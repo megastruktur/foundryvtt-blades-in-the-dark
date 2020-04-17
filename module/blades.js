@@ -6,14 +6,14 @@
 
 // Import Modules
 import { SimpleItemSheet } from "./item-sheet.js";
-import { SimpleActorSheet } from "./actor-sheet.js";
+import { BladesActorSheet } from "./actor-sheet.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 
 Hooks.once("init", async function() {
-  console.log(`Initializing Simple Worldbuilding System`);
+  console.log(`Initializing Blades In the Dark System`);
 
 	/**
 	 * Set an initiative formula for the system
@@ -26,7 +26,7 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", SimpleActorSheet, { makeDefault: true });
+  Actors.registerSheet("dnd5e", BladesActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("dnd5e", SimpleItemSheet, {makeDefault: true});
 
@@ -55,7 +55,7 @@ Hooks.once("init", async function() {
     
     const rgx = new RegExp(' value=\"' + count + '\"');
     return html.replace(rgx, "$& checked=\"checked\"");
-    
+
   });
 
 });
