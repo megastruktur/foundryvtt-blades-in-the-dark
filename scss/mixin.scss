@@ -1,0 +1,157 @@
+/*
+ * Toothradio
+ */
+ @mixin toothradio($width, $height, $unchecked_background, $checked_background) {
+
+  label {
+
+    display: block;
+    float: left;
+
+    & {
+      height: $height;
+      width: $width;
+      background-image: url($checked_background);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 5px;
+  
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+    &[for$="-0"] {
+      height: auto !important;
+      width: auto !important;
+      background-image: none !important;
+      background: black !important;
+      margin-right: 0px !important;
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+
+      & ~ label {
+        background-image: url($unchecked_background);
+      }
+      & + label {
+        background-image: url($checked_background);
+      }
+    }
+  }
+}
+
+/*
+ * Checkboxes underscored.
+ */
+@mixin check_underscore() {
+  label {
+    // width: $width;
+    // height: $height;
+    float: left;
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Hide the browser's default checkbox */
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked ~ .checkmark {
+        color: red;
+      }
+    }
+
+    .checkmark {
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+
+}
+
+
+/*
+ * Create Clock
+ */
+@mixin clock($segments, $size, $default_color, $accent_color) {
+
+  $angle: 360 / $segments;
+  $skew: 90 + $angle;
+  $border_width: 3;
+
+  position: relative;
+  border: #{$border_width}px solid black;
+  padding: 0;
+  width: #{$size}px;
+  height: #{$size}px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+
+  label {
+    overflow: hidden;
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0% 100%;
+    background-color: $accent_color;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+      & ~ label {
+        background-color: $default_color;
+      }
+      & + label {
+        background-color: $accent_color;
+      }
+    }
+  }
+
+  // Zero value to clear everything.
+  input[value="0"] {
+    opacity: 1;
+    height: 16px;
+    width: 16px;
+    z-index: 10;
+    left: #{($size + 2 * $border_width)/2 - 9}px;
+    top: #{($size + 2 * $border_width)/2 - 9}px;
+    margin: 0px;
+  }
+
+  @for $i from 1 through $segments {
+
+    $rotate_angle: $angle * ($i - 1);
+    *:nth-child(#{$i * 2 + 1}) {
+      transform: rotate(#{$rotate_angle}deg) skewY(#{$skew}deg);
+    }
+  }
+
+}

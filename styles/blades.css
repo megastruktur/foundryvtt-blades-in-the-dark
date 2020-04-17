@@ -1,0 +1,212 @@
+/*
+ * Toothradio
+ */
+/*
+ * Checkboxes underscored.
+ */
+/*
+ * Create Clock
+ */
+/*
+ * General Styles
+ */
+* {
+  font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+}
+* #stress-trauma {
+  border-top: 3px solid black;
+  display: flex;
+  flex-direction: row;
+  /* Trauma */
+}
+* #stress-trauma > * {
+  margin-right: 10px;
+}
+* #stress-trauma:last-child {
+  margin-right: 0px;
+}
+* #stress-trauma .stress-trauma-label {
+  background-color: black;
+  color: white;
+  font-size: 35px;
+  text-align: center;
+}
+* #stress-trauma #character-stress {
+  /* Hide the browser's default checkbox */
+}
+* #stress-trauma #character-stress label {
+  display: block;
+  float: left;
+}
+* #stress-trauma #character-stress label {
+  height: 100px;
+  width: 32px;
+  background-image: url("assets/teeth/stresstooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+* #stress-trauma #character-stress label:last-of-type {
+  margin-right: 0px;
+}
+* #stress-trauma #character-stress label[for$="-0"] {
+  height: auto !important;
+  width: auto !important;
+  background-image: none !important;
+  background: black !important;
+  margin-right: 0px !important;
+}
+* #stress-trauma #character-stress input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+* #stress-trauma #character-stress input:checked ~ label {
+  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+}
+* #stress-trauma #character-stress input:checked + label {
+  background-image: url("assets/teeth/stresstooth-red.png");
+}
+* #stress-trauma #character-trauma-container #character-trauma {
+  /* Hide the browser's default checkbox */
+}
+* #stress-trauma #character-trauma-container #character-trauma label {
+  display: block;
+  float: left;
+}
+* #stress-trauma #character-trauma-container #character-trauma label {
+  height: 100px;
+  width: 32px;
+  background-image: url("assets/teeth/shorttooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+* #stress-trauma #character-trauma-container #character-trauma label:last-of-type {
+  margin-right: 0px;
+}
+* #stress-trauma #character-trauma-container #character-trauma label[for$="-0"] {
+  height: auto !important;
+  width: auto !important;
+  background-image: none !important;
+  background: black !important;
+  margin-right: 0px !important;
+}
+* #stress-trauma #character-trauma-container #character-trauma input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+* #stress-trauma #character-trauma-container #character-trauma input:checked ~ label {
+  background-image: url("assets/teeth/shorttooth-grey.png");
+}
+* #stress-trauma #character-trauma-container #character-trauma input:checked + label {
+  background-image: url("assets/teeth/shorttooth-red.png");
+}
+* #stress-trauma #character-trauma-container .stress-trauma-label {
+  float: none !important;
+}
+* #stress-trauma #trauma-list label {
+  float: left;
+  display: block;
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Hide the browser's default checkbox */
+}
+* #stress-trauma #trauma-list label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+* #stress-trauma #trauma-list label input:checked ~ .checkmark {
+  color: red;
+}
+* #stress-trauma #trauma-list label .checkmark {
+  text-decoration: none;
+  font-weight: bold;
+}
+* #character-harm {
+  float: left;
+  width: 70%;
+}
+* #character-harm table {
+  width: 100%;
+}
+* #character-harm table th {
+  background-color: black;
+  color: white;
+}
+* #character-harm table input {
+  width: 100%;
+}
+* #character-healing {
+  float: left;
+}
+* #character-healing #character-health-clock {
+  position: relative;
+  border: 3px solid black;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+}
+* #character-healing #character-health-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  background-color: purple;
+}
+* #character-healing #character-health-clock input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+* #character-healing #character-health-clock input:checked ~ label {
+  background-color: white;
+}
+* #character-healing #character-health-clock input:checked + label {
+  background-color: purple;
+}
+* #character-healing #character-health-clock input[value="0"] {
+  opacity: 1;
+  height: 16px;
+  width: 16px;
+  z-index: 10;
+  left: 44px;
+  top: 44px;
+  margin: 0px;
+}
+* #character-healing #character-health-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+* #character-healing #character-health-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+* #character-healing #character-health-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+* #character-healing #character-health-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+
+/*# sourceMappingURL=style.css.map */

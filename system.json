@@ -1,0 +1,18 @@
+{
+  "name": "blades-in-the-dark",
+  "title": "Blades in the Dark",
+  "description": "GBlades in the dark game system.",
+  "version": 0.1,
+  "minimumCoreVersion": "0.5.2",
+  "compatibleCoreVersion": "0.5.3",
+  "templateVersion": 1,
+  "author": "megastruktur",
+  "esmodules": ["module/blades.js"],
+  "styles": ["styles/blades.css"],
+  "packs": [],
+  "languages": [],
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": null,
+  "secondaryTokenAttribute": null
+}

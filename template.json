@@ -1,0 +1,141 @@
+{
+"Actor": {
+  "types": ["character"],
+  "character": {
+    "alias": "",
+    "heritage": "",
+    "background": "",
+    "vice": "",
+    "stress": [0],
+    "traumas": [],
+    "healing-clock": [0],
+    "harm": {
+        "light": {
+          "one": "",
+          "two": ""
+        },
+        "medium": {
+          "one": "",
+          "two": ""
+        },
+        "heavy": {
+          "one": ""
+        },
+        "deadly": {
+          "one": ""
+        }
+    },
+    "armor-uses": {
+      "armor": 0,
+      "heavy": 0,
+      "special": 0
+    },
+    "attributes": {
+        "insight": {
+            "hunt": 0,
+            "study": 0,
+            "survey": 0,
+            "tinker": 0
+        },
+        "prowess": {
+            "finesse": 0,
+            "prowl": 0,
+            "skirmish": 0,
+            "wreck": 0
+        },
+        "resolve": {
+            "attune": 0,
+            "command": 0,
+            "consort": 0,
+            "sway": 0
+        }
+    },
+    "heritages": {
+      "akoros": {
+        "label": "Akoros",
+        "dtype": "String"
+      },
+      "the-dagger-isles": {
+        "label": "The Dagger Isles",
+        "dtype": "String"
+      },
+      "iruvia": {
+        "label": "Iruvia",
+        "dtype": "String"
+      },
+      "severos": {
+        "label": "Severos",
+        "dtype": "String"
+      },
+      "skovlan": {
+        "label": "Skovlan",
+        "dtype": "String"
+      },
+      "tycheros": {
+        "label": "Tycheros",
+        "dtype": "String"
+      }
+    },
+    "backgrounds": {
+      "academic": {
+        "label": "Academic",
+        "dtype": "String"
+      },
+      "labor": {
+        "label": "Labor",
+        "dtype": "String"
+      },
+      "law": {
+        "label": "Law",
+        "dtype": "String"
+      },
+      "trade": {
+        "label": "Trade",
+        "dtype": "String"
+      },
+      "military": {
+        "label": "Military",
+        "dtype": "String"
+      },
+      "noble": {
+        "label": "Noble",
+        "dtype": "String"
+      },
+      "underworld": {
+        "label": "Underworld",
+        "dtype": "String"
+      }
+    },
+    "vices": {
+      "faith": {
+        "label": "Faith",
+        "dtype": "String"
+      },
+      "gambling": {
+        "label": "Gambling",
+        "dtype": "String"
+      },
+      "luxury": {
+        "label": "Luxury",
+        "dtype": "String"
+      },
+      "obligation": {
+        "label": "Obligation",
+        "dtype": "String"
+      },
+      "pleasure": {
+        "label": "Pleasure",
+        "dtype": "String"
+      },
+      "stupor": {
+        "label": "Stupor",
+        "dtype": "String"
+      },
+      "weird": {
+        "label": "Weird",
+        "dtype": "String"
+      }
+    }
+  }
+}
+}

@@ -1,0 +1,84 @@
+@import 'mixin.scss';
+
+/*
+ * General Styles
+ */
+* {
+  font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+
+  // Stress and Trauma
+
+  #stress-trauma {
+
+    border-top: 3px solid black;
+    display: flex;
+    flex-direction: row;
+
+    > * {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    .stress-trauma-label {
+      background-color: black;
+      color: white;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    // Stress
+    #character-stress {
+      @include toothradio(32px, 100px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    }
+
+    /* Trauma */
+    #character-trauma-container {
+
+      #character-trauma {
+        @include toothradio(32px, 100px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
+      }
+      .stress-trauma-label {
+        float: none !important;
+      }
+    }
+
+    #trauma-list {
+      @include check_underscore();
+    }
+
+  }
+
+  // Harm
+  #character-harm {
+
+    float: left;
+    width: 70%;
+
+    table {
+      width: 100%;
+
+      th {
+        background-color: black;
+        color: white;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  // Clock
+  #character-healing {
+
+    float: left;
+
+    #character-health-clock {
+      @include clock(4, 100, white, purple);
+    }
+  }
+
+}
