@@ -5,7 +5,8 @@
  */
 
 // Import Modules
-import { SimpleItemSheet } from "./item-sheet.js";
+import { preloadHandlebarsTemplates } from "./templates.js";
+// import { SimpleItemSheet } from "./item-sheet.js";
 import { BladesActorSheet } from "./actor-sheet.js";
 
 /* -------------------------------------------- */
@@ -26,9 +27,10 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", BladesActorSheet, { makeDefault: true });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("dnd5e", SimpleItemSheet, {makeDefault: true});
+  Actors.registerSheet("bitd", BladesActorSheet, { makeDefault: true });
+  // Items.unregisterSheet("core", ItemSheet);
+  // Items.registerSheet("bitd", SimpleItemSheet, {makeDefault: true});
+  preloadHandlebarsTemplates();
 
 
   // Multiboxes.
@@ -56,6 +58,11 @@ Hooks.once("init", async function() {
     const rgx = new RegExp(' value=\"' + count + '\"');
     return html.replace(rgx, "$& checked=\"checked\"");
 
+  });
+
+  // Equals handlebar.
+  Handlebars.registerHelper('eq', function (a, b, options) {
+    return (a === b) ? options.fn(this) : '';
   });
 
 });

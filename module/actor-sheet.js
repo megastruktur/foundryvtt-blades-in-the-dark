@@ -9,7 +9,7 @@ export class BladesActorSheet extends ActorSheet {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
-      width: 1200,
+      width: 1400,
       height: 1200
     });
   }
@@ -131,7 +131,7 @@ export class BladesActorSheet extends ActorSheet {
     const FD = new FormData(form);
     const dtypes = {};
     const editorTargets = Object.keys(this.editors);
-    console.log('YAMAMMMMMMAAAAAAAAAAAAAA!!!!');
+    
     // Always include checkboxes
     for ( let el of form.elements ) {
       if ( !el.name ) continue;

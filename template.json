@@ -9,6 +9,7 @@
     "stress": [0],
     "traumas": [],
     "healing-clock": [0],
+    "class": "cutter",
     "harm": {
         "light": {
           "one": "",
@@ -32,22 +33,31 @@
     },
     "attributes": {
         "insight": {
-            "hunt": 0,
-            "study": 0,
-            "survey": 0,
-            "tinker": 0
+          "exp": [0],
+          "skills": {
+            "hunt": [0],
+            "study": [0],
+            "survey": [0],
+            "tinker": [0]
+          }
         },
         "prowess": {
-            "finesse": 0,
-            "prowl": 0,
-            "skirmish": 0,
-            "wreck": 0
+          "exp": [0],
+          "skills": {
+            "finesse": [0],
+            "prowl": [0],
+            "skirmish": [0],
+            "wreck": [0]
+          }
         },
         "resolve": {
-            "attune": 0,
-            "command": 0,
-            "consort": 0,
-            "sway": 0
+          "exp": [0],
+          "skills": {
+            "attune": [0],
+            "command": [0],
+            "consort": [0],
+            "sway": [0]
+          }
         }
     },
     "heritages": {
@@ -135,7 +145,59 @@
         "label": "Weird",
         "dtype": "String"
       }
+    },
+    "classes": {
+      "cutter": {
+        "skills": {
+          "skirmish": 2,
+          "command": 1
+        }
+      },
+      "hound": {
+        "skills": {
+          "hunt": 2,
+          "survey": 1
+        }
+      },
+      "leech": {
+        "skills": {
+          "tinker": 2,
+          "wreck": 1
+        }
+      },
+      "lurk": {
+        "skills": {
+          "finesse": 1,
+          "prowl": 2
+        }
+      },
+      "slide": {
+        "skills": {
+          "consort": 1,
+          "sway": 2
+        }
+      },
+      "spider": {
+        "skills": {
+          "study": 1,
+          "consort": 2
+        }
+      },
+      "whisper": {
+        "skills": {
+          "study": 1,
+          "attune": 2
+        }
+      }
     }
+  }
+},
+"Item": {
+  "types": ["item"],
+  "item": {
+    "class_restriction": "",
+    "load": 0,
+    "description": ""
   }
 }
 }
