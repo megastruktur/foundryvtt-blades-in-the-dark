@@ -1,14 +1,13 @@
 /**
- * Extend the basic ItemSheet with some very simple modifications
+ * Extend the basic ItemSheet
  * @extends {ItemSheet}
  */
-export class SimpleItemSheet extends ItemSheet {
+export class BladesItemSheet extends ItemSheet {
 
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-			classes: ["worldbuilding", "sheet", "item"],
-			template: "systems/worldbuilding/templates/item-sheet.html",
+			classes: ["blades-in-the-dark", "sheet", "item"],
 			width: 520,
 			height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
@@ -18,12 +17,16 @@ export class SimpleItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
+  get template() {
+    const path = "systems/blades-in-the-dark/templates/items/";
+    return `${path}/${this.item.data.type}.html`;
+  }
+
+  /* -------------------------------------------- */
+
+  /** @override */
   getData() {
     const data = super.getData();
-    data.dtypes = ["String", "Number", "Boolean"];
-    for ( let attr of Object.values(data.data.attributes) ) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-    }
     return data;
   }
 
@@ -32,14 +35,6 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
 	activateListeners(html) {
     super.activateListeners(html);
-
-    // Activate tabs
-    let tabs = html.find('.tabs');
-    let initial = this._sheetTab;
-    new Tabs(tabs, {
-      initial: initial,
-      callback: clicked => this._sheetTab = clicked.data("tab")
-    });
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;

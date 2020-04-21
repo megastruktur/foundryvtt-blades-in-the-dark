@@ -9,15 +9,7 @@ export const preloadHandlebarsTemplates = async function() {
   const templatePaths = [
 
     // Actor Sheet Partials
-    "systems/blades-in-the-dark/templates/parts/attributes.html",
-    
-    "systems/blades-in-the-dark/templates/parts/cutter-class.html",
-    "systems/blades-in-the-dark/templates/parts/hound-class.html",
-    "systems/blades-in-the-dark/templates/parts/leech-class.html",
-    "systems/blades-in-the-dark/templates/parts/lurk-class.html",
-    "systems/blades-in-the-dark/templates/parts/slide-class.html",
-    "systems/blades-in-the-dark/templates/parts/spider-class.html",
-    "systems/blades-in-the-dark/templates/parts/whisper-class.html"
+    "systems/blades-in-the-dark/templates/parts/attributes.html"
   ];
 
   // Load the template parts

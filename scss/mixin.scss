@@ -1,12 +1,29 @@
 /*
+ * Custom single radio.
+ */
+ @mixin custom_radio_with_bg($width, $height, $unchecked_background, $checked_background) {
+  
+  display: none;
+
+  &:checked {
+
+    & ~ label {
+      background-image: url($unchecked_background);
+    }
+    & + label {
+      background-image: url($checked_background);
+    }
+  }
+}
+
+/*
  * Toothradio
  */
  @mixin toothradio($width, $height, $unchecked_background, $checked_background) {
 
-  label {
+  display: flex;
 
-    display: block;
-    float: left;
+  label {
 
     & {
       height: $height;
@@ -19,31 +36,65 @@
       &:last-of-type {
         margin-right: 0px;
       }
-    }
-    &[for$="-0"] {
-      height: auto !important;
-      width: auto !important;
-      background-image: none !important;
-      background: black !important;
-      margin-right: 0px !important;
+      &[for$="-0"] {
+        width: auto;
+        height: auto;
+        background-image: none !important;
+        background: black !important;
+        margin-right: 0px;
+      }
     }
   }
 
   /* Hide the browser's default checkbox */
   input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    @include custom_radio_with_bg($width, $height, $unchecked_background, $checked_background);
+  }
+}
 
+/*
+ * Custom Radio
+ */
+ @mixin custom_radio($width, $height) {
+
+  display: flex;
+  $default_color: white;
+  $accent_color: black;
+  $circle_border_color: black;
+
+  label {
+
+    & {
+      height: $height;
+      width: $width;
+      background-color: $accent_color;
+
+      vertical-align: middle;
+      border: 2px solid $circle_border_color;
+      border-radius: 24px;
+
+      &[for$="-0"] {
+        height: 5px;
+        width: 5px;
+        border-radius: 24px;
+        background-image: none !important;
+        background-color: red !important;
+        margin-right: 0px;
+      }
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  input {
+    display: none;
+  
     &:checked {
-
+  
       & ~ label {
-        background-image: url($unchecked_background);
+        background-color: $default_color;
       }
       & + label {
-        background-image: url($checked_background);
+        background-color: $accent_color;
       }
     }
   }
@@ -53,27 +104,22 @@
  * Checkboxes underscored.
  */
 @mixin check_underscore() {
+
+  display: flex;
+  flex-wrap: wrap;
   label {
-    // width: $width;
-    // height: $height;
-    float: left;
-    display: block;
-    position: relative;
-    padding-left: 10px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    margin-right: 10px;
 
     /* Hide the browser's default checkbox */
     input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
+      
+      display: none;
 
       &:checked ~ .checkmark {
         color: red;
@@ -87,7 +133,6 @@
   }
 
 }
-
 
 /*
  * Create Clock
@@ -120,10 +165,7 @@
 
   input {
     position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    display: none;
 
     &:checked {
       & ~ label {
@@ -137,12 +179,15 @@
 
   // Zero value to clear everything.
   input[value="0"] {
+    display: block;
     opacity: 1;
     height: 16px;
     width: 16px;
     z-index: 10;
-    left: #{($size + 2 * $border_width)/2 - 9}px;
-    top: #{($size + 2 * $border_width)/2 - 9}px;
+    left: 0px;
+    top: 0px;
+    // left: #{($size + 2 * $border_width)/2 - 9}px;
+    // top: #{($size + 2 * $border_width)/2 - 9}px;
     margin: 0px;
   }
 

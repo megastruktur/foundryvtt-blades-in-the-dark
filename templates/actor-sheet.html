@@ -45,16 +45,17 @@
         {{/select}}
       </select>
     </div>
-    <div>
-      <label for="character-class">Class</label>
-      <select id="character-class" name="data.class">
-        {{#select data.class}}
-        {{#each data.classes as |class key|}}
-        <option value="{{key}}">{{key}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
+    {{#each actor.items as |item id|}}
+        {{#eq item.type "class"}}
+        <div class="item flexrow" data-item-id="{{item._id}}">
+          <div class="item-body">
+            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+            <h4 class="item-name">{{item.name}}</h4>
+          </div>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        {{/eq}}
+    {{/each}}
   </div>
 
   {{!-- Stress and Trauma --}}
@@ -215,10 +216,20 @@
 
   {{!-- Attributes --}}
   {{> "systems/blades-in-the-dark/templates/parts/attributes.html"}}
-  
-  {{!-- Test --}}
-  {{#eq data.class "cutter"}}
-  {{> "systems/blades-in-the-dark/templates/parts/cutter-class.html"}}
-  {{/eq}}
+
+  {{!-- Owned Items Tab --}}
+  <!-- <div class="tab items" data-group="primary" data-tab="items"> -->
+      <ol class="items-list">
+      {{#each actor.items as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-body">
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+              <h4 class="item-name">{{item.name}}</h4>
+            </div>
+            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </li>
+      {{/each}}
+      </ol>
+  <!-- </div> -->
 
 </form>

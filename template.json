@@ -1,6 +1,6 @@
 {
 "Actor": {
-  "types": ["character"],
+  "types": ["character", "crew"],
   "character": {
     "alias": "",
     "heritage": "",
@@ -9,7 +9,10 @@
     "stress": [0],
     "traumas": [],
     "healing-clock": [0],
-    "class": "cutter",
+    "experience": [0],
+    "coins": [0],
+    "coins_stashed": [0],
+    "special_abilities": [],
     "harm": {
         "light": {
           "one": "",
@@ -193,10 +196,32 @@
   }
 },
 "Item": {
-  "types": ["item"],
+  "types": ["item", "class", "ability", "heritages", "backgrounds", "vices"],
   "item": {
     "class_restriction": "",
     "load": 0,
+    "description": ""
+  },
+  "class": {
+    "description": "",
+    "base_skills": {
+      "hunt": [0],
+      "study": [0],
+      "survey": [0],
+      "tinker": [0],
+      "finesse": [0],
+      "prowl": [0],
+      "skirmish": [0],
+      "wreck": [0],
+      "attune": [0],
+      "command": [0],
+      "consort": [0],
+      "sway": [0]
+    },
+    "class_items": []
+  },
+  "ability": {
+    "class": "",
     "description": ""
   }
 }

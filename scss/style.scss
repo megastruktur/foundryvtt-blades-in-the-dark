@@ -6,6 +6,32 @@
 * {
   font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 
+  ul {
+    list-style: none;
+  }
+
+  .section {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .black-label {
+    background-color: black;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 50px !important;
+    text-transform: capitalize;
+  }
+
+  .label-stripe {
+    text-transform: uppercase;
+    background-color: #888;
+  }
+
   // Stress and Trauma
 
   #stress-trauma {
@@ -22,13 +48,6 @@
       margin-right: 0px;
     }
 
-    .stress-trauma-label {
-      background-color: black;
-      color: white;
-      font-size: 35px;
-      text-align: center;
-    }
-
     // Stress
     #character-stress {
       @include toothradio(32px, 100px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
@@ -39,45 +58,81 @@
 
       #character-trauma {
         @include toothradio(32px, 100px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
-      }
-      .stress-trauma-label {
-        float: none !important;
+        flex-direction: column;
+
+        #trauma-teeth {
+          display: flex;
+          flex-direction: row;
+        }
       }
     }
 
     #trauma-list {
       @include check_underscore();
+      justify-content: space-between;
+      align-items: flex-start;
     }
 
   }
 
-  // Harm
-  #character-harm {
+  #harm-armor {
+    
+    display: flex;
 
-    float: left;
-    width: 70%;
-
-    table {
+    // Harm
+    #character-harm {
+  
       width: 100%;
-
-      th {
-        background-color: black;
-        color: white;
-      }
-
-      input {
+  
+      table {
         width: 100%;
+  
+        th {
+          background-color: black;
+          color: white;
+        }
+  
+        input[type="text"] {
+          width: 100%;
+        }
+      }
+    }
+  
+    // Clock
+    #character-health-clock {
+      @include clock(4, 100, white, red);
+      margin: 0 auto;
+    }
+
+    #character-armor-uses {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
     }
   }
 
-  // Clock
-  #character-healing {
 
-    float: left;
+  #attributes {
+    .attributes-exp {
+      @include toothradio(17px, 50px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
+    }
+    .attributes-exp {
+      border-top: 5px solid black;
+    }
+    
+    .attributes-container {
+      display: flex;
+      margin: 5px 0px;
+      @include custom_radio(20px, 20px);
 
-    #character-health-clock {
-      @include clock(4, 100, white, purple);
+      * {
+        margin-right: 5px;
+      }
     }
   }
 

@@ -6,7 +6,7 @@
 
 // Import Modules
 import { preloadHandlebarsTemplates } from "./templates.js";
-// import { SimpleItemSheet } from "./item-sheet.js";
+import { BladesItemSheet } from "./item-sheet.js";
 import { BladesActorSheet } from "./actor-sheet.js";
 
 /* -------------------------------------------- */
@@ -28,8 +28,8 @@ Hooks.once("init", async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("bitd", BladesActorSheet, { makeDefault: true });
-  // Items.unregisterSheet("core", ItemSheet);
-  // Items.registerSheet("bitd", SimpleItemSheet, {makeDefault: true});
+  Items.unregisterSheet("core", ItemSheet);
+  Items.registerSheet("bitd", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
 
 
