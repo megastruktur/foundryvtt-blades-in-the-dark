@@ -1,52 +1,28 @@
 <form class="{{cssClass}}" autocomplete="off">
 
   <div id="name-alias" class="section">
-    <div>
-      <label for="character-name">Name</label>
-      <input type="text" id="character-name" name="name" value="{{actor.name}}">
-    </div>
-    <div>
-      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-    </div>
-    <div>
-      <label for="character-alias">Alias</label>
-      <input type="text" id="character-alias" name="data.alias" value="{{data.alias}}">
-    </div>
-  </div>
 
-  <div id="dropdowns-details" class="section">
     <div>
-      <label for="character-heritage">Heritage</label>
-      <select id="character-heritage" name="data.heritage">
-        {{#select data.heritage}}
-        {{#each data.heritages as |heritage key|}}
-        <option value="{{key}}">{{heritage.label}}</option>
+      <div>
+        <label for="character-name">Name</label>
+        <input type="text" id="character-name" name="name" value="{{actor.name}}">
+      </div>
+
+      <div class="section">
+        {{#each actor.items as |item id|}}
+            {{#eq item.type "heritage"}}
+            <div class="item flexrow" data-item-id="{{item._id}}">
+              <div class="item-body">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <h4 class="item-name">{{item.name}}</h4>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            {{/eq}}
         {{/each}}
-        {{/select}}
-      </select>
-    </div>
-    <div>
-      <label for="character-background">Background</label>
-      <select id="character-background" name="data.background">
-        {{#select data.background}}
-        {{#each data.backgrounds as |background key|}}
-        <option value="{{key}}">{{background.label}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
-    <div>
-      <label for="character-vice">Vice</label>
-      <select id="character-vice" name="data.vice">
-        {{#select data.vice}}
-        {{#each data.vices as |vice key|}}
-        <option value="{{key}}">{{vice.label}}</option>
-        {{/each}}
-        {{/select}}
-      </select>
-    </div>
-    {{#each actor.items as |item id|}}
-        {{#eq item.type "class"}}
+
+        {{#each actor.items as |item id|}}
+        {{#eq item.type "background"}}
         <div class="item flexrow" data-item-id="{{item._id}}">
           <div class="item-body">
             <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -55,7 +31,45 @@
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
           </div>
         {{/eq}}
-    {{/each}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div>
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    </div>
+
+    <div>
+      <div>
+        <label for="character-alias">Alias</label>
+        <input type="text" id="character-alias" name="data.alias" value="{{data.alias}}">
+      </div>
+      <div class="section">
+        {{#each actor.items as |item id|}}
+            {{#eq item.type "vice"}}
+            <div class="item flexrow" data-item-id="{{item._id}}">
+              <div class="item-body">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <h4 class="item-name">{{item.name}}</h4>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            {{/eq}}
+        {{/each}}
+        {{#each actor.items as |item id|}}
+            {{#eq item.type "class"}}
+            <div class="item flexrow" data-item-id="{{item._id}}">
+              <div class="item-body">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <h4 class="item-name">{{item.name}}</h4>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+            {{/eq}}
+        {{/each}}
+      </div>
+    </div>
+
   </div>
 
   {{!-- Stress and Trauma --}}

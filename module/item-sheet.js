@@ -18,7 +18,7 @@ export class BladesItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/blades-in-the-dark/templates/items/";
+    const path = "systems/blades-in-the-dark/templates/items";
     return `${path}/${this.item.data.type}.html`;
   }
 

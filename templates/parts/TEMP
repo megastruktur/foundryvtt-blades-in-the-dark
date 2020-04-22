@@ -1,0 +1,33 @@
+
+          "battleborn": {
+            "label": "Battleborn",
+            "description": "You may expend your special armor to reduce harm from an attack in combat or to push yourself during a fight."
+          },
+          "bodyguard": {
+            "label": "Bodyguard",
+            "description": "When you protect a teammate, take +1d to your resistance roll. When you gather info to anticipate possible threats in the current situation, you get +1 effect."
+          },
+          "ghost_fighter": {
+            "label": "Ghost Fighter",
+            "description": "You may imbue your hands, melee weapons, or tools with spirit energy. You gain potency in combat vs. the supernatural. You may grapple with spirits to restrain and capture them."
+          },
+          "leader": {
+            "label": "Leader",
+            "description": "When you Command a cohort in combat, they continue to  fight  when  they  would  otherwise  break (they're  not  taken  out  when they suffer level 3 harm). They gain +1 effect and 1 armor."
+          },
+          "mule": {
+            "label": "Mule",
+            "description": "Your load limits are higher. Light: 5. Normal: 7. Heavy: 8."
+          },
+          "not_to_be_trifled_with": {
+            "label": "Not  to  be  Trifled  With",
+            "description": "You  can  push  yourself  to  do  one  of  the  following:  perform  a  feat  of  physical  force  that  verges  on  the  superhuman—engage a small gang on equal footing in close combat."
+          },
+          "savage": {
+            "label": "Savage",
+            "description": "When  you  unleash  physical  violence,  it's  especially  frightening. When you Command a frightened target, take +1d."
+          },
+          "vigorous": {
+            "label": "Vigorous",
+            "description": "Vigorous: You recover from harm faster. Permanently fill in one of your healing clock segments. Take +1d to healing treatment rolls."
+          }

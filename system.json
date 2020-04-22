@@ -9,10 +9,39 @@
   "author": "megastruktur",
   "esmodules": ["module/blades.js"],
   "styles": ["styles/blades.css"],
-  "packs": [],
-  "languages": [],
+  "languages": ["en"],
   "gridDistance": 1,
   "gridUnits": "m",
   "primaryTokenAttribute": null,
-  "secondaryTokenAttribute": null
+  "secondaryTokenAttribute": null,
+  "packs": [
+    {
+      "name": "Classes",
+      "label": "Classes",
+      "system": "blades-in-the-dark",
+      "path": "./packs/classes.db",
+      "entity": "Item"
+    },
+    {
+      "name": "Heritages",
+      "label": "Heritages",
+      "system": "blades-in-the-dark",
+      "path": "./packs/heritages.db",
+      "entity": "Item"
+    },
+    {
+      "name": "Vices",
+      "label": "Vices",
+      "system": "blades-in-the-dark",
+      "path": "./packs/vices.db",
+      "entity": "Item"
+    },
+    {
+      "name": "Backgrounds",
+      "label": "Backgrounds",
+      "system": "blades-in-the-dark",
+      "path": "./packs/backgrounds.db",
+      "entity": "Item"
+    }
+]
 }

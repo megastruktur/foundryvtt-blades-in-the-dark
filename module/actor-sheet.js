@@ -56,7 +56,7 @@ export class BladesActorSheet extends ActorSheet {
     html.find('.item-delete').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
       this.actor.deleteOwnedItem(element.data("itemId"));
-      li.slideUp(200, () => this.render(false));
+      element.slideUp(200, () => this.render(false));
     });
   }
 
@@ -162,34 +162,62 @@ export class BladesActorSheet extends ActorSheet {
   async _onDrop (event) {
 
     event.preventDefault();
-    const actor = this.actor;
 
     // Get dropped data
     let data;
+    let item;
     try {
       data = JSON.parse(event.dataTransfer.getData('text/plain'));
     } catch (err) {
       return false;
     }
 
+    // Add only Items.
     if (data.type === "Item") {
 
-      // Class must be distinct.
-      let item = game.items.get(data.id);
-      if (item.data.type === "class") {
-        actor.items.forEach(i => {
-          if (i.data.type === "class") {
-            actor.deleteOwnedItem(i.id);
-          }
+      // Import from Compendium
+      if (data.pack) {
+        const pack = game.packs.find(p => p.collection === data.pack);
+        await pack.getEntity(data.id).then(ent => {
+          item = ent;
         });
       }
+      // Get from Items list.
+      else {
+        // Class must be distinct.
+        item = game.items.get(data.id);
+      }
+
+      if (item) {
+        this._removeDuplicatedItemType(item.data.type);
+      }
+
+      // Call parent on drop logic
+      return super._onDrop(event);
     }
 
-    // Call parent on drop logic
-    return super._onDrop(event);
   }
 
   /* -------------------------------------------- */
 
+  /**
+   * Removes a duplicate item type from charlist.
+   * 
+   * @param {string} item_type 
+   */
+  _removeDuplicatedItemType(item_type) {
 
+    const actor = this.actor;
+    let distinct_types = ["class", "heritage", "background", "vice"];
+
+    if (distinct_types.indexOf(item_type) >= 0) {
+      actor.items.forEach(i => {
+        if (i.data.type === item_type) {
+          actor.deleteOwnedItem(i.id);
+        }
+      });
+    }
+  }
+
+  /* -------------------------------------------- */
 }

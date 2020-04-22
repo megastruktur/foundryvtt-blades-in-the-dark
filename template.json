@@ -3,9 +3,6 @@
   "types": ["character", "crew"],
   "character": {
     "alias": "",
-    "heritage": "",
-    "background": "",
-    "vice": "",
     "stress": [0],
     "traumas": [],
     "healing-clock": [0],
@@ -63,92 +60,6 @@
           }
         }
     },
-    "heritages": {
-      "akoros": {
-        "label": "Akoros",
-        "dtype": "String"
-      },
-      "the-dagger-isles": {
-        "label": "The Dagger Isles",
-        "dtype": "String"
-      },
-      "iruvia": {
-        "label": "Iruvia",
-        "dtype": "String"
-      },
-      "severos": {
-        "label": "Severos",
-        "dtype": "String"
-      },
-      "skovlan": {
-        "label": "Skovlan",
-        "dtype": "String"
-      },
-      "tycheros": {
-        "label": "Tycheros",
-        "dtype": "String"
-      }
-    },
-    "backgrounds": {
-      "academic": {
-        "label": "Academic",
-        "dtype": "String"
-      },
-      "labor": {
-        "label": "Labor",
-        "dtype": "String"
-      },
-      "law": {
-        "label": "Law",
-        "dtype": "String"
-      },
-      "trade": {
-        "label": "Trade",
-        "dtype": "String"
-      },
-      "military": {
-        "label": "Military",
-        "dtype": "String"
-      },
-      "noble": {
-        "label": "Noble",
-        "dtype": "String"
-      },
-      "underworld": {
-        "label": "Underworld",
-        "dtype": "String"
-      }
-    },
-    "vices": {
-      "faith": {
-        "label": "Faith",
-        "dtype": "String"
-      },
-      "gambling": {
-        "label": "Gambling",
-        "dtype": "String"
-      },
-      "luxury": {
-        "label": "Luxury",
-        "dtype": "String"
-      },
-      "obligation": {
-        "label": "Obligation",
-        "dtype": "String"
-      },
-      "pleasure": {
-        "label": "Pleasure",
-        "dtype": "String"
-      },
-      "stupor": {
-        "label": "Stupor",
-        "dtype": "String"
-      },
-      "weird": {
-        "label": "Weird",
-        "dtype": "String"
-      }
-    },
     "classes": {
       "cutter": {
         "skills": {
@@ -196,7 +107,7 @@
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritages", "backgrounds", "vices"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice"],
   "item": {
     "class_restriction": "",
     "load": 0,
@@ -222,6 +133,15 @@
   },
   "ability": {
     "class": "",
+    "description": ""
+  },
+  "heritage": {
+    "description": ""
+  },
+  "background": {
+    "description": ""
+  },
+  "vice": {
     "description": ""
   }
 }
