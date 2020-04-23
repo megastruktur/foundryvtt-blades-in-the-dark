@@ -42,6 +42,20 @@
       "system": "blades-in-the-dark",
       "path": "./packs/backgrounds.db",
       "entity": "Item"
+    },
+    {
+      "name": "Items",
+      "label": "Items",
+      "system": "blades-in-the-dark",
+      "path": "./packs/items.db",
+      "entity": "Item"
+    },
+    {
+      "name": "Abilities",
+      "label": "Abilities",
+      "system": "blades-in-the-dark",
+      "path": "./packs/abilities.db",
+      "entity": "Item"
     }
 ]
 }

@@ -9,8 +9,8 @@ export class BladesActorSheet extends ActorSheet {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
-      width: 800,
-      height: 1000
+      width: 700,
+      height: 970
     });
   }
 
@@ -19,12 +19,13 @@ export class BladesActorSheet extends ActorSheet {
   /** @override */
   getData() {
     const data = super.getData();
-    data.dtypes = ["String", "Number", "Boolean", "Radio"];
+
+    // Calculate Load
+    let loadout = 0;
+    data.items.forEach(i => {loadout += (i.type === "item") ? parseInt(i.data.load) : 0});
+    data.data.loadout = loadout;
     console.log("DATA");
     console.log(data);
-    // for ( let attr of Object.values(data.data) ) {
-    //   attr.isCheckbox = attr.dtype === "Boolean";
-    // }
     return data;
   }
 
@@ -65,7 +66,6 @@ export class BladesActorSheet extends ActorSheet {
   /** @override */
   _updateObject(event, formData) {
 
-    console.log(formData);
     // Handle the free-form attributes list
     // const formAttrs = expandObject(formData).data.attributes || {};
     // const attributes = Object.values(formAttrs).reduce((obj, v) => {

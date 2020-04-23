@@ -6,6 +6,7 @@
 
 // Import Modules
 import { preloadHandlebarsTemplates } from "./templates.js";
+import { BladesItem } from "./item.js";
 import { BladesItemSheet } from "./item-sheet.js";
 import { BladesActorSheet } from "./actor-sheet.js";
 
@@ -20,16 +21,13 @@ Hooks.once("init", async function() {
 	 * Set an initiative formula for the system
 	 * @type {String}
 	 */
-	CONFIG.Combat.initiative = {
-	  formula: "1d20",
-    decimals: 2
-  };
+  CONFIG.Item.entityClass = BladesItem;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("bitd", BladesActorSheet, { makeDefault: true });
+  Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("bitd", BladesItemSheet, {makeDefault: true});
+  Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
 
 

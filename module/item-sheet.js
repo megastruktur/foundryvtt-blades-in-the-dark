@@ -19,7 +19,14 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
   get template() {
     const path = "systems/blades-in-the-dark/templates/items";
-    return `${path}/${this.item.data.type}.html`;
+    let simple_item_types = ["background", "heritage", "vice"];
+    let template_name = `${this.item.data.type}`;
+
+    if (simple_item_types.indexOf(this.item.data.type) >= 0) {
+      template_name = "simple";
+    }
+
+    return `${path}/${template_name}.html`;
   }
 
   /* -------------------------------------------- */
@@ -40,7 +47,7 @@ export class BladesItemSheet extends ItemSheet {
     if (!this.options.editable) return;
 
     // Add or Remove Attribute
-    html.find(".attributes").on("click", ".attribute-control", this._onClickAttributeControl.bind(this));
+    // html.find(".attributes").on("click", ".attribute-control", this._onClickAttributeControl.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -74,34 +81,5 @@ export class BladesItemSheet extends ItemSheet {
       await this._onSubmit(event);
     }
   }
-
   /* -------------------------------------------- */
-
-  /** @override */
-  _updateObject(event, formData) {
-
-    // Handle the free-form attributes list
-    const formAttrs = expandObject(formData).data.attributes || {};
-    const attributes = Object.values(formAttrs).reduce((obj, v) => {
-      let k = v["key"].trim();
-      if ( /[\s\.]/.test(k) )  return ui.notifications.error("Attribute keys may not contain spaces or periods");
-      delete v["key"];
-      obj[k] = v;
-      return obj;
-    }, {});
-    
-    // Remove attributes which are no longer used
-    for ( let k of Object.keys(this.object.data.data.attributes) ) {
-      if ( !attributes.hasOwnProperty(k) ) attributes[`-=${k}`] = null;
-    }
-
-    // Re-combine formData
-    formData = Object.entries(formData).filter(e => !e[0].startsWith("data.attributes")).reduce((obj, e) => {
-      obj[e[0]] = e[1];
-      return obj;
-    }, {_id: this.object._id, "data.attributes": attributes});
-
-    // Update the Item
-    return this.object.update(formData);
-  }
 }

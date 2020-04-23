@@ -8,6 +8,9 @@
  * Custom Radio
  */
 /*
+ * Custom Radio Squared
+ */
+/*
  * Checkboxes underscored.
  */
 /*
@@ -16,11 +19,20 @@
 /*
  * General Styles
  */
- * {
+* {
   font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 }
 * ul {
   list-style: none;
+}
+* form.actor-sheet {
+  padding: 20px;
+}
+* textarea {
+  margin-top: 10px;
+}
+* td {
+  padding: 10px;
 }
 * .section {
   margin-bottom: 10px;
@@ -28,19 +40,55 @@
   flex-direction: row;
   justify-content: space-between;
 }
+* .section > * {
+  margin-right: 10px;
+}
+* .section > *:last-child {
+  margin-right: 0px;
+}
+* .section .grow-one {
+  flex-grow: 1;
+}
+* .section .grow-two {
+  flex-grow: 2;
+}
+* .section.experience {
+  margin-bottom: 0px;
+  justify-content: center;
+}
+* .editor,
+* .editor-content {
+  min-height: 280px;
+}
+* .flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+* .flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
 * .black-label {
   background-color: black;
   color: white;
-  font-size: 35px;
+  font-size: 21px;
   text-align: center;
   padding: 0px 5px;
-  height: 50px !important;
+  height: 30px !important;
   text-transform: capitalize;
+}
+* .label-stripe {
+  text-transform: uppercase;
+  background-color: #888;
+  margin-bottom: 10px;
+  position: relative;
 }
 * #stress-trauma {
   border-top: 3px solid black;
   display: flex;
   flex-direction: row;
+  margin-bottom: 0px;
   /* Trauma */
 }
 * #stress-trauma > * {
@@ -54,8 +102,8 @@
   /* Hide the browser's default checkbox */
 }
 * #stress-trauma #character-stress label {
-  height: 100px;
-  width: 32px;
+  height: 50px;
+  width: 17px;
   background-image: url("assets/teeth/stresstooth-red.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -86,8 +134,8 @@
   flex-direction: column;
 }
 * #stress-trauma #character-trauma-container #character-trauma label {
-  height: 100px;
-  width: 32px;
+  height: 50px;
+  width: 17px;
   background-image: url("assets/teeth/shorttooth-red.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -124,7 +172,7 @@
 }
 * #stress-trauma #trauma-list label {
   cursor: pointer;
-  font-size: 22px;
+  font-size: 19px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -141,6 +189,49 @@
 * #stress-trauma #trauma-list label .checkmark {
   text-decoration: none;
   font-weight: bold;
+}
+* #abilities #character-experience {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+* #abilities #character-experience label {
+  height: 30px;
+  width: 10px;
+  background-image: url("assets/teeth/stresstooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+* #abilities #character-experience label:last-of-type {
+  margin-right: 0px;
+}
+* #abilities #character-experience label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  background: black !important;
+  margin-right: 0px;
+}
+* #abilities #character-experience input {
+  display: none;
+}
+* #abilities #character-experience input:checked ~ label {
+  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+}
+* #abilities #character-experience input:checked + label {
+  background-image: url("assets/teeth/stresstooth-red.png");
+}
+* #abilities .item-name {
+  width: 70px;
+}
+* #abilities .item-body {
+  width: auto;
+}
+* #abilities .item-description {
+  width: 200px;
 }
 * #harm-armor {
   display: flex;
@@ -211,48 +302,58 @@
 * #harm-armor #character-health-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-* #harm-armor #character-armor-uses {
-  display: flex;
-  flex-direction: column;
-}
 * #harm-armor #character-armor-uses div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+* #attributes {
+  display: flex;
+  flex-direction: column;
+}
+* #attributes .stripe {
+  background-color: black;
+  color: white;
+  font-size: 17px;
+  padding-left: 5px;
+}
 * #attributes .attributes-exp {
+  position: relative;
+  margin-bottom: 10px;
+}
+* #attributes .attributes-exp .stripe-tooth-body {
   display: flex;
   /* Hide the browser's default checkbox */
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
-* #attributes .attributes-exp label {
-  height: 50px;
-  width: 17px;
+* #attributes .attributes-exp .stripe-tooth-body label {
+  height: 30px;
+  width: 10px;
   background-image: url("assets/teeth/xptooth-red.png");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
 }
-* #attributes .attributes-exp label:last-of-type {
+* #attributes .attributes-exp .stripe-tooth-body label:last-of-type {
   margin-right: 0px;
 }
-* #attributes .attributes-exp label[for$="-0"] {
+* #attributes .attributes-exp .stripe-tooth-body label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   background: black !important;
   margin-right: 0px;
 }
-* #attributes .attributes-exp input {
+* #attributes .attributes-exp .stripe-tooth-body input {
   display: none;
 }
-* #attributes .attributes-exp input:checked ~ label {
+* #attributes .attributes-exp .stripe-tooth-body input:checked ~ label {
   background-image: url("assets/teeth/xptooth-white.png");
 }
-* #attributes .attributes-exp input:checked + label {
+* #attributes .attributes-exp .stripe-tooth-body input:checked + label {
   background-image: url("assets/teeth/xptooth-red.png");
-}
-* #attributes .attributes-exp {
-  border-top: 5px solid black;
 }
 * #attributes .attributes-container {
   display: flex;
@@ -261,8 +362,8 @@
   /* Hide the browser's default checkbox */
 }
 * #attributes .attributes-container label {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   background-color: black;
   vertical-align: middle;
   border: 2px solid black;
@@ -287,6 +388,73 @@
 }
 * #attributes .attributes-container * {
   margin-right: 5px;
+}
+* .item {
+  justify-content: space-between;
+}
+* .item .item-body {
+  margin-bottom: 10px;
+}
+* .item .item-body * {
+  margin-right: 10px;
+}
+* .item .item-body .item-description {
+  font-style: italic;
+  text-align: justify;
+}
+* .item div {
+  flex-grow: 2;
+}
+* .item .item-control {
+  flex-grow: 1;
+}
+* .item .item-body,
+* .item .item-class-label {
+  width: 100px;
+}
+* #name,
+* #alias {
+  margin-bottom: 10px;
+}
+* .profile-img {
+  margin: 0px 30px;
+}
+* .coins {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  flex-wrap: wrap;
+}
+* .coins label {
+  height: 15px;
+  width: 15px;
+  background-color: grey;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+* .coins label[for$="-0"] {
+  margin-right: 0px;
+}
+* .coins input {
+  display: none;
+}
+* .coins input:checked ~ label {
+  background-color: white;
+}
+* .coins input:checked + label {
+  background-color: grey;
+}
+* .coins label {
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
+* .coins label[for$="0"] {
+  border-width: 2px;
+}
+* .coins.coins-hands {
+  width: 36px;
+}
+* .coins.coins-stashed {
+  width: 190px;
 }
 
 /*# sourceMappingURL=style.css.map */

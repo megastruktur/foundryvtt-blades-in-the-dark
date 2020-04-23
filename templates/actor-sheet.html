@@ -1,77 +1,85 @@
-<form class="{{cssClass}}" autocomplete="off">
+<form class="{{cssClass}} actor-sheet" autocomplete="off">
 
   <div id="name-alias" class="section">
 
-    <div>
-      <div>
+    <div class="grow-two">
+      <div id="name">
         <label for="character-name">Name</label>
         <input type="text" id="character-name" name="name" value="{{actor.name}}">
       </div>
 
-      <div class="section">
+      <div id="character-traits" class="flex-column">
+        
         {{#each actor.items as |item id|}}
             {{#eq item.type "heritage"}}
-            <div class="item flexrow" data-item-id="{{item._id}}">
-              <div class="item-body">
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-class-label">Heritage</div>
+              <div class="item-body flex-horizontal">
                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                <h4 class="item-name">{{item.name}}</h4>
+                <div class="item-name">{{item.name}}</div>
               </div>
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-              </div>
+            </div>
             {{/eq}}
         {{/each}}
 
         {{#each actor.items as |item id|}}
-        {{#eq item.type "background"}}
-        <div class="item flexrow" data-item-id="{{item._id}}">
-          <div class="item-body">
-            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-            <h4 class="item-name">{{item.name}}</h4>
+          {{#eq item.type "background"}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-class-label">Background</div>
+            <div class="item-body flex-horizontal">
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+              <div class="item-name">{{item.name}}</div>
+            </div>
+            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
           </div>
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-          </div>
-        {{/eq}}
+          {{/eq}}
+        {{/each}}
+
+        {{#each actor.items as |item id|}}
+            {{#eq item.type "vice"}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-class-label">Vice</div>
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <div class="item-name">{{item.name}}</div>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/eq}}
+        {{/each}}
+
+        {{#each actor.items as |item id|}}
+            {{#eq item.type "class"}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-class-label">Class</div>
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <div class="item-name">{{item.name}}</div>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/eq}}
         {{/each}}
       </div>
     </div>
 
-    <div>
-      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-    </div>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
-    <div>
-      <div>
+    <div class="grow-two">
+      <div id="alias">
         <label for="character-alias">Alias</label>
         <input type="text" id="character-alias" name="data.alias" value="{{data.alias}}">
       </div>
-      <div class="section">
-        {{#each actor.items as |item id|}}
-            {{#eq item.type "vice"}}
-            <div class="item flexrow" data-item-id="{{item._id}}">
-              <div class="item-body">
-                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                <h4 class="item-name">{{item.name}}</h4>
-              </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-              </div>
-            {{/eq}}
-        {{/each}}
-        {{#each actor.items as |item id|}}
-            {{#eq item.type "class"}}
-            <div class="item flexrow" data-item-id="{{item._id}}">
-              <div class="item-body">
-                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                <h4 class="item-name">{{item.name}}</h4>
-              </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-              </div>
-            {{/eq}}
-        {{/each}}
-      </div>
+
+      {{> "systems/blades-in-the-dark/templates/parts/coins.html"}}
     </div>
 
   </div>
 
+  {{!-- Experience --}}
+  <div class="section experience">
+  </div>
   {{!-- Stress and Trauma --}}
   <div id="stress-trauma" class="section">
     <div id="character-stress">
@@ -229,21 +237,75 @@
   </div>
 
   {{!-- Attributes --}}
-  {{> "systems/blades-in-the-dark/templates/parts/attributes.html"}}
+  <div class="section">
 
-  {{!-- Owned Items Tab --}}
-  <!-- <div class="tab items" data-group="primary" data-tab="items"> -->
-      <ol class="items-list">
-      {{#each actor.items as |item id|}}
-          <li class="item flexrow" data-item-id="{{item._id}}">
-            <div class="item-body">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <h4 class="item-name">{{item.name}}</h4>
+    <div class="flex-vertical grow-two">
+      <div id="abilities" class="flex-vertical">
+        <div class="label-stripe">
+          <p>Abilities</p>
+          <div id="character-experience">
+            {{#multiboxes data.experience}}
+            <input type="radio" id="character-experience-1" name="data.experience" value="1" dtype="Radio">
+            <label for="character-experience-1"></label>
+            <input type="radio" id="character-experience-2" name="data.experience" value="2" dtype="Radio">
+            <label for="character-experience-2"></label>
+            <input type="radio" id="character-experience-3" name="data.experience" value="3" dtype="Radio">
+            <label for="character-experience-3"></label>
+            <input type="radio" id="character-experience-4" name="data.experience" value="4" dtype="Radio">
+            <label for="character-experience-4"></label>
+            <input type="radio" id="character-experience-5" name="data.experience" value="5" dtype="Radio">
+            <label for="character-experience-5"></label>
+            <input type="radio" id="character-experience-6" name="data.experience" value="6" dtype="Radio">
+            <label for="character-experience-6"></label>
+            <input type="radio" id="character-experience-7" name="data.experience" value="7" dtype="Radio">
+            <label for="character-experience-7"></label>
+            <input type="radio" id="character-experience-8" name="data.experience" value="8" dtype="Radio">
+            <label for="character-experience-8"></label>
+            <input type="radio" id="character-experience-9" name="data.experience" value="9" dtype="Radio">
+            <label for="character-experience-9"></label>
+            {{/multiboxes}}
+          </div>
+        </div>
+  
+        <div id="abilities-list">
+          {{#each actor.items as |item id|}}
+          {{#eq item.type "ability"}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <b><div class="item-name">{{item.name}}</div></b>
+                <div class="item-description">{{item.data.description}}</div>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
             </div>
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-          </li>
-      {{/each}}
-      </ol>
-  <!-- </div> -->
+          {{/eq}}
+          {{/each}}
+        </div>
+      </div>
+
+      {{!-- Owned Items Tab --}}
+      <div id="loadout" class="flex-vertical">
+        <div class="label-stripe">
+          <p>Loadout: {{data.loadout}}</p>
+        </div>
+        <div>
+          {{#each actor.items as |item id|}}
+          {{#eq item.type "item"}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <div class="item-name">{{item.name}}</div>
+                <div class="item-description">{{item.data.description}}</div>
+              </div>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          {{/eq}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Attributes --}}
+    {{> "systems/blades-in-the-dark/templates/parts/attributes.html"}}
+  </div>
 
 </form>

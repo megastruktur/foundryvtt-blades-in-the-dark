@@ -10,6 +10,7 @@
     "coins": [0],
     "coins_stashed": [0],
     "special_abilities": [],
+    "loadout": 0,
     "harm": {
         "light": {
           "one": "",
@@ -108,13 +109,18 @@
 },
 "Item": {
   "types": ["item", "class", "ability", "heritage", "background", "vice"],
+  "templates": {
+    "default": {
+      "description": ""
+    }
+  },
   "item": {
+    "templates": ["default"],
     "class_restriction": "",
-    "load": 0,
-    "description": ""
+    "load": 0
   },
   "class": {
-    "description": "",
+    "templates": ["default"],
     "base_skills": {
       "hunt": [0],
       "study": [0],
@@ -132,17 +138,18 @@
     "class_items": []
   },
   "ability": {
+    "templates": ["default"],
     "class": "",
-    "description": ""
+    "price": 1
   },
   "heritage": {
-    "description": ""
+    "templates": ["default"]
   },
   "background": {
-    "description": ""
+    "templates": ["default"]
   },
   "vice": {
-    "description": ""
+    "templates": ["default"]
   }
 }
 }
