@@ -83,6 +83,7 @@
   background-color: #888;
   margin-bottom: 10px;
   position: relative;
+  padding-left: 10px;
 }
 * #stress-trauma {
   border-top: 3px solid black;
@@ -195,7 +196,7 @@
   /* Hide the browser's default checkbox */
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 10px;
 }
 * #abilities #character-experience label {
   height: 30px;
