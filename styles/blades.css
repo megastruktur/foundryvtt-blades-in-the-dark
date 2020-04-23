@@ -32,7 +32,7 @@
   margin-top: 10px;
 }
 * td {
-  padding: 10px;
+  padding: 5px;
 }
 * .section {
   margin-bottom: 10px;
@@ -253,8 +253,8 @@
   position: relative;
   border: 3px solid black;
   padding: 0;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
@@ -281,14 +281,7 @@
   background-color: red;
 }
 * #harm-armor #character-health-clock input[value="0"] {
-  display: block;
-  opacity: 1;
-  height: 16px;
-  width: 16px;
-  z-index: 10;
-  left: 0px;
-  top: 0px;
-  margin: 0px;
+  display: none;
 }
 * #harm-armor #character-health-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(180deg);
