@@ -60,58 +60,32 @@
             "sway": [0]
           }
         }
-    },
-    "classes": {
-      "cutter": {
-        "skills": {
-          "skirmish": 2,
-          "command": 1
-        }
-      },
-      "hound": {
-        "skills": {
-          "hunt": 2,
-          "survey": 1
-        }
-      },
-      "leech": {
-        "skills": {
-          "tinker": 2,
-          "wreck": 1
-        }
-      },
-      "lurk": {
-        "skills": {
-          "finesse": 1,
-          "prowl": 2
-        }
-      },
-      "slide": {
-        "skills": {
-          "consort": 1,
-          "sway": 2
-        }
-      },
-      "spider": {
-        "skills": {
-          "study": 1,
-          "consort": 2
-        }
-      },
-      "whisper": {
-        "skills": {
-          "study": 1,
-          "attune": 2
-        }
-      }
     }
+  },
+  "crew": {
+    "name": "",
+    "reputation": [0],
+    "lair": "",
+    "tier": [0],
+    "deity": "",
+    "hold": [],
+    "experience": [0],
+    "hold_types": ["weak", "strong"],
+    "coins": [0],
+    "vault": [0],
+    "turfs": [8]
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type"],
   "templates": {
     "default": {
       "description": ""
+    },
+    "ability": {
+      "description": "",
+      "class": "",
+      "price": 1
     }
   },
   "item": {
@@ -138,9 +112,10 @@
     "class_items": []
   },
   "ability": {
-    "templates": ["default"],
-    "class": "",
-    "price": 1
+    "templates": ["ability"]
+  },
+  "crew_upgrade": {
+    "templates": ["ability"]
   },
   "heritage": {
     "templates": ["default"]
@@ -150,6 +125,106 @@
   },
   "vice": {
     "templates": ["default"]
+  },
+  "cohort": {
+    "templates": ["default"],
+    "type": [],
+    "cohort_types": ["gang", "expert"]
+  },
+  "crew_type": {
+    "description": "",
+    "turfs": {
+      "1": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "2": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "3": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "4": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "5": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "6": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "7": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "8": {
+        "name": "Lair",
+        "value": 1,
+        "description": "",
+        "connects": []
+      },
+      "9": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "10": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "11": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "12": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "13": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "14": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      },
+      "15": {
+        "name": "",
+        "value": "",
+        "description": "",
+        "connects": []
+      }
+    }
   }
 }
 }

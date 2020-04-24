@@ -6,14 +6,17 @@
 
 // Import Modules
 import { preloadHandlebarsTemplates } from "./templates.js";
+import { BladesHelpers } from "./blades-helpers.js";
 import { BladesItem } from "./item.js";
 import { BladesItemSheet } from "./item-sheet.js";
 import { BladesActorSheet } from "./actor-sheet.js";
+import { BladesCrewSheet } from "./crew-sheet.js";
+
+window.BladesHelpers = BladesHelpers;
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
-
 Hooks.once("init", async function() {
   console.log(`Initializing Blades In the Dark System`);
 
@@ -26,6 +29,7 @@ Hooks.once("init", async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("blades", BladesCrewSheet, { types: ["crew"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
@@ -61,6 +65,11 @@ Hooks.once("init", async function() {
   // Equals handlebar.
   Handlebars.registerHelper('eq', function (a, b, options) {
     return (a === b) ? options.fn(this) : '';
+  });
+
+  // NotEquals handlebar.
+  Handlebars.registerHelper('noteq', function (a, b, options) {
+    return (a !== b) ? options.fn(this) : '';
   });
 
 });

@@ -8,8 +8,8 @@ export class BladesItemSheet extends ItemSheet {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
 			classes: ["blades-in-the-dark", "sheet", "item"],
-			width: 520,
-			height: 480,
+			width: 900,
+			height: 900,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
 		});
   }
@@ -81,5 +81,13 @@ export class BladesItemSheet extends ItemSheet {
       await this._onSubmit(event);
     }
   }
+  /* -------------------------------------------- */
+
+  /** override */
+  _getFormData(form) {
+    const FD = BladesHelpers.getFormDataHelper(form, this.editors);
+    return FD;
+  }
+
   /* -------------------------------------------- */
 }
