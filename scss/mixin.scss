@@ -101,6 +101,48 @@
 }
 
 /*
+ * Custom Radio Squared
+ */
+ @mixin custom_radio_square($width, $height) {
+
+  display: flex;
+  $default_color: white;
+  $accent_color: grey;
+  $circle_border_color: black;
+
+  label {
+
+    & {
+      height: $height;
+      width: $width;
+      background-color: $accent_color;
+
+      vertical-align: middle;
+      border: 1px solid $circle_border_color;
+
+      &[for$="-0"] {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  input {
+    display: none;
+  
+    &:checked {
+  
+      & ~ label {
+        background-color: $default_color;
+      }
+      & + label {
+        background-color: $accent_color;
+      }
+    }
+  }
+}
+
+/*
  * Checkboxes underscored.
  */
 @mixin check_underscore() {
@@ -109,7 +151,7 @@
   flex-wrap: wrap;
   label {
     cursor: pointer;
-    font-size: 22px;
+    font-size: 19px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -179,16 +221,7 @@
 
   // Zero value to clear everything.
   input[value="0"] {
-    display: block;
-    opacity: 1;
-    height: 16px;
-    width: 16px;
-    z-index: 10;
-    left: 0px;
-    top: 0px;
-    // left: #{($size + 2 * $border_width)/2 - 9}px;
-    // top: #{($size + 2 * $border_width)/2 - 9}px;
-    margin: 0px;
+    display: none;
   }
 
   @for $i from 1 through $segments {

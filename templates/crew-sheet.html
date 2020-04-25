@@ -7,4 +7,15 @@
     </div>
   </div>
 
+
+  <div>
+    {{#each actor.items as |item id|}}
+    {{#eq item.type "crew_type"}}
+    <div class="item" data-item-id="{{item._id}}">
+    {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
+    </div>
+    {{/eq}}
+    {{/each}}
+  </div>
+
 </form>

@@ -51,6 +51,21 @@ export class BladesCrewSheet extends ActorSheet {
       this.actor.deleteOwnedItem(element.data("itemId"));
       element.slideUp(200, () => this.render(false));
     });
+
+    // Toggle Turf
+    html.find('.turf-select').click(ev => {
+      const element = $(ev.currentTarget).parents(".item");
+      
+      let item_id = element.data("itemId")
+      let turf_id = $(ev.currentTarget).data("turfId");
+      let turf_current_status = $(ev.currentTarget).data("turfStatus");
+      let turf_checkbox_name = 'data.turfs.' + turf_id + '.value';
+
+      this.actor.updateEmbeddedEntity('OwnedItem', {
+        _id: item_id,
+        [turf_checkbox_name]: !turf_current_status});
+      this.render(false);
+    });
   }
 
   /* -------------------------------------------- */
@@ -102,7 +117,7 @@ export class BladesCrewSheet extends ActorSheet {
 
       if (item) {
         const actor = this.actor;
-        BladesHelpers._removeDuplicatedItemType(item.data.type, actor);
+        BladesHelpers.removeDuplicatedItemType(item.data.type, actor);
       }
 
       // Call parent on drop logic

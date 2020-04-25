@@ -10,26 +10,80 @@
     list-style: none;
   }
 
+  form {
+    &.actor-sheet {
+      padding: 20px;
+    }
+  }
+
+  textarea {
+    margin-top: 10px;
+  }
+
+  td {
+    padding: 5px;
+  }
+
   .section {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+    > * {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    .grow-one {
+      flex-grow: 1;
+    }
+
+    .grow-two {
+      flex-grow: 2;
+    }
+
+    &.experience {
+      margin-bottom: 0px;
+      justify-content: center;
+    }
+  }
+
+  .editor,
+  .editor-content {
+    min-height: 280px;
+  }
+
+  .flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .flex-vertical {
+    display: flex;
+    flex-direction: column;
   }
 
   .black-label {
     background-color: black;
     color: white;
-    font-size: 35px;
+    font-size: 21px;
     text-align: center;
     padding: 0px 5px;
-    height: 50px !important;
+    height: 30px !important;
     text-transform: capitalize;
   }
 
   .label-stripe {
     text-transform: uppercase;
     background-color: #888;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
   }
 
   // Stress and Trauma
@@ -39,6 +93,7 @@
     border-top: 3px solid black;
     display: flex;
     flex-direction: row;
+    margin-bottom: 0px;
 
     > * {
       margin-right: 10px;
@@ -50,14 +105,14 @@
 
     // Stress
     #character-stress {
-      @include toothradio(32px, 100px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+      @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
     }
 
     /* Trauma */
     #character-trauma-container {
 
       #character-trauma {
-        @include toothradio(32px, 100px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
+        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
         flex-direction: column;
 
         #trauma-teeth {
@@ -71,6 +126,27 @@
       @include check_underscore();
       justify-content: space-between;
       align-items: flex-start;
+    }
+
+  }
+
+  #abilities {
+
+    #character-experience {
+      @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+      position: absolute;
+      top: 0px;
+      right: 10px;
+    }
+
+    .item-name {
+      width: 70px;
+    }
+    .item-body {
+      width: auto;
+    }
+    .item-description {
+      width: 200px;
     }
 
   }
@@ -100,13 +176,11 @@
   
     // Clock
     #character-health-clock {
-      @include clock(4, 100, white, red);
+      @include clock(4, 80, white, red);
       margin: 0 auto;
     }
 
     #character-armor-uses {
-      display: flex;
-      flex-direction: column;
 
       div {
         display: flex;
@@ -118,20 +192,213 @@
 
 
   #attributes {
-    .attributes-exp {
-      @include toothradio(17px, 50px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
+
+    display: flex;
+    flex-direction: column;
+
+    .stripe {
+      background-color: black;
+      color: white;
+      font-size: 17px;
+      padding-left: 5px;
     }
+
     .attributes-exp {
-      border-top: 5px solid black;
+
+      position: relative;
+      margin-bottom: 10px;
+
+      .stripe-tooth-body {
+        @include toothradio(10px, 30px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
     }
     
     .attributes-container {
       display: flex;
       margin: 5px 0px;
-      @include custom_radio(20px, 20px);
+      @include custom_radio(15px, 15px);
 
       * {
         margin-right: 5px;
+      }
+    }
+  }
+
+  // ITEM
+  .item {
+
+    justify-content: space-between;
+
+    .item-body {
+  
+      margin-bottom: 10px;
+      * {
+        margin-right: 10px;
+      }
+  
+      .item-description {
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+
+    div {
+      flex-grow: 2;
+    }
+    .item-control {
+      flex-grow: 1;
+    }
+    .item-body,
+    .item-class-label {
+      width: 100px;
+    }
+  }
+
+  #name,
+  #alias {
+    margin-bottom: 10px;
+
+    // color: red;
+    // background-image: url("assets/brush/dry-brush-stroke-3.png");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height: 67px;
+
+    // input {
+    //   color: red;
+    //   border: none;
+    //   background: none;
+    // }
+  }
+
+  .profile-img {
+    margin: 0px 30px;
+  }
+
+  .coins {
+    @include custom_radio_square(15px, 15px);
+    flex-wrap: wrap;
+
+    label {
+      margin-right: 3px;
+      margin-bottom: 3px;
+
+      &[for$="0"] {
+        border-width: 2px;
+      }
+    }
+
+    &.coins-hands {
+      width: 36px;
+    }
+
+    &.coins-stashed {
+      width: 190px;
+    }
+    
+  }
+
+  // Turfs.
+  $turf_margin: 20px;
+  $turf_height: 125px;
+  $turf_width: 130px;
+  $connector_height: $turf_height/10;
+  $connector_width: $turf_margin * 2;
+
+  #turf-list {
+
+    display: flex;
+    flex-direction: column;
+
+    .turf-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      *:first-child {
+        margin-left: 0px;
+      }
+      *:last-child {
+        margin-right: 0px;
+      }
+  
+      .turf-block {
+    
+        width: $turf_width;
+        height: $turf_height;
+        background-color: lightgray;
+        position: relative;
+        margin: $turf_margin;
+        flex-grow: initial;
+
+        &.turf-selected {
+          .connector {
+            background-color: gray;
+            z-index: 1;
+          }
+        }
+
+        .connector {
+
+          position: absolute;
+          display: block;
+          background-color: lightgray;
+
+          &.right,
+          &.left {
+            width: $turf_margin * 2;
+            height: $turf_height/5;
+            top: $turf_height/2 - $turf_height/10;
+          }
+          &.left {
+            left: -$turf_margin * 2;
+          }
+          &.right {
+            left: $turf_width;
+          }
+
+          &.top,
+          &.bottom {
+            height: $turf_margin * 2;
+            width: $turf_height/5;
+            left: $turf_width/2 - $turf_height/10;
+          }
+          &.top {
+            top: -$turf_margin * 2;
+          }
+          &.bottom {
+            top: $turf_height;
+          }
+        }
+
+
+        &.turf-selected {
+          background-color: gray;
+        }
+
+        .turf-description {
+          border: none;
+          background: none;
+          resize: none;
+          width: $turf_width;
+          text-align: center;
+          min-height: auto;
+          font-size: 12px;
+        }
+
+        .turf-name {
+          border: none;
+          border-radius: 0px;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        input[type="checkbox"] {
+          transform: scale(1);
+        }
       }
     }
   }

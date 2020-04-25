@@ -7,35 +7,5 @@
   </header>
   
 
-
-  <div id="turf-list">
-    <div class="turf-row">
-      {{#each data.turfs as |turf id|}}
-      <div class="turf-block {{#if turf.value}}turf-selected{{/if}}">
-          {{#each turf.connects as |connect|}}
-            <div class="connector {{connect}}"></div>
-          {{/each}}
-          {{#noteq id "8"}}
-          <input class="name-box" type="checkbox" name="data.turfs.{{id}}.value" {{checked turf.value}}>
-          {{/noteq}}
-
-          {{#multiboxes turf.connects}}
-          <input type="checkbox" name="data.turfs.{{id}}.connects" value="left">
-          <input type="checkbox" name="data.turfs.{{id}}.connects" value="top">
-          <input type="checkbox" name="data.turfs.{{id}}.connects" value="right">
-          <input type="checkbox" name="data.turfs.{{id}}.connects" value="bottom">
-          {{/multiboxes}}
-
-          <input type="text" name="data.turfs.{{id}}.name" value="{{turf.name}}">
-          <textarea name="data.turfs.{{id}}.description">{{turf.description}}</textarea>
-      </div>
-      {{#eq id "5"}}
-      </div><div class="turf-row">
-      {{/eq}}
-      {{#eq id "10"}}
-      </div><div class="turf-row">
-      {{/eq}}
-      {{/each}}
-    </div>
-  </div>
+  {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" turfs_data=data.turfs can_edit=true}}
 </form>

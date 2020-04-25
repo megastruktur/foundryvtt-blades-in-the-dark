@@ -1,0 +1,48 @@
+<div id="turf-list">
+
+  <div class="turf-row">
+    {{#each turfs_data as |turf id|}}
+    <div class="turf-block {{#if turf.value}}turf-selected{{/if}}">
+
+        {{#each turf.connects as |connect|}}
+          <div class="connector {{connect}}"></div>
+        {{/each}}
+
+        {{#if ../can_edit}}
+
+          {{#noteq id "8"}}
+          <input class="name-box" type="checkbox" name="data.turfs.{{id}}.value" {{checked turf.value}}>
+          {{/noteq}}
+
+          <div>
+            {{#multiboxes turf.connects}}
+            <input type="checkbox" name="data.turfs.{{id}}.connects" value="left">
+            <input type="checkbox" name="data.turfs.{{id}}.connects" value="top">
+            <input type="checkbox" name="data.turfs.{{id}}.connects" value="right">
+            <input type="checkbox" name="data.turfs.{{id}}.connects" value="bottom">
+            {{/multiboxes}}
+          </div>
+
+          <input class="turf-name" type="text" name="data.turfs.{{id}}.name" value="{{turf.name}}">
+          {{#noteq turf.name "Turf"}}
+          {{#noteq turf.name "Lair"}}
+          <textarea class="turf-description" name="data.turfs.{{id}}.description">{{turf.description}}</textarea>
+          {{/noteq}}
+          {{/noteq}}
+        {{else}}
+          <p class="turf-name">{{turf.name}}</p>
+          {{#if turf.description}}
+          <p class="turf-description">{{turf.description}}</p>
+          {{/if}}
+          <a class="turf-control turf-select" title="Select" data-turf-id="{{id}}" data-turf-status="{{turf.value}}"><i class="fas fa-circle"></i></a>
+        {{/if}}
+    </div>
+    {{#eq id "5"}}
+    </div><div class="turf-row">
+    {{/eq}}
+    {{#eq id "10"}}
+    </div><div class="turf-row">
+    {{/eq}}
+    {{/each}}
+  </div>
+</div>
