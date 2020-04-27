@@ -500,49 +500,49 @@
 * #turf-list .turf-row *:last-child {
   margin-right: 0px;
 }
-* #turf-list .turf-row .turf-block {
+* #turf-list.section-non-editable .turf-block {
   width: 130px;
-  height: 125px;
+  height: 100px;
   background-color: lightgray;
   position: relative;
   margin: 20px;
   flex-grow: initial;
 }
-* #turf-list .turf-row .turf-block.turf-selected .connector {
+* #turf-list.section-non-editable .turf-block.turf-selected .connector {
   background-color: gray;
   z-index: 1;
 }
-* #turf-list .turf-row .turf-block .connector {
+* #turf-list.section-non-editable .turf-block .connector {
   position: absolute;
   display: block;
   background-color: lightgray;
 }
-* #turf-list .turf-row .turf-block .connector.right, * #turf-list .turf-row .turf-block .connector.left {
+* #turf-list.section-non-editable .turf-block .connector.right, * #turf-list.section-non-editable .turf-block .connector.left {
   width: 40px;
-  height: 25px;
-  top: 50px;
+  height: 20px;
+  top: 40px;
 }
-* #turf-list .turf-row .turf-block .connector.left {
+* #turf-list.section-non-editable .turf-block .connector.left {
   left: -40px;
 }
-* #turf-list .turf-row .turf-block .connector.right {
+* #turf-list.section-non-editable .turf-block .connector.right {
   left: 130px;
 }
-* #turf-list .turf-row .turf-block .connector.top, * #turf-list .turf-row .turf-block .connector.bottom {
+* #turf-list.section-non-editable .turf-block .connector.top, * #turf-list.section-non-editable .turf-block .connector.bottom {
   height: 40px;
-  width: 25px;
-  left: 52.5px;
+  width: 20px;
+  left: 55px;
 }
-* #turf-list .turf-row .turf-block .connector.top {
+* #turf-list.section-non-editable .turf-block .connector.top {
   top: -40px;
 }
-* #turf-list .turf-row .turf-block .connector.bottom {
-  top: 125px;
+* #turf-list.section-non-editable .turf-block .connector.bottom {
+  top: 100px;
 }
-* #turf-list .turf-row .turf-block.turf-selected {
+* #turf-list.section-non-editable .turf-block.turf-selected {
   background-color: gray;
 }
-* #turf-list .turf-row .turf-block .turf-description {
+* #turf-list.section-non-editable .turf-block .turf-description {
   border: none;
   background: none;
   resize: none;
@@ -551,14 +551,84 @@
   min-height: auto;
   font-size: 12px;
 }
-* #turf-list .turf-row .turf-block .turf-name {
+* #turf-list.section-non-editable .turf-block .turf-name {
   border: none;
   border-radius: 0px;
   text-align: center;
   font-weight: bold;
 }
-* #turf-list .turf-row .turf-block input[type=checkbox] {
+* #turf-list.section-non-editable .turf-block input[type=checkbox] {
   transform: scale(1);
+}
+* #turf-list.section-non-editable .turf-block .turf-control.turf-select {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+}
+* #turf-list.section-editable .turf-block {
+  width: 130px;
+  height: 125px;
+  background-color: lightgray;
+  position: relative;
+  margin: 20px;
+  flex-grow: initial;
+}
+* #turf-list.section-editable .turf-block.turf-selected .connector {
+  background-color: gray;
+  z-index: 1;
+}
+* #turf-list.section-editable .turf-block .connector {
+  position: absolute;
+  display: block;
+  background-color: lightgray;
+}
+* #turf-list.section-editable .turf-block .connector.right, * #turf-list.section-editable .turf-block .connector.left {
+  width: 40px;
+  height: 25px;
+  top: 50px;
+}
+* #turf-list.section-editable .turf-block .connector.left {
+  left: -40px;
+}
+* #turf-list.section-editable .turf-block .connector.right {
+  left: 130px;
+}
+* #turf-list.section-editable .turf-block .connector.top, * #turf-list.section-editable .turf-block .connector.bottom {
+  height: 40px;
+  width: 25px;
+  left: 52.5px;
+}
+* #turf-list.section-editable .turf-block .connector.top {
+  top: -40px;
+}
+* #turf-list.section-editable .turf-block .connector.bottom {
+  top: 125px;
+}
+* #turf-list.section-editable .turf-block.turf-selected {
+  background-color: gray;
+}
+* #turf-list.section-editable .turf-block .turf-description {
+  border: none;
+  background: none;
+  resize: none;
+  width: 130px;
+  text-align: center;
+  min-height: auto;
+  font-size: 12px;
+}
+* #turf-list.section-editable .turf-block .turf-name {
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+* #turf-list.section-editable .turf-block input[type=checkbox] {
+  transform: scale(1);
+}
+* #turf-list.section-editable .turf-block .turf-control.turf-select {
+  position: absolute;
+  top: -7px;
+  left: -7px;
 }
 
 /*# sourceMappingURL=style.css.map */

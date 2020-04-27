@@ -233,3 +233,91 @@
   }
 
 }
+
+@mixin turf_block($turf_width, $turf_height) {
+  
+  $turf_margin: 20px;
+  $connector_height: $turf_height/10;
+  $connector_width: $turf_margin * 2;
+
+  width: $turf_width;
+  height: $turf_height;
+  background-color: lightgray;
+  position: relative;
+  margin: $turf_margin;
+  flex-grow: initial;
+
+  &.turf-selected {
+    .connector {
+      background-color: gray;
+      z-index: 1;
+    }
+  }
+
+  .connector {
+
+    position: absolute;
+    display: block;
+    background-color: lightgray;
+
+    &.right,
+    &.left {
+      width: $turf_margin * 2;
+      height: $turf_height/5;
+      top: $turf_height/2 - $turf_height/10;
+    }
+    &.left {
+      left: -$turf_margin * 2;
+    }
+    &.right {
+      left: $turf_width;
+    }
+
+    &.top,
+    &.bottom {
+      height: $turf_margin * 2;
+      width: $turf_height/5;
+      left: $turf_width/2 - $turf_height/10;
+    }
+    &.top {
+      top: -$turf_margin * 2;
+    }
+    &.bottom {
+      top: $turf_height;
+    }
+  }
+
+
+  &.turf-selected {
+    background-color: gray;
+  }
+
+  .turf-description {
+    border: none;
+    background: none;
+    resize: none;
+    width: $turf_width;
+    text-align: center;
+    min-height: auto;
+    font-size: 12px;
+  }
+
+  .turf-name {
+    border: none;
+    border-radius: 0px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1);
+  }
+
+  .turf-control {
+    &.turf-select {
+      position: absolute;
+      top: -7px;
+      left: -7px;
+    }
+  }
+}
