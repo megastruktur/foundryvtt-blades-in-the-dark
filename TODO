@@ -8,3 +8,6 @@
 - Add die calculator
 - Add Crew Template shortcut
 - Add Crew XP cheetsheet
+- Add Usage documentation to README.md
+- Add Turf Validation (<= 6 max)
+- Add turf connection validation

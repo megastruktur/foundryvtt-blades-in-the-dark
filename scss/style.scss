@@ -301,6 +301,19 @@
     
   }
 
+  // Reputation
+
+
+  // Stress
+  #crew-reputation {
+    border-top: 2px solid black;
+    @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+
+    input[disabled="disabled"] + label {
+      background-image: url(assets/teeth/stresstooth-black.png);
+    }
+  }
+
   // Turfs.
   $turf_margin: 20px;
   $turf_height: 125px;

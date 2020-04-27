@@ -450,6 +450,41 @@
 * .coins.coins-stashed {
   width: 190px;
 }
+* #crew-reputation {
+  border-top: 2px solid black;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+* #crew-reputation label {
+  height: 50px;
+  width: 17px;
+  background-image: url("assets/teeth/stresstooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+* #crew-reputation label:last-of-type {
+  margin-right: 0px;
+}
+* #crew-reputation label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  background: black !important;
+  margin-right: 0px;
+}
+* #crew-reputation input {
+  display: none;
+}
+* #crew-reputation input:checked ~ label {
+  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+}
+* #crew-reputation input:checked + label {
+  background-image: url("assets/teeth/stresstooth-red.png");
+}
+* #crew-reputation input[disabled=disabled] + label {
+  background-image: url(assets/teeth/stresstooth-black.png);
+}
 * #turf-list {
   display: flex;
   flex-direction: column;

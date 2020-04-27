@@ -68,16 +68,17 @@
     "lair": "",
     "tier": [0],
     "deity": "",
-    "hold": [],
+    "hold": ["strong"],
     "experience": [0],
     "hold_types": ["weak", "strong"],
     "coins": [0],
     "vault": [0],
-    "turfs": [8]
+    "turfs": [8],
+    "features": []
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_feature"],
   "templates": {
     "default": {
       "description": ""
@@ -130,6 +131,9 @@
     "templates": ["default"],
     "type": [],
     "cohort_types": ["gang", "expert"]
+  },
+  "crew_feature": {
+    "templates": ["default"]
   },
   "crew_type": {
     "description": "",

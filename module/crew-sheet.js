@@ -9,7 +9,7 @@ export class BladesCrewSheet extends ActorSheet {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
-      width: 700,
+      width: 930,
       height: 970
     });
   }
@@ -20,12 +20,22 @@ export class BladesCrewSheet extends ActorSheet {
   getData() {
     const data = super.getData();
 
-    // Calculate Load
-    let loadout = 0;
-    data.items.forEach(i => {loadout += (i.type === "item") ? parseInt(i.data.load) : 0});
-    data.data.loadout = loadout;
-    console.log("DATA");
-    console.log(data);
+    // Calculate Turfs amount.
+    // We already have Lair, so set to -1.
+    let turfs_amount = -1;
+
+    data.items.forEach(item => {
+
+      if (item.type === "crew_type") {
+        // Object.entries(item.data.turfs).forEach(turf => {turfs_amount += (turf.value === true) ? 1 : 0});
+        Object.entries(item.data.turfs).forEach(([key, turf]) => {
+          turfs_amount += (turf.value === true) ? 1 : 0;
+        });
+      }
+
+    });
+    data.data.turfs_amount = turfs_amount;
+
     return data;
   }
 

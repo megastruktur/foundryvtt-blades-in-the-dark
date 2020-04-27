@@ -56,6 +56,13 @@
       "system": "blades-in-the-dark",
       "path": "./packs/abilities.db",
       "entity": "Item"
+    },
+    {
+      "name": "Crew Features",
+      "label": "Crew Features",
+      "system": "blades-in-the-dark",
+      "path": "./packs/crew_features.db",
+      "entity": "Item"
     }
 ]
 }

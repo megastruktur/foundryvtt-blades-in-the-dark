@@ -2,12 +2,104 @@
 
   <div id="name-alias" class="section">
     <div id="name">
-      <label for="character-name">Name</label>
-      <input type="text" id="character-name" name="name" value="{{actor.name}}">
+      <label for="crew-name">Name</label>
+      <input type="text" id="crew-name" name="name" value="{{actor.name}}">
+    </div>
+    <div id="lair">
+      <label for="crew-lair">Lair</label>
+      <input type="text" id="crew-lair" name="data.lair" value="{{data.lair}}">
+    </div>
+
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+
+    <div id="crew-features">
+      <div class="item-label">Add 2 Crew Features</div>
+      {{#each actor.items as |item id|}}
+      {{#eq item.type "crew_feature"}}
+        <div class="item flex-horizontal" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+            <div class="item-name">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+      {{/eq}}
+      {{/each}}
     </div>
   </div>
 
 
+
+  <div class="section">
+    <div id="crew-reputation">
+      {{#multiboxes data.reputation}}
+      {{#repturf data.turfs_amount}}
+      <input type="radio" id="crew-reputation-0" name="data.reputation" value="0" dtype="Radio">
+      <label class="black-label" for="crew-reputation-0">Rep</label>
+      <input type="radio" id="crew-reputation-1" name="data.reputation" value="1" dtype="Radio">
+      <label for="crew-reputation-1"></label>
+      <input type="radio" id="crew-reputation-2" name="data.reputation" value="2" dtype="Radio">
+      <label for="crew-reputation-2"></label>
+      <input type="radio" id="crew-reputation-3" name="data.reputation" value="3" dtype="Radio">
+      <label for="crew-reputation-3"></label>
+      <input type="radio" id="crew-reputation-4" name="data.reputation" value="4" dtype="Radio">
+      <label for="crew-reputation-4"></label>
+      <input type="radio" id="crew-reputation-5" name="data.reputation" value="5" dtype="Radio">
+      <label for="crew-reputation-5"></label>
+      <input type="radio" id="crew-reputation-6" name="data.reputation" value="6" dtype="Radio">
+      <label for="crew-reputation-6"></label>
+      <input type="radio" id="crew-reputation-7" name="data.reputation" value="7" dtype="Radio">
+      <label for="crew-reputation-7"></label>
+      <input type="radio" id="crew-reputation-8" name="data.reputation" value="8" dtype="Radio">
+      <label for="crew-reputation-8"></label>
+      <input type="radio" id="crew-reputation-9" name="data.reputation" value="9" dtype="Radio" >
+      <label for="crew-reputation-9"></label>
+      <input type="radio" id="crew-reputation-10" name="data.reputation" value="10" dtype="Radio" >
+      <label for="crew-reputation-10"></label>
+      <input type="radio" id="crew-reputation-11" name="data.reputation" value="11" dtype="Radio" >
+      <label for="crew-reputation-11"></label>
+      <input type="radio" id="crew-reputation-12" name="data.reputation" value="12" dtype="Radio" >
+      <label for="crew-reputation-12"></label>
+      {{/repturf}}
+      {{/multiboxes}}
+      <div class="black-label">Turf</div>
+    </div>
+
+    <div id="crew-hold">
+      <div>Hold</div>
+      {{#multiboxes data.hold}}
+      <div>
+        <div>Weak</div>
+        <input id="crew-hold-weak" type="radio" name="data.hold" value="weak">
+        <label for="crew-hold-weak"></label>
+      </div>
+      <div>
+        <div>Strong</div>
+        <input id="crew-hold-strong" type="radio" name="data.hold" value="strong">
+        <label for="crew-hold-strong"></label>
+      </div>
+      {{/multiboxes}}
+    </div>
+
+    <div id="crew-tier">
+      {{#multiboxes data.tier}}
+      <div>
+        <label for="crew-tier-0">Tier</label>
+        <input id="crew-tier-0" type="radio" name="data.tier" value="0">
+      </div>
+      <input id="crew-tier-1" type="radio" name="data.tier" value="1">
+      <label for="crew-tier-1"></label>
+      <input id="crew-tier-2" type="radio" name="data.tier" value="2">
+      <label for="crew-tier-2"></label>
+      <input id="crew-tier-3" type="radio" name="data.tier" value="3">
+      <label for="crew-tier-3"></label>
+      <input id="crew-tier-4" type="radio" name="data.tier" value="4">
+      <label for="crew-tier-4"></label>
+      {{/multiboxes}}
+    </div>
+  </div>
+
+  {{!-- Crew Type --}}
   <div>
     {{#each actor.items as |item id|}}
     {{#eq item.type "crew_type"}}
