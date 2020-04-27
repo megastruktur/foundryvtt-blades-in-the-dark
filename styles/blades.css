@@ -1,7 +1,4 @@
 /*
- * Custom single radio.
- */
-/*
  * Toothradio
  */
 /*
@@ -15,6 +12,15 @@
  */
 /*
  * Create Clock
+ */
+/*
+ * Turf Block
+ */
+/*
+ * Toothradio single elements
+ */
+/*
+ * Custom Radio Round
  */
 /*
  * General Styles
@@ -72,6 +78,15 @@
 * .black-label {
   background-color: black;
   color: white;
+  font-size: 21px;
+  text-align: center;
+  padding: 0px 5px;
+  height: 30px !important;
+  text-transform: capitalize;
+}
+* .gray-label {
+  background-color: #999;
+  color: black;
   font-size: 21px;
   text-align: center;
   padding: 0px 5px;
@@ -629,6 +644,58 @@
   position: absolute;
   top: -7px;
   left: -7px;
+}
+* #crew-hold {
+  border-top: 2px solid black;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+* #crew-hold label {
+  height: 50px;
+  width: 17px;
+  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+* #crew-hold label:last-of-type {
+  margin-right: 0px;
+}
+* #crew-hold input {
+  display: none;
+}
+* #crew-hold input:checked + label {
+  background-image: url("assets/teeth/stresstooth-red.png");
+}
+* #crew-tier {
+  background-color: #999;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+* #crew-tier label:not([for$="-0"]) {
+  height: 18px;
+  width: 18px;
+  background-color: black;
+  vertical-align: middle;
+  border: 2px solid black;
+  border-radius: 9px;
+}
+* #crew-tier input {
+  display: none;
+}
+* #crew-tier input:checked ~ label:not([for$="-0"]) {
+  border-color: gray;
+  background-color: #CCC;
+}
+* #crew-tier input:checked + label:not([for$="-0"]) {
+  background-color: black;
+  border-color: black;
+}
+* #crew-tier > * {
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

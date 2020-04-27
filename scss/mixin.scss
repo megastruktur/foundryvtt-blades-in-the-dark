@@ -1,22 +1,4 @@
 /*
- * Custom single radio.
- */
- @mixin custom_radio_with_bg($width, $height, $unchecked_background, $checked_background) {
-  
-  display: none;
-
-  &:checked {
-
-    & ~ label {
-      background-image: url($unchecked_background);
-    }
-    & + label {
-      background-image: url($checked_background);
-    }
-  }
-}
-
-/*
  * Toothradio
  */
  @mixin toothradio($width, $height, $unchecked_background, $checked_background) {
@@ -48,7 +30,18 @@
 
   /* Hide the browser's default checkbox */
   input {
-    @include custom_radio_with_bg($width, $height, $unchecked_background, $checked_background);
+  
+    display: none;
+  
+    &:checked {
+  
+      & ~ label {
+        background-image: url($unchecked_background);
+      }
+      & + label {
+        background-image: url($checked_background);
+      }
+    }
   }
 }
 
@@ -234,6 +227,9 @@
 
 }
 
+/*
+ * Turf Block
+ */
 @mixin turf_block($turf_width, $turf_height) {
   
   $turf_margin: 20px;
@@ -318,6 +314,81 @@
       position: absolute;
       top: -7px;
       left: -7px;
+    }
+  }
+}
+
+
+/*
+ * Toothradio single elements
+ */
+ @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
+
+  display: flex;
+
+  label {
+
+    & {
+      height: $height;
+      width: $width;
+      background-image: url($unchecked_background);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-right: 5px;
+  
+      &:last-of-type {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  input {
+  
+    display: none;
+  
+    &:checked {
+      & + label {
+        background-image: url($checked_background);
+      }
+    }
+  }
+}
+
+/*
+ * Custom Radio Round
+ */
+ @mixin custom_radio_round($diameter, $circle_border_color, $default_color, $accent_color) {
+
+  display: flex;
+
+  label {
+
+    &:not([for$="-0"]) {
+      height: $diameter;
+      width: $diameter;
+      background-color: $accent_color;
+
+      vertical-align: middle;
+      border: 2px solid $accent_color;
+      border-radius: $diameter / 2;
+    }
+  }
+
+  /* Hide the browser's default checkbox */
+  input {
+    display: none;
+  
+    &:checked {
+  
+      & ~ label:not([for$="-0"]) {
+        border-color: $circle_border_color;
+        background-color: $default_color;
+      }
+      & + label:not([for$="-0"]) {
+        background-color: $accent_color;
+        border-color: $accent_color;
+      }
     }
   }
 }

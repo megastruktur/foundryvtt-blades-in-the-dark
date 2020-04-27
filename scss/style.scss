@@ -1,5 +1,10 @@
 @import 'mixin.scss';
 
+// Colors
+$lightgray: #CCC;
+$gray: #999;
+$red: red;
+
 /*
  * General Styles
  */
@@ -71,6 +76,16 @@
   .black-label {
     background-color: black;
     color: white;
+    font-size: 21px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+  }
+
+  .gray-label {
+    background-color: $gray;
+    color: black;
     font-size: 21px;
     text-align: center;
     padding: 0px 5px;
@@ -176,7 +191,7 @@
   
     // Clock
     #character-health-clock {
-      @include clock(4, 80, white, red);
+      @include clock(4, 80, white, $red);
       margin: 0 auto;
     }
 
@@ -345,6 +360,26 @@
         @include turf_block(130px, 125px);
       }
     }
+  }
+
+  #crew-hold {
+    border-top: 2px solid black;
+    @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+  }
+
+  #crew-tier {
+
+    background-color: $gray;
+    height: 30px;
+    display: flex;
+    align-items: center;
+
+    @include custom_radio_round(18px, gray, $lightgray, black);
+
+    > * {
+      margin-right: 5px;
+    }
+      
   }
 
 }

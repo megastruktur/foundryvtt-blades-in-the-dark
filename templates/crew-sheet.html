@@ -62,19 +62,19 @@
       <label for="crew-reputation-12"></label>
       {{/repturf}}
       {{/multiboxes}}
-      <div class="black-label">Turf</div>
+      <div class="gray-label">Turf</div>
     </div>
 
-    <div id="crew-hold">
-      <div>Hold</div>
+    <div id="crew-hold" class="flex-horizontal">
+      <div class="black-label">Hold</div>
       {{#multiboxes data.hold}}
-      <div>
-        <div>Weak</div>
+      <div class="flex-horizontal">
+        <div class="gray-label">Weak</div>
         <input id="crew-hold-weak" type="radio" name="data.hold" value="weak">
         <label for="crew-hold-weak"></label>
       </div>
-      <div>
-        <div>Strong</div>
+      <div class="flex-horizontal">
+        <div class="gray-label">Strong</div>
         <input id="crew-hold-strong" type="radio" name="data.hold" value="strong">
         <label for="crew-hold-strong"></label>
       </div>
@@ -83,10 +83,8 @@
 
     <div id="crew-tier">
       {{#multiboxes data.tier}}
-      <div>
-        <label for="crew-tier-0">Tier</label>
-        <input id="crew-tier-0" type="radio" name="data.tier" value="0">
-      </div>
+      <input id="crew-tier-0" type="radio" name="data.tier" value="0">
+      <label for="crew-tier-0" class="black-label">Tier</label>
       <input id="crew-tier-1" type="radio" name="data.tier" value="1">
       <label for="crew-tier-1"></label>
       <input id="crew-tier-2" type="radio" name="data.tier" value="2">
