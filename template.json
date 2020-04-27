@@ -4,7 +4,7 @@
   "character": {
     "alias": "",
     "stress": [0],
-    "traumas": [],
+    "traumas": [0],
     "healing-clock": [0],
     "experience": [0],
     "coins": [0],
@@ -74,7 +74,9 @@
     "coins": [0],
     "vault": [0],
     "turfs": [8],
-    "features": []
+    "features": [],
+    "heat": [0],
+    "wanted": [0]
   }
 },
 "Item": {

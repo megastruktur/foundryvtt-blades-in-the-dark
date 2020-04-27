@@ -63,6 +63,13 @@
       "system": "blades-in-the-dark",
       "path": "./packs/crew_features.db",
       "entity": "Item"
+    },
+    {
+      "name": "Crew Types",
+      "label": "Crew Types",
+      "system": "blades-in-the-dark",
+      "path": "./packs/crew_types.db",
+      "entity": "Item"
     }
 ]
 }

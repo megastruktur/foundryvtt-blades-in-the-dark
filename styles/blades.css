@@ -100,24 +100,27 @@
   position: relative;
   padding-left: 10px;
 }
-* #stress-trauma {
+* .big-teeth-section {
   border-top: 3px solid black;
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
   /* Trauma */
 }
-* #stress-trauma > * {
+* .big-teeth-section > * {
   margin-right: 10px;
 }
-* #stress-trauma:last-child {
+* .big-teeth-section > *:last-child {
   margin-right: 0px;
 }
-* #stress-trauma #character-stress {
+* .big-teeth-section:last-child {
+  margin-right: 0px;
+}
+* .big-teeth-section .big-teeth {
   display: flex;
   /* Hide the browser's default checkbox */
 }
-* #stress-trauma #character-stress label {
+* .big-teeth-section .big-teeth label {
   height: 50px;
   width: 17px;
   background-image: url("assets/teeth/stresstooth-red.png");
@@ -125,31 +128,31 @@
   background-size: contain;
   margin-right: 5px;
 }
-* #stress-trauma #character-stress label:last-of-type {
+* .big-teeth-section .big-teeth label:last-of-type {
   margin-right: 0px;
 }
-* #stress-trauma #character-stress label[for$="-0"] {
+* .big-teeth-section .big-teeth label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   background: black !important;
   margin-right: 0px;
 }
-* #stress-trauma #character-stress input {
+* .big-teeth-section .big-teeth input {
   display: none;
 }
-* #stress-trauma #character-stress input:checked ~ label {
+* .big-teeth-section .big-teeth input:checked ~ label {
   background-image: url("assets/teeth/stresstooth-halfgrey.png");
 }
-* #stress-trauma #character-stress input:checked + label {
+* .big-teeth-section .big-teeth input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* #stress-trauma #character-trauma-container #character-trauma {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap {
   display: flex;
   /* Hide the browser's default checkbox */
   flex-direction: column;
 }
-* #stress-trauma #character-trauma-container #character-trauma label {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap label {
   height: 50px;
   width: 17px;
   background-image: url("assets/teeth/shorttooth-red.png");
@@ -157,36 +160,36 @@
   background-size: contain;
   margin-right: 5px;
 }
-* #stress-trauma #character-trauma-container #character-trauma label:last-of-type {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap label:last-of-type {
   margin-right: 0px;
 }
-* #stress-trauma #character-trauma-container #character-trauma label[for$="-0"] {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   background: black !important;
   margin-right: 0px;
 }
-* #stress-trauma #character-trauma-container #character-trauma input {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap input {
   display: none;
 }
-* #stress-trauma #character-trauma-container #character-trauma input:checked ~ label {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked ~ label {
   background-image: url("assets/teeth/shorttooth-grey.png");
 }
-* #stress-trauma #character-trauma-container #character-trauma input:checked + label {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked + label {
   background-image: url("assets/teeth/shorttooth-red.png");
 }
-* #stress-trauma #character-trauma-container #character-trauma #trauma-teeth {
+* .big-teeth-section .small-teeth-container .small-teeth-wrap .small-teeth {
   display: flex;
   flex-direction: row;
 }
-* #stress-trauma #trauma-list {
+* .big-teeth-section #trauma-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
 }
-* #stress-trauma #trauma-list label {
+* .big-teeth-section #trauma-list label {
   cursor: pointer;
   font-size: 19px;
   -webkit-user-select: none;
@@ -196,13 +199,13 @@
   margin-right: 10px;
   /* Hide the browser's default checkbox */
 }
-* #stress-trauma #trauma-list label input {
+* .big-teeth-section #trauma-list label input {
   display: none;
 }
-* #stress-trauma #trauma-list label input:checked ~ .checkmark {
+* .big-teeth-section #trauma-list label input:checked ~ .checkmark {
   color: red;
 }
-* #stress-trauma #trauma-list label .checkmark {
+* .big-teeth-section #trauma-list label .checkmark {
   text-decoration: none;
   font-weight: bold;
 }
@@ -421,7 +424,11 @@
 * .item .item-class-label {
   width: 100px;
 }
+* .item-class-label {
+  margin-bottom: 10px;
+}
 * #name,
+* #lair,
 * #alias {
   margin-bottom: 10px;
 }
@@ -466,7 +473,7 @@
   width: 190px;
 }
 * #crew-reputation {
-  border-top: 2px solid black;
+  border-top: 3px solid black;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -646,7 +653,7 @@
   left: -7px;
 }
 * #crew-hold {
-  border-top: 2px solid black;
+  border-top: 3px solid black;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -670,6 +677,7 @@
 * #crew-tier {
   background-color: #999;
   height: 30px;
+  width: 145px;
   display: flex;
   align-items: center;
   display: flex;
@@ -696,6 +704,9 @@
 }
 * #crew-tier > * {
   margin-right: 5px;
+}
+* #heat-wanted {
+  justify-content: none;
 }
 
 /*# sourceMappingURL=style.css.map */

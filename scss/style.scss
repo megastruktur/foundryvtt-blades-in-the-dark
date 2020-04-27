@@ -103,7 +103,7 @@ $red: red;
 
   // Stress and Trauma
 
-  #stress-trauma {
+  .big-teeth-section {
 
     border-top: 3px solid black;
     display: flex;
@@ -112,6 +112,10 @@ $red: red;
 
     > * {
       margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
     }
 
     &:last-child {
@@ -119,18 +123,18 @@ $red: red;
     }
 
     // Stress
-    #character-stress {
+    .big-teeth {
       @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
     }
 
     /* Trauma */
-    #character-trauma-container {
+    .small-teeth-container {
 
-      #character-trauma {
+      .small-teeth-wrap {
         @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
         flex-direction: column;
 
-        #trauma-teeth {
+        .small-teeth {
           display: flex;
           flex-direction: row;
         }
@@ -271,8 +275,13 @@ $red: red;
       width: 100px;
     }
   }
+    
+  .item-class-label {
+    margin-bottom: 10px;
+  }
 
   #name,
+  #lair,
   #alias {
     margin-bottom: 10px;
 
@@ -321,7 +330,7 @@ $red: red;
 
   // Stress
   #crew-reputation {
-    border-top: 2px solid black;
+    border-top: 3px solid black;
     @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
 
     input[disabled="disabled"] + label {
@@ -363,7 +372,7 @@ $red: red;
   }
 
   #crew-hold {
-    border-top: 2px solid black;
+    border-top: 3px solid black;
     @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
   }
 
@@ -371,6 +380,7 @@ $red: red;
 
     background-color: $gray;
     height: 30px;
+    width: 145px;
     display: flex;
     align-items: center;
 
@@ -380,6 +390,10 @@ $red: red;
       margin-right: 5px;
     }
       
+  }
+
+  #heat-wanted {
+    justify-content: none;
   }
 
 }

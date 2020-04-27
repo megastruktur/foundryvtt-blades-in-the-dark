@@ -1,33 +1,53 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <div id="name-alias" class="section">
-    <div id="name">
-      <label for="crew-name">Name</label>
-      <input type="text" id="crew-name" name="name" value="{{actor.name}}">
-    </div>
-    <div id="lair">
-      <label for="crew-lair">Lair</label>
-      <input type="text" id="crew-lair" name="data.lair" value="{{data.lair}}">
-    </div>
+  <div class="section">
 
+    <div id="name-alias" class="grow-two flex-column">
+      <div id="name">
+        <label for="crew-name">Name</label>
+        <input type="text" id="crew-name" name="name" value="{{actor.name}}">
+      </div>
+  
+      <div id="crew-features">
+        <div class="item-class-label">Crew Features (add 2)</div>
+        {{#each actor.items as |item id|}}
+        {{#eq item.type "crew_feature"}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+              <div class="item-name">{{item.name}}</div>
+            </div>
+            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        {{/eq}}
+        {{/each}}
+      </div>
+    </div>
+  
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
-    <div id="crew-features">
-      <div class="item-label">Add 2 Crew Features</div>
-      {{#each actor.items as |item id|}}
-      {{#eq item.type "crew_feature"}}
-        <div class="item flex-horizontal" data-item-id="{{item._id}}">
-          <div class="item-body flex-horizontal">
-            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-            <div class="item-name">{{item.name}}</div>
-          </div>
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-        </div>
-      {{/eq}}
-      {{/each}}
+    <div class="grow-two flex-vertical">
+      <div id="lair">
+        <label for="crew-lair">Lair</label>
+        <input type="text" id="crew-lair" name="data.lair" value="{{data.lair}}">
+      </div>
+
+      <div id="crew-tier">
+        {{#multiboxes data.tier}}
+        <input id="crew-tier-0" type="radio" name="data.tier" value="0">
+        <label for="crew-tier-0" class="black-label">Tier</label>
+        <input id="crew-tier-1" type="radio" name="data.tier" value="1">
+        <label for="crew-tier-1"></label>
+        <input id="crew-tier-2" type="radio" name="data.tier" value="2">
+        <label for="crew-tier-2"></label>
+        <input id="crew-tier-3" type="radio" name="data.tier" value="3">
+        <label for="crew-tier-3"></label>
+        <input id="crew-tier-4" type="radio" name="data.tier" value="4">
+        <label for="crew-tier-4"></label>
+        {{/multiboxes}}
+      </div>
     </div>
   </div>
-
 
 
   <div class="section">
@@ -65,6 +85,57 @@
       <div class="gray-label">Turf</div>
     </div>
 
+    <div id="heat-wanted" class="flex-horizontal big-teeth-section">
+  
+      <div id="crew-heat" class="big-teeth">
+        {{#multiboxes data.heat}}
+        <input type="radio" id="crew-heat-0" name="data.heat" value="0" dtype="Radio">
+        <label class="black-label" for="crew-heat-0">Heat</label>
+        <input type="radio" id="crew-heat-1" name="data.heat" value="1" dtype="Radio">
+        <label for="crew-heat-1"></label>
+        <input type="radio" id="crew-heat-2" name="data.heat" value="2" dtype="Radio">
+        <label for="crew-heat-2"></label>
+        <input type="radio" id="crew-heat-3" name="data.heat" value="3" dtype="Radio">
+        <label for="crew-heat-3"></label>
+        <input type="radio" id="crew-heat-4" name="data.heat" value="4" dtype="Radio">
+        <label for="crew-heat-4"></label>
+        <input type="radio" id="crew-heat-5" name="data.heat" value="5" dtype="Radio">
+        <label for="crew-heat-5"></label>
+        <input type="radio" id="crew-heat-6" name="data.heat" value="6" dtype="Radio">
+        <label for="crew-heat-6"></label>
+        <input type="radio" id="crew-heat-7" name="data.heat" value="7" dtype="Radio">
+        <label for="crew-heat-7"></label>
+        <input type="radio" id="crew-heat-8" name="data.heat" value="8" dtype="Radio">
+        <label for="crew-heat-8"></label>
+        <input type="radio" id="crew-heat-9" name="data.heat" value="9" dtype="Radio">
+        <label for="crew-heat-9"></label>
+        {{/multiboxes}}
+  
+      </div>
+      <div id="crew-wanted-container" class="small-teeth-container">
+        {{#multiboxes data.wanted}}
+        <div id="crew-wanted" class="small-teeth-wrap">
+          <label class="black-label" for="crew-wanted-counter-0">Wanted</label>
+          <div class="small-teeth">
+            <input type="radio" id="crew-wanted-counter-0" name="data.wanted" value="0">
+            <input type="radio" id="crew-wanted-counter-1" name="data.wanted" value="1">
+            <label for="crew-wanted-counter-1"></label>
+            <input type="radio" id="crew-wanted-counter-2" name="data.wanted" value="2">
+            <label for="crew-wanted-counter-2"></label>
+            <input type="radio" id="crew-wanted-counter-3" name="data.wanted" value="3">
+            <label for="crew-wanted-counter-3"></label>
+            <input type="radio" id="crew-wanted-counter-4" name="data.wanted" value="4">
+            <label for="crew-wanted-counter-4"></label>
+          </div>
+        </div>
+        {{/multiboxes}}
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="section">
+
     <div id="crew-hold" class="flex-horizontal">
       <div class="black-label">Hold</div>
       {{#multiboxes data.hold}}
@@ -81,20 +152,6 @@
       {{/multiboxes}}
     </div>
 
-    <div id="crew-tier">
-      {{#multiboxes data.tier}}
-      <input id="crew-tier-0" type="radio" name="data.tier" value="0">
-      <label for="crew-tier-0" class="black-label">Tier</label>
-      <input id="crew-tier-1" type="radio" name="data.tier" value="1">
-      <label for="crew-tier-1"></label>
-      <input id="crew-tier-2" type="radio" name="data.tier" value="2">
-      <label for="crew-tier-2"></label>
-      <input id="crew-tier-3" type="radio" name="data.tier" value="3">
-      <label for="crew-tier-3"></label>
-      <input id="crew-tier-4" type="radio" name="data.tier" value="4">
-      <label for="crew-tier-4"></label>
-      {{/multiboxes}}
-    </div>
   </div>
 
   {{!-- Crew Type --}}

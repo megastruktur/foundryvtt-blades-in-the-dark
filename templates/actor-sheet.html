@@ -81,8 +81,8 @@
   <div class="section experience">
   </div>
   {{!-- Stress and Trauma --}}
-  <div id="stress-trauma" class="section">
-    <div id="character-stress">
+  <div id="stress-trauma" class="section big-teeth-section">
+    <div id="character-stress" class="big-teeth">
       {{#multiboxes data.stress}}
       <input type="radio" id="character-stress-0" name="data.stress" value="0" dtype="Radio">
       <label class="black-label" for="character-stress-0">Stress</label>
@@ -107,12 +107,12 @@
       {{/multiboxes}}
 
     </div>
-    <div id="character-trauma-container">
+    <div id="character-trauma-container" class="small-teeth-container">
       {{#traumacounter data.traumas}}
-      <div id="character-trauma">
+      <div id="character-trauma" class="small-teeth-wrap">
         <label class="black-label" for="character-trauma-counter-0">Trauma</label>
-        <div id="trauma-teeth">
-          <input type="radio" id="character-trauma-counter-0" name="trauma-counter" value="0" checked="checked">
+        <div id="trauma-teeth" class="small-teeth">
+          <input type="radio" id="character-trauma-counter-0" name="trauma-counter" value="0">
           <input type="radio" id="character-trauma-counter-1" name="trauma-counter" value="1">
           <label for="character-trauma-counter-1"></label>
           <input type="radio" id="character-trauma-counter-2" name="trauma-counter" value="2">
