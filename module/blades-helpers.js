@@ -89,4 +89,62 @@ export class BladesHelpers {
 
   }
 
+  /**
+   * Add item modification if logic exists.
+   * @param {Object} item_data 
+   * @param {Entity} entity 
+   */
+  static callItemLogic(item_data, entity) {
+
+    if ('logic' in item_data.data) {
+      let logic = JSON.parse(item_data.data.logic);
+
+      // Different logic behav. dep on operator.
+      switch (logic.operator) {
+
+        // Add when creating.
+        case "addition":
+          entity.update({
+            [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) + logic.value
+          });
+          break;
+
+      }
+
+    }
+
+  }
+
+  /**
+   * Undo Item modifications when item is removed.
+   * @param {Object} item_data 
+   * @param {Entity} entity 
+   */
+  static undoItemLogic(item_data, entity) {
+
+    if ('logic' in item_data.data) {
+      let logic = JSON.parse(item_data.data.logic)
+
+      // Different logic behav. dep on operator.
+      switch (logic.operator) {
+
+        // Subtract when removing.
+        case "addition":
+          entity.update({
+            [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) - logic.value
+          });
+          break;
+
+      }
+    }
+
+  }
+
+
+  static getNestedProperty(obj, property) {
+    return property.split('.').reduce((r, e) => {
+        return r[e];
+    }, obj);
+  }
+
 }

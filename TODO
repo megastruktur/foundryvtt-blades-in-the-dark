@@ -12,3 +12,4 @@
 - Add Usage documentation to README.md
 - Add Turf Validation (<= 6 max)
 - Add turf connection validation
+- Document usage of "logic" item property (crew_upgrades)

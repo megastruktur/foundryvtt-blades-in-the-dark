@@ -155,7 +155,7 @@
   </div>
 
   {{!-- Crew Type --}}
-  <div>
+  <div class="section">
     {{#each actor.items as |item id|}}
     {{#eq item.type "crew_type"}}
     <div class="item" data-item-id="{{item._id}}">
@@ -163,6 +163,31 @@
     </div>
     {{/eq}}
     {{/each}}
+  </div>
+
+  <div class="section">
+    <div id="crew-upgrades">   
+      <div class="label-stripe">
+        <p><label>Crew Upgrades</label></p>
+      </div>   
+      {{#each actor.items as |item id|}}
+      {{#eq item.type "crew_upgrade"}}
+        <div class="item flex-horizontal" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+            <div class="item-name">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+      {{/eq}}
+      {{/each}}
+    </div>
+
+    <div id="crew-coins">
+      <div class="label-stripe">
+        <p><label>Coins (max: 4 + {{data.vault.max}})</label></p>
+      </div>
+    </div>
   </div>
 
 </form>

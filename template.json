@@ -72,7 +72,11 @@
     "experience": [0],
     "hold_types": ["weak", "strong"],
     "coins": [0],
-    "vault": [0],
+    "vault": {
+      "value": [0],
+      "max": 0,
+      "default": 0
+    },
     "turfs": [8],
     "features": [],
     "heat": [0],
@@ -80,7 +84,7 @@
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_feature"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_feature", "crew_upgrade"],
   "templates": {
     "default": {
       "description": ""
@@ -89,6 +93,9 @@
       "description": "",
       "class": "",
       "price": 1
+    },
+    "logic": {
+      "logic": ""
     }
   },
   "item": {
@@ -117,9 +124,6 @@
   "ability": {
     "templates": ["ability"]
   },
-  "crew_upgrade": {
-    "templates": ["ability"]
-  },
   "heritage": {
     "templates": ["default"]
   },
@@ -136,6 +140,10 @@
   },
   "crew_feature": {
     "templates": ["default"]
+  },
+  "crew_upgrade": {
+    "templates": ["default", "logic"],
+    "crew_type": ""
   },
   "crew_type": {
     "description": "",

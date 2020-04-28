@@ -128,6 +128,7 @@ export class BladesCrewSheet extends ActorSheet {
       if (item) {
         const actor = this.actor;
         BladesHelpers.removeDuplicatedItemType(item.data.type, actor);
+        BladesHelpers.callItemLogic(item, actor);
       }
 
       // Call parent on drop logic
@@ -137,4 +138,5 @@ export class BladesCrewSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
+  
 }

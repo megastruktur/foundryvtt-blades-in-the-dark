@@ -3,8 +3,8 @@
   "title": "Blades in the Dark",
   "description": "GBlades in the dark game system.",
   "version": 0.1,
-  "minimumCoreVersion": "0.5.2",
-  "compatibleCoreVersion": "0.5.3",
+  "minimumCoreVersion": "0.5.3",
+  "compatibleCoreVersion": "0.5.5",
   "templateVersion": 1,
   "author": "megastruktur",
   "esmodules": ["module/blades.js"],
@@ -69,6 +69,13 @@
       "label": "Crew Types",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_types.db",
+      "entity": "Item"
+    },
+    {
+      "name": "Crew Upgrades",
+      "label": "Crew Upgrades",
+      "system": "blades-in-the-dark",
+      "path": "./packs/crew_upgrades.db",
       "entity": "Item"
     }
 ]

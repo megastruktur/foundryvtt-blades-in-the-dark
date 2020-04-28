@@ -90,3 +90,14 @@ Hooks.once("init", async function() {
   });
 
 });
+
+/*
+ * Hooks
+ */
+Hooks.on("createOwnedItem", (parent, child, options, userId) => {
+  BladesHelpers.callItemLogic(child, parent);
+});
+
+Hooks.on("deleteOwnedItem", (parent, child, options, userId) => {
+  BladesHelpers.undoItemLogic(child, parent);
+});
