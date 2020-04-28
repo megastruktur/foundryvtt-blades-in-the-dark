@@ -149,14 +149,8 @@ $red: red;
 
   }
 
+  // Abilities
   #abilities {
-
-    #character-experience {
-      @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-      position: absolute;
-      top: 0px;
-      right: 10px;
-    }
 
     .item-name {
       width: 70px;
@@ -168,6 +162,14 @@ $red: red;
       width: 200px;
     }
 
+  }
+
+  // Experience teeth
+  .teeth-experience {
+    @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    position: absolute;
+    top: 0px;
+    right: 10px;
   }
 
   #harm-armor {
@@ -387,6 +389,7 @@ $red: red;
   #crew-hold {
     border-top: 3px solid black;
     @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    width: 220px;
   }
 
   #crew-tier {
@@ -407,6 +410,30 @@ $red: red;
 
   #heat-wanted {
     justify-content: none;
+  }
+
+  .experience-clues-container {
+    width: 340px;
+    font-size: 12px;
+
+    .experience-clues-description {
+      font-weight: bold;
+    }
+
+    .experience-clues {
+      font-style: italic;
+    }
+  }
+
+  .class-name {
+    width: 512px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    text-transform: uppercase;
+    border: 3px solid black;
   }
 
 }

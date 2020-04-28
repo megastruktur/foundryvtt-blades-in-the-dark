@@ -100,6 +100,27 @@ Hooks.once("init", async function() {
     return html;
   });
 
+  Handlebars.registerHelper('crew_experience', (options) => {
+
+    let html = options.fn(this);
+    for (let i = 1; i <= 10; i++) {
+
+      html += '<input type="radio" id="crew-experience-' + i + '" name="data.experience" value="' + i + '" dtype="Radio"><label for="crew-experience-' + i + '"></label>';
+    }
+
+    return html;
+  });
+
+  // Enrich the HTML replace /n with <br>
+  Handlebars.registerHelper('html', (options) => {
+
+    let html = "";
+    console.log(options);
+    let text = options.hash['text'].replace(/\n/g, "<br />");
+
+    return new Handlebars.SafeString(text);;
+  });
+
 });
 
 /*

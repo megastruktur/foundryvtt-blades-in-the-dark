@@ -144,11 +144,12 @@
     "templates": ["default"]
   },
   "crew_upgrade": {
-    "templates": ["default", "logic"],
+    "templates": ["ability", "logic"],
     "crew_type": ""
   },
   "crew_type": {
     "description": "",
+    "experience_clues": "",
     "turfs": {
       "1": {
         "name": "",

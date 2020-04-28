@@ -209,40 +209,6 @@
   text-decoration: none;
   font-weight: bold;
 }
-* #abilities #character-experience {
-  display: flex;
-  /* Hide the browser's default checkbox */
-  position: absolute;
-  top: 0px;
-  right: 10px;
-}
-* #abilities #character-experience label {
-  height: 30px;
-  width: 10px;
-  background-image: url("assets/teeth/stresstooth-red.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-}
-* #abilities #character-experience label:last-of-type {
-  margin-right: 0px;
-}
-* #abilities #character-experience label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  background: black !important;
-  margin-right: 0px;
-}
-* #abilities #character-experience input {
-  display: none;
-}
-* #abilities #character-experience input:checked ~ label {
-  background-image: url("assets/teeth/stresstooth-halfgrey.png");
-}
-* #abilities #character-experience input:checked + label {
-  background-image: url("assets/teeth/stresstooth-red.png");
-}
 * #abilities .item-name {
   width: 70px;
 }
@@ -251,6 +217,40 @@
 }
 * #abilities .item-description {
   width: 200px;
+}
+* .teeth-experience {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+* .teeth-experience label {
+  height: 30px;
+  width: 10px;
+  background-image: url("assets/teeth/stresstooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+* .teeth-experience label:last-of-type {
+  margin-right: 0px;
+}
+* .teeth-experience label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  background: black !important;
+  margin-right: 0px;
+}
+* .teeth-experience input {
+  display: none;
+}
+* .teeth-experience input:checked ~ label {
+  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+}
+* .teeth-experience input:checked + label {
+  background-image: url("assets/teeth/stresstooth-red.png");
 }
 * #harm-armor {
   display: flex;
@@ -685,6 +685,7 @@
   border-top: 3px solid black;
   display: flex;
   /* Hide the browser's default checkbox */
+  width: 220px;
 }
 * #crew-hold label {
   height: 50px;
@@ -736,6 +737,26 @@
 }
 * #heat-wanted {
   justify-content: none;
+}
+* .experience-clues-container {
+  width: 340px;
+  font-size: 12px;
+}
+* .experience-clues-container .experience-clues-description {
+  font-weight: bold;
+}
+* .experience-clues-container .experience-clues {
+  font-style: italic;
+}
+* .class-name {
+  width: 512px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  text-transform: uppercase;
+  border: 3px solid black;
 }
 
 /*# sourceMappingURL=style.css.map */
