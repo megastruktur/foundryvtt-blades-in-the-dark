@@ -71,11 +71,13 @@
     "hold": ["strong"],
     "experience": [0],
     "hold_types": ["weak", "strong"],
-    "coins": [0],
+    "coins": {
+      "max": 4,
+      "value": [0]
+    },
     "vault": {
       "value": [0],
-      "max": 0,
-      "default": 0
+      "max": 0
     },
     "turfs": [8],
     "features": [],

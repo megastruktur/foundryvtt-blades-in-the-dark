@@ -472,6 +472,35 @@
 * .coins.coins-stashed {
   width: 190px;
 }
+* .crew-coins {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  flex-wrap: wrap;
+  max-width: 72px;
+}
+* .crew-coins label {
+  height: 15px;
+  width: 15px;
+  background-color: grey;
+  vertical-align: middle;
+  border: 1px solid black;
+}
+* .crew-coins label[for$="-0"] {
+  margin-right: 0px;
+}
+* .crew-coins input {
+  display: none;
+}
+* .crew-coins input:checked ~ label {
+  background-color: white;
+}
+* .crew-coins input:checked + label {
+  background-color: grey;
+}
+* .crew-coins label {
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
 * #crew-reputation {
   border-top: 3px solid black;
   display: flex;

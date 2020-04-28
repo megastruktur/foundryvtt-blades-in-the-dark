@@ -63,17 +63,17 @@ Hooks.once("init", async function() {
   });
 
   // Equals handlebar.
-  Handlebars.registerHelper('eq', function (a, b, options) {
+  Handlebars.registerHelper('eq', (a, b, options) => {
     return (a === b) ? options.fn(this) : '';
   });
 
   // NotEquals handlebar.
-  Handlebars.registerHelper('noteq', function (a, b, options) {
+  Handlebars.registerHelper('noteq', (a, b, options) => {
     return (a !== b) ? options.fn(this) : '';
   });
 
   // ReputationTurf handlebar.
-  Handlebars.registerHelper('repturf', function (turfs_amount, options) {
+  Handlebars.registerHelper('repturf', (turfs_amount, options) => {
     let html = options.fn(this);
     var turfs_amount_int = parseInt(turfs_amount);
 
@@ -89,19 +89,37 @@ Hooks.once("init", async function() {
     return html;
   });
 
+  Handlebars.registerHelper('crew_vault_coins', (max_coins, options) => {
+
+    let html = options.fn(this);
+    for (let i = 1; i <= max_coins; i++) {
+
+      html += "<input type=\"radio\" id=\"crew-coins-vault-" + i + "\" name=\"data.vault.value\" value=\"" + i + "\"><label for=\"crew-coins-vault-" + i + "\"></label>";
+    }
+
+    return html;
+  });
+
 });
 
 /*
  * Hooks
  */
 Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
-  BladesHelpers.removeDuplicatedItemType(child_data.type, parent_entity);
+
+  BladesHelpers.removeDuplicatedItemType(child_data, parent_entity);
+
+  return true;
 });
 
 Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
+
   BladesHelpers.callItemLogic(child_data, parent_entity);
+  return true;
 });
 
 Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
+  
   BladesHelpers.undoItemLogic(child_data, parent_entity);
+  return true;
 });

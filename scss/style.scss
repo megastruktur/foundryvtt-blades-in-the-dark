@@ -302,13 +302,16 @@ $red: red;
     margin: 0px 30px;
   }
 
+  $coin_size: 15px;
+  $coin_margin: 3px;
+
   .coins {
-    @include custom_radio_square(15px, 15px);
+    @include custom_radio_square($coin_size);
     flex-wrap: wrap;
 
     label {
-      margin-right: 3px;
-      margin-bottom: 3px;
+      margin-right: $coin_margin;
+      margin-bottom: $coin_margin;
 
       &[for$="0"] {
         border-width: 2px;
@@ -324,11 +327,21 @@ $red: red;
     }
     
   }
+  
+  // Crew Coins
+  .crew-coins {
+    @include custom_radio_square($coin_size);
+    flex-wrap: wrap;
+    max-width: 4 * ($coin_size + $coin_margin);
+
+    label {
+      margin-right: $coin_margin;
+      margin-bottom: $coin_margin;
+    }
+  }
+
 
   // Reputation
-
-
-  // Stress
   #crew-reputation {
     border-top: 3px solid black;
     @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");

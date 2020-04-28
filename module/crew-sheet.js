@@ -80,13 +80,6 @@ export class BladesCrewSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
-  _updateObject(event, formData) {
-    
-    // Update the Actor
-    return this.object.update(formData);
-  }
-
   /** override */
   _getFormData(form) {
     const FD = BladesHelpers.getFormDataHelper(form, this.editors);

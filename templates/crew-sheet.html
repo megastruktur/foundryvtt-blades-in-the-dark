@@ -85,6 +85,47 @@
       <div class="gray-label">Turf</div>
     </div>
 
+    {{!-- Coins --}}
+    <div id="crew-coins">
+      
+      <div id="crew-coins-hands">
+        <div class="stripe">
+          <label for="crew-coins-hands-0">Coins</label>
+        </div>
+        <div class="crew-coins coins-hands">
+          {{#multiboxes data.coins.value}}
+          <input type="radio" id="crew-coins-hands-0" name="data.coins.value" value="0" checked="checked">
+          <input type="radio" id="crew-coins-hands-1" name="data.coins.value" value="1">
+          <label for="crew-coins-hands-1"></label>
+          <input type="radio" id="crew-coins-hands-2" name="data.coins.value" value="2">
+          <label for="crew-coins-hands-2"></label>
+          <input type="radio" id="crew-coins-hands-3" name="data.coins.value" value="3">
+          <label for="crew-coins-hands-3"></label>
+          <input type="radio" id="crew-coins-hands-4" name="data.coins.value" value="4">
+          <label for="crew-coins-hands-4"></label>
+          {{/multiboxes}}
+        </div>
+      </div>
+
+      {{#if data.vault.max}}
+      <div id="crew-coins-vault">
+        
+        <div class="stripe">
+          <label for="crew-coins-vault-0">Vault</label>
+        </div>
+        <div class="crew-coins coins-vault">
+          {{#multiboxes data.vault.value}}
+          <input type="radio" id="crew-coins-vault-0" name="data.vault.value" value="0" checked="checked">
+          {{#crew_vault_coins data.vault.max}}{{/crew_vault_coins}}
+          {{/multiboxes}}
+        </div>
+
+      </div>
+      {{/if}}
+    
+    </div>
+
+    {{!-- Heat/Wanted --}}
     <div id="heat-wanted" class="flex-horizontal big-teeth-section">
   
       <div id="crew-heat" class="big-teeth">
@@ -183,11 +224,6 @@
       {{/each}}
     </div>
 
-    <div id="crew-coins">
-      <div class="label-stripe">
-        <p><label>Coins (max: 4 + {{data.vault.max}})</label></p>
-      </div>
-    </div>
   </div>
 
 </form>

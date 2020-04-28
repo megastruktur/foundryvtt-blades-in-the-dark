@@ -3,20 +3,17 @@ export class BladesHelpers {
   /**
    * Removes a duplicate item type from charlist.
    * 
-   * @param {string} item_type 
-   * @param {Actor} actor 
+   * @param {Object} item_data 
+   * @param {Entity} actor 
    */
-  static removeDuplicatedItemType(item_type, actor) {
+  static removeDuplicatedItemType(item_data, actor) {
 
-    let distinct_types = ["class", "heritage", "background", "vice", "crew_type"];
-
-    if (distinct_types.indexOf(item_type) >= 0) {
-      actor.items.forEach(i => {
-        if (i.data.type === item_type) {
-          actor.deleteOwnedItem(i.id);
-        }
-      });
-    }
+    // If the Item has the exact same name - remove it from list.
+    actor.items.forEach(i => {
+      if (i.data.name === item_data.name) {
+        actor.deleteOwnedItem(i.id);
+      }
+    });
   }
 
   /**
@@ -99,16 +96,18 @@ export class BladesHelpers {
     if ('logic' in item_data.data) {
       let logic = JSON.parse(item_data.data.logic);
 
-      // Different logic behav. dep on operator.
-      switch (logic.operator) {
-
-        // Add when creating.
-        case "addition":
-          entity.update({
-            [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) + logic.value
-          });
-          break;
-
+      if (logic) {
+        // Different logic behav. dep on operator.
+        switch (logic.operator) {
+  
+          // Add when creating.
+          case "addition":
+            entity.update({
+              [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) + logic.value
+            });
+            break;
+  
+        }
       }
 
     }
@@ -125,22 +124,27 @@ export class BladesHelpers {
     if ('logic' in item_data.data) {
       let logic = JSON.parse(item_data.data.logic)
 
-      // Different logic behav. dep on operator.
-      switch (logic.operator) {
+      if (logic) {
+        // Different logic behav. dep on operator.
+        switch (logic.operator) {
+          // Subtract when removing.
+          case "addition":
+            entity.update({
+              [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) - logic.value
+            });
+            break;
 
-        // Subtract when removing.
-        case "addition":
-          entity.update({
-            [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) - logic.value
-          });
-          break;
-
+        }
       }
     }
 
   }
 
-
+  /**
+   * Get a nested dynamic attribute.
+   * @param {Object} obj 
+   * @param {string} property 
+   */
   static getNestedProperty(obj, property) {
     return property.split('.').reduce((r, e) => {
         return r[e];

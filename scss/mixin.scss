@@ -96,7 +96,7 @@
 /*
  * Custom Radio Squared
  */
- @mixin custom_radio_square($width, $height) {
+ @mixin custom_radio_square($side) {
 
   display: flex;
   $default_color: white;
@@ -106,8 +106,8 @@
   label {
 
     & {
-      height: $height;
-      width: $width;
+      height: $side;
+      width: $side;
       background-color: $accent_color;
 
       vertical-align: middle;
