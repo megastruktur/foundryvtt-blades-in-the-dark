@@ -98,47 +98,4 @@ export class BladesActorSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
-
-  /** @override */
-  async _onDrop (event) {
-
-    event.preventDefault();
-
-    // Get dropped data
-    let data;
-    let item;
-    try {
-      data = JSON.parse(event.dataTransfer.getData('text/plain'));
-    } catch (err) {
-      return false;
-    }
-
-    // Add only Items.
-    if (data.type === "Item") {
-
-      // Import from Compendium
-      if (data.pack) {
-        const pack = game.packs.find(p => p.collection === data.pack);
-        await pack.getEntity(data.id).then(ent => {
-          item = ent;
-        });
-      }
-      // Get from Items list.
-      else {
-        // Class must be distinct.
-        item = game.items.get(data.id);
-      }
-
-      if (item) {
-        const actor = this.actor;
-        BladesHelpers.removeDuplicatedItemType(item.data.type, actor);
-      }
-
-      // Call parent on drop logic
-      return super._onDrop(event);
-    }
-
-  }
-
-  /* -------------------------------------------- */
 }

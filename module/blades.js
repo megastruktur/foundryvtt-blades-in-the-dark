@@ -94,10 +94,14 @@ Hooks.once("init", async function() {
 /*
  * Hooks
  */
-Hooks.on("createOwnedItem", (parent, child, options, userId) => {
-  BladesHelpers.callItemLogic(child, parent);
+Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
+  BladesHelpers.removeDuplicatedItemType(child_data.type, parent_entity);
 });
 
-Hooks.on("deleteOwnedItem", (parent, child, options, userId) => {
-  BladesHelpers.undoItemLogic(child, parent);
+Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
+  BladesHelpers.callItemLogic(child_data, parent_entity);
+});
+
+Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
+  BladesHelpers.undoItemLogic(child_data, parent_entity);
 });
