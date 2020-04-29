@@ -443,7 +443,7 @@
 * .coins label {
   height: 15px;
   width: 15px;
-  background-color: grey;
+  background-color: gold;
   vertical-align: middle;
   border: 1px solid black;
 }
@@ -457,7 +457,7 @@
   background-color: white;
 }
 * .coins input:checked + label {
-  background-color: grey;
+  background-color: gold;
 }
 * .coins label {
   margin-right: 3px;
@@ -481,7 +481,7 @@
 * .crew-coins label {
   height: 15px;
   width: 15px;
-  background-color: grey;
+  background-color: gold;
   vertical-align: middle;
   border: 1px solid black;
 }
@@ -495,7 +495,7 @@
   background-color: white;
 }
 * .crew-coins input:checked + label {
-  background-color: grey;
+  background-color: gold;
 }
 * .crew-coins label {
   margin-right: 3px;
@@ -685,7 +685,7 @@
   border-top: 3px solid black;
   display: flex;
   /* Hide the browser's default checkbox */
-  width: 220px;
+  width: 221px;
 }
 * #crew-hold label {
   height: 50px;
@@ -706,10 +706,11 @@
 }
 * #crew-tier {
   background-color: #999;
-  height: 30px;
+  height: 33px;
   width: 145px;
   display: flex;
   align-items: center;
+  border-top: 3px solid black;
   display: flex;
   /* Hide the browser's default checkbox */
 }

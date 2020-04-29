@@ -45,6 +45,12 @@ export class BladesCrewSheet extends ActorSheet {
 	activateListeners(html) {
     super.activateListeners(html);
 
+    // Activate tabs
+    const tabs = new TabsV2({navSelector: ".tabs", contentSelector: ".section", initial: "turfs"});
+
+    // @todo Fix the error in TabsV2
+    // tabs.bind(html);
+
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 

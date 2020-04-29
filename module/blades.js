@@ -114,8 +114,6 @@ Hooks.once("init", async function() {
   // Enrich the HTML replace /n with <br>
   Handlebars.registerHelper('html', (options) => {
 
-    let html = "";
-    console.log(options);
     let text = options.hash['text'].replace(/\n/g, "<br />");
 
     return new Handlebars.SafeString(text);;

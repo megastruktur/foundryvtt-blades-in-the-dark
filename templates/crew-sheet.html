@@ -32,20 +32,41 @@
         <input type="text" id="crew-lair" name="data.lair" value="{{data.lair}}">
       </div>
 
-      <div id="crew-tier">
-        {{#multiboxes data.tier}}
-        <input id="crew-tier-0" type="radio" name="data.tier" value="0">
-        <label for="crew-tier-0" class="black-label">Tier</label>
-        <input id="crew-tier-1" type="radio" name="data.tier" value="1">
-        <label for="crew-tier-1"></label>
-        <input id="crew-tier-2" type="radio" name="data.tier" value="2">
-        <label for="crew-tier-2"></label>
-        <input id="crew-tier-3" type="radio" name="data.tier" value="3">
-        <label for="crew-tier-3"></label>
-        <input id="crew-tier-4" type="radio" name="data.tier" value="4">
-        <label for="crew-tier-4"></label>
-        {{/multiboxes}}
+
+      <div class="flex-horizontal">
+
+        <div id="crew-hold" class="flex-horizontal">
+          <div class="black-label">Hold</div>
+          {{#multiboxes data.hold}}
+          <div class="flex-horizontal">
+            <div class="gray-label">Weak</div>
+            <input id="crew-hold-weak" type="radio" name="data.hold" value="weak">
+            <label for="crew-hold-weak"></label>
+          </div>
+          <div class="flex-horizontal">
+            <div class="gray-label">Strong</div>
+            <input id="crew-hold-strong" type="radio" name="data.hold" value="strong">
+            <label for="crew-hold-strong"></label>
+          </div>
+          {{/multiboxes}}
+        </div>
+
+        <div id="crew-tier">
+          {{#multiboxes data.tier}}
+          <input id="crew-tier-0" type="radio" name="data.tier" value="0">
+          <label for="crew-tier-0" class="black-label">Tier</label>
+          <input id="crew-tier-1" type="radio" name="data.tier" value="1">
+          <label for="crew-tier-1"></label>
+          <input id="crew-tier-2" type="radio" name="data.tier" value="2">
+          <label for="crew-tier-2"></label>
+          <input id="crew-tier-3" type="radio" name="data.tier" value="3">
+          <label for="crew-tier-3"></label>
+          <input id="crew-tier-4" type="radio" name="data.tier" value="4">
+          <label for="crew-tier-4"></label>
+          {{/multiboxes}}
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -179,22 +200,6 @@
 
     <div class="flex-vertical">
 
-      <div id="crew-hold" class="flex-horizontal">
-        <div class="black-label">Hold</div>
-        {{#multiboxes data.hold}}
-        <div class="flex-horizontal">
-          <div class="gray-label">Weak</div>
-          <input id="crew-hold-weak" type="radio" name="data.hold" value="weak">
-          <label for="crew-hold-weak"></label>
-        </div>
-        <div class="flex-horizontal">
-          <div class="gray-label">Strong</div>
-          <input id="crew-hold-strong" type="radio" name="data.hold" value="strong">
-          <label for="crew-hold-strong"></label>
-        </div>
-        {{/multiboxes}}
-      </div>
-
       <div id="crew-class" class="class-name">
         {{#each actor.items as |item id|}}
         {{#eq item.type "crew_type"}}
@@ -202,6 +207,11 @@
         {{/eq}}
         {{/each}}
       </div>
+      <nav class="tabs flex-horizontal">
+        <a class="item" data-tab="turfs">Turfs</a>
+        <a class="item" data-tab="upgrades">Upgrades</a>
+        <a class="item" data-tab="abilities">Abilities</a>
+      </nav>
     </div>
 
 
@@ -231,7 +241,7 @@
   </div>
 
   {{!-- Crew Type --}}
-  <div class="section">
+  <div class="section tab-content" data-tab="turfs">
     {{#each actor.items as |item id|}}
     {{#eq item.type "crew_type"}}
     <div class="item" data-item-id="{{item._id}}">
@@ -241,7 +251,7 @@
     {{/each}}
   </div>
 
-  <div class="section">
+  <div class="section tab-content" data-tab="upgrades">
 
     {{!-- Crew Upgrades --}}
     <div id="crew-upgrades" class="grow-two flex-vertical">
@@ -252,8 +262,30 @@
       {{#eq item.type "crew_upgrade"}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body flex-horizontal">
-            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-            <div class="item-name">{{item.name}}</div>
+            <b><div class="item-name">{{item.name}}</div></b>
+            <div class="item-description">{{item.data.description}}</div>
+          </div>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+      {{/eq}}
+      {{/each}}
+    </div>
+
+  </div>
+
+  <div class="section tab-content" data-tab="abilities">
+
+    {{!-- Crew Upgrades --}}
+    <div id="crew-abilities" class="grow-two flex-vertical">
+      <div class="label-stripe">
+        <p><label>Special Abilities</label></p>
+      </div>
+      {{#each actor.items as |item id|}}
+      {{#eq item.type "crew_ability"}}
+        <div class="item flex-horizontal" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <b><div class="item-name">{{item.name}}</div></b>
+            <div class="item-description">{{item.data.description}}</div>
           </div>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>

@@ -389,16 +389,17 @@ $red: red;
   #crew-hold {
     border-top: 3px solid black;
     @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-    width: 220px;
+    width: 221px;
   }
 
   #crew-tier {
 
     background-color: $gray;
-    height: 30px;
+    height: 33px;
     width: 145px;
     display: flex;
     align-items: center;
+    border-top: 3px solid black;
 
     @include custom_radio_round(18px, gray, $lightgray, black);
 
