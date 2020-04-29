@@ -10,7 +10,7 @@ export class BladesCrewSheet extends ActorSheet {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
       width: 930,
-      height: 970,
+      height: 1015,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "turfs"}]
     });
   }

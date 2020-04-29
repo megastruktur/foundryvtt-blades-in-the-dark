@@ -6,7 +6,7 @@
 - Add XP gain cheetsheet for each class
 - Add Class items to Compendium
 - Add brush strokes if needed for styling (https://www.onlygfx.com/55-dry-brush-stroke-png-transparent/)
-- Add City map as Compendium or separate button
+- Add City map as Compendium or a separate button. Add notes descripbing the City areas.
 - Add die calculator
 - Add Crew Template shortcut
 - Add Crew XP cheetsheet
@@ -19,3 +19,4 @@
 - Add screenshots
 - Add BitD fonts and fix styles
 - Fix the Teeth black color to "$almost_black"
+- Add Localization
