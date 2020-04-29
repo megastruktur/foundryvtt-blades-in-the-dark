@@ -1,9 +1,11 @@
-@import 'mixin.scss';
-
 // Colors
 $lightgray: #CCC;
 $gray: #999;
 $red: red;
+$almost_black: #191813;
+
+// Imports
+@import 'mixin.scss';
 
 /*
  * General Styles
@@ -74,7 +76,7 @@ $red: red;
   }
 
   .black-label {
-    background-color: black;
+    background-color: $almost_black;
     color: white;
     font-size: 21px;
     text-align: center;
@@ -85,7 +87,7 @@ $red: red;
 
   .gray-label {
     background-color: $gray;
-    color: black;
+    color: $almost_black;
     font-size: 21px;
     text-align: center;
     padding: 0px 5px;
@@ -106,7 +108,7 @@ $red: red;
 
   .big-teeth-section {
 
-    border-top: 3px solid black;
+    border-top: 3px solid $almost_black;
     display: flex;
     flex-direction: row;
     margin-bottom: 0px;
@@ -186,7 +188,7 @@ $red: red;
         width: 100%;
   
         th {
-          background-color: black;
+          background-color: $almost_black;
           color: white;
         }
   
@@ -219,7 +221,7 @@ $red: red;
     flex-direction: column;
 
     .stripe {
-      background-color: black;
+      background-color: $almost_black;
       color: white;
       font-size: 17px;
       padding-left: 5px;
@@ -346,7 +348,7 @@ $red: red;
 
   // Reputation
   #crew-reputation {
-    border-top: 3px solid black;
+    border-top: 3px solid $almost_black;
     @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
 
     input[disabled="disabled"] + label {
@@ -388,7 +390,7 @@ $red: red;
   }
 
   #crew-hold {
-    border-top: 3px solid black;
+    border-top: 3px solid $almost_black;
     @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
     width: 221px;
   }
@@ -400,9 +402,9 @@ $red: red;
     width: 145px;
     display: flex;
     align-items: center;
-    border-top: 3px solid black;
+    border-top: 3px solid $almost_black;
 
-    @include custom_radio_round(18px, gray, $lightgray, black);
+    @include custom_radio_round(18px, gray, $lightgray, $almost_black);
 
     > * {
       margin-right: 5px;
@@ -432,10 +434,19 @@ $red: red;
     height: 120px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 48px;
     text-transform: uppercase;
-    border: 3px solid black;
+    border: 3px solid $almost_black;
+
+    .big-name {
+      font-weight: bold;
+    }
+
+    .big-description {
+      font-size: 20px;
+      color: $almost_black;
+    }
   }
 
 }

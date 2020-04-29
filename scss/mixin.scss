@@ -1,7 +1,7 @@
 /*
  * Toothradio
  */
- @mixin toothradio($width, $height, $unchecked_background, $checked_background) {
+@mixin toothradio($width, $height, $unchecked_background, $checked_background) {
 
   display: flex;
 
@@ -22,7 +22,7 @@
         width: auto;
         height: auto;
         background-image: none !important;
-        background: black !important;
+        background: $almost_black !important;
         margin-right: 0px;
       }
     }
@@ -48,12 +48,12 @@
 /*
  * Custom Radio
  */
- @mixin custom_radio($width, $height) {
+@mixin custom_radio($width, $height) {
 
   display: flex;
   $default_color: white;
-  $accent_color: black;
-  $circle_border_color: black;
+  $accent_color: $almost_black;
+  $circle_border_color: $almost_black;
 
   label {
 
@@ -96,12 +96,12 @@
 /*
  * Custom Radio Squared
  */
- @mixin custom_radio_square($side) {
+@mixin custom_radio_square($side) {
 
   display: flex;
   $default_color: white;
   $accent_color: gold;
-  $circle_border_color: black;
+  $circle_border_color: $almost_black;
 
   label {
 
@@ -179,7 +179,7 @@
   $border_width: 3;
 
   position: relative;
-  border: #{$border_width}px solid black;
+  border: #{$border_width}px solid $almost_black;
   padding: 0;
   width: #{$size}px;
   height: #{$size}px;

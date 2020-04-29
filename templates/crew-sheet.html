@@ -203,7 +203,8 @@
       <div id="crew-class" class="class-name">
         {{#each actor.items as |item id|}}
         {{#eq item.type "crew_type"}}
-        {{item.name}}
+        <div class="big-name">{{item.name}}</div>
+        <div class="big-description">{{item.data.description}}</div>
         {{/eq}}
         {{/each}}
       </div>
@@ -211,6 +212,7 @@
         <a class="item" data-tab="turfs">Turfs</a>
         <a class="item" data-tab="upgrades">Upgrades</a>
         <a class="item" data-tab="abilities">Abilities</a>
+        <a class="item" data-tab="all-items">All Items</a>
       </nav>
     </div>
 
@@ -291,6 +293,22 @@
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
       {{/eq}}
+      {{/each}}
+    </div>
+
+    {{!-- Full Item List --}}
+    <div id="crew-abilities" class="tab grow-two flex-vertical" data-tab="all-items">
+      <div class="label-stripe">
+        <p><label>Special Abilities</label></p>
+      </div>
+      {{#each actor.items as |item id|}}
+      <div class="item flex-horizontal" data-item-id="{{item._id}}">
+        <div class="item-body flex-horizontal">
+          <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+          <div class="item-name">{{item.name}}</div>
+        </div>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
       {{/each}}
     </div>
 

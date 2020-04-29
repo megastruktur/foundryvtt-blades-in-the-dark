@@ -76,7 +76,7 @@
   flex-direction: column;
 }
 * .black-label {
-  background-color: black;
+  background-color: #191813;
   color: white;
   font-size: 21px;
   text-align: center;
@@ -86,7 +86,7 @@
 }
 * .gray-label {
   background-color: #999;
-  color: black;
+  color: #191813;
   font-size: 21px;
   text-align: center;
   padding: 0px 5px;
@@ -102,7 +102,7 @@
   display: flex;
 }
 * .big-teeth-section {
-  border-top: 3px solid black;
+  border-top: 3px solid #191813;
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
@@ -136,7 +136,7 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: black !important;
+  background: #191813 !important;
   margin-right: 0px;
 }
 * .big-teeth-section .big-teeth input {
@@ -168,7 +168,7 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: black !important;
+  background: #191813 !important;
   margin-right: 0px;
 }
 * .big-teeth-section .small-teeth-container .small-teeth-wrap input {
@@ -241,7 +241,7 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: black !important;
+  background: #191813 !important;
   margin-right: 0px;
 }
 * .teeth-experience input {
@@ -263,7 +263,7 @@
   width: 100%;
 }
 * #harm-armor #character-harm table th {
-  background-color: black;
+  background-color: #191813;
   color: white;
 }
 * #harm-armor #character-harm table input[type=text] {
@@ -271,7 +271,7 @@
 }
 * #harm-armor #character-health-clock {
   position: relative;
-  border: 3px solid black;
+  border: 3px solid #191813;
   padding: 0;
   width: 80px;
   height: 80px;
@@ -325,7 +325,7 @@
   flex-direction: column;
 }
 * #attributes .stripe {
-  background-color: black;
+  background-color: #191813;
   color: white;
   font-size: 17px;
   padding-left: 5px;
@@ -356,7 +356,7 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: black !important;
+  background: #191813 !important;
   margin-right: 0px;
 }
 * #attributes .attributes-exp .stripe-tooth-body input {
@@ -377,9 +377,9 @@
 * #attributes .attributes-container label {
   height: 15px;
   width: 15px;
-  background-color: black;
+  background-color: #191813;
   vertical-align: middle;
-  border: 2px solid black;
+  border: 2px solid #191813;
   border-radius: 24px;
 }
 * #attributes .attributes-container label[for$="-0"] {
@@ -397,7 +397,7 @@
   background-color: white;
 }
 * #attributes .attributes-container input:checked + label {
-  background-color: black;
+  background-color: #191813;
 }
 * #attributes .attributes-container * {
   margin-right: 5px;
@@ -446,7 +446,7 @@
   width: 15px;
   background-color: gold;
   vertical-align: middle;
-  border: 1px solid black;
+  border: 1px solid #191813;
 }
 * .coins label[for$="-0"] {
   margin-right: 0px;
@@ -484,7 +484,7 @@
   width: 15px;
   background-color: gold;
   vertical-align: middle;
-  border: 1px solid black;
+  border: 1px solid #191813;
 }
 * .crew-coins label[for$="-0"] {
   margin-right: 0px;
@@ -503,7 +503,7 @@
   margin-bottom: 3px;
 }
 * #crew-reputation {
-  border-top: 3px solid black;
+  border-top: 3px solid #191813;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -522,7 +522,7 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: black !important;
+  background: #191813 !important;
   margin-right: 0px;
 }
 * #crew-reputation input {
@@ -683,7 +683,7 @@
   left: -7px;
 }
 * #crew-hold {
-  border-top: 3px solid black;
+  border-top: 3px solid #191813;
   display: flex;
   /* Hide the browser's default checkbox */
   width: 221px;
@@ -711,16 +711,16 @@
   width: 145px;
   display: flex;
   align-items: center;
-  border-top: 3px solid black;
+  border-top: 3px solid #191813;
   display: flex;
   /* Hide the browser's default checkbox */
 }
 * #crew-tier label:not([for$="-0"]) {
   height: 18px;
   width: 18px;
-  background-color: black;
+  background-color: #191813;
   vertical-align: middle;
-  border: 2px solid black;
+  border: 2px solid #191813;
   border-radius: 9px;
 }
 * #crew-tier input {
@@ -731,8 +731,8 @@
   background-color: #CCC;
 }
 * #crew-tier input:checked + label:not([for$="-0"]) {
-  background-color: black;
-  border-color: black;
+  background-color: #191813;
+  border-color: #191813;
 }
 * #crew-tier > * {
   margin-right: 5px;
@@ -755,10 +755,17 @@
   height: 120px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 48px;
   text-transform: uppercase;
-  border: 3px solid black;
+  border: 3px solid #191813;
+}
+* .class-name .big-name {
+  font-weight: bold;
+}
+* .class-name .big-description {
+  font-size: 20px;
+  color: #191813;
 }
 
 /*# sourceMappingURL=style.css.map */
