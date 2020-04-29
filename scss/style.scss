@@ -3,6 +3,7 @@ $lightgray: #CCC;
 $gray: #999;
 $red: red;
 $almost_black: #191813;
+$almost_white: #EEEFFF;
 
 // Imports
 @import 'mixin.scss';
@@ -77,7 +78,7 @@ $almost_black: #191813;
 
   .black-label {
     background-color: $almost_black;
-    color: white;
+    color: $almost_white;
     font-size: 21px;
     text-align: center;
     padding: 0px 5px;
@@ -97,11 +98,13 @@ $almost_black: #191813;
 
   .label-stripe {
     text-transform: uppercase;
-    background-color: #888;
+    background-color: $almost_black;
+    color: $almost_white;
     margin-bottom: 10px;
     position: relative;
     padding-left: 10px;
     display: flex;
+    font-weight: bold;
   }
 
   // Stress and Trauma
@@ -189,7 +192,7 @@ $almost_black: #191813;
   
         th {
           background-color: $almost_black;
-          color: white;
+          color: $almost_white;
         }
   
         input[type="text"] {
@@ -200,7 +203,7 @@ $almost_black: #191813;
   
     // Clock
     #character-health-clock {
-      @include clock(4, 80, white, $red);
+      @include clock(4, 80, $almost_white, $red);
       margin: 0 auto;
     }
 
@@ -222,7 +225,7 @@ $almost_black: #191813;
 
     .stripe {
       background-color: $almost_black;
-      color: white;
+      color: $almost_white;
       font-size: 17px;
       padding-left: 5px;
     }
@@ -289,18 +292,6 @@ $almost_black: #191813;
   #lair,
   #alias {
     margin-bottom: 10px;
-
-    // color: red;
-    // background-image: url("assets/brush/dry-brush-stroke-3.png");
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // height: 67px;
-
-    // input {
-    //   color: red;
-    //   border: none;
-    //   background: none;
-    // }
   }
 
   .profile-img {
@@ -404,7 +395,7 @@ $almost_black: #191813;
     align-items: center;
     border-top: 3px solid $almost_black;
 
-    @include custom_radio_round(18px, gray, $lightgray, $almost_black);
+    @include custom_radio_round(18px, gray, $almost_white, $almost_black);
 
     > * {
       margin-right: 5px;
@@ -446,6 +437,13 @@ $almost_black: #191813;
     .big-description {
       font-size: 20px;
       color: $almost_black;
+    }
+  }
+
+  .window-app {
+    
+    .window-content {
+      // background: url("https://wallpapertag.com/wallpaper/middle/c/3/6/294219-old-paper-background-1920x1200-for-desktop.jpg") repeat;
     }
   }
 

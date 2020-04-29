@@ -77,7 +77,7 @@
 }
 * .black-label {
   background-color: #191813;
-  color: white;
+  color: #EEEFFF;
   font-size: 21px;
   text-align: center;
   padding: 0px 5px;
@@ -95,11 +95,13 @@
 }
 * .label-stripe {
   text-transform: uppercase;
-  background-color: #888;
+  background-color: #191813;
+  color: #EEEFFF;
   margin-bottom: 10px;
   position: relative;
   padding-left: 10px;
   display: flex;
+  font-weight: bold;
 }
 * .big-teeth-section {
   border-top: 3px solid #191813;
@@ -264,7 +266,7 @@
 }
 * #harm-armor #character-harm table th {
   background-color: #191813;
-  color: white;
+  color: #EEEFFF;
 }
 * #harm-armor #character-harm table input[type=text] {
   width: 100%;
@@ -295,7 +297,7 @@
   display: none;
 }
 * #harm-armor #character-health-clock input:checked ~ label {
-  background-color: white;
+  background-color: #EEEFFF;
 }
 * #harm-armor #character-health-clock input:checked + label {
   background-color: red;
@@ -326,7 +328,7 @@
 }
 * #attributes .stripe {
   background-color: #191813;
-  color: white;
+  color: #EEEFFF;
   font-size: 17px;
   padding-left: 5px;
 }
@@ -394,7 +396,7 @@
   display: none;
 }
 * #attributes .attributes-container input:checked ~ label {
-  background-color: white;
+  background-color: #EEEFFF;
 }
 * #attributes .attributes-container input:checked + label {
   background-color: #191813;
@@ -455,7 +457,7 @@
   display: none;
 }
 * .coins input:checked ~ label {
-  background-color: white;
+  background-color: #EEEFFF;
 }
 * .coins input:checked + label {
   background-color: gold;
@@ -493,7 +495,7 @@
   display: none;
 }
 * .crew-coins input:checked ~ label {
-  background-color: white;
+  background-color: #EEEFFF;
 }
 * .crew-coins input:checked + label {
   background-color: gold;
@@ -728,7 +730,7 @@
 }
 * #crew-tier input:checked ~ label:not([for$="-0"]) {
   border-color: gray;
-  background-color: #CCC;
+  background-color: #EEEFFF;
 }
 * #crew-tier input:checked + label:not([for$="-0"]) {
   background-color: #191813;

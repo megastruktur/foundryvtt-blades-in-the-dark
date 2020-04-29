@@ -51,7 +51,7 @@
 @mixin custom_radio($width, $height) {
 
   display: flex;
-  $default_color: white;
+  $default_color: $almost_white;
   $accent_color: $almost_black;
   $circle_border_color: $almost_black;
 
@@ -99,7 +99,7 @@
 @mixin custom_radio_square($side) {
 
   display: flex;
-  $default_color: white;
+  $default_color: $almost_white;
   $accent_color: gold;
   $circle_border_color: $almost_black;
 
