@@ -40,25 +40,25 @@
 * td {
   padding: 5px;
 }
-* .section {
+* section {
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-* .section > * {
+* section > * {
   margin-right: 10px;
 }
-* .section > *:last-child {
+* section > *:last-child {
   margin-right: 0px;
 }
-* .section .grow-one {
+* section .grow-one {
   flex-grow: 1;
 }
-* .section .grow-two {
+* section .grow-two {
   flex-grow: 2;
 }
-* .section.experience {
+* section.experience {
   margin-bottom: 0px;
   justify-content: center;
 }

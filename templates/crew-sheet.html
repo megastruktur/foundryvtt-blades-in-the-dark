@@ -1,6 +1,6 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <div class="section">
+  <section>
 
     <div id="name-alias" class="grow-two flex-column">
       <div id="name">
@@ -68,10 +68,10 @@
       </div>
 
     </div>
-  </div>
+  </section>
 
 
-  <div class="section">
+  <section>
     <div id="crew-reputation">
       {{#multiboxes data.reputation}}
       {{#repturf data.turfs_amount}}
@@ -194,9 +194,9 @@
       </div>
   
     </div>
-  </div>
+  </section>
 
-  <div class="section">
+  <section>
 
     <div class="flex-vertical">
 
@@ -208,9 +208,9 @@
         {{/each}}
       </div>
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="turfs">Turfs</a>
-        <a class="item" data-tab="upgrades">Upgrades</a>
-        <a class="item" data-tab="abilities">Abilities</a>
+        <a class="item" data-tab="tab1">Turfs</a>
+        <a class="item" data-tab="tab2">Upgrades</a>
+        <a class="item" data-tab="tab3">Abilities</a>
       </nav>
     </div>
 
@@ -238,10 +238,10 @@
       </div>
     </div>
 
-  </div>
+  </section>
 
   {{!-- Crew Type --}}
-  <div class="section tab-content" data-tab="turfs">
+  <section class="tab-content" data-tab="tab1">
     {{#each actor.items as |item id|}}
     {{#eq item.type "crew_type"}}
     <div class="item" data-item-id="{{item._id}}">
@@ -249,9 +249,9 @@
     </div>
     {{/eq}}
     {{/each}}
-  </div>
+  </section>
 
-  <div class="section tab-content" data-tab="upgrades">
+  <section class="tab-content" data-tab="tab2">
 
     {{!-- Crew Upgrades --}}
     <div id="crew-upgrades" class="grow-two flex-vertical">
@@ -271,9 +271,9 @@
       {{/each}}
     </div>
 
-  </div>
+  </section>
 
-  <div class="section tab-content" data-tab="abilities">
+  <section class="tab-content" data-tab="tab3">
 
     {{!-- Crew Upgrades --}}
     <div id="crew-abilities" class="grow-two flex-vertical">
@@ -293,6 +293,6 @@
       {{/each}}
     </div>
 
-  </div>
+  </section>
 
 </form>
