@@ -13,5 +13,8 @@
 - Add Usage documentation to README.md
 - Add Turf Validation (<= 6 max)
 - Add turf connection validation
+- Change Traumas from Checkboxes to Items
 - Document usage of "logic" item property (crew_upgrades)
+- Add Icons to Items
 - Add screenshots
+- Add BitD fonts and fix styles

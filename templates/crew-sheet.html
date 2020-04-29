@@ -208,9 +208,9 @@
         {{/each}}
       </div>
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="tab1">Turfs</a>
-        <a class="item" data-tab="tab2">Upgrades</a>
-        <a class="item" data-tab="tab3">Abilities</a>
+        <a class="item" data-tab="turfs">Turfs</a>
+        <a class="item" data-tab="upgrades">Upgrades</a>
+        <a class="item" data-tab="abilities">Abilities</a>
       </nav>
     </div>
 
@@ -240,21 +240,26 @@
 
   </section>
 
-  {{!-- Crew Type --}}
-  <section class="tab-content" data-tab="tab1">
-    {{#each actor.items as |item id|}}
-    {{#eq item.type "crew_type"}}
-    <div class="item" data-item-id="{{item._id}}">
-    {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
-    </div>
-    {{/eq}}
-    {{/each}}
-  </section>
+  {{!-- Tabs --}}
+  <section class="tab-content">
 
-  <section class="tab-content" data-tab="tab2">
+    {{!-- Turfs --}}
+    <div class="tab" data-tab="turfs">
+      <div class="label-stripe">
+        <p><label>Turfs</label></p>
+      </div>
+      {{#each actor.items as |item id|}}
+      {{#eq item.type "crew_type"}}
+      <div class="item" data-item-id="{{item._id}}">
+      {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
+      </div>
+      {{/eq}}
+      {{/each}}
+    </div>
+
 
     {{!-- Crew Upgrades --}}
-    <div id="crew-upgrades" class="grow-two flex-vertical">
+    <div id="crew-upgrades" class="tab grow-two flex-vertical" data-tab="upgrades">
       <div class="label-stripe">
         <p><label>Crew Upgrades</label></p>
       </div>
@@ -271,12 +276,8 @@
       {{/each}}
     </div>
 
-  </section>
-
-  <section class="tab-content" data-tab="tab3">
-
-    {{!-- Crew Upgrades --}}
-    <div id="crew-abilities" class="grow-two flex-vertical">
+    {{!-- Crew Abilities --}}
+    <div id="crew-abilities" class="tab grow-two flex-vertical" data-tab="abilities">
       <div class="label-stripe">
         <p><label>Special Abilities</label></p>
       </div>
@@ -294,5 +295,6 @@
     </div>
 
   </section>
+
 
 </form>

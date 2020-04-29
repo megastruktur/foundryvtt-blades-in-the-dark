@@ -99,6 +99,7 @@
   margin-bottom: 10px;
   position: relative;
   padding-left: 10px;
+  display: flex;
 }
 * .big-teeth-section {
   border-top: 3px solid black;

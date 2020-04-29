@@ -10,7 +10,8 @@ export class BladesCrewSheet extends ActorSheet {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
       width: 930,
-      height: 970
+      height: 970,
+      tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "turfs"}]
     });
   }
 
@@ -44,12 +45,6 @@ export class BladesCrewSheet extends ActorSheet {
   /** @override */
 	activateListeners(html) {
     super.activateListeners(html);
-
-    // Activate tabs
-    const tabs = new TabsV2({navSelector: ".tabs", contentSelector: ".section", initial: "turfs"});
-
-    // @todo Fix the error in TabsV2
-    // tabs.bind(html);
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
