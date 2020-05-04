@@ -48,5 +48,5 @@ export class BladesItem extends Item {
     data.quality = quality;
     
     this.data.data = data;
-  }
+}
 }
