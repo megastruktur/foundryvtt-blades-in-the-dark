@@ -13,7 +13,7 @@
         {{#each actor.items as |item id|}}
         {{#eq item.type "crew_feature"}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
+            <div class="item-body item-sheet-open flex-horizontal">
               <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
               <div class="item-name">{{item.name}}</div>
             </div>
@@ -212,6 +212,8 @@
         <a class="item" data-tab="turfs">Turfs</a>
         <a class="item" data-tab="upgrades">Upgrades</a>
         <a class="item" data-tab="abilities">Abilities</a>
+        <a class="item" data-tab="cohorts">Cohorts</a>
+        <a class="item" data-tab="notes">Notes</a>
         <a class="item" data-tab="all-items">All Items</a>
       </nav>
     </div>
@@ -268,7 +270,7 @@
       {{#each actor.items as |item id|}}
       {{#eq item.type "crew_upgrade"}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
-          <div class="item-body flex-horizontal">
+          <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
             <div class="item-description">{{item.data.description}}</div>
           </div>
@@ -286,7 +288,7 @@
       {{#each actor.items as |item id|}}
       {{#eq item.type "crew_ability"}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
-          <div class="item-body flex-horizontal">
+          <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
             <div class="item-description">{{item.data.description}}</div>
           </div>
@@ -296,14 +298,37 @@
       {{/each}}
     </div>
 
+    {{!-- Cohorts --}}
+    <div id="crew-cohorts" class="tab grow-two flex-vertical" data-tab="cohorts">
+      <div class="label-stripe flex-horizontal">
+        <p>Cohorts</p>
+        <p><a class="add-item" data-item-type="cohort"><i class="fas fa-plus-square"></i></a></p>
+      </div>
+      <div class="cohorts flex-horizontal">
+        {{#each actor.items as |item id|}}
+          {{#eq item.type "cohort"}}
+          
+            {{> "systems/blades-in-the-dark/templates/parts/cohort-block.html" item=item}}
+    
+          {{/eq}}
+        {{/each}}
+      </div>
+    </div>
+
+    {{!-- Notes --}}
+    <div id="notes" class="tab grow-two flex-vertical" data-tab="notes">
+      <label>Notes</label>
+      <textarea rows="15" name="data.description">{{{data.description}}}</textarea>
+    </div>
+
     {{!-- Full Item List --}}
     <div id="crew-abilities" class="tab grow-two flex-vertical" data-tab="all-items">
       <div class="label-stripe">
-        <p><label>Special Abilities</label></p>
+        <p><label>All Items</label></p>
       </div>
       {{#each actor.items as |item id|}}
       <div class="item flex-horizontal" data-item-id="{{item._id}}">
-        <div class="item-body flex-horizontal">
+        <div class="item-body item-sheet-open flex-horizontal">
           <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
           <div class="item-name">{{item.name}}</div>
         </div>

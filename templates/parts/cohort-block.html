@@ -1,0 +1,47 @@
+<div class="item cohort-block-wrapper" data-item-id="{{item._id}}">
+
+  <div class="cohort-block">
+    <div class="label-stripe">
+      <div class="item-sheet-open">{{#eq item.data.cohort.[0] "Gang"}}Gang of {{#each ../item.data.gang_type as |gang_type key|}}{{gang_type}} {{/each}}{{/eq}}{{#eq item.data.cohort.[0] "Expert"}}{{../item.data.cohort.[0]}} {{../item.data.expert_type}}{{/eq}} (click to edit)</div>
+      <div>Q:{{item.data.quality}} S:{{item.data.scale}}</div>
+      <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+    </div>
+    <div class="cohort-body">
+
+      <div class="cohort-block-harm flex-horizontal">
+        {{#each item.data.harm_list as |harm harm_key|}}
+          {{#multiboxes ../item.data.harm}}
+          <input id="harm-{{harm_key}}-{{../item._id}}" type="radio" name="harm.{{../item._id}}" data-item="{{../item._id}}" value="{{harm_key}}">
+          <label for="harm-{{harm_key}}-{{../item._id}}">{{harm.label}}</label>
+          {{/multiboxes}}
+        {{/each}}
+      </div>
+
+      {{#eq item.data.cohort.[0] "Gang"}}
+        {{#each ../item.data.gang_type as |gang_type key|}}
+        <div>
+            {{#with (lookup ../../item.data.gang_type_list gang_type)}}{{description}} {{/with}}
+        </div>
+        {{/each}}
+      {{/eq}}
+      
+      <div class="flex-vertical">
+        <div class="flex-vertical">
+          {{#each item.data.edges as |edge key|}}
+            {{#with (lookup ../item.data.edges_list edge)}}
+              <div class="description">{{description}} <b>({{label}})</b></div>
+            {{/with}}
+          {{/each}}
+          {{#each item.data.flaws as |flaw key|}}
+            {{#with (lookup ../item.data.flaws_list flaw)}}
+              <div class="description">{{description}} <b>({{label}})</b></div>
+            {{/with}}
+          {{/each}}
+        </div>
+      </div>
+      
+      <div class="description">{{item.data.description}}</div>
+    </div>
+
+  </div>
+</div>
