@@ -14,6 +14,10 @@ $almost_white: #EEEFFF;
 * {
   font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 
+  header {
+    margin-bottom: 10px;
+  }
+
   ul {
     list-style: none;
   }
@@ -38,7 +42,7 @@ $almost_white: #EEEFFF;
     flex-direction: row;
     justify-content: space-between;
     
-    > * {
+    > *:not(.label-stripe) {
       margin-right: 10px;
 
       &:last-child {
@@ -103,8 +107,24 @@ $almost_white: #EEEFFF;
     margin-bottom: 10px;
     position: relative;
     padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     font-weight: bold;
+  }
+
+  .label-stripe-gray {
+    text-transform: uppercase;
+    background-color: $gray;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  .description {
+    font-style: italic;
   }
 
   // Stress and Trauma
@@ -440,11 +460,65 @@ $almost_white: #EEEFFF;
     }
   }
 
-  .window-app {
-    
-    .window-content {
-      // background: url("https://wallpapertag.com/wallpaper/middle/c/3/6/294219-old-paper-background-1920x1200-for-desktop.jpg") repeat;
+  // Cohorts styling
+  .edgeflaw {
+
+    input {
+      display: none;
+
+      &:checked {
+
+        & + label {
+          color: $red;
+        }
+
+      }
+    }
+
+  }
+
+  #gang-expert-type-selector {
+
+    #gang-type-boxes {
+      flex-wrap: wrap;
     }
   }
 
+  .cohorts {
+    flex-wrap: wrap;
+    
+    .cohort-block-wrapper {
+      width: 400px;
+    }
+    .label-stripe {
+      margin-bottom: 0px;
+    }
+
+    .cohort-body {
+      > div {
+        margin-bottom: 10px;
+      }
+    }
+
+    .cohort-block-harm {
+
+      justify-content: space-around;
+
+      input[type="radio"] {
+        display: none;
+  
+        &:checked + label {
+          color: $almost_white;
+          font-weight: bold;
+          background-color: $almost_black;
+        }
+      }
+
+      label {
+        border: 2px solid $almost_black;
+        border-top: none;
+        padding: 5px;
+      }
+    }
+  }
 }

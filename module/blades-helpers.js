@@ -151,4 +151,21 @@ export class BladesHelpers {
     }, obj);
   }
 
+
+  /**
+   * Add item functionality
+   */
+  static _addOwnedItem(event, actor) {
+
+    event.preventDefault();
+    const a = event.currentTarget;
+    const item_type = a.dataset.itemType;
+
+    let data = {
+      name: randomID(),
+      type: item_type
+    };
+    return actor.createEmbeddedEntity("OwnedItem", data);
+  }
+
 }

@@ -71,7 +71,7 @@
         width: 5px;
         border-radius: 24px;
         background-image: none !important;
-        background-color: red !important;
+        background-color: $red !important;
         margin-right: 0px;
       }
     }
@@ -157,7 +157,7 @@
       display: none;
 
       &:checked ~ .checkmark {
-        color: red;
+        color: $red;
       }
     }
 
@@ -238,14 +238,14 @@
 
   width: $turf_width;
   height: $turf_height;
-  background-color: lightgray;
+  background-color: $lightgray;
   position: relative;
   margin: $turf_margin;
   flex-grow: initial;
 
   &.turf-selected {
     .connector {
-      background-color: gray;
+      background-color: $gray;
       z-index: 1;
     }
   }
@@ -254,7 +254,7 @@
 
     position: absolute;
     display: block;
-    background-color: lightgray;
+    background-color: $lightgray;
 
     &.right,
     &.left {
@@ -285,7 +285,7 @@
 
 
   &.turf-selected {
-    background-color: gray;
+    background-color: $gray;
   }
 
   .turf-description {

@@ -28,6 +28,9 @@
 * {
   font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 }
+* header {
+  margin-bottom: 10px;
+}
 * ul {
   list-style: none;
 }
@@ -46,10 +49,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
-* section > * {
+* section > *:not(.label-stripe) {
   margin-right: 10px;
 }
-* section > *:last-child {
+* section > *:not(.label-stripe):last-child {
   margin-right: 0px;
 }
 * section .grow-one {
@@ -100,8 +103,22 @@
   margin-bottom: 10px;
   position: relative;
   padding-left: 10px;
+  padding-right: 10px;
   display: flex;
   font-weight: bold;
+}
+* .label-stripe-gray {
+  text-transform: uppercase;
+  background-color: #999;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  font-weight: bold;
+}
+* .description {
+  font-style: italic;
 }
 * .big-teeth-section {
   border-top: 3px solid #191813;
@@ -557,19 +574,19 @@
 * #turf-list.section-non-editable .turf-block {
   width: 130px;
   height: 100px;
-  background-color: lightgray;
+  background-color: #CCC;
   position: relative;
   margin: 20px;
   flex-grow: initial;
 }
 * #turf-list.section-non-editable .turf-block.turf-selected .connector {
-  background-color: gray;
+  background-color: #999;
   z-index: 1;
 }
 * #turf-list.section-non-editable .turf-block .connector {
   position: absolute;
   display: block;
-  background-color: lightgray;
+  background-color: #CCC;
 }
 * #turf-list.section-non-editable .turf-block .connector.right, * #turf-list.section-non-editable .turf-block .connector.left {
   width: 40px;
@@ -594,7 +611,7 @@
   top: 100px;
 }
 * #turf-list.section-non-editable .turf-block.turf-selected {
-  background-color: gray;
+  background-color: #999;
 }
 * #turf-list.section-non-editable .turf-block .turf-description {
   border: none;
@@ -622,19 +639,19 @@
 * #turf-list.section-editable .turf-block {
   width: 130px;
   height: 125px;
-  background-color: lightgray;
+  background-color: #CCC;
   position: relative;
   margin: 20px;
   flex-grow: initial;
 }
 * #turf-list.section-editable .turf-block.turf-selected .connector {
-  background-color: gray;
+  background-color: #999;
   z-index: 1;
 }
 * #turf-list.section-editable .turf-block .connector {
   position: absolute;
   display: block;
-  background-color: lightgray;
+  background-color: #CCC;
 }
 * #turf-list.section-editable .turf-block .connector.right, * #turf-list.section-editable .turf-block .connector.left {
   width: 40px;
@@ -659,7 +676,7 @@
   top: 125px;
 }
 * #turf-list.section-editable .turf-block.turf-selected {
-  background-color: gray;
+  background-color: #999;
 }
 * #turf-list.section-editable .turf-block .turf-description {
   border: none;
@@ -769,5 +786,42 @@
   font-size: 20px;
   color: #191813;
 }
+* .edgeflaw input {
+  display: none;
+}
+* .edgeflaw input:checked + label {
+  color: red;
+}
+* #gang-expert-type-selector #gang-type-boxes {
+  flex-wrap: wrap;
+}
+* .cohorts {
+  flex-wrap: wrap;
+}
+* .cohorts .cohort-block-wrapper {
+  width: 400px;
+}
+* .cohorts .label-stripe {
+  margin-bottom: 0px;
+}
+* .cohorts .cohort-body > div {
+  margin-bottom: 10px;
+}
+* .cohorts .cohort-block-harm {
+  justify-content: space-around;
+}
+* .cohorts .cohort-block-harm input[type=radio] {
+  display: none;
+}
+* .cohorts .cohort-block-harm input[type=radio]:checked + label {
+  color: #EEEFFF;
+  font-weight: bold;
+  background-color: #191813;
+}
+* .cohorts .cohort-block-harm label {
+  border: 2px solid #191813;
+  border-top: none;
+  padding: 5px;
+}
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=blades.css.map */

@@ -32,14 +32,6 @@ export class BladesItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
-    return data;
-  }
-
-  /* -------------------------------------------- */
-
-  /** @override */
 	activateListeners(html) {
     super.activateListeners(html);
 

@@ -137,8 +137,111 @@
   },
   "cohort": {
     "templates": ["default"],
-    "type": [],
-    "cohort_types": ["gang", "expert"]
+    "cohort": ["Gang"],
+    "scale": 0,
+    "quality": 0,
+    "cohort_list": {
+      "Gang": {
+        "label": "Gang"
+      },
+      "Expert": {
+        "label": "Expert"
+      }
+    },
+    "gang_type": ["Adepts"],
+    "gang_type_list": {
+
+      "Adepts": {
+        "label": "Adepts",
+        "description": "Scholars, tinkerers, occultists, and chemists."
+      },
+      "Rooks": {
+        "label": "Rooks",
+        "description": "Con artists, spies, and socialites."
+      },
+      "Rovers": {
+        "label": "Rovers",
+        "description": "Sailors, carriage drivers, and deathlands scavengers."
+      },
+      "Skulks": {
+        "label": "Skulks",
+        "description": "Scouts, infiltrators, and thieves."
+      },
+      "Thugs": {
+        "label": "Thugs",
+        "description": "Scouts, infiltrators, and thieves."
+      }
+    },
+    "expert_type": "",
+    "status": [],
+    "statuses": [],
+    "edges": [],
+    "edges_list": {
+      "Fearsome": {
+        "label": "Fearsome",
+        "description": "The cohort is terrifying in aspect and reputation."
+      },
+      "Independent": {
+        "label": "Independent",
+        "description": "The cohort can be trusted to make good decisions and act on their own initiative in the absence of direct orders."
+      },
+      "Loyal": {
+        "label": "Loyal",
+        "description": "The cohort can’t be bribed or turned against you."
+      },
+      "Tenacious": {
+        "label": "Tenacious",
+        "description": "The cohort won’t be deterred from a task."
+      }
+    },
+    "flaws": [],
+    "flaws_list": {
+      "Principled": {
+        "label": "Principled",
+        "description": "The cohort has an ethic or values that it won’t betray."
+      },
+      "Savage": {
+        "label": "Savage",
+        "description": "The cohort is excessively violent and cruel."
+      },
+      "Unreliable": {
+        "label": "Unreliable",
+        "description": "The cohort isn’t always available, due to other obligations, stupefaction from their vices, etc."
+      },
+      "Wild": {
+        "label": "Wild",
+        "description": "The cohort is drunken, debauched, and loud-mouthed."
+      }
+    },
+    "harm": ["No"],
+    "harm_list": {
+      "No": {
+        "label": "No Harm",
+        "description": "The cohort is healthy.",
+        "value": 0
+      },
+      "Weakened": {
+        "label": "Weakened",
+        "description": "The cohort has reduced effect.",
+        "value": 1
+      },
+      "Impaired": {
+        "label": "Impaired",
+        "description": "The cohort operates with reduced quality (-1d).",
+        "value": 2
+      },
+      "Broken": {
+        "label": "Broken",
+        "description": "The cohort can’t do anything until they recover.",
+        "value": 3
+      },
+      "Dead": {
+        "label": "Dead",
+        "description": "The cohort is destroyed. You can spend coin equal to your Tier +2 to restore it, plus two downtime activities to recruit new gang members, or hire a new expert.",
+        "value": 4
+      }
+    },
+    "armor": false
   },
   "crew_feature": {
     "templates": ["default"]
