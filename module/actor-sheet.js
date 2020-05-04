@@ -10,7 +10,8 @@ export class BladesActorSheet extends ActorSheet {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
       width: 700,
-      height: 970
+      height: 970,
+      tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}]
     });
   }
 
@@ -24,8 +25,6 @@ export class BladesActorSheet extends ActorSheet {
     let loadout = 0;
     data.items.forEach(i => {loadout += (i.type === "item") ? parseInt(i.data.load) : 0});
     data.data.loadout = loadout;
-    console.log("DATA");
-    console.log(data);
     return data;
   }
 

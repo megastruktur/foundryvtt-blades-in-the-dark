@@ -236,11 +236,23 @@
     </div>
   </section>
 
+
+
+
   {{!-- Attributes --}}
   <section>
 
-    <div class="flex-vertical grow-two">
-      <div id="abilities" class="flex-vertical">
+    <div class="tab-content flex-vertical grow-two">
+
+      {{!-- Nav menu --}}
+      <nav class="tabs flex-horizontal">
+        <a class="item" data-tab="abilities">Abilities</a>
+        <a class="item" data-tab="loadout">Loadout</a>
+        <a class="item" data-tab="character-notes">Notes</a>
+        <a class="item" data-tab="all-character-items">All Items</a>
+      </nav>
+
+      <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe">
           <p><label for="character-experience-0">Abilities</label></p>
           <div id="character-experience" class="teeth-experience">
@@ -284,7 +296,7 @@
       </div>
 
       {{!-- Owned Items Tab --}}
-      <div id="loadout" class="flex-vertical">
+      <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         <div class="label-stripe">
           <p>Loadout: {{data.loadout}}</p>
         </div>
@@ -303,8 +315,31 @@
           {{/each}}
         </div>
       </div>
-    </div>
 
+      <div class="tab flex-vertical" data-tab="character-notes">
+        <div class="label-stripe">
+          <p>Notes</p>
+        </div>
+        <textarea rows="13" name="data.description">{{{data.description}}}</textarea>
+      </div>
+
+      {{!-- Full Item List --}}
+      <div class="tab grow-two flex-vertical" data-tab="all-character-items">
+        <div class="label-stripe">
+          <p><label>All Items</label></p>
+        </div>
+        {{#each actor.items as |item id|}}
+        <div class="item flex-horizontal" data-item-id="{{item._id}}">
+          <div class="item-body item-sheet-open flex-horizontal">
+            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+            <div class="item-name">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/each}}
+      </div>
+
+    </div>
     {{!-- Attributes --}}
     {{> "systems/blades-in-the-dark/templates/parts/attributes.html"}}
   </section>

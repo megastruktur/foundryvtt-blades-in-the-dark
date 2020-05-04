@@ -65,6 +65,9 @@
   margin-bottom: 0px;
   justify-content: center;
 }
+* nav {
+  margin-bottom: 10px;
+}
 * .editor,
 * .editor-content {
   min-height: 280px;
@@ -342,6 +345,7 @@
 * #attributes {
   display: flex;
   flex-direction: column;
+  width: 200px;
 }
 * #attributes .stripe {
   background-color: #191813;
