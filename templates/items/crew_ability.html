@@ -10,8 +10,11 @@
     <section class="sheet-body">
       <textarea name="data.description">{{data.description}}</textarea>
     </section>
-    <label>Ability Price</label>
-    <input id="ability-price" type="text" name="data.price" value="{{data.price}}" placeholder="Ability Price">
-    <label>Ability Class</label>
-    <input id="ability-class" type="text" name="data.class" value="{{data.class}}" placeholder="Ability Class">
+    
+    <div class="flex-vertical">
+      <label class="label-stripe">Ability Price</label>
+      <input id="ability-price" type="text" name="data.price" value="{{data.price}}" placeholder="Ability Price">
+      <label class="label-stripe">Ability Class</label>
+      <input id="ability-class" type="text" name="data.class" value="{{data.class}}" placeholder="Ability Class">
+    </div>
 </form>
