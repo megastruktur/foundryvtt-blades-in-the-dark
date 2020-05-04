@@ -11,7 +11,6 @@ export class BladesItem extends Item {
     
     const item_data = this.data;
     const data = item_data.data;
-    console.log("prepare item " + item_data.type);
 
     if (item_data.type === "cohort") {
     

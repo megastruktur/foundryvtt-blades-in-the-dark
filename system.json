@@ -58,10 +58,10 @@
       "entity": "Item"
     },
     {
-      "name": "Crew Features",
-      "label": "Crew Features",
+      "name": "Crew Reputation",
+      "label": "Crew Reputation",
       "system": "blades-in-the-dark",
-      "path": "./packs/crew_features.db",
+      "path": "./packs/crew_reputation.db",
       "entity": "Item"
     },
     {

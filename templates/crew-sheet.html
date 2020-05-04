@@ -8,10 +8,10 @@
         <input type="text" id="crew-name" name="name" value="{{actor.name}}">
       </div>
   
-      <div id="crew-features">
-        <div class="item-class-label">Crew Features (add 2)</div>
+      <div id="crew-reputation">
+        <div class="item-class-label">Crew Reputation</div>
         {{#each actor.items as |item id|}}
-        {{#eq item.type "crew_feature"}}
+        {{#eq item.type "crew_reputation"}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body item-sheet-open flex-horizontal">
               <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>

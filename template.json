@@ -243,7 +243,7 @@
     },
     "armor": false
   },
-  "crew_feature": {
+  "crew_reputation": {
     "templates": ["default"]
   },
   "crew_upgrade": {
