@@ -50,7 +50,7 @@ export class BladesCrewSheet extends ActorSheet {
     if (!this.options.editable) return;
 
     // Update Inventory Item
-    html.find('.item-body').click(ev => {
+    html.find('.item-sheet-open').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
       const item = this.actor.getOwnedItem(element.data("itemId"));
       item.sheet.render(true);
@@ -61,6 +61,11 @@ export class BladesCrewSheet extends ActorSheet {
       const element = $(ev.currentTarget).parents(".item");
       this.actor.deleteOwnedItem(element.data("itemId"));
       element.slideUp(200, () => this.render(false));
+    });
+
+    // Add a new Cohort
+    html.find('.add-item').click(ev => {
+      BladesHelpers._addOwnedItem(ev, this.actor);
     });
 
     // Toggle Turf
@@ -77,6 +82,19 @@ export class BladesCrewSheet extends ActorSheet {
         [turf_checkbox_name]: !turf_current_status});
       this.render(false);
     });
+
+    // Cohort Block Harm handler
+    html.find('.cohort-block-harm input[type="radio"]').change(ev => {
+      const element = $(ev.currentTarget).parents(".item");
+      
+      let item_id = element.data("itemId")
+      let harm_id = $(ev.currentTarget).val();
+
+      this.actor.updateEmbeddedEntity('OwnedItem', {
+        _id: item_id,
+        "data.harm": [harm_id]});
+      this.render(false);
+    });
   }
 
   /* -------------------------------------------- */
@@ -87,6 +105,20 @@ export class BladesCrewSheet extends ActorSheet {
     return FD;
   }
 
+  /* -------------------------------------------- */
+  /*  Form Submission                             */
+	/* -------------------------------------------- */
+
+  /** @override */
+  _updateObject(event, formData) {
+
+    // Update the Item
+    super._updateObject(event, formData);
+
+    if (event.target.name === "data.tier") {
+      this.render(true);
+    }
+  }
   /* -------------------------------------------- */
 
 }
