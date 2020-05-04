@@ -107,6 +107,7 @@
   },
   "class": {
     "templates": ["default"],
+    "experience_clues": "",
     "base_skills": {
       "hunt": [0],
       "study": [0],
@@ -120,8 +121,7 @@
       "command": [0],
       "consort": [0],
       "sway": [0]
-    },
-    "class_items": []
+    }
   },
   "ability": {
     "templates": ["ability"]
