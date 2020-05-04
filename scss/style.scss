@@ -64,6 +64,10 @@ $almost_white: #EEEFFF;
     }
   }
 
+  nav {
+    margin-bottom: 10px;
+  }
+
   .editor,
   .editor-content {
     min-height: 280px;
@@ -242,6 +246,7 @@ $almost_white: #EEEFFF;
 
     display: flex;
     flex-direction: column;
+    width: 200px;
 
     .stripe {
       background-color: $almost_black;
