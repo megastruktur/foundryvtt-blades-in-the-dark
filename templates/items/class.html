@@ -6,7 +6,15 @@
       </div>
   </header>
   
-  <section class="sheet-body">
+  <section class="flex-vertical">
+    <label class="label-stripe">Description</label>
     <textarea name="data.description">{{data.description}}</textarea>
+    <label class="label-stripe">Exp Clues</label>
+    <div><i>- Every time you roll a desperate action, mark xp in that action's attribute.</i></div>
+    <div>At the end of each session, for each item below, mark 1 xp (in your playbook or an attribute) or 2 xp if that item occurred multiple times.</div>
+    <div><i>- You expressed your beliefs, drives, heritage, or background.</i></div>
+    <div><i>- You struggled with issues from your vice or traumas during the session.</i></div>
+    <textarea name="data.experience_clues">{{data.experience_clues}}</textarea>
   </section>
+
 </form>
