@@ -102,7 +102,7 @@
   },
   "item": {
     "templates": ["default"],
-    "class_restriction": "",
+    "class": "",
     "load": 0
   },
   "class": {
