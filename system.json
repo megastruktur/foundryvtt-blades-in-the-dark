@@ -84,6 +84,13 @@
       "system": "blades-in-the-dark",
       "path": "./packs/crew_abilities.db",
       "entity": "Item"
+    },
+    {
+      "name": "Doskvol",
+      "label": "Doskvol",
+      "system": "blades-in-the-dark",
+      "path": "./packs/doskvol.db",
+      "entity": "Scene"
     }
 ]
 }
