@@ -17,5 +17,10 @@ To use just open Compendium and drag necessary Items, Abilities, etc. to the she
 ## Troubleshooting
 - If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.
 
+## Credits
+- The Blades In the Dark game system page: https://bladesinthedark.com/
+- Some assets were taken from here (thank you  timdenee and joesinghaus): https://github.com/joesinghaus/Blades-in-the-Dark
+
+
 [screenshot_all]: ./images/screenshot_all.png "screenshot_all"
 [screenshot_compendium]: ./images/screenshot_compendium.png "screenshot_compendium"
