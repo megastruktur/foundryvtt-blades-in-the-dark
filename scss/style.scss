@@ -40,7 +40,7 @@ $almost_white: #EEEFFF;
   section {
     margin-bottom: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     
     > *:not(.label-stripe) {

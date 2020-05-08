@@ -47,7 +47,7 @@
 * section {
   margin-bottom: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 * section > *:not(.label-stripe) {

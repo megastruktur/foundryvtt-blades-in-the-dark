@@ -1,6 +1,6 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <section>
+  <section class="flex-horizontal">
 
     <div id="name-alias" class="grow-two flex-column">
       <div id="name">
@@ -8,7 +8,7 @@
         <input type="text" id="crew-name" name="name" value="{{actor.name}}">
       </div>
   
-      <div id="crew-reputation">
+      <div class="flex-vertical">
         <div class="item-class-label">Crew Reputation</div>
         {{#each actor.items as |item id|}}
         {{#eq item.type "crew_reputation"}}
@@ -71,7 +71,7 @@
   </section>
 
 
-  <section>
+  <section class="flex-horizontal">
     <div id="crew-reputation">
       {{#multiboxes data.reputation}}
       {{#repturf data.turfs_amount}}
@@ -196,7 +196,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="flex-horizontal">
 
     <div class="flex-vertical">
 
