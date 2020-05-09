@@ -14,6 +14,9 @@
   "gridUnits": "m",
   "primaryTokenAttribute": null,
   "secondaryTokenAttribute": null,
+  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
+  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/master.zip",
   "packs": [
     {
       "name": "Classes",
