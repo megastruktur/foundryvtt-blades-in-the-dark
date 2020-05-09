@@ -4,7 +4,8 @@ Contact Discord: `megastruktur#5704` in case you find any bugs or if you have an
 
 ## Usage
 
-To use just open Compendium and drag necessary Items, Abilities, etc. to the sheet.
+- To use just open Compendium and drag necessary Items, Abilities, etc. to the sheet.
+- To reset XP, attributes, etc, click on Name.
 
 ## Screenshots
 
