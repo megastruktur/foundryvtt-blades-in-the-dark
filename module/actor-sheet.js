@@ -1,8 +1,11 @@
+
+import { BladesSheet } from "./blades-sheet.js";
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
+ * @extends {BladesSheet}
  */
-export class BladesActorSheet extends ActorSheet {
+export class BladesActorSheet extends BladesSheet {
 
   /** @override */
 	static get defaultOptions() {
@@ -68,4 +71,5 @@ export class BladesActorSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
+
 }

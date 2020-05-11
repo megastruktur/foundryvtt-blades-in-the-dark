@@ -3,9 +3,34 @@
 Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
 
 ## Usage
+`"Item" - all classes, crew types, upgrades, items, abilities, upgrades, etc.`
 
-- To use just open Compendium and drag necessary Items, Abilities, etc. to the sheet.
-- To reset XP, attributes, etc, click on Name.
+- To reset reputation, exp, etc counters just click on the label name.
+- Health clock can be reset by clicking on "Healing" table header.
+- To add items you can click a corresponding link or drag items from compendium/game to the sheet.
+- All "class/crew" specific items are prefixed with first letters
+
+- I don't want the "class/crew items" to be prepopulated, so the character sheet contains less "compendium" info.
+- To see the description of Class, Vice, Background, etc you can just click added item and see all the info in the popup.
+- When adding a new item you can hower a "question-circle" icon to see the item's description.
+- To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet.
+
+Classes:
+- (C) Cutter
+- (H) Hound
+- (Le) Leech
+- (Lu) Lurk
+- (Sl) Slide
+- (Sp) Spider
+- (W) Whisper
+
+Crew Types:
+- (A) Assassins
+- (B) Bravos
+- (C) Cult
+- (H) Hawkers
+- (Sh) Shadows
+- (Sm) Smugglers
 
 ## Screenshots
 
@@ -14,6 +39,12 @@ Contact Discord: `megastruktur#5704` in case you find any bugs or if you have an
 
 ### Compendium
 ![alt screen][screenshot_compendium]
+
+## To be done in the nearest future
+- Clocks
+- Friends/rivals section
+- Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)
+- Dice Rolling
 
 ## Troubleshooting
 - If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.

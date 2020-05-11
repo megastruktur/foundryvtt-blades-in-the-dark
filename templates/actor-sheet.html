@@ -10,10 +10,26 @@
 
       <div id="character-traits" class="flex-column">
         
-        {{#each actor.items as |item id|}}
-            {{#eq item.type "heritage"}}
+        <div class="item-block flex-horizontal">
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">Heritage</a></div>
+          {{#each actor.items as |item id|}}
+              {{#eq item.type "heritage"}}
+              <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                <div class="item-body flex-horizontal">
+                  <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                  <div class="item-name">{{item.name}}</div>
+                </div>
+                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+              {{/eq}}
+          {{/each}}
+        </div>
+
+        <div class="item-block flex-horizontal">
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background">Background</a></div>
+          {{#each actor.items as |item id|}}
+            {{#eq item.type "background"}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
-              <div class="item-class-label">Heritage</div>
               <div class="item-body flex-horizontal">
                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                 <div class="item-name">{{item.name}}</div>
@@ -21,46 +37,39 @@
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
             </div>
             {{/eq}}
-        {{/each}}
+          {{/each}}
+        </div>
 
-        {{#each actor.items as |item id|}}
-          {{#eq item.type "background"}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-class-label">Background</div>
-            <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <div class="item-name">{{item.name}}</div>
-            </div>
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        <div class="item-block flex-horizontal">
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice">Vice</a></div>
+          {{#each actor.items as |item id|}}
+              {{#eq item.type "vice"}}
+              <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                <div class="item-body flex-horizontal">
+                  <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                  <div class="item-name">{{item.name}}</div>
+                </div>
+                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              </div>
+              {{/eq}}
+          {{/each}}
+        </div>
+
+        <div class="item-block flex-horizontal">
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class">Class</a></div>
+            {{#each actor.items as |item id|}}
+                {{#eq item.type "class"}}
+                <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                  <div class="item-body flex-horizontal">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <div class="item-name">{{item.name}}</div>
+                  </div>
+                  <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                </div>
+                {{/eq}}
+            {{/each}}
           </div>
-          {{/eq}}
-        {{/each}}
 
-        {{#each actor.items as |item id|}}
-            {{#eq item.type "vice"}}
-            <div class="item flex-horizontal" data-item-id="{{item._id}}">
-              <div class="item-class-label">Vice</div>
-              <div class="item-body flex-horizontal">
-                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                <div class="item-name">{{item.name}}</div>
-              </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-            </div>
-            {{/eq}}
-        {{/each}}
-
-        {{#each actor.items as |item id|}}
-            {{#eq item.type "class"}}
-            <div class="item flex-horizontal" data-item-id="{{item._id}}">
-              <div class="item-class-label">Class</div>
-              <div class="item-body flex-horizontal">
-                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                <div class="item-name">{{item.name}}</div>
-              </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-            </div>
-            {{/eq}}
-        {{/each}}
       </div>
     </div>
 
@@ -171,7 +180,7 @@
       <table>
         <thead>
           <th class="black-white" colspan="4">Harm</th>
-          <th class="black-white">Healing</th>
+          <th class="black-white"><label for="character-healing-clock-0">Healing</label></th>
           <th class="black-white">Armor</th>
         </thead>
         <tbody>
@@ -255,6 +264,7 @@
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe">
           <p><label for="character-experience-0">Abilities</label></p>
+          <p><a class="item-add-popup" data-item-type="ability"><i class="fas fa-plus-square"></i></a></p>
           <div id="character-experience" class="teeth-experience">
             {{#multiboxes data.experience}}
             <input type="radio" id="character-experience-0" name="data.experience" value="0" dtype="Radio">
@@ -292,13 +302,15 @@
             </div>
           {{/eq}}
           {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="ability">Add Ability</a></div>
         </div>
       </div>
 
       {{!-- Owned Items Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
-        <div class="label-stripe">
+        <div class="label-stripe flex-horizontal">
           <p>Loadout: {{data.loadout}}</p>
+          <p><a class="item-add-popup" data-item-type="item"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <div>
           {{#each actor.items as |item id|}}
@@ -313,6 +325,7 @@
             </div>
           {{/eq}}
           {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="item">Add Item</a></div>
         </div>
       </div>
 

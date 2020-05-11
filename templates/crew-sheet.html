@@ -9,7 +9,9 @@
       </div>
   
       <div class="flex-vertical">
-        <div class="item-class-label">Crew Reputation</div>
+        <div class="item-class-label">
+          <a class="item-add-popup" data-distinct="true" data-item-type="crew_reputation">Crew Reputation</a>
+        </div>
         {{#each actor.items as |item id|}}
         {{#eq item.type "crew_reputation"}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -264,8 +266,9 @@
 
     {{!-- Crew Upgrades --}}
     <div id="crew-upgrades" class="tab grow-two flex-vertical" data-tab="upgrades">
-      <div class="label-stripe">
-        <p><label>Crew Upgrades</label></p>
+      <div class="label-stripe flex-horizontal">
+        <p>Crew Upgrades</p>
+        <p><a class="item-add-popup" data-item-type="crew_upgrade"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
       {{#eq item.type "crew_upgrade"}}
@@ -282,8 +285,9 @@
 
     {{!-- Crew Abilities --}}
     <div id="crew-abilities" class="tab grow-two flex-vertical" data-tab="abilities">
-      <div class="label-stripe">
-        <p><label>Special Abilities</label></p>
+      <div class="label-stripe flex-horizontal">
+        <p>Special Abilities</p>
+        <p><a class="item-add-popup" data-item-type="crew_ability"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
       {{#eq item.type "crew_ability"}}

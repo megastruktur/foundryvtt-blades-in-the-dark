@@ -242,6 +242,9 @@
 * #abilities .item-description {
   width: 200px;
 }
+* #abilities .label-stripe p:first-child {
+  margin-right: 10px;
+}
 * .teeth-experience {
   display: flex;
   /* Hide the browser's default checkbox */
@@ -827,6 +830,34 @@
   border: 2px solid #191813;
   border-top: none;
   padding: 5px;
+}
+* #items-to-add {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+* #items-to-add input[type=radio],
+* #items-to-add input[type=checkbox] {
+  display: none;
+}
+* #items-to-add input[type=radio]:checked + label,
+* #items-to-add input[type=checkbox]:checked + label {
+  font-weight: bold;
+}
+* .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #191813;
+  color: #EEEFFF;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 9999;
+}
+* .tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 /*# sourceMappingURL=blades.css.map */

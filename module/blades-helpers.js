@@ -172,4 +172,29 @@ export class BladesHelpers {
     return actor.createEmbeddedEntity("OwnedItem", data);
   }
 
+  /**
+   * Get the list of all available ingame items by Type.
+   * 
+   * @param {string} item_type 
+   * @param {Object} game 
+   */
+  static async getAllItemsByType(item_type, game) {
+
+    let list_of_items = [];
+    let game_items = [];
+    let compendium_items = [];
+    
+    game_items = game.items.filter(e => e.type === item_type).map(e => {return e.data});
+
+    let pack = game.packs.find(e => e.metadata.name === item_type);
+    let compendium_content = await pack.getContent();
+    compendium_items = compendium_content.map(e => {return e.data});
+
+    list_of_items = game_items.concat(compendium_items);
+
+    return list_of_items;
+
+  }
+  /* -------------------------------------------- */
+
 }
