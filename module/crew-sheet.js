@@ -1,8 +1,10 @@
+
+import { BladesSheet } from "./blades-sheet.js";
+
 /**
- * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
+ * @extends {BladesSheet}
  */
-export class BladesCrewSheet extends ActorSheet {
+export class BladesCrewSheet extends BladesSheet {
 
   /** @override */
 	static get defaultOptions() {
