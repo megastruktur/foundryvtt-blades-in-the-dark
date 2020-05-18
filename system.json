@@ -12,7 +12,7 @@
   "languages": ["en"],
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
   "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/master.zip",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/0.5.1.zip",
   "packs": [
     {
       "name": "class",
