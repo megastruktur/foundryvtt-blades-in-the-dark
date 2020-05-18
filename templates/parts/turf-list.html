@@ -34,15 +34,17 @@
           {{#if turf.description}}
           <p class="turf-description">{{turf.description}}</p>
           {{/if}}
+          {{#noteq id "8"}}
           <a class="turf-control turf-select" title="Select" data-turf-id="{{id}}" data-turf-status="{{turf.value}}"><i class="fas fa-circle"></i></a>
+          {{/noteq}}
         {{/if}}
     </div>
-    {{#eq id "5"}}
+    {{#if (eq id "5")}}
     </div><div class="turf-row">
-    {{/eq}}
-    {{#eq id "10"}}
+    {{/if}}
+    {{#if (eq id "10")}}
     </div><div class="turf-row">
-    {{/eq}}
+    {{/if}}
     {{/each}}
   </div>
 </div>

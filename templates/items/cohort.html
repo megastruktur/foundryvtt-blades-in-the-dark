@@ -34,7 +34,7 @@
   </section>
 
   <section id="gang-expert-type-selector" class="flex-vertical">
-    {{#eq data.cohort.[0] "Gang"}}
+    {{#if (eq data.cohort.[0] "Gang")}}
 
       <div class="label-stripe">Gang Type</div>
       <div id="gang-type-boxes" class="flex-horizontal">
@@ -53,12 +53,12 @@
         {{/each}}
       </div>
 
-    {{/eq}}
+    {{/if}}
 
-    {{#eq data.cohort.[0] "Expert"}}
+    {{#if (eq data.cohort.[0] "Expert")}}
       <div class="label-stripe">Expert Type</div>
       <input type="text" name="data.expert_type" value="{{../data.expert_type}}">
-    {{/eq}}
+    {{/if}}
   </section>
 
   {{!-- Scale and Quality if attached to Actor --}}

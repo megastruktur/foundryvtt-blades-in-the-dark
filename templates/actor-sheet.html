@@ -13,7 +13,7 @@
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">Heritage</a></div>
           {{#each actor.items as |item id|}}
-              {{#eq item.type "heritage"}}
+              {{#if (eq item.type "heritage")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
                 <div class="item-body flex-horizontal">
                   <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -21,14 +21,14 @@
                 </div>
                 <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
               </div>
-              {{/eq}}
+              {{/if}}
           {{/each}}
         </div>
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background">Background</a></div>
           {{#each actor.items as |item id|}}
-            {{#eq item.type "background"}}
+            {{#if (eq item.type "background")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -36,14 +36,14 @@
               </div>
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
             </div>
-            {{/eq}}
+            {{/if}}
           {{/each}}
         </div>
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice">Vice</a></div>
           {{#each actor.items as |item id|}}
-              {{#eq item.type "vice"}}
+              {{#if (eq item.type "vice")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
                 <div class="item-body flex-horizontal">
                   <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -51,14 +51,14 @@
                 </div>
                 <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
               </div>
-              {{/eq}}
+              {{/if}}
           {{/each}}
         </div>
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class">Class</a></div>
             {{#each actor.items as |item id|}}
-                {{#eq item.type "class"}}
+                {{#if (eq item.type "class")}}
                 <div class="item flex-horizontal" data-item-id="{{item._id}}">
                   <div class="item-body flex-horizontal">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -66,7 +66,7 @@
                   </div>
                   <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
                 </div>
-                {{/eq}}
+                {{/if}}
             {{/each}}
           </div>
 
@@ -292,7 +292,7 @@
   
         <div id="abilities-list">
           {{#each actor.items as |item id|}}
-          {{#eq item.type "ability"}}
+          {{#if (eq item.type "ability")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
                 <b><div class="item-name">{{item.name}}</div></b>
@@ -300,7 +300,7 @@
               </div>
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
             </div>
-          {{/eq}}
+          {{/if}}
           {{/each}}
           <div class="item-class-label"><a class="item-add-popup" data-item-type="ability">Add Ability</a></div>
         </div>
@@ -314,7 +314,7 @@
         </div>
         <div>
           {{#each actor.items as |item id|}}
-          {{#eq item.type "item"}}
+          {{#if (eq item.type "item")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -323,7 +323,7 @@
               </div>
               <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
             </div>
-          {{/eq}}
+          {{/if}}
           {{/each}}
           <div class="item-class-label"><a class="item-add-popup" data-item-type="item">Add Item</a></div>
         </div>
