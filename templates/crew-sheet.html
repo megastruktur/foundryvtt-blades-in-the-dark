@@ -13,7 +13,7 @@
           <a class="item-add-popup" data-distinct="true" data-item-type="crew_reputation">Crew Reputation</a>
         </div>
         {{#each actor.items as |item id|}}
-        {{#eq item.type "crew_reputation"}}
+        {{#if (eq item.type "crew_reputation")}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body item-sheet-open flex-horizontal">
               <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
@@ -21,7 +21,7 @@
             </div>
             <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
           </div>
-        {{/eq}}
+        {{/if}}
         {{/each}}
       </div>
     </div>
@@ -204,10 +204,10 @@
 
       <div id="crew-class" class="class-name">
         {{#each actor.items as |item id|}}
-        {{#eq item.type "crew_type"}}
+        {{#if (eq item.type "crew_type")}}
         <div class="big-name">{{item.name}}</div>
         <div class="big-description">{{item.data.description}}</div>
-        {{/eq}}
+        {{/if}}
         {{/each}}
       </div>
       <nav class="tabs flex-horizontal">
@@ -236,9 +236,9 @@
         <div class="experience-clues-description">At the end of each session, for each item below, mark 1 xp (or instead mark 2xp if that item occurred multiple times).</div>
         <div class="experience-clues">
           {{#each actor.items as |item id|}}
-          {{#eq item.type "crew_type"}}
+          {{#if (eq item.type "crew_type")}}
           {{html text=item.data.experience_clues}}
-          {{/eq}}
+          {{/if}}
           {{/each}}
         </div>
       </div>
@@ -255,11 +255,11 @@
         <p><label>Turfs</label></p>
       </div>
       {{#each actor.items as |item id|}}
-      {{#eq item.type "crew_type"}}
+      {{#if (eq item.type "crew_type")}}
       <div class="item" data-item-id="{{item._id}}">
       {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
       </div>
-      {{/eq}}
+      {{/if}}
       {{/each}}
     </div>
 
@@ -271,7 +271,7 @@
         <p><a class="item-add-popup" data-item-type="crew_upgrade"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
-      {{#eq item.type "crew_upgrade"}}
+      {{#if (eq item.type "crew_upgrade")}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
@@ -279,7 +279,7 @@
           </div>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
-      {{/eq}}
+      {{/if}}
       {{/each}}
     </div>
 
@@ -290,7 +290,7 @@
         <p><a class="item-add-popup" data-item-type="crew_ability"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
-      {{#eq item.type "crew_ability"}}
+      {{#if (eq item.type "crew_ability")}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
@@ -298,7 +298,7 @@
           </div>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
-      {{/eq}}
+      {{/if}}
       {{/each}}
     </div>
 
@@ -310,11 +310,11 @@
       </div>
       <div class="cohorts flex-horizontal">
         {{#each actor.items as |item id|}}
-          {{#eq item.type "cohort"}}
+          {{#if (eq item.type "cohort")}}
           
             {{> "systems/blades-in-the-dark/templates/parts/cohort-block.html" item=item}}
     
-          {{/eq}}
+          {{/if}}
         {{/each}}
       </div>
     </div>

@@ -63,9 +63,6 @@ Hooks.once("init", async function() {
   });
 
   // Equals handlebar.
-  Handlebars.registerHelper('eq', (a, b, options) => {
-    return (a === b) ? options.fn(this) : '';
-  });
 
   // NotEquals handlebar.
   Handlebars.registerHelper('noteq', (a, b, options) => {

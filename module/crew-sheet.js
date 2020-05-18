@@ -117,7 +117,7 @@ export class BladesCrewSheet extends BladesSheet {
     // Update the Item
     super._updateObject(event, formData);
 
-    if (event.target.name === "data.tier") {
+    if (event.target && event.target.name === "data.tier") {
       this.render(true);
     }
   }
