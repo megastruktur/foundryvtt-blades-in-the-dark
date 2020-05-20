@@ -11,6 +11,11 @@ export class BladesSheet extends ActorSheet {
 	activateListeners(html) {
     super.activateListeners(html);
     html.find(".item-add-popup").click(this._onItemAddClick.bind(this));
+
+    // This is a workaround until is being fixed in FoundryVTT.
+    if ( this.options.submitOnChange ) {
+      html.on("change", "textarea", this._onChangeInput.bind(this));  // Use delegated listener on the form
+    }
   }
 
   /* -------------------------------------------- */
