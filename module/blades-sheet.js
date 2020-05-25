@@ -16,6 +16,8 @@ export class BladesSheet extends ActorSheet {
     if ( this.options.submitOnChange ) {
       html.on("change", "textarea", this._onChangeInput.bind(this));  // Use delegated listener on the form
     }
+
+    html.find(".roll-die-attribute").click(this._onRollAttributeDieClick.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -89,6 +91,18 @@ export class BladesSheet extends ActorSheet {
     items_to_add.forEach(e => {
       this.actor.createEmbeddedEntity("OwnedItem", duplicate(e));
     });
+  }
+  /* -------------------------------------------- */
+
+  /**
+   * Roll an Attribute die.
+   * @param {*} event 
+   */
+  async _onRollAttributeDieClick(event) {
+
+    const attribute_name = $(event.currentTarget).data("rollAttribute");
+    this.actor.rollAttributePopup(attribute_name);
+
   }
   /* -------------------------------------------- */
 

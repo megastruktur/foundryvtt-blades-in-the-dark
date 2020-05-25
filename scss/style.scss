@@ -4,6 +4,8 @@ $gray: #999;
 $red: red;
 $almost_black: #191813;
 $almost_white: #EEEFFF;
+$gold: #DAA520;
+$green: #008000;
 
 // Imports
 @import 'mixin.scss';
@@ -262,6 +264,10 @@ $almost_white: #EEEFFF;
       padding-left: 5px;
     }
 
+    .attribute-label,
+    .attribute-skill-label {
+      text-transform: capitalize;
+    }
     .attributes-exp {
 
       position: relative;
@@ -277,7 +283,7 @@ $almost_white: #EEEFFF;
     
     .attributes-container {
       display: flex;
-      margin: 5px 0px;
+      margin: 3px 0px;
       @include custom_radio(15px, 15px);
 
       * {
@@ -572,6 +578,31 @@ $almost_white: #EEEFFF;
     &:hover .tooltiptext {
       visibility: visible;
     }
+  }
+
+  .blades-die-tooltip {
+
+    .die {
+      font-weight: bold;
+      text-transform: capitalize;
+
+      &.critical-success {
+        color: $gold;
+      }
+
+      &.success {
+        color: $green;
+      }
+
+      &.partial-success {
+        color: $almost_black;
+      }
+
+      &.failure {
+        color: $red;
+      }
+    }
+
   }
   
 }

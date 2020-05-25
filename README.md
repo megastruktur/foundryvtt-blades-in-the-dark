@@ -46,7 +46,7 @@ Crew Types:
 - Clocks
 - Friends/rivals section
 - Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)
-- Dice Rolling
+- Enhance Dice Rolling (ability modifiers)
 
 ## Troubleshooting
 - If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.
