@@ -5,12 +5,14 @@
  */
 
 // Import Modules
-import { preloadHandlebarsTemplates } from "./templates.js";
+import { preloadHandlebarsTemplates } from "./blades-templates.js";
+import { bladesRoll, simpleRollPopup } from "./blades-roll.js";
 import { BladesHelpers } from "./blades-helpers.js";
-import { BladesItem } from "./item.js";
-import { BladesItemSheet } from "./item-sheet.js";
-import { BladesActorSheet } from "./actor-sheet.js";
-import { BladesCrewSheet } from "./crew-sheet.js";
+import { BladesActor } from "./blades-actor.js";
+import { BladesItem } from "./blades-item.js";
+import { BladesItemSheet } from "./blades-item-sheet.js";
+import { BladesActorSheet } from "./blades-actor-sheet.js";
+import { BladesCrewSheet } from "./blades-crew-sheet.js";
 
 window.BladesHelpers = BladesHelpers;
 
@@ -20,11 +22,16 @@ window.BladesHelpers = BladesHelpers;
 Hooks.once("init", async function() {
   console.log(`Initializing Blades In the Dark System`);
 
-	/**
-	 * Set an initiative formula for the system
-	 * @type {String}
-	 */
+  game.blades = {
+    dice: bladesRoll
+  }
+
+  // Define Roll template.
+  // CONFIG.Dice.template = "systems/blades-in-the-dark/templates/blades-roll.html"
+  // CONFIG.Dice.tooltip = "systems/blades-in-the-dark/templates/blades-roll-tooltip.html"
+
   CONFIG.Item.entityClass = BladesItem;
+  CONFIG.Actor.entityClass = BladesActor;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
@@ -138,4 +145,12 @@ Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
   
   BladesHelpers.undoItemLogic(child_data, parent_entity);
   return true;
+});
+// getSceneControlButtons
+Hooks.on("renderSceneControls", async (app, html) => {
+  let dice_roller = $('<li class="scene-control" title="Dice Roll"><i class="fas fa-dice"></i></li>');
+  dice_roller.click(function() {
+    simpleRollPopup();
+  });
+  html.append(dice_roller);
 });

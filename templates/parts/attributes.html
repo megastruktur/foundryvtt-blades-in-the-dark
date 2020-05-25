@@ -1,278 +1,58 @@
 <div id="attributes">
-  <div id="attributes-insight" class="attribute">
-    <div id="attributes-insight-title" class="attributes-exp">
+
+  {{#each data.attributes as |attribute attribute_name|}}
+
+  <div id="attributes-{{attribute_name}}" class="attribute">
+    <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
       <div class="stripe">
-        <label for="insight-exp-0">Insight</label>
+        <label class="attribute-label" for="{{attribute_name}}-exp-0">{{attribute_name}}</label>
+        <a class="roll-die-attribute" data-roll-attribute="{{attribute_name}}" title="Roll"><i class="fas fa-dice"></i></a>
       </div>
       <div class="stripe-tooth-body">
-        {{#multiboxes data.attributes.insight.exp}}
-        <input type="radio" id="insight-exp-0" name="data.attributes.insight.exp" value="0" checked="checked">
-        <input type="radio" id="insight-exp-1" name="data.attributes.insight.exp" value="1">
-        <label for="insight-exp-1"></label>
-        <input type="radio" id="insight-exp-2" name="data.attributes.insight.exp" value="2">
-        <label for="insight-exp-2"></label>
-        <input type="radio" id="insight-exp-3" name="data.attributes.insight.exp" value="3">
-        <label for="insight-exp-3"></label>
-        <input type="radio" id="insight-exp-4" name="data.attributes.insight.exp" value="4">
-        <label for="insight-exp-4"></label>
-        <input type="radio" id="insight-exp-5" name="data.attributes.insight.exp" value="5">
-        <label for="insight-exp-5"></label>
-        <input type="radio" id="insight-exp-6" name="data.attributes.insight.exp" value="6">
-        <label for="insight-exp-6"></label>
+        {{#multiboxes attribute.exp}}
+        <input type="radio" id="{{attribute_name}}-exp-0" name="data.attributes.{{attribute_name}}.exp" value="0" checked="checked">
+        <input type="radio" id="{{attribute_name}}-exp-1" name="data.attributes.{{attribute_name}}.exp" value="1">
+        <label for="{{attribute_name}}-exp-1"></label>
+        <input type="radio" id="{{attribute_name}}-exp-2" name="data.attributes.{{attribute_name}}.exp" value="2">
+        <label for="{{attribute_name}}-exp-2"></label>
+        <input type="radio" id="{{attribute_name}}-exp-3" name="data.attributes.{{attribute_name}}.exp" value="3">
+        <label for="{{attribute_name}}-exp-3"></label>
+        <input type="radio" id="{{attribute_name}}-exp-4" name="data.attributes.{{attribute_name}}.exp" value="4">
+        <label for="{{attribute_name}}-exp-4"></label>
+        <input type="radio" id="{{attribute_name}}-exp-5" name="data.attributes.{{attribute_name}}.exp" value="5">
+        <label for="{{attribute_name}}-exp-5"></label>
+        <input type="radio" id="{{attribute_name}}-exp-6" name="data.attributes.{{attribute_name}}.exp" value="6">
+        <label for="{{attribute_name}}-exp-6"></label>
         {{/multiboxes}}
       </div>
     </div>
     
     {{!-- Skills --}}
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.insight.skills.hunt}}
-      <input type="radio" id="attributes-hunt-0" name="data.attributes.insight.skills.hunt" value="0">
-      <label for="attributes-hunt-0"></label>
-      <input type="radio" id="attributes-hunt-1" name="data.attributes.insight.skills.hunt" value="1">
-      <label for="attributes-hunt-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-hunt-2" name="data.attributes.insight.skills.hunt" value="2">
-      <label for="attributes-hunt-2"></label>
-      <input type="radio" id="attributes-hunt-3" name="data.attributes.insight.skills.hunt" value="3">
-      <label for="attributes-hunt-3"></label>
-      <input type="radio" id="attributes-hunt-4" name="data.attributes.insight.skills.hunt" value="4">
-      <label for="attributes-hunt-4"></label>
-      <div class="attribute-skill-label">Hunt</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.insight.skills.study}}
-      <input type="radio" id="attributes-study-0" name="data.attributes.insight.skills.study" value="0">
-      <label for="attributes-study-0"></label>
-      <input type="radio" id="attributes-study-1" name="data.attributes.insight.skills.study" value="1">
-      <label for="attributes-study-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-study-2" name="data.attributes.insight.skills.study" value="2">
-      <label for="attributes-study-2"></label>
-      <input type="radio" id="attributes-study-3" name="data.attributes.insight.skills.study" value="3">
-      <label for="attributes-study-3"></label>
-      <input type="radio" id="attributes-study-4" name="data.attributes.insight.skills.study" value="4">
-      <label for="attributes-study-4"></label>
-      <div class="attribute-skill-label">Study</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.insight.skills.survey}}
-      <input type="radio" id="attributes-survey-0" name="data.attributes.insight.skills.survey" value="0">
-      <label for="attributes-survey-0"></label>
-      <input type="radio" id="attributes-survey-1" name="data.attributes.insight.skills.survey" value="1">
-      <label for="attributes-survey-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-survey-2" name="data.attributes.insight.skills.survey" value="2">
-      <label for="attributes-survey-2"></label>
-      <input type="radio" id="attributes-survey-3" name="data.attributes.insight.skills.survey" value="3">
-      <label for="attributes-survey-3"></label>
-      <input type="radio" id="attributes-survey-4" name="data.attributes.insight.skills.survey" value="4">
-      <label for="attributes-survey-4"></label>
-      <div class="attribute-skill-label">Survey</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.insight.skills.tinker}}
-      <input type="radio" id="attributes-tinker-0" name="data.attributes.insight.skills.tinker" value="0">
-      <label for="attributes-tinker-0"></label>
-      <input type="radio" id="attributes-tinker-1" name="data.attributes.insight.skills.tinker" value="1">
-      <label for="attributes-tinker-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-tinker-2" name="data.attributes.insight.skills.tinker" value="2">
-      <label for="attributes-tinker-2"></label>
-      <input type="radio" id="attributes-tinker-3" name="data.attributes.insight.skills.tinker" value="3">
-      <label for="attributes-tinker-3"></label>
-      <input type="radio" id="attributes-tinker-4" name="data.attributes.insight.skills.tinker" value="4">
-      <label for="attributes-tinker-4"></label>
-      <div class="attribute-skill-label">Tinker</div>
-      {{/multiboxes}}
-    </div>
 
-  </div>
-
-  <div id="attributes-prowess" class="attribute">
-    <div id="attributes-prowess-title" class="attributes-exp">
-      <div class="stripe">
-        <label for="prowess-exp-0">Prowess</label>
-      </div>
-      <div class="stripe-tooth-body">
-        {{#multiboxes data.attributes.prowess.exp}}
-        <input type="radio" id="prowess-exp-0" name="data.attributes.prowess.exp" value="0" checked="checked">
-        <input type="radio" id="prowess-exp-1" name="data.attributes.prowess.exp" value="1">
-        <label for="prowess-exp-1"></label>
-        <input type="radio" id="prowess-exp-2" name="data.attributes.prowess.exp" value="2">
-        <label for="prowess-exp-2"></label>
-        <input type="radio" id="prowess-exp-3" name="data.attributes.prowess.exp" value="3">
-        <label for="prowess-exp-3"></label>
-        <input type="radio" id="prowess-exp-4" name="data.attributes.prowess.exp" value="4">
-        <label for="prowess-exp-4"></label>
-        <input type="radio" id="prowess-exp-5" name="data.attributes.prowess.exp" value="5">
-        <label for="prowess-exp-5"></label>
-        <input type="radio" id="prowess-exp-6" name="data.attributes.prowess.exp" value="6">
-        <label for="prowess-exp-6"></label>
+    {{#each attribute.skills as |skill skill_name|}}
+    <div class="flex-horizontal">
+      <div class="attributes-container">
+        {{#multiboxes skill}}
+        <input type="radio" id="attributes-{{skill_name}}-0" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="0">
+        <label for="attributes-{{skill_name}}-0"></label>
+        <input type="radio" id="attributes-{{skill_name}}-1" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="1">
+        <label for="attributes-{{skill_name}}-1"></label>
+        <span>|</span>
+        <input type="radio" id="attributes-{{skill_name}}-2" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="2">
+        <label for="attributes-{{skill_name}}-2"></label>
+        <input type="radio" id="attributes-{{skill_name}}-3" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="3">
+        <label for="attributes-{{skill_name}}-3"></label>
+        <input type="radio" id="attributes-{{skill_name}}-4" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="4">
+        <label for="attributes-{{skill_name}}-4"></label>
+        <div class="attribute-skill-label">{{skill_name}}</div>
         {{/multiboxes}}
       </div>
+      <a class="roll-die-attribute" data-roll-attribute="{{skill_name}}" title="Roll"><i class="fas fa-dice"></i></a>
     </div>
-    
-    {{!-- Skills --}}
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.prowess.skills.finesse}}
-      <input type="radio" id="attributes-finesse-0" name="data.attributes.prowess.skills.finesse" value="0">
-      <label for="attributes-finesse-0"></label>
-      <input type="radio" id="attributes-finesse-1" name="data.attributes.prowess.skills.finesse" value="1">
-      <label for="attributes-finesse-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-finesse-2" name="data.attributes.prowess.skills.finesse" value="2">
-      <label for="attributes-finesse-2"></label>
-      <input type="radio" id="attributes-finesse-3" name="data.attributes.prowess.skills.finesse" value="3">
-      <label for="attributes-finesse-3"></label>
-      <input type="radio" id="attributes-finesse-4" name="data.attributes.prowess.skills.finesse" value="4">
-      <label for="attributes-finesse-4"></label>
-      <div class="attribute-skill-label">Finesse</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.prowess.skills.prowl}}
-      <input type="radio" id="attributes-prowl-0" name="data.attributes.prowess.skills.prowl" value="0">
-      <label for="attributes-prowl-0"></label>
-      <input type="radio" id="attributes-prowl-1" name="data.attributes.prowess.skills.prowl" value="1">
-      <label for="attributes-prowl-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-prowl-2" name="data.attributes.prowess.skills.prowl" value="2">
-      <label for="attributes-prowl-2"></label>
-      <input type="radio" id="attributes-prowl-3" name="data.attributes.prowess.skills.prowl" value="3">
-      <label for="attributes-prowl-3"></label>
-      <input type="radio" id="attributes-prowl-4" name="data.attributes.prowess.skills.prowl" value="4">
-      <label for="attributes-prowl-4"></label>
-      <div class="attribute-skill-label">Prowl</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.prowess.skills.skirmish}}
-      <input type="radio" id="attributes-skirmish-0" name="data.attributes.prowess.skills.skirmish" value="0">
-      <label for="attributes-skirmish-0"></label>
-      <input type="radio" id="attributes-skirmish-1" name="data.attributes.prowess.skills.skirmish" value="1">
-      <label for="attributes-skirmish-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-skirmish-2" name="data.attributes.prowess.skills.skirmish" value="2">
-      <label for="attributes-skirmish-2"></label>
-      <input type="radio" id="attributes-skirmish-3" name="data.attributes.prowess.skills.skirmish" value="3">
-      <label for="attributes-skirmish-3"></label>
-      <input type="radio" id="attributes-skirmish-4" name="data.attributes.prowess.skills.skirmish" value="4">
-      <label for="attributes-skirmish-4"></label>
-      <div class="attribute-skill-label">Skirmish</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.prowess.skills.wreck}}
-      <input type="radio" id="attributes-wreck-0" name="data.attributes.prowess.skills.wreck" value="0">
-      <label for="attributes-wreck-0"></label>
-      <input type="radio" id="attributes-wreck-1" name="data.attributes.prowess.skills.wreck" value="1">
-      <label for="attributes-wreck-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-wreck-2" name="data.attributes.prowess.skills.wreck" value="2">
-      <label for="attributes-wreck-2"></label>
-      <input type="radio" id="attributes-wreck-3" name="data.attributes.prowess.skills.wreck" value="3">
-      <label for="attributes-wreck-3"></label>
-      <input type="radio" id="attributes-wreck-4" name="data.attributes.prowess.skills.wreck" value="4">
-      <label for="attributes-wreck-4"></label>
-      <div class="attribute-skill-label">Wreck</div>
-      {{/multiboxes}}
-    </div>
+    {{/each}}
 
   </div>
+  {{/each}}
 
 
-  <div id="attributes-resolve" class="attribute">
-    <div id="attributes-resolve-title" class="attributes-exp">
-      <div class="stripe">
-        <label for="resolve-exp-0">Resolve</label>
-      </div>
-      <div class="stripe-tooth-body">
-        {{#multiboxes data.attributes.resolve.exp}}
-        <input type="radio" id="resolve-exp-0" name="data.attributes.resolve.exp" value="0" checked="checked">
-        <input type="radio" id="resolve-exp-1" name="data.attributes.resolve.exp" value="1">
-        <label for="resolve-exp-1"></label>
-        <input type="radio" id="resolve-exp-2" name="data.attributes.resolve.exp" value="2">
-        <label for="resolve-exp-2"></label>
-        <input type="radio" id="resolve-exp-3" name="data.attributes.resolve.exp" value="3">
-        <label for="resolve-exp-3"></label>
-        <input type="radio" id="resolve-exp-4" name="data.attributes.resolve.exp" value="4">
-        <label for="resolve-exp-4"></label>
-        <input type="radio" id="resolve-exp-5" name="data.attributes.resolve.exp" value="5">
-        <label for="resolve-exp-5"></label>
-        <input type="radio" id="resolve-exp-6" name="data.attributes.resolve.exp" value="6">
-        <label for="resolve-exp-6"></label>
-        {{/multiboxes}}
-      </div>
-    </div>
-
-    {{!-- Skills --}}
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.resolve.skills.attune}}
-      <input type="radio" id="attributes-attune-0" name="data.attributes.resolve.skills.attune" value="0">
-      <label for="attributes-attune-0"></label>
-      <input type="radio" id="attributes-attune-1" name="data.attributes.resolve.skills.attune" value="1">
-      <label for="attributes-attune-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-attune-2" name="data.attributes.resolve.skills.attune" value="2">
-      <label for="attributes-attune-2"></label>
-      <input type="radio" id="attributes-attune-3" name="data.attributes.resolve.skills.attune" value="3">
-      <label for="attributes-attune-3"></label>
-      <input type="radio" id="attributes-attune-4" name="data.attributes.resolve.skills.attune" value="4">
-      <label for="attributes-attune-4"></label>
-      <div class="attribute-skill-label">Attune</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.resolve.skills.command}}
-      <input type="radio" id="attributes-command-0" name="data.attributes.resolve.skills.command" value="0">
-      <label for="attributes-command-0"></label>
-      <input type="radio" id="attributes-command-1" name="data.attributes.resolve.skills.command" value="1">
-      <label for="attributes-command-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-command-2" name="data.attributes.resolve.skills.command" value="2">
-      <label for="attributes-command-2"></label>
-      <input type="radio" id="attributes-command-3" name="data.attributes.resolve.skills.command" value="3">
-      <label for="attributes-command-3"></label>
-      <input type="radio" id="attributes-command-4" name="data.attributes.resolve.skills.command" value="4">
-      <label for="attributes-command-4"></label>
-      <div class="attribute-skill-label">Command</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.resolve.skills.consort}}
-      <input type="radio" id="attributes-consort-0" name="data.attributes.resolve.skills.consort" value="0">
-      <label for="attributes-consort-0"></label>
-      <input type="radio" id="attributes-consort-1" name="data.attributes.resolve.skills.consort" value="1">
-      <label for="attributes-consort-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-consort-2" name="data.attributes.resolve.skills.consort" value="2">
-      <label for="attributes-consort-2"></label>
-      <input type="radio" id="attributes-consort-3" name="data.attributes.resolve.skills.consort" value="3">
-      <label for="attributes-consort-3"></label>
-      <input type="radio" id="attributes-consort-4" name="data.attributes.resolve.skills.consort" value="4">
-      <label for="attributes-consort-4"></label>
-      <div class="attribute-skill-label">Consort</div>
-      {{/multiboxes}}
-    </div>
-    <div class="attributes-container">
-      {{#multiboxes data.attributes.resolve.skills.sway}}
-      <input type="radio" id="attributes-sway-0" name="data.attributes.resolve.skills.sway" value="0">
-      <label for="attributes-sway-0"></label>
-      <input type="radio" id="attributes-sway-1" name="data.attributes.resolve.skills.sway" value="1">
-      <label for="attributes-sway-1"></label>
-      <span>|</span>
-      <input type="radio" id="attributes-sway-2" name="data.attributes.resolve.skills.sway" value="2">
-      <label for="attributes-sway-2"></label>
-      <input type="radio" id="attributes-sway-3" name="data.attributes.resolve.skills.sway" value="3">
-      <label for="attributes-sway-3"></label>
-      <input type="radio" id="attributes-sway-4" name="data.attributes.resolve.skills.sway" value="4">
-      <label for="attributes-sway-4"></label>
-      <div class="attribute-skill-label">Sway</div>
-      {{/multiboxes}}
-    </div>
-
-</div>
 </div>
