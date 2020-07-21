@@ -38,16 +38,16 @@
 
       <div class="label-stripe">Gang Type</div>
       <div id="gang-type-boxes" class="flex-horizontal">
-        {{#multiboxes ../data.gang_type}}
-          {{#each ../../data.gang_type_list as |gang_type key|}}
+        {{#multiboxes data.gang_type}}
+          {{#each data.gang_type_list as |gang_type key|}}
             <input id="gang-type-{{key}}" type="checkbox" name="data.gang_type" value="{{key}}">
             <label for="gang-type-{{key}}">{{gang_type.label}}</label>
           {{/each}}
         {{/multiboxes}}
       </div>
       <div id="selected-gang-description" class="description">
-        {{#each ../data.gang_type as |gang_type key|}}
-          {{#with (lookup ../../data.gang_type_list gang_type)}}
+        {{#each data.gang_type as |gang_type key|}}
+          {{#with (lookup ../data.gang_type_list gang_type)}}
             {{description}}
           {{/with}}
         {{/each}}
@@ -57,7 +57,7 @@
 
     {{#if (eq data.cohort.[0] "Expert")}}
       <div class="label-stripe">Expert Type</div>
-      <input type="text" name="data.expert_type" value="{{../data.expert_type}}">
+      <input type="text" name="data.expert_type" value="{{data.expert_type}}">
     {{/if}}
   </section>
 

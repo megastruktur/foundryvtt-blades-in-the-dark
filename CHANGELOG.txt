@@ -1,3 +1,5 @@
-v0.6.0
+v0.7.0
 
-- Adds Dice Rolls
+- Fix Dice rolls
+- Fix Cohorts
+- Get ready for FoundryVTT 0.7.0
