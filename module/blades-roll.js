@@ -5,26 +5,22 @@
  */
 export async function bladesRoll(dice_amount, attribute_name = "") {
 
+  // Is Dice So Nice enabled ?
+  let niceDice = false;
+  
+  try {
+    niceDice = game.settings.get('dice-so-nice', 'settings').enabled;      
+  } catch {
+    console.log("Dice-is-nice! not enabled");
+  }
 
- // Is Dice So Nice enabled ?
-    let niceDice = '';
-        try {
-      niceDice = true;
-      game.settings.get('dice-so-nice', 'settings').enabled;
-          
-    } catch {
-      niceDice = false;
-    }
+  // Is FoundryVTT core version >= 0.7.0 ?
+  //  if using >= 0.7.0 New api calls enabled and DiceSoNice disabled until module update
+  //  if using < 0.7.0 Old Roll API calls used and DiceSoNice enabled
 
-// Is FoundryVTT core version >= 0.7.0 ?  
-//  if using >= 0.7.0 New api calls enabled and DiceSoNice disabled until module update
-// if using < 0.7.0 Old Roll API calls used and DiceSoNice enabled 
+  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
 
- let isBelow070 = isNewerVersion('0.7.0', game.data.version);
-   if (isBelow070==false) {niceDice=false;}
-
-
-
+  if (isBelow070 == false) { niceDice=false; }
 
   let speaker = ChatMessage.getSpeaker();
   // ChatMessage.getSpeaker(controlledToken)
@@ -35,16 +31,12 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
 
   let r = new Roll( `${dice_amount}d6`, {} );
 
-  r.roll();
-
-
   // show 3d Dice so Nice if enabled
   if (niceDice) {
-          
-  game.dice3d.showForRoll(r).then(displayed => {   });
-
+    game.dice3d.showForRoll(r).then(displayed => {});
+  } else {
+    r.roll();
   }
-
 
   // r.toMessage();
 
@@ -52,15 +44,51 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
   // but I want to get my hands into this directly, and I think players 
   // will want to see all the dice happening.
 
-  let rolls='';
-  let sorted_rolls='';
+  let rolls = [];
+  if (isBelow070) {
+    rolls = (r.parts)[0].rolls;
+  } else {
+    rolls = (r.terms)[0].results;
+  }
 
-  if (isBelow070) { rolls = (r.parts)[0].rolls;} else { rolls = (r.terms)[0].results; }
+  // Retrieve Roll status.
+  let roll_status = getBladesRollStatus(rolls, zeromode);
 
+  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name});
 
+  let messageData = {
+    speaker: speaker,
+    content: result,
+    type: CONST.CHAT_MESSAGE_TYPES.OOC,
+    roll: r
+  }
+
+  CONFIG.ChatMessage.entityClass.create(messageData, {})
+
+  return result;
+}
+
+/**
+ * Get status of the Roll.
+ *  - failure
+ *  - partial-success
+ *  - success
+ *  - critical-success
+ * @param {Array} rolls 
+ * @param {Boolean} zeromode 
+ */
+export function getBladesRollStatus(rolls, zeromode = false) {
+
+  // Dice API has changed in 0.7.0 so need to keep that in mind.
+  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
+
+  let sorted_rolls = [];
   // Sort roll values from lowest to highest.
-  if (isBelow070) {  sorted_rolls = rolls.map(i => i.roll).sort(); } else { sorted_rolls = rolls.map(i => i.result).sort(); }
-
+  if (isBelow070) {
+    sorted_rolls = rolls.map(i => i.roll).sort();
+  } else {
+    sorted_rolls = rolls.map(i => i.result).sort();
+  }
 
   let roll_status = "failure"
 
@@ -104,19 +132,10 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
 
   }
 
-  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name});
+  return roll_status;
 
-  let messageData = {
-    speaker: speaker,
-    content: result,
-    type: CONST.CHAT_MESSAGE_TYPES.OOC,
-    roll: r
-  }
-
-  CONFIG.ChatMessage.entityClass.create(messageData, {})
-
-  return result;
 }
+
 
 /**
  * Call a Roll popup.
