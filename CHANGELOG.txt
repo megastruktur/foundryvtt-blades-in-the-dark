@@ -1,5 +1,5 @@
-v0.7.0
+v0.7.1
 
-- Fix Dice rolls
-- Fix Cohorts
-- Get ready for FoundryVTT 0.7.0
+- Adds Dice-so-nice support for FoundryVTT <0.7.0
+- Adds a proper Dice backward compatibility support (FVTT <0.7.0)
+- Refactors Dice functionality a bit

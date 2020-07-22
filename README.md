@@ -4,6 +4,10 @@
 
 Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
 
+Contributors:
+- `megastruktur#5704`
+- `Tyronne I’Saurus#5415`
+
 ## Usage
 `"Item" - all classes, crew types, upgrades, items, abilities, upgrades, etc.`
 
@@ -43,10 +47,8 @@ Crew Types:
 ![alt screen][screenshot_compendium]
 
 ## To be done in the nearest future
-- Clocks
 - Friends/rivals section
 - Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)
-- Enhance Dice Rolling (ability modifiers)
 
 ## Troubleshooting
 - If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.
