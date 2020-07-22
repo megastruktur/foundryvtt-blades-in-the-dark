@@ -5,6 +5,27 @@
  */
 export async function bladesRoll(dice_amount, attribute_name = "") {
 
+
+ // Is Dice So Nice enabled ?
+    let niceDice = '';
+        try {
+      niceDice = true;
+      game.settings.get('dice-so-nice', 'settings').enabled;
+          
+    } catch {
+      niceDice = false;
+    }
+
+// Is FoundryVTT core version >= 0.7.0 ?  
+//  if using >= 0.7.0 New api calls enabled and DiceSoNice disabled until module update
+// if using < 0.7.0 Old Roll API calls used and DiceSoNice enabled 
+
+ let isBelow070 = isNewerVersion('0.7.0', game.data.version);
+   if (isBelow070==false) {niceDice=false;}
+
+
+
+
   let speaker = ChatMessage.getSpeaker();
   // ChatMessage.getSpeaker(controlledToken)
   let zeromode = false;
@@ -15,16 +36,30 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
   let r = new Roll( `${dice_amount}d6`, {} );
 
   r.roll();
+
+
+  // show 3d Dice so Nice if enabled
+  if (niceDice) {
+          
+  game.dice3d.showForRoll(r).then(displayed => {   });
+
+  }
+
+
   // r.toMessage();
 
   // Might be better as a DicePool with keep high/keep low intelligence, 
   // but I want to get my hands into this directly, and I think players 
   // will want to see all the dice happening.
 
-  let rolls = (r.parts)[0].rolls;
-  
+  let rolls='';
+  let sorted_rolls='';
+
+  if (isBelow070) { rolls = (r.parts)[0].rolls;} else { rolls = (r.terms)[0].results; }
+
+
   // Sort roll values from lowest to highest.
-  let sorted_rolls = rolls.map(i => i.roll).sort();
+  if (isBelow070) {  sorted_rolls = rolls.map(i => i.roll).sort(); } else { sorted_rolls = rolls.map(i => i.result).sort(); }
 
 
   let roll_status = "failure"
