@@ -14,15 +14,6 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
     console.log("Dice-is-nice! not enabled");
   }
 
-  // Is FoundryVTT core version >= 0.7.0 ?
-  //  if using >= 0.7.0 New api calls enabled and DiceSoNice disabled until module update
-  //  if using < 0.7.0 Old Roll API calls used and DiceSoNice enabled
-
-  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
-
-  if (isBelow070 == false) { niceDice=false; }
-
-  let speaker = ChatMessage.getSpeaker();
   // ChatMessage.getSpeaker(controlledToken)
   let zeromode = false;
   
@@ -33,18 +24,29 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
 
   // show 3d Dice so Nice if enabled
   if (niceDice) {
-    game.dice3d.showForRoll(r).then(displayed => {});
+    game.dice3d.showForRoll(r).then((displayed, zeromode, attribute_name) => {
+      showChatRollMessage(r, zeromode, attribute_name);
+    });
   } else {
     r.roll();
+    showChatRollMessage(r, zeromode, attribute_name)
   }
+}
 
-  // r.toMessage();
-
-  // Might be better as a DicePool with keep high/keep low intelligence, 
-  // but I want to get my hands into this directly, and I think players 
-  // will want to see all the dice happening.
-
+/**
+ * Shows Chat message.
+ *
+ * @param {Roll} r 
+ * @param {Boolean} zeromode
+ * @param {String} attribute_name
+ */
+async function showChatRollMessage(r, zeromode, attribute_name = "") {
+  
+  let speaker = ChatMessage.getSpeaker();
+  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
   let rolls = [];
+  
+  // Backward Compat for rolls.
   if (isBelow070) {
     rolls = (r.parts)[0].rolls;
   } else {
@@ -64,8 +66,6 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
   }
 
   CONFIG.ChatMessage.entityClass.create(messageData, {})
-
-  return result;
 }
 
 /**

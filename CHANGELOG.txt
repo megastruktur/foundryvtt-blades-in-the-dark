@@ -1,5 +1,4 @@
-v0.7.1
+v0.7.2
 
-- Adds Dice-so-nice support for FoundryVTT <0.7.0
-- Adds a proper Dice backward compatibility support (FVTT <0.7.0)
-- Refactors Dice functionality a bit
+- Adds Dice-so-nice! compatibility for FoundryVTT 0.7.x
+ 
