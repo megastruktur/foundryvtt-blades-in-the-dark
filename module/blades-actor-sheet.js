@@ -36,18 +36,27 @@ export class BladesActorSheet extends BladesSheet {
 			"heavy","Encumbered","over max"];
     let mule_present=0;
  
-   //Sanity Check
-   if (loadout<0){loadout=0};
-   if (loadout>10){loadout=10};
+    //Sanity Check
+    if (loadout < 0) {
+      loadout = 0;
+    }
+    if (loadout > 10) {
+      loadout = 10;
+    }
 
     //look for Mule ability
-    data.items.forEach(i => {if (i.type=="ability" && i.name=="(C) Mule") {  mule_present=1;}  });
+    data.items.forEach(i => {
+      if (i.type=="ability" && i.name=="(C) Mule") {
+        mule_present = 1;
+      }
+    });
 
     //set encumbrance level
-    if (mule_present) { data.data.load_level=mule_level[loadout]; } else 
-      {
+    if (mule_present) {
+      data.data.load_level=mule_level[loadout];
+    } else {
       data.data.load_level=load_level[loadout];   
-      }
+    }
 
     return data;
   }
