@@ -498,12 +498,17 @@
 * .coins input:checked + label {
   background-color: #DAA520;
 }
-* .coins label {
+* .coins input ~ label {
   margin-right: 3px;
   margin-bottom: 3px;
+  cursor: pointer;
+  transition: background-color 0.25s;
 }
-* .coins label[for$="0"] {
+* .coins input ~ label[for$="0"] {
   border-width: 2px;
+}
+* .coins input ~ label:hover {
+  background-color: #ae8319;
 }
 * .coins.coins-hands {
   width: 36px;

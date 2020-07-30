@@ -7,6 +7,8 @@ $almost_white: #EEEFFF;
 $gold: #DAA520;
 $green: #008000;
 
+$transition-period: 0.25s;
+
 // Imports
 @import 'mixin.scss';
 
@@ -135,7 +137,7 @@ $green: #008000;
   }
 
   .rollable-text {
-    transition: color 0.25s;
+    transition: color $transition-period;
   }
   .rollable-text:hover {
     color: $red;
@@ -351,12 +353,18 @@ $green: #008000;
     @include custom_radio_square($coin_size);
     flex-wrap: wrap;
 
-    label {
+    input ~ label {
       margin-right: $coin_margin;
       margin-bottom: $coin_margin;
 
       &[for$="0"] {
         border-width: 2px;
+      }
+
+      cursor: pointer;
+      transition: background-color $transition-period;
+      &:hover {
+        background-color: darken($color: $gold, $amount: 10%)
       }
     }
 
