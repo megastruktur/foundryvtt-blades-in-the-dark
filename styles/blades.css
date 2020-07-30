@@ -124,6 +124,9 @@
 * .description {
   font-style: italic;
 }
+* .rollable-text:hover {
+  color: red;
+}
 * .big-teeth-section {
   border-top: 3px solid #191813;
   display: flex;
@@ -359,6 +362,7 @@
 }
 * #attributes .attribute-label,
 * #attributes .attribute-skill-label {
+  transition: color 0.25s;
   text-transform: capitalize;
 }
 * #attributes .attributes-exp {

@@ -134,6 +134,10 @@ $green: #008000;
     font-style: italic;
   }
 
+  .rollable-text:hover {
+    color: $red;
+  }
+
   // Stress and Trauma
 
   .big-teeth-section {
@@ -266,6 +270,7 @@ $green: #008000;
 
     .attribute-label,
     .attribute-skill-label {
+      transition: color 0.25s;
       text-transform: capitalize;
     }
     .attributes-exp {
