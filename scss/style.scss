@@ -134,8 +134,12 @@ $green: #008000;
     font-style: italic;
   }
 
+  .rollable-text {
+    transition: color 0.25s;
+  }
   .rollable-text:hover {
     color: $red;
+    cursor: pointer;
   }
 
   // Stress and Trauma
@@ -270,7 +274,6 @@ $green: #008000;
 
     .attribute-label,
     .attribute-skill-label {
-      transition: color 0.25s;
       text-transform: capitalize;
     }
     .attributes-exp {
