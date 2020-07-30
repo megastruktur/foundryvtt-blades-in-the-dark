@@ -125,7 +125,7 @@
   font-style: italic;
 }
 * .rollable-text {
-  transition: color 0.25s;
+  transition: color 0.2s;
 }
 * .rollable-text:hover {
   color: red;
@@ -502,7 +502,7 @@
   margin-right: 3px;
   margin-bottom: 3px;
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: background-color 0.2s;
 }
 * .coins input ~ label[for$="0"] {
   border-width: 2px;
