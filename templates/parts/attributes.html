@@ -5,7 +5,7 @@
   <div id="attributes-{{attribute_name}}" class="attribute">
     <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
       <div class="stripe">
-        <label class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}" for="{{attribute_name}}-exp-0" .roll-die-attribute>{{attribute_name}}</label>
+        <label class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}" for="{{attribute_name}}-exp-0" .roll-die-attribute>{{caps attribute_name}}</label>
       </div>
       <div class="stripe-tooth-body">
         {{#multiboxes attribute.exp}}
@@ -43,7 +43,7 @@
         <label for="attributes-{{skill_name}}-3"></label>
         <input type="radio" id="attributes-{{skill_name}}-4" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="4">
         <label for="attributes-{{skill_name}}-4"></label>
-        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{skill_name}}</div>
+        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{caps skill_name}}</div>
         {{/multiboxes}}
       </div>
     </div>
