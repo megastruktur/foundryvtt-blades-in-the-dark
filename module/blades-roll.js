@@ -24,7 +24,7 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
 
   // show 3d Dice so Nice if enabled
   if (niceDice) {
-    game.dice3d.showForRoll(r).then((displayed, zeromode, attribute_name) => {
+    game.dice3d.showForRoll(r).then((displayed) => {
       showChatRollMessage(r, zeromode, attribute_name);
     });
   } else {
