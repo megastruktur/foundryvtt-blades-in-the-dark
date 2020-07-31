@@ -1,6 +1,4 @@
-v0.7.3
+v0.7.4
 
-- Display encumbrance level (light/normal/heavy)
-- Added Support for (cu) Mule ability in encumbrance display
-- Fixed bug with turf count
+- Fixes bug with 0d rolling
  
