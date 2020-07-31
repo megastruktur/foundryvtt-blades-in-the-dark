@@ -366,7 +366,11 @@
 }
 * #attributes .attribute-label,
 * #attributes .attribute-skill-label {
-  text-transform: capitalize;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+* #attributes .attribute-skill-label {
+  letter-spacing: 1px;
 }
 * #attributes .attributes-exp {
   position: relative;

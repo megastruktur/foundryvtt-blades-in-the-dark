@@ -277,7 +277,11 @@ $transition-period: 0.2s;
 
     .attribute-label,
     .attribute-skill-label {
-      text-transform: capitalize;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .attribute-skill-label {
+      letter-spacing: 1px;
     }
     .attributes-exp {
 
