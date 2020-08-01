@@ -2,8 +2,10 @@
  * Roll Dice.
  * @param {int} dice_amount 
  * @param {string} attribute_name 
+ * @param {string} position
+ * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "") {
+export async function bladesRoll(dice_amount, attribute_name = "", position="risky", effect="standard") {
 
   // Is Dice So Nice enabled ?
   let niceDice = false;
@@ -25,11 +27,11 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
   // show 3d Dice so Nice if enabled
   if (niceDice) {
     game.dice3d.showForRoll(r).then((displayed) => {
-      showChatRollMessage(r, zeromode, attribute_name);
+      showChatRollMessage(r, zeromode, attribute_name, position, effect);
     });
   } else {
     r.roll();
-    showChatRollMessage(r, zeromode, attribute_name)
+    showChatRollMessage(r, zeromode, attribute_name, position, effect)
   }
 }
 
@@ -39,8 +41,10 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
  * @param {Roll} r 
  * @param {Boolean} zeromode
  * @param {String} attribute_name
+ * @param {string} position
+ * @param {string} effect
  */
-async function showChatRollMessage(r, zeromode, attribute_name = "") {
+async function showChatRollMessage(r, zeromode, attribute_name = "", position="", effect="") {
   
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
@@ -56,7 +60,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "") {
   // Retrieve Roll status.
   let roll_status = getBladesRollStatus(rolls, zeromode);
 
-  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name});
+  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name, position: position, effect: effect});
 
   let messageData = {
     speaker: speaker,

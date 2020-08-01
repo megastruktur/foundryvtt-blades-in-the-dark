@@ -1,25 +1,73 @@
 <div class="dice-tooltip blades-die-tooltip">
-  <div class="die {{roll_status}}">
-    {{#if attribute_name}}Roll {{attribute_name}}: {{/if}}
-    {{#if (eq roll_status "critical-success")}}
-    Critical Success!
-    {{/if}}
+  {{#if attribute_name}}<div class="chat-label label-stripe-chat">{{attribute_name}}</div>{{/if}}
+  {{#if position}}
+    <div class="chat-label-small label-stripe-chat-small">
+      {{position}} | {{effect}}
+    </div>
+  {{/if}}
 
-    {{#if (eq roll_status "success")}}
-    Success!
-    {{/if}}
+  {{#if (eq roll_status "critical-success")}}
+  <div class="die {{roll_status}}">Critical Success!</div>
+  <div class="description">
+    <p>
+      You do it with <strong>increased effect</strong>.
+    </p>
+  </div>
+  {{/if}}
 
-    {{#if (eq roll_status "partial-success")}}
-    Partial Success
-    {{/if}}
+  {{#if (eq roll_status "success")}}
+  <div class="die {{roll_status}}">Success!</div>
+  <div class="description">
+    <p>
+      You do it.
+    </p>
+  </div>
+  {{/if}}
 
-    {{#if (eq roll_status "failure")}}
-    Failure
-    {{/if}}
+  {{#if (eq roll_status "partial-success")}}
+  <div class="die {{roll_status}}">Partial Success</div>
+  <div class="description">
+    <p>
+      {{#if (eq position "controlled")}}
+      You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a <strong>minor
+        complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser
+        harm</strong>,
+      you end up in a <strong>risky</strong> position.
+      {{else if (eq position "risky")}}
+      You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs,
+      you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.
+      {{else}}
+      You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious
+            complication</strong> occurs, you have <strong>reduced effect</strong>.
+          {{/if}}
+    </p>
+  </div>
+  {{/if}}
+
+  {{#if (eq roll_status "failure")}}
+  <div class="die {{roll_status}}">Failure</div>
+  <div class="description">
+    <p>
+      {{#if (eq position "controlled")}}
+      You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach.
+      {{else if (eq position "risky")}}
+      Things go badly. You suffer <strong>harm</strong> a <strong>complication</strong> occurs, you end up in a
+      <strong>desperate</strong> position, you <strong>lose this opportunity</strong>.
+      {{else}}
+      It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication occurs</strong>,
+      you <strong>lose this opportunity for action</strong>.
+      {{/if}}
+    </p>
+  </div>
+  {{/if}}
 
   <ol class="dice-rolls">
     {{#each this.rolls}}
-      <li class="roll die d6">{{{this.result}}}</li>
+    {{#if this.result}}
+    <li class="roll die d6">{{{this.result}}}</li>
+    {{else}}
+    <li class="roll die d6">{{{this.roll}}}</li>
+    {{/if}}
     {{/each}}
-</ol>
+  </ol>
 </div>
