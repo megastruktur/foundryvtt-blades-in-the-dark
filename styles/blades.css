@@ -1,5 +1,8 @@
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
 /*
- * Toothradio
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
 /*
  * Custom Radio
@@ -128,8 +131,8 @@
   transition: color 0.2s;
 }
 * .rollable-text:hover {
-  color: red;
   cursor: pointer;
+  color: red;
 }
 * .big-teeth-section {
   border-top: 3px solid #191813;
@@ -158,6 +161,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * .big-teeth-section .big-teeth label:last-of-type {
   margin-right: 0px;
@@ -168,6 +173,10 @@
   background-image: none !important;
   background: #191813 !important;
   margin-right: 0px;
+}
+* .big-teeth-section .big-teeth label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * .big-teeth-section .big-teeth input {
   display: none;
@@ -190,6 +199,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
+  cursor: not-allowed;
 }
 * .big-teeth-section .small-teeth-container .small-teeth-wrap label:last-of-type {
   margin-right: 0px;
@@ -228,7 +238,13 @@
   -ms-user-select: none;
   user-select: none;
   margin-right: 10px;
+  transition: filter 0.1s;
+  cursor: pointer;
   /* Hide the browser's default checkbox */
+}
+* .big-teeth-section #trauma-list label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * .big-teeth-section #trauma-list label input {
   display: none;
@@ -266,6 +282,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * .teeth-experience label:last-of-type {
   margin-right: 0px;
@@ -276,6 +294,10 @@
   background-image: none !important;
   background: #191813 !important;
   margin-right: 0px;
+}
+* .teeth-experience label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * .teeth-experience input {
   display: none;
@@ -322,6 +344,12 @@
   height: 100%;
   transform-origin: 0% 100%;
   background-color: red;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #harm-armor #character-health-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #harm-armor #character-health-clock input {
   position: absolute;
@@ -390,6 +418,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * #attributes .attributes-exp .stripe-tooth-body label:last-of-type {
   margin-right: 0px;
@@ -400,6 +430,10 @@
   background-image: none !important;
   background: #191813 !important;
   margin-right: 0px;
+}
+* #attributes .attributes-exp .stripe-tooth-body label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #attributes .attributes-exp .stripe-tooth-body input {
   display: none;
@@ -423,6 +457,8 @@
   vertical-align: middle;
   border: 2px solid #191813;
   border-radius: 24px;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * #attributes .attributes-container label[for$="-0"] {
   height: 5px;
@@ -431,6 +467,10 @@
   background-image: none !important;
   background-color: red !important;
   margin-right: 0px;
+}
+* #attributes .attributes-container label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #attributes .attributes-container input {
   display: none;
@@ -489,9 +529,15 @@
   background-color: #DAA520;
   vertical-align: middle;
   border: 1px solid #191813;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * .coins label[for$="-0"] {
   margin-right: 0px;
+}
+* .coins label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * .coins input {
   display: none;
@@ -505,14 +551,15 @@
 * .coins input ~ label {
   margin-right: 3px;
   margin-bottom: 3px;
+  transition: filter 0.2s;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 * .coins input ~ label[for$="0"] {
   border-width: 2px;
 }
 * .coins input ~ label:hover {
-  background-color: #ae8319;
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * .coins.coins-hands {
   width: 36px;
@@ -532,9 +579,15 @@
   background-color: #DAA520;
   vertical-align: middle;
   border: 1px solid #191813;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * .crew-coins label[for$="-0"] {
   margin-right: 0px;
+}
+* .crew-coins label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * .crew-coins input {
   display: none;
@@ -561,6 +614,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 * #crew-reputation label:last-of-type {
   margin-right: 0px;
@@ -571,6 +626,10 @@
   background-image: none !important;
   background: #191813 !important;
   margin-right: 0px;
+}
+* #crew-reputation label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #crew-reputation input {
   display: none;
@@ -600,12 +659,18 @@
   margin-right: 0px;
 }
 * #turf-list.section-non-editable .turf-block {
+  transition: filter 0.1s;
+  cursor: pointer;
   width: 130px;
   height: 100px;
   background-color: #CCC;
   position: relative;
   margin: 20px;
   flex-grow: initial;
+}
+* #turf-list.section-non-editable .turf-block:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #turf-list.section-non-editable .turf-block.turf-selected .connector {
   background-color: #999;
@@ -665,12 +730,18 @@
   left: -7px;
 }
 * #turf-list.section-editable .turf-block {
+  transition: filter 0.1s;
+  cursor: pointer;
   width: 130px;
   height: 125px;
   background-color: #CCC;
   position: relative;
   margin: 20px;
   flex-grow: initial;
+}
+* #turf-list.section-editable .turf-block:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #turf-list.section-editable .turf-block.turf-selected .connector {
   background-color: #999;
@@ -736,6 +807,14 @@
   width: 221px;
 }
 * #crew-hold label {
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #crew-hold label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* #crew-hold label {
   height: 50px;
   width: 17px;
   background-image: url("assets/teeth/stresstooth-halfgrey.png");
@@ -761,6 +840,14 @@
   border-top: 3px solid #191813;
   display: flex;
   /* Hide the browser's default checkbox */
+}
+* #crew-tier label {
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #crew-tier label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 * #crew-tier label:not([for$="-0"]) {
   height: 18px;

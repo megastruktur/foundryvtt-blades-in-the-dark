@@ -12,9 +12,9 @@
 }
 
 /*
- * Toothradio
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-@mixin toothradio($width, $height, $unchecked_background, $checked_background) {
+@mixin toothradio($width, $height, $unchecked_background, $checked_background, $changeable: true) {
 
   display: flex;
 
@@ -39,7 +39,12 @@
         margin-right: 0px;
       }
 
-      @include changeable(0.1s, 0.8, 0.9);
+      @if $changeable {
+        @include changeable(0.1s, 0.8, 0.9);
+      }
+      @else {
+        cursor: not-allowed;
+      }
     }
   }
 
