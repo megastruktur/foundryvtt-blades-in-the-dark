@@ -1,6 +1,6 @@
 <div class="dice-tooltip blades-die-tooltip">
   <div class="die {{roll_status}}">
-    {{#if attribute_name}}Roll {{attribute_name}}: {{/if}}
+    {{#if attribute_name}}{{attribute_name}}: {{/if}}
     {{#if (eq roll_status "critical-success")}}
     Critical Success!
     {{/if}}
@@ -19,7 +19,7 @@
 
   <ol class="dice-rolls">
     {{#each this.rolls}}
-      <li class="roll die d6">{{{this.result}}}</li>
+      <li class="roll die d6">{{{this.roll}}}</li>
     {{/each}}
-</ol>
+  </ol>
 </div>
