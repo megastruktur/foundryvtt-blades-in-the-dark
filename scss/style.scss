@@ -9,6 +9,8 @@ $green: #008000;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
+$hover-opacity: 0.9;
+$hover-brightness: 0.8;
 
 // Imports
 @import 'mixin.scss';
@@ -141,8 +143,8 @@ $transition-period: 0.2s;
     transition: color $transition-period;
   }
   .rollable-text:hover {
-    color: $red;
     cursor: pointer;
+    color: $red;
   }
 
   // Stress and Trauma
@@ -277,7 +279,11 @@ $transition-period: 0.2s;
 
     .attribute-label,
     .attribute-skill-label {
-      text-transform: capitalize;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .attribute-skill-label {
+      letter-spacing: 1px;
     }
     .attributes-exp {
 
@@ -362,11 +368,7 @@ $transition-period: 0.2s;
         border-width: 2px;
       }
 
-      cursor: pointer;
-      transition: background-color $transition-period;
-      &:hover {
-        background-color: darken($color: $gold, $amount: 10%)
-      }
+      @include changeable($transition-period, $hover-brightness, $hover-opacity);
     }
 
     &.coins-hands {
@@ -621,5 +623,4 @@ $transition-period: 0.2s;
     }
 
   }
-  
 }

@@ -1,3 +1,16 @@
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+@mixin changeable($transition-period, $hover-brightness, $hover-opacity) {
+  transition: filter $transition-period;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness($hover-brightness);
+    opacity: $hover-opacity;
+  }
+}
+
 /*
  * Toothradio
  */
@@ -25,6 +38,8 @@
         background: $almost_black !important;
         margin-right: 0px;
       }
+
+      @include changeable(0.1s, 0.8, 0.9);
     }
   }
 
@@ -74,6 +89,8 @@
         background-color: $red !important;
         margin-right: 0px;
       }
+
+      @include changeable(0.1s, 0.8, 0.9);
     }
   }
 
@@ -116,6 +133,7 @@
       &[for$="-0"] {
         margin-right: 0px;
       }
+      @include changeable(0.1s, 0.8, 0.9);
     }
   }
 
@@ -150,6 +168,7 @@
     -ms-user-select: none;
     user-select: none;
     margin-right: 10px;
+    @include changeable(0.1s, 0.8, 0.9);
 
     /* Hide the browser's default checkbox */
     input {
@@ -196,6 +215,8 @@
     height: 100%;
     transform-origin: 0% 100%;
     background-color: $accent_color;
+
+    @include changeable(0.1s, 0.8, 0.9);
   }
 
   input {
@@ -231,7 +252,9 @@
  * Turf Block
  */
 @mixin turf_block($turf_width, $turf_height) {
-  
+  @include changeable(0.1s, 0.8, 0.9);
+
+
   $turf_margin: 20px;
   $connector_height: $turf_height/10;
   $connector_width: $turf_margin * 2;
@@ -327,7 +350,7 @@
   display: flex;
 
   label {
-
+    @include changeable(0.1s, 0.8, 0.9);
     & {
       height: $height;
       width: $width;
@@ -363,7 +386,7 @@
   display: flex;
 
   label {
-
+    @include changeable(0.1s, 0.8, 0.9);
     &:not([for$="-0"]) {
       height: $diameter;
       width: $diameter;
