@@ -125,10 +125,6 @@ Hooks.once("init", async function() {
     return new Handlebars.SafeString(text);;
   });
 
-  Handlebars.registerHelper('caps', (textToCaps) => {
-    return textToCaps.toUpperCase();
-  });
-
 });
 
 /*
