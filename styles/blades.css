@@ -507,8 +507,8 @@
   margin-right: 0px;
 }
 * #attributes .attributes-container label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
+  filter: brightness(0.7);
+  opacity: 0.7;
 }
 * #attributes .attributes-container input {
   display: none;
@@ -517,7 +517,13 @@
   background-color: #EEEFFF;
 }
 * #attributes .attributes-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
   background-color: #191813;
+}
+* #attributes .attributes-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
 }
 * #attributes .attributes-container * {
   margin-right: 5px;

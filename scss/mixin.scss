@@ -95,7 +95,7 @@
         margin-right: 0px;
       }
 
-      @include changeable(0.1s, 0.8, 0.9);
+      @include changeable(0.1s, 0.7, 0.7);
     }
   }
 
@@ -109,6 +109,8 @@
         background-color: $default_color;
       }
       & + label {
+        // Less opacity here cos otherwise it's barely visible on the dark
+        @include changeable(0.1s, 0.7, 0.7); 
         background-color: $accent_color;
       }
     }
@@ -408,7 +410,6 @@
     display: none;
   
     &:checked {
-  
       & ~ label:not([for$="-0"]) {
         border-color: $circle_border_color;
         background-color: $default_color;
