@@ -220,7 +220,7 @@ $hover-brightness: 0.8;
     .small-teeth-container {
 
       .small-teeth-wrap {
-        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
+        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
         flex-direction: column;
 
         .small-teeth {
