@@ -42,6 +42,10 @@ Crew Types:
 ### Compendium
 ![alt screen][screenshot_compendium]
 
+### Rolls
+![alt screen][screenshot_roll_1]
+![alt screen][screenshot_roll_2]
+
 ## To be done in the nearest future
 - Friends/rivals section
 - Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)
@@ -56,3 +60,5 @@ Crew Types:
 
 [screenshot_all]: ./images/screenshot_all.png "screenshot_all"
 [screenshot_compendium]: ./images/screenshot_compendium.png "screenshot_compendium"
+[screenshot_roll_1]: ./images/screenshot_roll_1.png "screenshot_roll_1"
+[screenshot_roll_2]: ./images/screenshot_roll_2.png "screenshot_roll_2"
