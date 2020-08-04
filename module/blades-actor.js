@@ -55,6 +55,22 @@ export class BladesActor extends Actor {
             <select id="mod" name="mod">
               ${this.createListOfDiceMods(-3,+3,0)}
             </select>
+            </div>
+            <div class="form-group">
+            <label>Position:</label>
+            <select id="pos" name="pos">
+              <option value="controlled">Controlled</option>
+              <option value="risky" selected>Risky</option>
+              <option value="desperate">Desperate</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label>Effect:</label>
+            <select id="fx" name="fx">
+              <option value="limited">Limited</option>
+              <option value="standard" selected>Standard</option>
+              <option value="great">Great</option>
+            </select>
           </div>
         </form>
       `,
@@ -64,7 +80,9 @@ export class BladesActor extends Actor {
           label: `Roll`,
           callback: (html) => {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
-            this.rollAttribute(attribute_name, modifier);
+            let position = html.find('[name="pos"]')[0].value;
+            let effect = html.find('[name="fx"]')[0].value;
+            this.rollAttribute(attribute_name, modifier, position, effect);
           }
         },
         no: {
@@ -79,7 +97,7 @@ export class BladesActor extends Actor {
 
   /* -------------------------------------------- */
   
-  rollAttribute(attribute_name = "", additional_dice_amount = 0) {
+  rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect) {
 
     let dice_amount = 0;
     if (attribute_name !== "") {
@@ -91,7 +109,7 @@ export class BladesActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    bladesRoll(dice_amount, attribute_name);
+    bladesRoll(dice_amount, attribute_name, position, effect);
   }
 
   /* -------------------------------------------- */

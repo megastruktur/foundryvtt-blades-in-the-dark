@@ -6,6 +6,8 @@ $almost_black: #191813;
 $almost_white: #EEEFFF;
 $gold: #DAA520;
 $green: #008000;
+$light_green: #12a012;
+$blue: #04578f;
 
 // Imports
 @import 'mixin.scss';
@@ -107,6 +109,24 @@ $green: #008000;
     text-transform: capitalize;
   }
 
+  .chat-label {
+    background-color: $almost_black;
+    color: $almost_white;
+    font-size: 21px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+  }
+  .chat-label-small {
+    background-color: $gray;
+    color: $almost_black;
+    font-size: small;
+    text-align: center;
+    padding: 3px 5px;
+    height: 20px !important;
+  }
+
   .label-stripe {
     text-transform: uppercase;
     background-color: $almost_black;
@@ -126,6 +146,29 @@ $green: #008000;
     position: relative;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  .label-stripe-chat {
+    text-transform: uppercase;
+    background-color: $almost_black;
+    color: $almost_white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 3px;
+    display: flex;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .label-stripe-chat-small {
+    text-transform: capitalize;
+    background-color: $gray;
+    color: $almost_black;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 3px;
     display: flex;
     font-weight: bold;
   }
@@ -585,9 +628,10 @@ $green: #008000;
     .die {
       font-weight: bold;
       text-transform: capitalize;
+      font-size: large;
 
       &.critical-success {
-        color: $gold;
+        color: $light_green;
       }
 
       &.success {
@@ -595,7 +639,7 @@ $green: #008000;
       }
 
       &.partial-success {
-        color: $almost_black;
+        color: $blue;
       }
 
       &.failure {
