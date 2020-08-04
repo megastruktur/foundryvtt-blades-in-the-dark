@@ -46,14 +46,16 @@ Hooks.once("init", async function() {
   Handlebars.registerHelper('multiboxes', function(selected, options) {
     
     let html = options.fn(this);
-    
-    selected.forEach(selected_value => {
-      if (selected_value !== false) {
-        const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
-        const rgx = new RegExp(' value=\"' + escapedValue + '\"');
-        html = html.replace(rgx, "$& checked=\"checked\"");
-      }
-    });
+
+    if (typeof selected != 'undefined') {
+      selected.forEach(selected_value => {
+        if (selected_value !== false) {
+          const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
+          const rgx = new RegExp(' value=\"' + escapedValue + '\"');
+          html = html.replace(rgx, "$& checked=\"checked\"");
+        }
+      });
+    }
     return html;
   });
 

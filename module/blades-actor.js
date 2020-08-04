@@ -27,7 +27,7 @@ export class BladesActor extends Actor {
     for (var attibute_name in this.data.data.attributes) {
       dice_amount[attibute_name] = 0;
       for (var skill_name in this.data.data.attributes[attibute_name].skills) {
-        dice_amount[skill_name] = parseInt(this.data.data.attributes[attibute_name].skills[skill_name][0])
+        dice_amount[skill_name] = parseInt(this.data.data.attributes[attibute_name].skills[skill_name]['value'][0])
 
         // We add a +1d for every skill higher than 0.
         if (dice_amount[skill_name] > 0) {
@@ -44,32 +44,31 @@ export class BladesActor extends Actor {
 
   rollAttributePopup(attribute_name) {
     // const roll = new Roll("1d20 + @abilities.wis.mod", actor.getRollData());
-
     new Dialog({
       title: `Roll ${attribute_name}`,
       content: `
         <h2>Roll ${attribute_name}</h2>
         <form>
           <div class="form-group">
-            <label>Modifier:</label>
+            <label>${game.i18n.localize('BITD.Modifier')}:</label>
             <select id="mod" name="mod">
               ${this.createListOfDiceMods(-3,+3,0)}
             </select>
             </div>
             <div class="form-group">
-            <label>Position:</label>
+            <label>${game.i18n.localize('BITD.Position')}:</label>
             <select id="pos" name="pos">
-              <option value="controlled">Controlled</option>
-              <option value="risky" selected>Risky</option>
-              <option value="desperate">Desperate</option>
+              <option value="controlled">${game.i18n.localize('BITD.PositionControlled')}</option>
+              <option value="risky" selected>${game.i18n.localize('BITD.PositionRisky')}</option>
+              <option value="desperate">${game.i18n.localize('BITD.PositionDesperate')}</option>
             </select>
             </div>
             <div class="form-group">
-            <label>Effect:</label>
+            <label>${game.i18n.localize('BITD.Effect')}:</label>
             <select id="fx" name="fx">
-              <option value="limited">Limited</option>
-              <option value="standard" selected>Standard</option>
-              <option value="great">Great</option>
+              <option value="limited">${game.i18n.localize('BITD.EffectLimited')}</option>
+              <option value="standard" selected>${game.i18n.localize('BITD.EffectStandard')}</option>
+              <option value="great">${game.i18n.localize('BITD.EffectGreat')}</option>
             </select>
           </div>
         </form>

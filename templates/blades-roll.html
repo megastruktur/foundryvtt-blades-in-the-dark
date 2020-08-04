@@ -2,60 +2,47 @@
   {{#if attribute_name}}<div class="chat-label label-stripe-chat">{{attribute_name}}</div>{{/if}}
   {{#if position}}
     <div class="chat-label-small label-stripe-chat-small">
-      {{position}} | {{effect}}
+      {{{localize position}}} | {{{localize effect}}}
     </div>
   {{/if}}
 
   {{#if (eq roll_status "critical-success")}}
-  <div class="die {{roll_status}}">Critical Success!</div>
+  <div class="die {{roll_status}}">{{localize "BITD.RollCriticalSuccess"}}</div>
   <div class="description">
-    <p>
-      You do it with <strong>increased effect</strong>.
-    </p>
+    <p>{{{localize "BITD.RollDoWithIncreasedEffect"}}}</p>
   </div>
   {{/if}}
 
   {{#if (eq roll_status "success")}}
-  <div class="die {{roll_status}}">Success!</div>
-  <div class="description">
-    <p>
-      You do it.
-    </p>
-  </div>
+  <div class="die {{roll_status}}">{{localize "BITD.RollSuccess"}}</div>
+  <div class="description"><p>{{{localize "BITD.RollDo"}}}</p></div>
   {{/if}}
 
   {{#if (eq roll_status "partial-success")}}
-  <div class="die {{roll_status}}">Partial Success</div>
+  <div class="die {{roll_status}}">{{localize "BITD.RollPartialSuccess"}}</div>
   <div class="description">
     <p>
       {{#if (eq position "controlled")}}
-      You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a <strong>minor
-        complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser
-        harm</strong>,
-      you end up in a <strong>risky</strong> position.
+      {{{localize "BITD.RollPartialSuccessPositionControlled"}}}
       {{else if (eq position "risky")}}
-      You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs,
-      you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.
+      {{{localize "BITD.RollPartialSuccessPositionRisky"}}}
       {{else}}
-      You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious
-            complication</strong> occurs, you have <strong>reduced effect</strong>.
-          {{/if}}
+      {{{localize "BITD.RollPartialSuccessPosition"}}}
+      {{/if}}
     </p>
   </div>
   {{/if}}
 
   {{#if (eq roll_status "failure")}}
-  <div class="die {{roll_status}}">Failure</div>
+  <div class="die {{roll_status}}">{{localize "BITD.RollFailure"}}</div>
   <div class="description">
     <p>
       {{#if (eq position "controlled")}}
-      You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach.
+      {{{localize "BITD.RollFailurePositionControlled"}}}
       {{else if (eq position "risky")}}
-      Things go badly. You suffer <strong>harm</strong> a <strong>complication</strong> occurs, you end up in a
-      <strong>desperate</strong> position, you <strong>lose this opportunity</strong>.
+      {{{localize "BITD.RollFailurePositionRisky"}}}
       {{else}}
-      It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication occurs</strong>,
-      you <strong>lose this opportunity for action</strong>.
+      {{{localize "BITD.RollFailurePosition"}}}
       {{/if}}
     </p>
   </div>

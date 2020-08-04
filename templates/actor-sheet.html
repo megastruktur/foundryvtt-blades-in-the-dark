@@ -4,14 +4,14 @@
 
     <div class="grow-two">
       <div id="name">
-        <label for="character-name">Name</label>
+        <label for="character-name">{{localize "BITD.Name"}}</label>
         <input type="text" id="character-name" name="name" value="{{actor.name}}">
       </div>
 
       <div id="character-traits" class="flex-column">
         
         <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">Heritage</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">{{localize "BITD.Heritage"}}</a></div>
           {{#each actor.items as |item id|}}
               {{#if (eq item.type "heritage")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -19,14 +19,14 @@
                   <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                   <div class="item-name">{{item.name}}</div>
                 </div>
-                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
               </div>
               {{/if}}
           {{/each}}
         </div>
 
         <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background">Background</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background">{{localize "BITD.Background"}}</a></div>
           {{#each actor.items as |item id|}}
             {{#if (eq item.type "background")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -34,14 +34,14 @@
                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                 <div class="item-name">{{item.name}}</div>
               </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
             {{/if}}
           {{/each}}
         </div>
 
         <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice">Vice</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice">{{localize "BITD.Vice"}}</a></div>
           {{#each actor.items as |item id|}}
               {{#if (eq item.type "vice")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -49,14 +49,14 @@
                   <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                   <div class="item-name">{{item.name}}</div>
                 </div>
-                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
               </div>
               {{/if}}
           {{/each}}
         </div>
 
         <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class">Class</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class">{{localize "BITD.Class"}}</a></div>
             {{#each actor.items as |item id|}}
                 {{#if (eq item.type "class")}}
                 <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -64,7 +64,7 @@
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                     <div class="item-name">{{item.name}}</div>
                   </div>
-                  <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                  <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
                 </div>
                 {{/if}}
             {{/each}}
@@ -77,7 +77,7 @@
 
     <div class="grow-two">
       <div id="alias">
-        <label for="character-alias">Alias</label>
+        <label for="character-alias">{{localize "BITD.Alias"}}</label>
         <input type="text" id="character-alias" name="data.alias" value="{{data.alias}}">
       </div>
 
@@ -94,7 +94,7 @@
     <div id="character-stress" class="big-teeth">
       {{#multiboxes data.stress}}
       <input type="radio" id="character-stress-0" name="data.stress" value="0" dtype="Radio">
-      <label class="black-label" for="character-stress-0">Stress</label>
+      <label class="black-label" for="character-stress-0">{{localize "BITD.Stress"}}</label>
       <input type="radio" id="character-stress-1" name="data.stress" value="1" dtype="Radio">
       <label for="character-stress-1"></label>
       <input type="radio" id="character-stress-2" name="data.stress" value="2" dtype="Radio">
@@ -119,7 +119,7 @@
     <div id="character-trauma-container" class="small-teeth-container">
       {{#traumacounter data.traumas}}
       <div id="character-trauma" class="small-teeth-wrap">
-        <label class="black-label" for="character-trauma-counter-0">Trauma</label>
+        <label class="black-label" for="character-trauma-counter-0">{{localize "BITD.Trauma"}}</label>
         <div id="trauma-teeth" class="small-teeth">
           <input type="radio" id="character-trauma-counter-0" name="trauma-counter" value="0">
           <input type="radio" id="character-trauma-counter-1" name="trauma-counter" value="1">
@@ -139,35 +139,35 @@
       {{#multiboxes data.traumas}}
       <label>
         <input type="checkbox" name="data.traumas" value="cold">
-        <span class="checkmark">cold</span>
+        <span class="checkmark">{{localize "BITD.TraumaCold"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="haunted">
-        <span class="checkmark">haunted</span>
+        <span class="checkmark">{{localize "BITD.TraumaHaunted"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="obsessed">
-        <span class="checkmark">obsessed</span>
+        <span class="checkmark">{{localize "BITD.TraumaObsessed"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="paranoid">
-        <span class="checkmark">paranoid</span>
+        <span class="checkmark">{{localize "BITD.TraumaParanoid"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="reckless">
-        <span class="checkmark">reckless</span>
+        <span class="checkmark">{{localize "BITD.TraumaReckless"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="soft">
-        <span class="checkmark">soft</span>
+        <span class="checkmark">{{localize "BITD.TraumaSoft"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="unstable">
-        <span class="checkmark">unstable</span>
+        <span class="checkmark">{{localize "BITD.TraumaUnstable"}}</span>
       </label>
       <label>
         <input type="checkbox" name="data.traumas" value="vicious">
-        <span class="checkmark">vicious</span>
+        <span class="checkmark">{{localize "BITD.TraumaVicious"}}</span>
       </label>
       {{/multiboxes}}
     </div>
@@ -179,9 +179,9 @@
     <div id="character-harm">
       <table>
         <thead>
-          <th class="black-white" colspan="4">Harm</th>
-          <th class="black-white"><label for="character-healing-clock-0">Healing</label></th>
-          <th class="black-white">Armor</th>
+          <th class="black-white" colspan="4">{{localize "BITD.Harm"}}</th>
+          <th class="black-white"><label for="character-healing-clock-0">{{localize "BITD.Healing"}}</label></th>
+          <th class="black-white">{{localize "BITD.Armor"}}</th>
         </thead>
         <tbody>
           <tr>
@@ -189,7 +189,7 @@
             <td colspan="2">
               <input type="text" id="character-harm-3-1" name="data.harm.heavy.one" value="{{data.harm.heavy.one}}">
             </td>
-            <td>Need Help</td>
+            <td>{{localize "BITD.NeedHelp"}}</td>
             <td rowspan="3">
               {{#multiboxes data.healing-clock}}
               <div id="character-health-clock">
@@ -207,15 +207,15 @@
             </td>
             <td rowspan="3" id="character-armor-uses">
               <div>
-                <label for="armor-uses-armor">Armor</label>
+                <label for="armor-uses-armor">{{localize "BITD.Armor"}}</label>
                 <input id="armor-uses-armor" type="checkbox" name="data.armor-uses.armor" {{checked data.armor-uses.armor}}>
               </div>
               <div>
-                <label for="armor-uses-heavy">Heavy</label>
+                <label for="armor-uses-heavy">{{localize "BITD.Heavy"}}</label>
                 <input id="armor-uses-heavy" type="checkbox" name="data.armor-uses.heavy" {{checked data.armor-uses.heavy}}>
               </div>
               <div>
-                <label for="armor-uses-special">Special</label>
+                <label for="armor-uses-special">{{localize "BITD.Special"}}</label>
                 <input id="armor-uses-special" type="checkbox" name="data.armor-uses.special" {{checked data.armor-uses.special}}>
               </div>
             </td>
@@ -238,7 +238,7 @@
             <td>
               <input type="text" id="character-harm-1-2" name="data.harm.light.two" value="{{data.harm.light.two}}">
             </td>
-            <td>Less Effect</td>
+            <td>{{localize "BITD.LessEffect"}}</td>
           </tr>
         </tbody>
       </table>
@@ -255,15 +255,15 @@
 
       {{!-- Nav menu --}}
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="abilities">Abilities</a>
-        <a class="item" data-tab="loadout">Loadout</a>
-        <a class="item" data-tab="character-notes">Notes</a>
-        <a class="item" data-tab="all-character-items">All Items</a>
+        <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
+        <a class="item" data-tab="loadout">{{localize "BITD.Loadout"}}</a>
+        <a class="item" data-tab="character-notes">{{localize "BITD.Notes"}}</a>
+        <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
       </nav>
 
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe">
-          <p><label for="character-experience-0">Abilities</label></p>
+          <p><label for="character-experience-0">{{localize "BITD.Abilities"}}</label></p>
           <p><a class="item-add-popup" data-item-type="ability"><i class="fas fa-plus-square"></i></a></p>
           <div id="character-experience" class="teeth-experience">
             {{#multiboxes data.experience}}
@@ -298,18 +298,18 @@
                 <b><div class="item-name">{{item.name}}</div></b>
                 <div class="item-description">{{item.data.description}}</div>
               </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
           {{/if}}
           {{/each}}
-          <div class="item-class-label"><a class="item-add-popup" data-item-type="ability">Add Ability</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="ability">{{localize "BITD.AddAbility"}}</a></div>
         </div>
       </div>
 
       {{!-- Owned Items Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         <div class="label-stripe flex-horizontal">
-           <p>Loadout: {{data.loadout}}/{{data.load_level}} </p>
+           <p>{{localize "BITD.Loadout"}}: {{data.loadout}}/{{data.load_level}} </p>
           <p><a class="item-add-popup" data-item-type="item"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <div>
@@ -321,17 +321,17 @@
                 <div class="item-name">{{item.name}}</div>
                 <div class="item-description">{{item.data.description}}</div>
               </div>
-              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+              <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
           {{/if}}
           {{/each}}
-          <div class="item-class-label"><a class="item-add-popup" data-item-type="item">Add Item</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="item">{{localize "BITD.AddItem"}}</a></div>
         </div>
       </div>
 
       <div class="tab flex-vertical" data-tab="character-notes">
         <div class="label-stripe">
-          <p>Notes</p>
+          <p>{{localize "BITD.Notes"}}</p>
         </div>
         <textarea rows="13" name="data.description">{{{data.description}}}</textarea>
       </div>
@@ -339,7 +339,7 @@
       {{!-- Full Item List --}}
       <div class="tab grow-two flex-vertical" data-tab="all-character-items">
         <div class="label-stripe">
-          <p><label>All Items</label></p>
+          <p><label>{{localize "BITD.AllItems"}}</label></p>
         </div>
         {{#each actor.items as |item id|}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -347,7 +347,7 @@
             <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
             <div class="item-name">{{item.name}}</div>
           </div>
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
         </div>
         {{/each}}
       </div>
