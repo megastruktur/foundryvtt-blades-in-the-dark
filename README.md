@@ -4,10 +4,6 @@
 
 Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
 
-Contributors:
-- `megastruktur#5704`
-- `Tyronne I’Saurus#5415`
-
 ## Usage
 `"Item" - all classes, crew types, upgrades, items, abilities, upgrades, etc.`
 

@@ -1,4 +1,5 @@
-v0.7.4
+v0.7.5
 
-- Fixes bug with 0d rolling
+- Adds localization for text (except Items) (megastruktur)
+- Adds Rolls mod and styling (dunderjester)
  
