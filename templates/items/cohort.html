@@ -3,30 +3,25 @@
   <header class="sheet-header">
       <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
       </div>
   </header>
   
   <section class="flex-vertical">
 
-    <div class="label-stripe">Information</div>
+    <div class="label-stripe">{{localize "BITD.Information"}}</div>
 
-    <div>
-      You can add an additional type to a gang or expert by spending two crew upgrades.
-      <br>
-      When a cohort performs actions for which its types apply, it uses its full quality rating. Otherwise, its quality is zero. A given cohort can have up to two types.
-      Some crew upgrades will add the “Elite” feature to a gang, which gives them +1d when they roll for a given Type.
-    </div>
+    <div>{{{localize "BITD.AddAdditionalTypeOfGangText"}}}</div>
   </section>
 
   <section class="flex-vertical">
 
-    <div class="label-stripe">Cohort Type</div>
+    <div class="label-stripe">{{localize "BITD.CohortType"}}</div>
 
     <div id="cohort-type-list">
       {{#each data.cohort_list as |cohort key|}}
       {{#multiboxes ../data.cohort}}
-      <label for="{{key}}-cohort">{{cohort.label}}</label>
+      <label for="{{key}}-cohort">{{localize cohort.label}}</label>
       <input id="{{key}}-cohort" type="radio" name="data.cohort" value="{{key}}">
       {{/multiboxes}}
       {{/each}}
@@ -36,12 +31,12 @@
   <section id="gang-expert-type-selector" class="flex-vertical">
     {{#if (eq data.cohort.[0] "Gang")}}
 
-      <div class="label-stripe">Gang Type</div>
+      <div class="label-stripe">{{localize "BITD.GangType"}}</div>
       <div id="gang-type-boxes" class="flex-horizontal">
         {{#multiboxes data.gang_type}}
           {{#each data.gang_type_list as |gang_type key|}}
             <input id="gang-type-{{key}}" type="checkbox" name="data.gang_type" value="{{key}}">
-            <label for="gang-type-{{key}}">{{gang_type.label}}</label>
+            <label for="gang-type-{{key}}">{{localize gang_type.label}}</label>
           {{/each}}
         {{/multiboxes}}
       </div>
@@ -56,7 +51,7 @@
     {{/if}}
 
     {{#if (eq data.cohort.[0] "Expert")}}
-      <div class="label-stripe">Expert Type</div>
+      <div class="label-stripe">{{localize "BITD.ExpertType"}}</div>
       <input type="text" name="data.expert_type" value="{{data.expert_type}}">
     {{/if}}
   </section>
@@ -64,38 +59,38 @@
   {{!-- Scale and Quality if attached to Actor --}}
   {{#if data.quality}}
   <section id="quality-scale" class="flex-vertical">
-    <div class="label-stripe">Scale and quality</div>
-    <div>Quality: {{data.quality}}</div>
-    <div>Scale: {{data.scale}}</div>
+    <div class="label-stripe">{{localize "BITD.ScaleAndQuality"}}</div>
+    <div>{{localize "BITD.Quality"}}: {{data.quality}}</div>
+    <div>{{localize "BITD.Scale"}}: {{data.scale}}</div>
   </section>
   {{/if}}
 
   {{!-- Edges and Flaws --}}
   <section id="edges-flaws" class="flex-vertical">
 
-    <div class="label-stripe">Choose one or two edges and an equal number of flaws</div>
+    <div class="label-stripe">{{localize "BITD.ChooseOneOrTwoEdges"}}</div>
 
     <div class="flex-horizontal">
 
       <div class="edgeflaw-container flex-vertical">
-        <div class="label-stripe">Edges</div>
+        <div class="label-stripe">{{localize "BITD.Edges"}}</div>
         {{#each data.edges_list as |edge key|}}
           {{#multiboxes ../data.edges}}
           <div class="edgeflaw flex-horizontal">
             <input id="edge-{{key}}" type="checkbox" name="data.edges" value="{{key}}">
-            <label for="edge-{{key}}">{{edge.label}}</label>
+            <label for="edge-{{key}}">{{localize edge.label}}</label>
           </div>
           {{/multiboxes}}
         {{/each}}
       </div>
 
       <div class="edgeflaw-container flex-vertical">
-        <div class="label-stripe">Flaws</div>
+        <div class="label-stripe">{{localize "BITD.Flaws"}}</div>
         {{#each data.flaws_list as |flaw key|}}
           {{#multiboxes ../data.flaws}}
           <div class="edgeflaw flex-horizontal">
             <input id="flaw-{{key}}" type="checkbox" name="data.flaws" value="{{key}}">
-            <label for="flaw-{{key}}">{{flaw.label}}</label>
+            <label for="flaw-{{key}}">{{localize flaw.label}}</label>
           </div>
           {{/multiboxes}}
         {{/each}}
@@ -107,12 +102,12 @@
   </section>
   
   <section id="cohort-harm" class="flex-vertical">
-    <div class="label-stripe">Harm</div>
+    <div class="label-stripe">{{localize "BITD.Harm"}}</div>
     <div id="harm-list" class="flex-horizontal">
       {{#multiboxes data.harm}}
       {{#each data.harm_list as |harm harm_key|}}
         <input id="{{harm_key}}-harm" type="radio" name="data.harm" value="{{harm_key}}">
-        <label for="{{harm_key}}-harm">{{harm.label}}</label>
+        <label for="{{harm_key}}-harm">{{localize harm.label}}</label>
       {{/each}}
       {{/multiboxes}}
     </div>
@@ -120,11 +115,11 @@
 
   <section>
     <input id="cohort-armor" type="checkbox" name="data.armor" value="{{data.armor}}" {{checked data.armor}}>
-    <label for="cohort-armor">Armor</label>
+    <label for="cohort-armor">{{localize "BITD.Armor"}}</label>
   </section>
 
   <section class="sheet-body flex-vertical">
-    <div class="label-stripe">Description</div>
+    <div class="label-stripe">{{localize "BITD.Description"}}</div>
     <textarea name="data.description">{{data.description}}</textarea>
   </section>
 </form>
