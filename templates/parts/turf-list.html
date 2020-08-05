@@ -24,15 +24,15 @@
           </div>
 
           <input class="turf-name" type="text" name="data.turfs.{{id}}.name" value="{{turf.name}}">
-          {{#noteq turf.name "Turf"}}
-          {{#noteq turf.name "Lair"}}
-          <textarea class="turf-description" name="data.turfs.{{id}}.description">{{turf.description}}</textarea>
+          {{#noteq turf.name "BITD.Turf"}}
+          {{#noteq turf.name "BITD.Lair"}}
+          <textarea class="turf-description" name="data.turfs.{{id}}.description">{{localize turf.description}}</textarea>
           {{/noteq}}
           {{/noteq}}
         {{else}}
-          <p class="turf-name">{{turf.name}}</p>
+          <p class="turf-name">{{localize turf.name}}</p>
           {{#if turf.description}}
-          <p class="turf-description">{{turf.description}}</p>
+          <p class="turf-description">{{localize turf.description}}</p>
           {{/if}}
           {{#noteq id "8"}}
           <a class="turf-control turf-select" title="Select" data-turf-id="{{id}}" data-turf-status="{{turf.value}}"><i class="fas fa-circle"></i></a>

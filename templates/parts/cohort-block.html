@@ -12,7 +12,7 @@
         {{#each item.data.harm_list as |harm harm_key|}}
           {{#multiboxes ../item.data.harm}}
           <input id="harm-{{harm_key}}-{{../item._id}}" type="radio" name="harm.{{../item._id}}" data-item="{{../item._id}}" value="{{harm_key}}">
-          <label for="harm-{{harm_key}}-{{../item._id}}">{{harm.label}}</label>
+          <label for="harm-{{harm_key}}-{{../item._id}}">{{localize harm.label}}</label>
           {{/multiboxes}}
         {{/each}}
       </div>
@@ -29,12 +29,12 @@
         <div class="flex-vertical">
           {{#each item.data.edges as |edge key|}}
             {{#with (lookup ../item.data.edges_list edge)}}
-              <div class="description">{{description}} <b>({{label}})</b></div>
+              <div class="description">{{description}} <b>({{localize label}})</b></div>
             {{/with}}
           {{/each}}
           {{#each item.data.flaws as |flaw key|}}
             {{#with (lookup ../item.data.flaws_list flaw)}}
-              <div class="description">{{description}} <b>({{label}})</b></div>
+              <div class="description">{{description}} <b>({{localize label}})</b></div>
             {{/with}}
           {{/each}}
         </div>

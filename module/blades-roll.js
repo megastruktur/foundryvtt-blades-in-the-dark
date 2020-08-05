@@ -2,8 +2,10 @@
  * Roll Dice.
  * @param {int} dice_amount 
  * @param {string} attribute_name 
+ * @param {string} position
+ * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "") {
+export async function bladesRoll(dice_amount, attribute_name = "", position = "risky", effect = "standard") {
 
   // Is Dice So Nice enabled ?
   let niceDice = false;
@@ -25,11 +27,11 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
   // show 3d Dice so Nice if enabled
   if (niceDice) {
     game.dice3d.showForRoll(r).then((displayed) => {
-      showChatRollMessage(r, zeromode, attribute_name);
+      showChatRollMessage(r, zeromode, attribute_name, position, effect);
     });
   } else {
     r.roll();
-    showChatRollMessage(r, zeromode, attribute_name)
+    showChatRollMessage(r, zeromode, attribute_name, position, effect)
   }
 }
 
@@ -39,8 +41,10 @@ export async function bladesRoll(dice_amount, attribute_name = "") {
  * @param {Roll} r 
  * @param {Boolean} zeromode
  * @param {String} attribute_name
+ * @param {string} position
+ * @param {string} effect
  */
-async function showChatRollMessage(r, zeromode, attribute_name = "") {
+async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "") {
   
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
@@ -56,7 +60,33 @@ async function showChatRollMessage(r, zeromode, attribute_name = "") {
   // Retrieve Roll status.
   let roll_status = getBladesRollStatus(rolls, zeromode);
 
-  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name});
+  let position_localize = '';
+  switch (position) {
+    case 'controlled':
+      position_localize = 'BITD.PositionControlled'
+      break;
+    case 'desperate':
+      position_localize = 'BITD.PositionDesperate'
+      break;
+    case 'risky':
+    default:
+      position_localize = 'BITD.PositionRisky'
+  }
+
+  let effect_localize = '';
+  switch (effect) {
+    case 'limited':
+      effect_localize = 'BITD.EffectLimited'
+      break;
+    case 'great':
+      effect_localize = 'BITD.EffectGreat'
+      break;
+    case 'standard':
+    default:
+      effect_localize = 'BITD.EffectStandard'
+  }
+
+  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name, position: position_localize, effect: effect_localize});
 
   let messageData = {
     speaker: speaker,
@@ -145,11 +175,11 @@ export async function simpleRollPopup() {
   new Dialog({
     title: `Simple Roll`,
     content: `
-      <h2>Roll some dice!</h2>
-      <p>If you want to pull the numbers from a character, select their Token first.</p>
+      <h2>${game.i18n.localize("BITD.RollSomeDice")}</h2>
+      <p>${game.i18n.localize("BITD.RollTokenDescription")}</p>
       <form>
         <div class="form-group">
-          <label>Number of Dice:</label>
+          <label>${game.i18n.localize("BITD.RollNumberOfDice")}:</label>
           <select id="qty" name="qty">
             ${Array(11).fill().map((item, i) => `<option value="${i}">${i}d</option>`).join('')}
           </select>
@@ -161,15 +191,13 @@ export async function simpleRollPopup() {
         icon: "<i class='fas fa-check'></i>",
         label: `Roll`,
         callback: (html) => {
-          let diceQty = html.find('[name="qty"]')[0].value;
-          console.log("Roll "+diceQty);
-  
+          let diceQty = html.find('[name="qty"]')[0].value;  
           bladesRoll(diceQty);
         },
       },
       no: {
         icon: "<i class='fas fa-times'></i>",
-        label: `Cancel`,
+        label: game.i18n.localize('Cancel'),
       },
     },
     default: "yes"

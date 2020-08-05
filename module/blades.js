@@ -5,6 +5,7 @@
  */
 
 // Import Modules
+import { registerSystemSettings } from "./settings.js";
 import { preloadHandlebarsTemplates } from "./blades-templates.js";
 import { bladesRoll, simpleRollPopup } from "./blades-roll.js";
 import { BladesHelpers } from "./blades-helpers.js";
@@ -13,6 +14,7 @@ import { BladesItem } from "./blades-item.js";
 import { BladesItemSheet } from "./blades-item-sheet.js";
 import { BladesActorSheet } from "./blades-actor-sheet.js";
 import { BladesCrewSheet } from "./blades-crew-sheet.js";
+import * as migrations from "./migration.js";
 
 window.BladesHelpers = BladesHelpers;
 
@@ -33,6 +35,9 @@ Hooks.once("init", async function() {
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
 
+  // Register System Settings
+  registerSystemSettings();
+
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
@@ -46,14 +51,16 @@ Hooks.once("init", async function() {
   Handlebars.registerHelper('multiboxes', function(selected, options) {
     
     let html = options.fn(this);
-    
-    selected.forEach(selected_value => {
-      if (selected_value !== false) {
-        const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
-        const rgx = new RegExp(' value=\"' + escapedValue + '\"');
-        html = html.replace(rgx, "$& checked=\"checked\"");
-      }
-    });
+
+    if (typeof selected != 'undefined') {
+      selected.forEach(selected_value => {
+        if (selected_value !== false) {
+          const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
+          const rgx = new RegExp(' value=\"' + escapedValue + '\"');
+          html = html.replace(rgx, "$& checked=\"checked\"");
+        }
+      });
+    }
     return html;
   });
 
@@ -68,8 +75,6 @@ Hooks.once("init", async function() {
     return html.replace(rgx, "$& checked=\"checked\"");
 
   });
-
-  // Equals handlebar.
 
   // NotEquals handlebar.
   Handlebars.registerHelper('noteq', (a, b, options) => {
@@ -123,6 +128,23 @@ Hooks.once("init", async function() {
     return new Handlebars.SafeString(text);;
   });
 
+});
+
+/**
+ * Once the entire VTT framework is initialized, check to see if we should perform a data migration
+ */
+Hooks.once("ready", function() {
+
+  // Determine whether a system migration is required
+  const currentVersion = game.settings.get("bitd", "systemMigrationVersion");
+  const NEEDS_MIGRATION_VERSION = 1.0;
+
+  let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
+
+  // Perform the migration
+  if ( needMigration && game.user.isGM ) {
+    migrations.migrateWorld();
+  }
 });
 
 /*

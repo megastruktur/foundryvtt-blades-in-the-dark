@@ -2,23 +2,32 @@
   "name": "blades-in-the-dark",
   "title": "Blades in the Dark",
   "description": "Blades in the dark game system.",
-  "version": "0.7.4",
+  "version": "1.0",
   "minimumCoreVersion": "0.5.3",
   "compatibleCoreVersion": "0.7.0",
   "templateVersion": 1,
   "author": "megastruktur",
-  "esmodules": ["module/blades.js"],
-  "styles": ["styles/blades.css"],
+  "esmodules": [
+    "module/blades.js"
+  ],
+  "styles": [
+    "styles/blades.css"
+  ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "lang/ru.json"
     }
   ],
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/0.7.4/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/0.7.4.zip",
+  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/1.0/system.json",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/1.0.zip",
   "packs": [
     {
       "name": "class",
@@ -90,5 +99,5 @@
       "path": "./packs/crew_abilities.db",
       "entity": "Item"
     }
-]
+  ]
 }

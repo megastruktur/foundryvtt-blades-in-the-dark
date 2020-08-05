@@ -6,6 +6,13 @@ $almost_black: #191813;
 $almost_white: #EEEFFF;
 $gold: #DAA520;
 $green: #008000;
+$light_green: #12a012;
+$blue: #04578f;
+
+// Transition period for sheet parts that hint what they can do
+$transition-period: 0.2s;
+$hover-opacity: 0.9;
+$hover-brightness: 0.8;
 
 // Imports
 @import 'mixin.scss';
@@ -107,6 +114,24 @@ $green: #008000;
     text-transform: capitalize;
   }
 
+  .chat-label {
+    background-color: $almost_black;
+    color: $almost_white;
+    font-size: 21px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+  }
+  .chat-label-small {
+    background-color: $gray;
+    color: $almost_black;
+    font-size: small;
+    text-align: center;
+    padding: 3px 5px;
+    height: 20px !important;
+  }
+
   .label-stripe {
     text-transform: uppercase;
     background-color: $almost_black;
@@ -130,8 +155,39 @@ $green: #008000;
     font-weight: bold;
   }
 
+  .label-stripe-chat {
+    text-transform: uppercase;
+    background-color: $almost_black;
+    color: $almost_white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 3px;
+    display: flex;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .label-stripe-chat-small {
+    text-transform: capitalize;
+    background-color: $gray;
+    color: $almost_black;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 3px;
+    display: flex;
+    font-weight: bold;
+  }
+
   .description {
     font-style: italic;
+  }
+
+  .rollable-text {
+    transition: color $transition-period;
+  }
+  .rollable-text:hover {
+    cursor: pointer;
+    color: $red;
   }
 
   // Stress and Trauma
@@ -164,7 +220,7 @@ $green: #008000;
     .small-teeth-container {
 
       .small-teeth-wrap {
-        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
+        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
         flex-direction: column;
 
         .small-teeth {
@@ -266,7 +322,11 @@ $green: #008000;
 
     .attribute-label,
     .attribute-skill-label {
-      text-transform: capitalize;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .attribute-skill-label {
+      letter-spacing: 1px;
     }
     .attributes-exp {
 
@@ -343,13 +403,15 @@ $green: #008000;
     @include custom_radio_square($coin_size);
     flex-wrap: wrap;
 
-    label {
+    input ~ label {
       margin-right: $coin_margin;
       margin-bottom: $coin_margin;
 
       &[for$="0"] {
         border-width: 2px;
       }
+
+      @include changeable($transition-period, $hover-brightness, $hover-opacity);
     }
 
     &.coins-hands {
@@ -585,9 +647,10 @@ $green: #008000;
     .die {
       font-weight: bold;
       text-transform: capitalize;
+      font-size: large;
 
       &.critical-success {
-        color: $gold;
+        color: $light_green;
       }
 
       &.success {
@@ -595,7 +658,7 @@ $green: #008000;
       }
 
       &.partial-success {
-        color: $almost_black;
+        color: $blue;
       }
 
       &.failure {
@@ -604,5 +667,4 @@ $green: #008000;
     }
 
   }
-  
 }

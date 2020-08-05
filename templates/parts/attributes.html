@@ -5,7 +5,7 @@
   <div id="attributes-{{attribute_name}}" class="attribute">
     <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
       <div class="stripe">
-        <label class="attribute-label" for="{{attribute_name}}-exp-0">{{attribute_name}}</label>
+        <label class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}" for="{{attribute_name}}-exp-0">{{localize attribute.label}}</label>
         <a class="roll-die-attribute" data-roll-attribute="{{attribute_name}}" title="Roll"><i class="fas fa-dice"></i></a>
       </div>
       <div class="stripe-tooth-body">
@@ -32,22 +32,21 @@
     {{#each attribute.skills as |skill skill_name|}}
     <div class="flex-horizontal">
       <div class="attributes-container">
-        {{#multiboxes skill}}
-        <input type="radio" id="attributes-{{skill_name}}-0" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="0">
+        {{#multiboxes skill.value}}
+        <input type="radio" id="attributes-{{skill_name}}-0" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="0">
         <label for="attributes-{{skill_name}}-0"></label>
-        <input type="radio" id="attributes-{{skill_name}}-1" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="1">
+        <input type="radio" id="attributes-{{skill_name}}-1" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="1">
         <label for="attributes-{{skill_name}}-1"></label>
         <span>|</span>
-        <input type="radio" id="attributes-{{skill_name}}-2" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="2">
+        <input type="radio" id="attributes-{{skill_name}}-2" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="2">
         <label for="attributes-{{skill_name}}-2"></label>
-        <input type="radio" id="attributes-{{skill_name}}-3" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="3">
+        <input type="radio" id="attributes-{{skill_name}}-3" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="3">
         <label for="attributes-{{skill_name}}-3"></label>
-        <input type="radio" id="attributes-{{skill_name}}-4" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}" value="4">
+        <input type="radio" id="attributes-{{skill_name}}-4" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="4">
         <label for="attributes-{{skill_name}}-4"></label>
-        <div class="attribute-skill-label">{{skill_name}}</div>
+        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
         {{/multiboxes}}
       </div>
-      <a class="roll-die-attribute" data-roll-attribute="{{skill_name}}" title="Roll"><i class="fas fa-dice"></i></a>
     </div>
     {{/each}}
 

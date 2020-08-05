@@ -36,29 +36,68 @@
     "attributes": {
         "insight": {
           "exp": [0],
+          "label": "BITD.SkillsInsight",
           "skills": {
-            "hunt": [0],
-            "study": [0],
-            "survey": [0],
-            "tinker": [0]
+            "hunt": {
+              "label": "BITD.SkillsHunt",
+              "value": [0]
+            },
+            "study": {
+              "label": "BITD.SkillsStudy",
+              "value": [0]
+            },
+            "survey": {
+              "label": "BITD.SkillsSurvey",
+              "value": [0]
+            },
+            "tinker": {
+              "label": "BITD.SkillsTinker",
+              "value": [0]
+            }
           }
         },
         "prowess": {
           "exp": [0],
+          "label": "BITD.SkillsProwess",
           "skills": {
-            "finesse": [0],
-            "prowl": [0],
-            "skirmish": [0],
-            "wreck": [0]
+            "finesse": {
+              "label": "BITD.SkillsFinesse",
+              "value": [0]
+            },
+            "prowl": {
+              "label": "BITD.SkillsProwl",
+              "value": [0]
+            },
+            "skirmish": {
+              "label": "BITD.SkillsSkirmish",
+              "value": [0]
+            },
+            "wreck": {
+              "label": "BITD.SkillsWreck",
+              "value": [0]
+            }
           }
         },
         "resolve": {
           "exp": [0],
+          "label": "BITD.SkillsResolve",
           "skills": {
-            "attune": [0],
-            "command": [0],
-            "consort": [0],
-            "sway": [0]
+            "attune": {
+              "label": "BITD.SkillsAttune",
+              "value": [0]
+            },
+            "command": {
+              "label": "BITD.SkillsCommand",
+              "value": [0]
+            },
+            "consort": {
+              "label": "BITD.SkillsConsort",
+              "value": [0]
+            },
+            "sway": {
+              "label": "BITD.SkillsSway",
+              "value": [0]
+            }
           }
         }
     }
@@ -143,34 +182,34 @@
     "quality": 0,
     "cohort_list": {
       "Gang": {
-        "label": "Gang"
+        "label": "BITD.Gang"
       },
       "Expert": {
-        "label": "Expert"
+        "label": "BITD.Expert"
       }
     },
     "gang_type": ["Adepts"],
     "gang_type_list": {
 
       "Adepts": {
-        "label": "Adepts",
-        "description": "Scholars, tinkerers, occultists, and chemists."
+        "label": "BITD.GangTypeAdepts",
+        "description": "BITD.GangTypeAdeptsDescription"
       },
       "Rooks": {
-        "label": "Rooks",
-        "description": "Con artists, spies, and socialites."
+        "label": "BITD.GangTypeRooks",
+        "description": "BITD.GangTypeRooksDescription"
       },
       "Rovers": {
-        "label": "Rovers",
-        "description": "Sailors, carriage drivers, and deathlands scavengers."
+        "label": "BITD.GangTypeRovers",
+        "description": "BITD.GangTypeRoversDescription"
       },
       "Skulks": {
-        "label": "Skulks",
-        "description": "Scouts, infiltrators, and thieves."
+        "label": "BITD.GangTypeSkulks",
+        "description": "BITD.GangTypeSkulksDescription"
       },
       "Thugs": {
-        "label": "Thugs",
-        "description": "Scouts, infiltrators, and thieves."
+        "label": "BITD.GangTypeThugs",
+        "description": "BITD.GangTypeThugsDescription"
       }
     },
     "expert_type": "",
@@ -179,66 +218,66 @@
     "edges": [],
     "edges_list": {
       "Fearsome": {
-        "label": "Fearsome",
-        "description": "The cohort is terrifying in aspect and reputation."
+        "label": "BITD.EdgesFearsome",
+        "description": "BITD.EdgesFearsomeDescription"
       },
       "Independent": {
-        "label": "Independent",
-        "description": "The cohort can be trusted to make good decisions and act on their own initiative in the absence of direct orders."
+        "label": "BITD.EdgesIndependent",
+        "description": "BITD.EdgesIndependentDescription"
       },
       "Loyal": {
-        "label": "Loyal",
-        "description": "The cohort can’t be bribed or turned against you."
+        "label": "BITD.EdgesLoyal",
+        "description": "BITD.EdgesLoyalDescription"
       },
       "Tenacious": {
-        "label": "Tenacious",
-        "description": "The cohort won’t be deterred from a task."
+        "label": "BITD.EdgesTenacious",
+        "description": "BITD.EdgesTenaciousDescription"
       }
     },
     "flaws": [],
     "flaws_list": {
       "Principled": {
-        "label": "Principled",
-        "description": "The cohort has an ethic or values that it won’t betray."
+        "label": "BITD.FlawsPrincipled",
+        "description": "BITD.FlawsPrincipledDescription"
       },
       "Savage": {
-        "label": "Savage",
-        "description": "The cohort is excessively violent and cruel."
+        "label": "BITD.FlawsSavage",
+        "description": "BITD.FlawsSavageDescription"
       },
       "Unreliable": {
-        "label": "Unreliable",
-        "description": "The cohort isn’t always available, due to other obligations, stupefaction from their vices, etc."
+        "label": "BITD.FlawsUnreliable",
+        "description": "BITD.FlawsUnreliableDescription"
       },
       "Wild": {
-        "label": "Wild",
-        "description": "The cohort is drunken, debauched, and loud-mouthed."
+        "label": "BITD.FlawsWild",
+        "description": "BITD.FlawsWildDescription"
       }
     },
     "harm": ["No"],
     "harm_list": {
       "No": {
-        "label": "No Harm",
-        "description": "The cohort is healthy.",
+        "label": "BITD.HarmNoHarm",
+        "description": "BITD.HarmNoHarmDescription",
         "value": 0
       },
       "Weakened": {
-        "label": "Weakened",
-        "description": "The cohort has reduced effect.",
+        "label": "BITD.HarmWeakened",
+        "description": "BITD.HarmWeakenedDescription",
         "value": 1
       },
       "Impaired": {
-        "label": "Impaired",
-        "description": "The cohort operates with reduced quality (-1d).",
+        "label": "BITD.HarmImpaired",
+        "description": "BITD.HarmImpairedDescription",
         "value": 2
       },
       "Broken": {
-        "label": "Broken",
-        "description": "The cohort can’t do anything until they recover.",
+        "label": "BITD.HarmBroken",
+        "description": "BITD.HarmBrokenDescription",
         "value": 3
       },
       "Dead": {
-        "label": "Dead",
-        "description": "The cohort is destroyed. You can spend coin equal to your Tier +2 to restore it, plus two downtime activities to recruit new gang members, or hire a new expert.",
+        "label": "BITD.HarmDead",
+        "description": "BITD.HarmDeadDescription",
         "value": 4
       }
     },
@@ -301,7 +340,7 @@
         "connects": []
       },
       "8": {
-        "name": "Lair",
+        "name": "BITD.Lair",
         "value": 1,
         "description": "",
         "connects": []

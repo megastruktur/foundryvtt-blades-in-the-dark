@@ -1,7 +1,20 @@
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+@mixin changeable($transition-period, $hover-brightness, $hover-opacity) {
+  transition: filter $transition-period;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness($hover-brightness);
+    opacity: $hover-opacity;
+  }
+}
+
 /*
- * Toothradio
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-@mixin toothradio($width, $height, $unchecked_background, $checked_background) {
+@mixin toothradio($width, $height, $unchecked_background, $checked_background, $changeable: true) {
 
   display: flex;
 
@@ -24,6 +37,13 @@
         background-image: none !important;
         background: $almost_black !important;
         margin-right: 0px;
+      }
+
+      @if $changeable {
+        @include changeable(0.1s, 0.8, 0.9);
+      }
+      @else {
+        cursor: not-allowed;
       }
     }
   }
@@ -74,6 +94,8 @@
         background-color: $red !important;
         margin-right: 0px;
       }
+
+      @include changeable(0.1s, 0.7, 0.7);
     }
   }
 
@@ -87,6 +109,8 @@
         background-color: $default_color;
       }
       & + label {
+        // Less opacity here cos otherwise it's barely visible on the dark
+        @include changeable(0.1s, 0.7, 0.7); 
         background-color: $accent_color;
       }
     }
@@ -116,6 +140,7 @@
       &[for$="-0"] {
         margin-right: 0px;
       }
+      @include changeable(0.1s, 0.8, 0.9);
     }
   }
 
@@ -150,6 +175,7 @@
     -ms-user-select: none;
     user-select: none;
     margin-right: 10px;
+    @include changeable(0.1s, 0.8, 0.9);
 
     /* Hide the browser's default checkbox */
     input {
@@ -196,6 +222,8 @@
     height: 100%;
     transform-origin: 0% 100%;
     background-color: $accent_color;
+
+    @include changeable(0.1s, 0.8, 0.9);
   }
 
   input {
@@ -231,7 +259,9 @@
  * Turf Block
  */
 @mixin turf_block($turf_width, $turf_height) {
-  
+  @include changeable(0.1s, 0.8, 0.9);
+
+
   $turf_margin: 20px;
   $connector_height: $turf_height/10;
   $connector_width: $turf_margin * 2;
@@ -327,7 +357,7 @@
   display: flex;
 
   label {
-
+    @include changeable(0.1s, 0.8, 0.9);
     & {
       height: $height;
       width: $width;
@@ -363,7 +393,7 @@
   display: flex;
 
   label {
-
+    @include changeable(0.1s, 0.8, 0.9);
     &:not([for$="-0"]) {
       height: $diameter;
       width: $diameter;
@@ -380,7 +410,6 @@
     display: none;
   
     &:checked {
-  
       & ~ label:not([for$="-0"]) {
         border-color: $circle_border_color;
         background-color: $default_color;
