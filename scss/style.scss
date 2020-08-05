@@ -9,6 +9,11 @@ $green: #008000;
 $light_green: #12a012;
 $blue: #04578f;
 
+// Transition period for sheet parts that hint what they can do
+$transition-period: 0.2s;
+$hover-opacity: 0.9;
+$hover-brightness: 0.8;
+
 // Imports
 @import 'mixin.scss';
 
@@ -177,6 +182,14 @@ $blue: #04578f;
     font-style: italic;
   }
 
+  .rollable-text {
+    transition: color $transition-period;
+  }
+  .rollable-text:hover {
+    cursor: pointer;
+    color: $red;
+  }
+
   // Stress and Trauma
 
   .big-teeth-section {
@@ -207,7 +220,7 @@ $blue: #04578f;
     .small-teeth-container {
 
       .small-teeth-wrap {
-        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png");
+        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
         flex-direction: column;
 
         .small-teeth {
@@ -309,7 +322,11 @@ $blue: #04578f;
 
     .attribute-label,
     .attribute-skill-label {
-      text-transform: capitalize;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .attribute-skill-label {
+      letter-spacing: 1px;
     }
     .attributes-exp {
 
@@ -386,13 +403,15 @@ $blue: #04578f;
     @include custom_radio_square($coin_size);
     flex-wrap: wrap;
 
-    label {
+    input ~ label {
       margin-right: $coin_margin;
       margin-bottom: $coin_margin;
 
       &[for$="0"] {
         border-width: 2px;
       }
+
+      @include changeable($transition-period, $hover-brightness, $hover-opacity);
     }
 
     &.coins-hands {
@@ -648,5 +667,4 @@ $blue: #04578f;
     }
 
   }
-  
 }
