@@ -49,6 +49,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
   let rolls = [];
+  let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
   
   // Backward Compat for rolls.
   if (isBelow070) {
@@ -86,7 +87,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
       effect_localize = 'BITD.EffectStandard'
   }
 
-  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_name: attribute_name, position: position_localize, effect: effect_localize});
+  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize});
 
   let messageData = {
     speaker: speaker,

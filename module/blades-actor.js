@@ -1,4 +1,5 @@
 import { bladesRoll } from "./blades-roll.js";
+import { BladesHelpers } from "./blades-helpers.js";
 
 /**
  * Extend the basic Actor
@@ -43,11 +44,14 @@ export class BladesActor extends Actor {
   /* -------------------------------------------- */
 
   rollAttributePopup(attribute_name) {
+
     // const roll = new Roll("1d20 + @abilities.wis.mod", actor.getRollData());
+    let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
+
     new Dialog({
-      title: `Roll ${attribute_name}`,
+      title: `${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
-        <h2>Roll ${attribute_name}</h2>
+        <h2>${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}</h2>
         <form>
           <div class="form-group">
             <label>${game.i18n.localize('BITD.Modifier')}:</label>
@@ -76,7 +80,7 @@ export class BladesActor extends Actor {
       buttons: {
         yes: {
           icon: "<i class='fas fa-check'></i>",
-          label: `Roll`,
+          label: game.i18n.localize('BITD.Roll'),
           callback: (html) => {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
             let position = html.find('[name="pos"]')[0].value;
@@ -86,7 +90,7 @@ export class BladesActor extends Actor {
         },
         no: {
           icon: "<i class='fas fa-times'></i>",
-          label: `Close`,
+          label: game.i18n.localize('Close'),
         },
       },
       default: "yes",
