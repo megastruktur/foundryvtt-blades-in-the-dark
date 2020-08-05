@@ -5,7 +5,8 @@
   <div id="attributes-{{attribute_name}}" class="attribute">
     <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
       <div class="stripe">
-        <label class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}" for="{{attribute_name}}-exp-0" .roll-die-attribute>{{#if attribute.label}}{{localize attribute.label}}{{else}}{{attribute_name}}{{/if}}</label>
+        <label class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}" for="{{attribute_name}}-exp-0">{{localize attribute.label}}</label>
+        <a class="roll-die-attribute" data-roll-attribute="{{attribute_name}}" title="Roll"><i class="fas fa-dice"></i></a>
       </div>
       <div class="stripe-tooth-body">
         {{#multiboxes attribute.exp}}
@@ -43,7 +44,7 @@
         <label for="attributes-{{skill_name}}-3"></label>
         <input type="radio" id="attributes-{{skill_name}}-4" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="4">
         <label for="attributes-{{skill_name}}-4"></label>
-        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{#if skill.label}}{{localize skill.label}}{{else}}{{skill_name}}{{/if}}</div>
+        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
         {{/multiboxes}}
       </div>
     </div>

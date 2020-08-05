@@ -1,5 +1,6 @@
-v0.7.5
+v1.0
 
-- Adds localization for text (except Items) (megastruktur)
-- Adds Rolls mod and styling (dunderjester)
+- Added Localization for text (except Items) + Migrations (megastruktur)
+- Added Rolls mod and styling (dunderjester)
+- Changed the Versioning for easier tracking
  
