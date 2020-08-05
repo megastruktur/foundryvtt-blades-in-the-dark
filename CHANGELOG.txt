@@ -2,5 +2,7 @@ v1.0
 
 - Added Localization for text (except Items) + Migrations (megastruktur)
 - Added Rolls mod and styling (dunderjester)
+- Added Russian localization (Cododoc)
+- Added design improvements and quality of life hinting to character sheet (OctarineSourcerer)
 - Changed the Versioning for easier tracking
  
