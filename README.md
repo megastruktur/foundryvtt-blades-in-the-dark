@@ -1,6 +1,6 @@
 # FoundryVTT Blades in the Dark character and crew sheets
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8HF456289GB22&source=url)
+If you like my work - send thanks to astromortis@gmail.com  :3
 
 Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
 
