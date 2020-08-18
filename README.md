@@ -46,6 +46,19 @@ Crew Types:
 ![alt screen][screenshot_roll_1]
 ![alt screen][screenshot_roll_2]
 
+## Logic field
+
+Logic field is a json with params which allows to implement some logic when the Item of corresponding type is added or removed.
+### Example (from the Vault 1 crew upgrade)
+`{"attribute":"data.vault.max","operator":"addition","value":4,"requirement":""}`
+- `attribute` - the attribute to affect
+- `operator` - what is done to attribute
+- `value` - the value for operator
+- `requirement` - is not used
+
+### Operators list
+- `addition` - is added when item is attached and substracted when removed
+
 ## To be done in the nearest future
 - Friends/rivals section
 - Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)

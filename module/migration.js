@@ -9,7 +9,7 @@ export const migrateWorld = async function() {
   for ( let a of game.actors.entities ) {
     if (a.data.type === 'character') {
       try {
-        const updateData = _migrateActorSkills(a.data);
+        const updateData = _migrateActor(a.data);
         if ( !isObjectEmpty(updateData) ) {
           console.log(`Migrating Actor entity ${a.name}`);
           await a.update(updateData, {enforceTypes: false});
@@ -32,15 +32,16 @@ export const migrateWorld = async function() {
 /* -------------------------------------------- */
 
 /**
- * Migrate the actor skills
+ * Migrate the actor attributes
  * @param {Actor} actor   The actor to Update
  * @return {Object}       The updateData to apply
  */
-function _migrateActorSkills(actor) {
+function _migrateActor(actor) {
 
   let updateData = {}
-  const attributes = game.system.model.Actor.character.attributes;
 
+  // Migrate Skills
+  const attributes = game.system.model.Actor.character.attributes;
   for ( let attribute_name of Object.keys(actor.data.attributes || {}) ) {
 
     // Insert attribute label
@@ -63,6 +64,24 @@ function _migrateActorSkills(actor) {
         
       }
     }
+  }
+
+  // Migrate Stress to Array
+  if (typeof actor.data.stress[0] !== 'undefined') {
+    updateData[`data.stress.value`] = actor.data.stress;
+    updateData[`data.stress.max`] = 9;
+    updateData[`data.stress.max_default`] = 9;
+    updateData[`data.stress.name_default`] = "BITD.Stress";
+    updateData[`data.stress.name`] = "BITD.Stress";
+  }
+
+  // Migrate Trauma to Array
+  if (typeof actor.data.trauma === 'undefined') {
+    updateData[`data.trauma.list`] = actor.data.traumas;
+    updateData[`data.trauma.max`] = 4;
+    updateData[`data.trauma.max_default`] = 4;
+    updateData[`data.trauma.name_default`] = "BITD.Trauma";
+    updateData[`data.trauma.name`] = "BITD.Trauma";
   }
 
   return updateData;

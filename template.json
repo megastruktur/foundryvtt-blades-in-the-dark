@@ -3,8 +3,20 @@
   "types": ["character", "crew"],
   "character": {
     "alias": "",
-    "stress": [0],
-    "traumas": [0],
+    "stress": {
+      "value": [0],
+      "max": 9,
+      "max_default": 9,
+      "name_default": "BITD.Stress",
+      "name": "BITD.Stress"
+    },
+    "trauma": {
+      "max": 4,
+      "max_default": 4,
+      "name": "BITD.Trauma",
+      "name_default": "BITD.Trauma",
+      "list": [0]
+    },
     "healing-clock": [0],
     "experience": [0],
     "coins": [0],
@@ -141,12 +153,12 @@
     }
   },
   "item": {
-    "templates": ["default"],
+    "templates": ["default", "logic"],
     "class": "",
     "load": 0
   },
   "class": {
-    "templates": ["default"],
+    "templates": ["default", "logic"],
     "experience_clues": "",
     "base_skills": {
       "hunt": [0],
@@ -164,7 +176,7 @@
     }
   },
   "ability": {
-    "templates": ["ability"]
+    "templates": ["ability", "logic"]
   },
   "heritage": {
     "templates": ["default"]

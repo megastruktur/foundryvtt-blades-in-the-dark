@@ -120,6 +120,9 @@ export class BladesHelpers {
 
   /**
    * Undo Item modifications when item is removed.
+   * @todo
+   *  - Remove all items and then Add them back to
+   *    sustain the logic mods
    * @param {Object} item_data 
    * @param {Entity} entity 
    */

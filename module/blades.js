@@ -52,7 +52,7 @@ Hooks.once("init", async function() {
     
     let html = options.fn(this);
 
-    if (typeof selected != 'undefined') {
+    if (typeof selected !== 'undefined') {
       selected.forEach(selected_value => {
         if (selected_value !== false) {
           const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
@@ -128,6 +128,22 @@ Hooks.once("init", async function() {
     return new Handlebars.SafeString(text);;
   });
 
+  // "N Times" loop for handlebars.
+  //  Block is executed N times starting from n=1.
+  //
+  // Usage:
+  // {{#times_from_1 10}}
+  //   <span>{{this}}</span>
+  // {{/times_from_1}}
+  Handlebars.registerHelper('times_from_1', function(n, block) {
+
+    var accum = '';
+    for (var i = 1; i <= n; ++i) {
+      accum += block.fn(i);
+    }
+    return accum;
+  });
+
 });
 
 /**
@@ -137,10 +153,10 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required
   const currentVersion = game.settings.get("bitd", "systemMigrationVersion");
-  const NEEDS_MIGRATION_VERSION = 1.0;
-
+  const NEEDS_MIGRATION_VERSION = 1.2;
+  
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
-
+  
   // Perform the migration
   if ( needMigration && game.user.isGM ) {
     migrations.migrateWorld();

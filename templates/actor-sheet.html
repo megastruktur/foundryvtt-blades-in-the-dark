@@ -92,51 +92,37 @@
   {{!-- Stress and Trauma --}}
   <div id="stress-trauma" class="section big-teeth-section">
     <div id="character-stress" class="big-teeth">
-      {{#multiboxes data.stress}}
+      {{#multiboxes data.stress.value}}
+
       <input type="radio" id="character-stress-0" name="data.stress" value="0" dtype="Radio">
-      <label class="black-label" for="character-stress-0">{{localize "BITD.Stress"}}</label>
-      <input type="radio" id="character-stress-1" name="data.stress" value="1" dtype="Radio">
-      <label for="character-stress-1"></label>
-      <input type="radio" id="character-stress-2" name="data.stress" value="2" dtype="Radio">
-      <label for="character-stress-2"></label>
-      <input type="radio" id="character-stress-3" name="data.stress" value="3" dtype="Radio">
-      <label for="character-stress-3"></label>
-      <input type="radio" id="character-stress-4" name="data.stress" value="4" dtype="Radio">
-      <label for="character-stress-4"></label>
-      <input type="radio" id="character-stress-5" name="data.stress" value="5" dtype="Radio">
-      <label for="character-stress-5"></label>
-      <input type="radio" id="character-stress-6" name="data.stress" value="6" dtype="Radio">
-      <label for="character-stress-6"></label>
-      <input type="radio" id="character-stress-7" name="data.stress" value="7" dtype="Radio">
-      <label for="character-stress-7"></label>
-      <input type="radio" id="character-stress-8" name="data.stress" value="8" dtype="Radio">
-      <label for="character-stress-8"></label>
-      <input type="radio" id="character-stress-9" name="data.stress" value="9" dtype="Radio">
-      <label for="character-stress-9"></label>
+      <label class="black-label" for="character-stress-0">{{localize data.stress.name}}</label>
+      
+      {{#times_from_1 data.stress.max}}
+        <input type="radio" id="character-stress-{{this}}" name="data.stress" value="{{this}}" dtype="Radio">
+        <label for="character-stress-{{this}}"></label>
+      {{/times_from_1}}
+
       {{/multiboxes}}
 
     </div>
     <div id="character-trauma-container" class="small-teeth-container">
-      {{#traumacounter data.traumas}}
+      {{#traumacounter data.trauma.list}}
       <div id="character-trauma" class="small-teeth-wrap">
         <label class="black-label" for="character-trauma-counter-0">{{localize "BITD.Trauma"}}</label>
         <div id="trauma-teeth" class="small-teeth">
           <input type="radio" id="character-trauma-counter-0" name="trauma-counter" value="0">
-          <input type="radio" id="character-trauma-counter-1" name="trauma-counter" value="1">
-          <label for="character-trauma-counter-1"></label>
-          <input type="radio" id="character-trauma-counter-2" name="trauma-counter" value="2">
-          <label for="character-trauma-counter-2"></label>
-          <input type="radio" id="character-trauma-counter-3" name="trauma-counter" value="3">
-          <label for="character-trauma-counter-3"></label>
-          <input type="radio" id="character-trauma-counter-4" name="trauma-counter" value="4">
-          <label for="character-trauma-counter-4"></label>
+
+          {{#times_from_1 data.trauma.max}}
+            <input type="radio" id="character-trauma-counter-{{this}}" name="trauma-counter" value="{{this}}">
+            <label for="character-trauma-counter-{{this}}"></label>
+          {{/times_from_1}}
         </div>
       </div>
       {{/traumacounter}}
     </div>
 
     <div id="trauma-list">
-      {{#multiboxes data.traumas}}
+      {{#multiboxes data.trauma.list}}
       <label>
         <input type="checkbox" name="data.traumas" value="cold">
         <span class="checkmark">{{localize "BITD.TraumaCold"}}</span>
