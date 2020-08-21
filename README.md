@@ -58,6 +58,7 @@ Logic field is a json with params which allows to implement some logic when the 
 
 ### Operators list
 - `addition` - is added when item is attached and substracted when removed
+- `attribute_change` - changes the "attribute" to value and when removed - uses the "attribute_default" to restore
 
 ## To be done in the nearest future
 - Friends/rivals section

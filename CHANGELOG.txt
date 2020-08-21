@@ -4,6 +4,8 @@ v2.0
 - Added Ghost
 - Added Vampire
 - Added Logic field to Item, Class and Ability
+- Removed dice icons on Attributes
+- Added new logic operator "name_change"
 
 v1.2
 - Non-Turf claims are no longer counted against Rep-Turf limit

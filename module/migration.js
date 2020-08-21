@@ -78,6 +78,7 @@ function _migrateActor(actor) {
   // Migrate Trauma to Array
   if (typeof actor.data.trauma === 'undefined') {
     updateData[`data.trauma.list`] = actor.data.traumas;
+    updateData[`data.trauma.value`] = [actor.data.traumas.length];
     updateData[`data.trauma.max`] = 4;
     updateData[`data.trauma.max_default`] = 4;
     updateData[`data.trauma.name_default`] = "BITD.Trauma";

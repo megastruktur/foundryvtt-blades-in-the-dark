@@ -52,6 +52,11 @@ Hooks.once("init", async function() {
     
     let html = options.fn(this);
 
+    // Fix for single non-array values.
+    if ( !Array.isArray(selected) ) {
+      selected = [selected];
+    }
+    
     if (typeof selected !== 'undefined') {
       selected.forEach(selected_value => {
         if (selected_value !== false) {
@@ -153,7 +158,7 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required
   const currentVersion = game.settings.get("bitd", "systemMigrationVersion");
-  const NEEDS_MIGRATION_VERSION = 1.2;
+  const NEEDS_MIGRATION_VERSION = 2.0;
   
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
   

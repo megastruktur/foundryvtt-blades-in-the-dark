@@ -13,6 +13,7 @@
     "trauma": {
       "max": 4,
       "max_default": 4,
+      "value": [0],
       "name": "BITD.Trauma",
       "name_default": "BITD.Trauma",
       "list": [0]
