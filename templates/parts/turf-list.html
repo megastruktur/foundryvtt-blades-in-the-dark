@@ -23,7 +23,7 @@
             {{/multiboxes}}
           </div>
 
-          <input class="turf-name" type="text" name="data.turfs.{{id}}.name" value="{{turf.name}}">
+          <input class="turf-name" type="text" name="data.turfs.{{id}}.name" value="{{#if ../editable}}{{turf.name}}{{else}}{{localize turf.name}}{{/if}}">
           {{#noteq turf.name "BITD.Turf"}}
           {{#noteq turf.name "BITD.Lair"}}
           <textarea class="turf-description" name="data.turfs.{{id}}.description">{{localize turf.description}}</textarea>

@@ -1,3 +1,9 @@
+v1.2
+- Non-Turf claims are no longer counted against Rep-Turf limit
+
+v1.1
+- Fixes
+
 v1.0
 
 - Added Localization for text (except Items) + Migrations (megastruktur)
