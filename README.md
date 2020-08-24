@@ -18,19 +18,22 @@ Contact Discord: `megastruktur#5704` in case you find any bugs or if you have an
 - To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet.
 
 Classes:
-- (C) Cutter
-- (H) Hound
+- (C)  Cutter
+- (G)  Ghost
+- (H)  Hound
+- (Hu) Hull
 - (Le) Leech
 - (Lu) Lurk
 - (Sl) Slide
 - (Sp) Spider
-- (W) Whisper
+- (V)  Vampire
+- (W)  Whisper
 
 Crew Types:
-- (A) Assassins
-- (B) Bravos
-- (C) Cult
-- (H) Hawkers
+- (A)  Assassins
+- (B)  Bravos
+- (C)  Cult
+- (H)  Hawkers
 - (Sh) Shadows
 - (Sm) Smugglers
 
