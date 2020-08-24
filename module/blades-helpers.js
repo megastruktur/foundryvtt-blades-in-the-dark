@@ -97,21 +97,37 @@ export class BladesHelpers {
    */
   static callItemLogic(item_data, entity) {
 
-    if ('logic' in item_data.data) {
+    if ('logic' in item_data.data && item_data.data.logic !== '') {
       let logic = JSON.parse(item_data.data.logic);
 
+      // Should be an array to support multiple expressions
+      if (!Array.isArray(logic)) {
+        logic = [logic];
+      }
+
       if (logic) {
-        // Different logic behav. dep on operator.
-        switch (logic.operator) {
-  
-          // Add when creating.
-          case "addition":
-            entity.update({
-              [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) + logic.value
-            });
-            break;
-  
-        }
+
+        logic.forEach(expression => {
+
+          // Different logic behav. dep on operator.
+          switch (expression.operator) {
+    
+            // Add when creating.
+            case "addition":
+              entity.update({
+                [expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + expression.attribute)) + expression.value
+              });
+              break;
+
+            // Change name property.
+            case "attribute_change":
+              entity.update({
+                [expression.attribute]: expression.value
+              });
+              break;
+    
+          }
+        });
       }
 
     }
@@ -120,25 +136,49 @@ export class BladesHelpers {
 
   /**
    * Undo Item modifications when item is removed.
+   * @todo
+   *  - Remove all items and then Add them back to
+   *    sustain the logic mods
    * @param {Object} item_data 
    * @param {Entity} entity 
    */
   static undoItemLogic(item_data, entity) {
 
-    if ('logic' in item_data.data) {
+    if ('logic' in item_data.data && item_data.data.logic !== '') {
       let logic = JSON.parse(item_data.data.logic)
 
-      if (logic) {
-        // Different logic behav. dep on operator.
-        switch (logic.operator) {
-          // Subtract when removing.
-          case "addition":
-            entity.update({
-              [logic.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + logic.attribute)) - logic.value
-            });
-            break;
+      // Should be an array to support multiple expressions
+      if (!Array.isArray(logic)) {
+        logic = [logic];
+      }
 
-        }
+      if (logic) {
+
+        var entity_data = entity.data;
+
+        logic.forEach(expression => {
+          // Different logic behav. dep on operator.
+          switch (expression.operator) {
+
+            // Subtract when removing.
+            case "addition":
+              entity.update({
+                [expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + expression.attribute)) - expression.value
+              });
+              break;
+
+            // Change name back to default.
+            case "attribute_change":
+              // Get the array path to take data.
+              let default_expression_attribute_path = expression.attribute + '_default';
+              let default_name = default_expression_attribute_path.split(".").reduce((o, i) => o[i], entity_data);
+
+              entity.update({
+                [expression.attribute]: default_name
+              });
+              break;
+          }
+        });
       }
     }
 

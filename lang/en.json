@@ -162,5 +162,9 @@
   "BITD.Effect": "Effect",
   "BITD.Modifier": "Modifier",
 
+  "BITD.Drain": "Drain",
+  "BITD.Wear": "Wear",
+  "BITD.Gloom": "Gloom",
+
   "BITD.Name": "Name"
 }
