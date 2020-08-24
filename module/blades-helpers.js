@@ -169,7 +169,6 @@ export class BladesHelpers {
 
             // Change name back to default.
             case "attribute_change":
-              console.log(entity);
               // Get the array path to take data.
               let default_expression_attribute_path = expression.attribute + '_default';
               let default_name = default_expression_attribute_path.split(".").reduce((o, i) => o[i], entity_data);
