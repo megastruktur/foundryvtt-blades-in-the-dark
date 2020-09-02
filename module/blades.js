@@ -149,6 +149,22 @@ Hooks.once("init", async function() {
     return accum;
   });
 
+  // "N Times" loop for handlebars.
+  //  Block is executed N times starting from n=0.
+  //
+  // Usage:
+  // {{#times_from_0 10}}
+  //   <span>{{this}}</span>
+  // {{/times_from_0}}
+  Handlebars.registerHelper('times_from_0', function(n, block) {
+
+    var accum = '';
+    for (var i = 0; i <= n; ++i) {
+      accum += block.fn(i);
+    }
+    return accum;
+  });
+
 });
 
 /**

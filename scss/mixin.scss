@@ -35,8 +35,11 @@
         width: auto;
         height: auto;
         background-image: none !important;
-        background: $almost_black !important;
-        margin-right: 0px;
+        color: $almost_white;
+
+        i {
+          margin-top: 4px;
+        }
       }
 
       @if $changeable {
