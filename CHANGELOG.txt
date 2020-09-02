@@ -1,3 +1,6 @@
+v2.1
+- Minor css improvements
+
 v2.0
 - Refactored the Stress to have dynamic Max value
 - Added Hull

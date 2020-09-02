@@ -209,8 +209,10 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: #191813 !important;
-  margin-right: 0px;
+  color: #EEEFFF;
+}
+* .big-teeth-section .big-teeth label[for$="-0"] i {
+  margin-top: 4px;
 }
 * .big-teeth-section .big-teeth label:hover {
   filter: brightness(0.8);
@@ -246,8 +248,10 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: #191813 !important;
-  margin-right: 0px;
+  color: #EEEFFF;
+}
+* .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] i {
+  margin-top: 4px;
 }
 * .big-teeth-section .small-teeth-container .small-teeth-wrap input {
   display: none;
@@ -294,6 +298,9 @@
   text-decoration: none;
   font-weight: bold;
 }
+* #character-stress label[for$="-0"] {
+  margin-right: 0px;
+}
 * #abilities .item-name {
   width: 70px;
 }
@@ -330,8 +337,10 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: #191813 !important;
-  margin-right: 0px;
+  color: #EEEFFF;
+}
+* .teeth-experience label[for$="-0"] i {
+  margin-top: 4px;
 }
 * .teeth-experience label:hover {
   filter: brightness(0.8);
@@ -466,8 +475,10 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: #191813 !important;
-  margin-right: 0px;
+  color: #EEEFFF;
+}
+* #attributes .attributes-exp .stripe-tooth-body label[for$="-0"] i {
+  margin-top: 4px;
 }
 * #attributes .attributes-exp .stripe-tooth-body label:hover {
   filter: brightness(0.8);
@@ -668,8 +679,10 @@
   width: auto;
   height: auto;
   background-image: none !important;
-  background: #191813 !important;
-  margin-right: 0px;
+  color: #EEEFFF;
+}
+* #crew-reputation label[for$="-0"] i {
+  margin-top: 4px;
 }
 * #crew-reputation label:hover {
   filter: brightness(0.8);
