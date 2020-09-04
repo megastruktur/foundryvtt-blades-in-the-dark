@@ -20,7 +20,7 @@
       {{#if (eq item.data.cohort.[0] "Gang")}}
         {{#each item.data.gang_type as |gang_type key|}}
         <div>
-            {{#with (lookup ../item.data.gang_type_list gang_type)}}{{description}} {{/with}}
+            {{#with (lookup ../item.data.gang_type_list gang_type)}}{{localize description}} {{/with}}
         </div>
         {{/each}}
       {{/if}}
@@ -29,18 +29,18 @@
         <div class="flex-vertical">
           {{#each item.data.edges as |edge key|}}
             {{#with (lookup ../item.data.edges_list edge)}}
-              <div class="description">{{description}} <b>({{localize label}})</b></div>
+              <div class="description">{{localize description}} <b>({{localize label}})</b></div>
             {{/with}}
           {{/each}}
           {{#each item.data.flaws as |flaw key|}}
             {{#with (lookup ../item.data.flaws_list flaw)}}
-              <div class="description">{{description}} <b>({{localize label}})</b></div>
+              <div class="description">{{localize description}} <b>({{localize label}})</b></div>
             {{/with}}
           {{/each}}
         </div>
       </div>
       
-      <div class="description">{{item.data.description}}</div>
+      <div class="description">{{localize item.data.description}}</div>
     </div>
 
   </div>

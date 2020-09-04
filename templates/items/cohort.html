@@ -43,7 +43,7 @@
       <div id="selected-gang-description" class="description">
         {{#each data.gang_type as |gang_type key|}}
           {{#with (lookup ../data.gang_type_list gang_type)}}
-            {{description}}
+            {{localize description}}
           {{/with}}
         {{/each}}
       </div>
