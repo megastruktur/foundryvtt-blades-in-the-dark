@@ -1,3 +1,7 @@
+v2.2
+- Spanish translation added
+- Cohorts localization fix
+
 v2.1
 - Minor css improvements
 
