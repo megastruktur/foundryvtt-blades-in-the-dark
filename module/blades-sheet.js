@@ -88,9 +88,7 @@ export class BladesSheet extends ActorSheet {
 
       items_to_add.push(items.find(e => e._id === $(this).val()));
     });
-    items_to_add.forEach(e => {
-      this.actor.createEmbeddedEntity("OwnedItem", duplicate(e));
-    });
+    this.actor.createEmbeddedEntity("OwnedItem", items_to_add);
   }
   /* -------------------------------------------- */
 

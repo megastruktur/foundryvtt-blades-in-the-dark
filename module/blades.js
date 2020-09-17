@@ -165,6 +165,19 @@ Hooks.once("init", async function() {
     return accum;
   });
 
+  // Concat helper
+  // https://gist.github.com/adg29/f312d6fab93652944a8a1026142491b1
+  // Usage: (concat 'first 'second')
+  Handlebars.registerHelper('concat', function() {
+    var outStr = '';
+    for(var arg in arguments){
+        if(typeof arguments[arg]!='object'){
+            outStr += arguments[arg];
+        }
+    }
+    return outStr;
+  });
+
 });
 
 /**
