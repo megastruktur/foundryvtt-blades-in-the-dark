@@ -1,3 +1,7 @@
+v2.3
+- Added shortened attribute names to use in templates
+- Handlebars "concat" helper added
+
 v2.2
 - Spanish translation added
 - Cohorts localization fix
