@@ -138,18 +138,21 @@
   "BITD.EffectGreat": "Great",
 
   "BITD.SkillsInsight": "Insight",
+  "BITD.SkillsInsightShort": "Insight",
   "BITD.SkillsHunt": "Hunt",
   "BITD.SkillsStudy": "Study",
   "BITD.SkillsSurvey": "Survey",
   "BITD.SkillsTinker": "Tinker",
 
   "BITD.SkillsProwess": "Prowess",
+  "BITD.SkillsProwessShort": "Prowess",
   "BITD.SkillsFinesse": "Finesse",
   "BITD.SkillsProwl": "Prowl",
   "BITD.SkillsSkirmish": "Skirmish",
   "BITD.SkillsWreck": "Wreck",
 
   "BITD.SkillsResolve": "Resolve",
+  "BITD.SkillsResolveShort": "Resolve",
   "BITD.SkillsAttune": "Attune",
   "BITD.SkillsCommand": "Command",
   "BITD.SkillsConsort": "Consort",

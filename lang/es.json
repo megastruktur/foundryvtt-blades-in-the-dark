@@ -138,18 +138,21 @@
   "BITD.EffectGreat": "Excelente",
 
   "BITD.SkillsInsight": "Perspicacia",
+  "BITD.SkillsInsightShort": "Per.",
   "BITD.SkillsHunt": "Cazar",
   "BITD.SkillsStudy": "Estudiar",
   "BITD.SkillsSurvey": "Analizar",
   "BITD.SkillsTinker": "Trastear",
 
   "BITD.SkillsProwess": "Destreza",
+  "BITD.SkillsProwessShort": "Des.",
   "BITD.SkillsFinesse": "Afinar",
   "BITD.SkillsProwl": "Acechar",
   "BITD.SkillsSkirmish": "Pelear",
   "BITD.SkillsWreck": "Destrozar",
 
   "BITD.SkillsResolve": "Voluntad",
+  "BITD.SkillsResolveShort": "Vol.",
   "BITD.SkillsAttune": "Armonizar",
   "BITD.SkillsCommand": "Mandar",
   "BITD.SkillsConsort": "Socializar",
