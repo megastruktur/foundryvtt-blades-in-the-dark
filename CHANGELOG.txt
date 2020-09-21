@@ -1,3 +1,6 @@
+v2.4
+- Fixed Rolls: roll position is shown correctly now
+
 v2.3
 - Added shortened attribute names to use in templates
 - Handlebars "concat" helper added
