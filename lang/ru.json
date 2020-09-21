@@ -123,7 +123,7 @@
   "BITD.RollPartialSuccessPosition": "Всё получилось, но с последствиями: персонаж получает <strong>тяжёлые повреждения</strong>; происходит <strong>серьёзное осложнение</strong>; <strong>эффективность действия снижается</strong>.",
   "BITD.RollFailurePositionControlled": "Не получилось. Или отступи и попробуй иной подход, или повтори попытку, но уже в <strong>рискованной</strong> ситуации.",
   "BITD.RollFailurePositionRisky": "Дела идут плохо. Персонаж получает <strong>повреждения</strong>, происходит <strong>осложнение</strong>, ситуация становится <strong>отчаянной</strong>, <strong>возможность оказывается упущенной</strong>.",
-  "BITD.RollFailurePosition": "Случилось худшее. Персонаж получает <strong>тяжёлые повреждения</strong>, происходит <strong>серьёзное осложнение</strong>, <strong>возможность оказывается упущенной</strong>.",
+  "BITD.RollFailurePositionDesperate": "Случилось худшее. Персонаж получает <strong>тяжёлые повреждения</strong>, происходит <strong>серьёзное осложнение</strong>, <strong>возможность оказывается упущенной</strong>.",
   "BITD.PositionControlled": "Контролируемая",
   "BITD.PositionRisky": "Рискованная",
   "BITD.PositionDesperate": "Отчаянная",

@@ -128,7 +128,7 @@
   "BITD.RollPartialSuccessPosition": "Lo logras, pero con una consecuencia: sufres un <strong>daño grave</strong>, se produce una <strong>complicación seria</strong>, sufres un <strong> efecto reducido</strong>.",
   "BITD.RollFailurePositionControlled": "Vacilas. Sigue intentándolo aprovechando una oportunidad <strong>arriesgada</strong> abandona para intentarlo con otro enfoque.",
   "BITD.RollFailurePositionRisky": "Todo va mal. Sufres <strong>daño</strong>, se produce una <strong>complication</strong>, terminas en una situación <strong>desesperada</strong>, <strong>pierdes esta oportunidad</strong>.",
-  "BITD.RollFailurePosition": "Nada puede ir peor. Sufres un <strong>daño grave</strong>, se produce una <strong>complicación seria</strong>, <strong>pierdes la oportunidad</strong> de realizar esta acción.",
+  "BITD.RollFailurePositionDesperate": "Nada puede ir peor. Sufres un <strong>daño grave</strong>, se produce una <strong>complicación seria</strong>, <strong>pierdes la oportunidad</strong> de realizar esta acción.",
 
   "BITD.PositionControlled": "Controlada",
   "BITD.PositionRisky": "Arriesgada",
