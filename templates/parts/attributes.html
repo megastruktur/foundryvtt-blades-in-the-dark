@@ -10,11 +10,13 @@
       <div class="stripe-tooth-body">
         {{#multiboxes attribute.exp}}
 
-        <label for="{{attribute_name}}-exp-0"><i class="fab fa-creative-commons-zero"></i></label>
-        <input type="radio" id="{{attribute_name}}-exp-0" name="data.attributes.{{attribute_name}}.exp" value="0" checked="checked">
+        <label for="{{../actor._id}}-{{attribute_name}}-exp-0"><i class="fab fa-creative-commons-zero"></i></label>
+        <input type="radio" id="{{../actor._id}}-{{attribute_name}}-exp-0"
+               name="data.attributes.{{attribute_name}}.exp" value="0" checked="checked">
         {{#times_from_1 6}}
-          <input type="radio" id="{{attribute_name}}-exp-{{this}}" name="data.attributes.{{attribute_name}}.exp" value="{{this}}">
-          <label for="{{attribute_name}}-exp-{{this}}"></label>
+          <input type="radio" id="{{../../actor._id}}-{{attribute_name}}-exp-{{this}}"
+                 name="data.attributes.{{attribute_name}}.exp" value="{{this}}">
+          <label for="{{../../actor._id}}-{{attribute_name}}-exp-{{this}}"></label>
         {{/times_from_1}}
         {{/multiboxes}}
       </div>
@@ -23,13 +25,16 @@
     {{!-- Skills --}}
 
     {{#each attribute.skills as |skill skill_name|}}
+
     <div class="flex-horizontal">
       <div class="attributes-container">
+
         {{#multiboxes skill.value}}
 
         {{#times_from_0 4}}
-        <input type="radio" id="attributes-{{skill_name}}-{{this}}" name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
-        <label for="attributes-{{skill_name}}-{{this}}"></label>
+        <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
+               name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
+        <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"></label>
         {{/times_from_0}}
 
         <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
