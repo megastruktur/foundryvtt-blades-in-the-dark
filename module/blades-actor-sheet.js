@@ -95,12 +95,6 @@ export class BladesActorSheet extends BladesSheet {
     return this.object.update(formData);
   }
 
-  /** override */
-  _getFormData(form) {
-    const FD = BladesHelpers.getFormDataHelper(form, this.editors);
-    return FD;
-  }
-
   /* -------------------------------------------- */
 
 }

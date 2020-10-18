@@ -40,12 +40,4 @@ export class BladesItemSheet extends ItemSheet {
   }
 
   /* -------------------------------------------- */
-
-  /** override */
-  _getFormData(form) {
-    const FD = BladesHelpers.getFormDataHelper(form, this.editors);
-    return FD;
-  }
-
-  /* -------------------------------------------- */
 }

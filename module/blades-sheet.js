@@ -102,6 +102,7 @@ export class BladesSheet extends ActorSheet {
     this.actor.rollAttributePopup(attribute_name);
 
   }
+
   /* -------------------------------------------- */
 
 }

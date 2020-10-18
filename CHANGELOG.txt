@@ -1,3 +1,8 @@
+v2.5
+- Updates the functionality with checkboxes and new FormDataExtended api.
+- Fixes Traumas for FVTT 0.7.2+.
+- Version update to be FVTT 0.7.2+ compatible.
+
 v2.4
 - Fixed Rolls: roll position is shown correctly now
 
