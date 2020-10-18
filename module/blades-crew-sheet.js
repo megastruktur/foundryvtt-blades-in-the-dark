@@ -102,14 +102,6 @@ export class BladesCrewSheet extends BladesSheet {
   }
 
   /* -------------------------------------------- */
-
-  /** override */
-  _getFormData(form) {
-    const FD = BladesHelpers.getFormDataHelper(form, this.editors);
-    return FD;
-  }
-
-  /* -------------------------------------------- */
   /*  Form Submission                             */
 	/* -------------------------------------------- */
 
