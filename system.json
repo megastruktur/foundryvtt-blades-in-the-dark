@@ -31,7 +31,7 @@
     }
   ],
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/2.5/system.json",
+  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
   "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/2.5.zip",
   "packs": [
     {
