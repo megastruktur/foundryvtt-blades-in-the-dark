@@ -185,6 +185,34 @@ Hooks.once("init", async function() {
     return outStr;
   });
 
+
+  /**
+   * @inheritDoc
+   * Takes label from Selected option instead of just plain value.
+   */
+
+  Handlebars.registerHelper('selectOptionsWithLabel', function(choices, options) {
+
+    const localize = options.hash['localize'] ?? false;
+    let selected = options.hash['selected'] ?? null;
+    let blank = options.hash['blank'] || null;
+    selected = selected instanceof Array ? selected.map(String) : [String(selected)];
+
+    // Create an option
+    const option = (key, object) => {
+      if ( localize ) object.label = game.i18n.localize(object.label);
+      let isSelected = selected.includes(key);
+      html += `<option value="${key}" ${isSelected ? "selected" : ""}>${object.label}</option>`
+    };
+
+    // Create the options
+    let html = "";
+    if ( blank ) option("", blank);
+    Object.entries(choices).forEach(e => option(...e));
+
+    return new Handlebars.SafeString(html);
+  });
+
 });
 
 /**
