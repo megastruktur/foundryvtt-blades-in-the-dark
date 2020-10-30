@@ -29,16 +29,15 @@
   </section>
 
   <section id="gang-expert-type-selector" class="flex-vertical">
-    {{#if (eq data.cohort.[0] "Gang")}}
+    {{#if (eq data.cohort "Gang")}}
 
       <div class="label-stripe">{{localize "BITD.GangType"}}</div>
       <div id="gang-type-boxes" class="flex-horizontal">
-        {{#multiboxes data.gang_type}}
-          {{#each data.gang_type_list as |gang_type key|}}
-            <input id="gang-type-{{key}}" type="checkbox" name="data.gang_type" value="{{key}}">
-            <label for="gang-type-{{key}}">{{localize gang_type.label}}</label>
-          {{/each}}
-        {{/multiboxes}}
+
+        <select name="data.gang_type" multiple>
+          {{selectOptionsWithLabel data.gang_type_list selected=data.gang_type localize=true}}
+        </select>
+
       </div>
       <div id="selected-gang-description" class="description">
         {{#each data.gang_type as |gang_type key|}}
@@ -50,7 +49,7 @@
 
     {{/if}}
 
-    {{#if (eq data.cohort.[0] "Expert")}}
+    {{#if (eq data.cohort "Expert")}}
       <div class="label-stripe">{{localize "BITD.ExpertType"}}</div>
       <input type="text" name="data.expert_type" value="{{data.expert_type}}">
     {{/if}}

@@ -1,3 +1,7 @@
+v2.6
+- Fixed bug with upgrade
+- Fixed bug with Gang Type (checkboxes in Foundry can not be used to pass string values so changed to multiple select)
+
 v2.5
 - Updates the functionality with checkboxes and new FormDataExtended api.
 - Fixes Traumas for FVTT 0.7.2+.
