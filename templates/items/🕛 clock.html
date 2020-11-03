@@ -1,0 +1,21 @@
+<form class="{{cssClass}} clock-block" autocomplete="off">
+
+    <div class="flexcol blades-clock-name-type">
+
+        {{#if editable}}
+        <input type="text" id="{{item._id}}-clock-name" name="name" value="{{item.name}}">
+
+        <select data-type="String" name="data.type">
+            {{#select data.type}}
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            {{/select}}
+        </select>
+        {{/if}}
+
+        <div class="clocks clocks-{{data.type}}">
+            {{{blades-clock "data.value" data.type data.value item._id}}}
+        </div>
+    </div>
+</form>

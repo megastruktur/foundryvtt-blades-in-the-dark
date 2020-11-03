@@ -49,6 +49,12 @@ Crew Types:
 ![alt screen][screenshot_roll_1]
 ![alt screen][screenshot_roll_2]
 
+## Clocks
+Clocks are now here!
+- To add clock go to Items tab and create a new Item of type "🕛 clock".
+- To share it to other players rightclick, select "Configure Permissions" and set "Observer" permissions to all
+ desired players.
+
 ## Logic field
 
 Logic field is a json with params which allows to implement some logic when the Item of corresponding type is added or removed.

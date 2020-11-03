@@ -6,10 +6,11 @@ export class BladesItemSheet extends ItemSheet {
 
   /** @override */
 	static get defaultOptions() {
+
 	  return mergeObject(super.defaultOptions, {
 			classes: ["blades-in-the-dark", "sheet", "item"],
-			width: 900,
-			height: 900,
+			width: 'auto',
+			height: 'auto',
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
 		});
   }

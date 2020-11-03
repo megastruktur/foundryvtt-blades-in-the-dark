@@ -213,6 +213,42 @@ Hooks.once("init", async function() {
     return new Handlebars.SafeString(html);
   });
 
+
+  /**
+   * Create appropriate Blades clock
+   */
+
+  Handlebars.registerHelper('blades-clock', function(parameter_name, type, current_value, uniq_id) {
+
+    let html = '';
+
+    if (current_value === null) {
+      current_value = 0;
+    }
+
+    if (parseInt(current_value) > parseInt(type)) {
+      current_value = type;
+    }
+
+    // Label for 0
+    html += `<label class="clock-zero-label" for="clock-0-${uniq_id}}">❌</label>`;
+    html += `<div id="blades-clock-${uniq_id}" class="blades-clock clock-${type} clock-${type}-${current_value}" style="background-image:url('/systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${type}-${current_value}.svg');">`;
+
+    let zero_checked = (parseInt(current_value) === 0) ? 'checked="checked"' : '';
+    html += `<input type="radio" value="0" id="clock-0-${uniq_id}}" name="${parameter_name}" ${zero_checked}>`;
+
+    for (let i = 1; i <= parseInt(type); i++) {
+      let checked = (parseInt(current_value) === i) ? 'checked="checked"' : '';
+      html += `        
+        <input type="radio" value="${i}" id="clock-${i}-${uniq_id}" name="${parameter_name}" ${checked}>
+        <label for="clock-${i}-${uniq_id}"></label>
+      `;
+    }
+
+    html += `</div>`;
+    return html;
+  });
+
 });
 
 /**
