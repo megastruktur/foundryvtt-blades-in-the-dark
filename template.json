@@ -139,7 +139,7 @@
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability", "\uD83D\uDD5B clock"],
   "templates": {
     "default": {
       "description": ""
@@ -401,6 +401,10 @@
         "connects": []
       }
     }
+  },
+  "\uD83D\uDD5B clock": {
+    "type": 4,
+    "value": "0"
   }
 }
 }

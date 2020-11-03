@@ -300,8 +300,8 @@ $hover-brightness: 0.8;
   
     // Clock
     #character-health-clock {
-      @include clock(4, 80, $almost_white, $red);
       margin: 0 auto;
+      @include clock(4, 88);
     }
 
     #character-armor-uses {
@@ -674,5 +674,33 @@ $hover-brightness: 0.8;
       }
     }
 
+  }
+
+  .clock-zero-label {
+    color: $almost_black;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+  }
+
+  .clock-block {
+    .clocks {
+      &.clocks-4 {
+        @include clock(4, 200);
+      }
+      &.clocks-6 {
+        @include clock(6, 200);
+      }
+      &.clocks-8 {
+        @include clock(8, 200);
+      }
+    }
+  }
+
+  .clock-block .blades-clock-name-type {
+    > * {
+      margin-bottom: 10px;
+      max-width: 220px;
+    }
   }
 }

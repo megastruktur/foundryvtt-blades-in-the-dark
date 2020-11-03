@@ -165,7 +165,7 @@
       <table>
         <thead>
           <th class="black-white" colspan="4">{{localize "BITD.Harm"}}</th>
-          <th class="black-white"><label for="character-{{actor._id}}-healing-clock-0">{{localize "BITD.Healing"}}</label></th>
+          <th class="black-white"><label>{{localize "BITD.Healing"}}</label></th>
           <th class="black-white">{{localize "BITD.Armor"}}</th>
         </thead>
         <tbody>
@@ -176,18 +176,8 @@
             </td>
             <td>{{localize "BITD.NeedHelp"}}</td>
             <td rowspan="3">
-              {{#multiboxes data.healing-clock}}
               <div id="character-health-clock">
-                <input type="radio" value="0" id="character-{{actor._id}}-healing-clock-0" name="data.healing-clock" checked="checked">
-                <input type="radio" value="1" id="character-{{actor._id}}-healing-clock-1" name="data.healing-clock">
-                <label for="character-{{actor._id}}-healing-clock-1"></label>
-                <input type="radio" value="2" id="character-{{actor._id}}-healing-clock-2" name="data.healing-clock">
-                <label for="character-{{actor._id}}-healing-clock-2"></label>
-                <input type="radio" value="3" id="character-{{actor._id}}-healing-clock-3" name="data.healing-clock">
-                <label for="character-{{actor._id}}-healing-clock-3"></label>
-                <input type="radio" value="4" id="character-{{actor._id}}-healing-clock-4" name="data.healing-clock">
-                <label for="character-{{actor._id}}-healing-clock-4"></label>
-                {{/multiboxes}}
+                {{{blades-clock "data.healing-clock" 4 data.healing-clock actor._id}}}
               </div>
             </td>
             <td rowspan="3" id="character-armor-uses">
