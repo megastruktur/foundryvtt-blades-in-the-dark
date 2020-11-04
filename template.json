@@ -1,6 +1,6 @@
 {
 "Actor": {
-  "types": ["character", "crew"],
+  "types": ["character", "crew", "\uD83D\uDD5B clock"],
   "character": {
     "alias": "",
     "stress": {
@@ -136,10 +136,15 @@
     "features": [],
     "heat": [0],
     "wanted": [0]
+  },
+  "\uD83D\uDD5B clock": {
+    "name": "",
+    "type": 4,
+    "value": "0"
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability", "\uD83D\uDD5B clock"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
   "templates": {
     "default": {
       "description": ""
@@ -401,10 +406,6 @@
         "connects": []
       }
     }
-  },
-  "\uD83D\uDD5B clock": {
-    "type": 4,
-    "value": "0"
   }
 }
 }

@@ -1,3 +1,7 @@
+v2.8
+- Clocks rebuilt to be Actors.
+- Fixed Dice-so-nice integration.
+
 v2.7
 - Clocks added!
 

@@ -51,9 +51,8 @@ Crew Types:
 
 ## Clocks
 Clocks are now here!
-- To add clock go to Items tab and create a new Item of type "🕛 clock".
-- To share it to other players rightclick, select "Configure Permissions" and set "Observer" permissions to all
- desired players.
+- To add clock go to Actors tab and create a new Actor of type "🕛 clock".
+- To share it to other players just drag it to a scene.
 
 ## Logic field
 

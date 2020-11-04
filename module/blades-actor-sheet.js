@@ -88,13 +88,4 @@ export class BladesActorSheet extends BladesSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
-  _updateObject(event, formData) {
-    
-    // Update the Actor
-    return this.object.update(formData);
-  }
-
-  /* -------------------------------------------- */
-
 }
