@@ -1,13 +1,16 @@
 /* 
 *  Elements that can be changed will hint this by dimming and fading a little on hover
 */
-@mixin changeable($transition-period, $hover-brightness, $hover-opacity) {
+@mixin changeable($transition-period, $hover-brightness, $hover-opacity, $hover-color: null) {
   transition: filter $transition-period;
   cursor: pointer;
 
   &:hover {
     filter: brightness($hover-brightness);
     opacity: $hover-opacity;
+    @if $hover-color {
+      color: $hover-color;
+    }
   }
 }
 

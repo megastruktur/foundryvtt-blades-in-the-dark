@@ -703,4 +703,10 @@ $hover-brightness: 0.8;
       max-width: 220px;
     }
   }
+
+  i {
+    &.nullifier {
+      @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
+    }
+  }
 }

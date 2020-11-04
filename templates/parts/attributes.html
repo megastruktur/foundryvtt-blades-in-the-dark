@@ -10,7 +10,9 @@
       <div class="stripe-tooth-body">
         {{#multiboxes attribute.exp}}
 
-        <label for="{{../actor._id}}-{{attribute_name}}-exp-0"><i class="fab fa-creative-commons-zero"></i></label>
+        <label
+                for="{{../actor._id}}-{{attribute_name}}-exp-0"><i
+                class="fab fa-creative-commons-zero nullifier"></i></label>
         <input type="radio" id="{{../actor._id}}-{{attribute_name}}-exp-0"
                name="data.attributes.{{attribute_name}}.exp" value="0" checked="checked">
         {{#times_from_1 6}}
