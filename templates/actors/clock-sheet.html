@@ -1,9 +1,8 @@
 <form class="{{cssClass}} clock-block" autocomplete="off">
 
     <div class="flexcol blades-clock-name-type">
-
         {{#if editable}}
-        <input type="text" id="{{item._id}}-clock-name" name="name" value="{{item.name}}">
+        <input type="text" id="{{actor._id}}-clock-name" name="name" value="{{actor.name}}">
 
         <select data-type="String" name="data.type">
             {{#select data.type}}

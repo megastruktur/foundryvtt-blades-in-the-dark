@@ -106,7 +106,7 @@ export class BladesCrewSheet extends BladesSheet {
 	/* -------------------------------------------- */
 
   /** @override */
-  _updateObject(event, formData) {
+  async _updateObject(event, formData) {
 
     // Update the Item
     super._updateObject(event, formData);
