@@ -2,7 +2,8 @@
 
   <div id="coins-hands">
     <div class="stripe">
-      <label for="coins-{{actor._id}}-hands-0">{{localize "BITD.Coin"}}</label>
+      <label for="coins-{{actor._id}}-hands-0">{{localize "BITD.Coin"}}
+        <i class="fab fa-creative-commons-zero nullifier"></i></label>
     </div>
     <div class="coins coins-hands">
       {{#multiboxes data.coins}}
@@ -22,7 +23,8 @@
   <div id="coins-stashed">
     
     <div class="stripe">
-      <label for="coins-{{actor._id}}-stashed-0">{{localize "BITD.Stash"}}</label>
+      <label for="coins-{{actor._id}}-stashed-0">{{localize "BITD.Stash"}} <i
+              class="fab fa-creative-commons-zero nullifier"></i></label>
     </div>
     <div class="coins coins-stashed">
       {{#multiboxes data.coins_stashed}}

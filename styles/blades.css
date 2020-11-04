@@ -1205,5 +1205,14 @@
   margin-bottom: 10px;
   max-width: 220px;
 }
+* i.nullifier {
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+* i.nullifier:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+  color: red;
+}
 
 /*# sourceMappingURL=blades.css.map */
