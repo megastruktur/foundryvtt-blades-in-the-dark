@@ -1,3 +1,6 @@
+v2.10
+- Fix clock styles
+
 v2.9
 - Minor style fixes
 

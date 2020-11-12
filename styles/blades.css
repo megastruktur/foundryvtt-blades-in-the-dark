@@ -1038,9 +1038,6 @@
 }
 * .clock-zero-label {
   color: #191813;
-  top: 0px;
-  left: 0px;
-  position: absolute;
 }
 * .clock-block .clocks.clocks-4 {
   position: relative;
