@@ -1,5 +1,5 @@
 
-import { BladesSheet } from "./blades-sheet.js";
+import { BladesSheet } from "./wicked-sheet.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -10,8 +10,8 @@ export class BladesActorSheet extends BladesSheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-  	  classes: ["blades-in-the-dark", "sheet", "actor"],
-  	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
+          classes: ["wicked-ones", "sheet", "actor"],
+          template: "systems/wicked-ones/templates/actor-sheet.html",
       width: 700,
       height: 970,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}]

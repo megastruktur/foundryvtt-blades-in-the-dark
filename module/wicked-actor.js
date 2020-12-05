@@ -1,5 +1,5 @@
-import { bladesRoll } from "./blades-roll.js";
-import { BladesHelpers } from "./blades-helpers.js";
+import { bladesRoll } from "./wicked-roll.js";
+import { BladesHelpers } from "./wicked-helpers.js";
 
 /**
  * Extend the basic Actor

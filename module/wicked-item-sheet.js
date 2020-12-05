@@ -8,7 +8,7 @@ export class BladesItemSheet extends ItemSheet {
 	static get defaultOptions() {
 
 	  return mergeObject(super.defaultOptions, {
-			classes: ["blades-in-the-dark", "sheet", "item"],
+          classes: ["wicked-ones", "sheet", "item"],
 			width: 'auto',
 			height: 'auto',
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
@@ -19,7 +19,7 @@ export class BladesItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/blades-in-the-dark/templates/items";
+      const path = "systems/wicked-ones/templates/items";
     let simple_item_types = ["background", "heritage", "vice", "crew_reputation"];
     let template_name = `${this.item.data.type}`;
 

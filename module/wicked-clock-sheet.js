@@ -1,5 +1,5 @@
 
-import { BladesSheet } from "./blades-sheet.js";
+import { BladesSheet } from "./wicked-sheet.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -10,8 +10,8 @@ export class BladesClockSheet extends BladesSheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-  	  classes: ["blades-in-the-dark", "sheet", "actor"],
-  	  template: "systems/blades-in-the-dark/templates/actors/clock-sheet.html",
+          classes: ["wicked-ones", "sheet", "actor"],
+          template: "systems/wicked-ones/templates/actors/clock-sheet.html",
       width: 700,
       height: 970,
     });
@@ -22,7 +22,7 @@ export class BladesClockSheet extends BladesSheet {
   /** @override */
   async _updateObject(event, formData) {
 
-    let image_path = `/systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${formData['data.type']}-${formData['data.value']}.svg`;
+      let image_path = `/systems/wicked-ones/styles/assets/progressclocks-svg/Progress Clock ${formData['data.type']}-${formData['data.value']}.svg`;
     formData['img'] = image_path;
     formData['token.img'] = image_path;
 

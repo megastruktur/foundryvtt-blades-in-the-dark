@@ -1,5 +1,5 @@
 
-import { BladesSheet } from "./blades-sheet.js";
+import { BladesSheet } from "./wicked-sheet.js";
 
 /**
  * @extends {BladesSheet}
@@ -9,8 +9,8 @@ export class BladesCrewSheet extends BladesSheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-  	  classes: ["blades-in-the-dark", "sheet", "actor"],
-  	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
+          classes: ["wicked-ones", "sheet", "actor"],
+          template: "systems/wicked-ones/templates/dungeon-sheet.html",
       width: 930,
       height: 1020,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "turfs"}]

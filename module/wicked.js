@@ -6,15 +6,15 @@
 
 // Import Modules
 import { registerSystemSettings } from "./settings.js";
-import { preloadHandlebarsTemplates } from "./blades-templates.js";
-import { bladesRoll, simpleRollPopup } from "./blades-roll.js";
-import { BladesHelpers } from "./blades-helpers.js";
-import { BladesActor } from "./blades-actor.js";
-import { BladesItem } from "./blades-item.js";
-import { BladesItemSheet } from "./blades-item-sheet.js";
-import { BladesActorSheet } from "./blades-actor-sheet.js";
-import { BladesCrewSheet } from "./blades-crew-sheet.js";
-import { BladesClockSheet } from "./blades-clock-sheet.js";
+import { preloadHandlebarsTemplates } from "./wicked-templates.js";
+import { bladesRoll, simpleRollPopup } from "./wicked-roll.js";
+import { BladesHelpers } from "./wicked-helpers.js";
+import { BladesActor } from "./wicked-actor.js";
+import { BladesItem } from "./wicked-item.js";
+import { BladesItemSheet } from "./wicked-item-sheet.js";
+import { BladesActorSheet } from "./wicked-actor-sheet.js";
+import { BladesCrewSheet } from "./wicked-crew-sheet.js";
+import { BladesClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
 
 window.BladesHelpers = BladesHelpers;
@@ -30,8 +30,8 @@ Hooks.once("init", async function() {
   }
 
   // Define Roll template.
-  // CONFIG.Dice.template = "systems/blades-in-the-dark/templates/blades-roll.html"
-  // CONFIG.Dice.tooltip = "systems/blades-in-the-dark/templates/blades-roll-tooltip.html"
+  // CONFIG.Dice.template = "systems/wicked-ones/templates/wicked-roll.html"
+  // CONFIG.Dice.tooltip = "systems/wicked-ones/templates/wicked-roll-tooltip.html"
 
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
@@ -234,7 +234,7 @@ Hooks.once("init", async function() {
 
     // Label for 0
     html += `<label class="clock-zero-label" for="clock-0-${uniq_id}}"><i class="fab fa-creative-commons-zero nullifier"></i></label>`;
-    html += `<div id="blades-clock-${uniq_id}" class="blades-clock clock-${type} clock-${type}-${current_value}" style="background-image:url('/systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${type}-${current_value}.svg');">`;
+      html += `<div id="blades-clock-${uniq_id}" class="blades-clock clock-${type} clock-${type}-${current_value}" style="background-image:url('/systems/wicked-ones/styles/assets/progressclocks-svg/Progress Clock ${type}-${current_value}.svg');">`;
 
     let zero_checked = (parseInt(current_value) === 0) ? 'checked="checked"' : '';
     html += `<input type="radio" value="0" id="clock-0-${uniq_id}}" name="${parameter_name}" ${zero_checked}>`;
@@ -260,13 +260,13 @@ Hooks.once("ready", function() {
 
   // Determine whether a system migration is required
   const currentVersion = game.settings.get("bitd", "systemMigrationVersion");
-  const NEEDS_MIGRATION_VERSION = 2.0;
+  const NEEDS_MIGRATION_VERSION = 0.1;
   
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
   
   // Perform the migration
   if ( needMigration && game.user.isGM ) {
-    migrations.migrateWorld();
+    // migrations.migrateWorld(); Disable migration for now
   }
 });
 
