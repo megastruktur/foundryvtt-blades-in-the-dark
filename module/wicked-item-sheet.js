@@ -20,7 +20,7 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
   get template() {
       const path = "systems/wicked-ones/templates/items";
-    let simple_item_types = ["background", "heritage", "vice", "crew_reputation"];
+    let simple_item_types = ["impulse", "race", "revelry", "dungeon_reputation"];
     let template_name = `${this.item.data.type}`;
 
     if (simple_item_types.indexOf(this.item.data.type) >= 0) {

@@ -71,8 +71,8 @@ function _migrateActor(actor) {
     updateData[`data.stress.value`] = actor.data.stress;
     updateData[`data.stress.max`] = 9;
     updateData[`data.stress.max_default`] = 9;
-    updateData[`data.stress.name_default`] = "BITD.Stress";
-    updateData[`data.stress.name`] = "BITD.Stress";
+    updateData[`data.stress.name_default`] = "FITD.Stress";
+    updateData[`data.stress.name`] = "FITD.Stress";
   }
 
   // Migrate Trauma to Array
@@ -81,8 +81,8 @@ function _migrateActor(actor) {
     updateData[`data.trauma.value`] = [actor.data.traumas.length];
     updateData[`data.trauma.max`] = 4;
     updateData[`data.trauma.max_default`] = 4;
-    updateData[`data.trauma.name_default`] = "BITD.Trauma";
-    updateData[`data.trauma.name`] = "BITD.Trauma";
+    updateData[`data.trauma.name_default`] = "FITD.Trauma";
+    updateData[`data.trauma.name`] = "FITD.Trauma";
   }
 
   return updateData;

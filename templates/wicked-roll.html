@@ -7,58 +7,46 @@
     {{/if}}
 
     {{#if (eq roll_status "critical-success")}}
-    <div class="die {{roll_status}}">{{localize "BITD.RollCriticalSuccess"}}</div>
+    <div class="die {{roll_status}}">{{localize "FITD.RollCriticalSuccess"}}</div>
     <div class="description">
-        <p>{{{localize "BITD.RollDoWithIncreasedEffect"}}}</p>
+        <p>{{{localize "FITD.RollDoWithIncreasedEffect"}}}</p>
     </div>
     {{/if}}
 
     {{#if (eq roll_status "success")}}
-    <div class="die {{roll_status}}">{{localize "BITD.RollSuccess"}}</div>
-    <div class="description"><p>{{{localize "BITD.RollDo"}}}</p></div>
+    <div class="die {{roll_status}}">{{localize "FITD.RollSuccess"}}</div>
+    <div class="description"><p>{{{localize "FITD.RollDo"}}}</p></div>
     {{/if}}
 
     {{#if (eq roll_status "partial-success")}}
-    <div class="die {{roll_status}}">{{localize "BITD.RollPartialSuccess"}}</div>
+    <div class="die {{roll_status}}">{{localize "FITD.RollPartialSuccess"}}</div>
     <div class="description">
         <p>
             {{#if (eq position "controlled")}}
-            {{{localize "BITD.RollPartialSuccessPositionControlled"}}}
+            {{{localize "FITD.RollPartialSuccessPositionControlled"}}}
             {{else if (eq position "risky")}}
-            {{{localize "BITD.RollPartialSuccessPositionRisky"}}}
+            {{{localize "FITD.RollPartialSuccessPositionRisky"}}}
             {{else}}
-            {{{localize "BITD.RollPartialSuccessPosition"}}}
+            {{{localize "FITD.RollPartialSuccessPosition"}}}
             {{/if}}
         </p>
     </div>
     {{/if}}
 
     {{#if (eq roll_status "failure")}}
-    <div class="die {{roll_status}}">{{localize "BITD.RollFailure"}}</div>
+    <div class="die {{roll_status}}">{{localize "FITD.RollFailure"}}</div>
     <div class="description">
         <p>
             {{#if (eq position "controlled")}}
-            {{{localize "BITD.RollFailurePositionControlled"}}}
+            {{{localize "FITD.RollFailurePositionControlled"}}}
             {{else if (eq position "risky")}}
-            {{{localize "BITD.RollFailurePositionRisky"}}}
+            {{{localize "FITD.RollFailurePositionRisky"}}}
             {{else}}
-            {{{localize "BITD.RollFailurePositionDesperate"}}}
+            {{{localize "FITD.RollFailurePositionDesperate"}}}
             {{/if}}
         </p>
     </div>
     {{/if}}
-
-    <!--
-    <ol class="dice-rolls">
-        {{#each this.rolls}}
-        {{#if this.result}}
-        <li class="roll die d6">{{{this.result}}}</li>
-        {{else}}
-        <li class="roll die d6">{{{this.roll}}}</li>
-        {{/if}}
-        {{/each}}
-    </ol>
-        -->
 
 <ol class="dice-rolls">
     {{#each this.rolls}}

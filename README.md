@@ -13,7 +13,7 @@ Contact Discord: `megastruktur#5704` in case you find any bugs or if you have an
 - All "class/crew" specific items are prefixed with first letters
 
 - I don't want the "class/crew items" to be prepopulated, so the character sheet contains less "compendium" info.
-- To see the description of Class, Vice, Background, etc you can just click added item and see all the info in the popup.
+- To see the description of Class, Vice, FITD., etc you can just click added item and see all the info in the popup.
 - When adding a new item you can hower a "question-circle" icon to see the item's description.
 - To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet.
 

@@ -7,15 +7,15 @@
       "value": [0],
       "max": 9,
       "max_default": 9,
-      "name_default": "BITD.Stress",
-      "name": "BITD.Stress"
+      "name_default": "FITD.Stress",
+      "name": "FITD.Stress"
     },
     "trauma": {
       "max": 4,
       "max_default": 4,
       "value": [0],
-      "name": "BITD.Trauma",
-      "name_default": "BITD.Trauma",
+      "name": "FITD.Trauma",
+      "name_default": "FITD.Trauma",
       "list": [0]
     },
     "healing-clock": [0],
@@ -49,66 +49,66 @@
     "attributes": {
         "insight": {
           "exp": [0],
-          "label": "BITD.SkillsInsight",
+          "label": "FITD.SkillsInsight",
           "skills": {
             "hunt": {
-              "label": "BITD.SkillsHunt",
+              "label": "FITD.SkillsHunt",
               "value": [0]
             },
             "study": {
-              "label": "BITD.SkillsStudy",
+              "label": "FITD.SkillsStudy",
               "value": [0]
             },
             "survey": {
-              "label": "BITD.SkillsSurvey",
+              "label": "FITD.SkillsSurvey",
               "value": [0]
             },
             "tinker": {
-              "label": "BITD.SkillsTinker",
+              "label": "FITD.SkillsTinker",
               "value": [0]
             }
           }
         },
         "prowess": {
           "exp": [0],
-          "label": "BITD.SkillsProwess",
+          "label": "FITD.SkillsProwess",
           "skills": {
             "finesse": {
-              "label": "BITD.SkillsFinesse",
+              "label": "FITD.SkillsFinesse",
               "value": [0]
             },
             "prowl": {
-              "label": "BITD.SkillsProwl",
+              "label": "FITD.SkillsProwl",
               "value": [0]
             },
             "skirmish": {
-              "label": "BITD.SkillsSkirmish",
+              "label": "FITD.SkillsSkirmish",
               "value": [0]
             },
             "wreck": {
-              "label": "BITD.SkillsWreck",
+              "label": "FITD.SkillsWreck",
               "value": [0]
             }
           }
         },
         "resolve": {
           "exp": [0],
-          "label": "BITD.SkillsResolve",
+          "label": "FITD.SkillsResolve",
           "skills": {
             "attune": {
-              "label": "BITD.SkillsAttune",
+              "label": "FITD.SkillsAttune",
               "value": [0]
             },
             "command": {
-              "label": "BITD.SkillsCommand",
+              "label": "FITD.SkillsCommand",
               "value": [0]
             },
             "consort": {
-              "label": "BITD.SkillsConsort",
+              "label": "FITD.SkillsConsort",
               "value": [0]
             },
             "sway": {
-              "label": "BITD.SkillsSway",
+              "label": "FITD.SkillsSway",
               "value": [0]
             }
           }
@@ -200,34 +200,34 @@
     "quality": 0,
     "cohort_list": {
       "Gang": {
-        "label": "BITD.Gang"
+        "label": "FITD.Gang"
       },
       "Expert": {
-        "label": "BITD.Expert"
+        "label": "FITD.Expert"
       }
     },
     "dungeon_theme": ["Adepts"],
     "dungeon_theme_list": {
 
       "Adepts": {
-        "label": "BITD.GangTypeAdepts",
-        "description": "BITD.GangTypeAdeptsDescription"
+        "label": "FITD.GangTypeAdepts",
+        "description": "FITD.GangTypeAdeptsDescription"
       },
       "Rooks": {
-        "label": "BITD.GangTypeRooks",
-        "description": "BITD.GangTypeRooksDescription"
+        "label": "FITD.GangTypeRooks",
+        "description": "FITD.GangTypeRooksDescription"
       },
       "Rovers": {
-        "label": "BITD.GangTypeRovers",
-        "description": "BITD.GangTypeRoversDescription"
+        "label": "FITD.GangTypeRovers",
+        "description": "FITD.GangTypeRoversDescription"
       },
       "Skulks": {
-        "label": "BITD.GangTypeSkulks",
-        "description": "BITD.GangTypeSkulksDescription"
+        "label": "FITD.GangTypeSkulks",
+        "description": "FITD.GangTypeSkulksDescription"
       },
       "Thugs": {
-        "label": "BITD.GangTypeThugs",
-        "description": "BITD.GangTypeThugsDescription"
+        "label": "FITD.GangTypeThugs",
+        "description": "FITD.GangTypeThugsDescription"
       }
     },
     "expert_type": "",
@@ -236,66 +236,66 @@
     "edges": [],
     "edges_list": {
       "Fearsome": {
-        "label": "BITD.EdgesFearsome",
-        "description": "BITD.EdgesFearsomeDescription"
+        "label": "FITD.EdgesFearsome",
+        "description": "FITD.EdgesFearsomeDescription"
       },
       "Independent": {
-        "label": "BITD.EdgesIndependent",
-        "description": "BITD.EdgesIndependentDescription"
+        "label": "FITD.EdgesIndependent",
+        "description": "FITD.EdgesIndependentDescription"
       },
       "Loyal": {
-        "label": "BITD.EdgesLoyal",
-        "description": "BITD.EdgesLoyalDescription"
+        "label": "FITD.EdgesLoyal",
+        "description": "FITD.EdgesLoyalDescription"
       },
       "Tenacious": {
-        "label": "BITD.EdgesTenacious",
-        "description": "BITD.EdgesTenaciousDescription"
+        "label": "FITD.EdgesTenacious",
+        "description": "FITD.EdgesTenaciousDescription"
       }
     },
     "flaws": [],
     "flaws_list": {
       "Principled": {
-        "label": "BITD.FlawsPrincipled",
-        "description": "BITD.FlawsPrincipledDescription"
+        "label": "FITD.FlawsPrincipled",
+        "description": "FITD.FlawsPrincipledDescription"
       },
       "Savage": {
-        "label": "BITD.FlawsSavage",
-        "description": "BITD.FlawsSavageDescription"
+        "label": "FITD.FlawsSavage",
+        "description": "FITD.FlawsSavageDescription"
       },
       "Unreliable": {
-        "label": "BITD.FlawsUnreliable",
-        "description": "BITD.FlawsUnreliableDescription"
+        "label": "FITD.FlawsUnreliable",
+        "description": "FITD.FlawsUnreliableDescription"
       },
       "Wild": {
-        "label": "BITD.FlawsWild",
-        "description": "BITD.FlawsWildDescription"
+        "label": "FITD.FlawsWild",
+        "description": "FITD.FlawsWildDescription"
       }
     },
     "harm": ["No"],
     "harm_list": {
       "No": {
-        "label": "BITD.HarmNoHarm",
-        "description": "BITD.HarmNoHarmDescription",
+        "label": "FITD.HarmNoHarm",
+        "description": "FITD.HarmNoHarmDescription",
         "value": 0
       },
       "Weakened": {
-        "label": "BITD.HarmWeakened",
-        "description": "BITD.HarmWeakenedDescription",
+        "label": "FITD.HarmWeakened",
+        "description": "FITD.HarmWeakenedDescription",
         "value": 1
       },
       "Impaired": {
-        "label": "BITD.HarmImpaired",
-        "description": "BITD.HarmImpairedDescription",
+        "label": "FITD.HarmImpaired",
+        "description": "FITD.HarmImpairedDescription",
         "value": 2
       },
       "Broken": {
-        "label": "BITD.HarmBroken",
-        "description": "BITD.HarmBrokenDescription",
+        "label": "FITD.HarmBroken",
+        "description": "FITD.HarmBrokenDescription",
         "value": 3
       },
       "Dead": {
-        "label": "BITD.HarmDead",
-        "description": "BITD.HarmDeadDescription",
+        "label": "FITD.HarmDead",
+        "description": "FITD.HarmDeadDescription",
         "value": 4
       }
     },
@@ -358,7 +358,7 @@
         "connects": []
       },
       "8": {
-        "name": "BITD.Lair",
+        "name": "FITD.Lair",
         "value": 1,
         "description": "",
         "connects": []

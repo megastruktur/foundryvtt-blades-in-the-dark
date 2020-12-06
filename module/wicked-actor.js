@@ -49,30 +49,30 @@ export class BladesActor extends Actor {
     let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
 
     new Dialog({
-      title: `${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}`,
+      title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
-        <h2>${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}</h2>
+        <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}</h2>
         <form>
           <div class="form-group">
-            <label>${game.i18n.localize('BITD.Modifier')}:</label>
+            <label>${game.i18n.localize('FITD.Modifier')}:</label>
             <select id="mod" name="mod">
               ${this.createListOfDiceMods(-3,+3,0)}
             </select>
             </div>
             <div class="form-group">
-            <label>${game.i18n.localize('BITD.Position')}:</label>
+            <label>${game.i18n.localize('FITD.Position')}:</label>
             <select id="pos" name="pos">
-              <option value="controlled">${game.i18n.localize('BITD.PositionControlled')}</option>
-              <option value="risky" selected>${game.i18n.localize('BITD.PositionRisky')}</option>
-              <option value="desperate">${game.i18n.localize('BITD.PositionDesperate')}</option>
+              <option value="controlled">${game.i18n.localize('FITD.PositionControlled')}</option>
+              <option value="risky" selected>${game.i18n.localize('FITD.PositionRisky')}</option>
+              <option value="desperate">${game.i18n.localize('FITD.PositionDesperate')}</option>
             </select>
             </div>
             <div class="form-group">
-            <label>${game.i18n.localize('BITD.Effect')}:</label>
+            <label>${game.i18n.localize('FITD.Effect')}:</label>
             <select id="fx" name="fx">
-              <option value="limited">${game.i18n.localize('BITD.EffectLimited')}</option>
-              <option value="standard" selected>${game.i18n.localize('BITD.EffectStandard')}</option>
-              <option value="great">${game.i18n.localize('BITD.EffectGreat')}</option>
+              <option value="limited">${game.i18n.localize('FITD.EffectLimited')}</option>
+              <option value="standard" selected>${game.i18n.localize('FITD.EffectStandard')}</option>
+              <option value="great">${game.i18n.localize('FITD.EffectGreat')}</option>
             </select>
           </div>
         </form>
@@ -80,7 +80,7 @@ export class BladesActor extends Actor {
       buttons: {
         yes: {
           icon: "<i class='fas fa-check'></i>",
-          label: game.i18n.localize('BITD.Roll'),
+          label: game.i18n.localize('FITD.Roll'),
           callback: (html) => {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
             let position = html.find('[name="pos"]')[0].value;

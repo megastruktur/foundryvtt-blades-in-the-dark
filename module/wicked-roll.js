@@ -65,27 +65,27 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   let position_localize = '';
   switch (position) {
     case 'controlled':
-      position_localize = 'BITD.PositionControlled'
+      position_localize = 'FITD.PositionControlled'
       break;
     case 'desperate':
-      position_localize = 'BITD.PositionDesperate'
+      position_localize = 'FITD.PositionDesperate'
       break;
     case 'risky':
     default:
-      position_localize = 'BITD.PositionRisky'
+      position_localize = 'FITD.PositionRisky'
   }
 
   let effect_localize = '';
   switch (effect) {
     case 'limited':
-      effect_localize = 'BITD.EffectLimited'
+      effect_localize = 'FITD.EffectLimited'
       break;
     case 'great':
-      effect_localize = 'BITD.EffectGreat'
+      effect_localize = 'FITD.EffectGreat'
       break;
     case 'standard':
     default:
-      effect_localize = 'BITD.EffectStandard'
+      effect_localize = 'FITD.EffectStandard'
   }
 
     let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, effect: effect_localize});
@@ -177,11 +177,11 @@ export async function simpleRollPopup() {
   new Dialog({
     title: `Simple Roll`,
     content: `
-      <h2>${game.i18n.localize("BITD.RollSomeDice")}</h2>
-      <p>${game.i18n.localize("BITD.RollTokenDescription")}</p>
+      <h2>${game.i18n.localize("FITD.RollSomeDice")}</h2>
+      <p>${game.i18n.localize("FITD.RollTokenDescription")}</p>
       <form>
         <div class="form-group">
-          <label>${game.i18n.localize("BITD.RollNumberOfDice")}:</label>
+          <label>${game.i18n.localize("FITD.RollNumberOfDice")}:</label>
           <select id="qty" name="qty">
             ${Array(11).fill().map((item, i) => `<option value="${i}">${i}d</option>`).join('')}
           </select>

@@ -4,13 +4,13 @@
 
     <div id="name-alias" class="grow-two flex-column">
       <div id="name">
-        <label for="crew-name">{{localize "BITD.Name"}}</label>
+        <label for="crew-name">{{localize "FITD.Name"}}</label>
         <input type="text" id="crew-name" name="name" value="{{actor.name}}">
       </div>
   
       <div class="flex-vertical">
         <div class="item-class-label">
-          <a class="item-add-popup" data-distinct="true" data-item-type="crew_reputation">{{localize "BITD.CrewReputation"}}</a>
+          <a class="item-add-popup" data-distinct="true" data-item-type="crew_reputation">{{localize "FITD.CrewReputation"}}</a>
         </div>
         {{#each actor.items as |item id|}}
         {{#if (eq item.type "crew_reputation")}}
@@ -38,15 +38,15 @@
       <div class="flex-horizontal">
 
         <div id="crew-hold" class="flex-horizontal">
-          <div class="black-label">{{localize "BITD.Hold"}}</div>
+          <div class="black-label">{{localize "FITD.Hold"}}</div>
           {{#multiboxes data.hold}}
           <div class="flex-horizontal">
-            <div class="gray-label">{{localize "BITD.Weak"}}</div>
+            <div class="gray-label">{{localize "FITD.Weak"}}</div>
             <input id="crew-hold-weak" type="radio" name="data.hold" value="weak">
             <label for="crew-hold-weak"></label>
           </div>
           <div class="flex-horizontal">
-            <div class="gray-label">{{localize "BITD.Strong"}}</div>
+            <div class="gray-label">{{localize "FITD.Strong"}}</div>
             <input id="crew-hold-strong" type="radio" name="data.hold" value="strong">
             <label for="crew-hold-strong"></label>
           </div>
@@ -56,7 +56,7 @@
         <div id="crew-tier">
           {{#multiboxes data.tier}}
           <input id="crew-tier-0" type="radio" name="data.tier" value="0">
-          <label for="crew-tier-0" class="black-label">{{localize "BITD.Tier"}}</label>
+          <label for="crew-tier-0" class="black-label">{{localize "FITD.Tier"}}</label>
           <input id="crew-tier-1" type="radio" name="data.tier" value="1">
           <label for="crew-tier-1"></label>
           <input id="crew-tier-2" type="radio" name="data.tier" value="2">
@@ -78,7 +78,7 @@
       {{#multiboxes data.reputation}}
       {{#repturf data.turfs_amount}}
       <input type="radio" id="crew-reputation-0" name="data.reputation" value="0" dtype="Radio">
-      <label class="black-label" for="crew-reputation-0">{{localize "BITD.Rep"}}</label>
+      <label class="black-label" for="crew-reputation-0">{{localize "FITD.Rep"}}</label>
       <input type="radio" id="crew-reputation-1" name="data.reputation" value="1" dtype="Radio">
       <label for="crew-reputation-1"></label>
       <input type="radio" id="crew-reputation-2" name="data.reputation" value="2" dtype="Radio">
@@ -105,7 +105,7 @@
       <label for="crew-reputation-12"></label>
       {{/repturf}}
       {{/multiboxes}}
-      <div class="gray-label">{{localize "BITD.Turf"}}</div>
+      <div class="gray-label">{{localize "FITD.Turf"}}</div>
     </div>
 
     {{!-- Coins --}}
@@ -113,7 +113,7 @@
 
       <div id="crew-coins-hands">
         <div class="stripe">
-          <label for="crew-coins-hands-0">{{localize "BITD.Coins"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
+          <label for="crew-coins-hands-0">{{localize "FITD.Coins"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
         </div>
         <div class="crew-coins coins-hands">
           {{#multiboxes data.coins.value}}
@@ -134,7 +134,7 @@
       <div id="crew-coins-vault">
         
         <div class="stripe">
-          <label for="crew-coins-vault-0">{{localize "BITD.Vault"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
+          <label for="crew-coins-vault-0">{{localize "FITD.Vault"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
         </div>
         <div class="crew-coins coins-vault">
           {{#multiboxes data.vault.value}}
@@ -154,7 +154,7 @@
       <div id="crew-heat" class="big-teeth">
         {{#multiboxes data.heat}}
         <input type="radio" id="crew-heat-0" name="data.heat" value="0" dtype="Radio">
-        <label class="black-label" for="crew-heat-0">{{localize "BITD.Heat"}}</label>
+        <label class="black-label" for="crew-heat-0">{{localize "FITD.Heat"}}</label>
         <input type="radio" id="crew-heat-1" name="data.heat" value="1" dtype="Radio">
         <label for="crew-heat-1"></label>
         <input type="radio" id="crew-heat-2" name="data.heat" value="2" dtype="Radio">
@@ -179,7 +179,7 @@
       <div id="crew-wanted-container" class="small-teeth-container">
         {{#multiboxes data.wanted}}
         <div id="crew-wanted" class="small-teeth-wrap">
-          <label class="black-label" for="crew-wanted-counter-0">{{localize "BITD.Wanted"}}</label>
+          <label class="black-label" for="crew-wanted-counter-0">{{localize "FITD.Wanted"}}</label>
           <div class="small-teeth">
             <input type="radio" id="crew-wanted-counter-0" name="data.wanted" value="0">
             <input type="radio" id="crew-wanted-counter-1" name="data.wanted" value="1">
@@ -211,12 +211,12 @@
         {{/each}}
       </div>
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="turfs">{{localize "BITD.Turfs"}}</a>
-        <a class="item" data-tab="upgrades">{{localize "BITD.Upgrades"}}</a>
-        <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
-        <a class="item" data-tab="cohorts">{{localize "BITD.Cohorts"}}</a>
-        <a class="item" data-tab="notes">{{localize "BITD.Notes"}}</a>
-        <a class="item" data-tab="all-items">{{localize "BITD.AllItems"}}</a>
+        <a class="item" data-tab="turfs">{{localize "FITD.Turfs"}}</a>
+        <a class="item" data-tab="upgrades">{{localize "FITD.Upgrades"}}</a>
+        <a class="item" data-tab="abilities">{{localize "FITD.Abilities"}}</a>
+        <a class="item" data-tab="cohorts">{{localize "FITD.Cohorts"}}</a>
+        <a class="item" data-tab="notes">{{localize "FITD.Notes"}}</a>
+        <a class="item" data-tab="all-items">{{localize "FITD.AllItems"}}</a>
       </nav>
     </div>
 
@@ -225,7 +225,7 @@
     <div class="flex-fertical">
       <div class="big-teeth-section">
         <div class="big-teeth">
-          <label class="black-label" for="crew-experience-0">{{localize "BITD.CrewXP"}}</label>
+          <label class="black-label" for="crew-experience-0">{{localize "FITD.CrewXP"}}</label>
           {{#multiboxes data.experience}}
           <input type="radio" id="crew-experience-0" name="data.experience" value="0" dtype="Radio">
           {{#crew_experience}}{{/crew_experience}}
@@ -233,7 +233,7 @@
         </div>
       </div>
       <div class="experience-clues-container">
-        <div class="experience-clues-description">{{localize "BITD.CrewExpClue1"}}</div>
+        <div class="experience-clues-description">{{localize "FITD.CrewExpClue1"}}</div>
         <div class="experience-clues">
           {{#each actor.items as |item id|}}
           {{#if (eq item.type "crew_type")}}
@@ -252,7 +252,7 @@
     {{!-- Turfs --}}
     <div class="tab" data-tab="turfs">
       <div class="label-stripe">
-        <p><label>{{localize "BITD.Turfs"}}</label></p>
+        <p><label>{{localize "FITD.Turfs"}}</label></p>
       </div>
       {{#each actor.items as |item id|}}
       {{#if (eq item.type "crew_type")}}
@@ -267,7 +267,7 @@
     {{!-- Crew Upgrades --}}
     <div id="crew-upgrades" class="tab grow-two flex-vertical" data-tab="upgrades">
       <div class="label-stripe flex-horizontal">
-        <p>{{localize "BITD.CrewUpgrades"}}</p>
+        <p>{{localize "FITD.CrewUpgrades"}}</p>
         <p><a class="item-add-popup" data-item-type="crew_upgrade"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
@@ -286,7 +286,7 @@
     {{!-- Crew Abilities --}}
     <div id="crew-abilities" class="tab grow-two flex-vertical" data-tab="abilities">
       <div class="label-stripe flex-horizontal">
-        <p>{{localize "BITD.SpecialAbilities"}}</p>
+        <p>{{localize "FITD.SpecialAbilities"}}</p>
         <p><a class="item-add-popup" data-item-type="crew_ability"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
@@ -305,7 +305,7 @@
     {{!-- Cohorts --}}
     <div id="crew-cohorts" class="tab grow-two flex-vertical" data-tab="cohorts">
       <div class="label-stripe flex-horizontal">
-        <p>{{localize "BITD.Cohorts"}}</p>
+        <p>{{localize "FITD.Cohorts"}}</p>
         <p><a class="add-item" data-item-type="cohort"><i class="fas fa-plus-square"></i></a></p>
       </div>
       <div class="cohorts flex-horizontal">
@@ -322,7 +322,7 @@
     {{!-- Notes --}}
     <div id="notes" class="tab grow-two flex-vertical" data-tab="notes">
       <div class="label-stripe">
-        <p>{{localize "BITD.Notes"}}</p>
+        <p>{{localize "FITD.Notes"}}</p>
       </div>
       <textarea rows="15" name="data.description">{{{data.description}}}</textarea>
     </div>
@@ -330,7 +330,7 @@
     {{!-- Full Item List --}}
     <div class="tab grow-two flex-vertical" data-tab="all-items">
       <div class="label-stripe">
-        <p><label>{{localize "BITD.AllItems"}}</label></p>
+        <p><label>{{localize "FITD.AllItems"}}</label></p>
       </div>
       {{#each actor.items as |item id|}}
       <div class="item flex-horizontal" data-item-id="{{item._id}}">

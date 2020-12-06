@@ -32,7 +32,7 @@ export class BladesCrewSheet extends BladesSheet {
       if (item.type === "dungeon_theme") {
         // Object.entries(item.data.turfs).forEach(turf => {turfs_amount += (turf.value === true) ? 1 : 0});
         Object.entries(item.data.turfs).forEach(([key, turf]) => {
-          if (turf.name === 'BITD.Turf') {
+          if (turf.name === 'FITD.Turf') {
             turfs_amount += (turf.value === true) ? 1 : 0;
           }
         });
