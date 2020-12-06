@@ -28,7 +28,102 @@
 /*
  * General Styles
  */
- 
+ /* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-500.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-600.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-700.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 800;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-800.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 900;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-900.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-500italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-600italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-700italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 800;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-800italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 900;
+  src: local(''),
+       url('../fonts/bitter-v16-latin_cyrillic-900italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
  /* Blood crow-regular - latin */
 @font-face {
   font-family: 'Blood Crow';
@@ -52,8 +147,16 @@
 * header {
   margin-bottom: 10px;
 }
+body {
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
 * ul {
   list-style: none;
+}
+h1, h2, h3, h4 {
+    font-weight: bold;
 }
 * form.actor-sheet {
   padding: 20px;
@@ -121,6 +224,15 @@
   height: 30px !important;
   text-transform: capitalize;
 }
+* .chat-message .message-header .message-sender {
+    font-family: Piedra;
+    font-weight: normal;
+}
+.chat-message .message-content {
+    font-family: Bitter;
+    font-size: inherit;
+    font-weight: 500;
+}
 * .chat-label {
   background-color: #191813;
   color: #EEEFFF;
@@ -170,6 +282,7 @@
   display: flex;
   font-weight: normal;
   margin: 0;
+  border-top-left-radius: 5px
 }
 * .label-stripe-chat-small {
   text-transform: capitalize;
