@@ -10,10 +10,10 @@
   
       <div class="flex-vertical">
         <div class="item-class-label">
-          <a class="item-add-popup" data-distinct="true" data-item-type="crew_reputation">{{localize "FITD.CrewReputation"}}</a>
+          <a class="item-add-popup" data-distinct="true" data-item-type="dungeon_reputation">{{localize "FITD.DungeonReputation"}}</a>
         </div>
         {{#each actor.items as |item id|}}
-        {{#if (eq item.type "crew_reputation")}}
+        {{#if (eq item.type "dungeon_reputation")}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body item-sheet-open flex-horizontal">
               <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>

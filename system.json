@@ -68,7 +68,7 @@
     },
     {
       "name": "dungeon_reputation",
-      "label": "Dungeon Reputations",
+      "label": "Dungeon Reputation",
       "system": "wicked-ones",
       "path": "./packs/dungeon_reputations.db",
       "entity": "Item"
