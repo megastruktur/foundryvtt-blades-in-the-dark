@@ -18,16 +18,6 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
-    },
-    {
-      "lang": "ru",
-      "name": "Russian",
-      "path": "lang/ru.json"
-    },
-    {
-      "lang": "es",
-      "name": "Spanish",
-      "path": "lang/es.json"
     }
   ],
   "url": "https://github.com/eHanus/foundryvtt-wicked-ones/",
@@ -77,14 +67,14 @@
       "entity": "Item"
     },
     {
-      "name": "dungeon_reputations",
+      "name": "dungeon_reputation",
       "label": "Dungeon Reputations",
       "system": "wicked-ones",
       "path": "./packs/dungeon_reputations.db",
       "entity": "Item"
     },
     {
-      "name": "dungeon_themes",
+      "name": "dungeon_theme",
       "label": "Dungeon Theme",
       "system": "wicked-ones",
       "path": "./packs/dungeon_themes.db",

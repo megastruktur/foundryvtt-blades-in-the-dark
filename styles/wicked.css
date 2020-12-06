@@ -1212,4 +1212,30 @@
   color: red;
 }
 
+* .wicked-die {
+    width: 32px;
+    height: 32px;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+* .wd1 {
+    background-image: url("assets/dice/die-1-grey.png");
+}
+* .wd2 {
+    background-image: url("assets/dice/die-2-grey.png");
+}
+* .wd3 {
+    background-image: url("assets/dice/die-3-grey.png");
+}
+* .wd4 {
+    background-image: url("assets/dice/die-4-blue.png");
+}
+* .wd5 {
+    background-image: url("assets/dice/die-5-blue.png");
+}
+* .wd6 {
+    background-image: url("assets/dice/die-6-red.png");
+}
+
 /*# sourceMappingURL=blades.css.map */

@@ -13,7 +13,7 @@ import { BladesActor } from "./wicked-actor.js";
 import { BladesItem } from "./wicked-item.js";
 import { BladesItemSheet } from "./wicked-item-sheet.js";
 import { BladesActorSheet } from "./wicked-actor-sheet.js";
-import { BladesCrewSheet } from "./wicked-crew-sheet.js";
+import { BladesCrewSheet } from "./wicked-dungeon-sheet.js";
 import { BladesClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
 
@@ -42,7 +42,7 @@ Hooks.once("init", async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
-  Actors.registerSheet("blades", BladesCrewSheet, { types: ["crew"], makeDefault: true });
+  Actors.registerSheet("blades", BladesCrewSheet, { types: ["dungeon"], makeDefault: true });
   Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});

@@ -9,7 +9,7 @@ export const preloadHandlebarsTemplates = async function() {
   const templatePaths = [
 
     // Actor Sheet Partials
-    "systems/wicked-ones/templates/parts/coins.html",
+    "systems/wicked-ones/templates/parts/gold.html",
     "systems/wicked-ones/templates/parts/attributes.html",
     "systems/wicked-ones/templates/parts/turf-list.html",
     "systems/wicked-ones/templates/parts/cohort-block.html"
