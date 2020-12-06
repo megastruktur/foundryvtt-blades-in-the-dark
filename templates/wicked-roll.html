@@ -1,52 +1,30 @@
 <div class="dice-tooltip blades-die-tooltip">
-    {{#if attribute_label}}<div class="chat-label label-stripe-chat">{{localize attribute_label}}</div>{{/if}}
-    {{#if position}}
+  {{#if attribute_label}}<div class="chat-label label-stripe-chat">{{localize attribute_label}}</div>{{/if}}
+  {{#if position}}
     <div class="chat-label-small label-stripe-chat-small">
-        {{{localize position}}} | {{{localize effect}}}
+      {{{localize position}}} | {{{localize effect}}}
     </div>
-    {{/if}}
+  {{/if}}
 
-    {{#if (eq roll_status "critical-success")}}
-    <div class="die {{roll_status}}">{{localize "FITD.RollCriticalSuccess"}}</div>
-    <div class="description">
-        <p>{{{localize "FITD.RollDoWithIncreasedEffect"}}}</p>
-    </div>
-    {{/if}}
+  {{#if (eq roll_status "critical-success")}}
+  <div class="die {{roll_status}}">{{localize "FITD.RollCriticalSuccess"}}</div>
+  <div class="description"><p>{{{localize "FITD.RollDoCrit"}}}</p></div>
+  {{/if}}
 
-    {{#if (eq roll_status "success")}}
-    <div class="die {{roll_status}}">{{localize "FITD.RollSuccess"}}</div>
-    <div class="description"><p>{{{localize "FITD.RollDo"}}}</p></div>
-    {{/if}}
+  {{#if (eq roll_status "success")}}
+  <div class="die {{roll_status}}">{{localize "FITD.RollSuccess"}}</div>
+  <div class="description"><p>{{{localize "FITD.RollDo"}}}</p></div>
+  {{/if}}
 
-    {{#if (eq roll_status "partial-success")}}
-    <div class="die {{roll_status}}">{{localize "FITD.RollPartialSuccess"}}</div>
-    <div class="description">
-        <p>
-            {{#if (eq position "controlled")}}
-            {{{localize "FITD.RollPartialSuccessPositionControlled"}}}
-            {{else if (eq position "risky")}}
-            {{{localize "FITD.RollPartialSuccessPositionRisky"}}}
-            {{else}}
-            {{{localize "FITD.RollPartialSuccessPosition"}}}
-            {{/if}}
-        </p>
-    </div>
-    {{/if}}
+  {{#if (eq roll_status "partial-success")}}
+  <div class="die {{roll_status}}">{{localize "FITD.RollMixedSuccess"}}</div>
+  <div class="description"><p>{{{localize "FITD.RollDoMixed"}}}</p></div>
+  {{/if}}
 
-    {{#if (eq roll_status "failure")}}
-    <div class="die {{roll_status}}">{{localize "FITD.RollFailure"}}</div>
-    <div class="description">
-        <p>
-            {{#if (eq position "controlled")}}
-            {{{localize "FITD.RollFailurePositionControlled"}}}
-            {{else if (eq position "risky")}}
-            {{{localize "FITD.RollFailurePositionRisky"}}}
-            {{else}}
-            {{{localize "FITD.RollFailurePositionDesperate"}}}
-            {{/if}}
-        </p>
-    </div>
-    {{/if}}
+  {{#if (eq roll_status "failure")}}
+  <div class="die {{roll_status}}">{{localize "FITD.RollFailure"}}</div>
+  <div class="description"><p>{{{localize "FITD.RollDoFail"}}}</p></div>
+  {{/if}}
 
 <ol class="dice-rolls">
     {{#each this.rolls}}
@@ -58,3 +36,4 @@
     {{/each}}
 </ol>
 </div>
+

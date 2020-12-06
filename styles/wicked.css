@@ -28,8 +28,26 @@
 /*
  * General Styles
  */
+ 
+ /* Blood crow-regular - latin */
+@font-face {
+  font-family: 'Blood Crow';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/bloodcrow.ttf') format('truetype') /* Safari, Android, iOS */
+}
+
+/* piedra-regular - latin */
+@font-face {
+  font-family: 'Piedra';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/piedra-v9-latin-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+ 
 * {
-  font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 }
 * header {
   margin-bottom: 10px;
@@ -106,7 +124,7 @@
 * .chat-label {
   background-color: #191813;
   color: #EEEFFF;
-  font-size: 21px;
+  font-size: 22px;
   text-align: center;
   padding: 0px 5px;
   height: 30px !important;
@@ -118,7 +136,7 @@
   font-size: small;
   text-align: center;
   padding: 3px 5px;
-  height: 20px !important;
+  height: 26px !important;
 }
 * .label-stripe {
   text-transform: uppercase;
@@ -142,25 +160,28 @@
   font-weight: bold;
 }
 * .label-stripe-chat {
+  font-family: Piedra;
   text-transform: uppercase;
-  background-color: #191813;
-  color: #EEEFFF;
+  background-color: #68332c;
+  color: #fff;
   margin-bottom: 10px;
   position: relative;
   padding-top: 3px;
   display: flex;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
 }
 * .label-stripe-chat-small {
   text-transform: capitalize;
-  background-color: #999;
+  background-color: #bdb7ab;
   color: #191813;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   position: relative;
   padding-top: 3px;
   display: flex;
-  font-weight: bold;
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 16px;			  
 }
 * .description {
   font-style: italic;
@@ -1020,21 +1041,22 @@
   visibility: visible;
 }
 * .blades-die-tooltip .die {
-  font-weight: bold;
   text-transform: capitalize;
-  font-size: large;
+  font-family: Blood Crow;
+  font-weight: normal;
+  font-size: xx-large;
 }
 * .blades-die-tooltip .die.critical-success {
-  color: #12a012;
+  color: #b32813;
 }
 * .blades-die-tooltip .die.success {
-  color: #008000;
+  color: #9f3727;
 }
 * .blades-die-tooltip .die.partial-success {
-  color: #04578f;
+  color: #3d478a
 }
 * .blades-die-tooltip .die.failure {
-  color: red;
+  color: #7a7a7a;
 }
 * .clock-zero-label {
   color: #191813;
@@ -1239,3 +1261,8 @@
 }
 
 /*# sourceMappingURL=blades.css.map */
+
+/* WO Dice Rolls */
+.dice-tooltip .dice-rolls .roll.d6 {
+	font-family: Signika;
+}

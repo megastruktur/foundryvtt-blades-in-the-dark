@@ -62,17 +62,19 @@ export class BladesActor extends Actor {
             <div class="form-group">
             <label>${game.i18n.localize('FITD.Position')}:</label>
             <select id="pos" name="pos">
-              <option value="controlled">${game.i18n.localize('FITD.PositionControlled')}</option>
-              <option value="risky" selected>${game.i18n.localize('FITD.PositionRisky')}</option>
-              <option value="desperate">${game.i18n.localize('FITD.PositionDesperate')}</option>
+              <option value="dominant">${game.i18n.localize('FITD.PositionDominant')}</option>
+              <option value="default" selected>${game.i18n.localize('FITD.PositionDefault')}</option>
+              <option value="dire">${game.i18n.localize('FITD.PositionDire')}</option>
+              <option value="deadly">${game.i18n.localize('FITD.PositionDeadly')}</option>
             </select>
             </div>
             <div class="form-group">
             <label>${game.i18n.localize('FITD.Effect')}:</label>
             <select id="fx" name="fx">
-              <option value="limited">${game.i18n.localize('FITD.EffectLimited')}</option>
-              <option value="standard" selected>${game.i18n.localize('FITD.EffectStandard')}</option>
-              <option value="great">${game.i18n.localize('FITD.EffectGreat')}</option>
+              <option value="strong">${game.i18n.localize('FITD.EffectStrong')}</option>
+              <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>		  
+              <option value="weak">${game.i18n.localize('FITD.EffectWeak')}</option>
+              <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>	  
             </select>
           </div>
         </form>

@@ -5,7 +5,7 @@
  * @param {string} position
  * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "", position = "risky", effect = "standard") {
+export async function bladesRoll(dice_amount, attribute_name = "", position = "default", effect = "default") {
 
   // Is Dice So Nice enabled ?
   let niceDice = false;
@@ -64,31 +64,37 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
 
   let position_localize = '';
   switch (position) {
-    case 'controlled':
-      position_localize = 'FITD.PositionControlled'
+    case 'dominant':
+      position_localize = 'FITD.PositionDominant'
+      break;               
+    case 'dire':           
+      position_localize = 'FITD.PositionDire'
+      break;               
+	case 'deadly':         
+      position_localize = 'FITD.PositionDeadly'
       break;
-    case 'desperate':
-      position_localize = 'FITD.PositionDesperate'
-      break;
-    case 'risky':
-    default:
-      position_localize = 'FITD.PositionRisky'
+    case 'default':        
+    default:               
+      position_localize = 'FITD.PositionDefault'
   }
 
   let effect_localize = '';
   switch (effect) {
-    case 'limited':
-      effect_localize = 'FITD.EffectLimited'
-      break;
-    case 'great':
-      effect_localize = 'FITD.EffectGreat'
-      break;
-    case 'standard':
-    default:
-      effect_localize = 'FITD.EffectStandard'
+    case 'weak':
+      effect_localize = 'FITD.EffectWeak'
+      break;             
+    case 'strong':       
+      effect_localize = 'FITD.EffectStrong'
+      break; 
+    case 'zero':         
+      effect_localize = 'FITD.EffectZero'
+      break; 
+    case 'default':     
+    default:            
+      effect_localize = 'FITD.EffectDefault'	  
   }
 
-    let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, effect: effect_localize});
+    let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize});
 
   let messageData = {
     speaker: speaker,
