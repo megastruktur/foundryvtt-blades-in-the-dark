@@ -1,6 +1,6 @@
 {
 "Actor": {
-  "types": ["character", "crew", "\uD83D\uDD5B clock"],
+  "types": ["character", "dungeon", "\uD83D\uDD5B clock"],
   "character": {
     "alias": "",
     "stress": {
@@ -20,7 +20,7 @@
     },
     "healing-clock": [0],
     "experience": [0],
-    "coins": [0],
+    "gold": [0],
     "coins_stashed": [0],
     "special_abilities": [],
     "loadout": 0,
@@ -115,7 +115,7 @@
         }
     }
   },
-  "crew": {
+  "dungeon": {
     "name": "",
     "reputation": [0],
     "lair": "",
@@ -144,7 +144,7 @@
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+  "types": ["item", "calling", "ability", "race", "impulse", "revelry", "dungeon_upgrade", "cohort", "dungeon_theme", "dungeon_reputation", "dungeon_upgrade", "dungeon_ability"],
   "templates": {
     "default": {
       "description": ""
@@ -163,7 +163,7 @@
     "class": "",
     "load": 0
   },
-  "class": {
+  "calling": {
     "templates": ["default", "logic"],
     "experience_clues": "",
     "base_skills": {
@@ -184,13 +184,13 @@
   "ability": {
     "templates": ["ability", "logic"]
   },
-  "heritage": {
+  "race": {
     "templates": ["default"]
   },
-  "background": {
+  "impulse": {
     "templates": ["default"]
   },
-  "vice": {
+  "revelry": {
     "templates": ["default"]
   },
   "cohort": {
@@ -206,8 +206,8 @@
         "label": "BITD.Expert"
       }
     },
-    "gang_type": ["Adepts"],
-    "gang_type_list": {
+    "dungeon_theme": ["Adepts"],
+    "dungeon_theme_list": {
 
       "Adepts": {
         "label": "BITD.GangTypeAdepts",
@@ -301,17 +301,17 @@
     },
     "armor": false
   },
-  "crew_reputation": {
+  "dungeon_reputation": {
     "templates": ["default"]
   },
-  "crew_upgrade": {
+  "dungeon_upgrade": {
     "templates": ["ability", "logic"],
-    "crew_type": ""
+    "dungeon_theme": ""
   },
-  "crew_ability": {
+  "dungeon_ability": {
     "templates": ["ability"]
   },
-  "crew_type": {
+  "dungeon_theme": {
     "description": "",
     "experience_clues": "",
     "turfs": {

@@ -257,7 +257,7 @@
       {{#each actor.items as |item id|}}
       {{#if (eq item.type "crew_type")}}
       <div class="item" data-item-id="{{item._id}}">
-      {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
+      {{> "systems/wicked-ones/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
       </div>
       {{/if}}
       {{/each}}
@@ -312,7 +312,7 @@
         {{#each actor.items as |item id|}}
           {{#if (eq item.type "cohort")}}
           
-            {{> "systems/blades-in-the-dark/templates/parts/cohort-block.html" item=item}}
+            {{> "systems/wicked-ones/templates/parts/cohort-block.html" item=item}}
     
           {{/if}}
         {{/each}}

@@ -35,31 +35,31 @@
   "download": "https://github.com/eHanus/foundryvtt-wicked-ones/archive/2.10.zip",
   "packs": [
     {
-      "name": "class",
-      "label": "Classes",
+      "name": "calling",
+      "label": "Callings",
       "system": "wicked-ones",
-      "path": "./packs/classes.db",
+      "path": "./packs/callings.db",
       "entity": "Item"
     },
     {
-      "name": "heritage",
-      "label": "Heritages",
+      "name": "race",
+      "label": "Races",
       "system": "wicked-ones",
-      "path": "./packs/heritages.db",
+      "path": "./packs/races.db",
       "entity": "Item"
     },
     {
-      "name": "vice",
-      "label": "Vices",
+      "name": "revelry",
+      "label": "Revelries",
       "system": "wicked-ones",
-      "path": "./packs/vices.db",
+      "path": "./packs/revelries.db",
       "entity": "Item"
     },
     {
-      "name": "background",
-      "label": "Backgrounds",
+      "name": "impulse",
+      "label": "Dark Impulses",
       "system": "wicked-ones",
-      "path": "./packs/backgrounds.db",
+      "path": "./packs/impulses.db",
       "entity": "Item"
     },
     {
@@ -77,31 +77,31 @@
       "entity": "Item"
     },
     {
-      "name": "crew_reputation",
-      "label": "Crew Reputation",
+      "name": "dungeon_reputations",
+      "label": "Dungeon Reputations",
       "system": "wicked-ones",
-      "path": "./packs/crew_reputation.db",
+      "path": "./packs/dungeon_reputations.db",
       "entity": "Item"
     },
     {
-      "name": "crew_type",
-      "label": "Crew Types",
+      "name": "dungeon_themes",
+      "label": "Dungeon Theme",
       "system": "wicked-ones",
-      "path": "./packs/crew_types.db",
+      "path": "./packs/dungeon_themes.db",
       "entity": "Item"
     },
     {
-      "name": "crew_upgrade",
-      "label": "Crew Upgrades",
+      "name": "dungeon_upgrade",
+      "label": "Dungeon Upgrade",
       "system": "wicked-ones",
-      "path": "./packs/crew_upgrades.db",
+      "path": "./packs/dungeon_upgrades.db",
       "entity": "Item"
     },
     {
-      "name": "crew_ability",
-      "label": "Crew Abilities",
+      "name": "dungeon_ability",
+      "label": "Dungeon Abilities",
       "system": "wicked-ones",
-      "path": "./packs/crew_abilities.db",
+      "path": "./packs/dungeon_abilities.db",
       "entity": "Item"
     }
   ]
