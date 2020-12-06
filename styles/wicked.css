@@ -164,6 +164,7 @@ h1, h2, h3, h4 {
 * textarea {
   margin-top: 10px;
   margin-bottom: 20px;
+  font-family: Bitter, Lucida Console, monospace;
 }
 * td {
   padding: 5px;
