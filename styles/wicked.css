@@ -638,48 +638,6 @@ h1, h2, h3, h4 {
   position: relative;
   margin-bottom: 2px;
 }
-* #attributes .attributes-exp .stripe-tooth-body {
-  display: flex;
-  /* Hide the browser's default checkbox */
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-* #attributes .attributes-exp .stripe-tooth-body label {
-  height: 30px;
-  width: 10px;
-  background-image: url("assets/teeth/xptooth-red.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* #attributes .attributes-exp .stripe-tooth-body label:last-of-type {
-  margin-right: 0px;
-}
-* #attributes .attributes-exp .stripe-tooth-body label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  color: #EEEFFF;
-}
-* #attributes .attributes-exp .stripe-tooth-body label[for$="-0"] i {
-  margin-top: 4px;
-}
-* #attributes .attributes-exp .stripe-tooth-body label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #attributes .attributes-exp .stripe-tooth-body input {
-  display: none;
-}
-* #attributes .attributes-exp .stripe-tooth-body input:checked ~ label {
-  background-image: url("assets/teeth/xptooth-white.png");
-}
-* #attributes .attributes-exp .stripe-tooth-body input:checked + label {
-  background-image: url("assets/teeth/xptooth-red.png");
-}
 * #attributes .attributes-container {
   display: flex;
   margin: 3px 0px;
@@ -689,10 +647,13 @@ h1, h2, h3, h4 {
 * #attributes .attributes-container label {
   height: 15px;
   width: 15px;
-  background-color: #191813;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: #191813;*/
   vertical-align: middle;
-  border: 2px solid #191813;
-  border-radius: 24px;
+  /*border: 2px solid #191813;
+  border-radius: 24px;*/
   transition: filter 0.1s;
   cursor: pointer;
 }
@@ -712,12 +673,16 @@ h1, h2, h3, h4 {
   display: none;
 }
 * #attributes .attributes-container input:checked ~ label {
-  background-color: #EEEFFF;
+  /*background-color: #EEEFFF;*/
+  background-image: url("assets/boxes/box-empty.png");
 }
 * #attributes .attributes-container input:checked + label {
   transition: filter 0.1s;
   cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
   background-color: #191813;
+  */
 }
 * #attributes .attributes-container input:checked + label:hover {
   filter: brightness(0.7);
