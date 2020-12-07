@@ -204,7 +204,7 @@
 
       <div id="crew-class" class="class-name">
         {{#each actor.items as |item id|}}
-        {{#if (eq item.type "crew_type")}}
+        {{#if (eq item.type "dungeon_theme")}}
         <div class="big-name">{{item.name}}</div>
         <div class="big-description">{{item.data.description}}</div>
         {{/if}}
@@ -225,7 +225,7 @@
     <div class="flex-fertical">
       <div class="big-teeth-section">
         <div class="big-teeth">
-          <label class="black-label" for="crew-experience-0">{{localize "FITD.CrewXP"}}</label>
+          <label class="black-label" for="crew-experience-0">{{localize "FITD.DungeonXP"}}</label>
           {{#multiboxes data.experience}}
           <input type="radio" id="crew-experience-0" name="data.experience" value="0" dtype="Radio">
           {{#crew_experience}}{{/crew_experience}}
@@ -233,10 +233,10 @@
         </div>
       </div>
       <div class="experience-clues-container">
-        <div class="experience-clues-description">{{localize "FITD.CrewExpClue1"}}</div>
+        <div class="experience-clues-description">{{localize "FITD.DungeonExpClue1"}}</div>
         <div class="experience-clues">
           {{#each actor.items as |item id|}}
-          {{#if (eq item.type "crew_type")}}
+          {{#if (eq item.type "dungeon_theme")}}
           {{html text=item.data.experience_clues}}
           {{/if}}
           {{/each}}
@@ -255,7 +255,7 @@
         <p><label>{{localize "FITD.Turfs"}}</label></p>
       </div>
       {{#each actor.items as |item id|}}
-      {{#if (eq item.type "crew_type")}}
+      {{#if (eq item.type "dungeon_theme")}}
       <div class="item" data-item-id="{{item._id}}">
       {{> "systems/wicked-ones/templates/parts/turf-list.html" turfs_data=item.data.turfs can_edit=false}}
       </div>
@@ -267,11 +267,11 @@
     {{!-- Crew Upgrades --}}
     <div id="crew-upgrades" class="tab grow-two flex-vertical" data-tab="upgrades">
       <div class="label-stripe flex-horizontal">
-        <p>{{localize "FITD.CrewUpgrades"}}</p>
-        <p><a class="item-add-popup" data-item-type="crew_upgrade"><i class="fas fa-plus-square"></i></a></p>
+        <p>{{localize "FITD.DungeoUpgrades"}}</p>
+        <p><a class="item-add-popup" data-item-type="dungeon_upgrade"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
-      {{#if (eq item.type "crew_upgrade")}}
+      {{#if (eq item.type "dungeon_upgrade")}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
@@ -287,10 +287,10 @@
     <div id="crew-abilities" class="tab grow-two flex-vertical" data-tab="abilities">
       <div class="label-stripe flex-horizontal">
         <p>{{localize "FITD.SpecialAbilities"}}</p>
-        <p><a class="item-add-popup" data-item-type="crew_ability"><i class="fas fa-plus-square"></i></a></p>
+        <p><a class="item-add-popup" data-item-type="dungeon_ability"><i class="fas fa-plus-square"></i></a></p>
       </div>
       {{#each actor.items as |item id|}}
-      {{#if (eq item.type "crew_ability")}}
+      {{#if (eq item.type "dungeon_ability")}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
