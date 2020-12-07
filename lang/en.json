@@ -123,7 +123,6 @@
   "FITD.EffectWeak": "Weak",
   "FITD.EffectZero": "Zero",
 
-  "FITD.Roll": "Roll",
   "FITD.RollFailure": "Failure",
   "FITD.RollCriticalSuccess": "Critical!",
   "FITD.RollSuccess": "Success",
@@ -145,7 +144,7 @@
   "FITD.SkillsFinesse": "Finesse",
   "FITD.SkillsSkulk": "Skulk",
   "FITD.SkillsSmash": "Smash",
-  
+
   "FITD.SkillsGuts": "Guts",
   "FITD.SkillsBanter": "Banter",
   "FITD.SkillsInvoke": "Invoke",
@@ -161,6 +160,9 @@
   "FITD.Drain": "Drain",
   "FITD.Wear": "Wear",
   "FITD.Gloom": "Gloom",
+
+  "FITD.Bloodied": "Bloodied",
+  "FITD.DarkHearts": "Dark Hearts",
 
   "FITD.Name": "Name"
 }

@@ -570,11 +570,61 @@ h1, h2, h3, h4 {
   flex-direction: column;
   width: 200px;
 }
+* #attributes .attribute {
+  margin-bottom: 5px;
+}
 * #attributes .stripe {
-  background-color: #191813;
-  color: #EEEFFF;
-  font-size: 17px;
-  padding-left: 5px;
+    background-color: #191813;
+    color: #EEEFFF;
+    font-size: 17px;
+    padding-left: 5px;
+}
+* #attributes .shock {
+    height: 32px;
+    width: 32px;
+    background-image: url("assets/boxes/shock-empty.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 1px;
+    transition: filter 0.1s;
+    cursor: pointer;
+    position: relative;
+    top: -6px;
+}
+* #attributes .bloodied {
+    height: 36px;
+    width: 24px;
+    background-image: url("assets/boxes/bloodied-empty.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 8px;
+    margin-right: 1px;
+    transition: filter 0.1s;
+    cursor: pointer;
+    position: relative;
+    top: -13px;
+}
+* #attributes-darkhearts {
+    margin-top: -12px;
+}
+* #attributes .heart-container {
+    margin-left: 34px;
+    justify-content: flex-start;
+}
+* #attributes .dark-heart {
+    height: 32px;
+    width: 32px;
+    background-image: url("assets/boxes/heart-emtpy.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 4px;
+    transition: filter 0.1s;
+    cursor: pointer;
+    position: relative;
+    top: -6px;
+}
+* #attributes .main {
+    flex-grow: 1;
 }
 * #attributes .attribute-label,
 * #attributes .attribute-skill-label {
@@ -586,7 +636,7 @@ h1, h2, h3, h4 {
 }
 * #attributes .attributes-exp {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 * #attributes .attributes-exp .stripe-tooth-body {
   display: flex;
