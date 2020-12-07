@@ -72,23 +72,23 @@ Hooks.once("init", async function() {
   });
 
   // Trauma Counter
-  Handlebars.registerHelper('traumacounter', function(selected, options) {
+  //Handlebars.registerHelper('traumacounter', function(selected, options) {
     
-    let html = options.fn(this);
+  //  let html = options.fn(this);
 
-    var count = 0;
-    for (const trauma in selected) {
-      if (selected[trauma] === true) {
-        count++;
-      }
-    }
+  //  var count = 0;
+  //  for (const trauma in selected) {
+  //    if (selected[trauma] === true) {
+  //      count++;
+  //    }
+  //  }
 
-    if (count > 4) count = 4;
+  //  if (count > 4) count = 4;
     
-    const rgx = new RegExp(' value=\"' + count + '\"');
-    return html.replace(rgx, "$& checked=\"checked\"");
+  //  const rgx = new RegExp(' value=\"' + count + '\"');
+  //  return html.replace(rgx, "$& checked=\"checked\"");
 
-  });
+  //});
 
   // NotEquals handlebar.
   Handlebars.registerHelper('noteq', (a, b, options) => {

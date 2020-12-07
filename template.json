@@ -3,43 +3,40 @@
   "types": ["character", "dungeon", "\uD83D\uDD5B clock"],
   "character": {
     "alias": "",
-    "stress": {
-      "value": [0],
+    "wickedxp": {
+      "value": [ 0 ],
       "max": 9,
       "max_default": 9,
-      "name_default": "FITD.Stress",
-      "name": "FITD.Stress"
+      "name_default": "FITD.WickedXP",
+      "name": "FITD.WickedXP"
     },
-    "trauma": {
-      "max": 4,
-      "max_default": 4,
-      "value": [0],
-      "name": "FITD.Trauma",
-      "name_default": "FITD.Trauma",
-      "list": [0]
+    "recklessxp": {
+      "value": [ 0 ],
+      "max": 3,
+      "max_default": 3,
+      "name_default": "FITD.RecklessXP",
+      "name": "FITD.RecklessXP"
     },
-    "healing-clock": [0],
-    "experience": [0],
-    "gold": [0],
-    "coins_stashed": [0],
+    "stress-clock": [ 0 ],
+    "experience": [ 0 ],
+    "gold": [ 0 ],
+    "coins_stashed": [ 0 ],
     "special_abilities": [],
     "loadout": 0,
     "load_level": "",
-    "harm": {
-        "light": {
-          "one": "",
-          "two": ""
-        },
-        "medium": {
-          "one": "",
-          "two": ""
-        },
-        "heavy": {
-          "one": ""
-        },
-        "deadly": {
-          "one": ""
-        }
+    "defenses": {
+      "1": {
+        "checked": false,
+        "value": ""
+      },
+      "2": {
+        "checked": false,
+        "value": ""
+      },
+      "3": {
+        "checked": false,
+        "value": ""
+      }
     },
     "armor-uses": {
       "armor": 0,
@@ -47,60 +44,60 @@
       "special": 0
     },
     "attributes": {
-        "brains": {
-          "exp": [0],
-          "label": "FITD.SkillsBrains",
-          "skills": {
-            "scan": {
-              "label": "FITD.SkillsScan",
-              "value": [0]
-            },
-            "tinker": {
-              "label": "FITD.SkillsTinker",
-              "value": [0]
-            },
-            "trick": {
-              "label": "FITD.SkillsTrick",
-              "value": [0]
-            }
-          }
-        },
-        "muscles": {
-          "exp": [0],
-          "label": "FITD.SkillsMuscles",
-          "skills": {
-            "finesse": {
-              "label": "FITD.SkillsFinesse",
-              "value": [0]
-            },
-            "skulk": {
-              "label": "FITD.SkillsSkulk",
-              "value": [0]
-            },
-            "smash": {
-              "label": "FITD.SkillsSmash",
-              "value": [0]
-            }
-          }
-        },
-        "guts": {
-          "exp": [0],
-          "label": "FITD.SkillsGuts",
-          "skills": {
-            "banter": {
-              "label": "FITD.SkillsBanter",
-              "value": [0]
-            },
-            "invoke": {
-              "label": "FITD.SkillsInvoke",
-              "value": [0]
-            },
-            "threaten": {
-              "label": "FITD.SkillsThreaten",
-              "value": [0]
-            }
+      "brains": {
+        "exp": [ 0 ],
+        "label": "FITD.SkillsBrains",
+        "skills": {
+          "scan": {
+            "label": "FITD.SkillsScan",
+            "value": [ 0 ]
+          },
+          "tinker": {
+            "label": "FITD.SkillsTinker",
+            "value": [ 0 ]
+          },
+          "trick": {
+            "label": "FITD.SkillsTrick",
+            "value": [ 0 ]
           }
         }
+      },
+      "muscles": {
+        "exp": [ 0 ],
+        "label": "FITD.SkillsMuscles",
+        "skills": {
+          "finesse": {
+            "label": "FITD.SkillsFinesse",
+            "value": [ 0 ]
+          },
+          "skulk": {
+            "label": "FITD.SkillsSkulk",
+            "value": [ 0 ]
+          },
+          "smash": {
+            "label": "FITD.SkillsSmash",
+            "value": [ 0 ]
+          }
+        }
+      },
+      "guts": {
+        "exp": [ 0 ],
+        "label": "FITD.SkillsGuts",
+        "skills": {
+          "banter": {
+            "label": "FITD.SkillsBanter",
+            "value": [ 0 ]
+          },
+          "invoke": {
+            "label": "FITD.SkillsInvoke",
+            "value": [ 0 ]
+          },
+          "threaten": {
+            "label": "FITD.SkillsThreaten",
+            "value": [ 0 ]
+          }
+        }
+      }
     }
   },
   "dungeon": {

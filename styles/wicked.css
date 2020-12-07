@@ -401,39 +401,10 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: row;
 }
-* .big-teeth-section #trauma-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+* #character-wickedxp label[for$="-0"] {
+  margin-right: 0px;
 }
-* .big-teeth-section #trauma-list label {
-  cursor: pointer;
-  font-size: 19px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin-right: 10px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  /* Hide the browser's default checkbox */
-}
-* .big-teeth-section #trauma-list label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* .big-teeth-section #trauma-list label input {
-  display: none;
-}
-* .big-teeth-section #trauma-list label input:checked ~ .checkmark {
-  color: red;
-}
-* .big-teeth-section #trauma-list label .checkmark {
-  text-decoration: none;
-  font-weight: bold;
-}
-* #character-stress label[for$="-0"] {
+* #character-recklessxp label[for$="-0"] {
   margin-right: 0px;
 }
 * #abilities .item-name {
@@ -490,27 +461,27 @@ h1, h2, h3, h4 {
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* #harm-armor {
+* #defenses-stress {
   display: flex;
 }
-* #harm-armor #character-harm {
+* #defenses-stress #character-defenses {
   width: 100%;
 }
-* #harm-armor #character-harm table {
+* #defenses-stress #character-defenses table {
   width: 100%;
 }
-* #harm-armor #character-harm table th {
+* #defenses-stress #character-defenses table th {
   background-color: #191813;
   color: #EEEFFF;
 }
-* #harm-armor #character-harm table input[type=text] {
+* #defenses-stress #character-defenses table input[type=text] {
   width: 100%;
 }
-* #harm-armor #character-health-clock {
+* #defenses-stress #character-stress-clock {
   margin: 0 auto;
   position: relative;
 }
-* #harm-armor #character-health-clock .blades-clock {
+* #defenses-stress #character-stress-clock .blades-clock {
   position: relative;
   padding: 0;
   width: 88px;
@@ -520,7 +491,7 @@ h1, h2, h3, h4 {
   overflow: hidden;
   background-size: cover;
 }
-* #harm-armor #character-health-clock .blades-clock label {
+* #defenses-stress #character-stress-clock .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -531,36 +502,36 @@ h1, h2, h3, h4 {
   transition: filter 0.1s;
   cursor: pointer;
 }
-* #harm-armor #character-health-clock .blades-clock label:hover {
+* #defenses-stress #character-stress-clock .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* #harm-armor #character-health-clock .blades-clock input {
+* #defenses-stress #character-stress-clock .blades-clock input {
   position: absolute;
   display: none;
 }
-* #harm-armor #character-health-clock .blades-clock input[value="0"] {
+* #defenses-stress #character-stress-clock .blades-clock input[value="0"] {
   display: none;
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(3) {
+* #defenses-stress #character-stress-clock .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(150deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(5) {
+* #defenses-stress #character-stress-clock .blades-clock *:nth-child(5) {
   transform: rotate(60deg) skewY(150deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(7) {
+* #defenses-stress #character-stress-clock .blades-clock *:nth-child(7) {
   transform: rotate(120deg) skewY(150deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(9) {
+* #defenses-stress #character-stress-clock .blades-clock *:nth-child(9) {
   transform: rotate(180deg) skewY(150deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(11) {
+* #defenses-stress #character-stress-clock .blades-clock *:nth-child(11) {
   transform: rotate(240deg) skewY(150deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(13) {
+* #defenses-stress #character-stress-clock .blades-clock *:nth-child(13) {
   transform: rotate(300deg) skewY(150deg);
 }
-* #harm-armor #character-armor-uses div {
+* #defenses-stress #character-armor-uses div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

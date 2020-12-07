@@ -6,16 +6,6 @@
   "FITD.Calling": "Calling",
   "FITD.Stress": "Stress",
   "FITD.Alias": "Alias",
-  "FITD.Trauma": "Trauma",
-  "FITD.TraumaCold": "Cold",
-  "FITD.TraumaHaunted": "Haunted",
-  "FITD.TraumaObsessed": "Obsessed",
-  "FITD.TraumaParanoid": "Paranoid",
-  "FITD.TraumaReckless": "Reckless",
-  "FITD.TraumaSoft": "Soft",
-  "FITD.TraumaUnstable": "Unstable",
-  "FITD.TraumaVicious": "Vicious",
-  "FITD.Harm": "Harm",
   "FITD.Healing": "Healing",
   "FITD.Armor": "Defenses",
   "FITD.NeedHelp": "Need Help",
@@ -163,6 +153,9 @@
 
   "FITD.Bloodied": "Bloodied",
   "FITD.DarkHearts": "Dark Hearts",
+  "FITD.Defenses": "Defenses",
+  "FITD.WickedXP": "Wicked XP",
+  "FITD.RecklessXP": "Reckless XP",
 
   "FITD.Name": "Name"
 }
