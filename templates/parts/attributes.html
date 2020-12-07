@@ -5,9 +5,9 @@
   <div id="attributes-{{attribute_name}}" class="attribute">
     <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
       <div class="stripe">
-        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}">{{localize (concat attribute.label 'Short')}}</a>
+          <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}">{{localize attribute_name}}</a>
       </div>
-      <div class="stripe-tooth-body">
+      <!--<div class="stripe-tooth-body">
         {{#multiboxes attribute.exp}}
 
         <label
@@ -21,7 +21,7 @@
           <label for="{{../../actor._id}}-{{attribute_name}}-exp-{{this}}"></label>
         {{/times_from_1}}
         {{/multiboxes}}
-      </div>
+      </div>-->
     </div>
     
     {{!-- Skills --}}
@@ -33,7 +33,7 @@
 
         {{#multiboxes skill.value}}
 
-        {{#times_from_0 4}}
+        {{#times_from_0 3}}
         <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
                name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
         <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"></label>

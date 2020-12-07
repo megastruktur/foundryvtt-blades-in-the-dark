@@ -122,7 +122,7 @@
   "FITD.EffectDefault": "Default",
   "FITD.EffectWeak": "Weak",
   "FITD.EffectZero": "Zero",
-  
+
   "FITD.Roll": "Roll",
   "FITD.RollFailure": "Failure",
   "FITD.RollCriticalSuccess": "Critical!",
@@ -136,26 +136,20 @@
   "FITD.RollDoMixed": "<strong>Yes, but…</strong> You get the results, but they come at a cost. There will be some consequences coming your way. At other times, it may just result in a less effective result.",
   "FITD.RollDoFail": "<strong>No, and…</strong> Things go as poorly as they could have in that situation. You fail to do it and suffer a consequence.",
 
-  "FITD.SkillsInsight": "Insight",
-  "FITD.SkillsInsightShort": "Insight",
-  "FITD.SkillsHunt": "Hunt",
-  "FITD.SkillsStudy": "Study",
-  "FITD.SkillsSurvey": "Survey",
+  "FITD.SkillsBrains": "Brains",
+  "FITD.SkillsScan": "Scan",
   "FITD.SkillsTinker": "Tinker",
+  "FITD.SkillsTrick": "Trick",
 
-  "FITD.SkillsProwess": "Prowess",
-  "FITD.SkillsProwessShort": "Prowess",
+  "FITD.SkillsMuscles": "Muscles",
   "FITD.SkillsFinesse": "Finesse",
-  "FITD.SkillsProwl": "Prowl",
-  "FITD.SkillsSkirmish": "Skirmish",
-  "FITD.SkillsWreck": "Wreck",
-
-  "FITD.SkillsResolve": "Resolve",
-  "FITD.SkillsResolveShort": "Resolve",
-  "FITD.SkillsAttune": "Attune",
-  "FITD.SkillsCommand": "Command",
-  "FITD.SkillsConsort": "Consort",
-  "FITD.SkillsSway": "Sway",
+  "FITD.SkillsSkulk": "Skulk",
+  "FITD.SkillsSmash": "Smash",
+  
+  "FITD.SkillsGuts": "Guts",
+  "FITD.SkillsBanter": "Banter",
+  "FITD.SkillsInvoke": "Invoke",
+  "FITD.SkillsThreaten": "Threaten",
 
   "FITD.AddAbility": "Add Ability",
   "FITD.AddItem": "Add Item",

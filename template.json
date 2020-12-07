@@ -47,68 +47,56 @@
       "special": 0
     },
     "attributes": {
-        "insight": {
+        "brains": {
           "exp": [0],
-          "label": "FITD.SkillsInsight",
+          "label": "FITD.SkillsBrains",
           "skills": {
-            "hunt": {
-              "label": "FITD.SkillsHunt",
-              "value": [0]
-            },
-            "study": {
-              "label": "FITD.SkillsStudy",
-              "value": [0]
-            },
-            "survey": {
-              "label": "FITD.SkillsSurvey",
+            "scan": {
+              "label": "FITD.SkillsScan",
               "value": [0]
             },
             "tinker": {
               "label": "FITD.SkillsTinker",
               "value": [0]
+            },
+            "trick": {
+              "label": "FITD.SkillsTrick",
+              "value": [0]
             }
           }
         },
-        "prowess": {
+        "muscles": {
           "exp": [0],
-          "label": "FITD.SkillsProwess",
+          "label": "FITD.SkillsMuscles",
           "skills": {
             "finesse": {
               "label": "FITD.SkillsFinesse",
               "value": [0]
             },
-            "prowl": {
-              "label": "FITD.SkillsProwl",
+            "skulk": {
+              "label": "FITD.SkillsSkulk",
               "value": [0]
             },
-            "skirmish": {
-              "label": "FITD.SkillsSkirmish",
-              "value": [0]
-            },
-            "wreck": {
-              "label": "FITD.SkillsWreck",
+            "smash": {
+              "label": "FITD.SkillsSmash",
               "value": [0]
             }
           }
         },
-        "resolve": {
+        "guts": {
           "exp": [0],
-          "label": "FITD.SkillsResolve",
+          "label": "FITD.SkillsGuts",
           "skills": {
-            "attune": {
-              "label": "FITD.SkillsAttune",
+            "banter": {
+              "label": "FITD.SkillsBanter",
               "value": [0]
             },
-            "command": {
-              "label": "FITD.SkillsCommand",
+            "invoke": {
+              "label": "FITD.SkillsInvoke",
               "value": [0]
             },
-            "consort": {
-              "label": "FITD.SkillsConsort",
-              "value": [0]
-            },
-            "sway": {
-              "label": "FITD.SkillsSway",
+            "threaten": {
+              "label": "FITD.SkillsThreaten",
               "value": [0]
             }
           }
@@ -167,18 +155,15 @@
     "templates": ["default", "logic"],
     "experience_clues": "",
     "base_skills": {
-      "hunt": [0],
-      "study": [0],
-      "survey": [0],
+      "scan": [0],
       "tinker": [0],
+      "trick": [0],
       "finesse": [0],
-      "prowl": [0],
-      "skirmish": [0],
-      "wreck": [0],
-      "attune": [0],
-      "command": [0],
-      "consort": [0],
-      "sway": [0]
+      "skulk": [0],
+      "smash": [0],
+      "banter": [0],
+      "invoke": [0],
+      "threaten": [0]
     }
   },
   "ability": {
