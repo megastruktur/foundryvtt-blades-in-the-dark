@@ -1,393 +1,466 @@
 {
-"Actor": {
-  "types": ["character", "dungeon", "\uD83D\uDD5B clock"],
-  "character": {
-    "alias": "",
-    "wickedxp": {
-      "value": [ 0 ],
-      "max": 9,
-      "max_default": 9,
-      "name_default": "FITD.WickedXP",
-      "name": "FITD.WickedXP"
-    },
-    "recklessxp": {
-      "value": [ 0 ],
-      "max": 3,
-      "max_default": 3,
-      "name_default": "FITD.RecklessXP",
-      "name": "FITD.RecklessXP"
-    },
-    "stress-clock": [ 0 ],
-    "experience": [ 0 ],
-    "gold": [ 0 ],
-    "coins_stashed": [ 0 ],
-    "special_abilities": [],
-    "loadout": 0,
-    "load_level": "",
-    "defenses": {
-      "1": {
-        "checked": false,
-        "value": ""
+  "Actor": {
+    "types": [ "character", "minion_pack", "dungeon", "\uD83D\uDD5B clock" ],
+    "character": {
+      "alias": "",
+      "wickedxp": {
+        "value": [ 0 ],
+        "max": 9,
+        "max_default": 9,
+        "name_default": "FITD.WickedXP",
+        "name": "FITD.WickedXP"
       },
-      "2": {
-        "checked": false,
-        "value": ""
+      "recklessxp": {
+        "value": [ 0 ],
+        "max": 3,
+        "max_default": 3,
+        "name_default": "FITD.RecklessXP",
+        "name": "FITD.RecklessXP"
       },
-      "3": {
-        "checked": false,
-        "value": ""
+      "stress-clock": [ 0 ],
+      "experience": [ 0 ],
+      "gold": [ 0 ],
+      "coins_stashed": [ 0 ],
+      "special_abilities": [],
+      "loadout": 0,
+      "load_level": "",
+      "defenses": {
+        "1": {
+          "checked": false,
+          "value": ""
+        },
+        "2": {
+          "checked": false,
+          "value": ""
+        },
+        "3": {
+          "checked": false,
+          "value": ""
+        }
+      },
+      "armor-uses": {
+        "armor": 0,
+        "heavy": 0,
+        "special": 0
+      },
+      "attributes": {
+        "brains": {
+          "exp": [ 0 ],
+          "label": "FITD.SkillsBrains",
+          "skills": {
+            "scan": {
+              "label": "FITD.SkillsScan",
+              "value": [ 0 ]
+            },
+            "tinker": {
+              "label": "FITD.SkillsTinker",
+              "value": [ 0 ]
+            },
+            "trick": {
+              "label": "FITD.SkillsTrick",
+              "value": [ 0 ]
+            }
+          }
+        },
+        "muscles": {
+          "exp": [ 0 ],
+          "label": "FITD.SkillsMuscles",
+          "skills": {
+            "finesse": {
+              "label": "FITD.SkillsFinesse",
+              "value": [ 0 ]
+            },
+            "skulk": {
+              "label": "FITD.SkillsSkulk",
+              "value": [ 0 ]
+            },
+            "smash": {
+              "label": "FITD.SkillsSmash",
+              "value": [ 0 ]
+            }
+          }
+        },
+        "guts": {
+          "exp": [ 0 ],
+          "label": "FITD.SkillsGuts",
+          "skills": {
+            "banter": {
+              "label": "FITD.SkillsBanter",
+              "value": [ 0 ]
+            },
+            "invoke": {
+              "label": "FITD.SkillsInvoke",
+              "value": [ 0 ]
+            },
+            "threaten": {
+              "label": "FITD.SkillsThreaten",
+              "value": [ 0 ]
+            }
+          }
+        }
       }
     },
-    "armor-uses": {
-      "armor": 0,
-      "heavy": 0,
-      "special": 0
-    },
-    "attributes": {
-      "brains": {
-        "exp": [ 0 ],
-        "label": "FITD.SkillsBrains",
-        "skills": {
-          "scan": {
-            "label": "FITD.SkillsScan",
-            "value": [ 0 ]
-          },
-          "tinker": {
-            "label": "FITD.SkillsTinker",
-            "value": [ 0 ]
-          },
-          "trick": {
-            "label": "FITD.SkillsTrick",
-            "value": [ 0 ]
+    "minion_pack": {
+      "bloodied": false,
+      "morale": false,
+      "number": 0,
+      "race": "",
+      "darkimpulse": "",
+      "minion_upgrades": [],
+      "attributes": {
+        "brains": {
+          "label": "FITD.SkillsBrains",
+          "skills": {
+            "scan": {
+              "label": "FITD.SkillsScan",
+              "value": [ 0 ]
+            },
+            "tinker": {
+              "label": "FITD.SkillsTinker",
+              "value": [ 0 ]
+            },
+            "trick": {
+              "label": "FITD.SkillsTrick",
+              "value": [ 0 ]
+            }
           }
-        }
-      },
-      "muscles": {
-        "exp": [ 0 ],
-        "label": "FITD.SkillsMuscles",
-        "skills": {
-          "finesse": {
-            "label": "FITD.SkillsFinesse",
-            "value": [ 0 ]
-          },
-          "skulk": {
-            "label": "FITD.SkillsSkulk",
-            "value": [ 0 ]
-          },
-          "smash": {
-            "label": "FITD.SkillsSmash",
-            "value": [ 0 ]
+        },
+        "muscles": {
+          "label": "FITD.SkillsMuscles",
+          "skills": {
+            "finesse": {
+              "label": "FITD.SkillsFinesse",
+              "value": [ 0 ]
+            },
+            "skulk": {
+              "label": "FITD.SkillsSkulk",
+              "value": [ 0 ]
+            },
+            "smash": {
+              "label": "FITD.SkillsSmash",
+              "value": [ 0 ]
+            }
           }
-        }
-      },
-      "guts": {
-        "exp": [ 0 ],
-        "label": "FITD.SkillsGuts",
-        "skills": {
-          "banter": {
-            "label": "FITD.SkillsBanter",
-            "value": [ 0 ]
-          },
-          "invoke": {
-            "label": "FITD.SkillsInvoke",
-            "value": [ 0 ]
-          },
-          "threaten": {
-            "label": "FITD.SkillsThreaten",
-            "value": [ 0 ]
+        },
+        "guts": {
+          "label": "FITD.SkillsGuts",
+          "skills": {
+            "banter": {
+              "label": "FITD.SkillsBanter",
+              "value": [ 0 ]
+            },
+            "invoke": {
+              "label": "FITD.SkillsInvoke",
+              "value": [ 0 ]
+            },
+            "threaten": {
+              "label": "FITD.SkillsThreaten",
+              "value": [ 0 ]
+            }
           }
         }
       }
+    },
+    "dungeon": {
+      "name": "",
+      "reputation": [ 0 ],
+      "lair": "",
+      "tier": [ 0 ],
+      "deity": "",
+      "hold": [ "strong" ],
+      "experience": [ 0 ],
+      "hold_types": [ "weak", "strong" ],
+      "coins": {
+        "max": 4,
+        "value": [ 0 ]
+      },
+      "vault": {
+        "value": [ 0 ],
+        "max": 0
+      },
+      "turfs": [ 8 ],
+      "features": [],
+      "heat": [ 0 ],
+      "wanted": [ 0 ]
+    },
+    "\uD83D\uDD5B clock": {
+      "name": "",
+      "type": 4,
+      "value": "0"
     }
   },
-  "dungeon": {
-    "name": "",
-    "reputation": [0],
-    "lair": "",
-    "tier": [0],
-    "deity": "",
-    "hold": ["strong"],
-    "experience": [0],
-    "hold_types": ["weak", "strong"],
-    "coins": {
-      "max": 4,
-      "value": [0]
+  "Item": {
+    "types": [ "item", "calling", "minion_upgrade", "minion_type", "ability", "race", "impulse", "revelry", "dungeon_upgrade", "cohort", "dungeon_theme", "dungeon_reputation", "dungeon_upgrade", "dungeon_ability" ],
+    "templates": {
+      "default": {
+        "description": ""
+      },
+      "ability": {
+        "description": "",
+        "class": "",
+        "price": 1
+      },
+      "logic": {
+        "logic": ""
+      },
+      "minion_upgrade": {
+        "description": "",
+        "keyword": "",
+        "use_checkbox": false,
+        "checked": false
+      }
     },
-    "vault": {
-      "value": [0],
-      "max": 0
+    "item": {
+      "templates": [ "default", "logic" ],
+      "class": "",
+      "load": 0
     },
-    "turfs": [8],
-    "features": [],
-    "heat": [0],
-    "wanted": [0]
-  },
-  "\uD83D\uDD5B clock": {
-    "name": "",
-    "type": 4,
-    "value": "0"
-  }
-},
-"Item": {
-  "types": ["item", "calling", "ability", "race", "impulse", "revelry", "dungeon_upgrade", "cohort", "dungeon_theme", "dungeon_reputation", "dungeon_upgrade", "dungeon_ability"],
-  "templates": {
-    "default": {
-      "description": ""
+    "calling": {
+      "templates": [ "default", "logic" ],
+      "experience_clues": "",
+      "base_skills": {
+        "scan": [ 0 ],
+        "tinker": [ 0 ],
+        "trick": [ 0 ],
+        "finesse": [ 0 ],
+        "skulk": [ 0 ],
+        "smash": [ 0 ],
+        "banter": [ 0 ],
+        "invoke": [ 0 ],
+        "threaten": [ 0 ]
+      }
     },
     "ability": {
-      "description": "",
-      "class": "",
-      "price": 1
+      "templates": [ "ability", "logic" ]
     },
-    "logic": {
-      "logic": ""
-    }
-  },
-  "item": {
-    "templates": ["default", "logic"],
-    "class": "",
-    "load": 0
-  },
-  "calling": {
-    "templates": ["default", "logic"],
-    "experience_clues": "",
-    "base_skills": {
-      "scan": [0],
-      "tinker": [0],
-      "trick": [0],
-      "finesse": [0],
-      "skulk": [0],
-      "smash": [0],
-      "banter": [0],
-      "invoke": [0],
-      "threaten": [0]
-    }
-  },
-  "ability": {
-    "templates": ["ability", "logic"]
-  },
-  "race": {
-    "templates": ["default"]
-  },
-  "impulse": {
-    "templates": ["default"]
-  },
-  "revelry": {
-    "templates": ["default"]
-  },
-  "cohort": {
-    "templates": ["default"],
-    "cohort": ["Gang"],
-    "scale": 0,
-    "quality": 0,
-    "cohort_list": {
-      "Gang": {
-        "label": "FITD.Gang"
+    "minion_upgrade": {
+      "templates": [ "upgrade" ]
+    },
+    "minion_job": {
+      "templates": [ "default" ]
+    },
+    "race": {
+      "templates": [ "default" ]
+    },
+    "impulse": {
+      "templates": [ "default" ]
+    },
+    "revelry": {
+      "templates": [ "default" ]
+    },
+    "cohort": {
+      "templates": [ "default" ],
+      "cohort": [ "Gang" ],
+      "scale": 0,
+      "quality": 0,
+      "cohort_list": {
+        "Gang": {
+          "label": "FITD.Gang"
+        },
+        "Expert": {
+          "label": "FITD.Expert"
+        }
       },
-      "Expert": {
-        "label": "FITD.Expert"
-      }
-    },
-    "dungeon_theme": ["Adepts"],
-    "dungeon_theme_list": {
+      "dungeon_theme": [ "Adepts" ],
+      "dungeon_theme_list": {
 
-      "Adepts": {
-        "label": "FITD.GangTypeAdepts",
-        "description": "FITD.GangTypeAdeptsDescription"
+        "Adepts": {
+          "label": "FITD.GangTypeAdepts",
+          "description": "FITD.GangTypeAdeptsDescription"
+        },
+        "Rooks": {
+          "label": "FITD.GangTypeRooks",
+          "description": "FITD.GangTypeRooksDescription"
+        },
+        "Rovers": {
+          "label": "FITD.GangTypeRovers",
+          "description": "FITD.GangTypeRoversDescription"
+        },
+        "Skulks": {
+          "label": "FITD.GangTypeSkulks",
+          "description": "FITD.GangTypeSkulksDescription"
+        },
+        "Thugs": {
+          "label": "FITD.GangTypeThugs",
+          "description": "FITD.GangTypeThugsDescription"
+        }
       },
-      "Rooks": {
-        "label": "FITD.GangTypeRooks",
-        "description": "FITD.GangTypeRooksDescription"
+      "expert_type": "",
+      "status": [],
+      "statuses": [],
+      "edges": [],
+      "edges_list": {
+        "Fearsome": {
+          "label": "FITD.EdgesFearsome",
+          "description": "FITD.EdgesFearsomeDescription"
+        },
+        "Independent": {
+          "label": "FITD.EdgesIndependent",
+          "description": "FITD.EdgesIndependentDescription"
+        },
+        "Loyal": {
+          "label": "FITD.EdgesLoyal",
+          "description": "FITD.EdgesLoyalDescription"
+        },
+        "Tenacious": {
+          "label": "FITD.EdgesTenacious",
+          "description": "FITD.EdgesTenaciousDescription"
+        }
       },
-      "Rovers": {
-        "label": "FITD.GangTypeRovers",
-        "description": "FITD.GangTypeRoversDescription"
+      "flaws": [],
+      "flaws_list": {
+        "Principled": {
+          "label": "FITD.FlawsPrincipled",
+          "description": "FITD.FlawsPrincipledDescription"
+        },
+        "Savage": {
+          "label": "FITD.FlawsSavage",
+          "description": "FITD.FlawsSavageDescription"
+        },
+        "Unreliable": {
+          "label": "FITD.FlawsUnreliable",
+          "description": "FITD.FlawsUnreliableDescription"
+        },
+        "Wild": {
+          "label": "FITD.FlawsWild",
+          "description": "FITD.FlawsWildDescription"
+        }
       },
-      "Skulks": {
-        "label": "FITD.GangTypeSkulks",
-        "description": "FITD.GangTypeSkulksDescription"
+      "harm": [ "No" ],
+      "harm_list": {
+        "No": {
+          "label": "FITD.HarmNoHarm",
+          "description": "FITD.HarmNoHarmDescription",
+          "value": 0
+        },
+        "Weakened": {
+          "label": "FITD.HarmWeakened",
+          "description": "FITD.HarmWeakenedDescription",
+          "value": 1
+        },
+        "Impaired": {
+          "label": "FITD.HarmImpaired",
+          "description": "FITD.HarmImpairedDescription",
+          "value": 2
+        },
+        "Broken": {
+          "label": "FITD.HarmBroken",
+          "description": "FITD.HarmBrokenDescription",
+          "value": 3
+        },
+        "Dead": {
+          "label": "FITD.HarmDead",
+          "description": "FITD.HarmDeadDescription",
+          "value": 4
+        }
       },
-      "Thugs": {
-        "label": "FITD.GangTypeThugs",
-        "description": "FITD.GangTypeThugsDescription"
-      }
+      "armor": false
     },
-    "expert_type": "",
-    "status": [],
-    "statuses": [],
-    "edges": [],
-    "edges_list": {
-      "Fearsome": {
-        "label": "FITD.EdgesFearsome",
-        "description": "FITD.EdgesFearsomeDescription"
-      },
-      "Independent": {
-        "label": "FITD.EdgesIndependent",
-        "description": "FITD.EdgesIndependentDescription"
-      },
-      "Loyal": {
-        "label": "FITD.EdgesLoyal",
-        "description": "FITD.EdgesLoyalDescription"
-      },
-      "Tenacious": {
-        "label": "FITD.EdgesTenacious",
-        "description": "FITD.EdgesTenaciousDescription"
-      }
+    "dungeon_reputation": {
+      "templates": [ "default" ]
     },
-    "flaws": [],
-    "flaws_list": {
-      "Principled": {
-        "label": "FITD.FlawsPrincipled",
-        "description": "FITD.FlawsPrincipledDescription"
-      },
-      "Savage": {
-        "label": "FITD.FlawsSavage",
-        "description": "FITD.FlawsSavageDescription"
-      },
-      "Unreliable": {
-        "label": "FITD.FlawsUnreliable",
-        "description": "FITD.FlawsUnreliableDescription"
-      },
-      "Wild": {
-        "label": "FITD.FlawsWild",
-        "description": "FITD.FlawsWildDescription"
-      }
+    "dungeon_upgrade": {
+      "templates": [ "ability", "logic" ],
+      "dungeon_theme": ""
     },
-    "harm": ["No"],
-    "harm_list": {
-      "No": {
-        "label": "FITD.HarmNoHarm",
-        "description": "FITD.HarmNoHarmDescription",
-        "value": 0
-      },
-      "Weakened": {
-        "label": "FITD.HarmWeakened",
-        "description": "FITD.HarmWeakenedDescription",
-        "value": 1
-      },
-      "Impaired": {
-        "label": "FITD.HarmImpaired",
-        "description": "FITD.HarmImpairedDescription",
-        "value": 2
-      },
-      "Broken": {
-        "label": "FITD.HarmBroken",
-        "description": "FITD.HarmBrokenDescription",
-        "value": 3
-      },
-      "Dead": {
-        "label": "FITD.HarmDead",
-        "description": "FITD.HarmDeadDescription",
-        "value": 4
-      }
+    "dungeon_ability": {
+      "templates": [ "ability" ]
     },
-    "armor": false
-  },
-  "dungeon_reputation": {
-    "templates": ["default"]
-  },
-  "dungeon_upgrade": {
-    "templates": ["ability", "logic"],
-    "dungeon_theme": ""
-  },
-  "dungeon_ability": {
-    "templates": ["ability"]
-  },
-  "dungeon_theme": {
-    "description": "",
-    "experience_clues": "",
-    "turfs": {
-      "1": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "2": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "3": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "4": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "5": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "6": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "7": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "8": {
-        "name": "FITD.Lair",
-        "value": 1,
-        "description": "",
-        "connects": []
-      },
-      "9": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "10": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "11": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "12": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "13": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "14": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "15": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
+    "dungeon_theme": {
+      "description": "",
+      "experience_clues": "",
+      "turfs": {
+        "1": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "2": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "3": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "4": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "5": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "6": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "7": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "8": {
+          "name": "FITD.Lair",
+          "value": 1,
+          "description": "",
+          "connects": []
+        },
+        "9": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "10": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "11": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "12": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "13": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "14": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "15": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        }
       }
     }
   }
-}
 }

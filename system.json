@@ -32,6 +32,20 @@
       "entity": "Item"
     },
     {
+      "name": "minion_upgrade",
+      "label": "Minion Upgrades",
+      "system": "wicked-ones",
+      "path": "./packs/minion_upgrades.db",
+      "entity": "Item"
+    },
+    {
+      "name": "minion_type",
+      "label": "Minion Types",
+      "system": "wicked-ones",
+      "path": "./packs/minion_types.db",
+      "entity": "Item"
+    },
+    {
       "name": "race",
       "label": "Races",
       "system": "wicked-ones",

@@ -1,0 +1,21 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
+      </div>
+  </header>
+  
+  <section class="flex-vertical">
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description">{{data.description}}</textarea>
+    <label class="label-stripe">{{localize "FITD.Examples"}}</label>
+    <textarea name="data.keyword">{{data.keyword}}</textarea>
+
+    {{isG}}
+    <label class="label-stripe">{{localize "FITD.DisplayCheckbox"}}</label>
+    <input type="checkbox" name="data.use_checkbox" value="{{data.use_checkbox}}" {{checked data.use_checkbox}}>
+    <!--<input type="checkbox" name="data.use_checkbox" value="{{data.use_checkbox}}" />-->
+  </section>
+
+</form>
