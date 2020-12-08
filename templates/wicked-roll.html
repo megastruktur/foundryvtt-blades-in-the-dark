@@ -1,10 +1,18 @@
 <div class="dice-tooltip blades-die-tooltip">
   {{#if attribute_label}}<div class="chat-label label-stripe-chat">{{localize attribute_label}}</div>{{/if}}
-  {{#if position}}
-    <div class="chat-label-small label-stripe-chat-small">
-      {{{localize position}}} | {{{localize effect}}}
-    </div>
-  {{/if}}
+	{{#if (eq position "FITD.PositionDefault")}}   
+	  {{#if (eq effect "FITD.EffectDefault")}}   
+		 <!-- If position and effect are default, they do not need to be displayed for the roll-->
+	  {{else}}   
+		  <div class="chat-label-small label-stripe-chat-small">
+		  {{{localize position}}} | {{{localize effect}}}
+		  </div>
+	  {{/if}}
+	{{else}}   
+		  <div class="chat-label-small label-stripe-chat-small">
+		  {{{localize position}}} | {{{localize effect}}}
+		  </div>
+	{{/if}}
 
   {{#if (eq roll_status "critical-success")}}
   <div class="die {{roll_status}}">{{localize "FITD.RollCriticalSuccess"}}</div>
