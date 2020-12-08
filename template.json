@@ -105,7 +105,6 @@
       "morale": false,
       "number": 0,
       "race": "",
-      "darkimpulse": "",
       "minion_upgrades": [],
       "attributes": {
         "brains": {
@@ -190,7 +189,7 @@
     }
   },
   "Item": {
-    "types": [ "item", "calling", "minion_upgrade", "minion_type", "ability", "race", "impulse", "revelry", "dungeon_upgrade", "cohort", "dungeon_theme", "dungeon_reputation", "dungeon_upgrade", "dungeon_ability" ],
+    "types": [ "item", "calling", "minion_upgrade", "minion_type", "ability", "race", "wickedimpulse", "minionimpulse", "revelry", "dungeon_upgrade", "cohort", "dungeon_theme", "dungeon_reputation", "dungeon_upgrade", "dungeon_ability" ],
     "templates": {
       "default": {
         "description": ""
@@ -242,7 +241,10 @@
     "race": {
       "templates": [ "default" ]
     },
-    "impulse": {
+    "wickedimpulse": {
+      "templates": [ "default" ]
+    },
+    "minionimpulse": {
       "templates": [ "default" ]
     },
     "revelry": {

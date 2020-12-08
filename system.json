@@ -60,10 +60,17 @@
       "entity": "Item"
     },
     {
-      "name": "impulse",
-      "label": "Dark Impulses",
+      "name": "wickedimpulse",
+      "label": "Wicked One Impulses",
       "system": "wicked-ones",
-      "path": "./packs/impulses.db",
+      "path": "./packs/wickedimpulses.db",
+      "entity": "Item"
+    },
+    {
+      "name": "minionimpulse",
+      "label": "Minion Impulses",
+      "system": "wicked-ones",
+      "path": "./packs/minionimpulses.db",
       "entity": "Item"
     },
     {
