@@ -66,7 +66,6 @@ export class BladesActor extends Actor {
               <option value="resistance">${game.i18n.localize('FITD.RollResistance')}</option>			  
             </select>
           </div>
-            </div>
             <div class="form-group">
             <label>${game.i18n.localize('FITD.Position')}:</label>
             <select id="pos" name="pos">

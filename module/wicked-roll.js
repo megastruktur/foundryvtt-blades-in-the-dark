@@ -228,7 +228,7 @@ export function getBladesRollStatus(rolls, zeromode = false) {
 export async function simpleRollPopup() {
   
   new Dialog({
-    title: `Simple Roll`,
+    title: `Dice Roller`,
     content: `
       <h2>${game.i18n.localize("FITD.RollSomeDice")}</h2>
       <p>${game.i18n.localize("FITD.RollTokenDescription")}</p>

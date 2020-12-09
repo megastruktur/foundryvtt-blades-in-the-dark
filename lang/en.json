@@ -117,7 +117,7 @@
   "FITD.RollCriticalSuccess": "Critical!",
   "FITD.RollSuccess": "Success",
   "FITD.RollMixedSuccess": "Mixed",
-  "FITD.RollSomeDice": "Roll Some Dice!",
+  "FITD.RollSomeDice": "Choose your Roll type",
   "FITD.RollTokenDescription": "If you want to pull the numbers from a character, select their Token first.",
   "FITD.RollNumberOfDice": "Number of Dice",
   "FITD.RollDoCrit": "<strong>Yes, and… !</strong> Not only do you get what you want, but you get something else to go along with it!",
