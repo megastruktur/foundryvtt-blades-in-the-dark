@@ -2,7 +2,6 @@
   "Actor": {
     "types": [ "character", "minion_pack", "dungeon", "\uD83D\uDD5B clock" ],
     "character": {
-      "isminion": false,
       "alias": "",
       "wickedxp": {
         "value": [ 0 ],
@@ -22,7 +21,6 @@
       "experience": [ 0 ],
       "gold": [ 0 ],
       "coins_stashed": [ 0 ],
-      "special_abilities": [],
       "loadout": 0,
       "load_level": "",
       "defenses": {
@@ -103,12 +101,10 @@
       }
     },
     "minion_pack": {
-      "isminion": true,
       "bloodied": false,
       "morale": false,
       "number": 0,
       "race": "",
-      "minion_upgrades": [],
       "attribute_max_value": 2,
       "attributes": {
         "brains": {

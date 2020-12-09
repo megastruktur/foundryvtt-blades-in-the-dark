@@ -1,9 +1,9 @@
 <div id="attributes">
   {{#each data.attributes as |attribute attribute_name|}}
   <div id="attributes-{{attribute_name}}" class="attribute flex-horizontal">
-    {{#unless @root.data.isminion}}
+    {{#if (ne @root.actor.type "minion_pack")}}
     <div class="shock{{#if (true)}} filled{{/if}}"></div>
-    {{/unless}}
+    {{/if}}
     <div class="main">
       <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
         <div class="stripe">
@@ -36,7 +36,7 @@
   </div>
   {{/each}}
 
-  {{#if @root.data.isminion}}
+  {{#if (eq @root.actor.type eq "minion_pack")}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
     <div class="bloodied minion{{#if (true)}} filled{{/if}}"></div>
     <div class="main">
