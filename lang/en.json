@@ -183,15 +183,15 @@
   "FITD.RollResistanceFailure":"You spend 3 stress to <strong>partially</strong> resist the consequence.",
   
   "FITD.RollCreature":"Creature Roll",
-  "FITD.RollCreatureCriticalSuccess":"You damage two adventurers of your choice.<strong>Roll again.</strong>",
+  "FITD.RollCreatureCriticalSuccess":"You damage two adventurers of your choice. <strong>Roll again.</strong>",
   "FITD.RollCreatureSuccess":"You damage an adventurer of your choice. <strong>Roll again.</strong>",
   "FITD.RollCreatureMixedSuccess":"You damage an adventurer of the GM's choice and the creature is knocked out of the fight.",
   "FITD.RollCreatureFailure":"The creature is slain or flees the dungeon for good.",
   "FITD.RollCreatureNote":"❖ You can't damage the same adventurer twice in a row unless they're alone.",
   
   "FITD.RollTrap":"Trap Roll",
-  "FITD.RollTrapCriticalSuccess":"You damage two adventurers of your choice.<strong>Roll again.</strong>",
-  "FITD.RollTrapSuccess":"You damage an adventurer of your choice.<strong>Roll again.</strong>",
+  "FITD.RollTrapCriticalSuccess":"You damage two adventurers of your choice. <strong>Roll again.</strong>",
+  "FITD.RollTrapSuccess":"You damage an adventurer of your choice. <strong>Roll again.</strong>",
   "FITD.RollTrapMixedSuccess":"You damage an adventurer of the GM's choice.",
   "FITD.RollTrapFailure":"The trap is disabled or avoided by the adventurers.",
   "FITD.RollTrapNote":"You can't damage the same adventurer twice in a row unless they're alone.",

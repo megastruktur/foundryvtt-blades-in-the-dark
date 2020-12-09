@@ -2,12 +2,13 @@
 $lightgray: #CCC;
 $gray: #999;
 $red: red;
-$almost_black: #191813;
+$almost_black: #191919;
 $almost_white: #EEEFFF;
 $gold: #DAA520;
 $green: #008000;
 $light_green: #12a012;
 $blue: #04578f;
+$bloody: #400000;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -595,7 +596,8 @@ $hover-brightness: 0.8;
             display: none;
 
             &:checked + label {
-                font-weight: bold;
+                    font-weight: 800;
+					color: $bloody;
             }
         }
     }

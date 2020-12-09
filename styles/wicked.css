@@ -204,12 +204,25 @@ h1, h2, h3, h4 {
 }
 * select {
   font-family: Bitter, Lucida Console, monospace;
+  font-weight: 600;
+  font-size: 15px;
+}
+option {
+    font-weight: 600;
+	font-size: 15px;
+	color: #400000;
 }
 * nav {
   margin-bottom: 10px;
 }
 #pause h3 {
     font-weight: 600;
+}
+* input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+    font-weight: 600;
+}
+* a:hover {
+    text-shadow: 2px 2px 4px #616161;
 }
 * .editor,
 * .editor-content {
@@ -244,6 +257,7 @@ h1, h2, h3, h4 {
 }
 #chat-controls .roll-type-select {
     font-weight: 600;
+	color: #400000;
 }
 
 * .chat-message .message-header .message-sender {
@@ -1167,7 +1181,9 @@ h1, h2, h3, h4 {
 }
 * #items-to-add input[type=radio]:checked + label,
 * #items-to-add input[type=checkbox]:checked + label {
-  font-weight: bold;
+  font-weight: 800;
+  color: #400000;
+  text-shadow: 1px 1px 3px #ffbbbb;
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
@@ -1182,6 +1198,11 @@ h1, h2, h3, h4 {
 }
 * .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+* .tabs .item.active {
+    font-weight: 700;
+    color: #400000;
+	text-shadow: 2px 2px 7px #808080;
 }
 * .blades-die-tooltip .die {
   text-transform: capitalize;
