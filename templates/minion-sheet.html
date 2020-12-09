@@ -24,25 +24,10 @@
           {{/if}}
           {{/each}}
         </div>
-
-        <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="minionimpulse">{{localize "FITD.Impulse"}}</a></div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "minionimpulse")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <div class="item-name">{{item.name}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-          </div>
-          {{/if}}
-          {{/each}}
-        </div>
       </div>
     </div>
 
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
 
     <div class="grow-two">
       <div id="alias">
@@ -53,10 +38,34 @@
 
   </section>
 
- 
+  <section>
+    <div class="tab-content flex-vertical grow-two">
+      <div id="minion-impulses" class="flex-vertical">
+        <div class="label-stripe">
+          <p><label for="character-{{actor._id}}-experience-0">{{localize "FITD.Impulse"}}</label></p>
+          <p><a class="item-add-popup" data-item-type="minionimpulse"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+
+        <div id="abilities-list">
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "minionimpulse")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <b><div class="item-name">{{item.name}}</div></b>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="minionimpulse">{{localize "FITD.AddImpulse"}}</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   {{!-- Attributes --}}
   <section class="flex-horizontal">
-
     <div class="tab-content flex-vertical grow-two">
       <div id="abilities" class="flex-vertical">
         <div class="label-stripe">
@@ -70,8 +79,7 @@
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body flex-horizontal">
               <b><div class="item-name">{{item.name}}</div></b>
-              <!--<div class="item-description">{{item.data.description}}</div>-->
-              <div class="item-description">{{item.description}}</div>
+              <div class="item-description">{{item.data.description}}</div>
             </div>
             <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
           </div>

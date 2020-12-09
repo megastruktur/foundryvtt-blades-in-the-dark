@@ -1,6 +1,7 @@
 {
   "FITD.Race": "Race",
-  "FITD.Impulse": "Dark Impulse",
+  "FITD.Impulse": "Dark Impulses",
+  "FITD.AddImpulse": "Add Impulse",
   "FITD.TitleDeleteItem": "Delete item",
   "FITD.Revelry": "Revelry",
   "FITD.Calling": "Calling",
