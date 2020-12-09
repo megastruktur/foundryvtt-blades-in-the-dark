@@ -52,6 +52,9 @@
 	{{#if (eq type "FITD.RollCreature")}}
 		<div class="description"><p>{{{localize "FITD.RollCreatureNote"}}}</p></div>
 	{{/if}}
+	{{#if (eq type "FITD.RollLoot")}}
+		<div class="description"><p>{{{localize "FITD.RollLootDescription"}}}</p></div>
+	{{/if}}
 
 	<ol class="dice-rolls">
 		{{#each this.rolls}}

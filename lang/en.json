@@ -174,6 +174,7 @@
   "FITD.RollLootSuccess":"You pull a mundane or valuable item from the loot.",
   "FITD.RollLootMixedSuccess":"You gain 1 gold or spend it on revelry instead.",
   "FITD.RollLootFailure":"You enjoy some revelry, gaining a dark heart. If you already have two dark hearts, you instead overdo it!",
+  "FITD.RollLootDescription":"Each die rolled gives you something based on its result, not only your highest ones. For every other Mixed, you gain 1 gold or spend it on revelry instead. For every other Failure, you enjoy more revelry, gaining another dark heart. But if you already have two dark hearts, you instead overdo it!",
   
   "FITD.RollResistance":"Resistance Roll",
   "FITD.RollResistanceCriticalSuccess":"You <strong>clear</strong> 1 stress and <strong>fully</strong> resist the consequence.",
