@@ -152,6 +152,10 @@ body {
     font-weight: 500;
     font-size: 14px;
 }
+* button {
+	font-family: Bitter, sans-serif;
+	font-weight: 500;
+}
 * ul {
   list-style: none;
 }
@@ -160,6 +164,13 @@ h1, h2, h3, h4 {
 }
 * form.actor-sheet {
   padding: 20px;
+}
+* form .notes, form .hint {
+    color: #400000;
+    font-weight: 600;
+}
+* label {
+	font-weight: 600;
 }
 * textarea {
   margin-top: 10px;
@@ -191,8 +202,14 @@ h1, h2, h3, h4 {
   margin-bottom: 0px;
   justify-content: center;
 }
+* select {
+  font-family: Bitter, Lucida Console, monospace;
+}
 * nav {
   margin-bottom: 10px;
+}
+#pause h3 {
+    font-weight: 600;
 }
 * .editor,
 * .editor-content {
@@ -225,6 +242,10 @@ h1, h2, h3, h4 {
   height: 30px !important;
   text-transform: capitalize;
 }
+#chat-controls .roll-type-select {
+    font-weight: 600;
+}
+
 * .chat-message .message-header .message-sender {
     font-family: Piedra;
     font-weight: normal;
@@ -233,6 +254,10 @@ h1, h2, h3, h4 {
     font-family: Bitter;
     font-size: inherit;
     font-weight: 500;
+}
+.chat-message .message-header .message-metadata {
+    text-align: right;
+	font-weight: 700;
 }
 * .chat-label {
   background-color: #191813;
@@ -283,6 +308,18 @@ h1, h2, h3, h4 {
   display: flex;
   font-weight: normal;
   margin: 0;
+  border-top-left-radius: 5px
+}
+* .label-type{
+  font-family: Piedra;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  font-family: Bitter;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+  margin-left: auto;
   border-top-left-radius: 5px
 }
 * .label-stripe-chat-small {

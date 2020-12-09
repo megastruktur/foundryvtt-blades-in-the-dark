@@ -60,6 +60,13 @@ export class BladesActor extends Actor {
             </select>
             </div>
             <div class="form-group">
+            <label>${game.i18n.localize('FITD.RollType')}:</label>
+            <select id="type" name="type">
+              <option value="action" selected>${game.i18n.localize('FITD.RollAction')}</option>		  
+              <option value="resistance">${game.i18n.localize('FITD.RollResistance')}</option>			  
+            </select>
+          </div>
+            <div class="form-group">
             <label>${game.i18n.localize('FITD.Position')}:</label>
             <select id="pos" name="pos">
               <option value="dominant">${game.i18n.localize('FITD.PositionDominant')}</option>
@@ -87,7 +94,8 @@ export class BladesActor extends Actor {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
             let position = html.find('[name="pos"]')[0].value;
             let effect = html.find('[name="fx"]')[0].value;
-            this.rollAttribute(attribute_name, modifier, position, effect);
+			let type = html.find('[name="type"]')[0].value;
+            this.rollAttribute(attribute_name, modifier, position, effect, type);
           }
         },
         no: {
@@ -102,7 +110,7 @@ export class BladesActor extends Actor {
 
   /* -------------------------------------------- */
   
-  rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect) {
+  rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect, type) {
 
     let dice_amount = 0;
     if (attribute_name !== "") {
@@ -114,7 +122,7 @@ export class BladesActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    bladesRoll(dice_amount, attribute_name, position, effect);
+    bladesRoll(dice_amount, attribute_name, position, effect, type);
   }
 
   /* -------------------------------------------- */
