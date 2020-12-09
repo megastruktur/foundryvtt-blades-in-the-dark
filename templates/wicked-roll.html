@@ -1,5 +1,8 @@
 <div class="dice-tooltip blades-die-tooltip">
-  {{#if attribute_label}}<div class="chat-label label-stripe-chat">{{localize attribute_label}}</div>{{/if}}
+  {{#if attribute_label}}
+	<div class="chat-label label-stripe-chat">{{localize attribute_label}}</div>
+  {{/if}}
+	<div class="chat-label label-stripe-chat">{{localize type}}</div>
 	{{#if (eq position "FITD.PositionDefault")}}   
 	  {{#if (eq effect "FITD.EffectDefault")}}   
 		 <!-- If position and effect are default, they do not need to be displayed for the roll-->

@@ -5,7 +5,7 @@
  * @param {string} position
  * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "", position = "default", effect = "default") {
+export async function bladesRoll(dice_amount, attribute_name = "", position = "default", effect = "default", type="fortune") {
 
   // Is Dice So Nice enabled ?
   let niceDice = false;
@@ -28,11 +28,11 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "d
   r.roll();
   if (niceDice) {
     game.dice3d.showForRoll(r).then((displayed) => {
-      showChatRollMessage(r, zeromode, attribute_name, position, effect);
+      showChatRollMessage(r, zeromode, attribute_name, position, effect, type);
       ui.chat.scrollBottom();
     });
   } else {
-    showChatRollMessage(r, zeromode, attribute_name, position, effect)
+    showChatRollMessage(r, zeromode, attribute_name, position, effect, type)
   }
 }
 
@@ -44,8 +44,9 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "d
  * @param {String} attribute_name
  * @param {string} position
  * @param {string} effect
+ * @param {string} type
  */
-async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "") {
+async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "",type="") {
   
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
@@ -93,8 +94,54 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
     default:            
       effect_localize = 'FITD.EffectDefault'	  
   }
+  
+  let type_localize = '';
+  switch (type) {
+    case 'action':
+      type_localize = 'FITD.RollAction'
+      break;                
+    case 'blowback':        
+      type_localize = 'FITD.RollBlowback'
+      break;                
+    case 'calamity':        
+      type_localize = 'FITD.RollCalamity'
+      break;               
+    case 'defensiveMove':   
+      type_localize = 'FITD.RollDefensiveMove'
+      break;                
+    case 'discovery':       
+      type_localize = 'FITD.RollDiscovery'
+      break;                
+    case 'engagement':      
+      type_localize = 'FITD.RollEngagement'
+      break;                
+    case 'lock':           
+      type_localize = 'FITD.RollLock'
+      break;               
+    case 'loot':           
+      type_localize = 'FITD.RollLoot'
+      break;               
+    case 'resistance':    
+      type_localize = 'FITD.RollResistance'
+      break;                
+    case 'creature':        
+      type_localize = 'FITD.RollCreature'
+      break;                
+    case 'trap':            
+      type_localize = 'FITD.RollTrap'
+      break;                
+    case 'startingLoc':     
+      type_localize = 'FITD.RollStartingLoc'
+      break;                
+    case 'pathing':         
+      type_localize = 'FITD.RollPathing'
+      break;   	  
+    case 'fortune':     
+    default:            
+      type_localize = 'FITD.RollFortune'	  
+  }
 
-    let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize});
+    let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize, type: type_localize});
 
   let messageData = {
     speaker: speaker,
@@ -190,8 +237,25 @@ export async function simpleRollPopup() {
           <label>${game.i18n.localize("FITD.RollNumberOfDice")}:</label>
           <select id="qty" name="qty">
             ${Array(11).fill().map((item, i) => `<option value="${i}">${i}d</option>`).join('')}
-          </select>
+          </select>		
         </div>
+		<div class="form-group">
+		<label>${game.i18n.localize('FITD.RollType')}:</label>
+		<select id="type" name="type">
+		  <option value="fortune" selected>${game.i18n.localize('FITD.RollFortune')}</option>		  
+		  <option value="blowback">${game.i18n.localize('FITD.RollBlowback')}</option>
+		  <option value="calamity">${game.i18n.localize('FITD.RollCalamity')}</option>
+		  <option value="defensiveMove">${game.i18n.localize('FITD.RollDefensiveMove')}</option>
+		  <option value="discovery">${game.i18n.localize('FITD.RollDiscovery')}</option>
+		  <option value="engagement">${game.i18n.localize('FITD.RollEngagement')}</option>
+		  <option value="lock">${game.i18n.localize('FITD.RollLock')}</option>
+		  <option value="loot">${game.i18n.localize('FITD.RollLoot')}</option>
+		  <option value="creature">${game.i18n.localize('FITD.RollCreature')}</option>
+		  <option value="trap">${game.i18n.localize('FITD.RollTrap')}</option>
+		  <option value="startingLoc">${game.i18n.localize('FITD.RollStartingLoc')}</option>
+		  <option value="pathing">${game.i18n.localize('FITD.RollPathing')}</option>		  
+		</select>
+	  </div>		
       </form>
     `,
     buttons: {
@@ -199,8 +263,9 @@ export async function simpleRollPopup() {
         icon: "<i class='fas fa-check'></i>",
         label: `Roll`,
         callback: (html) => {
-          let diceQty = html.find('[name="qty"]')[0].value;  
-          bladesRoll(diceQty);
+          let diceQty = html.find('[name="qty"]')[0].value; 
+		  let type = html.find('[name="type"]')[0].value;		  
+          bladesRoll(diceQty, "", "default", "default", type);
         },
       },
       no: {

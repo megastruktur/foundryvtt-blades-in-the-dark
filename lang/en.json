@@ -124,7 +124,22 @@
   "FITD.RollDo": "<strong>Yes!</strong> You get the results that you hoped for!",
   "FITD.RollDoMixed": "<strong>Yes, but…</strong> You get the results, but they come at a cost. There will be some consequences coming your way. At other times, it may just result in a less effective result.",
   "FITD.RollDoFail": "<strong>No, and…</strong> Things go as poorly as they could have in that situation. You fail to do it and suffer a consequence.",
-
+  
+  "FITD.RollAction":"Action Roll",
+  "FITD.RollBlowback":"Blowback Roll",
+  "FITD.RollCalamity":"Calamity Roll",
+  "FITD.RollDefensiveMove":"Defensive Move Roll",
+  "FITD.RollDiscovery":"Discovery Roll",
+  "FITD.RollEngagement":"Engagement Roll",
+  "FITD.RollLock":"Lock Roll",
+  "FITD.RollLoot":"Loot Roll",
+  "FITD.RollResistance":"Resistance Roll",
+  "FITD.RollCreature":"Creature Roll",
+  "FITD.RollTrap":"Trap Roll",
+  "FITD.RollStartingLoc":"Starting Location Roll",
+  "FITD.RollPathing":"Pathing Roll",
+  "FITD.RollFortune":"Fortune Roll",
+  
   "FITD.SkillsBrains": "Brains",
   "FITD.SkillsScan": "Scan",
   "FITD.SkillsTinker": "Tinker",
@@ -146,6 +161,8 @@
   "FITD.Position": "Position",
   "FITD.Effect": "Effect",
   "FITD.Modifier": "Modifier",
+  "FITD.RollType": "Roll Type",
+
 
   "FITD.Drain": "Drain",
   "FITD.Wear": "Wear",
