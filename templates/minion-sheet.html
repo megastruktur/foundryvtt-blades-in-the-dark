@@ -8,6 +8,26 @@
         <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
       </div>
 
+      <div id="number">
+        <label for="character-{{actor._id}}-number">{{localize "FITD.Number"}}</label>
+        <input type="text" id="character-{{actor._id}}-number" name="data.number" value="{{data.number}}">
+      </div>
+
+      <div class="item-block flex-horizontal">
+        <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}</a></div>
+        {{#each actor.items as |item id|}}
+        {{#if (eq item.type "monsterrace")}}
+        <div class="item flex-horizontal" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+            <div class="item-name">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+
       <div id="character-traits" class="flex-column">
 
         <div class="item-block flex-horizontal">
@@ -28,13 +48,6 @@
     </div>
 
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
-
-    <div class="grow-two">
-      <div id="alias">
-        <label for="character-{{actor._id}}-alias">{{localize "FITD.MonsterRace"}}</label>
-        <input type="text" id="character-{{actor._id}}-alias" name="data.monsterrace" value="{{data.race}}">
-      </div>
-    </div>
 
   </section>
 

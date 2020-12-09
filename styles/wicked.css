@@ -536,6 +536,9 @@ h1, h2, h3, h4 {
   flex-direction: row;
   justify-content: space-between;
 }
+* #wo-nav-container nav a {
+  flex:none;
+}
 * #attributes {
   display: flex;
   flex-direction: column;
