@@ -141,6 +141,7 @@
   "FITD.SkillsThreaten": "Threaten",
 
   "FITD.AddAbility": "Add Ability",
+  "FITD.AddUpgrade": "Add Upgrade",
   "FITD.AddItem": "Add Item",
 
   "FITD.Position": "Position",
@@ -152,6 +153,8 @@
   "FITD.Gloom": "Gloom",
 
   "FITD.Bloodied": "Bloodied",
+  "FITD.Morale": "Morale",
+  "FITD.Type": "Type",
   "FITD.DarkHearts": "Dark Hearts",
   "FITD.Defenses": "Defenses",
   "FITD.WickedXP": "Wicked XP",

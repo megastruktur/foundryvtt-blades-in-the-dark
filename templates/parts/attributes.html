@@ -1,9 +1,9 @@
 <div id="attributes">
-
   {{#each data.attributes as |attribute attribute_name|}}
-
   <div id="attributes-{{attribute_name}}" class="attribute flex-horizontal">
+    {{#unless @root.data.isminion}}
     <div class="shock{{#if (true)}} filled{{/if}}"></div>
+    {{/unless}}
     <div class="main">
       <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
         <div class="stripe">
@@ -20,7 +20,7 @@
 
           {{#multiboxes skill.value}}
 
-          {{#times_from_0 3}}
+          {{#times_from_0 @root.data.attribute_max_value}}
           <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
                  name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
           <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"></label>
@@ -36,12 +36,30 @@
   </div>
   {{/each}}
 
+  {{#if @root.data.isminion}}
+  <div id="attributes-bloodied" class="attribute flex-horizontal">
+    <div class="bloodied minion{{#if (true)}} filled{{/if}}"></div>
+    <div class="main">
+      <div class="stripe">
+        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
+      </div>
+    </div>
+  </div>
+  <div id="attributes-morale" class="attribute flex-horizontal">
+    <div class="morale {{#if (true)}} filled{{/if}}"></div>
+    <div class="main">
+      <div class="stripe">
+        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Morale">{{localize "FITD.Morale"}}</a>
+      </div>
+    </div>
+  </div>
+  {{else}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
     <div class="bloodied{{#if (true)}} filled{{/if}}"></div>
     <div class="main">
-        <div class="stripe">
-          <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
-        </div>
+      <div class="stripe">
+        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
+      </div>
     </div>
   </div>
 
@@ -51,10 +69,10 @@
   </div>
   <div class="attribute flex-horizontal heart-container">
     <div class="main">
-        <div class="stripe">
-          <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="DarkHearts">{{localize "FITD.DarkHearts"}}</a>
-        </div>
+      <div class="stripe">
+        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="DarkHearts">{{localize "FITD.DarkHearts"}}</a>
+      </div>
     </div>
   </div>
-
+  {{/if}}
 </div>

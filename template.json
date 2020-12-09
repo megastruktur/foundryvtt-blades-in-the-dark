@@ -2,6 +2,7 @@
   "Actor": {
     "types": [ "character", "minion_pack", "dungeon", "\uD83D\uDD5B clock" ],
     "character": {
+      "isminion": false,
       "alias": "",
       "wickedxp": {
         "value": [ 0 ],
@@ -43,6 +44,7 @@
         "heavy": 0,
         "special": 0
       },
+      "attribute_max_value": 3,
       "attributes": {
         "brains": {
           "exp": [ 0 ],
@@ -101,11 +103,13 @@
       }
     },
     "minion_pack": {
+      "isminion": true,
       "bloodied": false,
       "morale": false,
       "number": 0,
       "race": "",
       "minion_upgrades": [],
+      "attribute_max_value": 2,
       "attributes": {
         "brains": {
           "label": "FITD.SkillsBrains",
@@ -233,7 +237,7 @@
       "templates": [ "ability", "logic" ]
     },
     "minion_upgrade": {
-      "templates": [ "upgrade" ]
+      "templates": [ "minion_upgrade" ]
     },
     "minion_job": {
       "templates": [ "default" ]
