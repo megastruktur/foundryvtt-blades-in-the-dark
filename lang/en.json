@@ -112,7 +112,9 @@
   "FITD.EffectDefault": "Default",
   "FITD.EffectWeak": "Weak",
   "FITD.EffectZero": "Zero",
-
+  
+  "FITD.PosEffEqual": "Equal Footing",
+  
   "FITD.RollFailure": "Failure",
   "FITD.RollCriticalSuccess": "Critical!",
   "FITD.RollSuccess": "Success",

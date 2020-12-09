@@ -310,6 +310,18 @@ h1, h2, h3, h4 {
   margin: 0;
   border-top-left-radius: 5px
 }
+* .label-type{
+  font-family: Piedra;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  font-family: Bitter;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+  margin-left: auto;
+  border-top-left-radius: 5px
+}
 * .label-stripe-chat-small {
   text-transform: capitalize;
   background-color: #bdb7ab;
