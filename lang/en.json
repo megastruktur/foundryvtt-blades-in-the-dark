@@ -9,7 +9,7 @@
   "ITEM.TypeMinion_upgrade": "Minion Upgrade",
   "ITEM.TypeMinion_type": "Minion Type",
   "ITEM.TypeAbility": "Special Ability",
-  "ITEM.TypeRace": "Monster Race",
+  "ITEM.TypeMonsterrace": "Monster Race",
   "ITEM.TypeWickedimpulse": "WO Dark Impulse",
   "ITEM.TypeMinionimpulse": "Minion Dark Impulse",
   "ITEM.TypeRevelry": "Revelry",
@@ -19,7 +19,7 @@
   "ITEM.TypeDungeon_reputation": "Dungeon Reputation",
   "ITEM.TypeDungeon_ability": "Dungeon Ability",
 
-  "FITD.Race": "Race",
+  "FITD.MonsterRace": "Race",
   "FITD.Impulse": "Dark Impulses",
   "FITD.AddImpulse": "Add Impulse",
   "FITD.TitleDeleteItem": "Delete item",

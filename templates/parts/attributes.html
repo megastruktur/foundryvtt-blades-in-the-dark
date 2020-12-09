@@ -36,7 +36,7 @@
   </div>
   {{/each}}
 
-  {{#if (eq @root.actor.type eq "minion_pack")}}
+  {{#if (eq actor.type "minion_pack")}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
     <div class="bloodied minion{{#if (true)}} filled{{/if}}"></div>
     <div class="main">

@@ -46,10 +46,10 @@
       "entity": "Item"
     },
     {
-      "name": "race",
-      "label": "Races",
+      "name": "monsterrace",
+      "label": "Monster Races",
       "system": "wicked-ones",
-      "path": "./packs/races.db",
+      "path": "./packs/monsterraces.db",
       "entity": "Item"
     },
     {

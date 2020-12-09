@@ -11,9 +11,9 @@
       <div id="character-traits" class="flex-column">
 
         <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="race">{{localize "FITD.Race"}}</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}</a></div>
           {{#each actor.items as |item id|}}
-          {{#if (eq item.type "race")}}
+          {{#if (eq item.type "monsterrace")}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body flex-horizontal">
               <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>

@@ -104,7 +104,6 @@
       "bloodied": false,
       "morale": false,
       "number": 0,
-      "race": "",
       "attribute_max_value": 2,
       "attributes": {
         "brains": {
@@ -189,7 +188,7 @@
     }
   },
   "Item": {
-    "types": [ "cohort", "calling", "dungeon_ability", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "item", "minionimpulse", "minion_type", "minion_upgrade", "race", "revelry", "ability", "wickedimpulse" ],
+    "types": [ "cohort", "calling", "dungeon_ability", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "ability", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -238,7 +237,7 @@
     "minion_job": {
       "templates": [ "default" ]
     },
-    "race": {
+    "monsterrace": {
       "templates": [ "default" ]
     },
     "wickedimpulse": {
