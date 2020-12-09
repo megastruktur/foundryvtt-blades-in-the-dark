@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": [ "character", "minion_pack", "dungeon", "\uD83D\uDD5B clock" ],
+    "types": [ "character", "minion_pack", "dungeon", "clock" ],
     "character": {
       "alias": "",
       "wickedxp": {
@@ -182,14 +182,14 @@
       "heat": [ 0 ],
       "wanted": [ 0 ]
     },
-    "\uD83D\uDD5B clock": {
+    "clock": {
       "name": "",
       "type": 4,
       "value": "0"
     }
   },
   "Item": {
-    "types": [ "item", "calling", "minion_upgrade", "minion_type", "ability", "race", "wickedimpulse", "minionimpulse", "revelry", "dungeon_upgrade", "cohort", "dungeon_theme", "dungeon_reputation", "dungeon_upgrade", "dungeon_ability" ],
+    "types": [ "cohort", "calling", "dungeon_ability", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "item", "minionimpulse", "minion_type", "minion_upgrade", "race", "revelry", "ability", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""

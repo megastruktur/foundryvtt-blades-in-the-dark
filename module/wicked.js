@@ -45,7 +45,7 @@ Hooks.once("init", async function() {
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
   Actors.registerSheet("blades", BladesMinionSheet, { types: ["minion_pack"], makeDefault: true });
   Actors.registerSheet("blades", BladesCrewSheet, { types: ["dungeon"], makeDefault: true });
-  Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });
+  Actors.registerSheet("blades", BladesClockSheet, { types: ["clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
