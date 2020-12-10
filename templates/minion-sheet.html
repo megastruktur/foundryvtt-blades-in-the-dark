@@ -47,11 +47,16 @@
       </div>
     </div>
 
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="200" width="200" />
 
   </section>
 
   <section>
+
+  </section>
+
+  {{!-- Attributes --}}
+  <section class="flex-horizontal">
     <div class="tab-content flex-vertical grow-two">
       <div id="minion-impulses" class="flex-vertical">
         <div class="label-stripe">
@@ -71,15 +76,8 @@
           </div>
           {{/if}}
           {{/each}}
-          <div class="item-class-label"><a class="item-add-popup" data-item-type="minionimpulse">{{localize "FITD.AddImpulse"}}</a></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  {{!-- Attributes --}}
-  <section class="flex-horizontal">
-    <div class="tab-content flex-vertical grow-two">
+      </div>	
       <div id="abilities" class="flex-vertical">
         <div class="label-stripe">
           <p><label for="character-{{actor._id}}-experience-0">{{localize "FITD.Upgrades"}}</label></p>
@@ -98,7 +96,6 @@
           </div>
           {{/if}}
           {{/each}}
-          <div class="item-class-label"><a class="item-add-popup" data-item-type="minion_upgrade">{{localize "FITD.AddUpgrade"}}</a></div>
         </div>
       </div>
 
