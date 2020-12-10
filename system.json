@@ -32,10 +32,24 @@
       "entity": "Item"
     },
     {
-      "name": "race",
-      "label": "Races",
+      "name": "minion_upgrade",
+      "label": "Minion Upgrades",
       "system": "wicked-ones",
-      "path": "./packs/races.db",
+      "path": "./packs/minion_upgrades.db",
+      "entity": "Item"
+    },
+    {
+      "name": "minion_type",
+      "label": "Minion Types",
+      "system": "wicked-ones",
+      "path": "./packs/minion_types.db",
+      "entity": "Item"
+    },
+    {
+      "name": "monsterrace",
+      "label": "Monster Races",
+      "system": "wicked-ones",
+      "path": "./packs/monsterraces.db",
       "entity": "Item"
     },
     {
@@ -46,10 +60,17 @@
       "entity": "Item"
     },
     {
-      "name": "impulse",
-      "label": "Dark Impulses",
+      "name": "wickedimpulse",
+      "label": "Wicked One Impulses",
       "system": "wicked-ones",
-      "path": "./packs/impulses.db",
+      "path": "./packs/wickedimpulses.db",
+      "entity": "Item"
+    },
+    {
+      "name": "minionimpulse",
+      "label": "Minion Impulses",
+      "system": "wicked-ones",
+      "path": "./packs/minionimpulses.db",
       "entity": "Item"
     },
     {

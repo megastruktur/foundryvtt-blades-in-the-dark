@@ -13,6 +13,7 @@ import { BladesActor } from "./wicked-actor.js";
 import { BladesItem } from "./wicked-item.js";
 import { BladesItemSheet } from "./wicked-item-sheet.js";
 import { BladesActorSheet } from "./wicked-actor-sheet.js";
+import { BladesMinionSheet } from "./wicked-minion-sheet.js";
 import { BladesCrewSheet } from "./wicked-dungeon-sheet.js";
 import { BladesClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
@@ -23,7 +24,7 @@ window.BladesHelpers = BladesHelpers;
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 Hooks.once("init", async function() {
-  console.log(`Initializing Blades In the Dark System`);
+  console.log(`Initializing Wicked Ones System`);
 
   game.blades = {
     dice: bladesRoll
@@ -42,8 +43,9 @@ Hooks.once("init", async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("blades", BladesMinionSheet, { types: ["minion_pack"], makeDefault: true });
   Actors.registerSheet("blades", BladesCrewSheet, { types: ["dungeon"], makeDefault: true });
-  Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });
+  Actors.registerSheet("blades", BladesClockSheet, { types: ["clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
