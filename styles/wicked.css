@@ -720,7 +720,10 @@ option {
   flex-grow: 2;
 }
 * .item .item-control {
-  flex-grow: 1;
+  /* flex-grow: 1; */
+}
+* .item-class-label {
+    margin-bottom: 10px;
 }
 * .item .item-body,
 * .item .item-class-label {
@@ -735,7 +738,7 @@ option {
   margin-bottom: 10px;
 }
 * .profile-img {
-  margin: 0px 30px;
+  margin: 0px 0px;
 }
 * .crew-coins {
   display: flex;
