@@ -126,20 +126,68 @@
   font-weight: 400;
   src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
 }
+
+/* WO Colours: */
+/* Section Title Dark Red: #3c1311 */
+/* Headline/Table Background: #68332c */
+/* Sub-Table Background: #534d52; */
+/* Border Decoration Brown: #7e6553 */
+
+/* Text Ink: #1f1a1a; */
+/* Hint Box Light Grey: #bdb7ab; */
+/* (Lighter Version): #fff8e8; */
+/* Map-Marker Green: #435e3d; */
+/* Scribble Brown: #56352e; */
+/* Scribble Grey: #4e4d4d; */
+
+ 
+* {
+}
 /*
  * General Styles
  */
 * header {
   margin-bottom: 10px;
 }
-* body {
-  font-family: Bitter, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: 3px;
+  background: #782e22;
+  border: 1px solid #68332c;
+}
+
+body {
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+a[href] {
+  color: #68332c;
 }
 * button {
-  font-family: Bitter, sans-serif;
-  font-weight: 500;
+	font-family: Bitter, sans-serif;
+	font-weight: 500;
+	color: #fff8e8;
+    background: #68332c;
+    border-top: 1px outset #d46c1f;
+    border-bottom: 2px outset #d46c1f;
+    border-left: 2px solid darkslategrey;
+    border-right: 2px solid darkslategrey;
+}
+button:hover,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px whitesmoke;
+}
+.dialog .dialog-buttons button {
+    background: #68332c;
+}
+* form button {
+    background: #68332c;
+	border-top: 1px outset #d46c1f;
+    border-bottom: 2px outset #d46c1f;
+    border-left: 2px solid darkslategrey;
+    border-right: 2px solid darkslategrey;
 }
 * ul {
   list-style: none;
@@ -165,6 +213,65 @@
 * td {
   padding: 5px;
 }
+/* Changes for #ff6400 to #68332c color replacement */
+textarea:focus {
+  outline: 2px solid #501f17;
+  box-shadow: 0 0 10px #68332c;
+}
+.placeable-hud .control-icon.active {
+  border: 1px solid #68332c;
+}
+#navigation #nav-toggle:hover {
+  text-shadow: 0 0 10px #68332c;
+}
+#navigation #scene-list .scene.view,
+#navigation #scene-list .scene.context {
+  cursor: default;
+  color: #FFF;
+  border: 1px solid red;
+  background: rgba(52, 52, 52, 0.95);
+  border-bottom: 1px solid #68332c;
+  box-shadow: 0 0 10px #68332c;
+}
+#menu #menu-items li:hover {
+  text-shadow: 0 0 10px #68332c;
+}
+#controls .scene-control.active,
+#controls .control-tool.active,
+#controls .scene-control:hover,
+#controls .control-tool:hover {
+  color: #FFF;
+  border: 1px solid red;
+  border-bottom: 1px solid #68332c;
+  box-shadow: 0 0 10px #68332c;
+}
+#sidebar-tabs {
+  flex: 0 0 32px;
+  box-sizing: border-box;
+  margin: 0 0 5px;
+  border-bottom: 1px solid #68332c;
+  box-shadow: 0 0 10px red;
+}
+#sidebar-tabs > .item.active {
+  color: #FFF;
+  border: 1px solid red;
+  border-bottom: none;
+  box-shadow: 0 0 6px inset #68332c;
+}
+.sidebar-tab .directory-list .directory-item.context,
+.sidebar-tab .directory-list .directory-item.active {
+  border-color: #68332c;
+}
+.sidebar-tab .directory-list .folder .context {
+  border-color: #68332c;
+}
+#scenes .scene.context,
+#scenes .scene.active {
+  margin-top: 0;
+  border: 2px solid #000;
+  box-shadow: 0 0 10px #68332c;
+}
+/* Color Change End */
 * section {
   margin-bottom: 10px;
   display: flex;
@@ -243,6 +350,16 @@ option {
 * #chat-controls .roll-type-select {
   font-weight: 600;
 }
+#chat-form textarea {
+    background: url(../images/background-light.png) repeat;
+}
+* .chat-message {
+    padding: 5px;
+    color: #191813;
+    font-size: 14px;
+    background: url(../images/background-light.png) repeat;
+    background-size: 300px;
+}
 * .chat-message .message-header .message-sender {
   font-family: Piedra;
   font-weight: normal;
@@ -272,6 +389,17 @@ option {
   text-align: center;
   padding: 3px 5px;
   height: 26px !important;
+}
+.compendium .directory-list .directory-item {
+    padding: 3px 0;
+    line-height: 48px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid #4000005c;
+    box-shadow: none;
+}
+.dialog .dialog-buttons button.default {
+    background: #68332c;
+    border: 2px groove #c9c7b8;
 }
 * .label-stripe {
   text-transform: uppercase;
@@ -306,6 +434,7 @@ option {
   font-weight: normal;
   margin: 0;
   border-top-left-radius: 5px;
+  text-shadow: 2px 2px 0 #313131;
 }
 * .label-type {
   font-family: Piedra;
@@ -333,6 +462,7 @@ option {
 }
 * .description {
   font-style: italic;
+  font-weight: 600;
 }
 * .rollable-text {
   transition: color 0.2s;
@@ -1208,6 +1338,12 @@ option {
   opacity: 0.9;
   color: red;
 }
+* .window-app .window-content {
+    background: url(../images/background-light.png) repeat;
+    color: #191813;
+    overflow-y: auto;    background-size: 300px;
+}
+
 * .wicked-die {
   width: 32px;
   height: 32px;
