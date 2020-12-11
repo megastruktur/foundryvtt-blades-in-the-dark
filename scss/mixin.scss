@@ -86,11 +86,11 @@
     & {
       height: $height;
       width: $width;
-      background-color: $accent_color;
+      background-image: url("assets/boxes/box-filled.png");
+      background-repeat: no-repeat;
+      background-size: contain;
 
       vertical-align: middle;
-      border: 2px solid $circle_border_color;
-      border-radius: 24px;
 
       &[for$="-0"] {
         height: 5px;
@@ -104,7 +104,7 @@
       @include changeable(0.1s, 0.7, 0.7);
     }
   }
-
+ 
   /* Hide the browser's default checkbox */
   input {
     display: none;
@@ -112,12 +112,12 @@
     &:checked {
   
       & ~ label {
-        background-color: $default_color;
+        background-image: url("assets/boxes/box-empty.png");
       }
       & + label {
         // Less opacity here cos otherwise it's barely visible on the dark
         @include changeable(0.1s, 0.7, 0.7); 
-        background-color: $accent_color;
+        background-image: url("assets/boxes/box-filled.png");
       }
     }
   }

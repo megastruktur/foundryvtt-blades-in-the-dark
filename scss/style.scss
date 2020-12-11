@@ -8,6 +8,7 @@ $gold: #DAA520;
 $green: #008000;
 $light_green: #12a012;
 $blue: #04578f;
+ 
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -17,29 +18,170 @@ $hover-brightness: 0.8;
 // Imports
 @import 'mixin.scss';
 
+
+/*
+ * Fonts
+ */
+ /* bitter-regular - latin_cyrillic */
+ @font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-500 - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-500.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-600 - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-600.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-700 - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-700.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-800 - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-800.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-900 - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-900.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-italic - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-500italic - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 500;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-500italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-600italic - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 600;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-600italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-700italic - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-700italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-800italic - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 800;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-800italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+  /* bitter-900italic - latin_cyrillic */
+  @font-face {
+    font-family: 'Bitter';
+    font-style: italic;
+    font-weight: 900;
+    src: local(''),
+         url('../fonts/bitter-v16-latin_cyrillic-900italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+   /* Blood crow-regular - latin */
+  @font-face {
+    font-family: 'Blood Crow';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/bloodcrow.ttf') format('truetype') /* Safari, Android, iOS */
+  }
+  
+  /* piedra-regular - latin */
+  @font-face {
+    font-family: 'Piedra';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/piedra-v9-latin-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+
 /*
  * General Styles
  */
 * {
-    font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
-
     header {
         margin-bottom: 10px;
+    }
+
+    body {
+        font-family: Bitter, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    
+    button {
+        font-family: Bitter, sans-serif;
+        font-weight: 500;
     }
 
     ul {
         list-style: none;
     }
 
+    h1, h2, h3, h4 {
+        font-weight: bold;
+    }
+
     form {
         &.actor-sheet {
             padding: 20px;
         }
+
+        .notes, .hint {
+            color: #400000;
+            font-weight: 600;
+        }
+    }
+
+    label {
+        font-weight: 600;
     }
 
     textarea {
         margin-top: 10px;
         margin-bottom: 20px;
+        font-family: Bitter, Lucida Console, monospace;
     }
 
     td {
@@ -74,8 +216,16 @@ $hover-brightness: 0.8;
         }
     }
 
+    select {
+        font-family: Bitter, Lucida Console, monospace;
+    }
+
     nav {
         margin-bottom: 10px;
+    }
+
+    #pause h3 {
+        font-weight: 600;
     }
 
     .editor,
@@ -103,7 +253,7 @@ $hover-brightness: 0.8;
         height: 30px !important;
         text-transform: capitalize;
     }
-
+    
     .gray-label {
         background-color: $gray;
         color: $almost_black;
@@ -113,11 +263,29 @@ $hover-brightness: 0.8;
         height: 30px !important;
         text-transform: capitalize;
     }
+    
+    #chat-controls .roll-type-select {
+        font-weight: 600;
+    }
+
+    .chat-message .message-header .message-sender {
+        font-family: Piedra;
+        font-weight: normal;
+    }
+    .chat-message .message-content {
+        font-family: Bitter;
+        font-size: inherit;
+        font-weight: 500;
+    }
+    .chat-message .message-header .message-metadata {
+        text-align: right;
+        font-weight: 700;
+    }
 
     .chat-label {
         background-color: $almost_black;
         color: $almost_white;
-        font-size: 21px;
+        font-size: 22px;
         text-align: center;
         padding: 0px 5px;
         height: 30px !important;
@@ -130,7 +298,7 @@ $hover-brightness: 0.8;
         font-size: small;
         text-align: center;
         padding: 3px 5px;
-        height: 20px !important;
+        height: 26px !important;
     }
 
     .label-stripe {
@@ -157,26 +325,43 @@ $hover-brightness: 0.8;
     }
 
     .label-stripe-chat {
+        font-family: Piedra;
         text-transform: uppercase;
-        background-color: $almost_black;
-        color: $almost_white;
+        background-color: #68332c;;
+        color: #fff;;
         margin-bottom: 10px;
         position: relative;
         padding-top: 3px;
         display: flex;
-        font-weight: bold;
+        font-weight: normal;
         margin: 0;
+        border-top-left-radius: 5px
     }
+
+    .label-type{
+        font-family: Piedra;
+        text-transform: uppercase;
+        color: #fff;
+        display: flex;
+        font-family: Bitter;
+        font-weight: 600;
+        font-size: 12px;
+        margin: 0;
+        margin-left: auto;
+        border-top-left-radius: 5px
+      }
 
     .label-stripe-chat-small {
         text-transform: capitalize;
-        background-color: $gray;
+        background-color: #bdb7ab;;
         color: $almost_black;
-        margin-bottom: 10px;
+        margin-bottom: 2px;
         position: relative;
         padding-top: 3px;
         display: flex;
-        font-weight: bold;
+        font-weight: normal;
+        font-family: Piedra;
+        font-size: 16px;	
     }
 
     .description {
@@ -235,6 +420,14 @@ $hover-brightness: 0.8;
             }
         }
     }
+    #character-recklessxp {
+        label {
+            &[for$="-0"] {
+                margin-right: 0px;
+            }
+        }
+    }
+
     // Abilities
     #abilities {
 
@@ -286,7 +479,7 @@ $hover-brightness: 0.8;
         // Clock
         #character-stress-clock {
             margin: 0 auto;
-            @include clock(4, 88);
+            @include clock(6, 88);
         }
 
         #character-armor-uses {
@@ -299,11 +492,19 @@ $hover-brightness: 0.8;
         }
     }
 
+    #wo-nav-container nav a {
+        flex:none;
+    }
+
 
     #attributes {
         display: flex;
         flex-direction: column;
         width: 200px;
+
+        .attribute {
+            margin-bottom: 5px;
+        }
 
         .stripe {
             background-color: $almost_black;
@@ -312,26 +513,87 @@ $hover-brightness: 0.8;
             padding-left: 5px;
         }
 
+        .shock {
+            height: 32px;
+            width: 32px;
+            background-image: url("assets/boxes/shock-empty.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 1px;
+            transition: filter 0.1s;
+            cursor: pointer;
+            position: relative;
+            top: -6px;
+        }
+
+        .bloodied {
+            height: 36px;
+            width: 24px;
+            background-image: url("assets/boxes/bloodied-empty.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-left: 8px;
+            margin-right: 1px;
+            transition: filter 0.1s;
+            cursor: pointer;
+            position: relative;
+            top: -13px;
+        }
+
+        .bloodied.minion {
+            height: 24px;
+            top: -2px;
+            margin-left: 1px;
+            margin-right: 2px;
+            background-image: url("assets/boxes/bloodied-minion-empty.png");
+        }
+
+        .morale {
+            height: 24px;
+            width: 24px;
+            background-image: url("assets/boxes/box-empty.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-left: 1px;
+            margin-right: 2px;
+            transition: filter 0.1s;
+            cursor: pointer;
+            position: relative;
+            top: -1px;
+        }
+        #attributes-darkhearts {
+            margin-top: -12px;
+        }
+        .heart-container {
+            margin-left: 34px;
+            justify-content: flex-start;
+        }
+        .dark-heart {
+            height: 32px;
+            width: 32px;
+            background-image: url("assets/boxes/heart-emtpy.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 4px;
+            transition: filter 0.1s;
+            cursor: pointer;
+            position: relative;
+            top: -6px;
+        }
+        .main {
+            flex-grow: 1;
+        }
         .attribute-label,
         .attribute-skill-label {
             font-weight: bold;
             text-transform: uppercase;
         }
-
         .attribute-skill-label {
             letter-spacing: 1px;
         }
-
         .attributes-exp {
             position: relative;
-            margin-bottom: 10px;
-
-            .stripe-tooth-body {
-                @include toothradio(10px, 30px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
-                position: absolute;
-                top: 0px;
-                right: 0px;
-            }
+            margin-bottom: 2px;
         }
 
         .attributes-container {
@@ -392,22 +654,6 @@ $hover-brightness: 0.8;
     $coin_size: 15px;
     $coin_margin: 3px;
 
-    .coins {
-        @include custom_radio_square($coin_size);
-        flex-wrap: wrap;
-
-        input ~ label {
-            margin-right: $coin_margin;
-            margin-bottom: $coin_margin;
-
-            &[for$="0"] {
-                border-width: 2px;
-            }
-
-            @include changeable($transition-period, $hover-brightness, $hover-opacity);
-        }
-
-    }
     // Crew Coins
     .crew-coins {
         @include custom_radio_square($coin_size);
@@ -616,24 +862,25 @@ $hover-brightness: 0.8;
     .blades-die-tooltip {
 
         .die {
-            font-weight: bold;
             text-transform: capitalize;
-            font-size: large;
+            font-family: Blood Crow;
+            font-weight: normal;
+            font-size: xx-large;
 
             &.critical-success {
-                color: $light_green;
+                color: #b32813;
             }
 
             &.success {
-                color: $green;
+                color: #9f3727;
             }
 
             &.partial-success {
-                color: $blue;
+                color: #3d478a;
             }
 
             &.failure {
-                color: $red;
+                color: #7a7a7a;
             }
         }
     }
@@ -670,4 +917,35 @@ $hover-brightness: 0.8;
             @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
         }
     }
+
+    .wicked-die {
+        width: 32px;
+        height: 32px;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .wd1 {
+        background-image: url("assets/dice/die-1-grey.png");
+    }
+    .wd2 {
+        background-image: url("assets/dice/die-2-grey.png");
+    }
+    .wd3 {
+        background-image: url("assets/dice/die-3-grey.png");
+    }
+    .wd4 {
+        background-image: url("assets/dice/die-4-blue.png");
+    }
+    .wd5 {
+        background-image: url("assets/dice/die-5-blue.png");
+    }
+    .wd6 {
+        background-image: url("assets/dice/die-6-red.png");
+    }
+
+    .dice-tooltip .dice-rolls .roll.d6 {
+        font-family: Signika;
+    }
 }
+
