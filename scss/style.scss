@@ -381,7 +381,7 @@ $hover-brightness: 0.8;
 
     #name,
     #lair,
-    #alias {
+    #look {
         margin-bottom: 10px;
     }
 
@@ -407,13 +407,6 @@ $hover-brightness: 0.8;
             @include changeable($transition-period, $hover-brightness, $hover-opacity);
         }
 
-        &.coins-hands {
-            width: 36px;
-        }
-
-        &.coins-stashed {
-            width: 190px;
-        }
     }
     // Crew Coins
     .crew-coins {

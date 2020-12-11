@@ -750,60 +750,11 @@ h1, h2, h3, h4 {
 }
 * #name,
 * #lair,
-* #alias {
+* #look {
   margin-bottom: 10px;
 }
 * .profile-img {
   margin: 0px 30px;
-}
-* .coins {
-  display: flex;
-  /* Hide the browser's default checkbox */
-  flex-wrap: wrap;
-}
-* .coins label {
-  height: 15px;
-  width: 15px;
-  background-color: #DAA520;
-  vertical-align: middle;
-  border: 1px solid #191813;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* .coins label[for$="-0"] {
-  margin-right: 0px;
-}
-* .coins label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* .coins input {
-  display: none;
-}
-* .coins input:checked ~ label {
-  background-color: #EEEFFF;
-}
-* .coins input:checked + label {
-  background-color: #DAA520;
-}
-* .coins input ~ label {
-  margin-right: 3px;
-  margin-bottom: 3px;
-  transition: filter 0.2s;
-  cursor: pointer;
-}
-* .coins input ~ label[for$="0"] {
-  border-width: 2px;
-}
-* .coins input ~ label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* .coins.coins-hands {
-  width: 36px;
-}
-* .coins.coins-stashed {
-  width: 190px;
 }
 * .crew-coins {
   display: flex;
