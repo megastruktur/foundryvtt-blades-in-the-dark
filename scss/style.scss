@@ -20,123 +20,6 @@ $hover-brightness: 0.8;
 
 
 /*
- * Fonts
- */
- /* bitter-regular - latin_cyrillic */
- @font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-500 - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 500;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-500.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-600 - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-600.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-700 - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 700;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-700.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-800 - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 800;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-800.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-900 - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 900;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-900.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-italic - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-500italic - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 500;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-500italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-600italic - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 600;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-600italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-700italic - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 700;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-700italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-800italic - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 800;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-800italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-  /* bitter-900italic - latin_cyrillic */
-  @font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 900;
-    src: local(''),
-         url('../fonts/bitter-v16-latin_cyrillic-900italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-   /* Blood crow-regular - latin */
-  @font-face {
-    font-family: 'Blood Crow';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/bloodcrow.ttf') format('truetype') /* Safari, Android, iOS */
-  }
-  
-  /* piedra-regular - latin */
-  @font-face {
-    font-family: 'Piedra';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-         url('../fonts/piedra-v9-latin-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-  }
-
-/*
  * General Styles
  */
 * {
@@ -498,173 +381,6 @@ $hover-brightness: 0.8;
         flex: none;
     }
 
-
-    #attributes {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-
-        .attribute {
-            margin-bottom: 5px;
-        }
-
-        .stripe {
-            background-color: $almost_black;
-            color: $almost_white;
-            font-size: 17px;
-            padding-left: 5px;
-        }
-
-        .shock {
-            input {
-                display: none;
-            }
-
-            label {
-                height: 32px;
-                width: 32px;
-                display: block;
-                background-image: url("assets/boxes/shock-empty.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                margin-right: 1px;
-                transition: filter 0.1s;
-                cursor: pointer;
-                position: relative;
-                top: -6px;
-            }
-
-            input:checked + label {
-                background-image: url("assets/boxes/shock-filled.png");
-            }
-        }
-
-        .bloodied {
-            input {
-                display: none;
-            }
-
-            label {
-                height: 36px;
-                width: 24px;
-                display: block;
-                background-image: url("assets/boxes/bloodied-empty.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                margin-left: 8px;
-                margin-right: 1px;
-                transition: filter 0.1s;
-                cursor: pointer;
-                position: relative;
-                top: -13px;
-            }
-
-            input:checked + label {
-                background-image: url("assets/boxes/bloodied-filled.png");
-            }
-        }
-
-        .bloodied-minion {
-            input {
-                display: none;
-            }
-
-            label {
-                height: 24px;
-                width: 24px;
-                display: block;
-                background-image: url("assets/boxes/bloodied-minion-empty.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                margin-left: 1px;
-                margin-right: 2px;
-                transition: filter 0.1s;
-                cursor: pointer;
-                position: relative;
-                top: -2px;
-            }
-
-            input:checked + label {
-                background-image: url("assets/boxes/bloodied-minion-filled.png");
-            }
-        }
-
-        .morale-minion {
-            input {
-                display: none;
-            }
-
-            label {
-                height: 24px;
-                width: 24px;
-                display: block;
-                background-image: url("assets/boxes/box-empty.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                margin-left: 1px;
-                margin-right: 2px;
-                transition: filter 0.1s;
-                cursor: pointer;
-                position: relative;
-                top: -1px;
-            }
-
-            input:checked + label {
-                background-image: url("assets/boxes/box-filled.png");
-            }
-        }
-
-        #attributes-darkhearts {
-            margin-top: -12px;
-        }
-
-        .heart-container {
-            margin-left: 34px;
-            justify-content: flex-start;
-        }
-
-        .dark-heart {
-            height: 32px;
-            width: 32px;
-            background-image: url("assets/boxes/heart-emtpy.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            margin-right: 4px;
-            transition: filter 0.1s;
-            cursor: pointer;
-            position: relative;
-            top: -6px;
-        }
-
-        .main {
-            flex-grow: 1;
-        }
-
-        .attribute-label,
-        .attribute-skill-label {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .attribute-skill-label {
-            letter-spacing: 1px;
-        }
-
-        .attributes-exp {
-            position: relative;
-            margin-bottom: 2px;
-        }
-
-        .attributes-container {
-            display: flex;
-            margin: 3px 0px;
-            @include custom_radio(15px, 15px);
-
-            * {
-                margin-right: 5px;
-            }
-        }
-    }
     // ITEM
     .item {
         justify-content: space-between;
@@ -1014,3 +730,150 @@ $hover-brightness: 0.8;
     }
 }
 
+
+/* Extension for Custom Labels */
+%custom-label {
+    height: 24px;
+    width: 24px;
+    display: block;
+    background-image: url("assets/boxes/box-empty.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: filter 0.1s;
+    cursor: pointer;
+    position: relative;
+    @include changeable(0.1s, 0.7, 0.7);
+}
+
+#attributes {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    .attribute {
+        margin-bottom: 5px;
+    }
+
+    .stripe {
+        background-color: $almost_black;
+        color: $almost_white;
+        font-size: 17px;
+        padding-left: 5px;
+    }
+
+    .shock {
+        input {
+            display: none;
+        }
+        label {
+            @extend %custom-label;
+            height: 32px;
+            width: 32px;
+            background-image: url("assets/boxes/shock-empty.png");
+            margin-right: 1px;
+            top: -6px;
+        }
+        input:checked + label {
+            background-image: url("assets/boxes/shock-filled.png");
+        }
+    }
+
+    .bloodied {
+        input {
+            display: none;
+        }
+        label {
+            @extend %custom-label;
+            height: 36px;
+            background-image: url("assets/boxes/bloodied-empty.png");
+            margin-left: 8px;
+            margin-right: 1px;
+            top: -13px;
+        }
+        input:checked + label {
+            background-image: url("assets/boxes/bloodied-filled.png");
+        }
+    }
+
+    .bloodied-minion {
+        input {
+            display: none;
+        }
+        label {
+            @extend %custom-label;
+            background-image: url("assets/boxes/bloodied-minion-empty.png");
+            margin-left: 1px;
+            margin-right: 2px;
+            top: -2px;
+        }
+        input:checked + label {
+            background-image: url("assets/boxes/bloodied-minion-filled.png");
+        }
+    }
+
+    .morale-minion {
+        input {
+            display: none;
+        }
+        label {
+            @extend %custom-label;
+            margin-left: 1px;
+            margin-right: 2px;
+            top: -1px;
+        }
+        input:checked + label {
+            background-image: url("assets/boxes/box-filled.png");
+        }
+    }
+
+    #attributes-darkhearts {
+        margin-top: -12px;
+    }
+
+    .heart-container {
+        margin-left: 34px;
+        justify-content: flex-start;
+    }
+
+    .dark-heart {
+        height: 32px;
+        width: 32px;
+        background-image: url("assets/boxes/heart-emtpy.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 4px;
+        transition: filter 0.1s;
+        cursor: pointer;
+        position: relative;
+        top: -6px;
+    }
+
+    .main {
+        flex-grow: 1;
+    }
+
+    .attribute-label,
+    .attribute-skill-label {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .attribute-skill-label {
+        letter-spacing: 1px;
+    }
+
+    .attributes-exp {
+        position: relative;
+        margin-bottom: 2px;
+    }
+
+    .attributes-container {
+        display: flex;
+        margin: 3px 0px;
+        @include custom_radio(15px, 15px);
+
+        * {
+            margin-right: 5px;
+        }
+    }
+}

@@ -560,179 +560,6 @@
 * #wo-nav-container nav a {
   flex: none;
 }
-* #attributes {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-}
-* #attributes .attribute {
-  margin-bottom: 5px;
-}
-* #attributes .stripe {
-  background-color: #191813;
-  color: #EEEFFF;
-  font-size: 17px;
-  padding-left: 5px;
-}
-* #attributes .shock input {
-  display: none;
-}
-* #attributes .shock label {
-  height: 32px;
-  width: 32px;
-  display: block;
-  background-image: url("assets/boxes/shock-empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 1px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  top: -6px;
-}
-* #attributes .shock input:checked + label {
-  background-image: url("assets/boxes/shock-filled.png");
-}
-* #attributes .bloodied input {
-  display: none;
-}
-* #attributes .bloodied label {
-  height: 36px;
-  width: 24px;
-  display: block;
-  background-image: url("assets/boxes/bloodied-empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-left: 8px;
-  margin-right: 1px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  top: -13px;
-}
-* #attributes .bloodied input:checked + label {
-  background-image: url("assets/boxes/bloodied-filled.png");
-}
-* #attributes .bloodied-minion input {
-  display: none;
-}
-* #attributes .bloodied-minion label {
-  height: 24px;
-  width: 24px;
-  display: block;
-  background-image: url("assets/boxes/bloodied-minion-empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-left: 1px;
-  margin-right: 2px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  top: -2px;
-}
-* #attributes .bloodied-minion input:checked + label {
-  background-image: url("assets/boxes/bloodied-minion-filled.png");
-}
-* #attributes .morale-minion input {
-  display: none;
-}
-* #attributes .morale-minion label {
-  height: 24px;
-  width: 24px;
-  display: block;
-  background-image: url("assets/boxes/box-empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-left: 1px;
-  margin-right: 2px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  top: -1px;
-}
-* #attributes .morale-minion input:checked + label {
-  background-image: url("assets/boxes/box-filled.png");
-}
-* #attributes #attributes-darkhearts {
-  margin-top: -12px;
-}
-* #attributes .heart-container {
-  margin-left: 34px;
-  justify-content: flex-start;
-}
-* #attributes .dark-heart {
-  height: 32px;
-  width: 32px;
-  background-image: url("assets/boxes/heart-emtpy.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 4px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  top: -6px;
-}
-* #attributes .main {
-  flex-grow: 1;
-}
-* #attributes .attribute-label,
-* #attributes .attribute-skill-label {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-* #attributes .attribute-skill-label {
-  letter-spacing: 1px;
-}
-* #attributes .attributes-exp {
-  position: relative;
-  margin-bottom: 2px;
-}
-* #attributes .attributes-container {
-  display: flex;
-  margin: 3px 0px;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-* #attributes .attributes-container label {
-  height: 15px;
-  width: 15px;
-  background-image: url("assets/boxes/box-filled.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  vertical-align: middle;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* #attributes .attributes-container label[for$="-0"] {
-  height: 5px;
-  width: 5px;
-  border-radius: 24px;
-  background-image: none !important;
-  background-color: red !important;
-  margin-right: 0px;
-}
-* #attributes .attributes-container label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-* #attributes .attributes-container input {
-  display: none;
-}
-* #attributes .attributes-container input:checked ~ label {
-  background-image: url("assets/boxes/box-empty.png");
-}
-* #attributes .attributes-container input:checked + label {
-  transition: filter 0.1s;
-  cursor: pointer;
-  background-image: url("assets/boxes/box-filled.png");
-}
-* #attributes .attributes-container input:checked + label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-* #attributes .attributes-container * {
-  margin-right: 5px;
-}
 * .item {
   justify-content: space-between;
 }
@@ -1388,6 +1215,169 @@
 }
 * .dice-tooltip .dice-rolls .roll.d6 {
   font-family: Signika;
+}
+
+/* Extension for Custom Labels */
+#attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: filter 0.1s;
+  cursor: pointer;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+
+#attributes {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+#attributes .attribute {
+  margin-bottom: 5px;
+}
+#attributes .stripe {
+  background-color: #191813;
+  color: #EEEFFF;
+  font-size: 17px;
+  padding-left: 5px;
+}
+#attributes .shock input {
+  display: none;
+}
+#attributes .shock label {
+  height: 32px;
+  width: 32px;
+  background-image: url("assets/boxes/shock-empty.png");
+  margin-right: 1px;
+  top: -6px;
+}
+#attributes .shock input:checked + label {
+  background-image: url("assets/boxes/shock-filled.png");
+}
+#attributes .bloodied input {
+  display: none;
+}
+#attributes .bloodied label {
+  height: 36px;
+  background-image: url("assets/boxes/bloodied-empty.png");
+  margin-left: 8px;
+  margin-right: 1px;
+  top: -13px;
+}
+#attributes .bloodied input:checked + label {
+  background-image: url("assets/boxes/bloodied-filled.png");
+}
+#attributes .bloodied-minion input {
+  display: none;
+}
+#attributes .bloodied-minion label {
+  background-image: url("assets/boxes/bloodied-minion-empty.png");
+  margin-left: 1px;
+  margin-right: 2px;
+  top: -2px;
+}
+#attributes .bloodied-minion input:checked + label {
+  background-image: url("assets/boxes/bloodied-minion-filled.png");
+}
+#attributes .morale-minion input {
+  display: none;
+}
+#attributes .morale-minion label {
+  margin-left: 1px;
+  margin-right: 2px;
+  top: -1px;
+}
+#attributes .morale-minion input:checked + label {
+  background-image: url("assets/boxes/box-filled.png");
+}
+#attributes #attributes-darkhearts {
+  margin-top: -12px;
+}
+#attributes .heart-container {
+  margin-left: 34px;
+  justify-content: flex-start;
+}
+#attributes .dark-heart {
+  height: 32px;
+  width: 32px;
+  background-image: url("assets/boxes/heart-emtpy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 4px;
+  transition: filter 0.1s;
+  cursor: pointer;
+  position: relative;
+  top: -6px;
+}
+#attributes .main {
+  flex-grow: 1;
+}
+#attributes .attribute-label,
+#attributes .attribute-skill-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#attributes .attribute-skill-label {
+  letter-spacing: 1px;
+}
+#attributes .attributes-exp {
+  position: relative;
+  margin-bottom: 2px;
+}
+#attributes .attributes-container {
+  display: flex;
+  margin: 3px 0px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes .attributes-container label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes .attributes-container label[for$="-0"] {
+  height: 5px;
+  width: 5px;
+  border-radius: 24px;
+  background-image: none !important;
+  background-color: red !important;
+  margin-right: 0px;
+}
+#attributes .attributes-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input {
+  display: none;
+}
+#attributes .attributes-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes .attributes-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+}
+#attributes .attributes-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container * {
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=wicked.css.map */
