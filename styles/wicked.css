@@ -313,6 +313,9 @@ option {
 * input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
     font-weight: 600;
 }
+* input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+    font-weight: 600;
+}
 * a:hover {
     text-shadow: 2px 2px 4px #616161;
 }
@@ -347,8 +350,9 @@ option {
   height: 30px !important;
   text-transform: capitalize;
 }
-* #chat-controls .roll-type-select {
-  font-weight: 600;
+#chat-controls .roll-type-select {
+    font-weight: 600;
+	color: #400000;
 }
 #chat-form textarea {
     background: url(../images/background-light.png) repeat;
