@@ -1,6 +1,6 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <section id="name-alias" class="flex-horizontal">
+  <section id="name-look" class="flex-horizontal">
 
     <div class="grow-two">
       <div id="name">
@@ -76,12 +76,11 @@
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
     <div class="grow-two">
-      <div id="alias">
-        <label for="character-{{actor._id}}-alias">{{localize "FITD.Alias"}}</label>
-        <input type="text" id="character-{{actor._id}}-alias" name="data.alias" value="{{data.alias}}">
+      <div id="look">
+        <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
+        <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
       </div>
 
-      {{> "systems/wicked-ones/templates/parts/gold.html" actor=actor}}
     </div>
 
   </section>
@@ -128,57 +127,38 @@
     <div id="character-defenses">
       <table>
         <thead>
-        <th class="black-white" colspan="4">{{localize "FITD.Defenses"}}</th>
-        <th class="black-white"><label>{{localize "FITD.Stress"}}</label></th>
-        <th class="black-white">{{localize "FITD.Impulse"}}</th>
+          <tr>
+            <th class="black-white" colspan="2">{{localize "FITD.Defenses"}}</th>
+            <th class="black-white">{{localize "FITD.Stress"}}</th>
+            <th class="black-white">{{localize "FITD.Impulse"}}</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <td><input type="checkbox" /></td>
-            <td colspan="2">
-              <input type="text" id="character-{{actor._id}}-defense-1" name="data.defenses.1.value" value="{{data.defenses.1.value}}">
-              <!--<input type="text" id="character-{{actor._id}}-harm-3-1" name="data.harm.heavy.one" value="{{data.harm.heavy.one}}">-->
-            </td>
+            <td><input type="checkbox" name="data.defenses.1.checked" value="{{data.defenses.1.checked}}" {{checked data.defenses.1.checked}}></td>
+            <td><input type="text" id="character-{{actor._id}}-defense-1" name="data.defenses.1.value" value="{{data.defenses.1.value}}"></td>
             <td rowspan="3">
               <div id="character-stress-clock">
-                {{{blades-clock "data.stress-clock" 6 data.stress-clock actor._id}}}
+                {{{blades-clock "data.stress_clock" 6 data.stress_clock actor._id}}}
               </div>
             </td>
-            <!--<td rowspan="3" id="character-armor-uses">
-              <div>
-                <label for="armor-uses-armor">{{localize "FITD.Armor"}}</label>
-                <input id="armor-uses-armor" type="checkbox" name="data.armor-uses.armor" {{checked data.armor-uses.armor}}>
-              </div>
-              <div>
-                <label for="armor-uses-heavy">{{localize "FITD.Heavy"}}</label>
-                <input id="armor-uses-heavy" type="checkbox" name="data.armor-uses.heavy" {{checked data.armor-uses.heavy}}>
-              </div>
-              <div>
-                <label for="armor-uses-special">{{localize "FITD.Special"}}</label>
-                <input id="armor-uses-special" type="checkbox" name="data.armor-uses.special" {{checked data.armor-uses.special}}>
-              </div>
-            </td>-->
           </tr>
           <tr>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" name="data.defenses.2.checked" value="{{data.defenses.2.checked}}" {{checked data.defenses.2.checked}}></td>
             <td>
               <input type="text" id="character-{{actor._id}}-defense-2" name="data.defenses.2.value" value="{{data.defenses.2.value}}">
-              <!--<input type="text" id="character-{{actor._id}}-harm-2-1" name="data.harm.medium.one" value="{{data.harm.medium.one}}">-->
             </td>
           </tr>
           <tr>
-            <td><input type="checkbox" /></td>
+            <td><input type="checkbox" name="data.defenses.3.checked" value="{{data.defenses.3.checked}}" {{checked data.defenses.3.checked}}></td>
             <td>
-              <input type="text" id="character-{{actor._id}}-defense-2" name="data.defenses.3.value" value="{{data.defenses.3.value}}">
-              <!--<input type="text" id="character-{{actor._id}}-harm-1-1" name="data.harm.light.one" value="{{data.harm.light.one}}">-->
+              <input type="text" id="character-{{actor._id}}-defense-3" name="data.defenses.3.value" value="{{data.defenses.3.value}}">
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
-
-
 
 
   {{!-- Attributes --}}

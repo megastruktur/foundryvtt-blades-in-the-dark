@@ -2,5 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/wicked-ones/v16/.suo
+/.vscode
 /.vs
+/scss/src
+/scss/*.bat

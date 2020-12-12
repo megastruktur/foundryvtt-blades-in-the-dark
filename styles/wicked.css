@@ -574,9 +574,13 @@
   font-size: 17px;
   padding-left: 5px;
 }
-* #attributes .shock {
+* #attributes .shock input {
+  display: none;
+}
+* #attributes .shock label {
   height: 32px;
   width: 32px;
+  display: block;
   background-image: url("assets/boxes/shock-empty.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -586,9 +590,16 @@
   position: relative;
   top: -6px;
 }
-* #attributes .bloodied {
+* #attributes .shock input:checked + label {
+  background-image: url("assets/boxes/shock-filled.png");
+}
+* #attributes .bloodied input {
+  display: none;
+}
+* #attributes .bloodied label {
   height: 36px;
   width: 24px;
+  display: block;
   background-image: url("assets/boxes/bloodied-empty.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -599,16 +610,36 @@
   position: relative;
   top: -13px;
 }
-* #attributes .bloodied.minion {
-  height: 24px;
-  top: -2px;
-  margin-left: 1px;
-  margin-right: 2px;
-  background-image: url("assets/boxes/bloodied-minion-empty.png");
+* #attributes .bloodied input:checked + label {
+  background-image: url("assets/boxes/bloodied-filled.png");
 }
-* #attributes .morale {
+* #attributes .bloodied-minion input {
+  display: none;
+}
+* #attributes .bloodied-minion label {
   height: 24px;
   width: 24px;
+  display: block;
+  background-image: url("assets/boxes/bloodied-minion-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 1px;
+  margin-right: 2px;
+  transition: filter 0.1s;
+  cursor: pointer;
+  position: relative;
+  top: -2px;
+}
+* #attributes .bloodied-minion input:checked + label {
+  background-image: url("assets/boxes/bloodied-minion-filled.png");
+}
+* #attributes .morale-minion input {
+  display: none;
+}
+* #attributes .morale-minion label {
+  height: 24px;
+  width: 24px;
+  display: block;
   background-image: url("assets/boxes/box-empty.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -618,6 +649,9 @@
   cursor: pointer;
   position: relative;
   top: -1px;
+}
+* #attributes .morale-minion input:checked + label {
+  background-image: url("assets/boxes/box-filled.png");
 }
 * #attributes #attributes-darkhearts {
   margin-top: -12px;

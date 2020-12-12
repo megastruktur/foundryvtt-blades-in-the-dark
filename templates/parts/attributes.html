@@ -2,7 +2,11 @@
   {{#each data.attributes as |attribute attribute_name|}}
   <div id="attributes-{{attribute_name}}" class="attribute flex-horizontal">
     {{#if (ne @root.actor.type "minion_pack")}}
-    <div class="shock{{#if (true)}} filled{{/if}}"></div>
+    <div class="shock">
+      <input type="checkbox" id="attributes-{{../actor._id}}-{{attribute_name}}-shocked" name="data.attributes.{{attribute_name}}.shocked"
+             value="{{shocked}}" {{checked shocked}}>
+      <label for="attributes-{{../actor._id}}-{{attribute_name}}-shocked"></label>
+    </div>
     {{/if}}
     <div class="main">
       <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
@@ -38,7 +42,11 @@
 
   {{#if (eq actor.type "minion_pack")}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
-    <div class="bloodied minion{{#if (true)}} filled{{/if}}"></div>
+    <div class="bloodied-minion">
+      <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
+             value="{{data.bloodied}}" {{checked data.bloodied}}>
+      <label for="{{actor._id}}-bloodied"></label>
+    </div>
     <div class="main">
       <div class="stripe">
         <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
@@ -46,7 +54,11 @@
     </div>
   </div>
   <div id="attributes-morale" class="attribute flex-horizontal">
-    <div class="morale {{#if (true)}} filled{{/if}}"></div>
+    <div class="morale-minion">
+      <input type="checkbox" id="{{actor._id}}-morale" name="data.morale"
+             value="{{data.morale}}" {{checked data.morale}}>
+      <label for="{{actor._id}}-morale"></label>
+    </div>
     <div class="main">
       <div class="stripe">
         <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Morale">{{localize "FITD.Morale"}}</a>
@@ -55,7 +67,12 @@
   </div>
   {{else}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
-    <div class="bloodied{{#if (true)}} filled{{/if}}"></div>
+    <div class="bloodied">
+      <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
+             value="{{data.bloodied}}" {{checked data.bloodied}}>
+      {{debug}}
+      <label for="{{actor._id}}-bloodied"></label>
+    </div>
     <div class="main">
       <div class="stripe">
         <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
