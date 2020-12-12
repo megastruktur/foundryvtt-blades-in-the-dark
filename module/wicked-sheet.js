@@ -8,12 +8,13 @@ export class BladesSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /** @override */
-	activateListeners(html) {
+  activateListeners(html) {
     super.activateListeners(html);
     html.find(".item-add-popup").click(this._onItemAddClick.bind(this));
+    html.find(".skill-practice-xp").click(this._onSkillSetPracticeXP.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
-    if ( this.options.submitOnChange ) {
+    if (this.options.submitOnChange) {
       html.on("change", "textarea", this._onChangeInput.bind(this));  // Use delegated listener on the form
     }
 
@@ -38,7 +39,7 @@ export class BladesSheet extends ActorSheet {
 
     items.forEach(e => {
       let addition_price_load = ``;
-      
+
       if (typeof e.data.load !== "undefined") {
         addition_price_load += `(${e.data.load})`
       } else if (typeof e.data.price !== "undefined") {
@@ -56,7 +57,7 @@ export class BladesSheet extends ActorSheet {
     let options = {
       // width: "500"
     }
-    
+
     let dialog = new Dialog({
       title: `${game.i18n.localize('Add')} ${item_type}`,
       content: html,
@@ -77,14 +78,14 @@ export class BladesSheet extends ActorSheet {
 
     dialog.render(true);
   }
-  
+
   /* -------------------------------------------- */
 
   async addItemsToSheet(item_type, el) {
 
     let items = await BladesHelpers.getAllItemsByType(item_type, game);
     let items_to_add = [];
-    el.find("input:checked").each(function() {
+    el.find("input:checked").each(function () {
 
       items_to_add.push(items.find(e => e._id === $(this).val()));
     });
@@ -101,6 +102,67 @@ export class BladesSheet extends ActorSheet {
     const attribute_name = $(event.currentTarget).data("rollAttribute");
     this.actor.rollAttributePopup(attribute_name);
 
+  }
+
+  /* -------------------------------------------- */
+
+  async _onSkillSetPracticeXP(event) {
+    event.preventDefault();
+    //const pressed_button = $(event.currentTarget).prev();
+    // const skill_name = $(event.currentTarget).siblings().last().data("rollAttribute");
+    let pressed_button = event.currentTarget.control;
+    const attribute_name = pressed_button.name.split(".")[2];
+    const skill_name = pressed_button.name.split(".")[4];
+    const temp_var = pressed_button.value;
+    let skill = this.actor.data.data.attributes[attribute_name].skills[skill_name];
+
+    // Set Practice XP
+    if (temp_var == 0 || temp_var > 1 || skill.value > 1) {
+      skill.practice = 0;
+    }
+    else {
+      if (skill.value == 0) {
+        skill.practice = 1;
+      }
+      else if (skill.practice == 1) {
+        skill.practice = 2;
+      }
+      else if (skill.practice == 2) {
+        skill.practice = 0;
+      }
+      else {
+        skill.practice = 0;
+        pressed_button = pressed_button.previousElementSibling.previousElementSibling;
+      }
+    }
+
+    // Update Data
+    const data = { _id: this.actor.data._id, data: { attributes: {} } };
+    data.data.attributes[attribute_name] = { skills: {} };
+    data.data.attributes[attribute_name].skills[skill_name] = { practice: skill.practice };
+    const updated = await this.entity.update(data);
+
+    // skill_name: { practice: skill_clicked.practice }
+
+
+    
+
+    // Submit click
+    pressed_button.click();
+
+    // Set Classes
+    //if (skill_clicked.practice == 1) {
+    //  event.currentTarget.classList.add('practice-one');
+    //  event.currentTarget.classList.remove('practice-two');
+    //}
+    //else if (skill_clicked.practice == 2) {
+    //  event.currentTarget.classList.remove('practice-one');
+    //  event.currentTarget.classList.add('practice-two');
+    //}
+    //else {
+    //  event.currentTarget.classList.remove('practice-one');
+    //  event.currentTarget.classList.remove('practice-two');
+    //}
   }
 
   /* -------------------------------------------- */

@@ -75,52 +75,58 @@
  * Custom Radio
  */
 @mixin custom_radio($width, $height) {
+    display: flex;
+    $default_color: $almost_white;
+    $accent_color: $almost_black;
+    $circle_border_color: $almost_black;
 
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $almost_black;
-  $circle_border_color: $almost_black;
+    label {
 
-  label {
+        & {
+            height: $height;
+            width: $width;
+            background-image: url("assets/boxes/box-filled.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            vertical-align: middle;
 
-    & {
-      height: $height;
-      width: $width;
-      background-image: url("assets/boxes/box-filled.png");
-      background-repeat: no-repeat;
-      background-size: contain;
+            &[for$="-0"] {
+                height: 5px;
+                width: 5px;
+                border-radius: 24px;
+                background-image: none !important;
+                background-color: $red !important;
+                margin-right: 0px;
+            }
 
-      vertical-align: middle;
-
-      &[for$="-0"] {
-        height: 5px;
-        width: 5px;
-        border-radius: 24px;
-        background-image: none !important;
-        background-color: $red !important;
-        margin-right: 0px;
-      }
-
-      @include changeable(0.1s, 0.7, 0.7);
+            @include changeable(0.1s, 0.7, 0.7);
+        }
     }
-  }
- 
-  /* Hide the browser's default checkbox */
-  input {
-    display: none;
-  
-    &:checked {
-  
-      & ~ label {
-        background-image: url("assets/boxes/box-empty.png");
-      }
-      & + label {
-        // Less opacity here cos otherwise it's barely visible on the dark
-        @include changeable(0.1s, 0.7, 0.7); 
-        background-image: url("assets/boxes/box-filled.png");
-      }
+    /* Hide the browser's default checkbox */
+    input {
+        display: none;
+
+        &:checked {
+
+            & ~ label {
+                background-image: url("assets/boxes/box-empty.png");
+            }
+
+            & + label {
+                // Less opacity here cos otherwise it's barely visible on the dark
+                @include changeable(0.1s, 0.7, 0.7);
+                background-image: url("assets/boxes/box-filled.png");
+
+                &.practice-one {
+                    background-image: url("assets/boxes/box-slashed.png");
+                }
+
+                &.practice-two {
+                    background-image: url("assets/boxes/box-crossed.png");
+                }
+            }
+        }
     }
-  }
 }
 
 /*

@@ -1376,6 +1376,12 @@
   filter: brightness(0.7);
   opacity: 0.7;
 }
+#attributes .attributes-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes .attributes-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
 #attributes .attributes-container * {
   margin-right: 5px;
 }

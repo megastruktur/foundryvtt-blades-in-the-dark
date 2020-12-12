@@ -23,11 +23,11 @@
         <div class="attributes-container">
 
           {{#multiboxes skill.value}}
-
+          
           {{#times_from_0 @root.data.attribute_max_value}}
           <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
                  name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
-          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"></label>
+          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}" class="skill-practice-xp{{#if (eq ../this.practice 1)}} practice-one{{/if}}{{#if (eq ../this.practice 2)}} practice-two{{/if}}"></label>
           {{/times_from_0}}
 
           <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
@@ -81,8 +81,17 @@
   </div>
 
   <div id="attributes-darkhearts" class="flex-horizontal heart-container">
-    <div class="dark-heart{{#if (true)}} filled{{/if}}"></div>
-    <div class="dark-heart{{#if (true)}} filled{{/if}}"></div>
+    <div class="attributes-container dark-hearts">
+      {{debug}}
+      {{#multiboxes data.dark_hearts}}
+
+      {{#times_from_0 2}}
+      <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}"
+             name="data.dark_hearts" value="{{this}}">
+      <label for="{{../actor._id}}-dark-hearts-{{this}}"></label>
+      {{/times_from_0}}
+      {{/multiboxes}}
+    </div>
   </div>
   <div class="attribute flex-horizontal heart-container">
     <div class="main">
