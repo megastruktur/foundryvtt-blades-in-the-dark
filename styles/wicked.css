@@ -146,11 +146,13 @@
   border-bottom: 2px outset #d46c1f;
   border-left: 2px solid darkslategrey;
   border-right: 2px solid darkslategrey;
+  transition-duration: 0.2s;
 }
 * button:hover,
 * button:focus {
   outline: none;
-  box-shadow: 0 0 5px whitesmoke;
+  box-shadow: 0 0 5px #d46c1f;
+  background: #d46c1f;
 }
 * .dialog .dialog-buttons button {
   background: #68332c;
@@ -316,6 +318,12 @@
   border-bottom: 2px outset #d46c1f;
   border-left: 2px solid darkslategrey;
   border-right: 2px solid darkslategrey;
+}
+* .dialog .dialog-buttons button.default:hover,
+* .dialog .dialog-buttons button.default:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d46c1f;
+  background: #d46c1f;
 }
 * .label-stripe {
   text-transform: uppercase;
@@ -1082,10 +1090,10 @@
   font-size: xx-large;
 }
 * .blades-die-tooltip .die.critical-success {
-  color: #12a012;
+  color: #008000;
 }
 * .blades-die-tooltip .die.success {
-  color: #008000;
+  color: #435e3d;
 }
 * .blades-die-tooltip .die.partial-success {
   color: #04578f;
@@ -1470,6 +1478,9 @@
 }
 #attributes .attributes-container * {
   margin-right: 5px;
+}
+#attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=wicked.css.map */

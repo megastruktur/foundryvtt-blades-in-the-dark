@@ -5,14 +5,15 @@ $red: red;
 $almost_black: #191919;
 $almost_white: #EEEFFF;
 $gold: #DAA520;
-$green: #008000;
-$light_green: #12a012;
+$light_green: #008000;
+$green: #435e3d;
 $blue: #04578f;
 $bloody: #400000;
 $bloody5c: #4000005c;
 $orange: #d46c1f;
 $mud: #68332c;
 $paper: #c9c7b8;
+$bone: #fff8e8;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -39,17 +40,19 @@ $hover-brightness: 0.8;
 	 button {
 		font-family: Bitter, sans-serif;
 		font-weight: 500;
-		color: #fff8e8;
+		color: $bone;
 		background: $mud;
 		border-top: 1px outset $orange;
 		border-bottom: 2px outset $orange;
 		border-left: 2px solid darkslategrey;
 		border-right: 2px solid darkslategrey;
+		transition-duration: $transition-period;
 	}
 	button:hover,
 	button:focus {
 	  outline: none;
-	  box-shadow: 0 0 5px whitesmoke;
+	  box-shadow: 0 0 5px $orange;
+	  background: $orange;
 	}
 	.dialog .dialog-buttons button {
 		background: $mud;
@@ -243,6 +246,12 @@ $hover-brightness: 0.8;
 		border-left: 2px solid darkslategrey;
 		border-right: 2px solid darkslategrey;
     }
+	.dialog .dialog-buttons button.default:hover,
+	.dialog .dialog-buttons button.default:focus {
+	  outline: none;
+	  box-shadow: 0 0 5px $orange;
+	  background: $orange;
+	}
 
     .label-stripe {
         text-transform: uppercase;
@@ -964,4 +973,7 @@ $hover-brightness: 0.8;
             margin-right: 5px;
         }
     }
+	input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+		font-weight:600;
+		}
 }
