@@ -154,6 +154,10 @@
 }
 * .dialog .dialog-buttons button {
   background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
 }
 * * form button {
   background: #68332c;
@@ -308,7 +312,10 @@
 }
 * .dialog .dialog-buttons button.default {
   background: #68332c;
-  border: 2px groove #c9c7b8;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
 }
 * .label-stripe {
   text-transform: uppercase;
@@ -1023,6 +1030,7 @@
   padding: 5px;
 }
 * #items-to-add {
+  font-size: medium;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1037,6 +1045,13 @@
   font-weight: 800;
   color: #400000;
 }
+* #items-to-add > flex-horizontal {
+  padding: 3px;
+  border-bottom: 1px solid #4000005c;
+}
+* #items-to-add:nth-child(2) {
+  background: #4000005c;
+}
 * .tooltip .tooltiptext {
   visibility: hidden;
   width: 300px;
@@ -1044,8 +1059,9 @@
   font-family: Bitter;
   background: url(../images/background-light.png) repeat;
   color: #400000;
-  font-size: 15px;
+  font-size: 16px;
   text-align: justify;
+  border: 2px solid #400000;
   padding: 10px;
   border-radius: 10px;
   position: absolute;

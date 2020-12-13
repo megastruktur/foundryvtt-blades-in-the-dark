@@ -9,8 +9,10 @@ $green: #008000;
 $light_green: #12a012;
 $blue: #04578f;
 $bloody: #400000;
+$bloody5c: #4000005c;
 $orange: #d46c1f;
 $mud: #68332c;
+$paper: #c9c7b8;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -51,6 +53,10 @@ $hover-brightness: 0.8;
 	}
 	.dialog .dialog-buttons button {
 		background: $mud;
+		border-top: 1px outset $orange;
+		border-bottom: 2px outset $orange;
+		border-left: 2px solid darkslategrey;
+		border-right: 2px solid darkslategrey;
 	}
 	* form button {
 		background: $mud;
@@ -231,8 +237,11 @@ $hover-brightness: 0.8;
     }
 
     .dialog .dialog-buttons button.default {
-        background: #68332c;
-        border: 2px groove #c9c7b8;
+		background: $mud;
+		border-top: 1px outset $orange;
+		border-bottom: 2px outset $orange;
+		border-left: 2px solid darkslategrey;
+		border-right: 2px solid darkslategrey;
     }
 
     .label-stripe {
@@ -654,6 +663,7 @@ $hover-brightness: 0.8;
     }
     // Add Items modal styling.
     #items-to-add {
+		font-size: medium;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -669,6 +679,13 @@ $hover-brightness: 0.8;
             }
         }
     }
+	#items-to-add > flex-horizontal{
+		padding: 3px;
+		border-bottom: 1px solid $bloody5c;	
+	}
+	#items-to-add:nth-child(2) {
+		background: $bloody5c;
+	}
     // Tooltip.
     .tooltip {
 
@@ -679,8 +696,9 @@ $hover-brightness: 0.8;
 			font-family: Bitter;
 			background: url(../images/background-light.png) repeat;
 			color: #400000;
-			font-size: 15px;
+			font-size: 16px;
 			text-align: justify;
+			border: 2px solid #400000;
 			padding: 10px;
 			border-radius: 10px;
 			position: absolute;
