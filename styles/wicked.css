@@ -126,34 +126,57 @@
   font-weight: 400;
   src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
 }
-
-/* WO Colours: */
-/* Section Title Dark Red: #3c1311 */
-/* Headline/Table Background: #68332c */
-/* Sub-Table Background: #534d52; */
-/* Border Decoration Brown: #7e6553 */
-
-/* Text Ink: #1f1a1a; */
-/* Hint Box Light Grey: #bdb7ab; */
-/* (Lighter Version): #fff8e8; */
-/* Map-Marker Green: #435e3d; */
-/* Scribble Brown: #56352e; */
-/* Scribble Grey: #4e4d4d; */
-
- 
-* {
-}
 /*
  * General Styles
  */
 * header {
   margin-bottom: 10px;
 }
+* body {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+* button {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  color: #fff8e8;
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
+* button:hover,
+* button:focus {
+  outline: none;
+  box-shadow: 0 0 5px whitesmoke;
+}
+* .dialog .dialog-buttons button {
+  background: #68332c;
+}
+* * form button {
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
 * ul {
   list-style: none;
 }
+* h1, * h2, * h3, * h4 {
+  font-weight: bold;
+}
 * form.actor-sheet {
   padding: 20px;
+}
+* form .notes, * form .hint {
+  color: #400000;
+  font-weight: 600;
+}
+* label {
+  font-weight: 600;
 }
 * textarea {
   margin-top: 10px;
@@ -162,65 +185,6 @@
 * td {
   padding: 5px;
 }
-/* Changes for #ff6400 to #68332c color replacement */
-textarea:focus {
-  outline: 2px solid #501f17;
-  box-shadow: 0 0 10px #68332c;
-}
-.placeable-hud .control-icon.active {
-  border: 1px solid #68332c;
-}
-#navigation #nav-toggle:hover {
-  text-shadow: 0 0 10px #68332c;
-}
-#navigation #scene-list .scene.view,
-#navigation #scene-list .scene.context {
-  cursor: default;
-  color: #FFF;
-  border: 1px solid red;
-  background: rgba(52, 52, 52, 0.95);
-  border-bottom: 1px solid #68332c;
-  box-shadow: 0 0 10px #68332c;
-}
-#menu #menu-items li:hover {
-  text-shadow: 0 0 10px #68332c;
-}
-#controls .scene-control.active,
-#controls .control-tool.active,
-#controls .scene-control:hover,
-#controls .control-tool:hover {
-  color: #FFF;
-  border: 1px solid red;
-  border-bottom: 1px solid #68332c;
-  box-shadow: 0 0 10px #68332c;
-}
-#sidebar-tabs {
-  flex: 0 0 32px;
-  box-sizing: border-box;
-  margin: 0 0 5px;
-  border-bottom: 1px solid #68332c;
-  box-shadow: 0 0 10px red;
-}
-#sidebar-tabs > .item.active {
-  color: #FFF;
-  border: 1px solid red;
-  border-bottom: none;
-  box-shadow: 0 0 6px inset #68332c;
-}
-.sidebar-tab .directory-list .directory-item.context,
-.sidebar-tab .directory-list .directory-item.active {
-  border-color: #68332c;
-}
-.sidebar-tab .directory-list .folder .context {
-  border-color: #68332c;
-}
-#scenes .scene.context,
-#scenes .scene.active {
-  margin-top: 0;
-  border: 2px solid #000;
-  box-shadow: 0 0 10px #68332c;
-}
-/* Color Change End */
 * section {
   margin-bottom: 10px;
   display: flex;
@@ -243,8 +207,19 @@ textarea:focus {
   margin-bottom: 0px;
   justify-content: center;
 }
+* select {
+  font-family: Bitter, Lucida Console, monospace;
+  font-weight: 600;
+  font-size: 15px;
+}
+* option {
+  font-weight: 600;
+}
 * nav {
   margin-bottom: 10px;
+}
+* #pause h3 {
+  font-weight: 600;
 }
 * .editor,
 * .editor-content {
@@ -260,7 +235,7 @@ textarea:focus {
   flex-direction: column;
 }
 * .black-label {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   font-size: 21px;
   text-align: center;
@@ -270,7 +245,7 @@ textarea:focus {
 }
 * .gray-label {
   background-color: #999;
-  color: #191813;
+  color: #191919;
   font-size: 21px;
   text-align: center;
   padding: 0px 5px;
@@ -278,11 +253,13 @@ textarea:focus {
   text-transform: capitalize;
 }
 * #chat-controls .roll-type-select {
-  font-weight: 600;
   color: #400000;
+  font-size: 14px;
+  font-weight: 700;
 }
 * #chat-form textarea {
   background: url(../images/background-light.png) repeat;
+  background-size: 300px;
 }
 * .chat-message {
   padding: 5px;
@@ -294,18 +271,19 @@ textarea:focus {
 * .chat-message .message-header .message-sender {
   font-family: Piedra;
   font-weight: normal;
+  font-size: 15px;
 }
 * .chat-message .message-content {
   font-family: Bitter;
   font-size: inherit;
-  font-weight: 500;
+  font-weight: 600;
 }
 * .chat-message .message-header .message-metadata {
   text-align: right;
   font-weight: 700;
 }
 * .chat-label {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   font-size: 22px;
   text-align: center;
@@ -315,7 +293,7 @@ textarea:focus {
 }
 * .chat-label-small {
   background-color: #999;
-  color: #191813;
+  color: #191919;
   font-size: small;
   text-align: center;
   padding: 3px 5px;
@@ -334,7 +312,7 @@ textarea:focus {
 }
 * .label-stripe {
   text-transform: uppercase;
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   margin-bottom: 10px;
   position: relative;
@@ -360,7 +338,7 @@ textarea:focus {
   color: #fff;
   margin-bottom: 10px;
   position: relative;
-  padding-top: 3px;
+  padding-top: 2px;
   display: flex;
   font-weight: normal;
   margin: 0;
@@ -382,7 +360,7 @@ textarea:focus {
 * .label-stripe-chat-small {
   text-transform: capitalize;
   background-color: #bdb7ab;
-  color: #191813;
+  color: #191919;
   margin-bottom: 2px;
   position: relative;
   padding-top: 3px;
@@ -400,10 +378,10 @@ textarea:focus {
 }
 * .rollable-text:hover {
   cursor: pointer;
-  color: #7a7a7a;
+  color: red;
 }
 * .big-teeth-section {
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
@@ -566,7 +544,7 @@ textarea:focus {
   width: 100%;
 }
 * #defenses-stress #character-defenses table th {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
 }
 * #defenses-stress #character-defenses table input[type=text] {
@@ -682,7 +660,7 @@ textarea:focus {
   width: 15px;
   background-color: #DAA520;
   vertical-align: middle;
-  border: 1px solid #191813;
+  border: 1px solid #191919;
   transition: filter 0.1s;
   cursor: pointer;
 }
@@ -707,7 +685,7 @@ textarea:focus {
   margin-bottom: 3px;
 }
 * #crew-reputation {
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -907,7 +885,7 @@ textarea:focus {
   left: -7px;
 }
 * #crew-hold {
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   /* Hide the browser's default checkbox */
   width: 221px;
@@ -943,7 +921,7 @@ textarea:focus {
   width: 145px;
   display: flex;
   align-items: center;
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -958,9 +936,9 @@ textarea:focus {
 * #crew-tier label:not([for$="-0"]) {
   height: 18px;
   width: 18px;
-  background-color: #191813;
+  background-color: #191919;
   vertical-align: middle;
-  border: 2px solid #191813;
+  border: 2px solid #191919;
   border-radius: 9px;
 }
 * #crew-tier input {
@@ -971,8 +949,8 @@ textarea:focus {
   background-color: #EEEFFF;
 }
 * #crew-tier input:checked + label:not([for$="-0"]) {
-  background-color: #191813;
-  border-color: #191813;
+  background-color: #191919;
+  border-color: #191919;
 }
 * #crew-tier > * {
   margin-right: 5px;
@@ -998,14 +976,14 @@ textarea:focus {
   justify-content: space-around;
   font-size: 48px;
   text-transform: uppercase;
-  border: 3px solid #191813;
+  border: 3px solid #191919;
 }
 * .class-name .big-name {
   font-weight: bold;
 }
 * .class-name .big-description {
   font-size: 20px;
-  color: #191813;
+  color: #191919;
 }
 * .edgeflaw input {
   display: none;
@@ -1037,10 +1015,10 @@ textarea:focus {
 * .cohorts .cohort-block-harm input[type=radio]:checked + label {
   color: #EEEFFF;
   font-weight: bold;
-  background-color: #191813;
+  background-color: #191919;
 }
 * .cohorts .cohort-block-harm label {
-  border: 2px solid #191813;
+  border: 2px solid #191919;
   border-top: none;
   padding: 5px;
 }
@@ -1058,16 +1036,18 @@ textarea:focus {
 * #items-to-add input[type=checkbox]:checked + label {
   font-weight: 800;
   color: #400000;
-  text-shadow: 1px 1px 3px #ffbbbb;
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
-  width: 200px;
-  background-color: #191813;
-  color: #EEEFFF;
-  text-align: center;
-  padding: 5px;
-  border-radius: 6px;
+  width: 300px;
+  font-weight: 600;
+  font-family: Bitter;
+  background: url(../images/background-light.png) repeat;
+  color: #400000;
+  font-size: 15px;
+  text-align: justify;
+  padding: 10px;
+  border-radius: 10px;
   position: absolute;
   z-index: 9999;
 }
@@ -1086,19 +1066,19 @@ textarea:focus {
   font-size: xx-large;
 }
 * .blades-die-tooltip .die.critical-success {
-  color: #b32813;
+  color: #12a012;
 }
 * .blades-die-tooltip .die.success {
-  color: #9f3727;
+  color: #008000;
 }
 * .blades-die-tooltip .die.partial-success {
-  color: #3d478a;
+  color: #04578f;
 }
 * .blades-die-tooltip .die.failure {
-  color: #7a7a7a;
+  color: red;
 }
 * .clock-zero-label {
-  color: #191813;
+  color: #191919;
 }
 * .clock-block .clocks.clocks-4 {
   position: relative;
@@ -1335,7 +1315,7 @@ textarea:focus {
   margin-bottom: 5px;
 }
 #attributes .stripe {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   font-size: 17px;
   padding-left: 5px;
@@ -1444,7 +1424,7 @@ textarea:focus {
   width: 5px;
   border-radius: 24px;
   background-image: none !important;
-  background-color: #7a7a7a !important;
+  background-color: red !important;
   margin-right: 0px;
 }
 #attributes .attributes-container label:hover {

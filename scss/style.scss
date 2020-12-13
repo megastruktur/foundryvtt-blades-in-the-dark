@@ -9,6 +9,8 @@ $green: #008000;
 $light_green: #12a012;
 $blue: #04578f;
 $bloody: #400000;
+$orange: #d46c1f;
+$mud: #68332c;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -26,17 +28,58 @@ $hover-brightness: 0.8;
     header {
         margin-bottom: 10px;
     }
+    body {
+        font-family: Bitter, sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+    }
 
+	 button {
+		font-family: Bitter, sans-serif;
+		font-weight: 500;
+		color: #fff8e8;
+		background: $mud;
+		border-top: 1px outset $orange;
+		border-bottom: 2px outset $orange;
+		border-left: 2px solid darkslategrey;
+		border-right: 2px solid darkslategrey;
+	}
+	button:hover,
+	button:focus {
+	  outline: none;
+	  box-shadow: 0 0 5px whitesmoke;
+	}
+	.dialog .dialog-buttons button {
+		background: $mud;
+	}
+	* form button {
+		background: $mud;
+		border-top: 1px outset $orange;
+		border-bottom: 2px outset $orange;
+		border-left: 2px solid darkslategrey;
+		border-right: 2px solid darkslategrey;
+	}
     ul {
         list-style: none;
+    }
+	h1, h2, h3, h4 {
+        font-weight: bold;
     }
 
     form {
         &.actor-sheet {
             padding: 20px;
         }
+    
+    .notes, .hint {
+            color: #400000;
+            font-weight: 600;
+        }
     }
 
+    label {
+        font-weight: 600;
+    }
     textarea {
         margin-top: 10px;
         margin-bottom: 20px;
@@ -73,9 +116,20 @@ $hover-brightness: 0.8;
             justify-content: center;
         }
     }
-
+    select {
+        font-family: Bitter, Lucida Console, monospace;
+		font-weight:600;
+		font-size:15px;
+    }
+	option {
+		font-weight:600;
+	}
     nav {
         margin-bottom: 10px;
+    }
+
+    #pause h3 {
+        font-weight: 600;
     }
 
     .editor,
@@ -115,12 +169,14 @@ $hover-brightness: 0.8;
     }
 
     #chat-controls .roll-type-select {
-        font-weight: 600;
         color: #400000;
-    }
+		font-size: 14px;
+		font-weight: 700;
+	}
 
     #chat-form textarea {
         background: url(../images/background-light.png) repeat;
+		background-size: 300px;
     }
 
     .chat-message {
@@ -134,12 +190,13 @@ $hover-brightness: 0.8;
     .chat-message .message-header .message-sender {
         font-family: Piedra;
         font-weight: normal;
+		font-size: 15px;
     }
 
     .chat-message .message-content {
         font-family: Bitter;
         font-size: inherit;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .chat-message .message-header .message-metadata {
@@ -208,7 +265,7 @@ $hover-brightness: 0.8;
         color: #fff;
         margin-bottom: 10px;
         position: relative;
-        padding-top: 3px;
+        padding-top: 2px;
         display: flex;
         font-weight: normal;
         margin: 0;
@@ -616,17 +673,19 @@ $hover-brightness: 0.8;
     .tooltip {
 
         .tooltiptext {
-            visibility: hidden;
-            width: 200px;
-            background-color: $almost_black;
-            color: $almost_white;
-            text-align: center;
-            padding: 5px;
-            border-radius: 6px;
-            // Position
-            position: absolute;
-            z-index: 9999;
-        }
+			visibility: hidden;
+			width: 300px;
+			font-weight: 600;
+			font-family: Bitter;
+			background: url(../images/background-light.png) repeat;
+			color: #400000;
+			font-size: 15px;
+			text-align: justify;
+			padding: 10px;
+			border-radius: 10px;
+			position: absolute;
+			z-index: 9999;
+		}
 
         &:hover .tooltiptext {
             visibility: visible;
