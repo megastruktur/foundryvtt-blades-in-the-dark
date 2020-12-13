@@ -132,35 +132,15 @@
 * header {
   margin-bottom: 10px;
 }
-* body {
-  font-family: Bitter, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-}
-* button {
-  font-family: Bitter, sans-serif;
-  font-weight: 500;
-}
 * ul {
   list-style: none;
-}
-* h1, * h2, * h3, * h4 {
-  font-weight: bold;
 }
 * form.actor-sheet {
   padding: 20px;
 }
-* form .notes, * form .hint {
-  color: #400000;
-  font-weight: 600;
-}
-* label {
-  font-weight: 600;
-}
 * textarea {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-family: Bitter, Lucida Console, monospace;
 }
 * td {
   padding: 5px;
@@ -187,14 +167,8 @@
   margin-bottom: 0px;
   justify-content: center;
 }
-* select {
-  font-family: Bitter, Lucida Console, monospace;
-}
 * nav {
   margin-bottom: 10px;
-}
-* #pause h3 {
-  font-weight: 600;
 }
 * .editor,
 * .editor-content {
@@ -229,6 +203,17 @@
 }
 * #chat-controls .roll-type-select {
   font-weight: 600;
+  color: #400000;
+}
+* #chat-form textarea {
+  background: url(../images/background-light.png) repeat;
+}
+* .chat-message {
+  padding: 5px;
+  color: #191813;
+  font-size: 14px;
+  background: url(../images/background-light.png) repeat;
+  background-size: 300px;
 }
 * .chat-message .message-header .message-sender {
   font-family: Piedra;
@@ -259,6 +244,17 @@
   text-align: center;
   padding: 3px 5px;
   height: 26px !important;
+}
+* .compendium .directory-list .directory-item {
+  padding: 3px 0;
+  line-height: 48px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #4000005c;
+  box-shadow: none;
+}
+* .dialog .dialog-buttons button.default {
+  background: #68332c;
+  border: 2px groove #c9c7b8;
 }
 * .label-stripe {
   text-transform: uppercase;
@@ -293,6 +289,7 @@
   font-weight: normal;
   margin: 0;
   border-top-left-radius: 5px;
+  text-shadow: 2px 2px 0 #313131;
 }
 * .label-type {
   font-family: Piedra;
@@ -320,13 +317,14 @@
 }
 * .description {
   font-style: italic;
+  font-weight: 600;
 }
 * .rollable-text {
   transition: color 0.2s;
 }
 * .rollable-text:hover {
   cursor: pointer;
-  color: red;
+  color: #7a7a7a;
 }
 * .big-teeth-section {
   border-top: 3px solid #191813;
@@ -577,7 +575,10 @@
   flex-grow: 2;
 }
 * .item .item-control {
-  flex-grow: 1;
+  /*flex-grow: 1;*/
+}
+* .item .item-class-label {
+  margin-bottom: 10px;
 }
 * .item .item-body,
 * .item .item-class-label {
@@ -592,7 +593,7 @@
   margin-bottom: 10px;
 }
 * .profile-img {
-  margin: 0px 30px;
+  margin: 0px 0px;
 }
 * .crew-coins {
   display: flex;
@@ -979,7 +980,9 @@
 }
 * #items-to-add input[type=radio]:checked + label,
 * #items-to-add input[type=checkbox]:checked + label {
-  font-weight: bold;
+  font-weight: 800;
+  color: #400000;
+  text-shadow: 1px 1px 3px #ffbbbb;
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
@@ -994,6 +997,11 @@
 }
 * .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+* .tabs .item.active {
+  font-weight: 700;
+  color: #400000;
+  text-shadow: 2px 2px 7px #808080;
 }
 * .blades-die-tooltip .die {
   text-transform: capitalize;
@@ -1188,6 +1196,12 @@
   opacity: 0.9;
   color: red;
 }
+* .window-app .window-content {
+  background: url(../images/background-light.png) repeat;
+  color: #191813;
+  overflow-y: auto;
+  background-size: 300px;
+}
 * .wicked-die {
   width: 32px;
   height: 32px;
@@ -1354,7 +1368,7 @@
   width: 5px;
   border-radius: 24px;
   background-image: none !important;
-  background-color: red !important;
+  background-color: #7a7a7a !important;
   margin-right: 0px;
 }
 #attributes .attributes-container label:hover {
