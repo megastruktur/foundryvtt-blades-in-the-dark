@@ -27,44 +27,19 @@ $hover-brightness: 0.8;
         margin-bottom: 10px;
     }
 
-    body {
-        font-family: Bitter, sans-serif;
-        font-weight: 500;
-        font-size: 14px;
-    }
-
-    button {
-        font-family: Bitter, sans-serif;
-        font-weight: 500;
-    }
-
     ul {
         list-style: none;
-    }
-
-    h1, h2, h3, h4 {
-        font-weight: bold;
     }
 
     form {
         &.actor-sheet {
             padding: 20px;
         }
-
-        .notes, .hint {
-            color: #400000;
-            font-weight: 600;
-        }
-    }
-
-    label {
-        font-weight: 600;
     }
 
     textarea {
         margin-top: 10px;
         margin-bottom: 20px;
-        font-family: Bitter, Lucida Console, monospace;
     }
 
     td {
@@ -99,16 +74,8 @@ $hover-brightness: 0.8;
         }
     }
 
-    select {
-        font-family: Bitter, Lucida Console, monospace;
-    }
-
     nav {
         margin-bottom: 10px;
-    }
-
-    #pause h3 {
-        font-weight: 600;
     }
 
     .editor,
@@ -149,6 +116,19 @@ $hover-brightness: 0.8;
 
     #chat-controls .roll-type-select {
         font-weight: 600;
+        color: #400000;
+    }
+
+    #chat-form textarea {
+        background: url(../images/background-light.png) repeat;
+    }
+
+    .chat-message {
+        padding: 5px;
+        color: #191813;
+        font-size: 14px;
+        background: url(../images/background-light.png) repeat;
+        background-size: 300px;
     }
 
     .chat-message .message-header .message-sender {
@@ -185,6 +165,18 @@ $hover-brightness: 0.8;
         padding: 3px 5px;
         height: 26px !important;
     }
+    .compendium .directory-list .directory-item {
+        padding: 3px 0;
+        line-height: 48px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid #4000005c;
+        box-shadow: none;
+    }
+
+    .dialog .dialog-buttons button.default {
+        background: #68332c;
+        border: 2px groove #c9c7b8;
+    }
 
     .label-stripe {
         text-transform: uppercase;
@@ -220,7 +212,8 @@ $hover-brightness: 0.8;
         display: flex;
         font-weight: normal;
         margin: 0;
-        border-top-left-radius: 5px
+        border-top-left-radius: 5px;
+        text-shadow: 2px 2px 0 #313131;
     }
 
     .label-type {
@@ -233,7 +226,7 @@ $hover-brightness: 0.8;
         font-size: 12px;
         margin: 0;
         margin-left: auto;
-        border-top-left-radius: 5px
+        border-top-left-radius: 5px;
     }
 
     .label-stripe-chat-small {
@@ -251,6 +244,7 @@ $hover-brightness: 0.8;
 
     .description {
         font-style: italic;
+        font-weight: 600;
     }
 
     .rollable-text {
@@ -403,7 +397,11 @@ $hover-brightness: 0.8;
         }
 
         .item-control {
-            flex-grow: 1;
+            /*flex-grow: 1;*/
+        }
+
+        .item-class-label {
+            margin-bottom: 10px;
         }
 
         .item-body,
@@ -423,7 +421,7 @@ $hover-brightness: 0.8;
     }
 
     .profile-img {
-        margin: 0px 30px;
+        margin: 0px 0px;
     }
 
     $coin_size: 15px;
@@ -547,7 +545,7 @@ $hover-brightness: 0.8;
             &:checked {
 
                 & + label {
-                    color: $red;
+                    color: red;
                 }
             }
         }
@@ -635,6 +633,11 @@ $hover-brightness: 0.8;
         }
     }
 
+    .tabs .item.active {
+        font-weight: 700;
+        color: #400000;
+        text-shadow: 2px 2px 7px #808080;
+    }
     .blades-die-tooltip {
 
         .die {
@@ -644,19 +647,19 @@ $hover-brightness: 0.8;
             font-size: xx-large;
 
             &.critical-success {
-                color: #b32813;
+                color: $light_green;
             }
 
             &.success {
-                color: #9f3727;
+                color: $green;
             }
 
             &.partial-success {
-                color: #3d478a;
+                color: $blue;
             }
 
             &.failure {
-                color: #7a7a7a;
+                color: $red;
             }
         }
     }
@@ -690,9 +693,16 @@ $hover-brightness: 0.8;
 
     i {
         &.nullifier {
-            @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
+            @include changeable($transition-period, $hover-brightness, $hover-opacity, red);
         }
     }
+
+        .window-app .window-content {
+            background: url(../images/background-light.png) repeat;
+            color: #191813;
+            overflow-y: auto;
+            background-size: 300px; 
+           }
 
     .wicked-die {
         width: 32px;

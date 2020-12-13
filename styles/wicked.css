@@ -149,66 +149,15 @@
 * header {
   margin-bottom: 10px;
 }
-::-webkit-scrollbar-thumb {
-  outline: none;
-  border-radius: 3px;
-  background: #782e22;
-  border: 1px solid #68332c;
-}
-
-body {
-    font-family: Bitter, sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-}
-a[href] {
-  color: #68332c;
-}
-* button {
-	font-family: Bitter, sans-serif;
-	font-weight: 500;
-	color: #fff8e8;
-    background: #68332c;
-    border-top: 1px outset #d46c1f;
-    border-bottom: 2px outset #d46c1f;
-    border-left: 2px solid darkslategrey;
-    border-right: 2px solid darkslategrey;
-}
-button:hover,
-button:focus {
-  outline: none;
-  box-shadow: 0 0 5px whitesmoke;
-}
-.dialog .dialog-buttons button {
-    background: #68332c;
-}
-* form button {
-    background: #68332c;
-	border-top: 1px outset #d46c1f;
-    border-bottom: 2px outset #d46c1f;
-    border-left: 2px solid darkslategrey;
-    border-right: 2px solid darkslategrey;
-}
 * ul {
   list-style: none;
-}
-* h1, * h2, * h3, * h4 {
-  font-weight: bold;
 }
 * form.actor-sheet {
   padding: 20px;
 }
-* form .notes, * form .hint {
-  color: #400000;
-  font-weight: 600;
-}
-* label {
-  font-weight: 600;
-}
 * textarea {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-family: Bitter, Lucida Console, monospace;
 }
 * td {
   padding: 5px;
@@ -294,30 +243,8 @@ textarea:focus {
   margin-bottom: 0px;
   justify-content: center;
 }
-* select {
-  font-family: Bitter, Lucida Console, monospace;
-  font-weight: 600;
-  font-size: 15px;
-}
-option {
-    font-weight: 600;
-	font-size: 15px;
-	color: #400000;
-}
 * nav {
   margin-bottom: 10px;
-}
-* #pause h3 {
-  font-weight: 600;
-}
-* input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
-    font-weight: 600;
-}
-* input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
-    font-weight: 600;
-}
-* a:hover {
-    text-shadow: 2px 2px 4px #616161;
 }
 * .editor,
 * .editor-content {
@@ -350,19 +277,19 @@ option {
   height: 30px !important;
   text-transform: capitalize;
 }
-#chat-controls .roll-type-select {
-    font-weight: 600;
-	color: #400000;
+* #chat-controls .roll-type-select {
+  font-weight: 600;
+  color: #400000;
 }
-#chat-form textarea {
-    background: url(../images/background-light.png) repeat;
+* #chat-form textarea {
+  background: url(../images/background-light.png) repeat;
 }
 * .chat-message {
-    padding: 5px;
-    color: #191813;
-    font-size: 14px;
-    background: url(../images/background-light.png) repeat;
-    background-size: 300px;
+  padding: 5px;
+  color: #191813;
+  font-size: 14px;
+  background: url(../images/background-light.png) repeat;
+  background-size: 300px;
 }
 * .chat-message .message-header .message-sender {
   font-family: Piedra;
@@ -394,16 +321,16 @@ option {
   padding: 3px 5px;
   height: 26px !important;
 }
-.compendium .directory-list .directory-item {
-    padding: 3px 0;
-    line-height: 48px;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid #4000005c;
-    box-shadow: none;
+* .compendium .directory-list .directory-item {
+  padding: 3px 0;
+  line-height: 48px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #4000005c;
+  box-shadow: none;
 }
-.dialog .dialog-buttons button.default {
-    background: #68332c;
-    border: 2px groove #c9c7b8;
+* .dialog .dialog-buttons button.default {
+  background: #68332c;
+  border: 2px groove #c9c7b8;
 }
 * .label-stripe {
   text-transform: uppercase;
@@ -473,7 +400,7 @@ option {
 }
 * .rollable-text:hover {
   cursor: pointer;
-  color: red;
+  color: #7a7a7a;
 }
 * .big-teeth-section {
   border-top: 3px solid #191813;
@@ -724,10 +651,10 @@ option {
   flex-grow: 2;
 }
 * .item .item-control {
-  /* flex-grow: 1; */
+  /*flex-grow: 1;*/
 }
-* .item-class-label {
-    margin-bottom: 10px;
+* .item .item-class-label {
+  margin-bottom: 10px;
 }
 * .item .item-body,
 * .item .item-class-label {
@@ -1148,9 +1075,9 @@ option {
   visibility: visible;
 }
 * .tabs .item.active {
-    font-weight: 700;
-    color: #400000;
-	text-shadow: 2px 2px 7px #808080;
+  font-weight: 700;
+  color: #400000;
+  text-shadow: 2px 2px 7px #808080;
 }
 * .blades-die-tooltip .die {
   text-transform: capitalize;
@@ -1346,11 +1273,11 @@ option {
   color: red;
 }
 * .window-app .window-content {
-    background: url(../images/background-light.png) repeat;
-    color: #191813;
-    overflow-y: auto;    background-size: 300px;
+  background: url(../images/background-light.png) repeat;
+  color: #191813;
+  overflow-y: auto;
+  background-size: 300px;
 }
-
 * .wicked-die {
   width: 32px;
   height: 32px;
@@ -1517,7 +1444,7 @@ option {
   width: 5px;
   border-radius: 24px;
   background-image: none !important;
-  background-color: red !important;
+  background-color: #7a7a7a !important;
   margin-right: 0px;
 }
 #attributes .attributes-container label:hover {
