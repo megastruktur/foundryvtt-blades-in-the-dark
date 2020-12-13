@@ -349,7 +349,6 @@
 }
 * .label-stripe-chat {
   font-family: Piedra;
-  text-transform: uppercase;
   background-color: #68332c;
   color: #fff;
   margin-bottom: 10px;
@@ -1090,10 +1089,11 @@
 * .blades-die-tooltip .die {
   /* text-transform: capitalize; */
   font-family: Piedra;
+  text-transform: uppercase;
   font-weight: normal;
-  font-size: xx-large;
+  font-size: 24px;
   text-align: center;
-  height: 40px;
+  height: 30px;
   color: white;
   border-bottom: 3px solid;
   border-bottom-right-radius: 5px;

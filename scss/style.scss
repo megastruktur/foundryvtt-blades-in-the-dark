@@ -79,7 +79,9 @@ $hover-brightness: 0.8;
 	h1, h2, h3, h4 {
         font-weight: bold;
     }
-
+	input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="range"] {
+		font-weight:600;
+		}	
     form {
         &.actor-sheet {
             padding: 20px;
@@ -284,7 +286,6 @@ $hover-brightness: 0.8;
 
     .label-stripe-chat {
         font-family: Piedra;
-        text-transform: uppercase;
         background-color: $mud;
         color: #fff;
         margin-bottom: 10px;
@@ -737,10 +738,11 @@ $hover-brightness: 0.8;
         .die {
             /* text-transform: capitalize; */
             font-family: Piedra;
+			text-transform: uppercase;
             font-weight: normal;
-            font-size: xx-large;
+            font-size: 24px;
 			text-align: center;
-			height: 40px;
+			height: 30px;
 			color: white;
 			border-bottom: 3px solid;
 			border-bottom-right-radius: 5px;
@@ -987,7 +989,4 @@ $hover-brightness: 0.8;
             margin-right: 5px;
         }
     }
-	input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
-		font-weight:600;
-		}
 }
