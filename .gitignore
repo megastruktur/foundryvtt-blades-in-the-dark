@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vscode
 /.vs
+/.vscode
 /scss/src
 /scss/*.bat
