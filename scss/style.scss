@@ -14,6 +14,11 @@ $orange: #d46c1f;
 $mud: #68332c;
 $paper: #c9c7b8;
 $bone: #fff8e8;
+$bloodyShadow: #4000004f;
+$crit: #b12c20;
+$success: #862118;
+$mixed: #2c3678;
+$fail: #656666;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -194,6 +199,7 @@ $hover-brightness: 0.8;
         font-size: 14px;
         background: url(../images/background-light.png) repeat;
         background-size: 300px;
+		box-shadow: inset 0 0 9px 1px $bloodyShadow;
     }
 
     .chat-message .message-header .message-sender {
@@ -216,10 +222,10 @@ $hover-brightness: 0.8;
     .chat-label {
         background-color: $almost_black;
         color: $almost_white;
-        font-size: 22px;
+        font-size: 24px;
         text-align: center;
         padding: 0px 5px;
-        height: 30px !important;
+        height: 32px !important;
         text-transform: capitalize;
     }
 
@@ -308,7 +314,7 @@ $hover-brightness: 0.8;
         text-transform: capitalize;
         background-color: #bdb7ab;
         color: $almost_black;
-        margin-bottom: 2px;
+        margin-bottom: 0px;
         position: relative;
         padding-top: 3px;
         display: flex;
@@ -718,7 +724,9 @@ $hover-brightness: 0.8;
             visibility: visible;
         }
     }
-
+	.hidden {
+		display: none;
+	}
     .tabs .item.active {
         font-weight: 700;
         color: #400000;
@@ -727,25 +735,28 @@ $hover-brightness: 0.8;
     .blades-die-tooltip {
 
         .die {
-            text-transform: capitalize;
-            font-family: Blood Crow;
+            /* text-transform: capitalize; */
+            font-family: Piedra;
             font-weight: normal;
             font-size: xx-large;
+			text-align: center;
+			color: white;
+			border-bottom-right-radius: 10px;
 
             &.critical-success {
-                color: $light_green;
+                color: $crit;
             }
 
             &.success {
-                color: $green;
+                background-color: $success;
             }
 
             &.partial-success {
-                color: $blue;
+                background-color: $mixed;
             }
 
             &.failure {
-                color: $red;
+                background-color: $fail;
             }
         }
     }
