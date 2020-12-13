@@ -132,11 +132,57 @@
 * header {
   margin-bottom: 10px;
 }
+* body {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+* button {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  color: #fff8e8;
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+  transition-duration: 0.2s;
+}
+* button:hover,
+* button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d46c1f;
+  background: #d46c1f;
+}
+* .dialog .dialog-buttons button {
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
+* * form button {
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
 * ul {
   list-style: none;
 }
+* h1, * h2, * h3, * h4 {
+  font-weight: bold;
+}
 * form.actor-sheet {
   padding: 20px;
+}
+* form .notes, * form .hint {
+  color: #400000;
+  font-weight: 600;
+}
+* label {
+  font-weight: 600;
 }
 * textarea {
   margin-top: 10px;
@@ -167,8 +213,19 @@
   margin-bottom: 0px;
   justify-content: center;
 }
+* select {
+  font-family: Bitter, Lucida Console, monospace;
+  font-weight: 600;
+  font-size: 15px;
+}
+* option {
+  font-weight: 600;
+}
 * nav {
   margin-bottom: 10px;
+}
+* #pause h3 {
+  font-weight: 600;
 }
 * .editor,
 * .editor-content {
@@ -184,7 +241,7 @@
   flex-direction: column;
 }
 * .black-label {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   font-size: 21px;
   text-align: center;
@@ -194,7 +251,7 @@
 }
 * .gray-label {
   background-color: #999;
-  color: #191813;
+  color: #191919;
   font-size: 21px;
   text-align: center;
   padding: 0px 5px;
@@ -202,11 +259,13 @@
   text-transform: capitalize;
 }
 * #chat-controls .roll-type-select {
-  font-weight: 600;
   color: #400000;
+  font-size: 14px;
+  font-weight: 700;
 }
 * #chat-form textarea {
   background: url(../images/background-light.png) repeat;
+  background-size: 300px;
 }
 * .chat-message {
   padding: 5px;
@@ -218,18 +277,19 @@
 * .chat-message .message-header .message-sender {
   font-family: Piedra;
   font-weight: normal;
+  font-size: 15px;
 }
 * .chat-message .message-content {
   font-family: Bitter;
   font-size: inherit;
-  font-weight: 500;
+  font-weight: 600;
 }
 * .chat-message .message-header .message-metadata {
   text-align: right;
   font-weight: 700;
 }
 * .chat-label {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   font-size: 22px;
   text-align: center;
@@ -239,7 +299,7 @@
 }
 * .chat-label-small {
   background-color: #999;
-  color: #191813;
+  color: #191919;
   font-size: small;
   text-align: center;
   padding: 3px 5px;
@@ -254,11 +314,20 @@
 }
 * .dialog .dialog-buttons button.default {
   background: #68332c;
-  border: 2px groove #c9c7b8;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
+* .dialog .dialog-buttons button.default:hover,
+* .dialog .dialog-buttons button.default:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d46c1f;
+  background: #d46c1f;
 }
 * .label-stripe {
   text-transform: uppercase;
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   margin-bottom: 10px;
   position: relative;
@@ -284,7 +353,7 @@
   color: #fff;
   margin-bottom: 10px;
   position: relative;
-  padding-top: 3px;
+  padding-top: 2px;
   display: flex;
   font-weight: normal;
   margin: 0;
@@ -306,7 +375,7 @@
 * .label-stripe-chat-small {
   text-transform: capitalize;
   background-color: #bdb7ab;
-  color: #191813;
+  color: #191919;
   margin-bottom: 2px;
   position: relative;
   padding-top: 3px;
@@ -324,10 +393,10 @@
 }
 * .rollable-text:hover {
   cursor: pointer;
-  color: #7a7a7a;
+  color: red;
 }
 * .big-teeth-section {
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
@@ -490,7 +559,7 @@
   width: 100%;
 }
 * #defenses-stress #character-defenses table th {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
 }
 * #defenses-stress #character-defenses table input[type=text] {
@@ -606,7 +675,7 @@
   width: 15px;
   background-color: #DAA520;
   vertical-align: middle;
-  border: 1px solid #191813;
+  border: 1px solid #191919;
   transition: filter 0.1s;
   cursor: pointer;
 }
@@ -631,7 +700,7 @@
   margin-bottom: 3px;
 }
 * #crew-reputation {
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -831,7 +900,7 @@
   left: -7px;
 }
 * #crew-hold {
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   /* Hide the browser's default checkbox */
   width: 221px;
@@ -867,7 +936,7 @@
   width: 145px;
   display: flex;
   align-items: center;
-  border-top: 3px solid #191813;
+  border-top: 3px solid #191919;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -882,9 +951,9 @@
 * #crew-tier label:not([for$="-0"]) {
   height: 18px;
   width: 18px;
-  background-color: #191813;
+  background-color: #191919;
   vertical-align: middle;
-  border: 2px solid #191813;
+  border: 2px solid #191919;
   border-radius: 9px;
 }
 * #crew-tier input {
@@ -895,8 +964,8 @@
   background-color: #EEEFFF;
 }
 * #crew-tier input:checked + label:not([for$="-0"]) {
-  background-color: #191813;
-  border-color: #191813;
+  background-color: #191919;
+  border-color: #191919;
 }
 * #crew-tier > * {
   margin-right: 5px;
@@ -922,14 +991,14 @@
   justify-content: space-around;
   font-size: 48px;
   text-transform: uppercase;
-  border: 3px solid #191813;
+  border: 3px solid #191919;
 }
 * .class-name .big-name {
   font-weight: bold;
 }
 * .class-name .big-description {
   font-size: 20px;
-  color: #191813;
+  color: #191919;
 }
 * .edgeflaw input {
   display: none;
@@ -961,14 +1030,15 @@
 * .cohorts .cohort-block-harm input[type=radio]:checked + label {
   color: #EEEFFF;
   font-weight: bold;
-  background-color: #191813;
+  background-color: #191919;
 }
 * .cohorts .cohort-block-harm label {
-  border: 2px solid #191813;
+  border: 2px solid #191919;
   border-top: none;
   padding: 5px;
 }
 * #items-to-add {
+  font-size: medium;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -982,16 +1052,26 @@
 * #items-to-add input[type=checkbox]:checked + label {
   font-weight: 800;
   color: #400000;
-  text-shadow: 1px 1px 3px #ffbbbb;
+}
+* #items-to-add > flex-horizontal {
+  padding: 3px;
+  border-bottom: 1px solid #4000005c;
+}
+* #items-to-add:nth-child(2) {
+  background: #4000005c;
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
-  width: 200px;
-  background-color: #191813;
-  color: #EEEFFF;
-  text-align: center;
-  padding: 5px;
-  border-radius: 6px;
+  width: 300px;
+  font-weight: 600;
+  font-family: Bitter;
+  background: url(../images/background-light.png) repeat;
+  color: #400000;
+  font-size: 16px;
+  text-align: justify;
+  border: 2px solid #400000;
+  padding: 10px;
+  border-radius: 10px;
   position: absolute;
   z-index: 9999;
 }
@@ -1010,19 +1090,19 @@
   font-size: xx-large;
 }
 * .blades-die-tooltip .die.critical-success {
-  color: #b32813;
+  color: #008000;
 }
 * .blades-die-tooltip .die.success {
-  color: #9f3727;
+  color: #435e3d;
 }
 * .blades-die-tooltip .die.partial-success {
-  color: #3d478a;
+  color: #04578f;
 }
 * .blades-die-tooltip .die.failure {
-  color: #7a7a7a;
+  color: red;
 }
 * .clock-zero-label {
-  color: #191813;
+  color: #191919;
 }
 * .clock-block .clocks.clocks-4 {
   position: relative;
@@ -1259,7 +1339,7 @@
   margin-bottom: 5px;
 }
 #attributes .stripe {
-  background-color: #191813;
+  background-color: #191919;
   color: #EEEFFF;
   font-size: 17px;
   padding-left: 5px;
@@ -1368,7 +1448,7 @@
   width: 5px;
   border-radius: 24px;
   background-image: none !important;
-  background-color: #7a7a7a !important;
+  background-color: red !important;
   margin-right: 0px;
 }
 #attributes .attributes-container label:hover {
@@ -1398,6 +1478,9 @@
 }
 #attributes .attributes-container * {
   margin-right: 5px;
+}
+#attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=wicked.css.map */
