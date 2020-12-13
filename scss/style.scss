@@ -10,11 +10,11 @@ $green: #435e3d;
 $blue: #04578f;
 $bloody: #400000;
 $bloody5c: #4000005c;
+$bloodyShadow: #4000004f;
 $orange: #d46c1f;
 $mud: #68332c;
 $paper: #c9c7b8;
 $bone: #fff8e8;
-$bloodyShadow: #4000004f;
 $crit: #b12c20;
 $success: #862118;
 $mixed: #2c3678;
@@ -86,7 +86,7 @@ $hover-brightness: 0.8;
         }
     
     .notes, .hint {
-            color: #400000;
+            color: $bloody;
             font-weight: 600;
         }
     }
@@ -183,7 +183,7 @@ $hover-brightness: 0.8;
     }
 
     #chat-controls .roll-type-select {
-        color: #400000;
+        color: $bloody;
 		font-size: 14px;
 		font-weight: 700;
 	}
@@ -285,7 +285,7 @@ $hover-brightness: 0.8;
     .label-stripe-chat {
         font-family: Piedra;
         text-transform: uppercase;
-        background-color: #68332c;
+        background-color: $mud;
         color: #fff;
         margin-bottom: 10px;
         position: relative;
@@ -317,7 +317,7 @@ $hover-brightness: 0.8;
         margin-bottom: 0px;
         position: relative;
         padding-top: 3px;
-        display: flex;
+        /* display: flex; */
         font-weight: normal;
         font-family: Piedra;
         font-size: 16px;
@@ -710,10 +710,10 @@ $hover-brightness: 0.8;
 			font-weight: 600;
 			font-family: Bitter;
 			background: url(../images/background-light.png) repeat;
-			color: #400000;
+			color: $bloody;
 			font-size: 16px;
 			text-align: justify;
-			border: 2px solid #400000;
+			border: 2px solid $bloody;
 			padding: 10px;
 			border-radius: 10px;
 			position: absolute;
@@ -729,7 +729,7 @@ $hover-brightness: 0.8;
 	}
     .tabs .item.active {
         font-weight: 700;
-        color: #400000;
+        color: $bloody;
         text-shadow: 2px 2px 7px #808080;
     }
     .blades-die-tooltip {
@@ -740,23 +740,26 @@ $hover-brightness: 0.8;
             font-weight: normal;
             font-size: xx-large;
 			text-align: center;
+			height: 40px;
 			color: white;
-			border-bottom-right-radius: 10px;
+			border-bottom: 3px solid;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
 
             &.critical-success {
                 color: $crit;
             }
 
             &.success {
-                background-color: $success;
+                color: $success;
             }
 
             &.partial-success {
-                background-color: $mixed;
+                color: $mixed;
             }
 
             &.failure {
-                background-color: $fail;
+                color: $fail;
             }
         }
     }

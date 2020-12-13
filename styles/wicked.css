@@ -380,7 +380,7 @@
   margin-bottom: 0px;
   position: relative;
   padding-top: 3px;
-  display: flex;
+  /* display: flex; */
   font-weight: normal;
   font-family: Piedra;
   font-size: 16px;
@@ -1093,20 +1093,23 @@
   font-weight: normal;
   font-size: xx-large;
   text-align: center;
+  height: 40px;
   color: white;
-  border-bottom-right-radius: 10px;
+  border-bottom: 3px solid;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 * .blades-die-tooltip .die.critical-success {
   color: #b12c20;
 }
 * .blades-die-tooltip .die.success {
-  background-color: #862118;
+  color: #862118;
 }
 * .blades-die-tooltip .die.partial-success {
-  background-color: #2c3678;
+  color: #2c3678;
 }
 * .blades-die-tooltip .die.failure {
-  background-color: #656666;
+  color: #656666;
 }
 * .clock-zero-label {
   color: #191919;
