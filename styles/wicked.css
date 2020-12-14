@@ -188,8 +188,12 @@
   font-weight: 600;
 }
 * textarea {
+  color: #400000;
   margin-top: 10px;
   margin-bottom: 20px;
+  font-family: Bitter;
+  font-weight: 600;
+  min-height: 80px;
 }
 * td {
   padding: 5px;
