@@ -97,8 +97,12 @@ $hover-brightness: 0.8;
         font-weight: 600;
     }
     textarea {
+		color: $bloody;
         margin-top: 10px;
         margin-bottom: 20px;
+		font-family: Bitter;
+		font-weight: 600;
+		min-height: 80px;
     }
 
     td {
