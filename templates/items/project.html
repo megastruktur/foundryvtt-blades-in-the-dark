@@ -7,12 +7,20 @@
   </header>
 
   {{!-- Sheet Body --}}
-  <section class="sheet-body flex-vertical">
-    <label class="label-stripe">{{localize "FITD.ClockSize"}}</label>
-    <input id="item-class" type="text" name="data.clock_size" value="{{data.clock_size}}">
-    <label class="label-stripe">{{localize "FITD.ClockProgress"}}</label>
-    <input id="item-class" type="text" name="data.clock_progress" value="{{data.clock_progress}}">
-    <label class="label-stripe">{{localize "FITD.Description"}}</label>
-    <textarea name="data.description">{{data.description}}</textarea>
-  </section>
+<section class="sheet-body flex-vertical">
+  <label class="label-stripe">{{localize "FITD.ClockSize"}}</label>
+  <div>
+    <input type="radio" id="{{item._id}}-project-size-4" name="data.clock_size" value="4" checked>
+    <label for="{{item._id}}-project-size-4">4</label>
+    <input type="radio" id="{{item._id}}-project-size-6" name="data.clock_size" value="6">
+    <label for="{{item._id}}-project-size-6">6</label>
+    <input type="radio" id="{{item._id}}-project-size-8" name="data.clock_size" value="8">
+    <label for="{{item._id}}-project-size-8">8</label>
+  </div>
+
+  <label class="label-stripe">{{localize "FITD.ClockProgress"}}</label>
+  <input id="item-class" type="text" name="data.clock_progress" value="{{data.clock_progress}}">
+  <label class="label-stripe">{{localize "FITD.Description"}}</label>
+  <textarea name="data.description">{{data.description}}</textarea>
+</section>
 </form>

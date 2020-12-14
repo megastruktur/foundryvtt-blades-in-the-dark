@@ -1236,6 +1236,9 @@
 * .dice-tooltip .dice-rolls .roll.d6 {
   font-family: Signika;
 }
+* .flex-evenly {
+  justify-content: space-evenly;
+}
 
 /* Extension for Custom Labels */
 #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
@@ -1260,6 +1263,9 @@
   display: flex;
   flex-direction: column;
   width: 200px;
+}
+#attributes.minion {
+  width: 150px;
 }
 #attributes .attribute {
   margin-bottom: 5px;
@@ -1402,6 +1408,15 @@
   font-weight: 600;
 }
 
+div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0.5;
+}
+div.item i.fa-trash, tr.item i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
 #base-info table {
   width: 100%;
   height: 230px;
@@ -1511,6 +1526,98 @@
 }
 #character-stress-clock .blades-clock {
   top: -10px;
+}
+
+#loadout .supply {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#loadout .supply label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-white-crossed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#loadout .supply label:last-of-type {
+  margin-right: 0px;
+}
+#loadout .supply label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+#loadout .supply label[for$="-0"] i {
+  margin-top: 4px;
+}
+#loadout .supply label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#loadout .supply input {
+  display: none;
+}
+#loadout .supply input:checked ~ label {
+  background-image: url("assets/boxes/box-white-filled.png");
+}
+#loadout .supply input:checked + label {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+
+#duties .item-body {
+  width: auto;
+}
+#duties .project-clock {
+  height: 80px;
+  position: relative;
+}
+#duties .project-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#duties .project-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#duties .project-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#duties .project-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#duties .project-clock .blades-clock input[value="0"] {
+  display: none;
+}
+#duties .project-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+#duties .project-clock .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+#duties .project-clock .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+#duties .project-clock .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
 }
 
 #attributes-darkhearts {
