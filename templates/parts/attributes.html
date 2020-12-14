@@ -11,7 +11,7 @@
     <div class="main">
       <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
         <div class="stripe">
-          <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}">{{localize attribute_name}}</a>
+          <label class="attribute-label">{{localize attribute_name}}</label>
         </div>
       </div>
 
@@ -49,7 +49,7 @@
     </div>
     <div class="main">
       <div class="stripe">
-        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
+        <label class="attribute-label">{{localize "FITD.Bloodied"}}</label>
       </div>
     </div>
   </div>
@@ -61,7 +61,7 @@
     </div>
     <div class="main">
       <div class="stripe">
-        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Morale">{{localize "FITD.Morale"}}</a>
+        <label class="attribute-label">{{localize "FITD.Morale"}}</label>
       </div>
     </div>
   </div>
@@ -70,33 +70,31 @@
     <div class="bloodied">
       <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
              value="{{data.bloodied}}" {{checked data.bloodied}}>
-      {{debug}}
       <label for="{{actor._id}}-bloodied"></label>
     </div>
     <div class="main">
       <div class="stripe">
-        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="Bloodied">{{localize "FITD.Bloodied"}}</a>
+        <label class="attribute-label">{{localize "FITD.Bloodied"}}</label>
       </div>
     </div>
   </div>
 
-  <div id="attributes-darkhearts" class="flex-horizontal heart-container">
-    <div class="attributes-container dark-hearts">
-      {{debug}}
+  <div id="attributes-darkhearts">
+    <div class="flex-horizontal heart-container">
       {{#multiboxes data.dark_hearts}}
 
       {{#times_from_0 2}}
       <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}"
-             name="data.dark_hearts" value="{{this}}">
-      <label for="{{../actor._id}}-dark-hearts-{{this}}"></label>
+              name="data.dark_hearts" value="{{this}}">
+      <label class="dark-heart" for="{{../actor._id}}-dark-hearts-{{this}}"></label>
       {{/times_from_0}}
       {{/multiboxes}}
     </div>
-  </div>
-  <div class="attribute flex-horizontal heart-container">
-    <div class="main">
-      <div class="stripe">
-        <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="DarkHearts">{{localize "FITD.DarkHearts"}}</a>
+    <div class="attribute flex-horizontal">
+      <div class="main">
+        <div class="stripe">
+          <label class="attribute-label">{{localize "FITD.DarkHearts"}}</label>
+        </div>
       </div>
     </div>
   </div>

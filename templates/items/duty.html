@@ -1,0 +1,18 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
+        </div>
+    </header>
+    
+    {{!-- Sheet Body --}}
+<section class="sheet-body flex-vertical">
+  <label class="label-stripe">{{localize "FITD.Tier"}}</label>
+  <input id="item-class" type="text" name="data.tier" value="{{data.tier}}">
+  <label class="label-stripe">{{localize "FITD.Type"}}</label>
+  <input id="item-class" type="text" name="data.type" value="{{data.type}}">
+  <label class="label-stripe">{{localize "FITD.Description"}}</label>
+  <textarea name="data.description">{{data.description}}</textarea>
+</section>
+</form>

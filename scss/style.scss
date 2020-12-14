@@ -31,47 +31,53 @@ $hover-brightness: 0.8;
     header {
         margin-bottom: 10px;
     }
+
     body {
         font-family: Bitter, sans-serif;
         font-weight: 500;
         font-size: 14px;
     }
 
-	 button {
-		font-family: Bitter, sans-serif;
-		font-weight: 500;
-		color: $bone;
-		background: $mud;
-		border-top: 1px outset $orange;
-		border-bottom: 2px outset $orange;
-		border-left: 2px solid darkslategrey;
-		border-right: 2px solid darkslategrey;
-		transition-duration: $transition-period;
-	}
-	button:hover,
-	button:focus {
-	  outline: none;
-	  box-shadow: 0 0 5px $orange;
-	  background: $orange;
-	}
-	.dialog .dialog-buttons button {
-		background: $mud;
-		border-top: 1px outset $orange;
-		border-bottom: 2px outset $orange;
-		border-left: 2px solid darkslategrey;
-		border-right: 2px solid darkslategrey;
-	}
-	* form button {
-		background: $mud;
-		border-top: 1px outset $orange;
-		border-bottom: 2px outset $orange;
-		border-left: 2px solid darkslategrey;
-		border-right: 2px solid darkslategrey;
-	}
+    button {
+        font-family: Bitter, sans-serif;
+        font-weight: 500;
+        color: $bone;
+        background: $mud;
+        border-top: 1px outset $orange;
+        border-bottom: 2px outset $orange;
+        border-left: 2px solid darkslategrey;
+        border-right: 2px solid darkslategrey;
+        transition-duration: $transition-period;
+    }
+
+    button:hover,
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 5px $orange;
+        background: $orange;
+    }
+
+    .dialog .dialog-buttons button {
+        background: $mud;
+        border-top: 1px outset $orange;
+        border-bottom: 2px outset $orange;
+        border-left: 2px solid darkslategrey;
+        border-right: 2px solid darkslategrey;
+    }
+
+    * form button {
+        background: $mud;
+        border-top: 1px outset $orange;
+        border-bottom: 2px outset $orange;
+        border-left: 2px solid darkslategrey;
+        border-right: 2px solid darkslategrey;
+    }
+
     ul {
         list-style: none;
     }
-	h1, h2, h3, h4 {
+
+    h1, h2, h3, h4 {
         font-weight: bold;
     }
 
@@ -79,8 +85,8 @@ $hover-brightness: 0.8;
         &.actor-sheet {
             padding: 20px;
         }
-    
-    .notes, .hint {
+
+        .notes, .hint {
             color: #400000;
             font-weight: 600;
         }
@@ -89,6 +95,7 @@ $hover-brightness: 0.8;
     label {
         font-weight: 600;
     }
+
     textarea {
         margin-top: 10px;
         margin-bottom: 20px;
@@ -119,20 +126,18 @@ $hover-brightness: 0.8;
         .grow-two {
             flex-grow: 2;
         }
-
-        &.experience {
-            margin-bottom: 0px;
-            justify-content: center;
-        }
     }
+
     select {
         font-family: Bitter, Lucida Console, monospace;
-		font-weight:600;
-		font-size:15px;
+        font-weight: 600;
+        font-size: 15px;
     }
-	option {
-		font-weight:600;
-	}
+
+    option {
+        font-weight: 600;
+    }
+
     nav {
         margin-bottom: 10px;
     }
@@ -179,13 +184,13 @@ $hover-brightness: 0.8;
 
     #chat-controls .roll-type-select {
         color: #400000;
-		font-size: 14px;
-		font-weight: 700;
-	}
+        font-size: 14px;
+        font-weight: 700;
+    }
 
     #chat-form textarea {
         background: url(../images/background-light.png) repeat;
-		background-size: 300px;
+        background-size: 300px;
     }
 
     .chat-message {
@@ -199,7 +204,7 @@ $hover-brightness: 0.8;
     .chat-message .message-header .message-sender {
         font-family: Piedra;
         font-weight: normal;
-		font-size: 15px;
+        font-size: 15px;
     }
 
     .chat-message .message-content {
@@ -231,6 +236,7 @@ $hover-brightness: 0.8;
         padding: 3px 5px;
         height: 26px !important;
     }
+
     .compendium .directory-list .directory-item {
         padding: 3px 0;
         line-height: 48px;
@@ -240,18 +246,19 @@ $hover-brightness: 0.8;
     }
 
     .dialog .dialog-buttons button.default {
-		background: $mud;
-		border-top: 1px outset $orange;
-		border-bottom: 2px outset $orange;
-		border-left: 2px solid darkslategrey;
-		border-right: 2px solid darkslategrey;
+        background: $mud;
+        border-top: 1px outset $orange;
+        border-bottom: 2px outset $orange;
+        border-left: 2px solid darkslategrey;
+        border-right: 2px solid darkslategrey;
     }
-	.dialog .dialog-buttons button.default:hover,
-	.dialog .dialog-buttons button.default:focus {
-	  outline: none;
-	  box-shadow: 0 0 5px $orange;
-	  background: $orange;
-	}
+
+    .dialog .dialog-buttons button.default:hover,
+    .dialog .dialog-buttons button.default:focus {
+        outline: none;
+        box-shadow: 0 0 5px $orange;
+        background: $orange;
+    }
 
     .label-stripe {
         text-transform: uppercase;
@@ -411,45 +418,9 @@ $hover-brightness: 0.8;
         right: 10px;
     }
 
-    #defenses-stress {
-        display: flex;
-        // Harm
-        #character-defenses {
-            width: 100%;
-
-            table {
-                width: 100%;
-
-                th {
-                    background-color: $almost_black;
-                    color: $almost_white;
-                }
-
-                input[type="text"] {
-                    width: 100%;
-                }
-            }
-        }
-        // Clock
-        #character-stress-clock {
-            margin: 0 auto;
-            @include clock(6, 88);
-        }
-
-        #character-armor-uses {
-
-            div {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-    }
-
     #wo-nav-container nav a {
         flex: none;
     }
-
     // ITEM
     .item {
         justify-content: space-between;
@@ -486,17 +457,7 @@ $hover-brightness: 0.8;
     }
 
     .item-class-label {
-        margin-bottom: 10px;
-    }
-
-    #name,
-    #lair,
-    #look {
-        margin-bottom: 10px;
-    }
-
-    .profile-img {
-        margin: 0px 0px;
+        margin-bottom: 2px;
     }
 
     $coin_size: 15px;
@@ -672,7 +633,7 @@ $hover-brightness: 0.8;
     }
     // Add Items modal styling.
     #items-to-add {
-		font-size: medium;
+        font-size: medium;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -683,36 +644,38 @@ $hover-brightness: 0.8;
             display: none;
 
             &:checked + label {
-                    font-weight: 800;
-					color: $bloody;
+                font-weight: 800;
+                color: $bloody;
             }
         }
     }
-	#items-to-add > flex-horizontal{
-		padding: 3px;
-		border-bottom: 1px solid $bloody5c;	
-	}
-	#items-to-add:nth-child(2) {
-		background: $bloody5c;
-	}
+
+    #items-to-add > flex-horizontal {
+        padding: 3px;
+        border-bottom: 1px solid $bloody5c;
+    }
+
+    #items-to-add:nth-child(2) {
+        background: $bloody5c;
+    }
     // Tooltip.
     .tooltip {
 
         .tooltiptext {
-			visibility: hidden;
-			width: 300px;
-			font-weight: 600;
-			font-family: Bitter;
-			background: url(../images/background-light.png) repeat;
-			color: #400000;
-			font-size: 16px;
-			text-align: justify;
-			border: 2px solid #400000;
-			padding: 10px;
-			border-radius: 10px;
-			position: absolute;
-			z-index: 9999;
-		}
+            visibility: hidden;
+            width: 300px;
+            font-weight: 600;
+            font-family: Bitter;
+            background: url(../images/background-light.png) repeat;
+            color: #400000;
+            font-size: 16px;
+            text-align: justify;
+            border: 2px solid #400000;
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            z-index: 9999;
+        }
 
         &:hover .tooltiptext {
             visibility: visible;
@@ -724,6 +687,7 @@ $hover-brightness: 0.8;
         color: #400000;
         text-shadow: 2px 2px 7px #808080;
     }
+
     .blades-die-tooltip {
 
         .die {
@@ -783,12 +747,12 @@ $hover-brightness: 0.8;
         }
     }
 
-        .window-app .window-content {
-            background: url(../images/background-light.png) repeat;
-            color: #191813;
-            overflow-y: auto;
-            background-size: 300px; 
-           }
+    .window-app .window-content {
+        background: url(../images/background-light.png) repeat;
+        color: #191813;
+        overflow-y: auto;
+        background-size: 300px;
+    }
 
     .wicked-die {
         width: 32px;
@@ -862,6 +826,7 @@ $hover-brightness: 0.8;
         input {
             display: none;
         }
+
         label {
             @extend %custom-label;
             height: 32px;
@@ -870,6 +835,7 @@ $hover-brightness: 0.8;
             margin-right: 1px;
             top: -6px;
         }
+
         input:checked + label {
             background-image: url("assets/boxes/shock-filled.png");
         }
@@ -879,6 +845,7 @@ $hover-brightness: 0.8;
         input {
             display: none;
         }
+
         label {
             @extend %custom-label;
             height: 36px;
@@ -887,6 +854,7 @@ $hover-brightness: 0.8;
             margin-right: 1px;
             top: -13px;
         }
+
         input:checked + label {
             background-image: url("assets/boxes/bloodied-filled.png");
         }
@@ -896,6 +864,7 @@ $hover-brightness: 0.8;
         input {
             display: none;
         }
+
         label {
             @extend %custom-label;
             background-image: url("assets/boxes/bloodied-minion-empty.png");
@@ -903,6 +872,7 @@ $hover-brightness: 0.8;
             margin-right: 2px;
             top: -2px;
         }
+
         input:checked + label {
             background-image: url("assets/boxes/bloodied-minion-filled.png");
         }
@@ -912,37 +882,17 @@ $hover-brightness: 0.8;
         input {
             display: none;
         }
+
         label {
             @extend %custom-label;
             margin-left: 1px;
             margin-right: 2px;
             top: -1px;
         }
+
         input:checked + label {
             background-image: url("assets/boxes/box-filled.png");
         }
-    }
-
-    #attributes-darkhearts {
-        margin-top: -12px;
-    }
-
-    .heart-container {
-        margin-left: 34px;
-        justify-content: flex-start;
-    }
-
-    .dark-heart {
-        height: 32px;
-        width: 32px;
-        background-image: url("assets/boxes/heart-emtpy.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin-right: 4px;
-        transition: filter 0.1s;
-        cursor: pointer;
-        position: relative;
-        top: -6px;
     }
 
     .main {
@@ -973,7 +923,95 @@ $hover-brightness: 0.8;
             margin-right: 5px;
         }
     }
-	input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
-		font-weight:600;
-		}
+
+    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+        font-weight: 600;
+    }
+}
+
+#base-info table {
+    width: 100%;
+    height: 230px;
+
+    tr {
+        background-color: initial;
+
+        td {
+            // width: 50%;
+            &:nth-of-type(3) {
+                width: 180px;
+            }
+        }
+    }
+}
+
+.profile-img.profile-big {
+    margin: 0px 0px;
+    height: 175px;
+    width: 175px;
+}
+
+#defenses-stress {
+    display: flex;
+}
+
+#character-defenses {
+    width: 100%;
+
+    table {
+        width: 100%;
+
+        th {
+            background-color: $almost_black;
+            color: $almost_white;
+        }
+
+        input[type="text"] {
+            width: 100%;
+        }
+
+        tr td:nth-of-type(1) .item-checkmark {
+            flex-grow: unset;
+            margin-right: 5px;
+        }
+
+        tr td:nth-of-type(2) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+#character-armor-uses {
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+// Clock
+#character-stress-clock {
+    // margin: 0 auto;
+    width: 60px;
+    @include clock(6, 60);
+
+    .clock-zero-label {
+        position: relative;
+        left: -10px;
+    }
+
+    .blades-clock{
+        top: -10px;
+    }
+}
+
+#attributes-darkhearts {
+    margin-top: -12px;
+    margin-left: 34px;
+
+    .heart-container {
+        justify-content: flex-start;
+        @include custom_radio(32px, 32px);
+    }
 }

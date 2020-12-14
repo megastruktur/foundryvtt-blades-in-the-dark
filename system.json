@@ -67,6 +67,13 @@
       "entity": "Item"
     },
     {
+      "name": "defense",
+      "label": "Defenses",
+      "system": "wicked-ones",
+      "path": "./packs/defenses.db",
+      "entity": "Item"
+    },
+    {
       "name": "minionimpulse",
       "label": "Minion Impulses",
       "system": "wicked-ones",
@@ -78,6 +85,34 @@
       "label": "Items",
       "system": "wicked-ones",
       "path": "./packs/items.db",
+      "entity": "Item"
+    },
+    {
+      "name": "gear",
+      "label": "Gear",
+      "system": "wicked-ones",
+      "path": "./packs/gear.db",
+      "entity": "Item"
+    },
+    {
+      "name": "supply",
+      "label": "Supplies",
+      "system": "wicked-ones",
+      "path": "./packs/supplies.db",
+      "entity": "Item"
+    },
+    {
+      "name": "duty",
+      "label": "Duties",
+      "system": "wicked-ones",
+      "path": "./packs/duties.db",
+      "entity": "Item"
+    },
+    {
+      "name": "project",
+      "label": "Projects",
+      "system": "wicked-ones",
+      "path": "./packs/projects.db",
       "entity": "Item"
     },
     {
