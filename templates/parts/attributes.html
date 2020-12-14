@@ -1,4 +1,4 @@
-<div id="attributes">
+<div id="attributes" {{#if (eq @root.actor.type "minion_pack")}}class="minion"{{/if}}>
   {{#each data.attributes as |attribute attribute_name|}}
   <div id="attributes-{{attribute_name}}" class="attribute flex-horizontal">
     {{#if (ne @root.actor.type "minion_pack")}}

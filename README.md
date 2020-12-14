@@ -1,58 +1,46 @@
-# FoundryVTT Blades in the Dark character and crew sheets
+# FoundryVTT Wicked Ones character and dungeon sheets
 
-If you like my work - send thanks to astromortis@gmail.com  :3
+For questions or reporting bugs contact on Discord: `Spearhead#4288` or `LorduFreeman#8747`
 
-Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
+Based on the Blades in the Dark sheets by `megastruktur`.
 
 ## Usage
-`"Item" - all classes, crew types, upgrades, items, abilities, upgrades, etc.`
+The module contains three "actor" types for Wicked Ones, Minion Packs and Dungeons with their own sheets
 
-- To reset reputation, exp, etc counters just click on the label name.
-- Health clock can be reset by clicking on "Healing" table header.
-- To add items you can click a corresponding link or drag items from compendium/game to the sheet.
-- All "class/crew" specific items are prefixed with first letters
+Most parts of the sheets can be filled in by selecting and customizing "items". Those consist of:
+Callings, Defenses, Downtime Projects, Dungeon Rooms and Themes, Gear, Supply, Impulses, Monster Races, Revelries and more
 
-- I don't want the "class/crew items" to be prepopulated, so the character sheet contains less "compendium" info.
-- To see the description of Class, Vice, FITD., etc you can just click added item and see all the info in the popup.
-- When adding a new item you can hower a "question-circle" icon to see the item's description.
-- To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet.
+- To reset XP, Gold and other counters just click on the label name
+- The stress clock can be reset by clicking on "Stress" table header
+- To add items you can click a corresponding link or drag items from the associated compendium to the sheet
+- All "calling/theme" specific items are prefixed with first significant letters
+- To see the description of a Calling, Dark Impulse, Ability, etc you can just click on the added item and see all the info in the popup
+- When adding a new item you can hover a "question-mark" icon to see the item's description
+- To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet
+- You can also change any information on items dragged to the sheet for customization
 
-Classes:
-- (C)  Cutter
-- (G)  Ghost
-- (H)  Hound
-- (Hu) Hull
-- (Le) Leech
-- (Lu) Lurk
-- (Sl) Slide
-- (Sp) Spider
-- (V)  Vampire
-- (W)  Whisper
+## Callings:
+- B)  Brute
+- Co) Conniver
+- Cr) Crafter
+- H)  Hunter
+- M)  Marauder
+- Sd) Shadow
+- Sm) Shaman
+- W)  Warlock
+- Sp) Zealot
 
-Crew Types:
-- (A)  Assassins
-- (B)  Bravos
-- (C)  Cult
-- (H)  Hawkers
-- (Sh) Shadows
-- (Sm) Smugglers
+## Dungeon Themes:
+- E) Enclave
+- F) Forge
+- H) Hideout
+- S) Stronghold
+- T) Temple
 
-## Screenshots
-
-### Character Sheet, Crew Sheet and Class
-![alt screen][screenshot_all]
-
-### Compendium
-![alt screen][screenshot_compendium]
-
-### Rolls
-![alt screen][screenshot_roll_1]
-![alt screen][screenshot_roll_2]
 
 ## Clocks
-Clocks are now here!
-- To add clock go to Actors tab and create a new Actor of type "🕛 clock".
-- To share it to other players just drag it to a scene.
+- To add clock go to Actors tab and create a new actor of type "🕛 Clock"
+- To share it to other players just drag it to a scene
 
 ## Logic field
 
@@ -69,18 +57,13 @@ Logic field is a json with params which allows to implement some logic when the 
 - `attribute_change` - changes the "attribute" to value and when removed - uses the "attribute_default" to restore
 
 ## To be done in the nearest future
-- Friends/rivals section
-- Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)
+- 
+- 
 
 ## Troubleshooting
-- If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.
+- If you can't find the drag-n-dropped item, refer to the "All" tab on each sheet
 
 ## Credits
-- This work is based on Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
-- Some assets were taken from here (thank you  timdenee and joesinghaus): https://github.com/joesinghaus/Blades-in-the-Dark
+- This work is based on Wicked Ones by Ben Nielson (found at http://b-design.io/)
+- Wicked Ones is in turn basd on Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 
-
-[screenshot_all]: ./images/screenshot_all.png "screenshot_all"
-[screenshot_compendium]: ./images/screenshot_compendium.png "screenshot_compendium"
-[screenshot_roll_1]: ./images/screenshot_roll_1.png "screenshot_roll_1"
-[screenshot_roll_2]: ./images/screenshot_roll_2.png "screenshot_roll_2"
