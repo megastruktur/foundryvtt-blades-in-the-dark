@@ -106,8 +106,12 @@ $hover-brightness: 0.8;
     }
 
     textarea {
+		color: $bloody;
         margin-top: 10px;
         margin-bottom: 20px;
+		font-family: Bitter;
+		font-weight: 600;
+		min-height: 80px;
     }
 
     td {
@@ -172,11 +176,11 @@ $hover-brightness: 0.8;
     }
 
     .black-label {
-        background-color: $almost_black;
+        background-color: $mud;
         color: $almost_white;
         font-size: 21px;
         text-align: center;
-        padding: 0px 5px;
+        padding: 2px 5px;
         height: 30px !important;
         text-transform: capitalize;
     }
@@ -272,7 +276,7 @@ $hover-brightness: 0.8;
 
     .label-stripe {
         text-transform: uppercase;
-        background-color: $almost_black;
+        background-color: $mud;
         color: $almost_white;
         margin-bottom: 10px;
         position: relative;
@@ -348,7 +352,7 @@ $hover-brightness: 0.8;
     }
     // Wicked and Reckless XP
     .big-teeth-section {
-        border-top: 3px solid $almost_black;
+        /* border-top: 3px solid $almost_black; */
         display: flex;
         flex-direction: row;
         margin-bottom: 0px;
@@ -859,7 +863,7 @@ $hover-brightness: 0.8;
     }
 
     .stripe {
-        background-color: $almost_black;
+        background-color: $mud;
         color: $almost_white;
         font-size: 17px;
         padding-left: 5px;
@@ -944,12 +948,14 @@ $hover-brightness: 0.8;
 
     .attribute-label,
     .attribute-skill-label {
-        font-weight: bold;
+        font-weight: 800;
+		font-size: 18px;
         text-transform: uppercase;
+		background-color: $mud;
     }
 
     .attribute-skill-label {
-        letter-spacing: 1px;
+		background-color: unset;
     }
 
     .attributes-exp {
@@ -960,11 +966,15 @@ $hover-brightness: 0.8;
     .attributes-container {
         display: flex;
         margin: 3px 0px;
+		background-color: unset;
         @include custom_radio(15px, 15px);
 
         * {
             margin-right: 5px;
         }
+		label {
+			margin-top:2px;
+		}
     }
 
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
@@ -1019,7 +1029,7 @@ div.item, tr.item {
         width: 100%;
 
         th {
-            background-color: $almost_black;
+            background-color: $mud;
             color: $almost_white;
         }
 
