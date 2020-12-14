@@ -192,4 +192,36 @@ export class BladesHelpers {
 
   /* -------------------------------------------- */
 
+
+/**
+ * Sorts Special Abilities by Calling and then Core and then Alphabet
+ */
+
+  // sort by name
+  static specialAbilitySort(a, b) {
+    if (a.data.calling < b.data.calling) {
+      return -1;
+    }
+    if (a.data.calling > b.data.calling) {
+      return 1;
+    }
+
+    if (a.data.core && !b.data.core) {
+      return -1;
+    }
+    if (!a.data.core && b.data.core) {
+      return 1;
+    }
+
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  }
+
 }
