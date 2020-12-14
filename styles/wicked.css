@@ -174,6 +174,9 @@
 * h1, * h2, * h3, * h4 {
   font-weight: bold;
 }
+* input[type=text], * input[type=number], * input[type=password], * input[type=date], * input[type=time], * input[type=range] {
+  font-weight: 600;
+}
 * form.actor-sheet {
   padding: 20px;
 }
@@ -269,6 +272,7 @@
   font-size: 14px;
   background: url(../images/background-light.png) repeat;
   background-size: 300px;
+  box-shadow: inset 0 0 9px 1px #4000004f;
 }
 * .chat-message .message-header .message-sender {
   font-family: Piedra;
@@ -287,10 +291,10 @@
 * .chat-label {
   background-color: #191919;
   color: #EEEFFF;
-  font-size: 22px;
+  font-size: 24px;
   text-align: center;
   padding: 0px 5px;
-  height: 30px !important;
+  height: 32px !important;
   text-transform: capitalize;
 }
 * .chat-label-small {
@@ -344,7 +348,6 @@
 }
 * .label-stripe-chat {
   font-family: Piedra;
-  text-transform: uppercase;
   background-color: #68332c;
   color: #fff;
   margin-bottom: 10px;
@@ -372,10 +375,10 @@
   text-transform: capitalize;
   background-color: #bdb7ab;
   color: #191919;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
   position: relative;
   padding-top: 3px;
-  display: flex;
+  /* display: flex; */
   font-weight: normal;
   font-family: Piedra;
   font-size: 16px;
@@ -991,28 +994,38 @@
 * .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+* .hidden {
+  display: none;
+}
 * .tabs .item.active {
   font-weight: 700;
   color: #400000;
   text-shadow: 2px 2px 7px #808080;
 }
 * .blades-die-tooltip .die {
-  text-transform: capitalize;
-  font-family: Blood Crow;
+  /* text-transform: capitalize; */
+  font-family: Piedra;
+  text-transform: uppercase;
   font-weight: normal;
-  font-size: xx-large;
+  font-size: 24px;
+  text-align: center;
+  height: 30px;
+  color: white;
+  border-bottom: 3px solid;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 * .blades-die-tooltip .die.critical-success {
-  color: #008000;
+  color: #b12c20;
 }
 * .blades-die-tooltip .die.success {
-  color: #435e3d;
+  color: #862118;
 }
 * .blades-die-tooltip .die.partial-success {
-  color: #04578f;
+  color: #2c3678;
 }
 * .blades-die-tooltip .die.failure {
-  color: red;
+  color: #656666;
 }
 * .clock-zero-label {
   color: #191919;

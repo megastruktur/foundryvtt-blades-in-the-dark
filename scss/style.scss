@@ -10,10 +10,15 @@ $green: #435e3d;
 $blue: #04578f;
 $bloody: #400000;
 $bloody5c: #4000005c;
+$bloodyShadow: #4000004f;
 $orange: #d46c1f;
 $mud: #68332c;
 $paper: #c9c7b8;
 $bone: #fff8e8;
+$crit: #b12c20;
+$success: #862118;
+$mixed: #2c3678;
+$fail: #656666;
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -80,14 +85,16 @@ $hover-brightness: 0.8;
     h1, h2, h3, h4 {
         font-weight: bold;
     }
-
+	input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="range"] {
+		font-weight:600;
+	}	
     form {
         &.actor-sheet {
             padding: 20px;
         }
-
-        .notes, .hint {
-            color: #400000;
+    
+    .notes, .hint {
+            color: $bloody;
             font-weight: 600;
         }
     }
@@ -183,10 +190,10 @@ $hover-brightness: 0.8;
     }
 
     #chat-controls .roll-type-select {
-        color: #400000;
-        font-size: 14px;
-        font-weight: 700;
-    }
+        color: $bloody;
+		font-size: 14px;
+		font-weight: 700;
+	}
 
     #chat-form textarea {
         background: url(../images/background-light.png) repeat;
@@ -199,6 +206,7 @@ $hover-brightness: 0.8;
         font-size: 14px;
         background: url(../images/background-light.png) repeat;
         background-size: 300px;
+		box-shadow: inset 0 0 9px 1px $bloodyShadow;
     }
 
     .chat-message .message-header .message-sender {
@@ -221,10 +229,10 @@ $hover-brightness: 0.8;
     .chat-label {
         background-color: $almost_black;
         color: $almost_white;
-        font-size: 22px;
+        font-size: 24px;
         text-align: center;
         padding: 0px 5px;
-        height: 30px !important;
+        height: 32px !important;
         text-transform: capitalize;
     }
 
@@ -285,8 +293,7 @@ $hover-brightness: 0.8;
 
     .label-stripe-chat {
         font-family: Piedra;
-        text-transform: uppercase;
-        background-color: #68332c;
+        background-color: $mud;
         color: #fff;
         margin-bottom: 10px;
         position: relative;
@@ -315,10 +322,10 @@ $hover-brightness: 0.8;
         text-transform: capitalize;
         background-color: #bdb7ab;
         color: $almost_black;
-        margin-bottom: 2px;
+        margin-bottom: 0px;
         position: relative;
         padding-top: 3px;
-        display: flex;
+        /* display: flex; */
         font-weight: normal;
         font-family: Piedra;
         font-size: 16px;
@@ -662,54 +669,63 @@ $hover-brightness: 0.8;
     .tooltip {
 
         .tooltiptext {
-            visibility: hidden;
-            width: 300px;
-            font-weight: 600;
-            font-family: Bitter;
-            background: url(../images/background-light.png) repeat;
-            color: #400000;
-            font-size: 16px;
-            text-align: justify;
-            border: 2px solid #400000;
-            padding: 10px;
-            border-radius: 10px;
-            position: absolute;
-            z-index: 9999;
-        }
+			visibility: hidden;
+			width: 300px;
+			font-weight: 600;
+			font-family: Bitter;
+			background: url(../images/background-light.png) repeat;
+			color: $bloody;
+			font-size: 16px;
+			text-align: justify;
+			border: 2px solid $bloody;
+			padding: 10px;
+			border-radius: 10px;
+			position: absolute;
+			z-index: 9999;
+		}
 
         &:hover .tooltiptext {
             visibility: visible;
         }
     }
-
+	.hidden {
+		display: none;
+	}
     .tabs .item.active {
         font-weight: 700;
-        color: #400000;
+        color: $bloody;
         text-shadow: 2px 2px 7px #808080;
     }
 
     .blades-die-tooltip {
 
         .die {
-            text-transform: capitalize;
-            font-family: Blood Crow;
+            /* text-transform: capitalize; */
+            font-family: Piedra;
+			text-transform: uppercase;
             font-weight: normal;
-            font-size: xx-large;
+            font-size: 24px;
+			text-align: center;
+			height: 30px;
+			color: white;
+			border-bottom: 3px solid;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
 
             &.critical-success {
-                color: $light_green;
+                color: $crit;
             }
 
             &.success {
-                color: $green;
+                color: $success;
             }
 
             &.partial-success {
-                color: $blue;
+                color: $mixed;
             }
 
             &.failure {
-                color: $red;
+                color: $fail;
             }
         }
     }
