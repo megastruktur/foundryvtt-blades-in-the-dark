@@ -212,10 +212,6 @@
 * section .grow-two {
   flex-grow: 2;
 }
-* section.experience {
-  margin-bottom: 0px;
-  justify-content: center;
-}
 * select {
   font-family: Bitter, Lucida Console, monospace;
   font-weight: 600;
@@ -552,81 +548,6 @@
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* #defenses-stress {
-  display: flex;
-}
-* #defenses-stress #character-defenses {
-  width: 100%;
-}
-* #defenses-stress #character-defenses table {
-  width: 100%;
-}
-* #defenses-stress #character-defenses table th {
-  background-color: #191919;
-  color: #EEEFFF;
-}
-* #defenses-stress #character-defenses table input[type=text] {
-  width: 100%;
-}
-* #defenses-stress #character-stress-clock {
-  margin: 0 auto;
-  position: relative;
-}
-* #defenses-stress #character-stress-clock .blades-clock {
-  position: relative;
-  padding: 0;
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  list-style: none;
-  overflow: hidden;
-  background-size: cover;
-}
-* #defenses-stress #character-stress-clock .blades-clock label {
-  overflow: hidden;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: 0% 100%;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* #defenses-stress #character-stress-clock .blades-clock label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #defenses-stress #character-stress-clock .blades-clock input {
-  position: absolute;
-  display: none;
-}
-* #defenses-stress #character-stress-clock .blades-clock input[value="0"] {
-  display: none;
-}
-* #defenses-stress #character-stress-clock .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(150deg);
-}
-* #defenses-stress #character-stress-clock .blades-clock *:nth-child(5) {
-  transform: rotate(60deg) skewY(150deg);
-}
-* #defenses-stress #character-stress-clock .blades-clock *:nth-child(7) {
-  transform: rotate(120deg) skewY(150deg);
-}
-* #defenses-stress #character-stress-clock .blades-clock *:nth-child(9) {
-  transform: rotate(180deg) skewY(150deg);
-}
-* #defenses-stress #character-stress-clock .blades-clock *:nth-child(11) {
-  transform: rotate(240deg) skewY(150deg);
-}
-* #defenses-stress #character-stress-clock .blades-clock *:nth-child(13) {
-  transform: rotate(300deg) skewY(150deg);
-}
-* #defenses-stress #character-armor-uses div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 * #wo-nav-container nav a {
   flex: none;
 }
@@ -657,15 +578,7 @@
   width: 100px;
 }
 * .item-class-label {
-  margin-bottom: 10px;
-}
-* #name,
-* #lair,
-* #look {
-  margin-bottom: 10px;
-}
-* .profile-img {
-  margin: 0px 0px;
+  margin-bottom: 2px;
 }
 * .crew-coins {
   display: flex;
@@ -1406,25 +1319,6 @@
 #attributes .morale-minion input:checked + label {
   background-image: url("assets/boxes/box-filled.png");
 }
-#attributes #attributes-darkhearts {
-  margin-top: -12px;
-}
-#attributes .heart-container {
-  margin-left: 34px;
-  justify-content: flex-start;
-}
-#attributes .dark-heart {
-  height: 32px;
-  width: 32px;
-  background-image: url("assets/boxes/heart-emtpy.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 4px;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  top: -6px;
-}
 #attributes .main {
   flex-grow: 1;
 }
@@ -1456,6 +1350,12 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
+#attributes .attributes-container label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 4px;
+  position: relative;
+  top: -4px;
+}
 #attributes .attributes-container label[for$="-0"] {
   height: 5px;
   width: 5px;
@@ -1474,6 +1374,9 @@
 #attributes .attributes-container input:checked ~ label {
   background-image: url("assets/boxes/box-empty.png");
 }
+#attributes .attributes-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
 #attributes .attributes-container input:checked + label {
   transition: filter 0.1s;
   cursor: pointer;
@@ -1483,6 +1386,9 @@
   filter: brightness(0.7);
   opacity: 0.7;
 }
+#attributes .attributes-container input:checked + label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+}
 #attributes .attributes-container input:checked + label.practice-one {
   background-image: url("assets/boxes/box-slashed.png");
 }
@@ -1491,6 +1397,185 @@
 }
 #attributes .attributes-container * {
   margin-right: 5px;
+}
+#attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
+  font-weight: 600;
+}
+
+#base-info table {
+  width: 100%;
+  height: 230px;
+}
+#base-info table tr {
+  background-color: initial;
+}
+#base-info table tr td:nth-of-type(3) {
+  width: 180px;
+}
+
+.profile-img.profile-big {
+  margin: 0px 0px;
+  height: 175px;
+  width: 175px;
+}
+
+#defenses-stress {
+  display: flex;
+}
+
+#character-defenses {
+  width: 100%;
+}
+#character-defenses table {
+  width: 100%;
+}
+#character-defenses table th {
+  background-color: #191919;
+  color: #EEEFFF;
+}
+#character-defenses table input[type=text] {
+  width: 100%;
+}
+#character-defenses table tr td:nth-of-type(1) .item-checkmark {
+  flex-grow: unset;
+  margin-right: 5px;
+}
+#character-defenses table tr td:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+
+#character-armor-uses div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#character-stress-clock {
+  width: 60px;
+  position: relative;
+}
+#character-stress-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#character-stress-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#character-stress-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#character-stress-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#character-stress-clock .blades-clock input[value="0"] {
+  display: none;
+}
+#character-stress-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+#character-stress-clock .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+#character-stress-clock .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+#character-stress-clock .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+#character-stress-clock .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+#character-stress-clock .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+#character-stress-clock .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+#character-stress-clock .blades-clock {
+  top: -10px;
+}
+
+#attributes-darkhearts {
+  margin-top: -12px;
+  margin-left: 34px;
+}
+#attributes-darkhearts .heart-container {
+  justify-content: flex-start;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes-darkhearts .heart-container label {
+  height: 32px;
+  width: 32px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes-darkhearts .heart-container label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 4px;
+  position: relative;
+  top: -4px;
+}
+#attributes-darkhearts .heart-container label[for$="-0"] {
+  height: 5px;
+  width: 5px;
+  border-radius: 24px;
+  background-image: none !important;
+  background-color: red !important;
+  margin-right: 0px;
+}
+#attributes-darkhearts .heart-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes-darkhearts .heart-container input {
+  display: none;
+}
+#attributes-darkhearts .heart-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes-darkhearts .heart-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+}
+#attributes-darkhearts .heart-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes-darkhearts .heart-container input:checked + label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+}
+#attributes-darkhearts .heart-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes-darkhearts .heart-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
 }
 
 /*# sourceMappingURL=wicked.css.map */

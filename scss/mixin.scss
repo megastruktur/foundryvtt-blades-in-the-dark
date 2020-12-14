@@ -90,6 +90,13 @@
             background-size: contain;
             vertical-align: middle;
 
+            &.dark-heart {
+                background-image: url("assets/boxes/heart-filled.png");
+                margin-right: 4px;
+                position: relative;
+                top: -4px;
+            }
+
             &[for$="-0"] {
                 height: 5px;
                 width: 5px;
@@ -110,12 +117,21 @@
 
             & ~ label {
                 background-image: url("assets/boxes/box-empty.png");
+
+                &.dark-heart {
+                    background-image: url("assets/boxes/heart-empty.png");
+                }
             }
+
 
             & + label {
                 // Less opacity here cos otherwise it's barely visible on the dark
                 @include changeable(0.1s, 0.7, 0.7);
                 background-image: url("assets/boxes/box-filled.png");
+
+                &.dark-heart {
+                    background-image: url("assets/boxes/heart-filled.png");
+                }
 
                 &.practice-one {
                     background-image: url("assets/boxes/box-slashed.png");

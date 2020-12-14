@@ -12,6 +12,7 @@ export class BladesSheet extends ActorSheet {
     super.activateListeners(html);
     html.find(".item-add-popup").click(this._onItemAddClick.bind(this));
     html.find(".skill-practice-xp").click(this._onSkillSetPracticeXP.bind(this));
+    html.find('.item-checkmark input').click(ev => ev.target.select()).change(this._onCheckmarkChange.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
     if (this.options.submitOnChange) {
@@ -108,8 +109,6 @@ export class BladesSheet extends ActorSheet {
 
   async _onSkillSetPracticeXP(event) {
     event.preventDefault();
-    //const pressed_button = $(event.currentTarget).prev();
-    // const skill_name = $(event.currentTarget).siblings().last().data("rollAttribute");
     let pressed_button = event.currentTarget.control;
     const attribute_name = pressed_button.name.split(".")[2];
     const skill_name = pressed_button.name.split(".")[4];
@@ -137,34 +136,30 @@ export class BladesSheet extends ActorSheet {
     }
 
     // Update Data
-    const data = { _id: this.actor.data._id, data: { attributes: {} } };
-    data.data.attributes[attribute_name] = { skills: {} };
-    data.data.attributes[attribute_name].skills[skill_name] = { practice: skill.practice };
-    const updated = await this.entity.update(data);
 
-    // skill_name: { practice: skill_clicked.practice }
+    //  this.actor.data.data.attributes.brains.skills.trick.practice
+    this.actor.update({ ['data.attributes.' + attribute_name + '.skills.' + skill_name + '.practice']: skill.practice });
 
-
-    
+    //const data = { _id: this.actor.data._id, data: { attributes: {} } };
+    //data.data.attributes[attribute_name] = { skills: {} };
+    //data.data.attributes[attribute_name].skills[skill_name] = { practice: skill.practice };
+    //const updated = await this.entity.update(data);
 
     // Submit click
     pressed_button.click();
-
-    // Set Classes
-    //if (skill_clicked.practice == 1) {
-    //  event.currentTarget.classList.add('practice-one');
-    //  event.currentTarget.classList.remove('practice-two');
-    //}
-    //else if (skill_clicked.practice == 2) {
-    //  event.currentTarget.classList.remove('practice-one');
-    //  event.currentTarget.classList.add('practice-two');
-    //}
-    //else {
-    //  event.currentTarget.classList.remove('practice-one');
-    //  event.currentTarget.classList.remove('practice-two');
-    //}
   }
 
   /* -------------------------------------------- */
 
+  /**
+   * Change the uses amount of an Owned Item within the Actor
+   */
+  async _onCheckmarkChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.getOwnedItem(itemId);
+    return item.update({ 'data.checked': event.target.checked });
+  }
+
+/* -------------------------------------------- */
 }

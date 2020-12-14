@@ -3,6 +3,8 @@
     "types": [ "character", "minion_pack", "dungeon", "clock" ],
     "character": {
       "look": "",
+      "vilefriend": "",
+      "minionpack": "",
       "wickedxp": {
         "value": 0,
         "max": 9,
@@ -21,20 +23,8 @@
       "bloodied": false,
       "dark_hearts": 0,
       "gold": 0,
-      "defenses": {
-        "1": {
-          "checked": false,
-          "value": ""
-        },
-        "2": {
-          "checked": false,
-          "value": ""
-        },
-        "3": {
-          "checked": false,
-          "value": ""
-        }
-      },
+      "supply": 0,
+      "max_supply": 2,
       "attribute_max_value": 3,
       "attributes": {
         "brains": {
@@ -190,7 +180,7 @@
     }
   },
   "Item": {
-    "types": [ "cohort", "calling", "dungeon_ability", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "ability", "wickedimpulse" ],
+    "types": [ "cohort", "calling", "defense", "project", "dungeon_ability", "duty", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "gear", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "ability", "supply", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -214,6 +204,26 @@
       "templates": [ "default", "logic" ],
       "class": "",
       "load": 0
+    },
+    "gear": {
+      "templates": [ "default" ]
+    },
+    "supply": {
+      "templates": [ "default" ]
+    },
+    "duty": {
+      "templates": [ "default" ],
+      "tier": 0,
+      "type": ""
+    },
+    "project": {
+      "templates": [ "default" ],
+      "clock_size": 4,
+      "clock_progress": 0
+    },
+    "defense": {
+      "description": "",
+      "checked": false
     },
     "calling": {
       "templates": [ "default", "logic" ],

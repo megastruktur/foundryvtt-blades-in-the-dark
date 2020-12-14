@@ -1,0 +1,18 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body flex-vertical">
+    <label class="label-stripe">{{localize "FITD.ClockSize"}}</label>
+    <input id="item-class" type="text" name="data.clock_size" value="{{data.clock_size}}">
+    <label class="label-stripe">{{localize "FITD.ClockProgress"}}</label>
+    <input id="item-class" type="text" name="data.clock_progress" value="{{data.clock_progress}}">
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description">{{data.description}}</textarea>
+  </section>
+</form>

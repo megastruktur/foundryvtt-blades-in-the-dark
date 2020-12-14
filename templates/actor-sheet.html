@@ -1,158 +1,195 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <section id="name-look" class="flex-horizontal">
 
-    <div class="grow-two">
-      <div id="name">
-        <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label>
-        <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
-      </div>
-
-      <div id="character-traits" class="flex-column">
-
-        <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}</a></div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "monsterrace")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <div class="item-name">{{item.name}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+  {{!-- Base Character Information --}}
+  <section id="base-info" class="section big-teeth-section">
+    <table>
+      <tr>
+        <td>
+          <div id="name">
+            <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label>
+            <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>
-          {{/if}}
-          {{/each}}
-        </div>
-
-        <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="wickedimpulse">{{localize "FITD.Impulse"}}</a></div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "wickedimpulse")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <div class="item-name">{{item.name}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </td>
+        <td>
+          <div id="minionpack">
+            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
+            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
           </div>
-          {{/if}}
-          {{/each}}
-        </div>
-
-        <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}</a></div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "revelry")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <div class="item-name">{{item.name}}</div>
+        </td>
+        <td rowspan="4">
+          <img class="profile-img profile-big" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="look">
+            <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
+            <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
             </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </td>
+        <td>
+          <div id="vilefriend">
+            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
+            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
           </div>
-          {{/if}}
-          {{/each}}
-        </div>
-
-        <div class="item-block flex-horizontal">
-          <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}</a></div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "calling")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-              <div class="item-name">{{item.name}}</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="item-block flex-vertical">
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}</a></div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "monsterrace")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                <div class="item-name">{{item.name}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            {{/if}}
+            {{/each}}
           </div>
-          {{/if}}
-          {{/each}}
-        </div>
+        </td>
+        <td>
+          <div id="character-{{actor._id}}-gold" class="big-teeth">
+            {{#multiboxes data.gold}}
+            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
 
-      </div>
-    </div>
+            {{#times_from_1 3}}
+            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
+            {{/times_from_1}}
 
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+            {{/multiboxes}}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="item-block flex-vertical">
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}</a></div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "calling")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                <div class="item-name">{{item.name}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </td>
+        <td>
+          <div id="character-{{actor._id}}-recklessxp" class="big-teeth">
+            {{#multiboxes data.recklessxp.value}}
+            <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
 
-    <div class="grow-two">
-      <div id="look">
-        <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
-        <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
-      </div>
+            {{#times_from_1 data.recklessxp.max}}
+            <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
+            {{/times_from_1}}
 
-    </div>
+            {{/multiboxes}}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="item-block flex-vertical">
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}</a></div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "revelry")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                <div class="item-name">{{item.name}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </td>
+        <td colspan="2">
+          <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
+            {{#multiboxes data.wickedxp.value}}
+            <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
 
+            {{#times_from_1 data.wickedxp.max}}
+              <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
+              <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
+            {{/times_from_1}}
+
+            {{/multiboxes}}
+          </div>
+        </td>
+      </tr>
+    </table>
   </section>
 
-  {{!-- Experience --}}
-  <section class="experience">
-  </section>
-  {{!-- Wicked and Reckless XP --}}
-<div id="wicked-reckless-xp" class="section big-teeth-section">
-  <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
-    {{#multiboxes data.wickedxp.value}}
 
-    <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
-    <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
-
-    {{#times_from_1 data.wickedxp.max}}
-    <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}"
-           dtype="Radio">
-    <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
-    {{/times_from_1}}
-
-    {{/multiboxes}}
-
-  </div>
-  <div id="character-{{actor._id}}-recklessxp" class="big-teeth">
-    {{#multiboxes data.recklessxp.value}}
-
-    <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
-    <label class="black-label" for="character-{{actor._id}}-reckless-0">{{localize data.recklessxp.name}}</label>
-
-    {{#times_from_1 data.recklessxp.max}}
-    <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}"
-           dtype="Radio">
-    <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
-    {{/times_from_1}}
-
-    {{/multiboxes}}
-
-  </div>
-</div>
-
-  {{!-- Defenses & Stress Clock --}}
+  {{!-- Defenses, Stress Clock & Impulses --}}
   <section id="defenses-stress">
     <div id="character-defenses">
       <table>
         <thead>
           <tr>
-            <th class="black-white" colspan="2">{{localize "FITD.Defenses"}}</th>
+            <th class="black-white">
+              {{localize "FITD.Defenses"}} <a class="item-add-popup" data-distinct="false" data-item-type="defense"><i class="fas fa-plus-square"></i></a>
+            </th>
             <th class="black-white">{{localize "FITD.Stress"}}</th>
-            <th class="black-white">{{localize "FITD.Impulse"}}</th>
+            <th class="black-white">
+              {{localize "FITD.Impulse"}} <a class="item-add-popup" data-distinct="false" data-item-type="wickedimpulse"><i class="fas fa-plus-square"></i></a>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><input type="checkbox" name="data.defenses.1.checked" value="{{data.defenses.1.checked}}" {{checked data.defenses.1.checked}}></td>
-            <td><input type="text" id="character-{{actor._id}}-defense-1" name="data.defenses.1.value" value="{{data.defenses.1.value}}"></td>
-            <td rowspan="3">
+            <td>
+              <div class="item-block flex-vertical">
+                {{#each actor.items as |item id|}}
+                {{#if (eq item.type "defense")}}
+                <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                  <div class="item-checkmark">
+                    <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}}>
+                    <label for="item-{{item._id}}-checked"></label>
+                  </div>
+                  <div class="item-body flex-horizontal">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                    <div class="item-name">{{item.name}}</div>
+                  </div>
+                  <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                </div>
+                {{/if}}
+                {{/each}}
+              </div>
+            </td>
+            <td>
               <div id="character-stress-clock">
                 {{{blades-clock "data.stress_clock" 6 data.stress_clock actor._id}}}
               </div>
             </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="data.defenses.2.checked" value="{{data.defenses.2.checked}}" {{checked data.defenses.2.checked}}></td>
             <td>
-              <input type="text" id="character-{{actor._id}}-defense-2" name="data.defenses.2.value" value="{{data.defenses.2.value}}">
-            </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="data.defenses.3.checked" value="{{data.defenses.3.checked}}" {{checked data.defenses.3.checked}}></td>
-            <td>
-              <input type="text" id="character-{{actor._id}}-defense-3" name="data.defenses.3.value" value="{{data.defenses.3.value}}">
+              <div class="item-block flex-vertical">
+                {{#each actor.items as |item id|}}
+                  {{#if (eq item.type "wickedimpulse")}}
+                  <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                    <div class="item-body flex-horizontal">
+                      <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                      <div class="item-name">{{item.name}}</div>
+                    </div>
+                    <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                  </div>
+                  {{/if}}
+                {{/each}}
+              </div>
             </td>
           </tr>
         </tbody>
@@ -161,7 +198,7 @@
   </section>
 
 
-  {{!-- Attributes --}}
+  {{!-- Navigation, Tabs & Attributes --}}
   <section class="flex-horizontal">
 
     <div id="wo-nav-container" class="tab-content flex-vertical grow-two">
@@ -170,11 +207,12 @@
       <nav class="tabs flex-horizontal">
         <a class="item" data-tab="abilities">{{localize "FITD.Abilities"}}</a>
         <a class="item" data-tab="loadout">{{localize "FITD.Loadout"}}</a>
-        <a class="item" data-tab="duties">{{localize "FITD.DutiesClocks"}}</a>
+        <a class="item" data-tab="duties">{{localize "FITD.DutiesProjects"}}</a>
         <a class="item" data-tab="character-notes">{{localize "FITD.Notes"}}</a>
         <a class="item" data-tab="all-character-items">{{localize "FITD.AllItems"}}</a>
       </nav>
 
+      {{!-- Special Abilities Tab --}}
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe">
           <p><label for="character-{{actor._id}}-experience-0">{{localize "FITD.Abilities"}}</label></p>
@@ -197,18 +235,18 @@
         </div>
       </div>
 
-      {{!-- Owned Items Tab --}}
+      {{!-- Gear & Supply Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         <div class="label-stripe flex-horizontal">
-          <p>{{localize "FITD.Loadout"}}: {{data.loadout}}/{{data.load_level}} </p>
-          <p><a class="item-add-popup" data-item-type="item"><i class="fas fa-plus-square"></i></a></p>
+          <p>{{localize "FITD.Gear"}}</p>
+          <p><a class="item-add-popup" data-item-type="gear"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <div>
           {{#each actor.items as |item id|}}
-          {{#if (eq item.type "item")}}
+          {{#if (eq item.type "gear")}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body flex-horizontal">
-              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
               <div class="item-name">{{item.name}}</div>
               <div class="item-description">{{item.data.description}}</div>
             </div>
@@ -216,10 +254,72 @@
           </div>
           {{/if}}
           {{/each}}
-          <div class="item-class-label"><a class="item-add-popup" data-item-type="item">{{localize "FITD.AddItem"}}</a></div>
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="gear">{{localize "FITD.AddItem"}}</a></div>
+        </div>
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.Supply"}}</p>
+          <p><a class="item-add-popup" data-item-type="supply"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <div>
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "supply")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+              <div class="item-name">{{item.name}}</div>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="supply">{{localize "FITD.AddItem"}}</a></div>
         </div>
       </div>
 
+      {{!-- Duties & Projects Tab --}}
+      <div id="duties" class="tab flex-vertical" data-tab="duties">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.Duties"}}</p>
+          <p><a class="item-add-popup" data-item-type="duty"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <div>
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "duty")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+              <div class="item-name">{{item.name}}</div>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="duty">{{localize "FITD.AddItem"}}</a></div>
+        </div>
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.Projects"}}</p>
+          <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <div>
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "project")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+              <div class="item-name">{{item.name}}</div>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="project">{{localize "FITD.AddItem"}}</a></div>
+        </div>
+      </div>
+
+      {{!-- Notes Tab --}}
       <div class="tab flex-vertical" data-tab="character-notes">
         <div class="label-stripe">
           <p>{{localize "FITD.Notes"}}</p>
