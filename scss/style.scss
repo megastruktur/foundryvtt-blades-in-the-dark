@@ -815,6 +815,21 @@ $hover-brightness: 0.8;
     }
 }
 
+#wo-nav-container .all-items-list {
+
+    &:nth-of-type(2n+1) {
+        background: rgba(0, 0, 0, 0.15);
+    }
+
+    div.item-body {
+        margin: 5px 10px;
+    }
+
+    a.item-delete{
+        margin-right: 10px;
+        align-self: center;
+    }
+}
 
 /* Extension for Custom Labels */
 %custom-label {

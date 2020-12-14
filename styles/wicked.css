@@ -1240,6 +1240,17 @@
   justify-content: space-evenly;
 }
 
+#wo-nav-container .all-items-list:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.15);
+}
+#wo-nav-container .all-items-list div.item-body {
+  margin: 5px 10px;
+}
+#wo-nav-container .all-items-list a.item-delete {
+  margin-right: 10px;
+  align-self: center;
+}
+
 /* Extension for Custom Labels */
 #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
   height: 24px;
