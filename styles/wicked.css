@@ -188,8 +188,12 @@
   font-weight: 600;
 }
 * textarea {
+  color: #400000;
   margin-top: 10px;
   margin-bottom: 20px;
+  font-family: Bitter;
+  font-weight: 600;
+  min-height: 80px;
 }
 * td {
   padding: 5px;
@@ -240,11 +244,11 @@
   flex-direction: column;
 }
 * .black-label {
-  background-color: #191919;
+  background-color: #68332c;
   color: #EEEFFF;
   font-size: 21px;
   text-align: center;
-  padding: 0px 5px;
+  padding: 2px 5px;
   height: 30px !important;
   text-transform: capitalize;
 }
@@ -327,7 +331,7 @@
 }
 * .label-stripe {
   text-transform: uppercase;
-  background-color: #191919;
+  background-color: #68332c;
   color: #EEEFFF;
   margin-bottom: 10px;
   position: relative;
@@ -395,7 +399,7 @@
   color: red;
 }
 * .big-teeth-section {
-  border-top: 3px solid #191919;
+  /* border-top: 3px solid $almost_black; */
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
@@ -1282,7 +1286,7 @@
   margin-bottom: 5px;
 }
 #attributes .stripe {
-  background-color: #191919;
+  background-color: #68332c;
   color: #EEEFFF;
   font-size: 17px;
   padding-left: 5px;
@@ -1341,11 +1345,13 @@
 }
 #attributes .attribute-label,
 #attributes .attribute-skill-label {
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 18px;
   text-transform: uppercase;
+  background-color: #68332c;
 }
 #attributes .attribute-skill-label {
-  letter-spacing: 1px;
+  background-color: unset;
 }
 #attributes .attributes-exp {
   position: relative;
@@ -1354,6 +1360,7 @@
 #attributes .attributes-container {
   display: flex;
   margin: 3px 0px;
+  background-color: unset;
   display: flex;
   /* Hide the browser's default checkbox */
 }
@@ -1415,6 +1422,9 @@
 #attributes .attributes-container * {
   margin-right: 5px;
 }
+#attributes .attributes-container label {
+  margin-top: 2px;
+}
 #attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
   font-weight: 600;
 }
@@ -1456,7 +1466,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   width: 100%;
 }
 #character-defenses table th {
-  background-color: #191919;
+  background-color: #68332c;
   color: #EEEFFF;
 }
 #character-defenses table input[type=text] {
