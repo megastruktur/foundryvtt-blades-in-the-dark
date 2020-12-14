@@ -180,15 +180,15 @@
     }
   },
   "Item": {
-    "types": [ "cohort", "calling", "defense", "project", "dungeon_ability", "duty", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "gear", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "ability", "supply", "wickedimpulse" ],
+    "types": [ "cohort", "calling", "defense", "project", "dungeon_ability", "duty", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "gear", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
       },
       "ability": {
         "description": "",
-        "class": "",
-        "price": 1
+        "calling": "",
+        "core":  false
       },
       "logic": {
         "logic": ""
@@ -240,7 +240,7 @@
         "threaten": [ 0 ]
       }
     },
-    "ability": {
+    "specialability": {
       "templates": [ "ability", "logic" ]
     },
     "minion_upgrade": {

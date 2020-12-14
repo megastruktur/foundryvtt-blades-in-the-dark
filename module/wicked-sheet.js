@@ -36,20 +36,29 @@ export class BladesSheet extends ActorSheet {
 
     let items = await BladesHelpers.getAllItemsByType(item_type, game);
 
+    if (items.length > 0 && items[0].type == "specialability") {
+      items.sort(BladesHelpers.specialAbilitySort);
+    }
+
+
     let html = `<div id="items-to-add">`;
 
     items.forEach(e => {
-      let addition_price_load = ``;
+      let callingaddendum = ``;
+      let coreaddendum = ``;
+      if (item_type == "specialability") {
+        if (typeof e.data.calling !== "undefined") {
+          callingaddendum += `(${e.data.calling}): `
+        }
+        if (e.data.core) {
+          coreaddendum += ` (Core)`
+        }
 
-      if (typeof e.data.load !== "undefined") {
-        addition_price_load += `(${e.data.load})`
-      } else if (typeof e.data.price !== "undefined") {
-        addition_price_load += `(${e.data.price})`
       }
 
       html += `<input id="select-item-${e._id}" type="${input_type}" name="select_items" value="${e._id}">`;
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
-      html += `${game.i18n.localize(e.name)} ${addition_price_load} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${game.i18n.localize(e.data.description)}</span></i>`;
+      html += `${callingaddendum}${game.i18n.localize(e.name)}${coreaddendum} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${game.i18n.localize(e.data.description)}</span></i>`;
       html += `</label>`;
     });
 

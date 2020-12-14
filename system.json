@@ -116,10 +116,10 @@
       "entity": "Item"
     },
     {
-      "name": "ability",
-      "label": "Abilities",
+      "name": "specialability",
+      "label": "Special Abilities",
       "system": "wicked-ones",
-      "path": "./packs/abilities.db",
+      "path": "./packs/specialabilities.db",
       "entity": "Item"
     },
     {

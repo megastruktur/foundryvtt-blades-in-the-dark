@@ -211,12 +211,12 @@
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe flex-horizontal">
           <p><label for="character-{{actor._id}}-experience-0">{{localize "FITD.Abilities"}}</label></p>
-          <p><a class="item-add-popup" data-item-type="ability"><i class="fas fa-plus-square"></i></a></p>
+          <p><a class="item-add-popup" data-item-type="specialability"><i class="fas fa-plus-square"></i></a></p>
         </div>
 
         <div id="abilities-list">
           {{#each actor.items as |item id|}}
-          {{#if (eq item.type "ability")}}
+          {{#if (eq item.type "specialability")}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body flex-horizontal">
               <b><div class="item-name">{{item.name}}</div></b>
