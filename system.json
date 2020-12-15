@@ -131,9 +131,16 @@
     },
     {
       "name": "dungeon_theme",
-      "label": "Dungeon Theme",
+      "label": "Dungeon Themes",
       "system": "wicked-ones",
       "path": "./packs/dungeon_themes.db",
+      "entity": "Item"
+    },
+    {
+      "name": "tier3room",
+      "label": "Tier-3 Rooms",
+      "system": "wicked-ones",
+      "path": "./packs/tier3rooms.db",
       "entity": "Item"
     },
     {

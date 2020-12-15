@@ -153,34 +153,26 @@
     },
     "dungeon": {
       "name": "",
-      "reputation": [ 0 ],
-      "lair": "",
-      "tier": [ 0 ],
-      "deity": "",
-      "hold": [ "strong" ],
-      "experience": [ 0 ],
-      "hold_types": [ "weak", "strong" ],
-      "coins": {
-        "max": 4,
-        "value": [ 0 ]
-      },
-      "vault": {
-        "value": [ 0 ],
-        "max": 0
-      },
-      "turfs": [ 8 ],
-      "features": [],
-      "heat": [ 0 ],
-      "wanted": [ 0 ]
-    },
-    "clock": {
-      "name": "",
-      "type": 4,
-      "value": "0"
+      "tier": 0,
+      "imps": "",
+      "entrance": "",
+      "structure": "",
+      "lighting": "",
+      "atmospherics": "",
+      "hoard": "",
+      "notes": "",
+      "master_plan": {
+        "step1": "",
+        "step2": "",
+        "step3": "",
+        "step4": "",
+        "step5": "",
+        "step6": ""
+      }
     }
   },
   "Item": {
-    "types": [ "cohort", "calling", "defense", "project", "dungeon_ability", "duty", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "gear", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "wickedimpulse" ],
+    "types": [ "cohort", "calling", "defense", "project", "dungeon_ability", "duty", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "gear", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "tier3room", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -188,7 +180,7 @@
       "ability": {
         "description": "",
         "calling": "",
-        "core":  false
+        "core": false
       },
       "logic": {
         "logic": ""
@@ -242,6 +234,11 @@
     },
     "specialability": {
       "templates": [ "ability", "logic" ]
+    },
+    "tier3room": {
+      "templates": [ "default" ],
+      "theme": "",
+      "requirements": ""
     },
     "minion_upgrade": {
       "templates": [ "minion_upgrade" ]
@@ -381,99 +378,8 @@
     },
     "dungeon_theme": {
       "description": "",
-      "experience_clues": "",
-      "turfs": {
-        "1": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "2": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "3": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "4": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "5": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "6": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "7": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "8": {
-          "name": "FITD.Lair",
-          "value": 1,
-          "description": "",
-          "connects": []
-        },
-        "9": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "10": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "11": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "12": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "13": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "14": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        },
-        "15": {
-          "name": "",
-          "value": "",
-          "description": "",
-          "connects": []
-        }
-      }
+      "special_name": "",
+      "special_feature": ""
     }
   }
 }

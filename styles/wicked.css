@@ -568,6 +568,12 @@
   font-style: italic;
   text-align: justify;
 }
+* .item .item-body .item-special-feature {
+  background: rgba(104, 51, 44, 0.25);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+}
 * .item div {
   flex-grow: 2;
 }
@@ -1704,6 +1710,13 @@ div.item i.fa-trash, tr.item i.fa-trash {
 }
 #attributes-darkhearts .heart-container input:checked + label.practice-two {
   background-image: url("assets/boxes/box-crossed.png");
+}
+
+#abilities-list div.item-name {
+  flex-basis: 25%;
+}
+#abilities-list div.item-description {
+  width: fit-content;
 }
 
 /*# sourceMappingURL=wicked.css.map */

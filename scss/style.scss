@@ -19,6 +19,7 @@ $crit: #b12c20;
 $success: #862118;
 $mixed: #2c3678;
 $fail: #656666;
+$lightbrown: rgba(104, 51, 44, 0.25);
 
 // Transition period for sheet parts that hint what they can do
 $transition-period: 0.2s;
@@ -106,12 +107,12 @@ $hover-brightness: 0.8;
     }
 
     textarea {
-		color: $bloody;
+        color: $bloody;
         margin-top: 10px;
         margin-bottom: 20px;
-		font-family: Bitter;
-		font-weight: 600;
-		min-height: 80px;
+        font-family: Bitter;
+        font-weight: 600;
+        min-height: 80px;
     }
 
     td {
@@ -448,6 +449,13 @@ $hover-brightness: 0.8;
             .item-description {
                 font-style: italic;
                 text-align: justify;
+            }
+
+            .item-special-feature {
+                background: $lightbrown;
+                border-radius: 15px;
+                padding: 10px;
+                margin: 10px;
             }
         }
 
@@ -1098,5 +1106,16 @@ div.item, tr.item {
     .heart-container {
         justify-content: flex-start;
         @include custom_radio(32px, 32px);
+    }
+}
+
+
+#abilities-list {
+    div.item-name {
+        flex-basis: 25%;
+    }
+
+    div.item-description {
+        width: fit-content;
     }
 }

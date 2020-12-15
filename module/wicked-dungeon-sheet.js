@@ -11,9 +11,9 @@ export class BladesCrewSheet extends BladesSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/dungeon-sheet.html",
-      width: 930,
-      height: 1020,
-      tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "turfs"}]
+      width: 700,
+      height: 850,
+      tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "rooms"}]
     });
   }
 
