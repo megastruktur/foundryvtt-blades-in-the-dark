@@ -12,7 +12,7 @@
           </div>
         </td>
         <td>
-          <div id="character-{{actor._id}}-tier" class="big-teeth">
+          <div id="dungeon-tier" class="">
             {{#multiboxes data.tier}}
             <input type="radio" id="dungeon-{{actor._id}}-tier-0" name="data.tier" value="0" dtype="Radio">
             <label class="black-label" for="dungeon-{{actor._id}}-tier-0">{{localize "FITD.Tier"}}</label>
@@ -31,17 +31,22 @@
         <td colspan="2">
           {{!-- Dungeon Theme Info --}}
           <div class="label-stripe flex-horizontal">
-            <p>{{localize "FITD.DungeonTheme"}}</p>
+            <p>
+              {{localize "FITD.DungeonTheme"}}:
+              {{#each actor.items as |item id|}}
+              {{#if (eq item.type "dungeon_theme")}}
+                {{item.name}}
+              {{/if}}
+              {{/each}}
+            </p>
             <p><a class="item-add-popup" data-distinct="true" data-item-type="dungeon_theme"><i class="fas fa-plus-square"></i></a></p>
           </div>
-
-          <div id="abilities-list">
+          <div id="special-list">
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "dungeon_theme")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-vertical">
-                <div class="item-name"><b>{{item.name}}</b></div>
-                <div class="item-description">{{item.data.description}}</div>
+                <div class="item-special-feature"><b>{{item.data.special_name}}:</b> {{item.data.special_feature}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -59,31 +64,18 @@
 
       {{!-- Nav menu --}}
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="rooms">{{localize "FITD.SpecialAndRooms"}}</a>
+        <a class="item" data-tab="rooms">{{localize "FITD.TierThreeRooms"}}</a>
         <a class="item" data-tab="description">{{localize "FITD.DungeonDescription"}}</a>
         <a class="item" data-tab="masterplan">{{localize "FITD.MasterPlan"}}</a>
         <a class="item" data-tab="dungeon-notes">{{localize "FITD.Notes"}}</a>
         <a class="item" data-tab="all-dungeon-items">{{localize "FITD.AllItems"}}</a>
       </nav>
 
-      {{!-- Special & Tier-3 Rooms Tab --}}
+      {{!-- Tier-3 Rooms Tab --}}
     <div id="rooms" class="tab flex-vertical" data-tab="rooms">
       <div class="label-stripe flex-horizontal">
-        <p>{{localize "FITD.Abilities"}}</p>
+        <p>{{localize "FITD.TierThreeRooms"}}</p>
         <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
-      </div>
-
-      <div id="abilities-list">
-        {{#each actor.items as |item id|}}
-        {{#if (eq item.type "dungeon_theme")}}
-        <div class="item flex-horizontal" data-item-id="{{item._id}}">
-          <div class="item-body flex-vertical">
-            <div class="item-special-feature"><b>{{item.data.special_name}}:</b> {{item.data.special_feature}}</div>
-          </div>
-          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-        </div>
-        {{/if}}
-        {{/each}}
       </div>
 
       <div id="abilities-list">
@@ -92,7 +84,7 @@
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body flex-horizontal">
             <div class="item-name"><b>{{item.name}}</b></div>
-            <div class="item-description">{{item.data.description}}</div>
+            <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
           </div>
           <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
         </div>
@@ -102,12 +94,25 @@
     </div>
 
       {{!-- Descriptions Tab --}}
-      <div id="description" class="tab flex-vertical" data-tab="description">
-        <div class="label-stripe">
-          <p>{{localize "FITD.DungeonDescription"}}</p>
-        </div>
-        <textarea rows="13" name="data.imps">{{{data.imps}}}</textarea>
+    <div id="description" class="tab flex-vertical" data-tab="description">
+      <div class="label-stripe">
+        <p>{{localize "FITD.DungeonDescription"}}</p>
       </div>
+      <div id="abilities-list">
+        {{#each actor.items as |item id|}}
+        {{#if (eq item.type "dungeon_theme")}}
+        <div class="item flex-horizontal" data-item-id="{{item._id}}">
+          <div class="item-body flex-vertical">
+            <div class="item-name"><b>{{item.name}}</b></div>
+            <div class="item-description">{{item.data.description}}</div>
+          </div>
+          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+      <textarea rows="13" name="data.imps">{{{data.imps}}}</textarea>
+    </div>
 
       {{!-- Master Plan Tab --}}
       <div id="masterplan" class="tab flex-vertical" data-tab="masterplan">
