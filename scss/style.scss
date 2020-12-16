@@ -271,6 +271,18 @@ $hover-brightness: 0.8;
         padding-right: 10px;
         display: flex;
         font-weight: bold;
+		
+		&:hover {
+			.item-add-popup {
+				transition: opacity 0.5s;
+				opacity: 1;
+			}
+		}
+
+		.item-add-popup {
+			transition: opacity 0.5s;
+			opacity: 0.1;
+		}
     }
 
     .label-stripe-gray {
@@ -417,7 +429,6 @@ $hover-brightness: 0.8;
         .item-class-label {
             margin-bottom: 10px;
         }
-
         .item-body,
         .item-class-label {
             width: 100px;
@@ -601,9 +612,23 @@ $hover-brightness: 0.8;
     margin: 0px 0px;
     height: 175px;
     width: 175px;
+	border: none;
+	background: url(../images/background-light.png) repeat $bloodyShadow;
+    border-radius: 5px;
+	border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-blend-mode: color-burn;
 }
-
-// Show Trah bins on hover over ancestor
+// Profile Pictures
+.profile-img{
+	border: none;
+	background: url(../images/background-light.png) repeat $bloodyShadow;
+    border-radius: 5px;
+	border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-blend-mode: color-burn;
+}
+// Show Trash bins on hover over ancestor
 div.item, tr.item {
     &:hover {
         i.fa-trash {
@@ -617,7 +642,10 @@ div.item, tr.item {
         opacity: 0;
     }
 }
-
+// Item Add Buttons
+.item-add-popup{
+	padding-left: 10px;
+}
 
 /*
  *  Anchored Styles
@@ -852,11 +880,28 @@ div.item, tr.item {
 			margin-top:3px;
 		}
     }
-	#dhearts {
-		margin-left: 5px;
-	}
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
         font-weight: 600;
+    }
+}
+
+/* All Table Formatting: */
+
+table td,
+table th {
+  padding: 0.25em 5px;
+}
+table th{
+      &:hover {
+        .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: 1;
+        }
+    }
+
+    .item-add-popup {
+        transition: opacity 0.5s;
+        opacity: 0.1;
     }
 }
 
@@ -906,7 +951,10 @@ div.item, tr.item {
         }
     }
 }
-
+/* Display all Item Names in Bold */
+.item-name{
+	font-weight: 600;
+	}
 // WO Defenses Stress Area
 #defenses-stress {
     display: flex;
@@ -951,7 +999,7 @@ div.item, tr.item {
 // WO Dark Hearts
 #attributes-darkhearts {
     margin-top: -12px;
-    margin-left: 34px;
+    margin-left: 36px;
 
     .heart-container {
         justify-content: flex-start;
@@ -959,7 +1007,7 @@ div.item, tr.item {
     }
 }
 
-// DU MP WO Special Ailities
+// DU MP WO Special Abilities
 #abilities {
 
     .item-name {
@@ -968,18 +1016,18 @@ div.item, tr.item {
 
     .item-body {
         width: auto;
+		font-weight: 500;
     }
 
     .item-description {
         width: 200px;
     }
 
-    .label-stripe {
-        p:first-child {
-            margin-right: 10px;
-        }
+    /* .label-stripe { */
+        /* p:first-child { */
+            /* margin-right: 10px; */
+        /* } */
     }
-}
 
 // DU MP WO Special Abilities List
 #abilities-list {
