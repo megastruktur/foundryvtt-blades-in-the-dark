@@ -618,6 +618,7 @@ $hover-brightness: 0.8;
 	border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
     background-blend-mode: color-burn;
+	object-fit: cover;
 }
 // Profile Pictures
 .profile-img{
@@ -627,6 +628,7 @@ $hover-brightness: 0.8;
 	border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
     background-blend-mode: color-burn;
+	object-fit: cover;
 }
 // Show Trash bins on hover over ancestor
 div.item, tr.item {
@@ -1006,6 +1008,7 @@ table th{
         @include custom_radio(32px, 32px);
     }
 }
+
 
 // DU MP WO Special Abilities
 #abilities {

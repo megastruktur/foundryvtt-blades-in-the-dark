@@ -4,6 +4,15 @@
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
+/* Dark Hearts Glow */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 -2px 5px 5px rgba(104, 51, 44, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 15px 5px rgba(104, 51, 44, 0.6), inset 0 -2px 8px 5px rgba(104, 51, 44, 0.4);
+  }
+}
 /*
  * Custom Radio
  */
@@ -859,6 +868,7 @@
   border-bottom-right-radius: 0px;
   border-top-left-radius: 0px;
   background-blend-mode: color-burn;
+  object-fit: cover;
 }
 
 .profile-img {
@@ -868,6 +878,7 @@
   border-bottom-right-radius: 0px;
   border-top-left-radius: 0px;
   background-blend-mode: color-burn;
+  object-fit: cover;
 }
 
 div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
@@ -1087,6 +1098,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   cursor: pointer;
 }
 #attributes .attributes-container label.dark-heart {
+  animation: glow 3000ms ease-out infinite alternate;
   background-image: url("assets/boxes/heart-filled.png");
   margin-right: 4px;
   position: relative;
@@ -1374,6 +1386,7 @@ table th .item-add-popup {
   cursor: pointer;
 }
 #attributes-darkhearts .heart-container label.dark-heart {
+  animation: glow 3000ms ease-out infinite alternate;
   background-image: url("assets/boxes/heart-filled.png");
   margin-right: 4px;
   position: relative;
