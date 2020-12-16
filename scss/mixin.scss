@@ -75,10 +75,12 @@
 /* Dark Hearts Glow */
 @keyframes glow {
   0% {
-    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3),inset 0 -2px 5px 5px rgba(104, 51, 44, 0.2);
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3),inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+	border-radius: 5px;
   }
   100% {
-    box-shadow: 0 0 15px 5px rgba(104, 51, 44, 0.6),inset 0 -2px 8px 5px rgba(104, 51, 44, 0.4);
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8),inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+	border-radius: 11px;
   }
 }
 /*
@@ -101,7 +103,6 @@
             vertical-align: middle;
 
             &.dark-heart {
-				animation: glow 3000ms ease-out infinite alternate;
                 background-image: url("assets/boxes/heart-filled.png");
                 margin-right: 4px;
                 position: relative;
@@ -142,6 +143,7 @@
                 background-image: url("assets/boxes/box-filled.png");
 
                 &.dark-heart {
+					/* animation: glow 2000ms ease-out infinite alternate; */
                     background-image: url("assets/boxes/heart-filled.png");
                 }
 

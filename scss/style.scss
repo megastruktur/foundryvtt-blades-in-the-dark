@@ -271,6 +271,7 @@ $hover-brightness: 0.8;
         padding-right: 10px;
         display: flex;
         font-weight: bold;
+		font-size: medium;
 		
 		&:hover {
 			.item-add-popup {
@@ -369,7 +370,7 @@ $hover-brightness: 0.8;
         }
         // Wicked XP
         .big-teeth {
-            @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+            @include toothradio(15px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
         }
         /* Reckless XP */
         .small-teeth-container {
@@ -906,6 +907,9 @@ table th{
         opacity: 0.1;
     }
 }
+table td:first-child {
+    padding-left: inherit;
+}
 
 // WO Basic Character Information
 #base-info table {
@@ -923,8 +927,18 @@ table th{
                 width: 180px;
             }
         }
-    }
+	#name input[type="text"]{
+	height: 52px;
+    border: none;
+    font-family: Blood Crow;
+    font-size: 55px;
+	font-weight: normal;
+    color: $mud;
+    background: none;
+	}
+  }
 }
+
 
 // WO Defenses
 #character-defenses {
@@ -936,6 +950,7 @@ table th{
         th {
             background-color: $mud;
             color: $almost_white;
+			font-size: medium;
         }
 
         input[type="text"] {

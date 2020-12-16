@@ -5,36 +5,17 @@
   <section id="base-info" class="section big-teeth-section">
     <table>
       <tr>
-        <td>
+        <td colspan="2">
           <div id="name">
-            <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label>
+            <!-- <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label> -->
             <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>
         </td>
-        <td>
-          <div id="minionpack">
-            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
-            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
-          </div>
-        </td>
-        <td rowspan="4">
+		<td rowspan="5">
           <img class="profile-img profile-big" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
         </td>
       </tr>
       <tr>
-        <td>
-          <div id="look">
-            <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
-            <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
-            </div>
-        </td>
-        <td>
-          <div id="vilefriend">
-            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
-            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
-          </div>
-        </td>
-      </tr>
       <tr>
         <td>
           <div class="item-block flex-vertical">
@@ -51,15 +32,15 @@
             {{/each}}
           </div>
         </td>
-        <td>
-          <div id="character-{{actor._id}}-gold" class="big-teeth">
-            {{#multiboxes data.gold}}
-            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
+		<td colspan="1">
+          <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
+            {{#multiboxes data.wickedxp.value}}
+            <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
 
-            {{#times_from_1 3}}
-            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
+            {{#times_from_1 data.wickedxp.max}}
+              <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
+              <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
@@ -113,18 +94,37 @@
             {{/each}}
           </div>
         </td>
-        <td colspan="2">
-          <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
-            {{#multiboxes data.wickedxp.value}}
-            <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
+        <td>
+          <div id="character-{{actor._id}}-gold" class="big-teeth">
+            {{#multiboxes data.gold}}
+            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
 
-            {{#times_from_1 data.wickedxp.max}}
-              <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
-              <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
+            {{#times_from_1 3}}
+            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
+          </div>
+        </td>
+      </tr>
+        <td>
+          <div id="minionpack">
+            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
+            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
+          </div>
+        </td>	  
+        <td>
+          <div id="look">
+            <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
+            <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
+            </div>
+        </td>
+        <td>
+          <div id="vilefriend">
+            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
+            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
           </div>
         </td>
       </tr>
