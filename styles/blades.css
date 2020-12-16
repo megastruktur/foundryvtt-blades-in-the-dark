@@ -566,9 +566,6 @@
 * #alias {
   margin-bottom: 10px;
 }
-* .profile-img {
-  margin: 0px 30px;
-}
 * .coins {
   display: flex;
   /* Hide the browser's default checkbox */

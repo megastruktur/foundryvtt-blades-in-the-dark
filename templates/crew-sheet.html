@@ -2,6 +2,8 @@
 
   <section class="flex-horizontal">
 
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+
     <div id="name-alias" class="grow-two flex-column">
       <div id="name">
         <label for="crew-name">{{localize "BITD.Name"}}</label>
@@ -25,8 +27,6 @@
         {{/each}}
       </div>
     </div>
-  
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
     <div class="grow-two flex-vertical">
       <div id="lair">
