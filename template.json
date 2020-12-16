@@ -172,7 +172,7 @@
     }
   },
   "Item": {
-    "types": [ "cohort", "calling", "defense", "project", "dungeon_ability", "duty", "dungeon_reputation", "dungeon_theme", "dungeon_upgrade", "gear", "item", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "tier3room", "wickedimpulse" ],
+    "types": [ "calling", "defense", "project", "duty", "dungeon_theme", "gear", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "tier3room", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -191,11 +191,6 @@
         "use_checkbox": false,
         "checked": false
       }
-    },
-    "item": {
-      "templates": [ "default", "logic" ],
-      "class": "",
-      "load": 0
     },
     "gear": {
       "templates": [ "default" ]
@@ -238,7 +233,8 @@
     "tier3room": {
       "templates": [ "default" ],
       "theme": "",
-      "requirements": ""
+      "requirements": "",
+      "missing_materials": false
     },
     "minion_upgrade": {
       "templates": [ "minion_upgrade" ]
@@ -257,124 +253,6 @@
     },
     "revelry": {
       "templates": [ "default" ]
-    },
-    "cohort": {
-      "templates": [ "default" ],
-      "cohort": [ "Gang" ],
-      "scale": 0,
-      "quality": 0,
-      "cohort_list": {
-        "Gang": {
-          "label": "FITD.Gang"
-        },
-        "Expert": {
-          "label": "FITD.Expert"
-        }
-      },
-      "dungeon_theme": [ "Adepts" ],
-      "dungeon_theme_list": {
-
-        "Adepts": {
-          "label": "FITD.GangTypeAdepts",
-          "description": "FITD.GangTypeAdeptsDescription"
-        },
-        "Rooks": {
-          "label": "FITD.GangTypeRooks",
-          "description": "FITD.GangTypeRooksDescription"
-        },
-        "Rovers": {
-          "label": "FITD.GangTypeRovers",
-          "description": "FITD.GangTypeRoversDescription"
-        },
-        "Skulks": {
-          "label": "FITD.GangTypeSkulks",
-          "description": "FITD.GangTypeSkulksDescription"
-        },
-        "Thugs": {
-          "label": "FITD.GangTypeThugs",
-          "description": "FITD.GangTypeThugsDescription"
-        }
-      },
-      "expert_type": "",
-      "status": [],
-      "statuses": [],
-      "edges": [],
-      "edges_list": {
-        "Fearsome": {
-          "label": "FITD.EdgesFearsome",
-          "description": "FITD.EdgesFearsomeDescription"
-        },
-        "Independent": {
-          "label": "FITD.EdgesIndependent",
-          "description": "FITD.EdgesIndependentDescription"
-        },
-        "Loyal": {
-          "label": "FITD.EdgesLoyal",
-          "description": "FITD.EdgesLoyalDescription"
-        },
-        "Tenacious": {
-          "label": "FITD.EdgesTenacious",
-          "description": "FITD.EdgesTenaciousDescription"
-        }
-      },
-      "flaws": [],
-      "flaws_list": {
-        "Principled": {
-          "label": "FITD.FlawsPrincipled",
-          "description": "FITD.FlawsPrincipledDescription"
-        },
-        "Savage": {
-          "label": "FITD.FlawsSavage",
-          "description": "FITD.FlawsSavageDescription"
-        },
-        "Unreliable": {
-          "label": "FITD.FlawsUnreliable",
-          "description": "FITD.FlawsUnreliableDescription"
-        },
-        "Wild": {
-          "label": "FITD.FlawsWild",
-          "description": "FITD.FlawsWildDescription"
-        }
-      },
-      "harm": [ "No" ],
-      "harm_list": {
-        "No": {
-          "label": "FITD.HarmNoHarm",
-          "description": "FITD.HarmNoHarmDescription",
-          "value": 0
-        },
-        "Weakened": {
-          "label": "FITD.HarmWeakened",
-          "description": "FITD.HarmWeakenedDescription",
-          "value": 1
-        },
-        "Impaired": {
-          "label": "FITD.HarmImpaired",
-          "description": "FITD.HarmImpairedDescription",
-          "value": 2
-        },
-        "Broken": {
-          "label": "FITD.HarmBroken",
-          "description": "FITD.HarmBrokenDescription",
-          "value": 3
-        },
-        "Dead": {
-          "label": "FITD.HarmDead",
-          "description": "FITD.HarmDeadDescription",
-          "value": 4
-        }
-      },
-      "armor": false
-    },
-    "dungeon_reputation": {
-      "templates": [ "default" ]
-    },
-    "dungeon_upgrade": {
-      "templates": [ "ability", "logic" ],
-      "dungeon_theme": ""
-    },
-    "dungeon_ability": {
-      "templates": [ "ability" ]
     },
     "dungeon_theme": {
       "description": "",

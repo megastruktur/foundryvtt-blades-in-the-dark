@@ -86,68 +86,11 @@ Hooks.once("init", async function() {
     }
   });
 
-  // Trauma Counter
-  //Handlebars.registerHelper('traumacounter', function(selected, options) {
-    
-  //  let html = options.fn(this);
-
-  //  var count = 0;
-  //  for (const trauma in selected) {
-  //    if (selected[trauma] === true) {
-  //      count++;
-  //    }
-  //  }
-
-  //  if (count > 4) count = 4;
-    
-  //  const rgx = new RegExp(' value=\"' + count + '\"');
-  //  return html.replace(rgx, "$& checked=\"checked\"");
-
-  //});
-
   // NotEquals handlebar.
   Handlebars.registerHelper('noteq', (a, b, options) => {
     return (a !== b) ? options.fn(this) : '';
   });
 
-  // ReputationTurf handlebar.
-  Handlebars.registerHelper('repturf', (turfs_amount, options) => {
-    let html = options.fn(this);
-    var turfs_amount_int = parseInt(turfs_amount);
-
-    // Can't be more than 6.
-    if (turfs_amount_int > 6) {
-      turfs_amount_int = 6;
-    }
-
-    for (let i = 13 - turfs_amount_int; i <= 12; i++) {
-      const rgx = new RegExp(' value=\"' + i + '\"');
-      html = html.replace(rgx, "$& disabled=\"disabled\"");
-    }
-    return html;
-  });
-
-  Handlebars.registerHelper('crew_vault_coins', (max_coins, options) => {
-
-    let html = options.fn(this);
-    for (let i = 1; i <= max_coins; i++) {
-
-      html += "<input type=\"radio\" id=\"crew-coins-vault-" + i + "\" name=\"data.vault.value\" value=\"" + i + "\"><label for=\"crew-coins-vault-" + i + "\"></label>";
-    }
-
-    return html;
-  });
-
-  Handlebars.registerHelper('crew_experience', (options) => {
-
-    let html = options.fn(this);
-    for (let i = 1; i <= 10; i++) {
-
-      html += '<input type="radio" id="crew-experience-' + i + '" name="data.experience" value="' + i + '" dtype="Radio"><label for="crew-experience-' + i + '"></label>';
-    }
-
-    return html;
-  });
 
   // Enrich the HTML replace /n with <br>
   Handlebars.registerHelper('html', (options) => {
@@ -274,7 +217,7 @@ Hooks.once("init", async function() {
 Hooks.once("ready", function() {
 
   // Determine whether a system migration is required
-  const currentVersion = game.settings.get("bitd", "systemMigrationVersion");
+  const currentVersion = game.settings.get("fitd-wo", "systemMigrationVersion");
   const NEEDS_MIGRATION_VERSION = 0.1;
   
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);

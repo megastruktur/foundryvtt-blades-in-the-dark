@@ -145,14 +145,7 @@ export class BladesSheet extends ActorSheet {
     }
 
     // Update Data
-
-    //  this.actor.data.data.attributes.brains.skills.trick.practice
     this.actor.update({ ['data.attributes.' + attribute_name + '.skills.' + skill_name + '.practice']: skill.practice });
-
-    //const data = { _id: this.actor.data._id, data: { attributes: {} } };
-    //data.data.attributes[attribute_name] = { skills: {} };
-    //data.data.attributes[attribute_name].skills[skill_name] = { practice: skill.practice };
-    //const updated = await this.entity.update(data);
 
     // Submit click
     pressed_button.click();

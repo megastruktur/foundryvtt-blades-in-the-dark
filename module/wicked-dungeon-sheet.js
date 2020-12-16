@@ -23,23 +23,7 @@ export class BladesCrewSheet extends BladesSheet {
   getData() {
     const data = super.getData();
 
-    // Calculate Turfs amount.
-    // We already have Lair, so set to -1.
-    let turfs_amount = 0
-
-    data.items.forEach(item => {
-
-      if (item.type === "dungeon_theme") {
-        // Object.entries(item.data.turfs).forEach(turf => {turfs_amount += (turf.value === true) ? 1 : 0});
-        Object.entries(item.data.turfs).forEach(([key, turf]) => {
-          if (turf.name === 'FITD.Turf') {
-            turfs_amount += (turf.value === true) ? 1 : 0;
-          }
-        });
-      }
-
-    });
-    data.data.turfs_amount = turfs_amount;
+    // Override Code for updating the sheet goes here
 
     return data;
   }
@@ -67,42 +51,15 @@ export class BladesCrewSheet extends BladesSheet {
       element.slideUp(200, () => this.render(false));
     });
 
-    // Add a new Cohort
+    // Add a new Cohort (Check if needed for Theme and Room additions)
     html.find('.add-item').click(ev => {
       BladesHelpers._addOwnedItem(ev, this.actor);
     });
 
-    // Toggle Turf
-    html.find('.turf-select').click(ev => {
-      const element = $(ev.currentTarget).parents(".item");
-      
-      let item_id = element.data("itemId")
-      let turf_id = $(ev.currentTarget).data("turfId");
-      let turf_current_status = $(ev.currentTarget).data("turfStatus");
-      let turf_checkbox_name = 'data.turfs.' + turf_id + '.value';
-
-      this.actor.updateEmbeddedEntity('OwnedItem', {
-        _id: item_id,
-        [turf_checkbox_name]: !turf_current_status});
-      this.render(false);
-    });
-
-    // Cohort Block Harm handler
-    html.find('.cohort-block-harm input[type="radio"]').change(ev => {
-      const element = $(ev.currentTarget).parents(".item");
-      
-      let item_id = element.data("itemId")
-      let harm_id = $(ev.currentTarget).val();
-
-      this.actor.updateEmbeddedEntity('OwnedItem', {
-        _id: item_id,
-        "data.harm": [harm_id]});
-      this.render(false);
-    });
   }
 
   /* -------------------------------------------- */
-  /*  Form Submission                             */
+  /*  Form Submission  (Check relevance)          */
 	/* -------------------------------------------- */
 
   /** @override */

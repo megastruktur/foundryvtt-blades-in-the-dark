@@ -10,8 +10,6 @@ export const preloadHandlebarsTemplates = async function() {
 
     // Actor Sheet Partials
     "systems/wicked-ones/templates/parts/attributes.html",
-    "systems/wicked-ones/templates/parts/turf-list.html",
-    "systems/wicked-ones/templates/parts/cohort-block.html"
   ];
 
   // Load the template parts

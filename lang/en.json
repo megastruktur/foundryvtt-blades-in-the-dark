@@ -49,6 +49,7 @@
   "FITD.Supply": "Supply",
   "FITD.DungeonTheme": "Dungeon Theme",
   "FITD.RoomRequirements": "Example Requirements",
+  "FITD.MissingMaterials": "Room is missing materials",
   "FITD.SpecialName": "Special Feature",
   "FITD.SpecialDescription": "Special Description",
   "FITD.Imps": "Imps",

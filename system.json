@@ -149,13 +149,6 @@
       "system": "wicked-ones",
       "path": "./packs/dungeon_upgrades.db",
       "entity": "Item"
-    },
-    {
-      "name": "dungeon_ability",
-      "label": "Dungeon Abilities",
-      "system": "wicked-ones",
-      "path": "./packs/dungeon_abilities.db",
-      "entity": "Item"
     }
   ]
 }
