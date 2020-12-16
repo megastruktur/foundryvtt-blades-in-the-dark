@@ -1007,6 +1007,8 @@ div.item, tr.item {
 #base-info table {
     width: 100%;
     height: 230px;
+	border-top: 5px solid $mud;
+    border-bottom: 5px solid $mud;
 
     tr {
         background-color: initial;

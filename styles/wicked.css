@@ -1447,6 +1447,8 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #base-info table {
   width: 100%;
   height: 230px;
+  border-top: 5px solid #68332c;
+  border-bottom: 5px solid #68332c;
 }
 #base-info table tr {
   background-color: initial;
