@@ -123,13 +123,6 @@
       "entity": "Item"
     },
     {
-      "name": "dungeon_reputation",
-      "label": "Dungeon Reputation",
-      "system": "wicked-ones",
-      "path": "./packs/dungeon_reputations.db",
-      "entity": "Item"
-    },
-    {
       "name": "dungeon_theme",
       "label": "Dungeon Themes",
       "system": "wicked-ones",
@@ -141,13 +134,6 @@
       "label": "Tier-3 Rooms",
       "system": "wicked-ones",
       "path": "./packs/tier3rooms.db",
-      "entity": "Item"
-    },
-    {
-      "name": "dungeon_upgrade",
-      "label": "Dungeon Upgrade",
-      "system": "wicked-ones",
-      "path": "./packs/dungeon_upgrades.db",
       "entity": "Item"
     }
   ]

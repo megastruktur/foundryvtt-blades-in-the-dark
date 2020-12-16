@@ -432,8 +432,13 @@ $hover-brightness: 0.8;
         right: 10px;
     }
 
-    #wo-nav-container nav a {
-        flex: none;
+    #wo-nav-container, #dun-nav-container {
+        nav a {
+            flex: none;
+        }
+    }
+
+    #dun-nav-container nav a {
     }
     // ITEM
     .item {
@@ -456,6 +461,10 @@ $hover-brightness: 0.8;
                 border-radius: 15px;
                 padding: 10px;
                 margin: 10px;
+            }
+
+            .missing-materials{
+                color: $gray;
             }
         }
 

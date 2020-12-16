@@ -552,7 +552,7 @@
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* #wo-nav-container nav a {
+* #wo-nav-container nav a, * #dun-nav-container nav a {
   flex: none;
 }
 * .item {
@@ -573,6 +573,9 @@
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
+}
+* .item .item-body .missing-materials {
+  color: #999;
 }
 * .item div {
   flex-grow: 2;
