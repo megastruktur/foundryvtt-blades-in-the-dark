@@ -127,7 +127,7 @@
   src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
 }
 /*
- * General Styles
+ *  General Styles
  */
 * header {
   margin-bottom: 10px;
@@ -148,8 +148,7 @@
   border-right: 2px solid darkslategrey;
   transition-duration: 0.2s;
 }
-* button:hover,
-* button:focus {
+* button:hover, * button:focus {
   outline: none;
   box-shadow: 0 0 5px #d46c1f;
   background: #d46c1f;
@@ -227,9 +226,6 @@
 * nav {
   margin-bottom: 10px;
 }
-* #pause h3 {
-  font-weight: 600;
-}
 * .editor,
 * .editor-content {
   min-height: 280px;
@@ -261,18 +257,9 @@
   height: 30px !important;
   text-transform: capitalize;
 }
-* #chat-controls .roll-type-select {
-  color: #400000;
-  font-size: 14px;
-  font-weight: 700;
-}
-* #chat-form textarea {
-  background: url(../images/background-light.png) repeat;
-  background-size: 300px;
-}
 * .chat-message {
   padding: 5px;
-  color: #191813;
+  color: #191919;
   font-size: 14px;
   background: url(../images/background-light.png) repeat;
   background-size: 300px;
@@ -323,8 +310,7 @@
   border-left: 2px solid darkslategrey;
   border-right: 2px solid darkslategrey;
 }
-* .dialog .dialog-buttons button.default:hover,
-* .dialog .dialog-buttons button.default:focus {
+* .dialog .dialog-buttons button.default:hover, * .dialog .dialog-buttons button.default:focus {
   outline: none;
   box-shadow: 0 0 5px #d46c1f;
   background: #d46c1f;
@@ -353,7 +339,7 @@
 * .label-stripe-chat {
   font-family: Piedra;
   background-color: #68332c;
-  color: #fff;
+  color: white;
   margin-bottom: 10px;
   position: relative;
   padding-top: 2px;
@@ -366,7 +352,7 @@
 * .label-type {
   font-family: Piedra;
   text-transform: uppercase;
-  color: #fff;
+  color: white;
   display: flex;
   font-family: Bitter;
   font-weight: 600;
@@ -399,7 +385,6 @@
   color: red;
 }
 * .big-teeth-section {
-  /* border-top: 3px solid $almost_black; */
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
@@ -492,24 +477,6 @@
   display: flex;
   flex-direction: row;
 }
-* #character-wickedxp label[for$="-0"] {
-  margin-right: 0px;
-}
-* #character-recklessxp label[for$="-0"] {
-  margin-right: 0px;
-}
-* #abilities .item-name {
-  width: 70px;
-}
-* #abilities .item-body {
-  width: auto;
-}
-* #abilities .item-description {
-  width: 200px;
-}
-* #abilities .label-stripe p:first-child {
-  margin-right: 10px;
-}
 * .teeth-experience {
   display: flex;
   /* Hide the browser's default checkbox */
@@ -552,9 +519,6 @@
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* #wo-nav-container nav a, * #dun-nav-container nav a {
-  flex: none;
-}
 * .item {
   justify-content: space-between;
 }
@@ -569,7 +533,7 @@
   text-align: justify;
 }
 * .item .item-body .item-special-feature {
-  background: rgba(104, 51, 44, 0.25);
+  background: #68332c3f;
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
@@ -580,9 +544,6 @@
 * .item div {
   flex-grow: 2;
 }
-* .item .item-control {
-  /*flex-grow: 1;*/
-}
 * .item .item-class-label {
   margin-bottom: 10px;
 }
@@ -592,402 +553,6 @@
 }
 * .item-class-label {
   margin-bottom: 2px;
-}
-* .crew-coins {
-  display: flex;
-  /* Hide the browser's default checkbox */
-  flex-wrap: wrap;
-  max-width: 72px;
-}
-* .crew-coins label {
-  height: 15px;
-  width: 15px;
-  background-color: #DAA520;
-  vertical-align: middle;
-  border: 1px solid #191919;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* .crew-coins label[for$="-0"] {
-  margin-right: 0px;
-}
-* .crew-coins label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* .crew-coins input {
-  display: none;
-}
-* .crew-coins input:checked ~ label {
-  background-color: #EEEFFF;
-}
-* .crew-coins input:checked + label {
-  background-color: #DAA520;
-}
-* .crew-coins label {
-  margin-right: 3px;
-  margin-bottom: 3px;
-}
-* #crew-reputation {
-  border-top: 3px solid #191919;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-* #crew-reputation label {
-  height: 50px;
-  width: 17px;
-  background-image: url("assets/teeth/stresstooth-red.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* #crew-reputation label:last-of-type {
-  margin-right: 0px;
-}
-* #crew-reputation label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  color: #EEEFFF;
-}
-* #crew-reputation label[for$="-0"] i {
-  margin-top: 4px;
-}
-* #crew-reputation label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #crew-reputation input {
-  display: none;
-}
-* #crew-reputation input:checked ~ label {
-  background-image: url("assets/teeth/stresstooth-halfgrey.png");
-}
-* #crew-reputation input:checked + label {
-  background-image: url("assets/teeth/stresstooth-red.png");
-}
-* #crew-reputation input[disabled=disabled] + label {
-  background-image: url(assets/teeth/stresstooth-black.png);
-}
-* #turf-list {
-  display: flex;
-  flex-direction: column;
-}
-* #turf-list .turf-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-* #turf-list .turf-row *:first-child {
-  margin-left: 0px;
-}
-* #turf-list .turf-row *:last-child {
-  margin-right: 0px;
-}
-* #turf-list.section-non-editable .turf-block {
-  transition: filter 0.1s;
-  cursor: pointer;
-  width: 130px;
-  height: 100px;
-  background-color: #CCC;
-  position: relative;
-  margin: 20px;
-  flex-grow: initial;
-}
-* #turf-list.section-non-editable .turf-block:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #turf-list.section-non-editable .turf-block.turf-selected .connector {
-  background-color: #999;
-  z-index: 1;
-}
-* #turf-list.section-non-editable .turf-block .connector {
-  position: absolute;
-  display: block;
-  background-color: #CCC;
-}
-* #turf-list.section-non-editable .turf-block .connector.right, * #turf-list.section-non-editable .turf-block .connector.left {
-  width: 40px;
-  height: 20px;
-  top: 40px;
-}
-* #turf-list.section-non-editable .turf-block .connector.left {
-  left: -40px;
-}
-* #turf-list.section-non-editable .turf-block .connector.right {
-  left: 130px;
-}
-* #turf-list.section-non-editable .turf-block .connector.top, * #turf-list.section-non-editable .turf-block .connector.bottom {
-  height: 40px;
-  width: 20px;
-  left: 55px;
-}
-* #turf-list.section-non-editable .turf-block .connector.top {
-  top: -40px;
-}
-* #turf-list.section-non-editable .turf-block .connector.bottom {
-  top: 100px;
-}
-* #turf-list.section-non-editable .turf-block.turf-selected {
-  background-color: #999;
-}
-* #turf-list.section-non-editable .turf-block .turf-description {
-  border: none;
-  background: none;
-  resize: none;
-  width: 130px;
-  text-align: center;
-  min-height: auto;
-  font-size: 12px;
-}
-* #turf-list.section-non-editable .turf-block .turf-name {
-  border: none;
-  border-radius: 0px;
-  text-align: center;
-  font-weight: bold;
-}
-* #turf-list.section-non-editable .turf-block input[type=checkbox] {
-  transform: scale(1);
-}
-* #turf-list.section-non-editable .turf-block .turf-control.turf-select {
-  position: absolute;
-  top: -7px;
-  left: -7px;
-}
-* #turf-list.section-editable .turf-block {
-  transition: filter 0.1s;
-  cursor: pointer;
-  width: 130px;
-  height: 125px;
-  background-color: #CCC;
-  position: relative;
-  margin: 20px;
-  flex-grow: initial;
-}
-* #turf-list.section-editable .turf-block:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #turf-list.section-editable .turf-block.turf-selected .connector {
-  background-color: #999;
-  z-index: 1;
-}
-* #turf-list.section-editable .turf-block .connector {
-  position: absolute;
-  display: block;
-  background-color: #CCC;
-}
-* #turf-list.section-editable .turf-block .connector.right, * #turf-list.section-editable .turf-block .connector.left {
-  width: 40px;
-  height: 25px;
-  top: 50px;
-}
-* #turf-list.section-editable .turf-block .connector.left {
-  left: -40px;
-}
-* #turf-list.section-editable .turf-block .connector.right {
-  left: 130px;
-}
-* #turf-list.section-editable .turf-block .connector.top, * #turf-list.section-editable .turf-block .connector.bottom {
-  height: 40px;
-  width: 25px;
-  left: 52.5px;
-}
-* #turf-list.section-editable .turf-block .connector.top {
-  top: -40px;
-}
-* #turf-list.section-editable .turf-block .connector.bottom {
-  top: 125px;
-}
-* #turf-list.section-editable .turf-block.turf-selected {
-  background-color: #999;
-}
-* #turf-list.section-editable .turf-block .turf-description {
-  border: none;
-  background: none;
-  resize: none;
-  width: 130px;
-  text-align: center;
-  min-height: auto;
-  font-size: 12px;
-}
-* #turf-list.section-editable .turf-block .turf-name {
-  border: none;
-  border-radius: 0px;
-  text-align: center;
-  font-weight: bold;
-}
-* #turf-list.section-editable .turf-block input[type=checkbox] {
-  transform: scale(1);
-}
-* #turf-list.section-editable .turf-block .turf-control.turf-select {
-  position: absolute;
-  top: -7px;
-  left: -7px;
-}
-* #crew-hold {
-  border-top: 3px solid #191919;
-  display: flex;
-  /* Hide the browser's default checkbox */
-  width: 221px;
-}
-* #crew-hold label {
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* #crew-hold label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #crew-hold label {
-  height: 50px;
-  width: 17px;
-  background-image: url("assets/teeth/stresstooth-halfgrey.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-}
-* #crew-hold label:last-of-type {
-  margin-right: 0px;
-}
-* #crew-hold input {
-  display: none;
-}
-* #crew-hold input:checked + label {
-  background-image: url("assets/teeth/stresstooth-red.png");
-}
-* #crew-tier {
-  background-color: #999;
-  height: 33px;
-  width: 145px;
-  display: flex;
-  align-items: center;
-  border-top: 3px solid #191919;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-* #crew-tier label {
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* #crew-tier label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* #crew-tier label:not([for$="-0"]) {
-  height: 18px;
-  width: 18px;
-  background-color: #191919;
-  vertical-align: middle;
-  border: 2px solid #191919;
-  border-radius: 9px;
-}
-* #crew-tier input {
-  display: none;
-}
-* #crew-tier input:checked ~ label:not([for$="-0"]) {
-  border-color: gray;
-  background-color: #EEEFFF;
-}
-* #crew-tier input:checked + label:not([for$="-0"]) {
-  background-color: #191919;
-  border-color: #191919;
-}
-* #crew-tier > * {
-  margin-right: 5px;
-}
-* #heat-wanted {
-  justify-content: none;
-}
-* .experience-clues-container {
-  width: 340px;
-  font-size: 12px;
-}
-* .experience-clues-container .experience-clues-description {
-  font-weight: bold;
-}
-* .experience-clues-container .experience-clues {
-  font-style: italic;
-}
-* .class-name {
-  width: 512px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 48px;
-  text-transform: uppercase;
-  border: 3px solid #191919;
-}
-* .class-name .big-name {
-  font-weight: bold;
-}
-* .class-name .big-description {
-  font-size: 20px;
-  color: #191919;
-}
-* .edgeflaw input {
-  display: none;
-}
-* .edgeflaw input:checked + label {
-  color: red;
-}
-* #gang-expert-type-selector #gang-type-boxes {
-  flex-wrap: wrap;
-}
-* .cohorts {
-  flex-wrap: wrap;
-}
-* .cohorts .cohort-block-wrapper {
-  width: 400px;
-}
-* .cohorts .label-stripe {
-  margin-bottom: 0px;
-}
-* .cohorts .cohort-body > div {
-  margin-bottom: 10px;
-}
-* .cohorts .cohort-block-harm {
-  justify-content: space-around;
-}
-* .cohorts .cohort-block-harm input[type=radio] {
-  display: none;
-}
-* .cohorts .cohort-block-harm input[type=radio]:checked + label {
-  color: #EEEFFF;
-  font-weight: bold;
-  background-color: #191919;
-}
-* .cohorts .cohort-block-harm label {
-  border: 2px solid #191919;
-  border-top: none;
-  padding: 5px;
-}
-* #items-to-add {
-  font-size: medium;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-* #items-to-add input[type=radio],
-* #items-to-add input[type=checkbox] {
-  display: none;
-}
-* #items-to-add input[type=radio]:checked + label,
-* #items-to-add input[type=checkbox]:checked + label {
-  font-weight: 800;
-  color: #400000;
-}
-* #items-to-add > flex-horizontal {
-  padding: 3px;
-  border-bottom: 1px solid #4000005c;
-}
-* #items-to-add:nth-child(2) {
-  background: #4000005c;
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
@@ -1016,7 +581,6 @@
   text-shadow: 2px 2px 7px #808080;
 }
 * .blades-die-tooltip .die {
-  /* text-transform: capitalize; */
   font-family: Piedra;
   text-transform: uppercase;
   font-weight: normal;
@@ -1217,7 +781,7 @@
 }
 * .window-app .window-content {
   background: url(../images/background-light.png) repeat;
-  color: #191813;
+  color: #191919;
   overflow-y: auto;
   background-size: 300px;
 }
@@ -1253,18 +817,9 @@
   justify-content: space-evenly;
 }
 
-#wo-nav-container .all-items-list:nth-of-type(2n+1) {
-  background: rgba(0, 0, 0, 0.15);
-}
-#wo-nav-container .all-items-list div.item-body {
-  margin: 5px 10px;
-}
-#wo-nav-container .all-items-list a.item-delete {
-  margin-right: 10px;
-  align-self: center;
-}
-
-/* Extension for Custom Labels */
+/*
+ *  Non-Anchored Styles
+ */
 #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
   height: 24px;
   width: 24px;
@@ -1281,6 +836,124 @@
 #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
+}
+
+.profile-img.profile-big {
+  margin: 0px 0px;
+  height: 175px;
+  width: 175px;
+}
+
+div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0.5;
+}
+div.item i.fa-trash, tr.item i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+/*
+ *  Anchored Styles
+ */
+#chat-controls .roll-type-select {
+  color: #400000;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#chat-form textarea {
+  background: url(../images/background-light.png) repeat;
+  background-size: 300px;
+}
+
+#character-wickedxp label[for$="-0"] {
+  margin-right: 0px;
+}
+
+#character-recklessxp label[for$="-0"] {
+  margin-right: 0px;
+}
+
+#dungeon-tier {
+  background-color: #68332c3f;
+  height: 33px;
+  width: 145px;
+  display: flex;
+  align-items: center;
+  border: solid;
+  border-width: 2px;
+  border-color: #68332c;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#dungeon-tier label {
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#dungeon-tier label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#dungeon-tier label:not([for$="-0"]) {
+  height: 18px;
+  width: 18px;
+  background-color: #191919;
+  vertical-align: middle;
+  border: 2px solid #191919;
+  border-radius: 9px;
+}
+#dungeon-tier input {
+  display: none;
+}
+#dungeon-tier input:checked ~ label:not([for$="-0"]) {
+  border-color: gray;
+  background-color: #EEEFFF;
+}
+#dungeon-tier input:checked + label:not([for$="-0"]) {
+  background-color: #191919;
+  border-color: #191919;
+}
+#dungeon-tier > * {
+  margin-right: 5px;
+}
+
+#items-to-add {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#items-to-add input[type=radio],
+#items-to-add input[type=checkbox] {
+  display: none;
+}
+#items-to-add input[type=radio]:checked + label,
+#items-to-add input[type=checkbox]:checked + label {
+  font-weight: 800;
+  color: #400000;
+}
+#items-to-add > flex-horizontal {
+  padding: 3px;
+  border-bottom: 1px solid #4000005c;
+}
+#items-to-add label:nth-of-type(2n) {
+  background: #68332c3f;
+}
+
+#wo-nav-container nav a, #dun-nav-container nav a, #mp-nav-container nav a {
+  flex: none;
+}
+#wo-nav-container .all-items-list:nth-of-type(2n+1), #dun-nav-container .all-items-list:nth-of-type(2n+1), #mp-nav-container .all-items-list:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.15);
+}
+#wo-nav-container .all-items-list div.item-body, #dun-nav-container .all-items-list div.item-body, #mp-nav-container .all-items-list div.item-body {
+  margin: 5px 10px;
+}
+#wo-nav-container .all-items-list a.item-delete, #dun-nav-container .all-items-list a.item-delete, #mp-nav-container .all-items-list a.item-delete {
+  margin-right: 10px;
+  align-self: center;
 }
 
 #attributes {
@@ -1438,15 +1111,6 @@
   font-weight: 600;
 }
 
-div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
-  transition: opacity 1s;
-  opacity: 0.5;
-}
-div.item i.fa-trash, tr.item i.fa-trash {
-  transition: opacity 1s;
-  opacity: 0;
-}
-
 #base-info table {
   width: 100%;
   height: 230px;
@@ -1456,16 +1120,6 @@ div.item i.fa-trash, tr.item i.fa-trash {
 }
 #base-info table tr td:nth-of-type(3) {
   width: 180px;
-}
-
-.profile-img.profile-big {
-  margin: 0px 0px;
-  height: 175px;
-  width: 175px;
-}
-
-#defenses-stress {
-  display: flex;
 }
 
 #character-defenses {
@@ -1490,10 +1144,8 @@ div.item i.fa-trash, tr.item i.fa-trash {
   justify-content: center;
 }
 
-#character-armor-uses div {
+#defenses-stress {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 #character-stress-clock {
@@ -1713,6 +1365,19 @@ div.item i.fa-trash, tr.item i.fa-trash {
 }
 #attributes-darkhearts .heart-container input:checked + label.practice-two {
   background-image: url("assets/boxes/box-crossed.png");
+}
+
+#abilities .item-name {
+  width: 70px;
+}
+#abilities .item-body {
+  width: auto;
+}
+#abilities .item-description {
+  width: 200px;
+}
+#abilities .label-stripe p:first-child {
+  margin-right: 10px;
 }
 
 #abilities-list div.item-name {
