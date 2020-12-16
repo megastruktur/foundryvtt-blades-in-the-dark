@@ -572,6 +572,9 @@
 * .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+* .fa-question-circle {
+  padding: 2px 3px;
+}
 * .hidden {
   display: none;
 }
@@ -980,7 +983,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   height: 32px;
   width: 32px;
   background-image: url("assets/boxes/shock-empty.png");
-  margin-right: 1px;
+  margin-right: 5px;
   top: -6px;
 }
 #attributes .shock input:checked + label {
@@ -993,7 +996,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   height: 36px;
   background-image: url("assets/boxes/bloodied-empty.png");
   margin-left: 8px;
-  margin-right: 1px;
+  margin-right: 5px;
   top: -13px;
 }
 #attributes .bloodied input:checked + label {
@@ -1105,7 +1108,10 @@ div.item i.fa-trash, tr.item i.fa-trash {
   margin-right: 5px;
 }
 #attributes .attributes-container label {
-  margin-top: 2px;
+  margin-top: 3px;
+}
+#attributes #dhearts {
+  margin-left: 5px;
 }
 #attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
   font-weight: 600;
@@ -1254,6 +1260,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
 
 #duties .item-body {
   width: auto;
+  padding: 3px;
 }
 #duties .project-clock {
   height: 80px;
@@ -1303,7 +1310,6 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #duties .project-clock .blades-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-
 #attributes-darkhearts {
   margin-top: -12px;
   margin-left: 34px;

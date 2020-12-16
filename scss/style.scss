@@ -451,7 +451,9 @@ $hover-brightness: 0.8;
             visibility: visible;
         }
     }
-
+	.fa-question-circle{
+		padding: 2px 3px;
+		}
     .hidden {
         display: none;
     }
@@ -753,7 +755,7 @@ div.item, tr.item {
             height: 32px;
             width: 32px;
             background-image: url("assets/boxes/shock-empty.png");
-            margin-right: 1px;
+            margin-right: 5px;
             top: -6px;
         }
 
@@ -772,7 +774,7 @@ div.item, tr.item {
             height: 36px;
             background-image: url("assets/boxes/bloodied-empty.png");
             margin-left: 8px;
-            margin-right: 1px;
+            margin-right: 5px;
             top: -13px;
         }
 
@@ -847,10 +849,12 @@ div.item, tr.item {
             margin-right: 5px;
         }
 		label {
-			margin-top:2px;
+			margin-top:3px;
 		}
     }
-
+	#dhearts {
+		margin-left: 5px;
+	}
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
         font-weight: 600;
     }
@@ -932,12 +936,16 @@ div.item, tr.item {
 #duties {
     .item-body {
         width: auto;
+		padding: 3px;
     }
 
     .project-clock {
         height: 80px;
         @include clock(4, 40);
     }
+	tr {
+		
+	}
 }
 
 // WO Dark Hearts
