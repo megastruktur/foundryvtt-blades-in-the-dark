@@ -177,9 +177,9 @@ $hover-brightness: 0.8;
     .black-label {
         background-color: $mud;
         color: $almost_white;
-        font-size: medium; //21px
+        font-size: 18px; //21px
         text-align: center;
-        padding: 2px 5px;
+        padding: 4px 5px;
         height: 30px !important;
         text-transform: capitalize;
     }
@@ -738,7 +738,8 @@ div.item, tr.item {
     }
 
     .all-items-list {
-
+		font-size: 14px;
+		
         &:nth-of-type(2n+1) {
             background: rgba(0, 0, 0, 0.15);
         }
@@ -912,12 +913,14 @@ div.item, tr.item {
         }
 
         label {
-            margin-top: 2px;
+            margin-top: 3px;
         }
     }
 
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
         font-weight: 600;
+		border: 1px solid $mud;
+		
     }
 }
 
@@ -941,7 +944,7 @@ table th{
     }
 }
 table td:first-child {
-    padding-left: inherit;
+    /* padding-left: inherit; */
 }
 
 // WO Basic Character Information
@@ -964,6 +967,7 @@ table td:first-child {
 	#name input[type="text"]{
 	height: 52px;
     border: none;
+	margin-left: 5px;
     font-family: Blood Crow;
     font-size: 55px;
 	font-weight: normal;
@@ -1015,6 +1019,7 @@ table td:first-child {
                     text-transform: uppercase;
                     font-family: 'Blood Crow';
                     font-size: 24px;
+					margin-right: 0px;
                     font-weight: normal;
                 }
             }
@@ -1068,7 +1073,7 @@ table td:first-child {
 
 // WO Dark Hearts
 #attributes-darkhearts {
-    margin-top: -12px;
+    margin-top: -22px;
     margin-left: 36px;
 
     .heart-container {
