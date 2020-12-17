@@ -253,9 +253,9 @@
 * .black-label {
   background-color: #68332c;
   color: #EEEFFF;
-  font-size: medium;
+  font-size: 18px;
   text-align: center;
-  padding: 2px 5px;
+  padding: 4px 5px;
   height: 30px !important;
   text-transform: capitalize;
 }
@@ -1205,7 +1205,7 @@ table th .item-add-popup {
 }
 
 table td:first-child {
-  padding-left: inherit;
+  /* padding-left: inherit; */
 }
 
 #base-info table {
@@ -1431,7 +1431,7 @@ table td:first-child {
   transform: rotate(270deg) skewY(180deg);
 }
 #attributes-darkhearts {
-  margin-top: -12px;
+  margin-top: -22px;
   margin-left: 36px;
 }
 #attributes-darkhearts .heart-container {
