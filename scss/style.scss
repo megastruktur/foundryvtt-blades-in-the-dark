@@ -55,7 +55,7 @@ $hover-brightness: 0.8;
         border-left: 2px solid darkslategrey;
         border-right: 2px solid darkslategrey;
         transition-duration: $transition-period;
-            
+
         &:hover, &:focus {
             outline: none;
             box-shadow: 0 0 5px $orange;
@@ -177,7 +177,7 @@ $hover-brightness: 0.8;
     .black-label {
         background-color: $mud;
         color: $almost_white;
-        font-size: 21px;
+        font-size: medium; //21px
         text-align: center;
         padding: 2px 5px;
         height: 30px !important;
@@ -271,19 +271,19 @@ $hover-brightness: 0.8;
         padding-right: 10px;
         display: flex;
         font-weight: bold;
-		font-size: medium;
-		
-		&:hover {
-			.item-add-popup {
-				transition: opacity 0.5s;
-				opacity: 1;
-			}
-		}
+        font-size: medium;
 
-		.item-add-popup {
-			transition: opacity 0.5s;
-			opacity: 0.1;
-		}
+        &:hover {
+            .item-add-popup {
+                transition: opacity 0.5s;
+                opacity: 1;
+            }
+        }
+
+        .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: 0.1;
+        }
     }
 
     .label-stripe-gray {
@@ -350,7 +350,6 @@ $hover-brightness: 0.8;
         cursor: pointer;
         color: $red;
     }
-
     // Wicked and Reckless XP
     .big-teeth-section {
         display: flex;
@@ -386,15 +385,13 @@ $hover-brightness: 0.8;
             }
         }
     }
-
-     // Experience teeth
+    // Experience teeth
     .teeth-experience {
         @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
         position: absolute;
         top: 0px;
         right: 10px;
     }
-
     // Item
     .item {
         justify-content: space-between;
@@ -418,7 +415,7 @@ $hover-brightness: 0.8;
                 margin: 10px;
             }
 
-            .missing-materials{
+            .missing-materials {
                 color: $gray;
             }
         }
@@ -430,6 +427,7 @@ $hover-brightness: 0.8;
         .item-class-label {
             margin-bottom: 10px;
         }
+
         .item-body,
         .item-class-label {
             width: 100px;
@@ -439,7 +437,6 @@ $hover-brightness: 0.8;
     .item-class-label {
         margin-bottom: 2px;
     }
-
     // Tooltip.
     .tooltip {
 
@@ -463,9 +460,11 @@ $hover-brightness: 0.8;
             visibility: visible;
         }
     }
-	.fa-question-circle{
-		padding: 2px 3px;
-		}
+
+    .fa-question-circle {
+        padding: 2px 3px;
+    }
+
     .hidden {
         display: none;
     }
@@ -758,9 +757,9 @@ div.item, tr.item {
 
 // MP WO Attribute Section
 #attributes {
-    display: flex;
-    flex-direction: column;
     width: 200px;
+    top: 7px;
+    position: relative;
 
     &.minion {
         width: 150px;
@@ -884,15 +883,16 @@ div.item, tr.item {
         flex-grow: 1;
     }
 
-    .attribute-label,
-    .attribute-skill-label {
-        font-weight: 800;
+    .attribute-label {
         font-size: 18px;
         text-transform: uppercase;
         background-color: $mud;
     }
 
     .attribute-skill-label {
+        font-weight: 800;
+        font-size: 18px;
+        text-transform: uppercase;
         background-color: unset;
     }
 
@@ -915,6 +915,7 @@ div.item, tr.item {
             margin-top: 2px;
         }
     }
+
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
         font-weight: 600;
     }
@@ -948,7 +949,7 @@ table td:first-child {
     width: 100%;
     height: 230px;
 	border-top: 5px solid $mud;
-    border-bottom: 5px solid $mud;
+    // border-bottom: 5px solid $mud;
 
     tr {
         background-color: initial;
@@ -956,9 +957,10 @@ table td:first-child {
         td {
             // width: 50%;
             &:nth-of-type(3) {
-                width: 180px;
+                width: 190px;
             }
         }
+
 	#name input[type="text"]{
 	height: 52px;
     border: none;
@@ -968,6 +970,10 @@ table td:first-child {
     color: $mud;
     background: none;
 	}
+
+    &:last-child {
+        background-color: $mud;
+    }
   }
 }
 
@@ -982,21 +988,36 @@ table td:first-child {
         th {
             background-color: $mud;
             color: $almost_white;
-			font-size: medium;
+            font-size: medium;
+            font-weight: 600;
         }
 
         input[type="text"] {
             width: 100%;
         }
 
-        tr td:nth-of-type(1) .item-checkmark {
-            flex-grow: unset;
-            margin-right: 5px;
-        }
+        tr {
 
-        tr td:nth-of-type(2) {
-            display: flex;
-            justify-content: center;
+            td:nth-of-type(1) .item-checkmark {
+                flex-grow: unset;
+                margin-right: 5px;
+            }
+
+            td:nth-of-type(2) {
+                display: flex;
+                justify-content: center;
+            }
+
+            td:nth-child(3) {
+                text-align:center;
+                
+                .item-name {
+                    text-transform: uppercase;
+                    font-family: 'Blood Crow';
+                    font-size: 24px;
+                    font-weight: normal;
+                }
+            }
         }
     }
 }

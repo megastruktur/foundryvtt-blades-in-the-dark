@@ -253,7 +253,7 @@
 * .black-label {
   background-color: #68332c;
   color: #EEEFFF;
-  font-size: 21px;
+  font-size: medium;
   text-align: center;
   padding: 2px 5px;
   height: 30px !important;
@@ -1002,9 +1002,9 @@ div.item i.fa-trash, tr.item i.fa-trash {
 }
 
 #attributes {
-  display: flex;
-  flex-direction: column;
   width: 200px;
+  top: 7px;
+  position: relative;
 }
 #attributes.minion {
   width: 150px;
@@ -1097,14 +1097,15 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #attributes .main {
   flex-grow: 1;
 }
-#attributes .attribute-label,
-#attributes .attribute-skill-label {
-  font-weight: 800;
+#attributes .attribute-label {
   font-size: 18px;
   text-transform: uppercase;
   background-color: #68332c;
 }
 #attributes .attribute-skill-label {
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: uppercase;
   background-color: unset;
 }
 #attributes .attributes-exp {
@@ -1207,13 +1208,12 @@ table td:first-child {
   width: 100%;
   height: 230px;
   border-top: 5px solid #68332c;
-  border-bottom: 5px solid #68332c;
 }
 #base-info table tr {
   background-color: initial;
 }
 #base-info table tr td:nth-of-type(3) {
-  width: 180px;
+  width: 190px;
 }
 #base-info table tr #name input[type=text] {
   height: 52px;
@@ -1223,6 +1223,9 @@ table td:first-child {
   font-weight: normal;
   color: #68332c;
   background: none;
+}
+#base-info table tr:last-child {
+  background-color: #68332c;
 }
 
 #character-defenses {
@@ -1235,6 +1238,7 @@ table td:first-child {
   background-color: #68332c;
   color: #EEEFFF;
   font-size: medium;
+  font-weight: 600;
 }
 #character-defenses table input[type=text] {
   width: 100%;
@@ -1246,6 +1250,15 @@ table td:first-child {
 #character-defenses table tr td:nth-of-type(2) {
   display: flex;
   justify-content: center;
+}
+#character-defenses table tr td:nth-child(3) {
+  text-align: center;
+}
+#character-defenses table tr td:nth-child(3) .item-name {
+  text-transform: uppercase;
+  font-family: "Blood Crow";
+  font-size: 24px;
+  font-weight: normal;
 }
 
 /* Display all Item Names in Bold */
