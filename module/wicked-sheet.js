@@ -36,40 +36,50 @@ export class BladesSheet extends ActorSheet {
 
     let items = await BladesHelpers.getAllItemsByType(item_type, game);
 
+    // Sort apecial abilities and tier-3 rooms
     if (items.length > 0 && items[0].type == "specialability") {
       items.sort(BladesHelpers.specialAbilitySort);
+    } else if (items.length > 0 && items[0].type == "tier3room") {
+      items.sort(BladesHelpers.tierThreeRoomSort);
     }
 
 
     let html = `<div id="items-to-add">`;
 
     items.forEach(e => {
-      let callingaddendum = ``;
-      let coreaddendum = ``;
+      let itemPrefix = ``;
+      let itemSuffix = ``;
       if (item_type == "specialability") {
         if (typeof e.data.calling !== "undefined") {
-          callingaddendum += `(${e.data.calling}): `
+          itemPrefix += `(${e.data.calling}): `
         }
         if (e.data.core) {
-          coreaddendum += ` (Core)`
+          itemSuffix += ` (Core)`
         }
-
+      } else if (item_type == "tier3room") {
+        if (typeof e.data.theme !== "undefined") {
+          itemPrefix += `(${e.data.theme}): `
+        }
       }
+
 
       html += `<input id="select-item-${e._id}" type="${input_type}" name="select_items" value="${e._id}">`;
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
-      html += `${callingaddendum}${game.i18n.localize(e.name)}${coreaddendum} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${game.i18n.localize(e.data.description)}</span></i>`;
+      html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${game.i18n.localize(e.data.description)}</span></i>`;
       html += `</label>`;
     });
 
     html += `</div>`;
+
+    const label = CONFIG.Item?.typeLabels?.[item_type] ?? item_type;
+    let title = game.i18n.has(label) ? game.i18n.localize(label) : item_type;
 
     let options = {
       // width: "500"
     }
 
     let dialog = new Dialog({
-      title: `${game.i18n.localize('Add')} ${item_type}`,
+      title: `${game.i18n.localize('Add')} ${game.i18n.localize(title)}`,
       content: html,
       buttons: {
         one: {

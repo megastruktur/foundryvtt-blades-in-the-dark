@@ -196,8 +196,6 @@ export class BladesHelpers {
 /**
  * Sorts Special Abilities by Calling and then Core and then Alphabet
  */
-
-  // sort by name
   static specialAbilitySort(a, b) {
     if (a.data.calling < b.data.calling) {
       return -1;
@@ -210,6 +208,28 @@ export class BladesHelpers {
       return -1;
     }
     if (!a.data.core && b.data.core) {
+      return 1;
+    }
+
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  }
+
+  /**
+ * Sorts Tier-3 Rooms by Theme and then Alphabet
+ */
+  static tierThreeRoomSort(a, b) {
+    if (a.data.theme < b.data.theme) {
+      return -1;
+    }
+    if (a.data.theme > b.data.theme) {
       return 1;
     }
 
