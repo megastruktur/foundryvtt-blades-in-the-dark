@@ -532,6 +532,7 @@ $hover-brightness: 0.8;
         color: $almost_black;
         overflow-y: auto;
         background-size: 300px;
+        z-index: -1;
     }
 
     .wicked-die {
@@ -773,12 +774,30 @@ div.item, tr.item {
             background-image: url("assets/boxes/bloodied-empty.png");
             margin-left: 8px;
             margin-right: 1px;
+            padding: 10px;
             top: -13px;
         }
 
         input:checked + label {
-            background-image: url("assets/boxes/bloodied-filled.png");
+            background-image: url("assets/boxes/bloodied-filled-white.png");
         }
+
+        input:checked ~ i.splash {
+            display: block;
+            height: 100px;
+            background-image: url("assets/decorations/bloodsplat.png");
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+            margin: -50px;
+            position: relative;
+            top: -30px;
+            left: 22px;
+            z-index: -1;
+        }
+    }
+
+    #attributes-bloodied {
+        margin-bottom: 15px;
     }
 
     .bloodied-minion {
@@ -789,13 +808,25 @@ div.item, tr.item {
         label {
             @extend %custom-label;
             background-image: url("assets/boxes/bloodied-minion-empty.png");
-            margin-left: 1px;
-            margin-right: 2px;
+            margin: 0px 2px -2px 1px;
             top: -2px;
         }
 
         input:checked + label {
-            background-image: url("assets/boxes/bloodied-minion-filled.png");
+            background-image: url("assets/boxes/bloodied-minion-filled-white.png");
+        }
+
+        input:checked ~ i.splash {
+            display: block;
+            height: 75px;
+            background-image: url("assets/decorations/bloodsplat.png");
+            background-size: 75px 75px;
+            background-repeat: no-repeat;
+            margin: -40px;
+            position: relative;
+            top: -12px;
+            left: 16px;
+            z-index: -1;
         }
     }
 
@@ -823,13 +854,13 @@ div.item, tr.item {
     .attribute-label,
     .attribute-skill-label {
         font-weight: 800;
-		font-size: 18px;
+        font-size: 18px;
         text-transform: uppercase;
-		background-color: $mud;
+        background-color: $mud;
     }
 
     .attribute-skill-label {
-		background-color: unset;
+        background-color: unset;
     }
 
     .attributes-exp {
@@ -840,15 +871,16 @@ div.item, tr.item {
     .attributes-container {
         display: flex;
         margin: 3px 0px;
-		background-color: unset;
+        background-color: unset;
         @include custom_radio(15px, 15px);
 
         * {
             margin-right: 5px;
         }
-		label {
-			margin-top:2px;
-		}
+
+        label {
+            margin-top: 2px;
+        }
     }
 
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {

@@ -784,6 +784,7 @@
   color: #191919;
   overflow-y: auto;
   background-size: 300px;
+  z-index: -1;
 }
 * .wicked-die {
   width: 32px;
@@ -994,22 +995,49 @@ div.item i.fa-trash, tr.item i.fa-trash {
   background-image: url("assets/boxes/bloodied-empty.png");
   margin-left: 8px;
   margin-right: 1px;
+  padding: 10px;
   top: -13px;
 }
 #attributes .bloodied input:checked + label {
-  background-image: url("assets/boxes/bloodied-filled.png");
+  background-image: url("assets/boxes/bloodied-filled-white.png");
+}
+#attributes .bloodied input:checked ~ i.splash {
+  display: block;
+  height: 100px;
+  background-image: url("assets/decorations/bloodsplat.png");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  margin: -50px;
+  position: relative;
+  top: -30px;
+  left: 22px;
+  z-index: -1;
+}
+#attributes #attributes-bloodied {
+  margin-bottom: 15px;
 }
 #attributes .bloodied-minion input {
   display: none;
 }
 #attributes .bloodied-minion label {
   background-image: url("assets/boxes/bloodied-minion-empty.png");
-  margin-left: 1px;
-  margin-right: 2px;
+  margin: 0px 2px -2px 1px;
   top: -2px;
 }
 #attributes .bloodied-minion input:checked + label {
-  background-image: url("assets/boxes/bloodied-minion-filled.png");
+  background-image: url("assets/boxes/bloodied-minion-filled-white.png");
+}
+#attributes .bloodied-minion input:checked ~ i.splash {
+  display: block;
+  height: 75px;
+  background-image: url("assets/decorations/bloodsplat.png");
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  margin: -40px;
+  position: relative;
+  top: -12px;
+  left: 16px;
+  z-index: -1;
 }
 #attributes .morale-minion input {
   display: none;
