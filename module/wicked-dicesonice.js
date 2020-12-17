@@ -23,34 +23,11 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 		system: "Wicked Ones"
    },"d6");
 
-  // dice3d.addTexture("sun", {
-    // name: "Worthy Metal",
-    // composite: "multiply",
-    // source: "modules/lordudice/graphics/dice/sun.png",
-	// bump: "modules/lordudice/graphics/dice/sun.png"
-  // })
-    // .then(() => {
-      // dice3d.addColorset({
-        // name: 'LCD - Saviours Blessing',
-        // description: "Saviours Blessing",
-        // category: "LCD - Dark Deeds",
-        // background: "#fff1bb",
-		// foreground: '#ff870d',
-		// outline: '#ff6b00',
-        // edge: '#ffbf00',
-		// texture: 'sun',
-		// material: 'metal',
-		// fontScale: {
-          // "d100":0.8,
-		  // "d20": 0.9,
-          // "d12":1.0,
-		  // "d10": 0.9,
-		  // "d8": 0.9,
-          // "d6":1.2,
-          // "d2":1.3
-        // },
-        // font:"Metamorphous"
-      // },"no");
-    // });
-	
-});
+      dice3d.addColorset({
+        name: 'Wicked Dice',
+        description: "Wicked Ones Style",
+        category: "Wicked Ones",
+        edge: '#686859',
+		material: 'metal',
+      },"default");
+    });
