@@ -65,7 +65,7 @@ export class BladesSheet extends ActorSheet {
 
       html += `<input id="select-item-${e._id}" type="${input_type}" name="select_items" value="${e._id}">`;
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
-      html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${game.i18n.localize(e.data.description)}</span></i>`;
+      html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${e.data.description}</span></i>`;
       html += `</label>`;
     });
 
