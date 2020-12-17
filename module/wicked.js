@@ -17,6 +17,7 @@ import { BladesMinionSheet } from "./wicked-minion-sheet.js";
 import { BladesCrewSheet } from "./wicked-dungeon-sheet.js";
 import { BladesClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
+import "./wicked-dicesonice.js";
 
 window.BladesHelpers = BladesHelpers;
 
