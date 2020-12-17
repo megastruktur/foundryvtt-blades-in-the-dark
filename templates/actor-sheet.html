@@ -6,20 +6,21 @@
     <table>
       <tr>
         <td colspan="2">
+          {{!-- Character Name --}}
           <div id="name">
-            <!-- <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label> -->
             <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>
         </td>
-		<td rowspan="5">
+        <td rowspan="4">
+          {{!-- Large Profile Picture --}}
           <img class="profile-img profile-big" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
         </td>
       </tr>
       <tr>
-      <tr>
         <td>
+          {{!-- Monster Race --}}
           <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}</a></div>
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}:</a></div>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "monsterrace")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -32,25 +33,19 @@
             {{/each}}
           </div>
         </td>
-		<td colspan="1">
-          <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
-            {{#multiboxes data.wickedxp.value}}
-            <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
-
-            {{#times_from_1 data.wickedxp.max}}
-              <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
-              <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
-            {{/times_from_1}}
-
-            {{/multiboxes}}
+        <td colspan="1">
+          {{!-- Look --}}
+          <div id="look">
+            <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
+            <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
           </div>
         </td>
       </tr>
       <tr>
         <td>
+          {{!-- Calling --}}
           <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}</a></div>
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}:</a></div>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "calling")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -64,6 +59,71 @@
           </div>
         </td>
         <td>
+          {{!-- Minion Pack --}}
+          <div id="minionpack">
+            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
+            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{!-- Revelry --}}
+          <div class="item-block flex-vertical">
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}:</a></div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "revelry")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <div class="item-name">{{item.name}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </td>
+        <td>
+          {{!-- Vile Friend --}}
+          <div id="vilefriend">
+            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
+            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{!-- Gold --}}
+          <div id="character-{{actor._id}}-gold" class="big-teeth">
+            {{#multiboxes data.gold}}
+            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
+
+            {{#times_from_1 3}}
+            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
+            {{/times_from_1}}
+
+            {{/multiboxes}}
+          </div>
+        </td>	  
+        <td>
+          {{!-- Wicked XP --}}
+          <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
+            {{#multiboxes data.wickedxp.value}}
+            <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
+
+            {{#times_from_1 data.wickedxp.max}}
+            <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
+            {{/times_from_1}}
+
+            {{/multiboxes}}
+          </div>
+        </td>
+        <td>
+          {{!-- Reckless XP --}}
           <div id="character-{{actor._id}}-recklessxp" class="big-teeth">
             {{#multiboxes data.recklessxp.value}}
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
@@ -78,125 +138,73 @@
           </div>
         </td>
       </tr>
-      <tr>
-        <td>
-          <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}</a></div>
-            {{#each actor.items as |item id|}}
-            {{#if (eq item.type "revelry")}}
-            <div class="item flex-horizontal" data-item-id="{{item._id}}">
-              <div class="item-body flex-horizontal">
-                <div class="item-name">{{item.name}}</div>
-              </div>
-              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-            </div>
-            {{/if}}
-            {{/each}}
-          </div>
-        </td>
-        <td>
-          <div id="character-{{actor._id}}-gold" class="big-teeth">
-            {{#multiboxes data.gold}}
-            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
-
-            {{#times_from_1 3}}
-            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
-            {{/times_from_1}}
-
-            {{/multiboxes}}
-          </div>
-        </td>
-      </tr>
-        <td>
-          <div id="minionpack">
-            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
-            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
-          </div>
-        </td>	  
-        <td>
-          <div id="look">
-            <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
-            <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
-            </div>
-        </td>
-        <td>
-          <div id="vilefriend">
-            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
-            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
-          </div>
-        </td>
-      </tr>
     </table>
   </section>
 
-
-  {{!-- Defenses, Stress Clock & Impulses --}}
-  <section id="defenses-stress">
-    <div id="character-defenses">
-      <table>
-        <thead>
-          <tr>
-            <th class="black-white">
-              {{localize "FITD.Defenses"}} <a class="item-add-popup" data-distinct="false" data-item-type="defense"><i class="fas fa-plus-square"></i></a>
-            </th>
-            <th class="black-white">{{localize "FITD.Stress"}}</th>
-            <th class="black-white">
-              {{localize "FITD.Impulse"}} <a class="item-add-popup" data-distinct="false" data-item-type="wickedimpulse"><i class="fas fa-plus-square"></i></a>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="item-block flex-vertical">
-                {{#each actor.items as |item id|}}
-                {{#if (eq item.type "defense")}}
-                <div class="item flex-horizontal" data-item-id="{{item._id}}">
-                  <div class="item-checkmark">
-                    <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}}>
-                    <label for="item-{{item._id}}-checked"></label>
-                  </div>
-                  <div class="item-body flex-horizontal">
-                    <div class="item-name">{{item.name}}</div>
-                  </div>
-                  <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-                </div>
-                {{/if}}
-                {{/each}}
-              </div>
-            </td>
-            <td>
-              <div id="character-stress-clock">
-                {{{blades-clock "data.stress_clock" 6 data.stress_clock actor._id}}}
-              </div>
-            </td>
-            <td>
-              <div class="item-block flex-vertical">
-                {{#each actor.items as |item id|}}
-                  {{#if (eq item.type "wickedimpulse")}}
-                  <div class="item flex-horizontal" data-item-id="{{item._id}}">
-                    <div class="item-body flex-horizontal">
-                      <div class="item-name">{{item.name}}</div>
-                    </div>
-                    <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-                  </div>
-                  {{/if}}
-                {{/each}}
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-
-  {{!-- Navigation, Tabs & Attributes --}}
+  {{!-- Defenses, Stress, Impulses, Tabs & Attributes --}}
   <section class="flex-horizontal">
 
     <div id="wo-nav-container" class="tab-content flex-vertical grow-two">
+      {{!-- Defenses, Stress Clock & Impulses --}}
+      <div id="defenses-stress">
+        <div id="character-defenses">
+          {{!-- TO DO: Reduce One Level --}}
+          <table>
+            <thead>
+              <tr>
+                <th class="black-white">
+                  {{localize "FITD.Defenses"}} <a class="item-add-popup" data-distinct="false" data-item-type="defense"><i class="fas fa-plus-square"></i></a>
+                </th>
+                <th class="black-white">{{localize "FITD.Stress"}}</th>
+                <th class="black-white">
+                  {{localize "FITD.Impulse"}} <a class="item-add-popup" data-distinct="false" data-item-type="wickedimpulse"><i class="fas fa-plus-square"></i></a>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="item-block flex-vertical">
+                    {{#each actor.items as |item id|}}
+                    {{#if (eq item.type "defense")}}
+                    <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                      <div class="item-checkmark">
+                        <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}}>
+                        <label for="item-{{item._id}}-checked"></label>
+                      </div>
+                      <div class="item-body flex-horizontal">
+                        <div class="item-name">{{item.name}}</div>
+                      </div>
+                      <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                  </div>
+                </td>
+                <td>
+                  <div id="character-stress-clock">
+                    {{{blades-clock "data.stress_clock" 6 data.stress_clock actor._id}}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-block flex-vertical">
+                    {{#each actor.items as |item id|}}
+                    {{#if (eq item.type "wickedimpulse")}}
+                    <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                      <div class="item-body flex-horizontal">
+                        <div class="item-name">{{item.name}}</div>
+                      </div>
+                      <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       {{!-- Nav menu --}}
       <nav class="tabs flex-horizontal">
@@ -230,52 +238,52 @@
       </div>
 
       {{!-- Gear & Supply Tab --}}
-    <div id="loadout" class="tab flex-vertical" data-tab="loadout">
-      <div class="label-stripe flex-horizontal">
-        <p>{{localize "FITD.Gear"}}</p>
-        <p><a class="item-add-popup" data-item-type="gear"><i class="fas fa-plus-square"></i></a></p>
-      </div>
-      <div>
-        {{#each actor.items as |item id|}}
-        {{#if (eq item.type "gear")}}
-        <div class="item flex-horizontal" data-item-id="{{item._id}}">
-          <div class="item-body flex-horizontal">
-            <div class="item-name">{{item.name}}</div>
-            <div class="item-description">{{item.data.description}}</div>
-          </div>
-          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+      <div id="loadout" class="tab flex-vertical" data-tab="loadout">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.Gear"}}</p>
+          <p><a class="item-add-popup" data-item-type="gear"><i class="fas fa-plus-square"></i></a></p>
         </div>
-        {{/if}}
-        {{/each}}
-      </div>
-      <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
-        <p class="flex-horizontal">
-          {{#multiboxes data.supply}}
-          <input type="radio" id="character-{{actor._id}}-supply-0" name="data.supply" value="0" dtype="Radio">
-          <label for="character-{{actor._id}}-supply-0">{{localize "FITD.Supply"}}</label>
-          {{#times_from_1 data.max_supply}}
-          <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply" value="{{this}}" dtype="Radio">
-          <label for="character-{{../actor._id}}-supply-{{this}}"></label>
-          {{/times_from_1}}
+        <div>
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "gear")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <div class="item-name">{{item.name}}</div>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
+        <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
+          <p class="flex-horizontal">
+            {{#multiboxes data.supply}}
+            <input type="radio" id="character-{{actor._id}}-supply-0" name="data.supply" value="0" dtype="Radio">
+            <label for="character-{{actor._id}}-supply-0">{{localize "FITD.Supply"}}</label>
+            {{#times_from_1 data.max_supply}}
+            <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-supply-{{this}}"></label>
+            {{/times_from_1}}
 
-          {{/multiboxes}}
-        </p>
-        <p><a class="item-add-popup" data-item-type="supply"><i class="fas fa-plus-square"></i></a></p>
-      </div>
-      <div>
-        {{#each actor.items as |item id|}}
-        {{#if (eq item.type "supply")}}
-        <div class="item flex-horizontal" data-item-id="{{item._id}}">
-          <div class="item-body flex-horizontal">
-            <div class="item-name">{{item.name}}</div>
-            <div class="item-description">{{item.data.description}}</div>
-          </div>
-          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            {{/multiboxes}}
+          </p>
+          <p><a class="item-add-popup" data-item-type="supply"><i class="fas fa-plus-square"></i></a></p>
         </div>
-        {{/if}}
-        {{/each}}
+        <div>
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "supply")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <div class="item-name">{{item.name}}</div>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
       </div>
-    </div>
 
       {{!-- Duties & Projects Tab --}}
       <div id="duties" class="tab flex-vertical" data-tab="duties">
