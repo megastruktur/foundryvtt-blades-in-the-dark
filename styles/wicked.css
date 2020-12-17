@@ -4,6 +4,17 @@
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
+/* Dark Hearts Glow */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
 /*
  * Custom Radio
  */
@@ -325,6 +336,15 @@
   padding-right: 10px;
   display: flex;
   font-weight: bold;
+  font-size: medium;
+}
+* .label-stripe:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+* .label-stripe .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
 }
 * .label-stripe-gray {
   text-transform: uppercase;
@@ -404,8 +424,8 @@
   /* Hide the browser's default checkbox */
 }
 * .big-teeth-section .big-teeth label {
-  height: 50px;
-  width: 17px;
+  height: 30px;
+  width: 15px;
   background-image: url("assets/teeth/stresstooth-red.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -571,6 +591,9 @@
 }
 * .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+* .fa-question-circle {
+  padding: 2px 3px;
 }
 * .hidden {
   display: none;
@@ -843,6 +866,23 @@
   margin: 0px 0px;
   height: 175px;
   width: 175px;
+  border: none;
+  background: url(../images/background-light.png) repeat #4000004f;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  background-blend-mode: color-burn;
+  object-fit: cover;
+}
+
+.profile-img {
+  border: none;
+  background: url(../images/background-light.png) repeat #4000004f;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  background-blend-mode: color-burn;
+  object-fit: cover;
 }
 
 div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
@@ -852,6 +892,10 @@ div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
 div.item i.fa-trash, tr.item i.fa-trash {
   transition: opacity 1s;
   opacity: 0;
+}
+
+.item-add-popup {
+  padding-left: 10px;
 }
 
 /*
@@ -981,7 +1025,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   height: 32px;
   width: 32px;
   background-image: url("assets/boxes/shock-empty.png");
-  margin-right: 1px;
+  margin-right: 5px;
   top: -6px;
 }
 #attributes .shock input:checked + label {
@@ -1121,6 +1165,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   opacity: 0.7;
 }
 #attributes .attributes-container input:checked + label.dark-heart {
+  /* animation: glow 2000ms ease-out infinite alternate; */
   background-image: url("assets/boxes/heart-filled.png");
 }
 #attributes .attributes-container input:checked + label.practice-one {
@@ -1139,15 +1184,45 @@ div.item i.fa-trash, tr.item i.fa-trash {
   font-weight: 600;
 }
 
+/* All Table Formatting: */
+table td,
+table th {
+  padding: 0.25em 5px;
+}
+
+table th:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+table th .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
+}
+
+table td:first-child {
+  padding-left: inherit;
+}
+
 #base-info table {
   width: 100%;
   height: 230px;
+  border-top: 5px solid #68332c;
+  border-bottom: 5px solid #68332c;
 }
 #base-info table tr {
   background-color: initial;
 }
 #base-info table tr td:nth-of-type(3) {
   width: 180px;
+}
+#base-info table tr #name input[type=text] {
+  height: 52px;
+  border: none;
+  font-family: Blood Crow;
+  font-size: 55px;
+  font-weight: normal;
+  color: #68332c;
+  background: none;
 }
 
 #character-defenses {
@@ -1159,6 +1234,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #character-defenses table th {
   background-color: #68332c;
   color: #EEEFFF;
+  font-size: medium;
 }
 #character-defenses table input[type=text] {
   width: 100%;
@@ -1170,6 +1246,11 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #character-defenses table tr td:nth-of-type(2) {
   display: flex;
   justify-content: center;
+}
+
+/* Display all Item Names in Bold */
+.item-name {
+  font-weight: 600;
 }
 
 #defenses-stress {
@@ -1280,6 +1361,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
 
 #duties .item-body {
   width: auto;
+  padding: 3px;
 }
 #duties .project-clock {
   height: 80px;
@@ -1329,10 +1411,9 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #duties .project-clock .blades-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-
 #attributes-darkhearts {
   margin-top: -12px;
-  margin-left: 34px;
+  margin-left: 36px;
 }
 #attributes-darkhearts .heart-container {
   justify-content: flex-start;
@@ -1386,6 +1467,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   opacity: 0.7;
 }
 #attributes-darkhearts .heart-container input:checked + label.dark-heart {
+  /* animation: glow 2000ms ease-out infinite alternate; */
   background-image: url("assets/boxes/heart-filled.png");
 }
 #attributes-darkhearts .heart-container input:checked + label.practice-one {
@@ -1395,17 +1477,21 @@ div.item i.fa-trash, tr.item i.fa-trash {
   background-image: url("assets/boxes/box-crossed.png");
 }
 
+#abilities {
+  /* .label-stripe { */
+  /* p:first-child { */
+  /* margin-right: 10px; */
+  /* } */
+}
 #abilities .item-name {
   width: 70px;
 }
 #abilities .item-body {
   width: auto;
+  font-weight: 500;
 }
 #abilities .item-description {
   width: 200px;
-}
-#abilities .label-stripe p:first-child {
-  margin-right: 10px;
 }
 
 #abilities-list div.item-name {
