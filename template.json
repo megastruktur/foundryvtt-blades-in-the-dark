@@ -205,6 +205,7 @@
     },
     "project": {
       "templates": [ "default" ],
+      "clock_sizes": [ 4, 6, 8 ],
       "clock_size": 4,
       "clock_progress": 0
     },

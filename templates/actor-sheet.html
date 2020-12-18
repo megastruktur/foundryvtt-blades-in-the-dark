@@ -323,22 +323,33 @@
           <p>{{localize "FITD.Projects"}}</p>
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
-        <div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "project")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal project-clock">
-              <div id="project-clock-{{item._id}}">
-                {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
-              </div>
-              <div class="item-name">{{item.name}}</div>
-              <div class="item-description">{{item.data.description}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-          </div>
-          {{/if}}
-          {{/each}}
-        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <td>Clock</td>
+              <td>Name</td>
+              <td>Description</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "project")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body flex-horizontal project-clock">
+                <div id="project-clock-{{item._id}}">
+                  {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
+                </div>
+              </td>
+              <td class="item-body"><div class="item-name">{{item.name}}</div></td>
+              <td class="item-body"><div class="item-description">{{item.data.description}}</div></td>
+              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
       </div>
 
       {{!-- Notes Tab --}}
