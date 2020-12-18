@@ -402,7 +402,7 @@
 }
 * .rollable-text:hover {
   cursor: pointer;
-  color: red;
+  color: #a20000;
 }
 * .big-teeth-section {
   display: flex;
@@ -422,11 +422,12 @@
 * .big-teeth-section .big-teeth {
   display: flex;
   /* Hide the browser's default checkbox */
+  justify-content: center;
 }
 * .big-teeth-section .big-teeth label {
-  height: 30px;
-  width: 15px;
-  background-image: url("assets/teeth/stresstooth-red.png");
+  height: 32px;
+  width: 11px;
+  background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
@@ -453,10 +454,93 @@
   display: none;
 }
 * .big-teeth-section .big-teeth input:checked ~ label {
-  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+  background-image: url("assets/teeth/xp-tooth-3-5-7-empty.png");
 }
 * .big-teeth-section .big-teeth input:checked + label {
-  background-image: url("assets/teeth/stresstooth-red.png");
+  background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
+}
+* .big-teeth-section .big-teeth label {
+  margin-right: 0px;
+}
+* .big-teeth-section .big-teeth label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-filled.png");
+  width: 10px;
+}
+* .big-teeth-section .big-teeth label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+  width: 12px;
+}
+* .big-teeth-section .big-teeth label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-filled.png");
+  width: 18px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-empty.png");
+  width: 10px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
+  width: 12px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-empty.png");
+  width: 18px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-filled.png");
+  width: 10px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+  width: 12px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked + label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-filled.png");
+  width: 18px;
+}
+* .big-teeth-section .big-teeth.gold {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  align-items: center;
+  justify-content: center;
+}
+* .big-teeth-section .big-teeth.gold label {
+  height: 20px;
+  width: 20px;
+  background-image: url("assets/teeth/gold-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .big-teeth-section .big-teeth.gold label:last-of-type {
+  margin-right: 0px;
+}
+* .big-teeth-section .big-teeth.gold label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+* .big-teeth-section .big-teeth.gold label[for$="-0"] i {
+  margin-top: 4px;
+}
+* .big-teeth-section .big-teeth.gold label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* .big-teeth-section .big-teeth.gold input {
+  display: none;
+}
+* .big-teeth-section .big-teeth.gold input:checked ~ label {
+  background-image: url("assets/teeth/gold-empty.png");
+}
+* .big-teeth-section .big-teeth.gold input:checked + label {
+  background-image: url("assets/teeth/gold-filled.png");
+}
+* .big-teeth-section .big-teeth.gold label {
+  margin-right: 0px;
 }
 * .big-teeth-section .small-teeth-container .small-teeth-wrap {
   display: flex;
@@ -800,7 +884,7 @@
 * i.nullifier:hover {
   filter: brightness(0.8);
   opacity: 0.9;
-  color: red;
+  color: #a20000;
 }
 * .window-app .window-content {
   background: url(../images/background-light.png) repeat;
@@ -1100,6 +1184,10 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #attributes .main {
   flex-grow: 1;
 }
+#attributes .main div:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
 #attributes .attribute-label {
   font-size: 18px;
   text-transform: uppercase;
@@ -1139,11 +1227,13 @@ div.item i.fa-trash, tr.item i.fa-trash {
   top: -4px;
 }
 #attributes .attributes-container label[for$="-0"] {
-  height: 5px;
-  width: 5px;
+  height: 8px;
+  width: 8px;
   border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
   background-image: none !important;
-  background-color: red !important;
+  background-color: #a20000 !important;
   margin-right: 0px;
 }
 #attributes .attributes-container label:hover {
@@ -1216,8 +1306,11 @@ table td:first-child {
 #base-info table tr {
   background-color: initial;
 }
+#base-info table tr td:nth-of-type(1) {
+  width: 150px;
+}
 #base-info table tr td:nth-of-type(3) {
-  width: 190px;
+  width: 200px;
 }
 #base-info table tr #name input[type=text] {
   height: 52px;
@@ -1456,11 +1549,13 @@ table td:first-child {
   top: -4px;
 }
 #attributes-darkhearts .heart-container label[for$="-0"] {
-  height: 5px;
-  width: 5px;
+  height: 8px;
+  width: 8px;
   border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
   background-image: none !important;
-  background-color: red !important;
+  background-color: #a20000 !important;
   margin-right: 0px;
 }
 #attributes-darkhearts .heart-container label:hover {
@@ -1495,28 +1590,32 @@ table td:first-child {
 #attributes-darkhearts .heart-container input:checked + label.practice-two {
   background-image: url("assets/boxes/box-crossed.png");
 }
+#attributes-darkhearts .heart-container:hover label {
+  transition: opacity 1s;
+  opacity: 1;
+}
 
-#abilities {
+#abilities, #loadout {
   /* .label-stripe { */
   /* p:first-child { */
   /* margin-right: 10px; */
   /* } */
 }
-#abilities .item-name {
+#abilities .item-name, #loadout .item-name {
   width: 70px;
 }
-#abilities .item-body {
+#abilities .item-body, #loadout .item-body {
   width: auto;
   font-weight: 500;
 }
-#abilities .item-description {
+#abilities .item-description, #loadout .item-description {
   width: 200px;
 }
 
-#abilities-list div.item-name {
+#abilities-list div.item-name, #loadout div.item-name {
   flex-basis: 25%;
 }
-#abilities-list div.item-description {
+#abilities-list div.item-description, #loadout div.item-description {
   width: fit-content;
 }
 

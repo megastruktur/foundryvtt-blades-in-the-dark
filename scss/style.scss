@@ -20,6 +20,7 @@ $crit: #b12c20;
 $success: #862118;
 $mixed: #2c3678;
 $fail: #656666;
+$highlight_red: #a20000;
 
 
 // Transition period for sheet parts that hint what they can do
@@ -348,7 +349,7 @@ $hover-brightness: 0.8;
 
     .rollable-text:hover {
         cursor: pointer;
-        color: $red;
+        color: $highlight_red;
     }
     // Wicked and Reckless XP
     .big-teeth-section {
@@ -369,7 +370,78 @@ $hover-brightness: 0.8;
         }
         // Wicked XP
         .big-teeth {
-            @include toothradio(15px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+            @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
+            justify-content: center;
+
+            label {
+
+                & {
+                    margin-right: 0px;
+
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
+                        width: 18px;
+                    }
+                }
+            }
+
+            &.xp-bar input:checked {
+
+                & ~ label {
+
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-empty.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-empty.png");
+                        width: 18px;
+                    }
+                }
+
+                & + label {
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
+                        width: 18px;
+                    }
+                }
+            }
+        }
+        // Gold
+        .big-teeth.gold {
+            @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
+            align-items: center;
+            justify-content: center;
+
+            & label {
+                margin-right: 0px;
+            }
         }
         /* Reckless XP */
         .small-teeth-container {
@@ -536,7 +608,7 @@ $hover-brightness: 0.8;
 
     i {
         &.nullifier {
-            @include changeable($transition-period, $hover-brightness, $hover-opacity, red);
+            @include changeable($transition-period, $hover-brightness, $hover-opacity, $highlight_red);
         }
     }
 
@@ -880,8 +952,14 @@ div.item, tr.item {
         }
     }
 
+
     .main {
         flex-grow: 1;
+
+        div:hover > div.attributes-container label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
     }
 
     .attribute-label {
@@ -951,34 +1029,35 @@ table td:first-child {
 #base-info table {
     width: 100%;
     height: 230px;
-	border-top: 5px solid $mud;
+    border-top: 5px solid $mud;
     // border-bottom: 5px solid $mud;
-
     tr {
         background-color: initial;
 
         td {
-            // width: 50%;
+            &:nth-of-type(1) {
+                width: 150px;
+            }
+
             &:nth-of-type(3) {
-                width: 190px;
+                width: 200px;
             }
         }
 
-	#name input[type="text"]{
-	height: 52px;
-    border: none;
-	margin-left: 5px;
-    font-family: Blood Crow;
-    font-size: 55px;
-	font-weight: normal;
-    color: $mud;
-    background: none;
-	}
+        #name input[type="text"] {
+            height: 52px;
+            border: none;
+            font-family: Blood Crow;
+            font-size: 55px;
+            font-weight: normal;
+            color: $mud;
+            background: none;
+        }
 
-    &:last-child {
-        background-color: $mud;
+        &:last-child {
+            background-color: $mud;
+        }
     }
-  }
 }
 
 
@@ -1079,12 +1158,17 @@ table td:first-child {
     .heart-container {
         justify-content: flex-start;
         @include custom_radio(32px, 32px);
+
+        &:hover label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
     }
 }
 
 
 // DU MP WO Special Abilities
-#abilities {
+#abilities, #loadout {
 
     .item-name {
         width: 70px;
@@ -1092,21 +1176,20 @@ table td:first-child {
 
     .item-body {
         width: auto;
-		font-weight: 500;
+        font-weight: 500;
     }
 
     .item-description {
         width: 200px;
     }
-
     /* .label-stripe { */
-        /* p:first-child { */
-            /* margin-right: 10px; */
-        /* } */
-    }
+    /* p:first-child { */
+    /* margin-right: 10px; */
+    /* } */
+}
 
 // DU MP WO Special Abilities List
-#abilities-list {
+#abilities-list, #loadout {
     div.item-name {
         flex-basis: 25%;
     }

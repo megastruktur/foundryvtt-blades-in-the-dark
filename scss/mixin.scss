@@ -110,18 +110,19 @@
             }
 
             &[for$="-0"] {
-                height: 5px;
-                width: 5px;
+                height: 8px;
+                width: 8px;
                 border-radius: 24px;
+                opacity: 0;
+                transition: opacity 1s;
                 background-image: none !important;
-                background-color: $red !important;
+                background-color: $highlight_red !important;
                 margin-right: 0px;
             }
 
             @include changeable(0.1s, 0.7, 0.7);
         }
     }
-
     /* Hide the browser's default checkbox */
     input {
         display: none;
@@ -143,7 +144,7 @@
                 background-image: url("assets/boxes/box-filled.png");
 
                 &.dark-heart {
-					/* animation: glow 2000ms ease-out infinite alternate; */
+                    /* animation: glow 2000ms ease-out infinite alternate; */
                     background-image: url("assets/boxes/heart-filled.png");
                 }
 
@@ -206,35 +207,32 @@
  * Checkboxes underscored.
  */
 @mixin check_underscore() {
+    display: flex;
+    flex-wrap: wrap;
 
-  display: flex;
-  flex-wrap: wrap;
-  label {
-    cursor: pointer;
-    font-size: 19px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin-right: 10px;
-    @include changeable(0.1s, 0.8, 0.9);
+    label {
+        cursor: pointer;
+        font-size: 19px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-right: 10px;
+        @include changeable(0.1s, 0.8, 0.9);
+        /* Hide the browser's default checkbox */
+        input {
+            display: none;
 
-    /* Hide the browser's default checkbox */
-    input {
-      
-      display: none;
+            &:checked ~ .checkmark {
+                color: $highlight_red;
+            }
+        }
 
-      &:checked ~ .checkmark {
-        color: $red;
-      }
+        .checkmark {
+            text-decoration: none;
+            font-weight: bold;
+        }
     }
-
-    .checkmark {
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
-
 }
 
 /*
