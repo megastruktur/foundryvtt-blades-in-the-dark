@@ -402,7 +402,7 @@
 }
 * .rollable-text:hover {
   cursor: pointer;
-  color: red;
+  color: #a20000;
 }
 * .big-teeth-section {
   display: flex;
@@ -884,7 +884,7 @@
 * i.nullifier:hover {
   filter: brightness(0.8);
   opacity: 0.9;
-  color: red;
+  color: #a20000;
 }
 * .window-app .window-content {
   background: url(../images/background-light.png) repeat;
@@ -1181,6 +1181,10 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #attributes .main {
   flex-grow: 1;
 }
+#attributes .main div:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
 #attributes .attribute-label {
   font-size: 18px;
   text-transform: uppercase;
@@ -1223,8 +1227,10 @@ div.item i.fa-trash, tr.item i.fa-trash {
   height: 5px;
   width: 5px;
   border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
   background-image: none !important;
-  background-color: red !important;
+  background-color: #a20000 !important;
   margin-right: 0px;
 }
 #attributes .attributes-container label:hover {
@@ -1540,8 +1546,10 @@ table td:first-child {
   height: 5px;
   width: 5px;
   border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
   background-image: none !important;
-  background-color: red !important;
+  background-color: #a20000 !important;
   margin-right: 0px;
 }
 #attributes-darkhearts .heart-container label:hover {
@@ -1575,6 +1583,10 @@ table td:first-child {
 }
 #attributes-darkhearts .heart-container input:checked + label.practice-two {
   background-image: url("assets/boxes/box-crossed.png");
+}
+#attributes-darkhearts .heart-container:hover label {
+  transition: opacity 1s;
+  opacity: 1;
 }
 
 #abilities, #loadout {
