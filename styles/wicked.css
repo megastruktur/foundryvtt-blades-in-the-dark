@@ -938,6 +938,10 @@
 
 .item {
   justify-content: space-between;
+  /*.item-body,
+  .item-class-label {
+      width: 100px;
+  }*/
 }
 .item .item-body {
   margin-bottom: 10px;
@@ -961,10 +965,6 @@
 }
 .item .item-class-label {
   margin-bottom: 10px;
-}
-.item .item-body,
-.item .item-class-label {
-  width: 100px;
 }
 
 .item-class-label {
