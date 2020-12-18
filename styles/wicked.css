@@ -255,7 +255,7 @@
   color: #EEEFFF;
   font-size: medium;
   text-align: center;
-  padding: 2px 5px;
+  padding: 5px 5px;
   height: 30px !important;
   text-transform: capitalize;
 }
@@ -422,11 +422,12 @@
 * .big-teeth-section .big-teeth {
   display: flex;
   /* Hide the browser's default checkbox */
+  justify-content: center;
 }
 * .big-teeth-section .big-teeth label {
-  height: 30px;
-  width: 15px;
-  background-image: url("assets/teeth/stresstooth-red.png");
+  height: 32px;
+  width: 11px;
+  background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
@@ -453,10 +454,93 @@
   display: none;
 }
 * .big-teeth-section .big-teeth input:checked ~ label {
-  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+  background-image: url("assets/teeth/xp-tooth-3-5-7-empty.png");
 }
 * .big-teeth-section .big-teeth input:checked + label {
-  background-image: url("assets/teeth/stresstooth-red.png");
+  background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
+}
+* .big-teeth-section .big-teeth label {
+  margin-right: 0px;
+}
+* .big-teeth-section .big-teeth label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-filled.png");
+  width: 10px;
+}
+* .big-teeth-section .big-teeth label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+  width: 12px;
+}
+* .big-teeth-section .big-teeth label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-filled.png");
+  width: 18px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-empty.png");
+  width: 10px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
+  width: 12px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-empty.png");
+  width: 18px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-filled.png");
+  width: 10px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+  width: 12px;
+}
+* .big-teeth-section .big-teeth.xp-bar input:checked + label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-filled.png");
+  width: 18px;
+}
+* .big-teeth-section .big-teeth.gold {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  align-items: center;
+  justify-content: center;
+}
+* .big-teeth-section .big-teeth.gold label {
+  height: 20px;
+  width: 20px;
+  background-image: url("assets/teeth/gold-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .big-teeth-section .big-teeth.gold label:last-of-type {
+  margin-right: 0px;
+}
+* .big-teeth-section .big-teeth.gold label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+* .big-teeth-section .big-teeth.gold label[for$="-0"] i {
+  margin-top: 4px;
+}
+* .big-teeth-section .big-teeth.gold label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* .big-teeth-section .big-teeth.gold input {
+  display: none;
+}
+* .big-teeth-section .big-teeth.gold input:checked ~ label {
+  background-image: url("assets/teeth/gold-empty.png");
+}
+* .big-teeth-section .big-teeth.gold input:checked + label {
+  background-image: url("assets/teeth/gold-filled.png");
+}
+* .big-teeth-section .big-teeth.gold label {
+  margin-right: 0px;
 }
 * .big-teeth-section .small-teeth-container .small-teeth-wrap {
   display: flex;
@@ -1212,8 +1296,11 @@ table td:first-child {
 #base-info table tr {
   background-color: initial;
 }
+#base-info table tr td:nth-of-type(1) {
+  width: 150px;
+}
 #base-info table tr td:nth-of-type(3) {
-  width: 190px;
+  width: 200px;
 }
 #base-info table tr #name input[type=text] {
   height: 52px;
@@ -1490,27 +1577,27 @@ table td:first-child {
   background-image: url("assets/boxes/box-crossed.png");
 }
 
-#abilities {
+#abilities, #loadout {
   /* .label-stripe { */
   /* p:first-child { */
   /* margin-right: 10px; */
   /* } */
 }
-#abilities .item-name {
+#abilities .item-name, #loadout .item-name {
   width: 70px;
 }
-#abilities .item-body {
+#abilities .item-body, #loadout .item-body {
   width: auto;
   font-weight: 500;
 }
-#abilities .item-description {
+#abilities .item-description, #loadout .item-description {
   width: 200px;
 }
 
-#abilities-list div.item-name {
+#abilities-list div.item-name, #loadout div.item-name {
   flex-basis: 25%;
 }
-#abilities-list div.item-description {
+#abilities-list div.item-description, #loadout div.item-description {
   width: fit-content;
 }
 

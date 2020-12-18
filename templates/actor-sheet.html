@@ -94,7 +94,7 @@
       <tr>
         <td>
           {{!-- Gold --}}
-          <div id="character-{{actor._id}}-gold" class="big-teeth">
+          <div id="character-{{actor._id}}-gold" class="big-teeth gold">
             {{#multiboxes data.gold}}
             <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
             <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
@@ -109,7 +109,7 @@
         </td>	  
         <td>
           {{!-- Wicked XP --}}
-          <div id="character-{{actor._id}}-wickedxp" class="big-teeth">
+          <div id="character-{{actor._id}}-wickedxp" class="big-teeth xp-bar">
             {{#multiboxes data.wickedxp.value}}
             <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
             <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
@@ -124,7 +124,7 @@
         </td>
         <td>
           {{!-- Reckless XP --}}
-          <div id="character-{{actor._id}}-recklessxp" class="big-teeth">
+          <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
             <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
