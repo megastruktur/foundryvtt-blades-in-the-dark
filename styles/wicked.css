@@ -623,41 +623,6 @@
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* .item {
-  justify-content: space-between;
-}
-* .item .item-body {
-  margin-bottom: 10px;
-}
-* .item .item-body * {
-  margin-right: 10px;
-}
-* .item .item-body .item-description {
-  font-style: italic;
-  text-align: justify;
-}
-* .item .item-body .item-special-feature {
-  background: #68332c3f;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
-}
-* .item .item-body .missing-materials {
-  color: #999;
-}
-* .item div {
-  flex-grow: 2;
-}
-* .item .item-class-label {
-  margin-bottom: 10px;
-}
-* .item .item-body,
-* .item .item-class-label {
-  width: 100px;
-}
-* .item-class-label {
-  margin-bottom: 2px;
-}
 * .tooltip .tooltiptext {
   visibility: hidden;
   width: 300px;
@@ -967,6 +932,41 @@
   border-top-left-radius: 0px;
   background-blend-mode: color-burn;
   object-fit: cover;
+}
+
+.item {
+  justify-content: space-between;
+}
+.item .item-body {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.item .item-body .item-description {
+  font-style: italic;
+  text-align: justify;
+}
+.item .item-body .item-special-feature {
+  background: #68332c3f;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+}
+.item .item-body .missing-materials {
+  color: #999;
+}
+.item div {
+  flex-grow: 2;
+}
+.item .item-class-label {
+  margin-bottom: 10px;
+}
+.item .item-body,
+.item .item-class-label {
+  width: 100px;
+}
+
+.item-class-label {
+  margin-bottom: 2px;
 }
 
 div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
@@ -1354,6 +1354,25 @@ table td:first-child {
   font-weight: normal;
 }
 
+#abilities-list, #loadout {
+  width: 100%;
+}
+#abilities-list tr, #loadout tr {
+  background-color: initial;
+}
+#abilities-list tr td:nth-of-type(1), #loadout tr td:nth-of-type(1) {
+  min-width: 75px;
+  width: 23%;
+}
+#abilities-list tr td:nth-of-type(2), #loadout tr td:nth-of-type(2) {
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+#abilities-list tr td:nth-of-type(3), #loadout tr td:nth-of-type(3) {
+  width: 20px;
+}
+
 /* Display all Item Names in Bold */
 .item-name {
   font-weight: 600;
@@ -1590,20 +1609,20 @@ table td:first-child {
 }
 
 #abilities, #loadout {
+  /*.item-name {
+      width: 70px;
+  }*/
+  /*.item-description {
+      width: 200px;
+  }*/
   /* .label-stripe { */
   /* p:first-child { */
   /* margin-right: 10px; */
   /* } */
 }
-#abilities .item-name, #loadout .item-name {
-  width: 70px;
-}
 #abilities .item-body, #loadout .item-body {
   width: auto;
   font-weight: 500;
-}
-#abilities .item-description, #loadout .item-description {
-  width: 200px;
 }
 
 #abilities-list div.item-name, #loadout div.item-name {

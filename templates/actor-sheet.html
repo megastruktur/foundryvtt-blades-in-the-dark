@@ -222,19 +222,25 @@
           <p><a class="item-add-popup" data-item-type="specialability"><i class="fas fa-plus-square"></i></a></p>
         </div>
 
-        <div id="abilities-list">
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "specialability")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <div class="item-name"><b>{{item.name}}</b></div>
-              <div class="item-description">{{item.data.description}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-          </div>
-          {{/if}}
-          {{/each}}
-        </div>
+        <table id="abilities-list">
+          <tbody>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
       </div>
 
       {{!-- Gear & Supply Tab --}}
@@ -243,19 +249,20 @@
           <p>{{localize "FITD.Gear"}}</p>
           <p><a class="item-add-popup" data-item-type="gear"><i class="fas fa-plus-square"></i></a></p>
         </div>
-        <div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "gear")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <div class="item-name">{{item.name}}</div>
-              <div class="item-description">{{item.data.description}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-          </div>
-          {{/if}}
-          {{/each}}
-        </div>
+        <table>
+          <tbody>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "gear")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body"><div class="item-name">{{item.name}}</div></td>
+              <td class="item-body"><div class="item-description">{{item.data.description}}</div></td>
+              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
+        </div>-->
         <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
           <p class="flex-horizontal">
             {{#multiboxes data.supply}}
@@ -270,20 +277,19 @@
           </p>
           <p><a class="item-add-popup" data-item-type="supply"><i class="fas fa-plus-square"></i></a></p>
         </div>
-        <div>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "supply")}}
-          <div class="item flex-horizontal" data-item-id="{{item._id}}">
-            <div class="item-body flex-horizontal">
-              <div class="item-name">{{item.name}}</div>
-              <div class="item-description">{{item.data.description}}</div>
-            </div>
-            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-          </div>
-          {{/if}}
-          {{/each}}
-        </div>
-      </div>
+        <table>
+          <tbody>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "supply")}}
+            <tr class="item">
+              <td class="item-body"><div class="item-name">{{item.name}}</div></td>
+              <td class="item-body"><div class="item-description">{{item.data.description}}</div></td>
+              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
 
       {{!-- Duties & Projects Tab --}}
       <div id="duties" class="tab flex-vertical" data-tab="duties">

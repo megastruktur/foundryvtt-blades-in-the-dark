@@ -464,51 +464,7 @@ $hover-brightness: 0.8;
         top: 0px;
         right: 10px;
     }
-    // Item
-    .item {
-        justify-content: space-between;
 
-        .item-body {
-            margin-bottom: 10px;
-
-            * {
-                margin-right: 10px;
-            }
-
-            .item-description {
-                font-style: italic;
-                text-align: justify;
-            }
-
-            .item-special-feature {
-                background: $mud3f;
-                border-radius: 15px;
-                padding: 10px;
-                margin: 10px;
-            }
-
-            .missing-materials {
-                color: $gray;
-            }
-        }
-
-        div {
-            flex-grow: 2;
-        }
-
-        .item-class-label {
-            margin-bottom: 10px;
-        }
-
-        .item-body,
-        .item-class-label {
-            width: 100px;
-        }
-    }
-
-    .item-class-label {
-        margin-bottom: 2px;
-    }
     // Tooltip.
     .tooltip {
 
@@ -703,6 +659,50 @@ $hover-brightness: 0.8;
     background-blend-mode: color-burn;
 	object-fit: cover;
 }
+
+// Item
+.item {
+    justify-content: space-between;
+
+    .item-body {
+        margin-bottom: 10px;
+        margin-right: 10px;
+
+        .item-description {
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .item-special-feature {
+            background: $mud3f;
+            border-radius: 15px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .missing-materials {
+            color: $gray;
+        }
+    }
+
+    div {
+        flex-grow: 2;
+    }
+
+    .item-class-label {
+        margin-bottom: 10px;
+    }
+
+    .item-body,
+    .item-class-label {
+        width: 100px;
+    }
+}
+
+.item-class-label {
+    margin-bottom: 2px;
+}
+
 // Show Trash bins on hover over ancestor
 div.item, tr.item {
     &:hover {
@@ -1101,6 +1101,33 @@ table td:first-child {
         }
     }
 }
+
+// WO Abilities Table
+#abilities-list, #loadout {
+    width: 100%;
+    // border-top: 5px solid $mud;
+    tr {
+        background-color: initial;
+
+        td {
+            &:nth-of-type(1) {
+                min-width: 75px;
+                width: 23%;
+            }
+
+            &:nth-of-type(2) {
+                margin-right: 0px;
+                margin-bottom: 0px;
+                padding-bottom: 10px;
+            }
+
+            &:nth-of-type(3) {
+                width: 20px;
+            }
+        }
+    }
+}
+
 /* Display all Item Names in Bold */
 .item-name{
 	font-weight: 600;
@@ -1166,18 +1193,18 @@ table td:first-child {
 // DU MP WO Special Abilities
 #abilities, #loadout {
 
-    .item-name {
+    /*.item-name {
         width: 70px;
-    }
+    }*/
 
     .item-body {
         width: auto;
         font-weight: 500;
     }
 
-    .item-description {
+    /*.item-description {
         width: 200px;
-    }
+    }*/
     /* .label-stripe { */
     /* p:first-child { */
     /* margin-right: 10px; */
