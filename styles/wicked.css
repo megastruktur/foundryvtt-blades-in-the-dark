@@ -1224,8 +1224,8 @@ div.item i.fa-trash, tr.item i.fa-trash {
   top: -4px;
 }
 #attributes .attributes-container label[for$="-0"] {
-  height: 5px;
-  width: 5px;
+  height: 8px;
+  width: 8px;
   border-radius: 24px;
   opacity: 0;
   transition: opacity 1s;
@@ -1543,8 +1543,8 @@ table td:first-child {
   top: -4px;
 }
 #attributes-darkhearts .heart-container label[for$="-0"] {
-  height: 5px;
-  width: 5px;
+  height: 8px;
+  width: 8px;
   border-radius: 24px;
   opacity: 0;
   transition: opacity 1s;
