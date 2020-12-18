@@ -464,7 +464,6 @@ $hover-brightness: 0.8;
         top: 0px;
         right: 10px;
     }
-
     // Tooltip.
     .tooltip {
 
@@ -573,7 +572,10 @@ $hover-brightness: 0.8;
         color: $almost_black;
         overflow-y: auto;
         background-size: 300px;
-        z-index: -1;
+
+        form.actor-sheet {
+            z-index: 0;
+        }
     }
 
     .wicked-die {
