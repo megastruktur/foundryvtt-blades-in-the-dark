@@ -944,8 +944,8 @@
   }*/
 }
 .item .item-body {
-  margin-bottom: 10px;
-  margin-right: 10px;
+  /* margin-bottom: 10px; */
+  /* margin-right: 10px; */
 }
 .item .item-body .item-description {
   font-style: italic;
@@ -968,7 +968,7 @@
 }
 
 .item-class-label {
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
@@ -982,6 +982,29 @@ div.item i.fa-trash, tr.item i.fa-trash {
 
 .item-add-popup {
   padding-left: 10px;
+  font-weight: 700;
+  color: #68332c;
+}
+
+#look, #minionpack, #vilefriend {
+  color: #68332c;
+}
+#look input[type=text], #minionpack input[type=text], #vilefriend input[type=text] {
+  font-weight: normal;
+  font-family: Piedra;
+  border: 1px solid #68332c;
+  border-radius: 0;
+}
+#look label, #minionpack label, #vilefriend label {
+  font-weight: 700;
+}
+
+input[type=text], input[type=number], input[type=password], input[type=date], input[type=time] {
+  font-weight: 600;
+  border: 1px solid #68332c;
+  border-radius: 0;
+  font-family: Piedra;
+  font-size: 20px;
 }
 
 /*
@@ -1277,15 +1300,11 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #attributes .attributes-container label {
   margin-top: 3px;
 }
-#attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
-  font-weight: 600;
-  border: 1px solid #68332c;
-}
 
 /* All Table Formatting: */
 table td,
 table th {
-  padding: 0.25em 5px;
+  padding: 5px;
 }
 
 table th:hover .item-add-popup {
@@ -1298,7 +1317,7 @@ table th .item-add-popup {
 }
 
 table td:first-child {
-  /* padding-left: inherit; */
+  padding-left: 5px;
 }
 
 #hearts-header {
@@ -1351,7 +1370,7 @@ table td:first-child {
 }
 #character-defenses table tr td:nth-of-type(1) .item-checkmark {
   flex-grow: unset;
-  margin-right: 5px;
+  margin-right: 0px 3px;
 }
 #character-defenses table tr td:nth-of-type(2) {
   display: flex;
@@ -1359,11 +1378,12 @@ table td:first-child {
 }
 #character-defenses table tr td:nth-child(3) {
   text-align: center;
+  padding: 0;
 }
 #character-defenses table tr td:nth-child(3) .item-name {
   text-transform: uppercase;
   font-family: "Blood Crow";
-  font-size: 24px;
+  font-size: 28px;
   margin-right: 0px;
   font-weight: normal;
 }
@@ -1511,7 +1531,10 @@ table td:first-child {
 
 /* Display all Item Names in Bold */
 .item-name {
-  font-weight: 600;
+  text-align: center;
+  font-weight: 500;
+  font-family: Piedra;
+  font-size: 20px;
 }
 
 #defenses-stress {

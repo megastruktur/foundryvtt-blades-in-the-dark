@@ -668,8 +668,8 @@ $hover-brightness: 0.8;
     justify-content: space-between;
 
     .item-body {
-        margin-bottom: 10px;
-        margin-right: 10px;
+        /* margin-bottom: 10px; */ //causes problems with Dark Impulses and Race Calling Revelry
+        /* margin-right: 10px; */
 
         .item-description {
             font-style: italic;
@@ -703,7 +703,7 @@ $hover-brightness: 0.8;
 }
 
 .item-class-label {
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 }
 
 // Show Trash bins on hover over ancestor
@@ -723,8 +723,34 @@ div.item, tr.item {
 // Item Add Buttons
 .item-add-popup{
 	padding-left: 10px;
+	font-weight: 700;
+	color: $mud;
+}
+// WO Top Entry Field Styles
+#look,#minionpack,#vilefriend{
+	color: $mud;
+	
+	    input[type="text"]{
+        font-weight: normal;
+		font-family: Piedra;
+		border: 1px solid $mud;
+		border-radius: 0;
+		}
+		
+		label{
+			font-weight: 700;
+		}
+
 }
 
+// Input Fields Styling
+    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
+        font-weight: 600;
+		border: 1px solid $mud;
+		border-radius: 0;
+		font-family: Piedra;
+		font-size: 20px;
+    }
 /*
  *  Anchored Styles
  */
@@ -998,18 +1024,13 @@ div.item, tr.item {
             margin-top: 3px;
         }
     }
-    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
-        font-weight: 600;
-		border: 1px solid $mud;
-		
-    }
 }
 
 /* All Table Formatting: */
 
 table td,
 table th {
-  padding: 0.25em 5px;
+  padding: 5px; // was 0.25em 5px;
 }
 table th{
       &:hover {
@@ -1025,7 +1046,7 @@ table th{
     }
 }
 table td:first-child {
-    /* padding-left: inherit; */
+    padding-left: 5px;
 }
 
 	#hearts-header {
@@ -1091,7 +1112,7 @@ table td:first-child {
 
             td:nth-of-type(1) .item-checkmark {
                 flex-grow: unset;
-                margin-right: 5px;
+                margin-right: 0px 3px;
             }
 
             td:nth-of-type(2) {
@@ -1101,11 +1122,12 @@ table td:first-child {
 
             td:nth-child(3) {
                 text-align:center;
+				padding: 0;
                 
                 .item-name {
                     text-transform: uppercase;
                     font-family: 'Blood Crow';
-                    font-size: 24px;
+                    font-size: 28px;
 					margin-right: 0px;
                     font-weight: normal;
                 }
@@ -1211,7 +1233,10 @@ table td:first-child {
 
 /* Display all Item Names in Bold */
 .item-name{
-	font-weight: 600;
+	text-align: center;
+	font-weight: 500;
+	font-family: Piedra;
+	font-size: 20px;
 	}
 // WO Defenses Stress Area
 #defenses-stress {
