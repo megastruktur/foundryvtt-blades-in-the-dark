@@ -13,8 +13,8 @@
     {{#each data.clock_sizes as |size key|}}
     {{#multiboxes ../data.clock_size}}
     <div>
-      <label for="{{key}}-project-size">{{size}}</label>
-      <input type="radio" id="{{key}}-project-size" name="data.clock_size" value="{{size}}">
+      <label for="project-size-{{size}}">{{size}}</label>
+      <input type="radio" id="project-size-{{size}}" class="clock-size-picker" name="data.clock_size" value="{{size}}">
     </div>
     {{/multiboxes}}
     {{/each}}
@@ -22,7 +22,7 @@
 
   <label class="label-stripe">{{localize "FITD.ClockProgress"}}</label>
 
-  <div id="clock-type-list" class="flex-horizontal">
+  <div id="clock-progress-list" class="flex-horizontal">
     {{#times_from_0 data.clock_size}}
     {{#multiboxes ../data.clock_progress}}
     <div>
