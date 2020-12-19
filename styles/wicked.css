@@ -992,7 +992,8 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #look input[type=text], #minionpack input[type=text], #vilefriend input[type=text] {
   font-weight: normal;
   font-family: Piedra;
-  border: 1px solid #68332c;
+  font-size: 20px;
+  border: none;
   border-radius: 0;
 }
 #look label, #minionpack label, #vilefriend label {
@@ -1003,8 +1004,6 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   font-weight: 600;
   border: 1px solid #68332c;
   border-radius: 0;
-  font-family: Piedra;
-  font-size: 20px;
 }
 
 /*

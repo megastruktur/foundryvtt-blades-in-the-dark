@@ -733,7 +733,8 @@ div.item, tr.item {
 	    input[type="text"]{
         font-weight: normal;
 		font-family: Piedra;
-		border: 1px solid $mud;
+		font-size: 20px;
+		border: none;
 		border-radius: 0;
 		}
 		
@@ -748,8 +749,6 @@ div.item, tr.item {
         font-weight: 600;
 		border: 1px solid $mud;
 		border-radius: 0;
-		font-family: Piedra;
-		font-size: 20px;
     }
 /*
  *  Anchored Styles
