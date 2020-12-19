@@ -38,6 +38,17 @@ export class BladesItemSheet extends ItemSheet {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
+
+    // Update Inventory Item
+    html.find('#clock-type-list .clock-size-picker').click(ev => {
+      const element = $(ev.currentTarget).parents(".item");
+      const item = this.actor.getOwnedItem(element.data("itemId"));
+      if (ev.target.value < this.getData().data.clock_progress) {
+        html.find('#progress-' + ev.target.value).click();
+      }
+      item.sheet.render(true);
+    });
+
   }
 
   /* -------------------------------------------- */

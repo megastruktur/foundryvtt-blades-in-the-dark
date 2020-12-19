@@ -1317,7 +1317,6 @@ table td:first-child {
 #base-info table tr #name input[type=text] {
   height: 52px;
   border: none;
-  margin-left: 5px;
   font-family: Blood Crow;
   font-size: 55px;
   font-weight: normal;
@@ -1360,6 +1359,128 @@ table td:first-child {
   font-size: 24px;
   margin-right: 0px;
   font-weight: normal;
+}
+
+#loadout .supply {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#loadout .supply label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-white-crossed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#loadout .supply label:last-of-type {
+  margin-right: 0px;
+}
+#loadout .supply label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+#loadout .supply label[for$="-0"] i {
+  margin-top: 4px;
+}
+#loadout .supply label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#loadout .supply input {
+  display: none;
+}
+#loadout .supply input:checked ~ label {
+  background-image: url("assets/boxes/box-white-filled.png");
+}
+#loadout .supply input:checked + label {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+
+#duties-tab .item-body {
+  width: auto;
+  padding: 3px;
+}
+#duties-tab .project-clock {
+  height: 80px;
+  position: relative;
+}
+#duties-tab .project-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#duties-tab .project-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#duties-tab .project-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#duties-tab .project-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#duties-tab .project-clock .blades-clock input[value="0"] {
+  display: none;
+}
+#duties-tab .project-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+#duties-tab .project-clock .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+#duties-tab .project-clock .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+#duties-tab .project-clock .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+#duties-tab div.label-stripe {
+  margin-bottom: 0px;
+}
+#duties-tab table {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+
+#duties-table tr td:nth-of-type(1) {
+  width: 50px;
+}
+#duties-table tr td:nth-of-type(2) {
+  min-width: 90px;
+  width: 23%;
+}
+#duties-table tr td:nth-of-type(4) {
+  width: 20px;
+}
+
+#project-clocks-table tr td:nth-of-type(1) {
+  width: 50px;
+}
+#project-clocks-table tr td:nth-of-type(2) {
+  min-width: 90px;
+  width: 23%;
+}
+#project-clocks-table tr td:nth-of-type(4) {
+  width: 20px;
 }
 
 #abilities-list, #loadout {
@@ -1452,98 +1573,6 @@ table td:first-child {
   top: -10px;
 }
 
-#loadout .supply {
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-#loadout .supply label {
-  height: 15px;
-  width: 15px;
-  background-image: url("assets/boxes/box-white-crossed.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#loadout .supply label:last-of-type {
-  margin-right: 0px;
-}
-#loadout .supply label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  color: #EEEFFF;
-}
-#loadout .supply label[for$="-0"] i {
-  margin-top: 4px;
-}
-#loadout .supply label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-#loadout .supply input {
-  display: none;
-}
-#loadout .supply input:checked ~ label {
-  background-image: url("assets/boxes/box-white-filled.png");
-}
-#loadout .supply input:checked + label {
-  background-image: url("assets/boxes/box-white-crossed.png");
-}
-
-#duties .item-body {
-  width: auto;
-  padding: 3px;
-}
-#duties .project-clock {
-  height: 80px;
-  position: relative;
-}
-#duties .project-clock .blades-clock {
-  position: relative;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  list-style: none;
-  overflow: hidden;
-  background-size: cover;
-}
-#duties .project-clock .blades-clock label {
-  overflow: hidden;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: 0% 100%;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#duties .project-clock .blades-clock label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-#duties .project-clock .blades-clock input {
-  position: absolute;
-  display: none;
-}
-#duties .project-clock .blades-clock input[value="0"] {
-  display: none;
-}
-#duties .project-clock .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(180deg);
-}
-#duties .project-clock .blades-clock *:nth-child(5) {
-  transform: rotate(90deg) skewY(180deg);
-}
-#duties .project-clock .blades-clock *:nth-child(7) {
-  transform: rotate(180deg) skewY(180deg);
-}
-#duties .project-clock .blades-clock *:nth-child(9) {
-  transform: rotate(270deg) skewY(180deg);
-}
 #attributes-darkhearts {
   margin-top: -22px;
   margin-left: 36px;

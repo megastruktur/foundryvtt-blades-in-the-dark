@@ -292,12 +292,12 @@
       </div>
 
       {{!-- Duties & Projects Tab --}}
-      <div id="duties" class="tab flex-vertical" data-tab="duties">
+      <div id="duties-tab" class="tab flex-vertical" data-tab="duties">
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Duties"}}</p>
           <p><a class="item-add-popup" data-item-type="duty"><i class="fas fa-plus-square"></i></a></p>
         </div>
-        <table>
+        <table id="duties-table">
           <thead>
             <tr>
               <td>Tier</td>
@@ -324,7 +324,7 @@
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
 
-        <table>
+        <table id="project-clocks-table">
           <thead>
             <tr>
               <td>Clock</td>
@@ -337,7 +337,7 @@
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "project")}}
             <tr class="item" data-item-id="{{item._id}}">
-              <td class="item-body flex-horizontal project-clock">
+              <td class="flex-horizontal project-clock">
                 <div id="project-clock-{{item._id}}">
                   {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
                 </div>
