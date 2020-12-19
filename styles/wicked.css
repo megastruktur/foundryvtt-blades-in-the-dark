@@ -1106,6 +1106,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   color: #EEEFFF;
   font-size: 17px;
   padding-left: 5px;
+  text-shadow: 0 2px #311815;
 }
 #attributes .shock input {
   display: none;
@@ -1147,7 +1148,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   z-index: -1;
 }
 #attributes #attributes-bloodied {
-  margin-bottom: 15px;
+  /* margin-bottom: -5px; // was 15px */
 }
 #attributes .bloodied-minion input {
   display: none;
@@ -1300,6 +1301,11 @@ table td:first-child {
   /* padding-left: inherit; */
 }
 
+#hearts-header {
+  margin-left: 33px;
+  margin-top: -10px;
+}
+
 #base-info table {
   width: 100%;
   height: 230px;
@@ -1317,12 +1323,12 @@ table td:first-child {
 #base-info table tr #name input[type=text] {
   height: 52px;
   border: none;
-  margin-left: 5px;
   font-family: Blood Crow;
   font-size: 55px;
   font-weight: normal;
   color: #68332c;
   background: none;
+  text-shadow: 0 1px 2px #d46c1f;
 }
 #base-info table tr:last-child {
   background-color: #68332c;
@@ -1545,7 +1551,7 @@ table td:first-child {
   transform: rotate(270deg) skewY(180deg);
 }
 #attributes-darkhearts {
-  margin-top: -22px;
+  /* margin-top: -22px; */
   margin-left: 36px;
 }
 #attributes-darkhearts .heart-container {

@@ -13,6 +13,7 @@ $bloody5c: #4000005c;
 $bloodyShadow: #4000004f;
 $orange: #d46c1f;
 $mud: #68332c;
+$darkmud: #311815;
 $mud3f: #68332c3f;
 $paper: #c9c7b8;
 $bone: #fff8e8;
@@ -849,6 +850,7 @@ div.item, tr.item {
         color: $almost_white;
         font-size: 17px;
         padding-left: 5px;
+		text-shadow: 0 2px $darkmud;
     }
 
     .shock {
@@ -904,7 +906,7 @@ div.item, tr.item {
     }
 
     #attributes-bloodied {
-        margin-bottom: 15px;
+        /* margin-bottom: -5px; // was 15px */
     }
 
     .bloodied-minion {
@@ -996,7 +998,6 @@ div.item, tr.item {
             margin-top: 3px;
         }
     }
-
     input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
         font-weight: 600;
 		border: 1px solid $mud;
@@ -1027,6 +1028,10 @@ table td:first-child {
     /* padding-left: inherit; */
 }
 
+	#hearts-header {
+		margin-left: 33px;
+		margin-top: -10px;
+	}
 // WO Basic Character Information
 #base-info table {
     width: 100%;
@@ -1054,6 +1059,7 @@ table td:first-child {
             font-weight: normal;
             color: $mud;
             background: none;
+			text-shadow: 0 1px 2px $orange;
         }
 
         &:last-child {
@@ -1181,7 +1187,7 @@ table td:first-child {
 
 // WO Dark Hearts
 #attributes-darkhearts {
-    margin-top: -22px;
+    /* margin-top: -22px; */
     margin-left: 36px;
 
     .heart-container {
