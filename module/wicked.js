@@ -52,6 +52,9 @@ Hooks.once("init", async function() {
     "gm_path": "FITD.GrowthPath"
   };
 
+  CONFIG.WO.special_ability_primal =
+    ["be_psi", "ds_eyes", "fs_face", "gm_path"];
+
   CONFIG.WO.special_ability_groups = {
     "group_base": "FITD.BasicPrimalAbilities",
     "group_faces": "FITD.FaceStealerFaces",
@@ -60,6 +63,21 @@ Hooks.once("init", async function() {
     "group_general": "FITD.GeneralAbilities",
     "group_flex": "FITD.Flexibility",
     "group_ext": "FITD.ExternalAbilities"
+  };
+
+  CONFIG.WO.special_ability_hidden_groups =
+    ["group_faces", "group_primal"];
+
+  CONFIG.WO.doomseeker_eye_rays = {
+    "bewitch": "FITD.RayBewitchment",
+    "death": "FITD.RayDeath",
+    "fear": "FITD.RayFear",
+    "null": "FITD.RayNullMagic",
+    "para": "FITD.RayParalysis",
+    "tele": "FITD.RayTelekinesis",
+    "time": "FITD.RayTime",
+    "transm": "FITD.RayTransmo",
+    "vision": "FITD.RayVision"
   };
 
   // Register System Settings
@@ -116,6 +134,13 @@ Hooks.once("init", async function() {
     return (a !== b) ? options.fn(this) : '';
   });
 
+  // Ifin Helper to check if an element is part of a list
+  Handlebars.registerHelper('ifIn', function (elem, list, options) {
+    if (list.indexOf(elem) > -1) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
 
   // Enrich the HTML replace /n with <br>
   Handlebars.registerHelper('html', (options) => {

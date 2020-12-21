@@ -23,6 +23,43 @@ export class BladesItemSheet extends ItemSheet {
   async getData(options) {
     const data = super.getData(options);
     data.config = CONFIG.WO;
+
+    if (data.data.ability_type == "ds_eyes") {
+
+      let assigned_rays = [];
+      let available_rays = {};
+
+      // Iterate through ray selectors and populate assigned rays
+      for (var i = 1; i < 10; i++) {
+        if (data.data.primal['ds_eye_ray_' + i] != "") {
+          assigned_rays.push(data.data.primal['ds_eye_ray_' + i]);
+        }
+      }
+
+      // Iterate through all rays and populate available rays
+      for (const [key, value] of Object.entries(CONFIG.WO.doomseeker_eye_rays)) {
+        if (assigned_rays.indexOf(key) == -1) {
+          available_rays[key] = CONFIG.WO.doomseeker_eye_rays[key];
+        }
+      }
+
+      // Iterate through ray selectors and pupulate available rays for selector
+      for (var i = 1; i < 10; i++) {
+        data.config["available_rays" + i] = {};
+        let val = data.data.primal['ds_eye_ray_' + i];
+        if (val != "") {
+          // Add own selected avalue as available
+          data.config['available_rays' + i][val] = CONFIG.WO.doomseeker_eye_rays[val];
+        }
+
+        // Add available values to the list to select from
+        for (const [key, value] of Object.entries(available_rays)) {
+          available_rays[key] = CONFIG.WO.doomseeker_eye_rays[key];
+          data.config['available_rays' + i][key] = CONFIG.WO.doomseeker_eye_rays[key];
+        }
+      }
+    }
+
     return data;
   }
 
@@ -51,6 +88,34 @@ export class BladesItemSheet extends ItemSheet {
     if (!this.options.editable) return;
 
     // Update Inventory Item
+    html.find('#item-type-select').change(ev => {
+      const abilitytype = ev.currentTarget.value;
+      const abilitygroup = $('#item-group-select')[0];
+      switch (abilitytype) {
+        case "be_psi":
+        case "ds_eyes":
+        case "gm_path":
+          abilitygroup.value = "group_primal";
+          // $(abilitygroup).parent()[0].style.display = 'none';
+          break;
+        case "fs_face":
+          abilitygroup.value = "group_faces";
+          // $(abilitygroup).parent()[0].style.display = 'none';
+          break;
+
+        case "basic":
+        case "advanced":
+        default:
+          if (abilitygroup.value == "group_primal" || abilitygroup.value == "group_faces") {
+            abilitygroup.value = "group_general";
+            // $(abilitygroup).parent()[0].style.display = 'contents';
+          }
+      }
+
+      // const element = $(ev.currentTarget).parents(".item");
+      // window.alert("Change of type to: " + ev.currentTarget.value);
+    });
+
     html.find('#clock-type-list .clock-size-picker').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
       const item = this.actor.getOwnedItem(element.data("itemId"));

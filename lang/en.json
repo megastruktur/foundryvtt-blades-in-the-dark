@@ -243,6 +243,35 @@
   "FITD.DowntimeTabTitle": "Downtime Actions",
   "FITD.DisplayCheckbox": "Display Checkbox",
   "FITD.Checkbox": "Checkbox",
-  "FITD.CheckboxExample": "Enter text to display a checkbox"
+  "FITD.CheckboxExample": "Enter text to display a checkbox",
 
+  "FITD.BESkillName": "Psionics Skill Name",
+  "FITD.BESkillNameHint": "Name to show up next to the skill dots",
+  "FITD.BESkillAbilityName1": "First Ability Name",
+  "FITD.BESkillAbilityDesc1": "First Ability Description",
+  "FITD.BESkillAbilityName2": "Second Ability Name",
+  "FITD.BESkillAbilityDesc2": "Second Ability Description",
+
+  "FITD.DSMainEye": "Main Eye (3D)",
+  "FITD.DSOuterEyes": "Outer Eyes (2D)",
+  "FITD.DSOtherEyes": "Other Eyes (1D)",
+  "FITD.NoneParentheses": "(none)",
+  "FITD.RayDeath": "Death Ray",
+  "FITD.RayTransmo": "Transmogrification Ray",
+  "FITD.RayParalysis": "Paralysis Ray",
+  "FITD.RayBewitchment": "Bewitchment Ray",
+  "FITD.RayTime": "Time Ray",
+  "FITD.RayNullMagic": "Null-Magic Ray",
+  "FITD.RayVision": "Vision Ray",
+  "FITD.RayTelekinesis": "Telekinesis Ray",
+  "FITD.RayFear": "Fear Ray",
+
+  "FITD.FSGrafted": "Grafted",
+
+  "FITD.GMStage1": "Stage One",
+  "FITD.GMStage1Box": "Stage One Checkbox",
+  "FITD.GMStage2": "Stage Two",
+  "FITD.GMStage2Box": "Stage Two Checkbox",
+  "FITD.GMStage3": "Stage Three",
+  "FITD.GMStage3Box": "Stage Three Checkbox"
 }
