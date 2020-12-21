@@ -44,16 +44,18 @@
 
   {{#if (eq actor.type "minion_pack")}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
+   <div class="tooltip">
     <div class="bloodied-minion">
       <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
              value="{{data.bloodied}}" {{checked data.bloodied}}>
       <label for="{{actor._id}}-bloodied"></label>
       <i class="splash"></i>
     </div>
+	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodied"}}}</span>
+   </div>
     <div class="main">
-      <div class="stripe tooltip">
+      <div class="stripe">
         <label class="attribute-label">{{localize "FITD.Bloodied"}}</label>
-		<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodied"}}}</span>
       </div>
     </div>
   </div>
@@ -71,16 +73,18 @@
   </div>
   {{else}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
+   <div class="tooltip">
     <div class="bloodied">
       <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
              value="{{data.bloodied}}" {{checked data.bloodied}}>
       <label for="{{actor._id}}-bloodied"></label>
       <i class="splash"></i>
     </div>
+	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodied"}}}</span>
+   </div>
     <div class="main">
-      <div class="stripe tooltip">
+      <div class="stripe">
         <label class="attribute-label">{{localize "FITD.Bloodied"}}</label>
-		<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodied"}}}</span>
       </div>
     </div>
   </div>
