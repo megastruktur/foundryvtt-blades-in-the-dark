@@ -631,6 +631,7 @@
   visibility: hidden;
   position: relative;
   width: fit-content;
+  max-width: 300px;
   font-weight: 600;
   font-family: Bitter;
   background: url(../images/background-light.png) repeat;
@@ -1118,6 +1119,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 #wo-nav-container .all-items-list, #dun-nav-container .all-items-list, #mp-nav-container .all-items-list {
   font-size: 14px;
+  font-family: Bitter !important;
 }
 #wo-nav-container .all-items-list:nth-of-type(2n+1), #dun-nav-container .all-items-list:nth-of-type(2n+1), #mp-nav-container .all-items-list:nth-of-type(2n+1) {
   background: rgba(0, 0, 0, 0.15);

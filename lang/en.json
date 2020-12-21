@@ -84,7 +84,7 @@
   "FITD.TooltipReckless": "Take an Action Dot when full.<br> Mark 1 XP if you played into either<br>being <strong>Bloodied</strong> or going <strong>Feral</strong> this session.",
   "FITD.TooltipActions": "<br><strong>Assist:</strong> Give +Effect, but open to Consequence<br><strong>Go Hard:</strong>Trade: +Effect for -Position<br><strong>Team Up:</strong> Take the highest result, but each PC with a Mixed or Failure takes Stress.<br><strong>Dark Bargain:</strong> Trade +1D for a Consequence<br><strong>Dark Heart:</strong> Take +1D on a Roll",
   "FITD.TooltipShock": "Take -1D on next Roll, then clears",
-  "FITD.TooltipBloodied": "Take <strong>Shock</strong> to all Attributes,<br>clears when <strong>all Shock is clear</strong>.",
+  "FITD.TooltipBloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>.",
   "FITD.TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",  
    
   "FITD.Roll": "Roll",

@@ -475,6 +475,7 @@ $hover-brightness: 0.8;
             visibility: hidden;
 			position:relative;
             width: fit-content;
+			max-width: 300px;
             font-weight: 600;
             font-family: Bitter;
             background: url(../images/background-light.png) repeat;
