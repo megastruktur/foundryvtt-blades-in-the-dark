@@ -237,6 +237,9 @@
 * nav {
   margin-bottom: 10px;
 }
+* .action-info {
+  margin-top: -20px;
+}
 * .editor,
 * .editor-content {
   min-height: 280px;
@@ -423,6 +426,7 @@
   display: flex;
   /* Hide the browser's default checkbox */
   justify-content: center;
+  align-items: center;
 }
 * .big-teeth-section .big-teeth label {
   height: 32px;
@@ -625,7 +629,8 @@
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
-  width: 300px;
+  position: relative;
+  width: fit-content;
   font-weight: 600;
   font-family: Bitter;
   background: url(../images/background-light.png) repeat;
@@ -634,15 +639,29 @@
   text-align: justify;
   border: 2px solid #400000;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
   position: absolute;
   z-index: 9999;
+  text-transform: none;
+  text-shadow: none;
+}
+* .tooltip .tooltipslow {
+  opacity: 0;
+  transition: visibility 0.1s, opacity 0.1s;
+  transition-delay: 0.1s;
 }
 * .tooltip:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s;
+  transition-delay: 1s;
 }
 * .fa-question-circle {
   padding: 2px 3px;
+}
+* .fa-book-dead:before {
+  padding-right: 5px;
+  color: #EEEFFF;
 }
 * .hidden {
   display: none;
@@ -914,7 +933,7 @@
 }
 
 .profile-img.profile-big {
-  margin: 0px 0px;
+  margin: 0px 5px;
   height: 175px;
   width: 175px;
   border: none;
@@ -983,7 +1002,6 @@ div.item i.fa-trash, tr.item i.fa-trash {
 .item-add-popup {
   padding-left: 10px;
   font-weight: 700;
-  color: #68332c;
 }
 
 #look, #minionpack, #vilefriend {
@@ -1351,6 +1369,9 @@ table td:first-child {
 #base-info table tr:last-child {
   background-color: #68332c;
 }
+#base-info table tr .item-add-popup {
+  color: #68332c;
+}
 
 #character-defenses {
   width: 100%;
@@ -1430,6 +1451,8 @@ table td:first-child {
 #duties-tab .item-body {
   width: auto;
   padding: 3px;
+  font-family: Bitter;
+  font-size: 14px;
 }
 #duties-tab .project-clock {
   height: 80px;
@@ -1489,6 +1512,7 @@ table td:first-child {
 
 #duties-table tr td:nth-of-type(1) {
   width: 50px;
+  font-weight: 900;
 }
 #duties-table tr td:nth-of-type(2) {
   min-width: 90px;
@@ -1504,6 +1528,7 @@ table td:first-child {
 #project-clocks-table tr td:nth-of-type(2) {
   min-width: 90px;
   width: 23%;
+  font-family: Bitter;
 }
 #project-clocks-table tr td:nth-of-type(4) {
   width: 20px;

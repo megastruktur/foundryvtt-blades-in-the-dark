@@ -85,6 +85,8 @@ export class BladesActor extends Actor {
             </select>
           </div>
         </form>
+		<h2>${game.i18n.localize('FITD.RollOptions')}</h2>
+		<div class="action-info">${game.i18n.localize('FITD.TooltipActions')}</div>
       `,
       buttons: {
         yes: {
