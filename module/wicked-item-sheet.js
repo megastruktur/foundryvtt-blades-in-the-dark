@@ -11,8 +11,19 @@ export class BladesItemSheet extends ItemSheet {
           classes: ["wicked-ones", "sheet", "item"],
 			width: 'auto',
 			height: 'auto',
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "abilitiestab"}]
 		});
+  }
+
+  /* -------------------------------------------- */
+
+  // Add config Values to local data object
+
+  /** @override */
+  async getData(options) {
+    const data = super.getData(options);
+    data.config = CONFIG.WO;
+    return data;
   }
 
   /* -------------------------------------------- */

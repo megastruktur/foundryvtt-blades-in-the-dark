@@ -1,19 +1,127 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
-        </div>
-    </header>
-    
-    {{!-- Sheet Body --}}
-    <section class="sheet-body">
-      <textarea name="data.description">{{data.description}}</textarea>
-    </section>
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Special Ability Type --}}
+  <div class="form-group">
+    <label>{{ localize "FITD.ItemAbilityType" }}</label>
+    <select name="data.ability_type">
+      {{#select data.ability_type}}
+      {{#each config.special_ability_types as |name type|}}
+      <option value="{{type}}">{{localize name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+
+  {{!-- Special Ability Group --}}
+  <div class="form-group">
+    <label>{{ localize "FITD.AbilityGroup" }}</label>
+    <select name="data.ability_group">
+      {{#select data.ability_group}}
+      {{#each config.special_ability_groups as |name type|}}
+      <option value="{{type}}">{{localize name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+
+
+
+  {{!-- BASIC TYPE --}}
+  {{#if (eq data.ability_type "basic")}}
+  <section class="sheet-body">
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description">{{data.description}}</textarea>
     <div class="flex-vertical">
-      <label class="label-stripe">{{localize "FITD.Calling"}}</label>
-      <input id="ability-calling" type="text" name="data.calling" value="{{data.calling}}" placeholder="{{localize 'FITD.Calling'}}">
+      <label class="label-stripe">{{localize "FITD.Source"}}</label>
+      <input id="ability-source" type="text" name="data.source" value="{{data.source}}" placeholder="{{localize 'FITD.SourceExample'}}">
       <label class="label-stripe">{{localize "FITD.Core"}}</label>
       <input id="ability-core" type="checkbox" name="data.core" {{checked data.core}}>
     </div>
+  </section>
+  {{/if}}
+
+
+
+  {{!-- ADVANCED TYPE --}}
+  {{#if (eq data.ability_type "advanced")}}
+  {{!-- Item Sheet Navigation --}}
+  <nav class="sheet-navigation sheet-tabs flex-horizontal" data-group="primary">
+    <a class="item active" data-tab="abilitiestab">{{ localize "FITD.AbilitiesTabTitle" }}</a>
+    <a class="item" data-tab="supplytab">{{ localize "FITD.SupplyTabTitle" }}</a>
+    <a class="item" data-tab="downtimetab">{{ localize "FITD.DowntimeTabTitle" }}</a>
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Abilities Tab --}}
+    <div class="tab sheet-body" data-group="primary" data-tab="abilitiestab">
+      <h2>Abilities List</h2>
+      <label class="label-stripe">{{localize "FITD.Description"}}</label>
+      <textarea name="data.description">{{data.description}}</textarea>
+      <div class="flex-vertical">
+        <label class="label-stripe">{{localize "FITD.Source"}}</label>
+        <input id="ability-source" type="text" name="data.source" value="{{data.source}}" placeholder="{{localize 'FITD.SourceExample'}}">
+        <label class="label-stripe">{{localize "FITD.Core"}}</label>
+        <input id="ability-core" type="checkbox" name="data.core" {{checked data.core}}>
+      </div>
+
+      <div class="flex-vertical">
+        <label class="label-stripe">{{localize "FITD.Checkbox"}} 1</label>
+        <input id="ability-chbx-1" type="text" name="data.ability_checkbox_1_text" value="{{data.ability_checkbox_1_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+        <label class="label-stripe">{{localize "FITD.Checkbox"}} 2</label>
+        <input id="ability-chbx-2" type="text" name="data.ability_checkbox_2_text" value="{{data.ability_checkbox_2_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+      </div>
+    </div>
+
+    {{!-- Supply Tab --}}
+    <div class="tab sheet-body" data-group="primary" data-tab="supplytab">
+      <h2>Supply</h2>
+
+    </div>
+
+    {{!-- Downtime Tab --}}
+    <div class="tab sheet-body" data-group="primary" data-tab="downtimetab">
+      <h2>Downtime Actions</h2>
+
+    </div>
+
+  </section>
+  {{/if}}
+
+  {{!-- BRAINEATER TYPE --}}
+  {{#if (eq data.ability_type "be_psi")}}
+  <section class="sheet-body">
+    <h2>Braineater</h2>
+  </section>
+  {{/if}}
+
+  {{!-- DOOMSEEKER TYPE --}}
+  {{#if (eq data.ability_type "ds_eyes")}}
+  <section class="sheet-body">
+    <h2>Doomseeker</h2>
+  </section>
+  {{/if}}
+
+  {{!-- FACESTEALER TYPE --}}
+  {{#if (eq data.ability_type "fs_face")}}
+  <section class="sheet-body">
+    <h2>Facestealer</h2>
+  </section>
+  {{/if}}
+
+  {{!-- GOLDMONGER TYPE --}}
+  {{#if (eq data.ability_type "gm_path")}}
+  <section class="sheet-body">
+    <h2>Goldmonger</h2>
+  </section>
+  {{/if}}
+
+
 </form>

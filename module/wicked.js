@@ -38,6 +38,30 @@ Hooks.once("init", async function() {
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
 
+  CONFIG.WO = {};
+  /**
+  * Define the set of special ability types
+  * @type {Object}
+  */
+  CONFIG.WO.special_ability_types = {
+    "basic": "FITD.Basic",
+    "advanced": "FITD.Advanced",
+    "be_psi": "FITD.PsiDiscipline",
+    "ds_eyes": "FITD.EyeRays",
+    "fs_face": "FITD.Face",
+    "gm_path": "FITD.GrowthPath"
+  };
+
+  CONFIG.WO.special_ability_groups = {
+    "group_base": "FITD.BasicPrimalAbilities",
+    "group_faces": "FITD.FaceStealerFaces",
+    "group_core": "FITD.CoreSkill",
+    "group_primal": "FITD.PrimalSpecials",
+    "group_general": "FITD.GeneralAbilities",
+    "group_flex": "FITD.Flexibility",
+    "group_ext": "FITD.ExternalAbilities"
+  };
+
   // Register System Settings
   registerSystemSettings();
 

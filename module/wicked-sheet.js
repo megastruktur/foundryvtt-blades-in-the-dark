@@ -22,7 +22,6 @@ export class BladesSheet extends ActorSheet {
     html.find(".roll-die-attribute").click(this._onRollAttributeDieClick.bind(this));
   }
 
-  /* -------------------------------------------- */
 
   async _onItemAddClick(event) {
     event.preventDefault();

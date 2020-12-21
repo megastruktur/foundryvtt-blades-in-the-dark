@@ -177,11 +177,6 @@
       "default": {
         "description": ""
       },
-      "ability": {
-        "description": "",
-        "calling": "",
-        "core": false
-      },
       "logic": {
         "logic": ""
       },
@@ -218,7 +213,47 @@
       "flashback_clues": ""
     },
     "specialability": {
-      "templates": [ "ability", "logic" ]
+      "templates": [ "default" ],
+      "ability_type": "basic",
+      "ability_group": "group_general",
+      "source": "",
+      "core": false,
+      "ability_checkbox_1_text": "",
+      "ability_checkbox_1_checked": false,
+      "ability_checkbox_2_text": "",
+      "ability_checkbox_2_checked": false,
+      "supply_desc": "",
+      "supply_checkbox_1_text": "",
+      "supply_checkbox_1_checked": false,
+      "supply_checkbox_2_text": "",
+      "supply_checkbox_2_checked": false,
+      "downtime_desc": "",
+      "downtime_checkbox_1_text": "",
+      "downtime_checkbox_1_checked": false,
+      "downtime_checkbox_2_text": "",
+      "downtime_checkbox_2_checked": false,
+      "primal": {
+        "be_psi_discipline": "",
+        "be_psi_dots": 0,
+        "be_psi_desc_1": "",
+        "be_psi_checked_1": "",
+        "be_psi_desc_2": "",
+        "be_psi_checked_2": "",
+        "ds_eye_ray_1": "",
+        "ds_eye_ray_2": "",
+        "ds_eye_ray_3": "",
+        "ds_eye_ray_4": "",
+        "ds_eye_ray_5": "",
+        "ds_eye_ray_6": "",
+        "ds_eye_ray_7": "",
+        "ds_eye_ray_8": "",
+        "ds_eye_ray_9": "",
+        "gm_path_name": "",
+        "gm_path_value": 0,
+        "gm_desc_1": "",
+        "gm_desc_2": "",
+        "gm_desc_3": ""
+      }
     },
     "tier3room": {
       "templates": [ "default" ],

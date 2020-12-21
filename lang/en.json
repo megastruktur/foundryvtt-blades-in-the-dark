@@ -217,6 +217,32 @@
   "FITD.WickedXP": "Wicked XP",
   "FITD.RecklessXP": "Reckless XP",
   "FITD.Choice": "Choice",
+  "FITD.Name": "Name",
+
+  "FITD.ItemAbilityType": "Special Ability Type",
+  "FITD.Basic": "Basic",
+  "FITD.Advanced": "Advanced",
+  "FITD.PsiDiscipline": "Braineater Psi Discipline",
+  "FITD.EyeRays": "Doomseeker Eye Rays",
+  "FITD.Face": "Facestealer Face",
+  "FITD.GrowthPath": "Goldmonger Growth Path",
+
+  "FITD.AbilityGroup": "Ability Group",
+  "FITD.BasicPrimalAbilities": "Base Primal Monster Abilities",
+  "FITD.FaceStealerFaces": "Facestealer Faces",
+  "FITD.CoreSkill": "Core Skill",
+  "FITD.PrimalSpecials": "Primal Monster Specials",
+  "FITD.GeneralAbilities": "General Special Abilities",
+  "FITD.Flexibility": "Flexibility Abilities",
+  "FITD.ExternalAbilities": "External Abilities",
+
+  "FITD.Source": "Source",
+  "FITD.SourceExample": "Source of Ability (Calling, Primal, etc)",
+  "FITD.AbilitiesTabTitle": "Abilities List",
+  "FITD.SupplyTabTitle": "Supply",
+  "FITD.DowntimeTabTitle": "Downtime Actions",
   "FITD.DisplayCheckbox": "Display Checkbox",
-  "FITD.Name": "Name"
+  "FITD.Checkbox": "Checkbox",
+  "FITD.CheckboxExample": "Enter text to display a checkbox"
+
 }
