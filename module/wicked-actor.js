@@ -49,7 +49,7 @@ export class BladesActor extends Actor {
     let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
 	
 	// Calculate Dice Amount for Attributes
-    let dice_amount = 0;
+    var dice_amount = 0;
     if (attribute_name !== "") {
       let roll_data = this.getRollData();
       dice_amount += roll_data.dice_amount[attribute_name];
@@ -59,6 +59,8 @@ export class BladesActor extends Actor {
 		}
 		
 	 //aus Zeile 100: ${dice_amount+document.getElementById('mod').selected.value}
+	let diceMod = 0;
+
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
@@ -97,6 +99,7 @@ export class BladesActor extends Actor {
           </div>
 		  <div class="form-group">
             <label>${game.i18n.localize('FITD.TotalSkillDice')}:</label>
+			Total not working yet: ${dice_amount+diceMod}
           </div>		  
         </form>
 		<h2>${game.i18n.localize('FITD.RollOptions')}</h2>
