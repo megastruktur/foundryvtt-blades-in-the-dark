@@ -20,7 +20,7 @@
         <td>
           {{!-- Monster Race --}}
           <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}:</a></div>
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}</a></div>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "monsterrace")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -45,7 +45,7 @@
         <td>
           {{!-- Calling --}}
           <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}:</a></div>
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}</a></div>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "calling")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -70,7 +70,7 @@
         <td>
           {{!-- Revelry --}}
           <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}:</a></div>
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}</a></div>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "revelry")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -97,11 +97,14 @@
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
             {{#multiboxes data.gold}}
             <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
-
+			<div class="tooltip">
+				<label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
+				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
+			</div>
+			
             {{#times_from_1 3}}
             <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
+			<label for="character-{{../actor._id}}-gold-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
@@ -112,8 +115,11 @@
           <div id="character-{{actor._id}}-wickedxp" class="big-teeth xp-bar">
             {{#multiboxes data.wickedxp.value}}
             <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
-
+			<div class="tooltip">
+				<label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
+				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipWicked"}}}</span>
+			</div>
+			
             {{#times_from_1 data.wickedxp.max}}
             <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
@@ -127,8 +133,10 @@
           <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
-            <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
-
+			<div class="tooltip">
+				<label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
+				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipReckless"}}}</span>
+			</div>
             {{#times_from_1 data.recklessxp.max}}
             <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
@@ -155,7 +163,7 @@
                 <th class="black-white">
                   {{localize "FITD.Defenses"}} <a class="item-add-popup" data-distinct="false" data-item-type="defense"><i class="fas fa-plus-square"></i></a>
                 </th>
-                <th class="black-white">{{localize "FITD.Stress"}}</th>
+                <th class="black-white tooltip">{{localize "FITD.Stress"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipStress"}}}</span></th>
                 <th class="black-white">
                   {{localize "FITD.Impulse"}} <a class="item-add-popup" data-distinct="false" data-item-type="wickedimpulse"><i class="fas fa-plus-square"></i></a>
                 </th>
@@ -320,7 +328,7 @@
           </tbody>
         </table>
         <div class="label-stripe flex-horizontal">
-          <p>{{localize "FITD.Projects"}}</p>
+          <p class="tooltip">{{localize "FITD.Projects"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipProjects"}}}</span></p>
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
 

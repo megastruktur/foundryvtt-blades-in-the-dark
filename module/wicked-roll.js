@@ -233,12 +233,6 @@ export async function simpleRollPopup() {
       <h2>${game.i18n.localize("FITD.RollSomeDice")}</h2>
       <p>${game.i18n.localize("FITD.RollTokenDescription")}</p>
       <form>
-        <div class="form-group">
-          <label>${game.i18n.localize("FITD.RollNumberOfDice")}:</label>
-          <select id="qty" name="qty">
-            ${Array(11).fill().map((item, i) => `<option value="${i}">${i}d</option>`).join('')}
-          </select>		
-        </div>
 		<div class="form-group">
 		<label>${game.i18n.localize('FITD.RollType')}:</label>
 		<select id="type" name="type">
@@ -255,7 +249,13 @@ export async function simpleRollPopup() {
 		  <option value="startingLoc">${game.i18n.localize('FITD.RollStartingLoc')}</option>
 		  <option value="pathing">${game.i18n.localize('FITD.RollPathing')}</option>		  
 		</select>
-	  </div>		
+	  </div>
+        <div class="form-group">
+          <label>${game.i18n.localize("FITD.RollNumberOfDice")}:</label>
+          <select id="qty" name="qty">
+            ${Array(11).fill().map((item, i) => `<option value="${i}">${i}D</option>`).join('')}
+          </select>		
+        </div>	  
       </form>
     `,
     buttons: {
