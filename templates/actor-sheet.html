@@ -357,7 +357,7 @@
         <div class="label-stripe">
           <p>{{localize "FITD.Notes"}}</p>
         </div>
-        <textarea rows="13" name="data.description">{{{data.description}}}</textarea>
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
       </div>
 
       {{!-- Full Item List --}}

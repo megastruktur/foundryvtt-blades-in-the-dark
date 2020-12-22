@@ -60,6 +60,16 @@ export class BladesItemSheet extends ItemSheet {
       }
     }
 
+    if (data.data.ability_type == "be_psi") {
+      data.data.source = game.i18n.localize("FITD.Braineater");
+    } else if (data.data.ability_type == "ds_eyes") {
+      data.data.source = game.i18n.localize("FITD.Doomseeker");
+    } else if (data.data.ability_type == "fs_face") {
+      data.data.source = game.i18n.localize("FITD.Facestealer");
+    } else if (data.data.ability_type == "gm_path") {
+      data.data.source = game.i18n.localize("FITD.Goldmonger");
+    }
+
     return data;
   }
 

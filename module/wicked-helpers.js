@@ -197,17 +197,24 @@ export class BladesHelpers {
  * Sorts Special Abilities by Calling and then Core and then Alphabet
  */
   static specialAbilitySort(a, b) {
-    if (a.data.calling < b.data.calling) {
+    if ((a.data.ability_type == "basic" || a.data.ability_type == "advanced") && !(b.data.ability_type == "basic" || b.data.ability_type == "advanced")) {
       return -1;
     }
-    if (a.data.calling > b.data.calling) {
+    if ( !(a.data.ability_type == "basic" || a.data.ability_type == "advanced") && (b.data.ability_type == "basic" || b.data.ability_type == "advanced")) {
       return 1;
     }
 
-    if (a.data.core && !b.data.core) {
+    if (a.data.source < b.data.source) {
       return -1;
     }
-    if (!a.data.core && b.data.core) {
+    if (a.data.source > b.data.source) {
+      return 1;
+    }
+
+    if ((a.data.ability_group == "group_core") && !(b.data.ability_group == "group_core")) {
+      return -1;
+    }
+    if ( !(a.data.ability_group == "group_core") && (b.data.ability_group == "group_core")) {
       return 1;
     }
 

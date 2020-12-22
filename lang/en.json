@@ -238,6 +238,10 @@
 
   "FITD.Source": "Source",
   "FITD.SourceExample": "Source of Ability (Calling, Primal, etc)",
+  "FITD.Braineater": "Braineater",
+  "FITD.Doomseeker": "Doomseeker",
+  "FITD.Facestealer": "Facestealer",
+  "FITD.Goldmonger": "Goldmonger",
   "FITD.AbilitiesTabTitle": "Abilities List",
   "FITD.SupplyTabTitle": "Supply",
   "FITD.DowntimeTabTitle": "Downtime Actions",

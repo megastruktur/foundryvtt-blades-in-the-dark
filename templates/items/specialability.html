@@ -18,7 +18,7 @@
     </select>
   </div>
 
-  {{!-- Special Ability Group --}}
+    {{!-- Special Ability Group --}}
   <div class="form-group" {{#ifIn data.ability_type config.special_ability_primal }} style="display: none;"{{/ifIn}}>
     <label>{{ localize "FITD.AbilityGroup" }}</label>
     <select id="item-group-select" name="data.ability_group">
@@ -44,7 +44,6 @@
   {{/if}}
 
 
-
   {{!-- ADVANCED TYPE --}}
   {{#if (eq data.ability_type "advanced")}}
   {{!-- Item Sheet Navigation --}}
@@ -65,8 +64,8 @@
       <div class="flex-vertical">
         <label class="label-stripe">{{localize "FITD.Source"}}</label>
         <input id="ability-source" type="text" name="data.source" value="{{data.source}}" placeholder="{{localize 'FITD.SourceExample'}}">
-        <label class="label-stripe">{{localize "FITD.Core"}}</label>
-        <input id="ability-core" type="checkbox" name="data.core" {{checked data.core}}>
+        <!--<label class="label-stripe">{{localize "FITD.Core"}}</label>
+        <input id="ability-core" type="checkbox" name="data.core" {{checked data.core}}>-->
       </div>
 
       <div class="flex-vertical">
@@ -80,22 +79,38 @@
     {{!-- Supply Tab --}}
     <div class="tab sheet-body" data-group="primary" data-tab="supplytab">
       <h2>Supply</h2>
-
+      <label class="label-stripe">{{localize "FITD.Description"}}</label>
+      <textarea name="data.supply_desc">{{data.supply_desc}}</textarea>
+      <div class="flex-vertical">
+        <label class="label-stripe">{{localize "FITD.Checkbox"}} 1</label>
+        <input id="sup-ability-chbx-1" type="text" name="data.supply_checkbox_1_text" value="{{data.supply_checkbox_1_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+        <label class="label-stripe">{{localize "FITD.Checkbox"}} 2</label>
+        <input id="sup-ability-chbx-2" type="text" name="data.supply_checkbox_2_text" value="{{data.supply_checkbox_2_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+      </div>
     </div>
 
     {{!-- Downtime Tab --}}
     <div class="tab sheet-body" data-group="primary" data-tab="downtimetab">
       <h2>Downtime Actions</h2>
-
+      <label class="label-stripe">{{localize "FITD.Description"}}</label>
+      <textarea name="data.downtime_desc">{{data.downtime_desc}}</textarea>
+      <div class="flex-vertical">
+        <label class="label-stripe">{{localize "FITD.Checkbox"}} 1</label>
+        <input id="dt-ability-chbx-1" type="text" name="data.downtime_checkbox_1_text" value="{{data.downtime_checkbox_1_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+        <label class="label-stripe">{{localize "FITD.Checkbox"}} 2</label>
+        <input id="dt-ability-chbx-2" type="text" name="data.downtime_checkbox_2_text" value="{{data.downtime_checkbox_2_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+      </div>
     </div>
 
   </section>
   {{/if}}
 
+
   {{!-- BRAINEATER TYPE --}}
   {{#if (eq data.ability_type "be_psi")}}
   <section class="sheet-body">
     <h2>Psionic Discipline of {{item.name}}</h2>
+    <input id="ability-source" type="text" name="data.source" value="{{data.source}}" style="display: none;" >
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "FITD.BESkillName"}}</label>
       <input type="text" name="data.primal.be_psi_skill_name" value="{{data.primal.be_psi_skill_name}}" placeholder="{{localize 'FITD.BESkillNameHint'}}">
@@ -115,10 +130,12 @@
   </section>
   {{/if}}
 
+
   {{!-- DOOMSEEKER TYPE --}}
   {{#if (eq data.ability_type "ds_eyes")}}
   <section class="sheet-body">
     <h2>Doomseeker</h2>
+    <input id="ability-source" type="text" name="data.source" value="{{data.source}}" style="display: none;" >
     <div id="ray-selection">
       <div class="flex-vertical">
         <label class="label-stripe">{{localize "FITD.DSMainEye"}}</label>
@@ -205,9 +222,11 @@
   </section>
   {{/if}}
 
+
   {{!-- FACESTEALER TYPE --}}
   {{#if (eq data.ability_type "fs_face")}}
   <section class="sheet-body">
+    <input id="ability-source" type="text" name="data.source" value="{{data.source}}" style="display: none;" >
     <h2>Facestealer</h2>
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "FITD.Description"}}</label>
@@ -216,9 +235,11 @@
   </section>
   {{/if}}
 
+
   {{!-- GOLDMONGER TYPE --}}
   {{#if (eq data.ability_type "gm_path")}}
   <section class="sheet-body">
+    <input id="ability-source" type="text" name="data.source" value="{{data.source}}" style="display: none;" >
     <h2>{{item.name}} Growth Path:</h2>
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "FITD.GMStage1"}}</label>

@@ -49,10 +49,10 @@ export class BladesSheet extends ActorSheet {
       let itemPrefix = ``;
       let itemSuffix = ``;
       if (item_type == "specialability") {
-        if (typeof e.data.calling !== "undefined") {
-          itemPrefix += `(${e.data.calling}): `
+        if (typeof e.data.source !== "undefined") {
+          itemPrefix += `(${e.data.source}): `
         }
-        if (e.data.core) {
+        if (e.data.ability_group == 'group_core') {
           itemSuffix += ` (Core)`
         }
       } else if (item_type == "tier3room") {
