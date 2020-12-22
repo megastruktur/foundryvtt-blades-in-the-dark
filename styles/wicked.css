@@ -1501,6 +1501,56 @@ table td:first-child {
 #abilities-list tr td:nth-of-type(3), #loadout tr td:nth-of-type(3) {
   width: 20px;
 }
+#abilities-list tr.group-core, #loadout tr.group-core {
+  background-color: #68332c3f;
+}
+#abilities-list tr td div.eye-rays, #loadout tr td div.eye-rays {
+  height: 230px;
+  background-image: url("assets/decorations/doomseeker.png");
+  background-size: 200px 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#abilities-list tr td div.eye-rays ul li, #loadout tr td div.eye-rays ul li {
+  text-align: center;
+  position: relative;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(1), #loadout tr td div.eye-rays ul li:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(2), #loadout tr td div.eye-rays ul li:nth-child(2) {
+  top: 12px;
+  left: -155px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(3), #loadout tr td div.eye-rays ul li:nth-child(3) {
+  top: -22px;
+  left: 126px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(4), #loadout tr td div.eye-rays ul li:nth-child(4) {
+  top: -17px;
+  left: -155px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(5), #loadout tr td div.eye-rays ul li:nth-child(5) {
+  top: -34px;
+  left: 126px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(6), #loadout tr td div.eye-rays ul li:nth-child(6) {
+  top: 25px;
+  left: -162px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(7), #loadout tr td div.eye-rays ul li:nth-child(7) {
+  top: -9px;
+  left: 142px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(8), #loadout tr td div.eye-rays ul li:nth-child(8) {
+  top: -4px;
+  left: -162px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(9), #loadout tr td div.eye-rays ul li:nth-child(9) {
+  top: -21px;
+  left: 142px;
+}
 
 /* Display all Item Names in Bold */
 .item-name {

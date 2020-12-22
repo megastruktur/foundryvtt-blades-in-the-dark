@@ -69,15 +69,15 @@ Hooks.once("init", async function() {
     ["group_faces", "group_primal"];
 
   CONFIG.WO.doomseeker_eye_rays = {
-    "bewitch": "FITD.RayBewitchment",
-    "death": "FITD.RayDeath",
-    "fear": "FITD.RayFear",
-    "null": "FITD.RayNullMagic",
-    "para": "FITD.RayParalysis",
-    "tele": "FITD.RayTelekinesis",
-    "time": "FITD.RayTime",
-    "transm": "FITD.RayTransmo",
-    "vision": "FITD.RayVision"
+    "FITD.RayBewitchment": "FITD.RayBewitchment",
+    "FITD.RayDeath": "FITD.RayDeath",
+    "FITD.RayFear": "FITD.RayFear",
+    "FITD.RayNullMagic": "FITD.RayNullMagic",
+    "FITD.RayParalysis": "FITD.RayParalysis",
+    "FITD.RayTelekinesis": "FITD.RayTelekinesis",
+    "FITD.RayTime": "FITD.RayTime",
+    "FITD.RayTransmo": "FITD.RayTransmo",
+    "FITD.RayVision": "FITD.RayVision"
   };
 
   // Register System Settings

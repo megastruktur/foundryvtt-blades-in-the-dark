@@ -206,6 +206,7 @@
         </div>
       </div>
 
+
       {{!-- Nav menu --}}
       <nav class="tabs flex-horizontal">
         <a class="item" data-tab="abilities">{{localize "FITD.Abilities"}}</a>
@@ -214,6 +215,7 @@
         <a class="item" data-tab="character-notes">{{localize "FITD.Notes"}}</a>
         <a class="item" data-tab="all-character-items">{{localize "FITD.AllItems"}}</a>
       </nav>
+
 
       {{!-- Special Abilities Tab --}}
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
@@ -224,8 +226,10 @@
 
         <table id="abilities-list">
           <tbody>
+            {{!-- Basic Primal Abilities --}}
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_base")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
                 <div class="item-name"><b>{{item.name}}</b></div>
@@ -238,10 +242,170 @@
               </td>
             </tr>
             {{/if}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- Face Stealer Faces --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_faces")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- Core Skill --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_core")}}
+            <tr class="item group-core" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- Primal Specials --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_primal")}}
+            {{#if (eq item.data.ability_type "be_psi")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{#if (eq item.data.ability_type "ds_eyes")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body" colspan="2">
+                <div class="eye-rays">
+                  <ul>
+                    <li><b>{{localize "FITD.DSMainEye"}}</b> {{localize item.data.primal.ds_eye_ray_1}}</li>
+                    <li><b>{{localize "FITD.DSOtherEyes"}}</b><br />{{localize item.data.primal.ds_eye_ray_6}}</li>
+                    <li><b>{{localize "FITD.DSOtherEyes"}}</b><br />{{localize item.data.primal.ds_eye_ray_7}}</li>
+                    <li>{{localize item.data.primal.ds_eye_ray_8}}</li>
+                    <li>{{localize item.data.primal.ds_eye_ray_9}}</li>
+                    <li><b>{{localize "FITD.DSOuterEyes"}}</b><br />{{localize item.data.primal.ds_eye_ray_2}}</li>
+                    <li><b>{{localize "FITD.DSOuterEyes"}}</b><br />{{localize item.data.primal.ds_eye_ray_3}}</li>
+                    <li>{{localize item.data.primal.ds_eye_ray_4}}</li>
+                    <li> {{localize item.data.primal.ds_eye_ray_5}}</li>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{#if (eq item.data.ability_type "gm_path")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- General Abilities --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_general")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- Flexibility --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_flex")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- ExternalAbilities --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_group "group_ext")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.description}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
             {{/each}}
           </tbody>
         </table>
+        {{#each actor.items as |item id|}}
+          {{#if (eq item.type "calling")}}
+          <div class="item flex-horizontal">
+            <p class="flashback-clues">{{item.data.flashback_clues}}</p>
+          </div>
+          {{/if}}
+       {{/each}}
       </div>
+
 
       {{!-- Gear & Supply Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
@@ -291,39 +455,45 @@
         </table>
       </div>
 
+
       {{!-- Duties & Projects Tab --}}
       <div id="duties-tab" class="tab flex-vertical" data-tab="duties">
         <div class="label-stripe flex-horizontal">
-          <p>{{localize "FITD.Duties"}}</p>
-          <p><a class="item-add-popup" data-item-type="duty"><i class="fas fa-plus-square"></i></a></p>
+          <p><label>{{localize "FITD.DowntimeActions"}}</label></p>
         </div>
-        <table id="duties-table">
-          <thead>
-            <tr>
-              <td>Tier</td>
-              <td>Type</td>
-              <td>Description</td>
-              <td></td>
-            </tr>
-          </thead>
+        <table id="abilities-list">
           <tbody>
-            {{#each actor.items as |item id|}}
-            {{#if (eq item.type "duty")}}
-            <tr class="item" data-item-id="{{item._id}}">
-              <td class="item-name item-body">{{item.data.tier}}</td>
-              <td class="item-name item-body">{{item.data.type}}</td>
-              <td class="item-name item-body">{{item.data.description}}</td>
-              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            <tr>
+              <td>
+                <div class="item-name"><b>{{localize "FITD.DowntimeAction"}}</b></div>
+              </td>
+              <td>
+                <div class="item-description">{{{localize "FITD.DowntimeActionHint"}}}</div>
+              </td>
             </tr>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_type "advanced")}}
+            {{#if item.data.downtime_desc}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="item-body">
+                <div class="item-description">{{item.data.downtime_desc}}</div>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
             {{/if}}
             {{/each}}
           </tbody>
         </table>
+        
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Projects"}}</p>
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
-
         <table id="project-clocks-table">
           <thead>
             <tr>
@@ -350,7 +520,34 @@
             {{/each}}
           </tbody>
         </table>
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.Duties"}}</p>
+          <p><a class="item-add-popup" data-item-type="duty"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <table id="duties-table">
+          <thead>
+            <tr>
+              <td>Tier</td>
+              <td>Type</td>
+              <td>Description</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "duty")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-name item-body">{{item.data.tier}}</td>
+              <td class="item-name item-body">{{item.data.type}}</td>
+              <td class="item-name item-body">{{item.data.description}}</td>
+              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
       </div>
+
 
       {{!-- Notes Tab --}}
       <div class="tab flex-vertical" data-tab="character-notes">

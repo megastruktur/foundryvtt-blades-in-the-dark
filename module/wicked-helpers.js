@@ -192,15 +192,39 @@ export class BladesHelpers {
 
   /* -------------------------------------------- */
 
+  /**
+   * Returns true if a string is the localized version of a calling name
+   *
+   * @param {string} attribute_name 
+   * @returns {bool}
+   */
+  static isBaseCalling(source_name) {
+    switch (source_name) {
+      case game.i18n.localize("FITD.Brute"):
+      case game.i18n.localize("FITD.Conniver"):
+      case game.i18n.localize("FITD.Crafter"):
+      case game.i18n.localize("FITD.Hunter"):
+      case game.i18n.localize("FITD.Marauder"):
+      case game.i18n.localize("FITD.Shadow"):
+      case game.i18n.localize("FITD.Shaman"):
+      case game.i18n.localize("FITD.Warlock"):
+      case game.i18n.localize("FITD.Zealot"):
+        return true;
+      default:
+        return false;
+    }
+  }
+
+/* -------------------------------------------- */
 
 /**
- * Sorts Special Abilities by Calling and then Core and then Alphabet
+ * Sorts Special Abilities by Base Calling or other, Source Name, Core Ability Status and then Alphabet
  */
   static specialAbilitySort(a, b) {
-    if ((a.data.ability_type == "basic" || a.data.ability_type == "advanced") && !(b.data.ability_type == "basic" || b.data.ability_type == "advanced")) {
+    if (BladesHelpers.isBaseCalling(a.data.source) && !BladesHelpers.isBaseCalling(b.data.source)) {
       return -1;
     }
-    if ( !(a.data.ability_type == "basic" || a.data.ability_type == "advanced") && (b.data.ability_type == "basic" || b.data.ability_type == "advanced")) {
+    if (!BladesHelpers.isBaseCalling(a.data.source) && BladesHelpers.isBaseCalling(b.data.source)) {
       return 1;
     }
 
@@ -251,4 +275,5 @@ export class BladesHelpers {
     return 0;
   }
 
+  /* -------------------------------------------- */
 }
