@@ -169,7 +169,7 @@
                     {{#if (eq item.type "defense")}}
                     <div class="item flex-horizontal" data-item-id="{{item._id}}">
                       <div class="item-checkmark">
-                        <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}}>
+                        <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}}  data-property-to-set="checked">
                         <label for="item-{{item._id}}-checked"></label>
                       </div>
                       <div class="item-body flex-horizontal">
@@ -288,12 +288,31 @@
             {{#if (eq item.type "specialability")}}
             {{#if (eq item.data.ability_group "group_primal")}}
             {{#if (eq item.data.ability_type "be_psi")}}
+            <tr id="discipline-{{item._id}}" class="label-stripe flex-horizontal supply item" data-item-id="{{item._id}}">
+              <td colspan="3">
+                <p class="flex-horizontal item-radio">
+                  {{debug data}}
+                  {{#multiboxes data.primal.be_psi_dots}}
+                  <input type="radio" id="discipline-{{item._id}}-0" name="data.primal.be_psi_dots" value="0" dtype="Radio" data-property-to-set="primal.be_psi_dots">
+                  <label for="discipline-{{item._id}}-0">{{data.primal.be_psi_skill_name}}</label>
+                  {{#times_from_1 3}}
+                  <input type="radio" id="discipline-{{item._id}}-{{this}}" name="data.primal.be_psi_dots" value="{{this}}" dtype="Radio" data-property-to-set="primal.be_psi_dots">
+                  <label for="discipline-{{item._id}}-{{this}}"></label>
+                  {{/times_from_1}}
+
+                  {{/multiboxes}}
+                </p>
+              </td>
+            </tr>
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
                 <div class="item-name"><b>{{item.name}}</b></div>
               </td>
               <td class="item-body">
-                <div class="item-description">{{item.data.description}}</div>
+                <div class="item-name"><b>{{item.data.primal.be_psi_name_1}}</b></div>
+                <div class="item-description">{{item.data.primal.be_psi_desc_1}}</div>
+                <div class="item-name"><b>{{item.data.primal.be_psi_name_2}}</b></div>
+                <div class="item-description">{{item.data.primal.be_psi_desc_2}}</div>
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>

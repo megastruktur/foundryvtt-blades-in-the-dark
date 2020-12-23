@@ -13,6 +13,7 @@ export class BladesSheet extends ActorSheet {
     html.find(".item-add-popup").click(this._onItemAddClick.bind(this));
     html.find(".skill-practice-xp").click(this._onSkillSetPracticeXP.bind(this));
     html.find('.item-checkmark input').click(ev => ev.target.select()).change(this._onCheckmarkChange.bind(this));
+    html.find('.item-radio input').click(ev => ev.target.select()).change(this._onRadioChange.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
     if (this.options.submitOnChange) {
@@ -163,14 +164,28 @@ export class BladesSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Change the uses amount of an Owned Item within the Actor
+   * Change the Checkbox Status in an Owned Item within the Actor
    */
   async _onCheckmarkChange(event) {
     event.preventDefault();
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const propertyToSet = event.currentTarget.dataset.propertyToSet;
     const item = this.actor.getOwnedItem(itemId);
-    return item.update({ 'data.checked': event.target.checked });
+    return item.update({ ['data.' + propertyToSet]: event.target.checked });
   }
 
-/* -------------------------------------------- */
+  /* -------------------------------------------- */
+
+  /**
+   * Change the Radio Button Status of an Owned Item within the Actor
+   */
+  async _onRadioChange(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const propertyToSet = event.currentTarget.dataset.propertyToSet;
+    const item = this.actor.getOwnedItem(itemId);
+    return item.update({ ['data.' + propertyToSet]: event.target.value });
+  }
+
+  /* -------------------------------------------- */
 }
