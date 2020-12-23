@@ -230,6 +230,8 @@
   font-family: Bitter, Lucida Console, monospace;
   font-weight: 600;
   font-size: 15px;
+  border-radius: 0px;
+  border-color: 1px solid #68332c;
 }
 * option {
   font-weight: 600;
@@ -1119,7 +1121,6 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 #wo-nav-container .all-items-list, #dun-nav-container .all-items-list, #mp-nav-container .all-items-list {
   font-size: 14px;
-  font-family: Bitter !important;
 }
 #wo-nav-container .all-items-list:nth-of-type(2n+1), #dun-nav-container .all-items-list:nth-of-type(2n+1), #mp-nav-container .all-items-list:nth-of-type(2n+1) {
   background: rgba(0, 0, 0, 0.15);
@@ -1358,16 +1359,6 @@ table td:first-child {
 #base-info table tr td:nth-of-type(3) {
   width: 200px;
 }
-#base-info table tr #name input[type=text] {
-  height: 52px;
-  border: none;
-  font-family: Blood Crow;
-  font-size: 55px;
-  font-weight: normal;
-  color: #68332c;
-  background: none;
-  text-shadow: 0 1px 2px #d46c1f;
-}
 #base-info table tr:last-child {
   background-color: #68332c;
 }
@@ -1561,6 +1552,7 @@ table td:first-child {
   font-weight: 500;
   font-family: Piedra;
   font-size: 20px;
+  padding: 0px 10px;
 }
 
 #defenses-stress {
@@ -1723,6 +1715,17 @@ table td:first-child {
 }
 #abilities-list div.item-description, #loadout div.item-description {
   width: fit-content;
+}
+
+#name input[type=text] {
+  height: 52px;
+  border: none;
+  font-family: Blood Crow;
+  font-size: 55px;
+  font-weight: normal;
+  color: #68332c;
+  background: none;
+  text-shadow: 0 1px 2px #d46c1f;
 }
 
 /*# sourceMappingURL=wicked.css.map */

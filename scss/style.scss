@@ -1090,17 +1090,6 @@ table td:first-child {
             }
         }
 
-        #name input[type="text"] {
-            height: 52px;
-            border: none;
-            font-family: Blood Crow;
-            font-size: 55px;
-            font-weight: normal;
-            color: $mud;
-            background: none;
-			text-shadow: 0 1px 2px $orange;
-        }
-
         &:last-child {
             background-color: $mud;
         }
@@ -1263,6 +1252,7 @@ table td:first-child {
 	font-weight: 500;
 	font-family: Piedra;
 	font-size: 20px;
+	padding: 0px 10px;
 	}
 // WO Defenses Stress Area
 #defenses-stress {
@@ -1331,4 +1321,16 @@ table td:first-child {
     div.item-description {
         width: fit-content;
     }
+}
+// Name input styling for all sheets
+
+#name input[type="text"] {
+	height: 52px;
+	border: none;
+	font-family: Blood Crow;
+	font-size: 55px;
+	font-weight: normal;
+	color: $mud;
+	background: none;
+	text-shadow: 0 1px 2px $orange;
 }
