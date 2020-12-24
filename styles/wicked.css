@@ -1551,6 +1551,11 @@ table td:first-child {
   top: -21px;
   left: 142px;
 }
+#abilities-list tr.stolen-face img, #loadout tr.stolen-face img {
+  max-height: 100px;
+  width: 75px;
+  object-fit: cover;
+}
 
 /* Display all Item Names in Bold */
 .item-name {

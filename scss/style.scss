@@ -1262,6 +1262,14 @@ table td:first-child {
                 }
             }
         }
+
+        &.stolen-face {
+            img {
+                max-height: 100px;
+                width: 75px;
+                object-fit: cover;
+            }
+        }
     }
 }
 

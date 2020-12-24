@@ -249,12 +249,20 @@
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "specialability")}}
             {{#if (eq item.data.ability_group "group_faces")}}
-            <tr class="item" data-item-id="{{item._id}}">
+            <tr class="item stolen-face" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <img src="{{item.img}}" title="{{item.name}}" />
               </td>
-              <td class="item-body">
+              <td class="">
+                <div class="item-name"><b>{{item.name}}</b></div>
                 <div class="item-description">{{item.data.description}}</div>
+                <div class="item-checkmark">
+                  <div>
+                    {{localize "FITD.FSGrafted"}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                    <label for="item-{{item._id}}-acbx1-checked"></label>
+                  </div>
+                </div>
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -366,8 +374,26 @@
               <td class="item-body">
                 <div class="item-name"><b>{{item.name}}</b></div>
               </td>
-              <td class="item-body">
+              <td class="">
                 <div class="item-description">{{item.data.description}}</div>
+                {{#if (eq item.data.ability_type "advanced")}}
+                {{#unless (eq item.data.ability_checkbox_1_text "")}}
+                <div class="item-checkmark">
+                  <div>{{item.data.ability_checkbox_1_text}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                    <label for="item-{{item._id}}-acbx1-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{#unless (eq item.data.ability_checkbox_2_text "")}}
+                <div class="item-checkmark">
+                  <div>{{item.data.ability_checkbox_2_text}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                    <label for="item-{{item._id}}-acbx2-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{/if}}
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -498,8 +524,28 @@
               <td class="item-body">
                 <div class="item-name"><b>{{item.name}}</b></div>
               </td>
-              <td class="item-body">
+              <td class="">
                 <div class="item-description">{{item.data.downtime_desc}}</div>
+                {{#if (eq item.data.ability_type "advanced")}}
+                {{#unless (eq item.data.downtime_checkbox_1_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.downtime_checkbox_1_text}}
+                    <input type="checkbox" id="item-{{item._id}}-dtcbx1-checked" value="{{item.data.downtime_checkbox_1_checked}}" {{checked item.data.downtime_checkbox_1_checked}} data-property-to-set="downtime_checkbox_1_checked">
+                    <label for="item-{{item._id}}-dtcbx1-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{#unless (eq item.data.downtime_checkbox_2_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.downtime_checkbox_2_text}}
+                    <input type="checkbox" id="item-{{item._id}}-dtcbx2-checked" value="{{item.data.downtime_checkbox_2_checked}}" {{checked item.data.downtime_checkbox_2_checked}} data-property-to-set="downtime_checkbox_2_checked">
+                    <label for="item-{{item._id}}-dtcbx2-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{/if}}
               </td>
             </tr>
             {{/if}}
