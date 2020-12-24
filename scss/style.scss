@@ -1271,6 +1271,32 @@ table td:first-child {
             }
         }
     }
+
+    table.gold-monger-path tr {
+        &:nth-child(1) td:nth-child(1) {
+            background: none;
+        }
+
+        &:nth-child(2) td:nth-child(1) {
+            background-position-y: center;
+        }
+
+        &:nth-child(3) td:nth-child(1) {
+            background-position-y: bottom;
+        }
+
+        &:nth-child(4) td:nth-child(1) {
+            background-position-y: center;
+            background-image: url("assets/decorations/verticalline-top.png");
+        }
+
+        td:nth-child(1) {
+            min-width: 32px;
+            width: 32px;
+            background-image: url("assets/decorations/verticalline-bottom.png");
+            background-repeat: no-repeat;
+        }
+    }
 }
 
 /* Display all Item Names in Bold */

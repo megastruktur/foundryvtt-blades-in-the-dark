@@ -1556,6 +1556,25 @@ table td:first-child {
   width: 75px;
   object-fit: cover;
 }
+#abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
+  background: none;
+}
+#abilities-list table.gold-monger-path tr:nth-child(2) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(2) td:nth-child(1) {
+  background-position-y: center;
+}
+#abilities-list table.gold-monger-path tr:nth-child(3) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(3) td:nth-child(1) {
+  background-position-y: bottom;
+}
+#abilities-list table.gold-monger-path tr:nth-child(4) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(4) td:nth-child(1) {
+  background-position-y: center;
+  background-image: url("assets/decorations/verticalline-top.png");
+}
+#abilities-list table.gold-monger-path tr td:nth-child(1), #loadout table.gold-monger-path tr td:nth-child(1) {
+  min-width: 32px;
+  width: 32px;
+  background-image: url("assets/decorations/verticalline-bottom.png");
+  background-repeat: no-repeat;
+}
 
 /* Display all Item Names in Bold */
 .item-name {

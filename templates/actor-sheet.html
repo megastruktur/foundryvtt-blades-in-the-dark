@@ -299,7 +299,6 @@
             <tr id="discipline-{{item._id}}" class="label-stripe flex-horizontal supply item" data-item-id="{{item._id}}">
               <td colspan="3">
                 <p class="flex-horizontal item-radio">
-                  {{debug data}}
                   {{#multiboxes data.primal.be_psi_dots}}
                   <input type="radio" id="discipline-{{item._id}}-0" name="data.primal.be_psi_dots" value="0" dtype="Radio" data-property-to-set="primal.be_psi_dots">
                   <label for="discipline-{{item._id}}-0">{{data.primal.be_psi_skill_name}}</label>
@@ -307,7 +306,6 @@
                   <input type="radio" id="discipline-{{item._id}}-{{this}}" name="data.primal.be_psi_dots" value="{{this}}" dtype="Radio" data-property-to-set="primal.be_psi_dots">
                   <label for="discipline-{{item._id}}-{{this}}"></label>
                   {{/times_from_1}}
-
                   {{/multiboxes}}
                 </p>
               </td>
@@ -351,11 +349,41 @@
             {{/if}}
             {{#if (eq item.data.ability_type "gm_path")}}
             <tr class="item" data-item-id="{{item._id}}">
-              <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
-              </td>
-              <td class="item-body">
-                <div class="item-description">{{item.data.description}}</div>
+              <td class="" colspan="2">
+                <table class="gold-monger-path item-radio">
+                  {{#multiboxes data.primal.gm_path_value}}
+                  <tr>
+                    <td>
+                      <input type="radio" id="path-{{item._id}}-0" name="data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item._id}}-0">{{data.primal.be_psi_skill_name}}</label>
+                    </td>
+                    <td><div class="item-name item-body"><b>{{item.name}}</b></div></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" id="path-{{item._id}}-1" name="data.primal.gm_path_value" value="1" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item._id}}-1"></label>
+                    </td>
+                    <td><div class="item-description">{{item.data.primal.gm_desc_1}}</div></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" id="path-{{item._id}}-2" name="data.primal.gm_path_value" value="2" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item._id}}-2"></label>
+                    </td>
+                    <td><div class="item-description">{{item.data.primal.gm_desc_2}}</div></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" id="path-{{item._id}}-3" name="data.primal.gm_path_value" value="3" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item._id}}-3"></label>
+                    </td>
+                    <td><div class="item-description">{{item.data.primal.gm_desc_3}}</div></td>
+                  </tr>
+                  {{/multiboxes}}
+                </table>
+                <!--<div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-description">{{item.data.primal.gm_desc_1}}</div>-->
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -379,7 +407,8 @@
                 {{#if (eq item.data.ability_type "advanced")}}
                 {{#unless (eq item.data.ability_checkbox_1_text "")}}
                 <div class="item-checkmark">
-                  <div>{{item.data.ability_checkbox_1_text}}
+                  <div>
+                    {{item.data.ability_checkbox_1_text}}
                     <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
                     <label for="item-{{item._id}}-acbx1-checked"></label>
                   </div>
@@ -387,7 +416,8 @@
                 {{/unless}}
                 {{#unless (eq item.data.ability_checkbox_2_text "")}}
                 <div class="item-checkmark">
-                  <div>{{item.data.ability_checkbox_2_text}}
+                  <div>
+                    {{item.data.ability_checkbox_2_text}}
                     <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
                     <label for="item-{{item._id}}-acbx2-checked"></label>
                   </div>
