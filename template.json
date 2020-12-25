@@ -23,10 +23,11 @@
       "bloodied": false,
       "dark_hearts": 0,
       "dark_hearts_max": 2,
+      "downtime_action_used": false,
       "gold": 0,
       "gold_max": 3,
       "supply": 0,
-      "max_supply": 2,
+      "supply_max": 2,
       "attribute_max_value": 3,
       "attributes": {
         "brains": {

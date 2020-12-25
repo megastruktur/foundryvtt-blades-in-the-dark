@@ -546,7 +546,7 @@
             {{#multiboxes data.supply}}
             <input type="radio" id="character-{{actor._id}}-supply-0" name="data.supply" value="0" dtype="Radio">
             <label for="character-{{actor._id}}-supply-0">{{localize "FITD.Supply"}}</label>
-            {{#times_from_1 data.max_supply}}
+            {{#times_from_1 data.supply_max}}
             <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-supply-{{this}}"></label>
             {{/times_from_1}}
@@ -584,6 +584,11 @@
               </td>
               <td>
                 <div class="item-description">{{{localize "FITD.DowntimeActionHint"}}}</div>
+                <div>
+                  {{localize "FITD.DowntimeActionUsed"}}
+                  <input type="checkbox" id="{{actor._id}}-dtaused" name="data.downtime_action_used" {{checked data.downtime_action_used}}>
+                  <label for="{{actor._id}}-dtaused"></label>
+                </div>
               </td>
             </tr>
             {{#each actor.items as |item id|}}

@@ -13,6 +13,7 @@
   "FITD.DowntimeAction": "Downtime Action",
   "FITD.DowntimeActions": "Downtime Actions",
   "FITD.DowntimeActionHint": "<b>Brew</b> potions and alchemicals<br><b>Build</b> locks, traps, tricks, and rooms.<br><b>Contact</b> vile friends, npcs, or factions.<br><b>Craft</b> an item, edge, or contraption.<br><b>Incant</b> a ritual.<br><b>Recruit</b> a pack of minions.<br><b>Torture</b> a prisoner.",
+  "FITD.DowntimeActionUsed": "Downtime Action Used",
   "ITEM.TypeProject": "Downtime Project",
   "ITEM.TypeMinion_upgrade": "Minion Upgrade",
   "ITEM.TypeMinion_type": "Minion Type",
