@@ -116,16 +116,20 @@
       <input type="text" name="data.primal.be_psi_skill_name" value="{{data.primal.be_psi_skill_name}}" placeholder="{{localize 'FITD.BESkillNameHint'}}">
     </div>
     <div class="flex-vertical">
-      <label class="label-stripe">{{localize "FITD.BESkillAbilityName1"}}</label>
+      <label class="label-stripe">{{localize "FITD.BEMasteryAbilityName1"}}</label>
       <input type="text" name="data.primal.be_psi_name_1" value="{{data.primal.be_psi_name_1}}">
-      <label class="label-stripe">{{localize "FITD.BESkillAbilityDesc1"}}</label>
+      <label class="label-stripe">{{localize "FITD.BEMasteryAbilityDesc1"}}</label>
       <textarea name="data.primal.be_psi_desc_1">{{data.primal.be_psi_desc_1}}</textarea>
+      <label class="label-stripe">{{localize "FITD.BEMasteryTaken"}}</label>
+      <input type="checkbox" name="data.primal.be_psi_checked_1" value="{{data.primal.be_psi_checked_1}}" {{checked data.primal.be_psi_checked_1}}>
     </div>
     <div class="flex-vertical">
-      <label class="label-stripe">{{localize "FITD.BESkillAbilityName2"}}</label>
+      <label class="label-stripe">{{localize "FITD.BEMasteryAbilityName2"}}</label>
       <input type="text" name="data.primal.be_psi_name_2" value="{{data.primal.be_psi_name_2}}">
-      <label class="label-stripe">{{localize "FITD.BESkillAbilityDesc2"}}</label>
+      <label class="label-stripe">{{localize "FITD.BEMasteryAbilityDesc2"}}</label>
       <textarea name="data.primal.be_psi_desc_2">{{data.primal.be_psi_desc_2}}</textarea>
+      <label class="label-stripe">{{localize "FITD.BEMasteryTaken"}}</label>
+      <input type="checkbox" name="data.primal.be_psi_checked_2" value="{{data.primal.be_psi_checked_2}}" {{checked data.primal.be_psi_checked_2}}>
     </div>
   </section>
   {{/if}}

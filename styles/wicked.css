@@ -1556,6 +1556,14 @@ table td:first-child {
   width: 75px;
   object-fit: cover;
 }
+#abilities-list tr.psi-discipline td > div, #loadout tr.psi-discipline td > div {
+  border-radius: 15px;
+  height: 30px;
+  align-items: center;
+}
+#abilities-list tr.psi-discipline td > div div, #loadout tr.psi-discipline td > div div {
+  flex: none;
+}
 #abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
   background: none;
 }

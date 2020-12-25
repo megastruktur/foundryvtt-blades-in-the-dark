@@ -1272,6 +1272,19 @@ table td:first-child {
         }
     }
 
+    tr.psi-discipline {
+
+        td > div {
+            border-radius: 15px;
+            height: 30px;
+            align-items: center;
+
+            div {
+                flex: none;
+            }
+        }
+    }
+
     table.gold-monger-path tr {
         &:nth-child(1) td:nth-child(1) {
             background: none;

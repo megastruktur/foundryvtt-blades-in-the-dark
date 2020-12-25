@@ -254,10 +254,11 @@
 
   "FITD.BESkillName": "Psionics Skill Name",
   "FITD.BESkillNameHint": "Name to show up next to the skill dots",
-  "FITD.BESkillAbilityName1": "First Ability Name",
-  "FITD.BESkillAbilityDesc1": "First Ability Description",
-  "FITD.BESkillAbilityName2": "Second Ability Name",
-  "FITD.BESkillAbilityDesc2": "Second Ability Description",
+  "FITD.BEMasteryAbilityName1": "First Mastery Name",
+  "FITD.BEMasteryAbilityDesc1": "First Mastery Description",
+  "FITD.BEMasteryAbilityName2": "Second Mastery Name",
+  "FITD.BEMasteryAbilityDesc2": "Second Mastery Description",
+  "FITD.BEMasteryTaken": "Mastery taken",
 
   "FITD.DSMainEye": "Main Eye (3D)",
   "FITD.DSOuterEyes": "Outer Eyes (2D)",
