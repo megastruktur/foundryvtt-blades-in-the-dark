@@ -78,7 +78,7 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
   get template() {
       const path = "systems/wicked-ones/templates/items";
-    let simple_item_types = ["defense", "gear", "goldmonger_type", "minionimpulse", "minion_type", "monsterrace", "revelry", "supply", "wickedimpulse" ];
+    let simple_item_types = ["defense", "gear", "goldmonger_type", "minionimpulse", "minion_type", "revelry", "supply", "wickedimpulse" ];
     let template_name = `${this.item.data.type}`;
 
     if (simple_item_types.indexOf(this.item.data.type) >= 0) {
@@ -106,11 +106,9 @@ export class BladesItemSheet extends ItemSheet {
         case "ds_eyes":
         case "gm_path":
           abilitygroup.value = "group_primal";
-          // $(abilitygroup).parent()[0].style.display = 'none';
           break;
         case "fs_face":
           abilitygroup.value = "group_faces";
-          // $(abilitygroup).parent()[0].style.display = 'none';
           break;
 
         case "basic":
@@ -118,12 +116,8 @@ export class BladesItemSheet extends ItemSheet {
         default:
           if (abilitygroup.value == "group_primal" || abilitygroup.value == "group_faces") {
             abilitygroup.value = "group_general";
-            // $(abilitygroup).parent()[0].style.display = 'contents';
           }
       }
-
-      // const element = $(ev.currentTarget).parents(".item");
-      // window.alert("Change of type to: " + ev.currentTarget.value);
     });
 
     html.find('#clock-type-list .clock-size-picker').click(ev => {

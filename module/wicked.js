@@ -291,14 +291,21 @@ Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
 Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
 
   BladesHelpers.callItemLogic(child_data, parent_entity);
+
+  // Add Code to Handle Attribute Changes to new Function
+
   return true;
 });
 
 Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
   
   BladesHelpers.undoItemLogic(child_data, parent_entity);
+
+  // Add Code to Handle Attribute Changes to new Function
+
   return true;
 });
+
 // getSceneControlButtons
 Hooks.on("renderSceneControls", async (app, html) => {
   let dice_roller = $('<li class="scene-control" title="Dice Roll"><i class="fas fa-dice"></i></li>');

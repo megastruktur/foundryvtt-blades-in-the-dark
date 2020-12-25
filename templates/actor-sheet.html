@@ -20,9 +20,9 @@
         <td>
           {{!-- Monster Race --}}
           <div class="item-block flex-vertical">
-            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monsterrace">{{localize "FITD.MonsterRace"}}:</a></div>
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monster_race">{{localize "FITD.MonsterRace"}}:</a></div>
             {{#each actor.items as |item id|}}
-            {{#if (eq item.type "monsterrace")}}
+            {{#if (eq item.type "monster_race")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
                 <div class="item-name">{{item.name}}</div>
@@ -428,8 +428,6 @@
                   </tr>
                   {{/multiboxes}}
                 </table>
-                <!--<div class="item-name"><b>{{item.name}}</b></div>
-      <div class="item-description">{{item.data.primal.gm_desc_1}}</div>-->
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -524,7 +522,16 @@
             <p class="flashback-clues">{{item.data.flashback_clues}}</p>
           </div>
           {{/if}}
-       {{/each}}
+        {{#if (eq item.type "monster_race")}}
+        {{#if item.data.primal}}
+        {{#if item.data.flashback_clues}}
+          <div class="item flex-horizontal">
+            <p class="flashback-clues">{{item.data.flashback_clues}}</p>
+          </div>
+        {{/if}}
+        {{/if}}
+        {{/if}}
+        {{/each}}
       </div>
 
 
