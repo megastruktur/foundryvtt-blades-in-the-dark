@@ -1206,11 +1206,25 @@ table td:first-child {
         }
 
         td div.eye-rays {
-            height: 230px;
-            background-image: url("assets/decorations/doomseeker.png");
-            background-size: 200px 200px;
-            background-repeat: no-repeat;
-            background-position: center;
+            text-align: center;
+            min-width: 420px;
+
+            div.doomseeker-img {
+                margin-top: 30px;
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                    margin: 0px;
+                    border-style: none;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+
+            ul {
+                margin-top: -225px;
+            }
 
             ul li {
                 text-align: center;
@@ -1382,5 +1396,25 @@ table td:first-child {
 
     div.item-description {
         width: fit-content;
+    }
+}
+
+#ray-selection {
+    
+    div.ray-line {
+        display: flex;
+        justify-content: space-evenly;
+
+        &:last-child {
+            margin-bottom: 25px;
+        }
+
+        select:nth-child(1) {
+            width: 70%;
+        }
+
+        select:nth-child(2) {
+            width: 20%;
+        }
     }
 }

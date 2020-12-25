@@ -175,7 +175,7 @@
     }
   },
   "Item": {
-    "types": [ "calling", "defense", "project", "duty", "dungeon_theme", "gear", "goldmongertype", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "tier3room", "wickedimpulse" ],
+    "types": [ "calling", "defense", "project", "duty", "dungeon_theme", "gear", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monsterrace", "revelry", "specialability", "supply", "tier3room", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -193,7 +193,7 @@
     "gear": {
       "templates": [ "default" ]
     },
-    "goldmongertype": {
+    "goldmonger_type": {
       "templates": [ "default" ]
     },
     "supply": {
@@ -247,14 +247,23 @@
         "be_psi_desc_2": "",
         "be_psi_checked_2": "",
         "ds_eye_ray_1": "",
+        "ds_eye_ray_1_val": 3,
         "ds_eye_ray_2": "",
+        "ds_eye_ray_2_val": 2,
         "ds_eye_ray_3": "",
+        "ds_eye_ray_3_val": 2,
         "ds_eye_ray_4": "",
+        "ds_eye_ray_4_val": 2,
         "ds_eye_ray_5": "",
+        "ds_eye_ray_5_val": 2,
         "ds_eye_ray_6": "",
+        "ds_eye_ray_6_val": 1,
         "ds_eye_ray_7": "",
+        "ds_eye_ray_7_val": 1,
         "ds_eye_ray_8": "",
+        "ds_eye_ray_8_val": 1,
         "ds_eye_ray_9": "",
+        "ds_eye_ray_9_val": 1,
         "gm_path_value": 0,
         "gm_desc_1": "",
         "gm_desc_2": "",

@@ -1505,11 +1505,22 @@ table td:first-child {
   background-color: #68332c3f;
 }
 #abilities-list tr td div.eye-rays, #loadout tr td div.eye-rays {
-  height: 230px;
-  background-image: url("assets/decorations/doomseeker.png");
-  background-size: 200px 200px;
-  background-repeat: no-repeat;
-  background-position: center;
+  text-align: center;
+  min-width: 420px;
+}
+#abilities-list tr td div.eye-rays div.doomseeker-img, #loadout tr td div.eye-rays div.doomseeker-img {
+  margin-top: 30px;
+}
+#abilities-list tr td div.eye-rays div.doomseeker-img img, #loadout tr td div.eye-rays div.doomseeker-img img {
+  width: 200px;
+  height: 200px;
+  margin: 0px;
+  border-style: none;
+  position: relative;
+  z-index: 2;
+}
+#abilities-list tr td div.eye-rays ul, #loadout tr td div.eye-rays ul {
+  margin-top: -225px;
 }
 #abilities-list tr td div.eye-rays ul li, #loadout tr td div.eye-rays ul li {
   text-align: center;
@@ -1749,6 +1760,20 @@ table td:first-child {
 }
 #abilities-list div.item-description, #loadout div.item-description {
   width: fit-content;
+}
+
+#ray-selection div.ray-line {
+  display: flex;
+  justify-content: space-evenly;
+}
+#ray-selection div.ray-line:last-child {
+  margin-bottom: 25px;
+}
+#ray-selection div.ray-line select:nth-child(1) {
+  width: 70%;
+}
+#ray-selection div.ray-line select:nth-child(2) {
+  width: 20%;
 }
 
 /*# sourceMappingURL=wicked.css.map */

@@ -53,7 +53,7 @@
       "entity": "Item"
     },
     {
-      "name": "goldmongertype",
+      "name": "goldmonger_type",
       "label": "Goldmonger Types",
       "system": "wicked-ones",
       "path": "./packs/goldmongertypes.db",
