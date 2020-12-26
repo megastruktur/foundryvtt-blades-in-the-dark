@@ -46,10 +46,17 @@
       "entity": "Item"
     },
     {
-      "name": "monsterrace",
+      "name": "monster_race",
       "label": "Monster Races",
       "system": "wicked-ones",
       "path": "./packs/monsterraces.db",
+      "entity": "Item"
+    },
+    {
+      "name": "goldmonger_type",
+      "label": "Goldmonger Types",
+      "system": "wicked-ones",
+      "path": "./packs/goldmongertypes.db",
       "entity": "Item"
     },
     {

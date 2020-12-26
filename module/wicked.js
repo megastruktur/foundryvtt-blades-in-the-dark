@@ -38,6 +38,48 @@ Hooks.once("init", async function() {
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
 
+  CONFIG.WO = {};
+  /**
+  * Define the set of special ability types
+  * @type {Object}
+  */
+  CONFIG.WO.special_ability_types = {
+    "basic": "FITD.Basic",
+    "advanced": "FITD.Advanced",
+    "be_psi": "FITD.PsiDiscipline",
+    "ds_eyes": "FITD.EyeRays",
+    "fs_face": "FITD.Face",
+    "gm_path": "FITD.GrowthPath"
+  };
+
+  CONFIG.WO.special_ability_primal =
+    ["be_psi", "ds_eyes", "fs_face", "gm_path"];
+
+  CONFIG.WO.special_ability_groups = {
+    "group_base": "FITD.BasicPrimalAbilities",
+    "group_faces": "FITD.FaceStealerFaces",
+    "group_core": "FITD.CoreSkill",
+    "group_primal": "FITD.PrimalSpecials",
+    "group_general": "FITD.GeneralAbilities",
+    "group_flex": "FITD.Flexibility",
+    "group_ext": "FITD.ExternalAbilities"
+  };
+
+  CONFIG.WO.special_ability_hidden_groups =
+    ["group_faces", "group_primal"];
+
+  CONFIG.WO.doomseeker_eye_rays = {
+    "FITD.RayBewitchment": "FITD.RayBewitchment",
+    "FITD.RayDeath": "FITD.RayDeath",
+    "FITD.RayFear": "FITD.RayFear",
+    "FITD.RayNullMagic": "FITD.RayNullMagic",
+    "FITD.RayParalysis": "FITD.RayParalysis",
+    "FITD.RayTelekinesis": "FITD.RayTelekinesis",
+    "FITD.RayTime": "FITD.RayTime",
+    "FITD.RayTransmo": "FITD.RayTransmo",
+    "FITD.RayVision": "FITD.RayVision"
+  };
+
   // Register System Settings
   registerSystemSettings();
 
@@ -92,6 +134,13 @@ Hooks.once("init", async function() {
     return (a !== b) ? options.fn(this) : '';
   });
 
+  // Ifin Helper to check if an element is part of a list
+  Handlebars.registerHelper('ifIn', function (elem, list, options) {
+    if (list.indexOf(elem) > -1) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
 
   // Enrich the HTML replace /n with <br>
   Handlebars.registerHelper('html', (options) => {
@@ -242,14 +291,21 @@ Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
 Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
 
   BladesHelpers.callItemLogic(child_data, parent_entity);
+
+  // Add Code to Handle Attribute Changes to new Function
+
   return true;
 });
 
 Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
   
   BladesHelpers.undoItemLogic(child_data, parent_entity);
+
+  // Add Code to Handle Attribute Changes to new Function
+
   return true;
 });
+
 // getSceneControlButtons
 Hooks.on("renderSceneControls", async (app, html) => {
   let dice_roller = $('<li class="scene-control" title="Dice Roll"><i class="fas fa-dice"></i></li>');
