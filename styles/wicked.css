@@ -230,12 +230,17 @@
   font-family: Bitter, Lucida Console, monospace;
   font-weight: 600;
   font-size: 15px;
+  border-radius: 0px;
+  border-color: 1px solid #68332c;
 }
 * option {
   font-weight: 600;
 }
 * nav {
   margin-bottom: 10px;
+}
+* .action-info {
+  margin-top: -20px;
 }
 * .editor,
 * .editor-content {
@@ -423,6 +428,7 @@
   display: flex;
   /* Hide the browser's default checkbox */
   justify-content: center;
+  align-items: center;
 }
 * .big-teeth-section .big-teeth label {
   height: 32px;
@@ -625,7 +631,9 @@
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
-  width: 300px;
+  position: relative;
+  width: fit-content;
+  max-width: 300px;
   font-weight: 600;
   font-family: Bitter;
   background: url(../images/background-light.png) repeat;
@@ -634,15 +642,29 @@
   text-align: justify;
   border: 2px solid #400000;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
   position: absolute;
   z-index: 9999;
+  text-transform: none;
+  text-shadow: none;
+}
+* .tooltip .tooltipslow {
+  opacity: 0;
+  transition: visibility 0.1s, opacity 0.1s;
+  transition-delay: 0.1s;
 }
 * .tooltip:hover .tooltiptext {
   visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s;
+  transition-delay: 1s;
 }
 * .fa-question-circle {
   padding: 2px 3px;
+}
+* .fa-book-dead:before {
+  padding-right: 5px;
+  color: #EEEFFF;
 }
 * .hidden {
   display: none;
@@ -914,7 +936,7 @@
 }
 
 .profile-img.profile-big {
-  margin: 0px 0px;
+  margin: 0px 5px;
   height: 175px;
   width: 175px;
   border: none;
@@ -944,8 +966,8 @@
   }*/
 }
 .item .item-body {
-  margin-bottom: 10px;
-  margin-right: 10px;
+  /* margin-bottom: 10px; */
+  /* margin-right: 10px; */
 }
 .item .item-body .item-description {
   font-style: italic;
@@ -968,7 +990,7 @@
 }
 
 .item-class-label {
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
 div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
@@ -982,6 +1004,27 @@ div.item i.fa-trash, tr.item i.fa-trash {
 
 .item-add-popup {
   padding-left: 10px;
+  font-weight: 700;
+}
+
+#look, #minionpack, #vilefriend {
+  color: #68332c;
+}
+#look input[type=text], #minionpack input[type=text], #vilefriend input[type=text] {
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
+}
+#look label, #minionpack label, #vilefriend label {
+  font-weight: 700;
+}
+
+input[type=text], input[type=number], input[type=password], input[type=date], input[type=time] {
+  font-weight: 600;
+  border: 1px solid #68332c;
+  border-radius: 0;
 }
 
 /*
@@ -1106,6 +1149,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   color: #EEEFFF;
   font-size: 17px;
   padding-left: 5px;
+  text-shadow: 0 2px #311815;
 }
 #attributes .shock input {
   display: none;
@@ -1147,7 +1191,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
   z-index: -1;
 }
 #attributes #attributes-bloodied {
-  margin-bottom: 15px;
+  /* margin-bottom: -5px; // was 15px */
 }
 #attributes .bloodied-minion input {
   display: none;
@@ -1276,15 +1320,11 @@ div.item i.fa-trash, tr.item i.fa-trash {
 #attributes .attributes-container label {
   margin-top: 3px;
 }
-#attributes input[type=text], #attributes input[type=number], #attributes input[type=password], #attributes input[type=date], #attributes input[type=time] {
-  font-weight: 600;
-  border: 1px solid #68332c;
-}
 
 /* All Table Formatting: */
 table td,
 table th {
-  padding: 0.25em 5px;
+  padding: 5px;
 }
 
 table th:hover .item-add-popup {
@@ -1297,7 +1337,12 @@ table th .item-add-popup {
 }
 
 table td:first-child {
-  /* padding-left: inherit; */
+  padding-left: 5px;
+}
+
+#hearts-header {
+  margin-left: 33px;
+  margin-top: -10px;
 }
 
 #base-info table {
@@ -1322,9 +1367,13 @@ table td:first-child {
   font-weight: normal;
   color: #68332c;
   background: none;
+  text-shadow: 0 1px 2px #d46c1f;
 }
 #base-info table tr:last-child {
   background-color: #68332c;
+}
+#base-info table tr .item-add-popup {
+  color: #68332c;
 }
 
 #character-defenses {
@@ -1344,7 +1393,7 @@ table td:first-child {
 }
 #character-defenses table tr td:nth-of-type(1) .item-checkmark {
   flex-grow: unset;
-  margin-right: 5px;
+  margin-right: 0px 3px;
 }
 #character-defenses table tr td:nth-of-type(2) {
   display: flex;
@@ -1352,11 +1401,12 @@ table td:first-child {
 }
 #character-defenses table tr td:nth-child(3) {
   text-align: center;
+  padding: 0;
 }
 #character-defenses table tr td:nth-child(3) .item-name {
   text-transform: uppercase;
   font-family: "Blood Crow";
-  font-size: 24px;
+  font-size: 28px;
   margin-right: 0px;
   font-weight: normal;
 }
@@ -1404,6 +1454,8 @@ table td:first-child {
 #duties-tab .item-body {
   width: auto;
   padding: 3px;
+  font-family: Bitter;
+  font-size: 14px;
 }
 #duties-tab .project-clock {
   height: 80px;
@@ -1463,6 +1515,7 @@ table td:first-child {
 
 #duties-table tr td:nth-of-type(1) {
   width: 50px;
+  font-weight: 900;
 }
 #duties-table tr td:nth-of-type(2) {
   min-width: 90px;
@@ -1478,6 +1531,7 @@ table td:first-child {
 #project-clocks-table tr td:nth-of-type(2) {
   min-width: 90px;
   width: 23%;
+  font-family: Bitter;
 }
 #project-clocks-table tr td:nth-of-type(4) {
   width: 20px;
@@ -1597,7 +1651,10 @@ table td:first-child {
 
 /* Display all Item Names in Bold */
 .item-name {
-  font-weight: 600;
+  text-align: center;
+  font-weight: 500;
+  font-family: Piedra;
+  font-size: 20px;
 }
 
 #defenses-stress {
@@ -1667,7 +1724,7 @@ table td:first-child {
 }
 
 #attributes-darkhearts {
-  margin-top: -22px;
+  /* margin-top: -22px; */
   margin-left: 36px;
 }
 #attributes-darkhearts .heart-container {

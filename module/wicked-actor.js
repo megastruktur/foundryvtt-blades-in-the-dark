@@ -47,18 +47,25 @@ export class BladesActor extends Actor {
 
     // const roll = new Roll("1d20 + @abilities.wis.mod", actor.getRollData());
     let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
+	
+	// Calculate Dice Amount for Attributes
+    var dice_amount = 0;
+    if (attribute_name !== "") {
+      let roll_data = this.getRollData();
+      dice_amount += roll_data.dice_amount[attribute_name];
+	}
+	else {
+	  dice_amount = 0;
+		}
+		
+	 //aus Zeile 100: ${dice_amount+document.getElementById('mod').selected.value}
+	let diceMod = 0;
 
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
-        <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}</h2>
+        <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}(${dice_amount}D)</h2>
         <form>
-          <div class="form-group">
-            <label>${game.i18n.localize('FITD.Modifier')}:</label>
-            <select id="mod" name="mod">
-              ${this.createListOfDiceMods(-3,+3,0)}
-            </select>
-            </div>
             <div class="form-group">
             <label>${game.i18n.localize('FITD.RollType')}:</label>
             <select id="type" name="type">
@@ -67,24 +74,36 @@ export class BladesActor extends Actor {
             </select>
           </div>
             <div class="form-group">
-            <label>${game.i18n.localize('FITD.Position')}:</label>
-            <select id="pos" name="pos">
-              <option value="dominant">${game.i18n.localize('FITD.PositionDominant')}</option>
-              <option value="default" selected>${game.i18n.localize('FITD.PositionDefault')}</option>
-              <option value="dire">${game.i18n.localize('FITD.PositionDire')}</option>
-              <option value="deadly">${game.i18n.localize('FITD.PositionDeadly')}</option>
-            </select>
+				<label>${game.i18n.localize('FITD.Position')}:</label>
+				<select id="pos" name="pos">
+				  <option value="dominant">${game.i18n.localize('FITD.PositionDominant')}</option>
+				  <option value="default" selected>${game.i18n.localize('FITD.PositionDefault')}</option>
+				  <option value="dire">${game.i18n.localize('FITD.PositionDire')}</option>
+				  <option value="deadly">${game.i18n.localize('FITD.PositionDeadly')}</option>
+				</select>
             </div>
             <div class="form-group">
-            <label>${game.i18n.localize('FITD.Effect')}:</label>
-            <select id="fx" name="fx">
-              <option value="strong">${game.i18n.localize('FITD.EffectStrong')}</option>
-              <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>		  
-              <option value="weak">${game.i18n.localize('FITD.EffectWeak')}</option>
-              <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>	  
+				<label>${game.i18n.localize('FITD.Effect')}:</label>
+				<select id="fx" name="fx">
+				  <option value="strong">${game.i18n.localize('FITD.EffectStrong')}</option>
+				  <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>		  
+				  <option value="weak">${game.i18n.localize('FITD.EffectWeak')}</option>
+				  <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>	  
+				</select>
+			</div>
+		  <div class="form-group">
+            <label>${game.i18n.localize('FITD.Modifier')}:</label>
+            <select id="mod" name="mod">
+              ${this.createListOfDiceMods(-3,+3,0)}
             </select>
           </div>
+		  <div class="form-group">
+            <label>${game.i18n.localize('FITD.TotalSkillDice')}:</label>
+			Total not working yet: ${dice_amount+diceMod}
+          </div>		  
         </form>
+		<h2>${game.i18n.localize('FITD.RollOptions')}</h2>
+		<div class="action-info">${game.i18n.localize('FITD.TooltipActions')}</div>
       `,
       buttons: {
         yes: {
@@ -105,6 +124,7 @@ export class BladesActor extends Actor {
       },
       default: "yes",
     }).render(true);
+
 
   }
 
@@ -184,7 +204,7 @@ export class BladesActor extends Actor {
         text += ` selected`;
       }
       
-      text += `>${plus}${i}d</option>`;
+      text += `>${plus}${i}D</option>`;
     }
   
     return text;
