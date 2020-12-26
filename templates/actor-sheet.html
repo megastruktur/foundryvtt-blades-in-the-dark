@@ -570,7 +570,59 @@
         </div>
         <table>
           <tbody>
+
             {{#each actor.items as |item id|}}
+            {{#if (eq item.type "specialability")}}
+            {{#if (eq item.data.ability_type "advanced")}}
+            {{#if item.data.supply_desc}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name"><b>{{item.name}}</b></div>
+              </td>
+              <td class="">
+                <div class="item-description">{{item.data.supply_desc}}</div>
+                {{!-- Two slots with same supply --}}
+                {{#if (eq item.data.supply_checkbox_1_text item.data.supply_checkbox_2_text)}}
+                {{#unless (eq item.data.supply_checkbox_1_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.supply_checkbox_1_text}}
+                    <input type="checkbox" id="item-{{item._id}}-scbx1-checked" value="{{item.data.supply_checkbox_1_checked}}" {{checked item.data.supply_checkbox_1_checked}} data-property-to-set="supply_checkbox_1_checked">
+                    <label for="item-{{item._id}}-scbx1-checked"></label>
+                    <input type="checkbox" id="item-{{item._id}}-scbx2-checked" value="{{item.data.supply_checkbox_2_checked}}" {{checked item.data.supply_checkbox_2_checked}} data-property-to-set="supply_checkbox_2_checked">
+                    <label for="item-{{item._id}}-scbx2-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{!-- Two slots with different supply --}}
+                {{else}}
+                {{#unless (eq item.data.supply_checkbox_1_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.supply_checkbox_1_text}}
+                    <input type="checkbox" id="item-{{item._id}}-scbx1-checked" value="{{item.data.supply_checkbox_1_checked}}" {{checked item.data.supply_checkbox_1_checked}} data-property-to-set="supply_checkbox_1_checked">
+                    <label for="item-{{item._id}}-scbx1-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{#unless (eq item.data.supply_checkbox_2_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.supply_checkbox_2_text}}
+                    <input type="checkbox" id="item-{{item._id}}-scbx2-checked" value="{{item.data.supply_checkbox_2_checked}}" {{checked item.data.supply_checkbox_2_checked}} data-property-to-set="supply_checkbox_2_checked">
+                    <label for="item-{{item._id}}-scbx2-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{/if}}
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/if}}
+            {{/each}}
+            {{#each actor.items as |item id|}}
+
             {{#if (eq item.type "supply")}}
             <tr class="item">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
