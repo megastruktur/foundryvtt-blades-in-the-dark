@@ -8,7 +8,7 @@ export class BladesHelpers {
    */
   static removeDuplicatedItemType(item_data, actor) {
 
-    let distinct_types = ["dungeon_theme", "calling", "revelry", "monsterrace", "minion_type"];
+    let distinct_types = ["dungeon_theme", "calling", "revelry", "monster_race", "minion_type"];
     let should_be_distinct = distinct_types.includes(item_data.type);
     // If the Item has the exact same name - remove it from list.
     // Remove Duplicate items from the array.
@@ -192,22 +192,53 @@ export class BladesHelpers {
 
   /* -------------------------------------------- */
 
+  /**
+   * Returns true if a string is the localized version of a calling name
+   *
+   * @param {string} attribute_name 
+   * @returns {bool}
+   */
+  static isBaseCalling(source_name) {
+    switch (source_name) {
+      case game.i18n.localize("FITD.Brute"):
+      case game.i18n.localize("FITD.Conniver"):
+      case game.i18n.localize("FITD.Crafter"):
+      case game.i18n.localize("FITD.Hunter"):
+      case game.i18n.localize("FITD.Marauder"):
+      case game.i18n.localize("FITD.Shadow"):
+      case game.i18n.localize("FITD.Shaman"):
+      case game.i18n.localize("FITD.Warlock"):
+      case game.i18n.localize("FITD.Zealot"):
+        return true;
+      default:
+        return false;
+    }
+  }
+
+/* -------------------------------------------- */
 
 /**
- * Sorts Special Abilities by Calling and then Core and then Alphabet
+ * Sorts Special Abilities by Base Calling or other, Source Name, Core Ability Status and then Alphabet
  */
   static specialAbilitySort(a, b) {
-    if (a.data.calling < b.data.calling) {
+    if (BladesHelpers.isBaseCalling(a.data.source) && !BladesHelpers.isBaseCalling(b.data.source)) {
       return -1;
     }
-    if (a.data.calling > b.data.calling) {
+    if (!BladesHelpers.isBaseCalling(a.data.source) && BladesHelpers.isBaseCalling(b.data.source)) {
       return 1;
     }
 
-    if (a.data.core && !b.data.core) {
+    if (a.data.source < b.data.source) {
       return -1;
     }
-    if (!a.data.core && b.data.core) {
+    if (a.data.source > b.data.source) {
+      return 1;
+    }
+
+    if ((a.data.ability_group == "group_core") && !(b.data.ability_group == "group_core")) {
+      return -1;
+    }
+    if ( !(a.data.ability_group == "group_core") && (b.data.ability_group == "group_core")) {
       return 1;
     }
 
@@ -244,4 +275,5 @@ export class BladesHelpers {
     return 0;
   }
 
+  /* -------------------------------------------- */
 }

@@ -1243,6 +1243,129 @@ table td:first-child {
                 width: 20px;
             }
         }
+
+        &.group-core {
+            background-color: $mud3f;
+        }
+
+        td div.eye-rays {
+            text-align: center;
+            min-width: 420px;
+
+            div.doomseeker-img {
+                margin-top: 30px;
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                    margin: 0px;
+                    border-style: none;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+
+            ul {
+                margin-top: -225px;
+            }
+
+            ul li {
+                text-align: center;
+                position: relative;
+
+                &:nth-child(1) {
+                    top: 0px;
+                    left: 0px;
+                }
+
+                &:nth-child(2) {
+                    top: 12px;
+                    left: -155px;
+                }
+
+                &:nth-child(3) {
+                    top: -22px;
+                    left: 126px;
+                }
+
+                &:nth-child(4) {
+                    top: -17px;
+                    left: -155px;
+                }
+
+                &:nth-child(5) {
+                    top: -34px;
+                    left: 126px;
+                }
+
+                &:nth-child(6) {
+                    top: 25px;
+                    left: -162px;
+                }
+
+                &:nth-child(7) {
+                    top: -9px;
+                    left: 142px;
+                }
+
+                &:nth-child(8) {
+                    top: -4px;
+                    left: -162px;
+                }
+
+                &:nth-child(9) {
+                    top: -21px;
+                    left: 142px;
+                }
+            }
+        }
+
+        &.stolen-face {
+            img {
+                max-height: 100px;
+                width: 75px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    tr.psi-discipline {
+
+        td > div {
+            border-radius: 15px;
+            height: 30px;
+            align-items: center;
+
+            div {
+                flex: none;
+            }
+        }
+    }
+
+    table.gold-monger-path tr {
+        &:nth-child(1) td:nth-child(1) {
+            background: none;
+        }
+
+        &:nth-child(2) td:nth-child(1) {
+            background-position-y: center;
+        }
+
+        &:nth-child(3) td:nth-child(1) {
+            background-position-y: bottom;
+        }
+
+        &:nth-child(4) td:nth-child(1) {
+            background-position-y: center;
+            background-image: url("assets/decorations/verticalline-top.png");
+        }
+
+        td:nth-child(1) {
+            min-width: 32px;
+            width: 32px;
+            background-image: url("assets/decorations/verticalline-bottom.png");
+            background-repeat: no-repeat;
+        }
     }
 }
 
@@ -1333,4 +1456,24 @@ table td:first-child {
 	color: $mud;
 	background: none;
 	text-shadow: 0 1px 2px $orange;
+}
+
+#ray-selection {
+    
+    div.ray-line {
+        display: flex;
+        justify-content: space-evenly;
+
+        &:last-child {
+            margin-bottom: 25px;
+        }
+
+        select:nth-child(1) {
+            width: 70%;
+        }
+
+        select:nth-child(2) {
+            width: 20%;
+        }
+    }
 }

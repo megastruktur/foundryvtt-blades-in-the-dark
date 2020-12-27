@@ -1545,6 +1545,99 @@ table td:first-child {
 #abilities-list tr td:nth-of-type(3), #loadout tr td:nth-of-type(3) {
   width: 20px;
 }
+#abilities-list tr.group-core, #loadout tr.group-core {
+  background-color: #68332c3f;
+}
+#abilities-list tr td div.eye-rays, #loadout tr td div.eye-rays {
+  text-align: center;
+  min-width: 420px;
+}
+#abilities-list tr td div.eye-rays div.doomseeker-img, #loadout tr td div.eye-rays div.doomseeker-img {
+  margin-top: 30px;
+}
+#abilities-list tr td div.eye-rays div.doomseeker-img img, #loadout tr td div.eye-rays div.doomseeker-img img {
+  width: 200px;
+  height: 200px;
+  margin: 0px;
+  border-style: none;
+  position: relative;
+  z-index: 2;
+}
+#abilities-list tr td div.eye-rays ul, #loadout tr td div.eye-rays ul {
+  margin-top: -225px;
+}
+#abilities-list tr td div.eye-rays ul li, #loadout tr td div.eye-rays ul li {
+  text-align: center;
+  position: relative;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(1), #loadout tr td div.eye-rays ul li:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(2), #loadout tr td div.eye-rays ul li:nth-child(2) {
+  top: 12px;
+  left: -155px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(3), #loadout tr td div.eye-rays ul li:nth-child(3) {
+  top: -22px;
+  left: 126px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(4), #loadout tr td div.eye-rays ul li:nth-child(4) {
+  top: -17px;
+  left: -155px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(5), #loadout tr td div.eye-rays ul li:nth-child(5) {
+  top: -34px;
+  left: 126px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(6), #loadout tr td div.eye-rays ul li:nth-child(6) {
+  top: 25px;
+  left: -162px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(7), #loadout tr td div.eye-rays ul li:nth-child(7) {
+  top: -9px;
+  left: 142px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(8), #loadout tr td div.eye-rays ul li:nth-child(8) {
+  top: -4px;
+  left: -162px;
+}
+#abilities-list tr td div.eye-rays ul li:nth-child(9), #loadout tr td div.eye-rays ul li:nth-child(9) {
+  top: -21px;
+  left: 142px;
+}
+#abilities-list tr.stolen-face img, #loadout tr.stolen-face img {
+  max-height: 100px;
+  width: 75px;
+  object-fit: cover;
+}
+#abilities-list tr.psi-discipline td > div, #loadout tr.psi-discipline td > div {
+  border-radius: 15px;
+  height: 30px;
+  align-items: center;
+}
+#abilities-list tr.psi-discipline td > div div, #loadout tr.psi-discipline td > div div {
+  flex: none;
+}
+#abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
+  background: none;
+}
+#abilities-list table.gold-monger-path tr:nth-child(2) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(2) td:nth-child(1) {
+  background-position-y: center;
+}
+#abilities-list table.gold-monger-path tr:nth-child(3) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(3) td:nth-child(1) {
+  background-position-y: bottom;
+}
+#abilities-list table.gold-monger-path tr:nth-child(4) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(4) td:nth-child(1) {
+  background-position-y: center;
+  background-image: url("assets/decorations/verticalline-top.png");
+}
+#abilities-list table.gold-monger-path tr td:nth-child(1), #loadout table.gold-monger-path tr td:nth-child(1) {
+  min-width: 32px;
+  width: 32px;
+  background-image: url("assets/decorations/verticalline-bottom.png");
+  background-repeat: no-repeat;
+}
 
 /* Display all Item Names in Bold */
 .item-name {
@@ -1726,6 +1819,20 @@ table td:first-child {
   color: #68332c;
   background: none;
   text-shadow: 0 1px 2px #d46c1f;
+}
+
+#ray-selection div.ray-line {
+  display: flex;
+  justify-content: space-evenly;
+}
+#ray-selection div.ray-line:last-child {
+  margin-bottom: 25px;
+}
+#ray-selection div.ray-line select:nth-child(1) {
+  width: 70%;
+}
+#ray-selection div.ray-line select:nth-child(2) {
+  width: 20%;
 }
 
 /*# sourceMappingURL=wicked.css.map */
