@@ -14,6 +14,8 @@ export class BladesSheet extends ActorSheet {
     html.find(".skill-practice-xp").click(this._onSkillSetPracticeXP.bind(this));
     html.find('.item-checkmark input').click(ev => ev.target.select()).change(this._onCheckmarkChange.bind(this));
     html.find('.item-radio input').click(ev => ev.target.select()).change(this._onRadioChange.bind(this));
+    html.find('.eye-rays area').mouseover(this._onDSMouseOver.bind(this));
+    html.find('.eye-rays area').mouseout(this._onDSMouseOut.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
     if (this.options.submitOnChange) {
@@ -187,5 +189,25 @@ export class BladesSheet extends ActorSheet {
     return item.update({ ['data.' + propertyToSet]: event.target.value });
   }
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
+
+  /**
+    * Change the class of the doomseeker when the mouse enters the image map area
+    */
+  async _onDSMouseOver(event) {
+    event.currentTarget.parentNode.previousElementSibling.classList.add('hovered');
+    return;
+  }
+
+/* -------------------------------------------- */
+
+  /**
+    * Change the class of the doomseeker when the mouse leaves the image map area
+    */
+  async _onDSMouseOut(event) {
+    event.currentTarget.parentNode.previousElementSibling.classList.remove('hovered');
+    return;
+  }
+
+/* -------------------------------------------- */
 }

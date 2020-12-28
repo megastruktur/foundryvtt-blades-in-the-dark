@@ -25,6 +25,19 @@ export class BladesActor extends Actor {
 
     // Calculate Dice to throw.
     let dice_amount = {};
+
+    // Add extra values for braineater disciplines and doomseeker eye rays if available
+    this.data.items.forEach(specialAbility => {
+      if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "ds_eyes") {
+        for (var i = 1; i < 10; i++) {
+          dice_amount[specialAbility.data.primal['ds_eye_ray_' + i]] = parseInt(specialAbility.data.primal['ds_eye_ray_' + i + '_val']);
+        }
+      } else if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "be_psi") {
+        dice_amount[specialAbility.data.primal.be_psi_skill_name] = parseInt(specialAbility.data.primal.be_psi_dots);
+
+      }
+    });
+
     for (var attibute_name in this.data.data.attributes) {
       dice_amount[attibute_name] = 0;
       for (var skill_name in this.data.data.attributes[attibute_name].skills) {
@@ -64,7 +77,7 @@ export class BladesActor extends Actor {
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
-        <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}(${dice_amount}D)</h2>
+        <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)} (${dice_amount}D)</h2>
         <form>
             <div class="form-group">
             <label>${game.i18n.localize('FITD.RollType')}:</label>
