@@ -83,7 +83,7 @@
   "FITD.DutiesProjects": "Duties & Projects",
   "FITD.Duties": "Dungeon Duties",
   "FITD.Projects": "Downtime Projects",
-	
+
   "FITD.TooltipCoin": "<strong>You can pay Gold to:</strong><br>• Attract a creature<br>• Get help from your vile friend<br>• Get a minion downtime action<br>• Get minions to join a raid<br>• Recruit a minion<br>• Upgrade a minion",
   "FITD.TooltipStress": "When the clock is full, <strong>you Go Feral:</strong> You are immediately <strong>compelled</strong>. Abilities used during this action cost no stress.",
   "FITD.TooltipWicked": "Take an ability when full. mark 1 XP for each you did this session:<br>•You made progress on Your Master Plan.<br>•You jumped into someone else’s Dungeon Scene.<br>•You acted like a monster.<br>•You used Your gear or supply in creative ways.",
@@ -91,8 +91,8 @@
   "FITD.TooltipActions": "<br><strong>Assist:</strong> Give +Effect, but open to Consequence<br><strong>Go Hard:</strong>Trade: +Effect for -Position<br><strong>Team Up:</strong> Take the highest result, but each PC with a Mixed or Failure takes Stress.<br><strong>Dark Bargain:</strong> Trade +1D for a Consequence<br><strong>Dark Heart:</strong> Take +1D on a Roll",
   "FITD.TooltipShock": "Take -1D on next Roll, then clears",
   "FITD.TooltipBloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>.",
-  "FITD.TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",  
-   
+  "FITD.TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",
+
   "FITD.Roll": "Roll",
   "FITD.RollOptions": "Roll Options",
   "FITD.PositionDominant": "Dominant",
@@ -251,7 +251,9 @@
   "FITD.CoreSkill": "Core Skill",
   "FITD.PrimalSpecials": "Primal Monster Specials",
   "FITD.GeneralAbilities": "General Special Abilities",
-  "FITD.Flexibility": "Flexibility Abilities",
+  "FITD.Flexibility": "Flexibility",
+  "FITD.FlexibilityAbilities": "Flexibility Abilities",
+  "FITD.External": "External",
   "FITD.ExternalAbilities": "External Abilities",
 
   "FITD.Source": "Source",

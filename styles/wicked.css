@@ -1552,6 +1552,18 @@ table td:first-child {
 #abilities-list tr.group-core, #loadout tr.group-core {
   background-color: #68332c3f;
 }
+#abilities-list tr.group-flex, #loadout tr.group-flex {
+  background-color: #9999993f;
+}
+#abilities-list tr.group-flex td.item-body i, #loadout tr.group-flex td.item-body i {
+  font-size: 14px;
+}
+#abilities-list tr.group-ext, #loadout tr.group-ext {
+  background-color: #9999993f;
+}
+#abilities-list tr.group-ext td.item-body i, #loadout tr.group-ext td.item-body i {
+  font-size: 14px;
+}
 #abilities-list tr td div.eye-rays, #loadout tr td div.eye-rays {
   text-align: center;
   min-width: 420px;

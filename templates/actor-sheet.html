@@ -240,9 +240,9 @@
             {{#if (eq item.data.ability_group "group_base")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}</div>
               </td>
-              <td class="item-body">
+              <td>
                 <div class="item-description">{{item.data.description}}</div>
               </td>
               <td>
@@ -261,8 +261,8 @@
               <td class="item-body">
                 <img src="{{item.img}}" title="{{item.name}}" />
               </td>
-              <td class="">
-                <div class="item-name"><b>{{item.name}}</b></div>
+              <td>
+                <div class="item-name item-body"><b>{{item.name}}</b></div>
                 <div class="item-description">{{item.data.description}}</div>
                 <div class="item-checkmark">
                   <div>
@@ -286,9 +286,9 @@
             {{#if (eq item.data.ability_group "group_core")}}
             <tr class="item group-core" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}</div>
               </td>
-              <td class="item-body">
+              <td>
                 <div class="item-description">{{item.data.description}}</div>
               </td>
               <td>
@@ -322,9 +322,9 @@
             {{#if (eq item.data.primal.be_psi_dots "3")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}</div>
               </td>
-              <td class="">
+              <td>
                 {{#if item.data.primal.be_psi_checked_1}}
                 <div class="item-name"><b>{{item.data.primal.be_psi_name_1}}</b></div>
                 <div class="item-description">{{item.data.primal.be_psi_desc_1}}</div>
@@ -378,7 +378,7 @@
                       <input type="radio" id="path-{{item._id}}-0" name="{{item._id}}-data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-0"></label>
                     </td>
-                    <td><div class="item-name item-body"><b>{{item.name}}</b></div></td>
+                    <td><div class="item-name item-body">{{item.name}}</div></td>
                   </tr>
                   <tr>
                     <td>
@@ -452,7 +452,7 @@
             {{#if (eq item.data.ability_group "group_general")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}</div>
               </td>
               <td class="">
                 <div class="item-description">{{item.data.description}}</div>
@@ -489,12 +489,32 @@
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "specialability")}}
             {{#if (eq item.data.ability_group "group_flex")}}
-            <tr class="item" data-item-id="{{item._id}}">
+            <tr class="item group-flex" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
               </td>
-              <td class="item-body">
+              <td>
                 <div class="item-description">{{item.data.description}}</div>
+                {{#if (eq item.data.ability_type "advanced")}}
+                {{#unless (eq item.data.ability_checkbox_1_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.ability_checkbox_1_text}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                    <label for="item-{{item._id}}-acbx1-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{#unless (eq item.data.ability_checkbox_2_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.ability_checkbox_2_text}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                    <label for="item-{{item._id}}-acbx2-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{/if}}
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -508,12 +528,32 @@
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "specialability")}}
             {{#if (eq item.data.ability_group "group_ext")}}
-            <tr class="item" data-item-id="{{item._id}}">
+            <tr class="item group-ext" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
               </td>
-              <td class="item-body">
+              <td class="">
                 <div class="item-description">{{item.data.description}}</div>
+                {{#if (eq item.data.ability_type "advanced")}}
+                {{#unless (eq item.data.ability_checkbox_1_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.ability_checkbox_1_text}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                    <label for="item-{{item._id}}-acbx1-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{#unless (eq item.data.ability_checkbox_2_text "")}}
+                <div class="item-checkmark">
+                  <div>
+                    {{item.data.ability_checkbox_2_text}}
+                    <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                    <label for="item-{{item._id}}-acbx2-checked"></label>
+                  </div>
+                </div>
+                {{/unless}}
+                {{/if}}
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -555,7 +595,7 @@
             {{#if (eq item.type "gear")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
-              <td class="item-body"><div class="item-description">{{item.data.description}}</div></td>
+              <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             {{/if}}
@@ -585,7 +625,7 @@
             {{#if item.data.supply_desc}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}</div>
               </td>
               <td class="">
                 <div class="item-description">{{item.data.supply_desc}}</div>
@@ -634,7 +674,7 @@
             {{#if (eq item.type "supply")}}
             <tr class="item">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
-              <td class="item-body"><div class="item-description">{{item.data.description}}</div></td>
+              <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             {{/if}}
@@ -653,7 +693,7 @@
           <tbody>
             <tr>
               <td>
-                <div class="item-name"><b>{{localize "FITD.DowntimeAction"}}</b></div>
+                <div class="item-name">{{localize "FITD.DowntimeAction"}}</div>
               </td>
               <td>
                 <div class="item-description">{{{localize "FITD.DowntimeActionHint"}}}</div>
@@ -670,9 +710,9 @@
             {{#if item.data.downtime_desc}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name"><b>{{item.name}}</b></div>
+                <div class="item-name">{{item.name}}</div>
               </td>
-              <td class="">
+              <td>
                 <div class="item-description">{{item.data.downtime_desc}}</div>
                 {{#if (eq item.data.ability_type "advanced")}}
                 {{#unless (eq item.data.downtime_checkbox_1_text "")}}
@@ -726,7 +766,7 @@
                 </div>
               </td>
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
-              <td class="item-body"><div class="item-description">{{item.data.description}}</div></td>
+              <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             {{/if}}

@@ -1,6 +1,7 @@
 // Colors
 $lightgray: #CCC;
 $gray: #999;
+$gray3f: #9999993f;
 $red: red;
 $almost_black: #191919;
 $almost_white: #EEEFFF;
@@ -1250,6 +1251,22 @@ table td:first-child {
 
         &.group-core {
             background-color: $mud3f;
+        }
+
+        &.group-flex {
+            background-color: $gray3f;
+
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        &.group-ext {
+            background-color: $gray3f;
+
+            td.item-body i {
+                font-size: 14px;
+            }
         }
 
         td div.eye-rays {
