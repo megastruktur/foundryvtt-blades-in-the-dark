@@ -309,5 +309,11 @@
   "FITD.Shadow": "Shadow",
   "FITD.Shaman": "Shaman",
   "FITD.Warlock": "Warlock",
-  "FITD.Zealot": "Zealot"
+  "FITD.Zealot": "Zealot",
+
+  "FITD.AbilityPackMule": "Pack Mule",
+  "FITD.AbilityStickyFingers": "Sticky Fingers",
+  "FITD.AbilityLair": "Lair",
+  "FITD.RoomGearLocker": "Gear Locker"
+
 }

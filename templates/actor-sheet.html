@@ -97,14 +97,14 @@
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
             {{#multiboxes data.gold}}
             <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
-			<div class="tooltip">
-				<label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
-				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
-			</div>
-			
-            {{#times_from_1 3}}
+            <div class="tooltip">
+              <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
+            </div>
+
+            {{#times_from_1 data.gold_max}}
             <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
-			<label for="character-{{../actor._id}}-gold-{{this}}"></label>
+            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}

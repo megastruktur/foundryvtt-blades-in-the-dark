@@ -25,22 +25,20 @@ export class BladesActorSheet extends BladesSheet {
     const data = super.getData();
 
 
-    // Use Mule code later to check for other skills modifying the sheet (Like "Sticky Fingers" from Shadow Calling)
-
-    ////look for Mule ability
-    //// @todo - fix translation.
-    //data.items.forEach(i => {
-    //  if (i.type == "specialability" && i.name == "(C) Mule") {
-    //    mule_present = 1;
-    //  }
-    //});
-
-    ////set encumbrance level
-    //if (mule_present) {
-    //  data.data.load_level=mule_level[loadout];
-    //} else {
-    //  data.data.load_level=load_level[loadout];   
-    //}
+    // look for abilities that change the number of gold, supply and dark heart icons
+    data.items.forEach(i => {
+      if (i.type == "specialability") {
+        if (i.name == game.i18n.localize("FITD.AbilityPackMule")) {
+          data.data.supply_max += 1;
+        } else if (i.name == game.i18n.localize("FITD.AbilityStickyFingers")) {
+          data.data.gold_max += 1;
+        } else if (i.name == game.i18n.localize("FITD.AbilityLair") && i.data.primal.gm_path_value == 3) {
+          data.data.dark_hearts_max += 1;
+        } else if (i.name == game.i18n.localize("FITD.RoomGearLocker")) {
+          data.data.supply_max += 1;
+        }
+      }
+    });
 
     return data;
   }
