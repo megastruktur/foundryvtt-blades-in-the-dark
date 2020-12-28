@@ -209,7 +209,7 @@
   padding: 5px;
 }
 * section {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -245,6 +245,7 @@
 * .editor,
 * .editor-content {
   min-height: 280px;
+  background: rgba(0, 0, 0, 0.05);
 }
 * .flex-horizontal {
   display: flex;
@@ -263,6 +264,7 @@
   padding: 4px 5px;
   height: 30px !important;
   text-transform: capitalize;
+  text-shadow: 0 2px #311815;
 }
 * .gray-label {
   background-color: #999;
@@ -277,7 +279,7 @@
   padding: 5px;
   color: #191919;
   font-size: 14px;
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   background-size: 300px;
   box-shadow: inset 0 0 9px 1px #4000004f;
 }
@@ -636,7 +638,7 @@
   max-width: 300px;
   font-weight: 600;
   font-family: Bitter;
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   color: #400000;
   font-size: 16px;
   text-align: justify;
@@ -672,7 +674,7 @@
 * .tabs .item.active {
   font-weight: 700;
   color: #400000;
-  text-shadow: 2px 2px 7px #808080;
+  text-shadow: 2px 2px 7px #d46c1f;
 }
 * .blades-die-tooltip .die {
   font-family: Piedra;
@@ -874,7 +876,7 @@
   color: #a20000;
 }
 * .window-app .window-content {
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   color: #191919;
   overflow-y: auto;
   background-size: 300px;
@@ -939,8 +941,9 @@
   margin: 0px 5px;
   height: 175px;
   width: 175px;
+  min-width: 175px;
   border: none;
-  background: url(../images/background-light.png) repeat #4000004f;
+  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
   border-radius: 5px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 0px;
@@ -950,7 +953,7 @@
 
 .profile-img {
   border: none;
-  background: url(../images/background-light.png) repeat #4000004f;
+  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
   border-radius: 5px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 0px;
@@ -974,7 +977,7 @@
   text-align: justify;
 }
 .item .item-body .item-special-feature {
-  background: #68332c3f;
+  background: #EEEFFF;
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
@@ -1037,7 +1040,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 
 #chat-form textarea {
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   background-size: 300px;
 }
 
@@ -1377,6 +1380,7 @@ table td:first-child {
   color: #EEEFFF;
   font-size: medium;
   font-weight: 600;
+  text-shadow: 0 2px #311815;
 }
 #character-defenses table input[type=text] {
   width: 100%;
@@ -1812,9 +1816,10 @@ table td:first-child {
 
 #name input[type=text] {
   height: 52px;
+  min-width: 370px;
   border: none;
-  font-family: Blood Crow;
-  font-size: 55px;
+  font-family: Piedra;
+  font-size: 44px;
   font-weight: normal;
   color: #68332c;
   background: none;
