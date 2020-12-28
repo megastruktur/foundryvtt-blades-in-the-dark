@@ -97,29 +97,29 @@
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
             {{#multiboxes data.gold}}
             <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
-			<div class="tooltip">
-				<label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
-				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
-			</div>
-			
-            {{#times_from_1 3}}
+            <div class="tooltip">
+              <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
+            </div>
+
+            {{#times_from_1 data.gold_max}}
             <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
-			<label for="character-{{../actor._id}}-gold-{{this}}"></label>
+            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
           </div>
-        </td>	  
+        </td>
         <td>
           {{!-- Wicked XP --}}
           <div id="character-{{actor._id}}-wickedxp" class="big-teeth xp-bar">
             {{#multiboxes data.wickedxp.value}}
             <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
-			<div class="tooltip">
-				<label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
-				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipWicked"}}}</span>
-			</div>
-			
+            <div class="tooltip">
+              <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipWicked"}}}</span>
+            </div>
+
             {{#times_from_1 data.wickedxp.max}}
             <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
@@ -133,10 +133,10 @@
           <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
-			<div class="tooltip">
-				<label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
-				<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipReckless"}}}</span>
-			</div>
+            <div class="tooltip">
+              <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipReckless"}}}</span>
+            </div>
             {{#times_from_1 data.recklessxp.max}}
             <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
@@ -177,7 +177,7 @@
                     {{#if (eq item.type "defense")}}
                     <div class="item flex-horizontal" data-item-id="{{item._id}}">
                       <div class="item-checkmark">
-                        <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}}  data-property-to-set="checked">
+                        <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}} data-property-to-set="checked">
                         <label for="item-{{item._id}}-checked"></label>
                       </div>
                       <div class="item-body flex-horizontal">
@@ -350,17 +350,39 @@
                       <area class="item-body" title="{{localize "FITD.DSConfigureRays"}}" coords="39,116,47,92,37,88,29,65,42,26,61,20,88,4,111,3,120,20,140,17,152,28,154,40,167,51,165,71,165,81,153,87,158,106,182,97,195,108,190,126,168,128,158,139,165,152,173,168,156,179,131,177,120,182,101,194,90,180,77,184,56,181,39,183,25,164,38,155,34,145,28,133,5,125,5,106,24,105" shape="poly">
                     </map>
                   </div>
-                  <ul>
-                    <li><b>{{localize "FITD.DSMainEye"}}:</b> {{localize item.data.primal.ds_eye_ray_1}} <b>{{item.data.primal.ds_eye_ray_1_val}}D</b></li>
-                    <li><b>{{localize "FITD.DSOtherEyes"}}:</b><br />{{localize item.data.primal.ds_eye_ray_6}} <b>{{item.data.primal.ds_eye_ray_6_val}}D</b></li>
-                    <li><b>{{localize "FITD.DSOtherEyes"}}:</b><br />{{localize item.data.primal.ds_eye_ray_7}} <b>{{item.data.primal.ds_eye_ray_7_val}}D</b></li>
-                    <li>{{localize item.data.primal.ds_eye_ray_8}} <b>{{item.data.primal.ds_eye_ray_8_val}}D</b></li>
-                    <li>{{localize item.data.primal.ds_eye_ray_9}} <b>{{item.data.primal.ds_eye_ray_9_val}}D</b></li>
-                    <li><b>{{localize "FITD.DSOuterEyes"}}:</b><br />{{localize item.data.primal.ds_eye_ray_2}} <b>{{item.data.primal.ds_eye_ray_2_val}}D</b></li>
-                    <li><b>{{localize "FITD.DSOuterEyes"}}:</b><br />{{localize item.data.primal.ds_eye_ray_3}} <b>{{item.data.primal.ds_eye_ray_3_val}}D</b></li>
-                    <li>{{localize item.data.primal.ds_eye_ray_4}} <b>{{item.data.primal.ds_eye_ray_4_val}}D</b></li>
-                    <li> {{localize item.data.primal.ds_eye_ray_5}} <b>{{item.data.primal.ds_eye_ray_5_val}}D</b></li>
-                  </ul>
+                  <div class="ray-items">
+                    <div>
+                      <b>{{localize "FITD.DSMainEye"}}:</b> <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_1}}">{{localize item.data.primal.ds_eye_ray_1}} <b>{{item.data.primal.ds_eye_ray_1_val}}D</b></span>
+                    </div>
+                    <div>
+                      <b>{{localize "FITD.DSOtherEyes"}}:</b><br />
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_6}}">{{localize item.data.primal.ds_eye_ray_6}} <b>{{item.data.primal.ds_eye_ray_6_val}}D</b></span>
+                    </div>
+                    <div>
+                      <b>{{localize "FITD.DSOtherEyes"}}:</b><br />
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_7}}">{{localize item.data.primal.ds_eye_ray_7}} <b>{{item.data.primal.ds_eye_ray_7_val}}D</b></span>
+                    </div>
+                    <div>
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_8}}">{{localize item.data.primal.ds_eye_ray_8}} <b>{{item.data.primal.ds_eye_ray_8_val}}D</b></span>
+                    </div>
+                    <div>
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_9}}">{{localize item.data.primal.ds_eye_ray_9}} <b>{{item.data.primal.ds_eye_ray_9_val}}D</b></span>
+                    </div>
+                    <div>
+                      <b>{{localize "FITD.DSOuterEyes"}}:</b><br />
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_2}}">{{localize item.data.primal.ds_eye_ray_2}} <b>{{item.data.primal.ds_eye_ray_2_val}}D</b></span>
+                    </div>
+                    <div>
+                      <b>{{localize "FITD.DSOuterEyes"}}:</b><br />
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_3}}">{{localize item.data.primal.ds_eye_ray_3}} <b>{{item.data.primal.ds_eye_ray_3_val}}D</b></span>
+                    </div>
+                    <div>
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_4}}">{{localize item.data.primal.ds_eye_ray_4}} <b>{{item.data.primal.ds_eye_ray_4_val}}D</b></span>
+                    </div>
+                    <div>
+                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_5}}">{{localize item.data.primal.ds_eye_ray_5}} <b>{{item.data.primal.ds_eye_ray_5_val}}D</b></span>
+                    </div>
+                  </div>
                 </div>
               </td>
               <td>
@@ -565,17 +587,17 @@
           </tbody>
         </table>
         {{#each actor.items as |item id|}}
-          {{#if (eq item.type "calling")}}
-          <div class="item flex-horizontal">
-            <p class="flashback-clues">{{item.data.flashback_clues}}</p>
-          </div>
-          {{/if}}
+        {{#if (eq item.type "calling")}}
+        <div class="item flex-horizontal">
+          <p class="flashback-clues">{{item.data.flashback_clues}}</p>
+        </div>
+        {{/if}}
         {{#if (eq item.type "monster_race")}}
         {{#if item.data.primal}}
         {{#if item.data.flashback_clues}}
-          <div class="item flex-horizontal">
-            <p class="flashback-clues">{{item.data.flashback_clues}}</p>
-          </div>
+        <div class="item flex-horizontal">
+          <p class="flashback-clues">{{item.data.flashback_clues}}</p>
+        </div>
         {{/if}}
         {{/if}}
         {{/if}}
@@ -627,7 +649,7 @@
               <td class="item-body">
                 <div class="item-name">{{item.name}}</div>
               </td>
-              <td class="">
+              <td>
                 <div class="item-description">{{item.data.supply_desc}}</div>
                 {{!-- Two slots with same supply --}}
                 {{#if (eq item.data.supply_checkbox_1_text item.data.supply_checkbox_2_text)}}
@@ -672,7 +694,7 @@
             {{#each actor.items as |item id|}}
 
             {{#if (eq item.type "supply")}}
-            <tr class="item">
+            <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
               <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
@@ -742,7 +764,7 @@
             {{/each}}
           </tbody>
         </table>
-        
+
         <div class="label-stripe flex-horizontal">
           <p class="tooltip">{{localize "FITD.Projects"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipProjects"}}}</span></p>
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>

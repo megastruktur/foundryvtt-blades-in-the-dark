@@ -14,6 +14,9 @@ export class BladesSheet extends ActorSheet {
     html.find(".skill-practice-xp").click(this._onSkillSetPracticeXP.bind(this));
     html.find('.item-checkmark input').click(ev => ev.target.select()).change(this._onCheckmarkChange.bind(this));
     html.find('.item-radio input').click(ev => ev.target.select()).change(this._onRadioChange.bind(this));
+    html.find('#project-clocks-table .project-clock .blades-clock').click(this._onProjectClockClick.bind(this));
+    html.find('.eye-rays area').mouseover(this._onDSMouseOver.bind(this));
+    html.find('.eye-rays area').mouseout(this._onDSMouseOut.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
     if (this.options.submitOnChange) {
@@ -187,5 +190,58 @@ export class BladesSheet extends ActorSheet {
     return item.update({ ['data.' + propertyToSet]: event.target.value });
   }
 
-  /* -------------------------------------------- */
+/* -------------------------------------------- */
+
+  /**
+    * Change the class of the doomseeker when the mouse enters the image map area
+    */
+  async _onDSMouseOver(event) {
+    event.currentTarget.parentNode.previousElementSibling.classList.add('hovered');
+    return;
+  }
+
+/* -------------------------------------------- */
+
+  /**
+    * Change the class of the doomseeker when the mouse leaves the image map area
+    */
+  async _onDSMouseOut(event) {
+    event.currentTarget.parentNode.previousElementSibling.classList.remove('hovered');
+    return;
+  }
+
+/* -------------------------------------------- */
+
+  /**
+    * Make the progress clocks in the frontend items clickable
+    */
+  async _onProjectClockClick(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.getOwnedItem(itemId);
+
+    if (event.target.value == 0) {
+      // set clock progress to 0
+      return item.update({ ['data.clock_progress']: 0 });
+    }
+    const clockRect = event.currentTarget.closest(".blades-clock").getBoundingClientRect();
+    const centerX = clockRect.x + clockRect.width / 2;
+    const centerY = clockRect.y + clockRect.height / 2;
+    const offsetX = event.clientX - centerX;
+    const offsetY = centerY - event.clientY;
+    const distance = Math.sqrt(offsetX * offsetX + offsetY * offsetY)
+    if (distance > clockRect.width / 2) {
+      // Return without action outside the circle
+      return;
+    }
+    const slope = (offsetX >= 0 ? Math.atan2(offsetX, offsetY) : Math.atan2(offsetX, offsetY) + 2 * Math.PI);
+    const segmentArc = Math.PI * 2 / item.data.data.clock_size;
+    const clickedSegement = Math.ceil(slope / segmentArc);
+
+    // set clock progress to clicked segment
+    return item.update({ ['data.clock_progress']: clickedSegement });
+
+  }
+
+/* -------------------------------------------- */
 }

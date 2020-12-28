@@ -1566,6 +1566,8 @@ table td:first-child {
 }
 #abilities-list tr td div.eye-rays, #loadout tr td div.eye-rays {
   text-align: center;
+  position: relative;
+  left: 15px;
   min-width: 420px;
 }
 #abilities-list tr td div.eye-rays div.doomseeker-img, #loadout tr td div.eye-rays div.doomseeker-img {
@@ -1577,50 +1579,61 @@ table td:first-child {
   margin: 0px;
   border-style: none;
   position: relative;
-  z-index: 2;
+  transition: filter 0.1s;
 }
-#abilities-list tr td div.eye-rays ul, #loadout tr td div.eye-rays ul {
+#abilities-list tr td div.eye-rays div.doomseeker-img img.hovered, #loadout tr td div.eye-rays div.doomseeker-img img.hovered {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#abilities-list tr td div.eye-rays div.doomseeker-img area, #loadout tr td div.eye-rays div.doomseeker-img area {
+  cursor: pointer;
+}
+#abilities-list tr td div.eye-rays div.ray-items, #loadout tr td div.eye-rays div.ray-items {
   margin-top: -225px;
+  height: 232px;
+  text-align: center;
 }
-#abilities-list tr td div.eye-rays ul li, #loadout tr td div.eye-rays ul li {
+#abilities-list tr td div.eye-rays div.ray-items > div, #loadout tr td div.eye-rays div.ray-items > div {
   text-align: center;
   position: relative;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(1), #loadout tr td div.eye-rays ul li:nth-child(1) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(1), #loadout tr td div.eye-rays div.ray-items > div:nth-child(1) {
   top: 0px;
-  left: 0px;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(2), #loadout tr td div.eye-rays ul li:nth-child(2) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(2), #loadout tr td div.eye-rays div.ray-items > div:nth-child(2) {
   top: 12px;
-  left: -155px;
+  left: 18%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(3), #loadout tr td div.eye-rays ul li:nth-child(3) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(3), #loadout tr td div.eye-rays div.ray-items > div:nth-child(3) {
   top: -22px;
-  left: 126px;
+  left: 82%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(4), #loadout tr td div.eye-rays ul li:nth-child(4) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(4), #loadout tr td div.eye-rays div.ray-items > div:nth-child(4) {
   top: -17px;
-  left: -155px;
+  left: 18%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(5), #loadout tr td div.eye-rays ul li:nth-child(5) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(5), #loadout tr td div.eye-rays div.ray-items > div:nth-child(5) {
   top: -34px;
-  left: 126px;
+  left: 82%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(6), #loadout tr td div.eye-rays ul li:nth-child(6) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(6), #loadout tr td div.eye-rays div.ray-items > div:nth-child(6) {
   top: 25px;
-  left: -162px;
+  left: 15%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(7), #loadout tr td div.eye-rays ul li:nth-child(7) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(7), #loadout tr td div.eye-rays div.ray-items > div:nth-child(7) {
   top: -9px;
-  left: 142px;
+  left: 85%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(8), #loadout tr td div.eye-rays ul li:nth-child(8) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(8), #loadout tr td div.eye-rays div.ray-items > div:nth-child(8) {
   top: -4px;
-  left: -162px;
+  left: 15%;
 }
-#abilities-list tr td div.eye-rays ul li:nth-child(9), #loadout tr td div.eye-rays ul li:nth-child(9) {
+#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(9), #loadout tr td div.eye-rays div.ray-items > div:nth-child(9) {
   top: -21px;
-  left: 142px;
+  left: 85%;
 }
 #abilities-list tr.stolen-face img, #loadout tr.stolen-face img {
   max-height: 100px;

@@ -292,16 +292,13 @@ Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
 
   BladesHelpers.callItemLogic(child_data, parent_entity);
 
-  // Add Code to Handle Attribute Changes to new Function
-
   return true;
 });
+
 
 Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
   
   BladesHelpers.undoItemLogic(child_data, parent_entity);
-
-  // Add Code to Handle Attribute Changes to new Function
 
   return true;
 });

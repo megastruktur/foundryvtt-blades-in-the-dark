@@ -1271,6 +1271,8 @@ table td:first-child {
 
         td div.eye-rays {
             text-align: center;
+            position: relative;
+            left: 15px;
             min-width: 420px;
 
             div.doomseeker-img {
@@ -1282,61 +1284,75 @@ table td:first-child {
                     margin: 0px;
                     border-style: none;
                     position: relative;
-                    z-index: 2;
+                    // z-index: 2;
+                    transition: filter 0.1s;
+
+                    &.hovered {
+                        filter: brightness(0.8);
+                        opacity: 0.9;
+                    }
+                }
+
+                area {
+                    cursor: pointer;
                 }
             }
 
-            ul {
+            div.ray-items {
                 margin-top: -225px;
+                height: 232px;
+                text-align: center;
             }
 
-            ul li {
+            div.ray-items > div {
                 text-align: center;
                 position: relative;
+                width: fit-content;
+                left: 50%;
+                transform: translateX(-50%);
 
                 &:nth-child(1) {
                     top: 0px;
-                    left: 0px;
                 }
 
                 &:nth-child(2) {
                     top: 12px;
-                    left: -155px;
+                    left: 18%;
                 }
 
                 &:nth-child(3) {
                     top: -22px;
-                    left: 126px;
+                    left: 82%;
                 }
 
                 &:nth-child(4) {
                     top: -17px;
-                    left: -155px;
+                    left: 18%;
                 }
 
                 &:nth-child(5) {
                     top: -34px;
-                    left: 126px;
+                    left: 82%;
                 }
 
                 &:nth-child(6) {
                     top: 25px;
-                    left: -162px;
+                    left: 15%;
                 }
 
                 &:nth-child(7) {
                     top: -9px;
-                    left: 142px;
+                    left: 85%;
                 }
 
                 &:nth-child(8) {
                     top: -4px;
-                    left: -162px;
+                    left: 15%;
                 }
 
                 &:nth-child(9) {
                     top: -21px;
-                    left: 142px;
+                    left: 85%;
                 }
             }
         }
