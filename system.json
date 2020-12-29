@@ -88,17 +88,10 @@
       "entity": "Item"
     },
     {
-      "name": "gear",
-      "label": "Gear",
+      "name": "gearsupply",
+      "label": "Gear & Supply",
       "system": "wicked-ones",
-      "path": "./packs/gear.db",
-      "entity": "Item"
-    },
-    {
-      "name": "supply",
-      "label": "Supplies",
-      "system": "wicked-ones",
-      "path": "./packs/supplies.db",
+      "path": "./packs/gearsupply.db",
       "entity": "Item"
     },
     {

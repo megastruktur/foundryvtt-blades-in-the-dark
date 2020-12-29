@@ -958,6 +958,10 @@
   object-fit: cover;
 }
 
+#edge-list {
+  display: block;
+}
+
 .item {
   justify-content: space-between;
   /*.item-body,

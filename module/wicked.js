@@ -5,6 +5,7 @@
  */
 
 // Import Modules
+import { WO } from "./config.js";
 import { registerSystemSettings } from "./settings.js";
 import { preloadHandlebarsTemplates } from "./wicked-templates.js";
 import { bladesRoll, simpleRollPopup } from "./wicked-roll.js";
@@ -18,6 +19,8 @@ import { BladesCrewSheet } from "./wicked-dungeon-sheet.js";
 import { BladesClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
 import "./wicked-dicesonice.js";
+
+CONFIG.WO = WO;
 
 window.BladesHelpers = BladesHelpers;
 
@@ -37,48 +40,6 @@ Hooks.once("init", async function() {
 
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
-
-  CONFIG.WO = {};
-  /**
-  * Define the set of special ability types
-  * @type {Object}
-  */
-  CONFIG.WO.special_ability_types = {
-    "basic": "FITD.Basic",
-    "advanced": "FITD.Advanced",
-    "be_psi": "FITD.PsiDiscipline",
-    "ds_eyes": "FITD.EyeRays",
-    "fs_face": "FITD.Face",
-    "gm_path": "FITD.GrowthPath"
-  };
-
-  CONFIG.WO.special_ability_primal =
-    ["be_psi", "ds_eyes", "fs_face", "gm_path"];
-
-  CONFIG.WO.special_ability_groups = {
-    "group_base": "FITD.BasicPrimalAbilities",
-    "group_faces": "FITD.FaceStealerFaces",
-    "group_core": "FITD.CoreSkill",
-    "group_primal": "FITD.PrimalSpecials",
-    "group_general": "FITD.GeneralAbilities",
-    "group_flex": "FITD.FlexibilityAbilities",
-    "group_ext": "FITD.ExternalAbilities"
-  };
-
-  CONFIG.WO.special_ability_hidden_groups =
-    ["group_faces", "group_primal"];
-
-  CONFIG.WO.doomseeker_eye_rays = {
-    "FITD.RayBewitchment": "FITD.RayBewitchment",
-    "FITD.RayDeath": "FITD.RayDeath",
-    "FITD.RayFear": "FITD.RayFear",
-    "FITD.RayNullMagic": "FITD.RayNullMagic",
-    "FITD.RayParalysis": "FITD.RayParalysis",
-    "FITD.RayTelekinesis": "FITD.RayTelekinesis",
-    "FITD.RayTime": "FITD.RayTime",
-    "FITD.RayTransmo": "FITD.RayTransmo",
-    "FITD.RayVision": "FITD.RayVision"
-  };
 
   // Register System Settings
   registerSystemSettings();
@@ -258,7 +219,6 @@ Hooks.once("init", async function() {
     html += `</div>`;
     return html;
   });
-
 });
 
 /**
