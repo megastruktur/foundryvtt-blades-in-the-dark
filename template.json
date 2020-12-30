@@ -98,7 +98,7 @@
     "minion_pack": {
       "bloodied": false,
       "morale": false,
-      "number": 0,
+      "number": 4,
       "attribute_max_value": 2,
       "attributes": {
         "brains": {
