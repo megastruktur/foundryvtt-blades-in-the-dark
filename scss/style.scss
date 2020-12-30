@@ -129,7 +129,7 @@ $hover-brightness: 0.8;
         justify-content: space-between;
 
         > *:not(.label-stripe) {
-            margin-right: 10px;
+            /* margin-right: 10px; */
 
             &:last-child {
                 margin-right: 0px;
@@ -478,9 +478,10 @@ $hover-brightness: 0.8;
 
         .tooltiptext {
             visibility: hidden;
-			position:relative;
+            position: absolute;
             width: fit-content;
 			max-width: 300px;
+			
             font-weight: 600;
             font-family: Bitter;
             background: url(../styles/assets/images/background-light.png) repeat;
@@ -490,7 +491,7 @@ $hover-brightness: 0.8;
             border: 2px solid $bloody;
             padding: 10px;
             border-radius: 4px;
-            position: absolute;
+
             z-index: 9999;
 			text-transform: none;
 			text-shadow:none;

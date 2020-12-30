@@ -631,9 +631,12 @@
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
+* .tooltip {
+  position: relative;
+}
 * .tooltip .tooltiptext {
   visibility: hidden;
-  position: relative;
+  position: absolute;
   width: fit-content;
   max-width: 300px;
   font-weight: 600;
@@ -645,7 +648,6 @@
   border: 2px solid #400000;
   padding: 10px;
   border-radius: 4px;
-  position: absolute;
   z-index: 9999;
   text-transform: none;
   text-shadow: none;
