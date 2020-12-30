@@ -1171,14 +1171,16 @@ table td:first-child {
 #loadout {
 
     .gear-tags {
-        margin-top: 10px;
+        margin-top: 4px;
 
         label {
+            display: inline-block;
             border-style: solid;
             border-width: 1px;
             border-color: $gray;
             border-radius: 5px;
             padding: 2px 4px;
+            margin-bottom: 4px;
 
             &.quality-mundane {
                 color: $almost_black;
