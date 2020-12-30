@@ -91,7 +91,7 @@
           </div>
         </td>
       </tr>
-      <tr>
+      <tr class="xp-stripe">
         <td>
           {{!-- Gold --}}
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
@@ -607,6 +607,7 @@
 
       {{!-- Gear & Supply Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
+        {{!-- Gear Table --}}
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Gear"}}</p>
           <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
@@ -618,7 +619,23 @@
             {{#if (eq item.data.gear_or_supply "gear")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
-              <td><div class="item-description">{{item.data.description}}</div></td>
+              <td>
+                <div class="item-description">{{item.data.description}}</div>
+                <div class="gear-tags">
+                  {{#if (eq item.data.quality_category "mundane")}}
+                  <label class="quality-mundane">{{localize "FITD.Mundane"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.quality_category "valuable")}}
+                  <label class="quality-valuable">{{localize "FITD.Valuable"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.quality_category "powerful")}}
+                  <label class="quality-powerful">{{localize "FITD.Powerful"}}</label>
+                  {{/if}}
+                  {{#each item.data.edges}}
+                  <label class="edge-tag">{{this}}</label>
+                  {{/each}}
+                </div>
+              </td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             {{/if}}
@@ -626,6 +643,7 @@
             {{/each}}
           </tbody>
         </table>
+        {{!-- Supply Table --}}
         <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
           <p class="flex-horizontal">
             {{#multiboxes data.supply}}
@@ -635,7 +653,6 @@
             <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-supply-{{this}}"></label>
             {{/times_from_1}}
-
             {{/multiboxes}}
           </p>
           <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
@@ -699,7 +716,39 @@
             {{#if (eq item.data.gear_or_supply "supply")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
-              <td><div class="item-description">{{item.data.description}}</div></td>
+              <td>
+                <div class="item-description">
+                  {{item.data.description}}
+                  {{#unless (eq item.data.use_type "unlimited")}}
+                  {{#unless (eq item.data.use_type "steady")}}
+                  ({{item.data.uses_left}} {{localize "FITD.SupplyUsesLeftSuffix"}})
+                  {{/unless}}
+                  {{/unless}}
+                </div>
+                <div class="gear-tags">
+                  {{#if (eq item.data.quality_category "mundane")}}
+                  <label class="quality-mundane">{{localize "FITD.Mundane"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.quality_category "valuable")}}
+                  <label class="quality-valuable">{{localize "FITD.Valuable"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.quality_category "powerful")}}
+                  <label class="quality-powerful">{{localize "FITD.Powerful"}}</label>
+                  {{/if}}
+                  {{#each item.data.edges}}
+                  <label class="edge-tag">{{this}}</label>
+                  {{/each}}
+                  {{#if (eq item.data.use_type "steady")}}
+                  <label class="quantity-steady">{{localize "FITD.SteadySupply"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.use_type "limited")}}
+                  <label class="quantity-limited">{{localize "FITD.LimitedSupply"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.use_type "shared")}}
+                  <label class="quantity-shared">{{localize "FITD.SharedSupply"}}</label>
+                  {{/if}}
+                </div>
+              </td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             {{/if}}

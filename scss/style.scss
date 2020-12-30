@@ -749,26 +749,38 @@ div.item, tr.item {
     }
 }
 // Item Add Buttons
-.item-add-popup{
+.item-add-popup {
 	padding-left: 10px;
 	font-weight: 700;
 }
-// WO Top Entry Field Styles
-#look,#minionpack,#vilefriend{
-	color: $mud;
-	
-	    input[type="text"]{
-        font-weight: normal;
-		font-family: Piedra;
-		font-size: 20px;
-		border: none;
-		border-radius: 0;
-		}
-		
-		label{
-			font-weight: 700;
-		}
 
+// MP Number Padding
+#number {
+    padding-left: 10px;
+
+    input {
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        display: block;
+    }
+}
+
+// WO MP Top Entry Field Styles
+#look, #minionpack, #vilefriend, #number {
+    color: $mud;
+
+    input[type="text"], input[type="number"] {
+        font-weight: normal;
+        font-family: Piedra;
+        font-size: 20px;
+        border: none;
+        border-radius: 0;
+    }
+
+    label {
+        font-weight: 700;
+    }
 }
 
 // Input Fields Styling
@@ -1079,6 +1091,20 @@ table td:first-child {
 		margin-left: 33px;
 		margin-top: -10px;
 	}
+// WO MP DS
+form.actor-sheet {
+    #name input[type="text"] {
+        height: 52px;
+        border: none;
+        font-family: Blood Crow;
+        font-size: 55px;
+        font-weight: normal;
+        color: $mud;
+        background: none;
+        text-shadow: 0 1px 2px $orange;
+    }
+}
+
 // WO Basic Character Information
 #base-info table {
     width: 100%;
@@ -1098,12 +1124,12 @@ table td:first-child {
             }
         }
 
-        &:last-child {
+        &.xp-stripe {
             background-color: $mud;
         }
-		
-		.item-add-popup {
-			color:$mud;
+
+        .item-add-popup {
+            color: $mud;
         }
     }
 }
@@ -1159,6 +1185,52 @@ table td:first-child {
 // WO Supply checkboxes
 #loadout .supply {
     @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
+}
+
+// WO Gear & Supply Tags
+#loadout {
+
+    .gear-tags {
+        margin-top: 4px;
+
+        label {
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $gray;
+            border-radius: 5px;
+            padding: 2px 4px;
+            margin-bottom: 4px;
+
+            &.quality-mundane {
+                color: $almost_black;
+            }
+
+            &.quality-valuable {
+                color: $mixed;
+            }
+
+            &.quality-powerful {
+                color: $crit;
+            }
+
+            &.edge-tag {
+                color: $orange;
+            }
+
+            &.quantity-steady {
+                color: $green;
+            }
+
+            &.quantity-limited {
+                color: $green;
+            }
+
+            &.quantity-shared {
+                color: $green;
+            }
+        }
+    }
 }
 
 // DU Dungeon Duties

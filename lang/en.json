@@ -57,6 +57,7 @@
   "FITD.LimitedSupply": "Limited Supply",
   "FITD.SharedSupply": "Shared Supply",
   "FITD.SupplyUsesLeft": "Uses Left",
+  "FITD.SupplyUsesLeftSuffix": "uses left",
   "FITD.Gear": "Gear",
   "FITD.Supply": "Supply",
   "FITD.DungeonTheme": "Dungeon Theme",

@@ -1016,17 +1016,27 @@ div.item i.fa-trash, tr.item i.fa-trash {
   font-weight: 700;
 }
 
-#look, #minionpack, #vilefriend {
+#number {
+  padding-left: 10px;
+}
+#number input {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  display: block;
+}
+
+#look, #minionpack, #vilefriend, #number {
   color: #68332c;
 }
-#look input[type=text], #minionpack input[type=text], #vilefriend input[type=text] {
+#look input[type=text], #look input[type=number], #minionpack input[type=text], #minionpack input[type=number], #vilefriend input[type=text], #vilefriend input[type=number], #number input[type=text], #number input[type=number] {
   font-weight: normal;
   font-family: Piedra;
   font-size: 20px;
   border: none;
   border-radius: 0;
 }
-#look label, #minionpack label, #vilefriend label {
+#look label, #minionpack label, #vilefriend label, #number label {
   font-weight: 700;
 }
 
@@ -1354,6 +1364,17 @@ table td:first-child {
   margin-top: -10px;
 }
 
+form.actor-sheet #name input[type=text] {
+  height: 52px;
+  border: none;
+  font-family: Blood Crow;
+  font-size: 55px;
+  font-weight: normal;
+  color: #68332c;
+  background: none;
+  text-shadow: 0 1px 2px #d46c1f;
+}
+
 #base-info table {
   width: 100%;
   height: 230px;
@@ -1368,7 +1389,7 @@ table td:first-child {
 #base-info table tr td:nth-of-type(3) {
   width: 200px;
 }
-#base-info table tr:last-child {
+#base-info table tr.xp-stripe {
   background-color: #68332c;
 }
 #base-info table tr .item-add-popup {
@@ -1449,6 +1470,40 @@ table td:first-child {
 }
 #loadout .supply input:checked + label {
   background-image: url("assets/boxes/box-white-crossed.png");
+}
+
+#loadout .gear-tags {
+  margin-top: 4px;
+}
+#loadout .gear-tags label {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+}
+#loadout .gear-tags label.quality-mundane {
+  color: #191919;
+}
+#loadout .gear-tags label.quality-valuable {
+  color: #2c3678;
+}
+#loadout .gear-tags label.quality-powerful {
+  color: #b12c20;
+}
+#loadout .gear-tags label.edge-tag {
+  color: #d46c1f;
+}
+#loadout .gear-tags label.quantity-steady {
+  color: #435e3d;
+}
+#loadout .gear-tags label.quantity-limited {
+  color: #435e3d;
+}
+#loadout .gear-tags label.quantity-shared {
+  color: #435e3d;
 }
 
 #duties-tab .item-body {

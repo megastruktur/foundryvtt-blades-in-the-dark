@@ -12,9 +12,9 @@ export class BladesMinionSheet extends BladesSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
       template: "systems/wicked-ones/templates/minion-sheet.html",
-      width: 700,
-      height: 970,
-      tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities" }]
+      width: 560,
+      height: 770,
+      tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "upgrades" }]
     });
   }
 
