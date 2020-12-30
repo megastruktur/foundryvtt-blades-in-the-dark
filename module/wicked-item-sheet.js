@@ -78,7 +78,7 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
   get template() {
       const path = "systems/wicked-ones/templates/items";
-    let simple_item_types = ["defense", "gear", "goldmonger_type", "minionimpulse", "minion_type", "revelry", "supply", "wickedimpulse" ];
+    let simple_item_types = ["defense", "goldmonger_type", "minionimpulse", "minion_type", "revelry", "wickedimpulse" ];
     let template_name = `${this.item.data.type}`;
 
     if (simple_item_types.indexOf(this.item.data.type) >= 0) {
@@ -120,13 +120,32 @@ export class BladesItemSheet extends ItemSheet {
       }
     });
 
+    // Update Edge List
+    html.find('#edge-list input').change(ev => {
+      const element = $(ev.currentTarget).parents(".item");
+      const idOffset = element[0].id.lastIndexOf('-') + 1;
+      const id = element[0].id.substring(idOffset);
+      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      const newEdges = [];
+      const inputs = html.find('#edge-list input');
+      for (var i = 0; i < inputs.length; i++) {
+        if (typeof inputs[i].value != "undefined" && inputs[i].value != "") {
+          newEdges.push(inputs[i].value);
+        }
+      }
+      item.update({ ['data.edges']: newEdges });
+    });
+
+    // Clock Size Changed
     html.find('#clock-type-list .clock-size-picker').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(element.data("itemId"));
-      if (ev.target.value < this.getData().data.clock_progress) {
-        html.find('#progress-' + ev.target.value).click();
+      const idOffset = element[0].id.lastIndexOf('-') + 1;
+      const id = element[0].id.substring(idOffset);
+      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      if (ev.target.value < item.data.data.clock_progress) {
+        item.update({ ['data.clock_progress']: ev.target.value });
       }
-      item.sheet.render(true);
+      item.update({ ['data.clock_size']: ev.target.value });
     });
 
   }

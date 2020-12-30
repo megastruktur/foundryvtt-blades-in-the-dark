@@ -175,7 +175,7 @@
     }
   },
   "Item": {
-    "types": [ "calling", "defense", "project", "duty", "dungeon_theme", "gear", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "supply", "tier3room", "wickedimpulse" ],
+    "types": [ "calling", "defense", "project", "duty", "dungeon_theme", "gearsupply", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "tier3room", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -190,13 +190,15 @@
         "checked": false
       }
     },
-    "gear": {
-      "templates": [ "default" ]
+    "gearsupply": {
+      "templates": [ "default" ],
+      "gear_or_supply": "gear",
+      "quality_category": "mundane",
+      "edges": {},
+      "use_type": "unlimited",
+      "uses_left": 4
     },
     "goldmonger_type": {
-      "templates": [ "default" ]
-    },
-    "supply": {
       "templates": [ "default" ]
     },
     "duty": {

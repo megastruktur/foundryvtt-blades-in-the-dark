@@ -609,17 +609,19 @@
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Gear"}}</p>
-          <p><a class="item-add-popup" data-item-type="gear"><i class="fas fa-plus-square"></i></a></p>
+          <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <table>
           <tbody>
             {{#each actor.items as |item id|}}
-            {{#if (eq item.type "gear")}}
+            {{#if (eq item.type "gearsupply")}}
+            {{#if (eq item.data.gear_or_supply "gear")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
               <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
+            {{/if}}
             {{/if}}
             {{/each}}
           </tbody>
@@ -636,7 +638,7 @@
 
             {{/multiboxes}}
           </p>
-          <p><a class="item-add-popup" data-item-type="supply"><i class="fas fa-plus-square"></i></a></p>
+          <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <table>
           <tbody>
@@ -693,12 +695,14 @@
             {{/each}}
             {{#each actor.items as |item id|}}
 
-            {{#if (eq item.type "supply")}}
+            {{#if (eq item.type "gearsupply")}}
+            {{#if (eq item.data.gear_or_supply "supply")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body"><div class="item-name">{{item.name}}</div></td>
               <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
+            {{/if}}
             {{/if}}
             {{/each}}
           </tbody>

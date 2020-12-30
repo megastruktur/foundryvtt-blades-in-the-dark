@@ -687,6 +687,11 @@ $hover-brightness: 0.8;
 	object-fit: cover;
 }
 
+// Edge List
+#edge-list {
+    display: block;
+}
+
 // Item
 .item {
     justify-content: space-between;
@@ -694,7 +699,6 @@ $hover-brightness: 0.8;
     .item-body {
         /* margin-bottom: 10px; */ //causes problems with Dark Impulses and Race Calling Revelry
         /* margin-right: 10px; */
-
         .item-description {
             font-style: italic;
             text-align: justify;
@@ -719,7 +723,6 @@ $hover-brightness: 0.8;
     .item-class-label {
         margin-bottom: 10px;
     }
-
     /*.item-body,
     .item-class-label {
         width: 100px;
