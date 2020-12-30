@@ -32,12 +32,14 @@
     </div>
 
     {{!-- Description --}}
-    <label class="label-stripe">{{localize "FITD.Description"}}</label>
-    <textarea name="data.description">{{data.description}}</textarea>
+    <div id="edge-list" class="form-group">
+      <label class="label-stripe">{{localize "FITD.Description"}}</label>
+      <textarea name="data.description">{{data.description}}</textarea>
+    </div>
 
     {{!-- Edges --}}
     <div id="edge-list" class="form-group">
-      <label>{{ localize "FITD.Edges" }}</label>
+      <label class="label-stripe">{{ localize "FITD.Edges" }}</label>
       {{#each data.edges}}
       <div class="flex-horizontal">
         <input type="text" value="{{this}}" data-item-name="{{this}}">

@@ -1455,6 +1455,38 @@ table td:first-child {
   background-image: url("assets/boxes/box-white-crossed.png");
 }
 
+#loadout .gear-tags {
+  margin-top: 10px;
+}
+#loadout .gear-tags label {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+}
+#loadout .gear-tags label.quality-mundane {
+  color: #191919;
+}
+#loadout .gear-tags label.quality-valuable {
+  color: #2c3678;
+}
+#loadout .gear-tags label.quality-powerful {
+  color: #b12c20;
+}
+#loadout .gear-tags label.edge-tag {
+  color: #d46c1f;
+}
+#loadout .gear-tags label.quantity-steady {
+  color: #435e3d;
+}
+#loadout .gear-tags label.quantity-limited {
+  color: #435e3d;
+}
+#loadout .gear-tags label.quantity-shared {
+  color: #435e3d;
+}
+
 #duties-tab .item-body {
   width: auto;
   padding: 3px;

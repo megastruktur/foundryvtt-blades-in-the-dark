@@ -1167,6 +1167,50 @@ table td:first-child {
     @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
 }
 
+// WO Gear & Supply Tags
+#loadout {
+
+    .gear-tags {
+        margin-top: 10px;
+
+        label {
+            border-style: solid;
+            border-width: 1px;
+            border-color: $gray;
+            border-radius: 5px;
+            padding: 2px 4px;
+
+            &.quality-mundane {
+                color: $almost_black;
+            }
+
+            &.quality-valuable {
+                color: $mixed;
+            }
+
+            &.quality-powerful {
+                color: $crit;
+            }
+
+            &.edge-tag {
+                color: $orange;
+            }
+
+            &.quantity-steady {
+                color: $green;
+            }
+
+            &.quantity-limited {
+                color: $green;
+            }
+
+            &.quantity-shared {
+                color: $green;
+            }
+        }
+    }
+}
+
 // DU Dungeon Duties
 #duties-tab {
     .item-body {
