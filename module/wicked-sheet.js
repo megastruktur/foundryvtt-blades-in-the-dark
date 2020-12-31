@@ -123,7 +123,12 @@ export class BladesSheet extends ActorSheet {
   async _onRollAttributeDieClick(event) {
 
     const attribute_name = $(event.currentTarget).data("rollAttribute");
-    this.actor.rollAttributePopup(attribute_name);
+    const attribute_value = $(event.currentTarget).data("rollValue");
+    if (attribute_value) {
+      this.actor.rollAttributePopup(attribute_name, attribute_value);
+    } else {
+      this.actor.rollAttributePopup(attribute_name);
+    }
 
   }
 

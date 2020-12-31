@@ -1012,6 +1012,9 @@ div.item i.fa-trash, tr.item i.fa-trash {
 }
 
 #number {
+  padding-right: 12px;
+}
+#number label {
   padding-left: 10px;
 }
 #number input {
@@ -1798,7 +1801,6 @@ form.actor-sheet #name input[type=text] {
 }
 
 #attributes-darkhearts {
-  /* margin-top: -22px; */
   margin-left: 36px;
 }
 #attributes-darkhearts .heart-container {
@@ -1869,18 +1871,6 @@ form.actor-sheet #name input[type=text] {
   opacity: 1;
 }
 
-#abilities, #loadout {
-  /*.item-name {
-      width: 70px;
-  }*/
-  /*.item-description {
-      width: 200px;
-  }*/
-  /* .label-stripe { */
-  /* p:first-child { */
-  /* margin-right: 10px; */
-  /* } */
-}
 #abilities .item-body, #loadout .item-body {
   width: auto;
   font-weight: 500;
@@ -1915,6 +1905,12 @@ section.rollable-skill div > div label {
 }
 section.rollable-skill div > div #upgrade-skill-rating {
   width: 50px;
+}
+
+#abilities-list div.item-rollable-text > div > div {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=wicked.css.map */

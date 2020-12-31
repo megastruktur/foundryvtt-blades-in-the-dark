@@ -24,7 +24,15 @@ export class BladesMinionSheet extends BladesSheet {
   getData() {
     const data = super.getData();
 
-    // Any logic for Form Updates here
+    // get localization string for the item roll name
+    data.items.forEach(i => {
+      if (i.type == "minion_upgrade") {
+        if (i.data.upgrade_type == "external" && i.data.upgrade_skill_name != "") {
+          const loc = CONFIG.WO.rollable_skills[i.data.upgrade_skill_name];
+          i.data.upgrade_skill_localization_ref = loc;
+        }
+      }
+    });
 
     return data;
   }

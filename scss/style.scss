@@ -752,7 +752,11 @@ div.item, tr.item {
 
 // MP Number Padding
 #number {
-    padding-left: 10px;
+    padding-right: 12px;
+
+    label {
+        padding-left: 10px;
+    }
 
     input {
         text-align: center;
@@ -1506,7 +1510,6 @@ form.actor-sheet {
 
 // WO Dark Hearts
 #attributes-darkhearts {
-    /* margin-top: -22px; */
     margin-left: 36px;
 
     .heart-container {
@@ -1524,22 +1527,10 @@ form.actor-sheet {
 // DU MP WO Special Abilities
 #abilities, #loadout {
 
-    /*.item-name {
-        width: 70px;
-    }*/
-
     .item-body {
         width: auto;
         font-weight: 500;
     }
-
-    /*.item-description {
-        width: 200px;
-    }*/
-    /* .label-stripe { */
-    /* p:first-child { */
-    /* margin-right: 10px; */
-    /* } */
 }
 
 // DU MP WO Special Abilities List
@@ -1586,4 +1577,10 @@ section.rollable-skill {
             width: 50px;
         }
     }
+}
+
+#abilities-list div.item-rollable-text > div > div {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 5px;
 }
