@@ -209,7 +209,7 @@
   padding: 5px;
 }
 * section {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -245,6 +245,7 @@
 * .editor,
 * .editor-content {
   min-height: 280px;
+  background: rgba(0, 0, 0, 0.05);
 }
 * .flex-horizontal {
   display: flex;
@@ -263,6 +264,7 @@
   padding: 4px 5px;
   height: 30px !important;
   text-transform: capitalize;
+  text-shadow: 0 2px #311815;
 }
 * .gray-label {
   background-color: #999;
@@ -277,7 +279,7 @@
   padding: 5px;
   color: #191919;
   font-size: 14px;
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   background-size: 300px;
   box-shadow: inset 0 0 9px 1px #4000004f;
 }
@@ -301,7 +303,7 @@
   font-size: 24px;
   text-align: center;
   padding: 0px 5px;
-  height: 32px !important;
+  height: 36px !important;
   text-transform: capitalize;
 }
 * .chat-label-small {
@@ -367,7 +369,7 @@
   color: white;
   margin-bottom: 10px;
   position: relative;
-  padding-top: 2px;
+  padding-top: 3px;
   display: flex;
   font-weight: normal;
   margin: 0;
@@ -631,19 +633,18 @@
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
-  position: relative;
+  position: absolute;
   width: fit-content;
   max-width: 300px;
   font-weight: 600;
   font-family: Bitter;
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   color: #400000;
   font-size: 16px;
   text-align: justify;
   border: 2px solid #400000;
   padding: 10px;
   border-radius: 4px;
-  position: absolute;
   z-index: 9999;
   text-transform: none;
   text-shadow: none;
@@ -672,7 +673,7 @@
 * .tabs .item.active {
   font-weight: 700;
   color: #400000;
-  text-shadow: 2px 2px 7px #808080;
+  text-shadow: 2px 2px 7px #d46c1f;
 }
 * .blades-die-tooltip .die {
   font-family: Piedra;
@@ -874,7 +875,7 @@
   color: #a20000;
 }
 * .window-app .window-content {
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   color: #191919;
   overflow-y: auto;
   background-size: 300px;
@@ -937,25 +938,21 @@
 
 .profile-img.profile-big {
   margin: 0px 5px;
-  height: 175px;
-  width: 175px;
+  height: 200px;
+  width: 200px;
+  max-width: fit-content;
   border: none;
-  background: url(../images/background-light.png) repeat #4000004f;
-  border-radius: 5px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 0px;
+  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
   background-blend-mode: color-burn;
   object-fit: cover;
 }
 
 .profile-img {
   border: none;
-  background: url(../images/background-light.png) repeat #4000004f;
-  border-radius: 5px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 0px;
+  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
   background-blend-mode: color-burn;
   object-fit: cover;
+  max-width: fit-content;
 }
 
 #edge-list {
@@ -978,10 +975,8 @@
   text-align: justify;
 }
 .item .item-body .item-special-feature {
-  background: #68332c3f;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0px 10px;
 }
 .item .item-body .missing-materials {
   color: #999;
@@ -1054,7 +1049,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 
 #chat-form textarea {
-  background: url(../images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.png) repeat;
   background-size: 300px;
 }
 
@@ -1382,7 +1377,7 @@ form.actor-sheet #name input[type=text] {
   background-color: initial;
 }
 #base-info table tr td:nth-of-type(1) {
-  width: 150px;
+  min-width: 150px;
 }
 #base-info table tr td:nth-of-type(3) {
   width: 200px;
@@ -1405,6 +1400,7 @@ form.actor-sheet #name input[type=text] {
   color: #EEEFFF;
   font-size: medium;
   font-weight: 600;
+  text-shadow: 0 2px #311815;
 }
 #character-defenses table input[type=text] {
   width: 100%;
@@ -1732,6 +1728,7 @@ form.actor-sheet #name input[type=text] {
   font-weight: 500;
   font-family: Piedra;
   font-size: 20px;
+  padding: 0px 10px;
 }
 
 #defenses-stress {
@@ -1801,7 +1798,7 @@ form.actor-sheet #name input[type=text] {
 }
 
 #attributes-darkhearts {
-  margin-left: 36px;
+  margin-left: 32px;
 }
 #attributes-darkhearts .heart-container {
   justify-content: flex-start;
@@ -1809,8 +1806,8 @@ form.actor-sheet #name input[type=text] {
   /* Hide the browser's default checkbox */
 }
 #attributes-darkhearts .heart-container label {
-  height: 32px;
-  width: 32px;
+  height: 48px;
+  width: 48px;
   background-image: url("assets/boxes/box-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -1881,6 +1878,19 @@ form.actor-sheet #name input[type=text] {
 }
 #abilities-list div.item-description, #loadout div.item-description {
   width: fit-content;
+}
+
+#name input[type=text] {
+  height: 52px;
+  min-width: 370px;
+  border: none;
+  font-family: Piedra;
+  font-size: 44px;
+  font-weight: normal;
+  color: #68332c;
+  background: none;
+  text-shadow: 0 1px 2px #d46c1f;
+  text-overflow: ellipsis;
 }
 
 #ray-selection div.ray-line {

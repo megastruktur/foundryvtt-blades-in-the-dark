@@ -123,7 +123,7 @@ $hover-brightness: 0.8;
     }
 
     section {
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -168,6 +168,7 @@ $hover-brightness: 0.8;
     .editor,
     .editor-content {
         min-height: 280px;
+		background: rgba(0,0,0,0.05);
     }
 
     .flex-horizontal {
@@ -189,6 +190,7 @@ $hover-brightness: 0.8;
         padding: 4px 5px;
         height: 30px !important;
         text-transform: capitalize;
+		text-shadow: 0 2px $darkmud;
     }
 
     .gray-label {
@@ -205,7 +207,7 @@ $hover-brightness: 0.8;
         padding: 5px;
         color: $almost_black;
         font-size: 14px;
-        background: url(../images/background-light.png) repeat;
+        background: url(../styles/assets/images/background-light.png) repeat;
         background-size: 300px;
         box-shadow: inset 0 0 9px 1px $bloodyShadow;
     }
@@ -233,7 +235,7 @@ $hover-brightness: 0.8;
         font-size: 24px;
         text-align: center;
         padding: 0px 5px;
-        height: 32px !important;
+        height: 36px !important;
         text-transform: capitalize;
     }
 
@@ -310,7 +312,7 @@ $hover-brightness: 0.8;
         color: white;
         margin-bottom: 10px;
         position: relative;
-        padding-top: 2px;
+        padding-top: 3px;
         display: flex;
         font-weight: normal;
         margin: 0;
@@ -476,19 +478,20 @@ $hover-brightness: 0.8;
 
         .tooltiptext {
             visibility: hidden;
-			position:relative;
+            position: absolute;
             width: fit-content;
 			max-width: 300px;
+			
             font-weight: 600;
             font-family: Bitter;
-            background: url(../images/background-light.png) repeat;
+            background: url(../styles/assets/images/background-light.png) repeat;
             color: $bloody;
             font-size: 16px;
             text-align: justify;
             border: 2px solid $bloody;
             padding: 10px;
             border-radius: 4px;
-            position: absolute;
+
             z-index: 9999;
 			text-transform: none;
 			text-shadow:none;
@@ -521,7 +524,7 @@ $hover-brightness: 0.8;
     .tabs .item.active {
         font-weight: 700;
         color: $bloody;
-        text-shadow: 2px 2px 7px #808080;
+        text-shadow: 2px 2px 7px $orange;
     }
 
     .blades-die-tooltip {
@@ -590,7 +593,7 @@ $hover-brightness: 0.8;
     }
 
     .window-app .window-content {
-        background: url(../images/background-light.png) repeat;
+        background: url(../styles/assets/images/background-light.png) repeat;
         color: $almost_black;
         overflow-y: auto;
         background-size: 300px;
@@ -663,25 +666,21 @@ $hover-brightness: 0.8;
 // Large Profile Pictures
 .profile-img.profile-big {
     margin: 0px 5px;
-    height: 175px;
-    width: 175px;
+    height: 200px;
+    width: 200px;
+	max-width: fit-content;
 	border: none;
-	background: url(../images/background-light.png) repeat $bloodyShadow;
-    border-radius: 5px;
-	border-bottom-right-radius: 0px;
-    border-top-left-radius: 0px;
+	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
     background-blend-mode: color-burn;
 	object-fit: cover;
 }
 // Profile Pictures
 .profile-img{
 	border: none;
-	background: url(../images/background-light.png) repeat $bloodyShadow;
-    border-radius: 5px;
-	border-bottom-right-radius: 0px;
-    border-top-left-radius: 0px;
+	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
     background-blend-mode: color-burn;
 	object-fit: cover;
+	max-width: fit-content;
 }
 
 // Edge List
@@ -702,10 +701,8 @@ $hover-brightness: 0.8;
         }
 
         .item-special-feature {
-            background: $mud3f;
-            border-radius: 15px;
-            padding: 10px;
-            margin: 10px;
+            padding: 0px;
+            margin: 0px 10px;
         }
 
         .missing-materials {
@@ -802,7 +799,7 @@ div.item, tr.item {
 
 // SYS Game Chat Background
 #chat-form textarea {
-    background: url(../images/background-light.png) repeat;
+    background: url(../styles/assets/images/background-light.png) repeat;
     background-size: 300px;
 }
 
@@ -1116,7 +1113,7 @@ form.actor-sheet {
 
         td {
             &:nth-of-type(1) {
-                width: 150px;
+                min-width: 150px;
             }
 
             &:nth-of-type(3) {
@@ -1147,6 +1144,7 @@ form.actor-sheet {
             color: $almost_white;
             font-size: medium;
             font-weight: 600;
+			text-shadow: 0 2px $darkmud;
         }
 
         input[type="text"] {
@@ -1487,6 +1485,7 @@ form.actor-sheet {
 	font-weight: 500;
 	font-family: Piedra;
 	font-size: 20px;
+	padding: 0px 10px;
 	}
 // WO Defenses Stress Area
 #defenses-stress {
@@ -1510,11 +1509,11 @@ form.actor-sheet {
 
 // WO Dark Hearts
 #attributes-darkhearts {
-    margin-left: 36px;
+    margin-left: 32px;
 
     .heart-container {
         justify-content: flex-start;
-        @include custom_radio(32px, 32px);
+        @include custom_radio(48px, 48px);
 
         &:hover label {
             transition: opacity 1s;
@@ -1542,6 +1541,20 @@ form.actor-sheet {
     div.item-description {
         width: fit-content;
     }
+}
+// Name input styling for all sheets
+
+#name input[type="text"] {
+	height: 52px;
+	min-width: 370px;
+	border: none;
+	font-family: Piedra;
+	font-size: 44px;
+	font-weight: normal;
+	color: $mud;
+	background: none;
+	text-shadow: 0 1px 2px $orange;
+	text-overflow: ellipsis;
 }
 
 #ray-selection {
