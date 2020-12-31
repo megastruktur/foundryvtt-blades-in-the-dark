@@ -14,7 +14,10 @@ WO.gear_supply_types = {
 WO.gear_quality_types = {
   "mundane": "FITD.Mundane",
   "valuable": "FITD.Valuable",
-  "powerful": "FITD.Powerful"
+  "powerful": "FITD.Powerful",
+  "tier1": "FITD.TierOne",
+  "tier2": "FITD.TierTwo",
+  "tier3": "FITD.TierThree"
 };
 
 WO.gear_supply_use_types = {

@@ -182,12 +182,6 @@
       },
       "logic": {
         "logic": ""
-      },
-      "minion_upgrade": {
-        "description": "",
-        "keyword": "",
-        "use_checkbox": false,
-        "checked": false
       }
     },
     "gearsupply": {
@@ -285,7 +279,10 @@
       "missing_materials": false
     },
     "minion_upgrade": {
-      "templates": [ "minion_upgrade" ]
+      "templates": [ "default" ],
+      "keyword": "",
+      "use_checkbox": false,
+      "checked": false
     },
     "minion_job": {
       "templates": [ "default" ]
