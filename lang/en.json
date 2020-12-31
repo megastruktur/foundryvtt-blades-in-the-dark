@@ -271,6 +271,13 @@
   "FITD.External": "External",
   "FITD.ExternalAbilities": "External Abilities",
 
+  "FITD.MinionUpgradeType": "Upgrade Type",
+  "FITD.Regular": "Regular",
+  "FITD.InvocationPath": "Invocation Path",
+  "FITD.RollableSkill": "Rollable Skill",
+  "FITD.SkillName": "Skill Name",
+  "FITD.SkillRating": "Skill Rating",
+
   "FITD.Source": "Source",
   "FITD.SourceExample": "Source of Ability (Calling, Primal, etc)",
   "FITD.Braineater": "Braineater",

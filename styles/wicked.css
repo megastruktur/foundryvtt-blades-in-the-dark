@@ -1907,4 +1907,14 @@ form.actor-sheet #name input[type=text] {
   width: 20%;
 }
 
+section.rollable-skill div > div {
+  width: 50%;
+}
+section.rollable-skill div > div label {
+  margin-right: 10px;
+}
+section.rollable-skill div > div #upgrade-skill-rating {
+  width: 50px;
+}
+
 /*# sourceMappingURL=wicked.css.map */

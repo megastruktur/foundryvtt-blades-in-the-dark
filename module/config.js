@@ -65,3 +65,21 @@ WO.doomseeker_eye_rays = {
   "FITD.RayVision": "FITD.RayVision"
 };
 
+WO.minion_upgrade_types = {
+  "regular": "FITD.Regular",
+  "path": "FITD.InvocationPath",
+  "external": "FITD.External"
+};
+
+WO.rollable_skills = {
+  "scan": "FITD.SkillsScan",
+  "tinker": "FITD.SkillsTinker",
+  "trick": "FITD.SkillsTrick",
+  "finesse": "FITD.SkillsFinesse",
+  "skulk": "FITD.SkillsSkulk",
+  "smash": "FITD.SkillsSmash",
+  "banter": "FITD.SkillsBanter",
+  "invoke": "FITD.SkillsInvoke",
+  "threaten": "FITD.SkillsThreaten"
+};
+
