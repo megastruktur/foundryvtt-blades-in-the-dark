@@ -14,7 +14,10 @@ WO.gear_supply_types = {
 WO.gear_quality_types = {
   "mundane": "FITD.Mundane",
   "valuable": "FITD.Valuable",
-  "powerful": "FITD.Powerful"
+  "powerful": "FITD.Powerful",
+  "tier1": "FITD.TierOne",
+  "tier2": "FITD.TierTwo",
+  "tier3": "FITD.TierThree"
 };
 
 WO.gear_supply_use_types = {
@@ -60,5 +63,23 @@ WO.doomseeker_eye_rays = {
   "FITD.RayTime": "FITD.RayTime",
   "FITD.RayTransmo": "FITD.RayTransmo",
   "FITD.RayVision": "FITD.RayVision"
+};
+
+WO.minion_upgrade_types = {
+  "regular": "FITD.Regular",
+  "path": "FITD.InvocationPath",
+  "external": "FITD.External"
+};
+
+WO.rollable_skills = {
+  "scan": "FITD.SkillsScan",
+  "tinker": "FITD.SkillsTinker",
+  "trick": "FITD.SkillsTrick",
+  "finesse": "FITD.SkillsFinesse",
+  "skulk": "FITD.SkillsSkulk",
+  "smash": "FITD.SkillsSmash",
+  "banter": "FITD.SkillsBanter",
+  "invoke": "FITD.SkillsInvoke",
+  "threaten": "FITD.SkillsThreaten"
 };
 

@@ -29,7 +29,13 @@
           {{#times_from_0 @root.data.attribute_max_value}}
           <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
                  name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
-          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}" class="skill-practice-xp{{#if (eq ../this.practice 1)}} practice-one{{/if}}{{#if (eq ../this.practice 2)}} practice-two{{/if}}"></label>
+          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}" 
+                 {{#if (eq ../../../actor.type "character")}}
+                   class="skill-practice-xp
+                   {{#if (eq ../this.practice 1)}} practice-one{{/if}}
+                   {{#if (eq ../this.practice 2)}} practice-two{{/if}}"
+                 {{/if}}>
+          </label>
           {{/times_from_0}}
 
           <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>

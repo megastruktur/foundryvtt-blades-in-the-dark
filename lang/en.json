@@ -85,6 +85,9 @@
   "FITD.FlashbackClues": "Flashback Clues",
   "FITD.Coin": "Gold",
   "FITD.Tier": "Tier",
+  "FITD.TierOne": "Tier 1",
+  "FITD.TierTwo": "Tier 2",
+  "FITD.TierThree": "Tier 3",
   "FITD.Type": "Type",
   "FITD.ClockSize": "Clock Segements",
   "FITD.ClockProgress": "Clock Progress",
@@ -267,6 +270,13 @@
   "FITD.FlexibilityAbilities": "Flexibility Abilities",
   "FITD.External": "External",
   "FITD.ExternalAbilities": "External Abilities",
+
+  "FITD.MinionUpgradeType": "Upgrade Type",
+  "FITD.Regular": "Regular",
+  "FITD.InvocationPath": "Invocation Path",
+  "FITD.RollableSkill": "Rollable Skill",
+  "FITD.SkillName": "Skill Name",
+  "FITD.SkillRating": "Skill Rating",
 
   "FITD.Source": "Source",
   "FITD.SourceExample": "Source of Ability (Calling, Primal, etc)",

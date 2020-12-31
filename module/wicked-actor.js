@@ -56,23 +56,19 @@ export class BladesActor extends Actor {
 
   /* -------------------------------------------- */
 
-  rollAttributePopup(attribute_name) {
+  rollAttributePopup(attribute_name, attribute_value = null) {
 
-    // const roll = new Roll("1d20 + @abilities.wis.mod", actor.getRollData());
     let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
 	
-	// Calculate Dice Amount for Attributes
-    var dice_amount = 0;
-    if (attribute_name !== "") {
+    // Calculate Dice Amount for Attributes
+    var dice_amount = attribute_value ? attribute_value : 0;
+    if (attribute_value == null && attribute_name !== "") {
       let roll_data = this.getRollData();
       dice_amount += roll_data.dice_amount[attribute_name];
-	}
-	else {
-	  dice_amount = 0;
-		}
+	  }
 		
-	 //aus Zeile 100: ${dice_amount+document.getElementById('mod').selected.value}
-	let diceMod = 0;
+	  //aus Zeile 100: ${dice_amount+document.getElementById('mod').selected.value}
+	  let diceMod = 0;
 
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,

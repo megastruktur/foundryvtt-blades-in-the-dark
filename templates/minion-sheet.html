@@ -13,7 +13,7 @@
             <td>
               {{!-- Monster Race --}}
               <div class="item-block flex-vertical">
-                <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monster_race">{{localize "FITD.MonsterRace"}}:</a></div>
+                <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monster_race">{{localize "FITD.MonsterRace"}}</a></div>
                 {{#each actor.items as |item id|}}
                 {{#if (eq item.type "monster_race")}}
                 <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -99,12 +99,99 @@
             <table id="abilities-list">
               <tbody>
 
-                {{!-- General Upgrades --}}
+
+                {{!-- Invocation Path --}}
+                {{#unless (eq data.attributes.guts.skills.invoke.value "0")}}
                 {{#each actor.items as |item id|}}
                 {{#if (eq item.type "minion_upgrade")}}
+                {{#if (eq item.data.upgrade_type "path")}}
                 <tr class="item" data-item-id="{{item._id}}">
                   <td class="item-body">
                     <div class="item-name">{{item.name}}</div>
+                  </td>
+                  <td>
+                    <div class="item-description">{{item.data.description}}</div>
+                  </td>
+                  <td>
+                    <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                {{/unless}}
+
+                {{!-- General Upgrades --}}
+                {{#each actor.items as |item id|}}
+                {{#if (eq item.type "minion_upgrade")}}
+                {{#if (eq item.data.upgrade_type "regular")}}
+                <tr class="item" data-item-id="{{item._id}}">
+                  <td class="item-body">
+                    <div class="item-name">{{item.name}}</div>
+                  </td>
+                  <td>
+                    <div class="item-description">{{item.data.description}}</div>
+                    {{#unless (eq item.data.upgrade_checkbox_text "")}}
+                    <div class="item-checkmark">
+                      <div>
+                        {{item.data.upgrade_checkbox_text}}
+                        <input type="checkbox" id="item-{{item._id}}-ucbx-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
+                        <label for="item-{{item._id}}-ucbx-checked"></label>
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </td>
+                  <td>
+                    <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+
+                {{!-- External Upgrades --}}
+                {{#each actor.items as |item id|}}
+                {{#if (eq item.type "minion_upgrade")}}
+                {{#if (eq item.data.upgrade_type "external")}}
+                <tr class="item group-ext" data-item-id="{{item._id}}">
+                  <td class="item-body">
+                    <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
+                  </td>
+                  <td>
+                    <div class="item-description">{{item.data.description}}</div>
+                    {{#unless (eq item.data.upgrade_checkbox_text "")}}
+                    <div class="item-checkmark">
+                      <div>
+                        {{item.data.upgrade_checkbox_text}}
+                        <input type="checkbox" id="item-{{item._id}}-ucbx-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
+                        <label for="item-{{item._id}}-ucbx-checked"></label>
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.upgrade_skill_name "")}}
+                    <div class="item-rollable-text">
+                      <div>
+                        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{item.data.upgrade_skill_name}}" data-roll-value="{{item.data.upgrade_skill_value}}">
+                          {{localize "FITD.Roll"}} {{localize item.data.upgrade_skill_localization_ref}} ({{item.data.upgrade_skill_value}}D)
+                        </div>
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </td>
+                  <td>
+                    <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                  </td>
+                </tr>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+
+                {{!-- External Abilities --}}
+                {{#each actor.items as |item id|}}
+                {{#if (eq item.type "specialability")}}
+                <tr class="item group-ext" data-item-id="{{item._id}}">
+                  <td class="item-body">
+                    <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
                   </td>
                   <td class="">
                     <div class="item-description">{{item.data.description}}</div>
