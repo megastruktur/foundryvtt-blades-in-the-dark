@@ -701,10 +701,8 @@ $hover-brightness: 0.8;
         }
 
         .item-special-feature {
-            background: $almost_white;
-            border-radius: 15px;
-            padding: 10px;
-            margin: 10px;
+            padding: 0px;
+            margin: 0px 10px;
         }
 
         .missing-materials {
@@ -1115,7 +1113,7 @@ form.actor-sheet {
 
         td {
             &:nth-of-type(1) {
-                width: 150px;
+                min-width: 150px;
             }
 
             &:nth-of-type(3) {
@@ -1511,7 +1509,7 @@ form.actor-sheet {
 
 // WO Dark Hearts
 #attributes-darkhearts {
-    margin-left: 36px;
+    margin-left: 32px;
 
     .heart-container {
         justify-content: flex-start;
@@ -1556,6 +1554,7 @@ form.actor-sheet {
 	color: $mud;
 	background: none;
 	text-shadow: 0 1px 2px $orange;
+	text-overflow: ellipsis;
 }
 
 #ray-selection {

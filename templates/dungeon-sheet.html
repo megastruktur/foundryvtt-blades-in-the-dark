@@ -83,7 +83,7 @@
         {{#if (eq item.type "tier3room")}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body flex-horizontal">
-            <div class="item-name"><b>{{item.name}}</b></div>
+            <div class="item-name">{{item.name}}</div>
             <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
           </div>
           <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -103,7 +103,7 @@
         {{#if (eq item.type "dungeon_theme")}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body flex-vertical">
-            <div class="item-name"><b>{{item.name}}</b></div>
+            <div class="item-name">{{item.name}}</div>
             <div class="item-description">{{item.data.description}}</div>
           </div>
           <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>

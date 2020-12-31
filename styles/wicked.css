@@ -975,10 +975,8 @@
   text-align: justify;
 }
 .item .item-body .item-special-feature {
-  background: #EEEFFF;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0px 10px;
 }
 .item .item-body .missing-materials {
   color: #999;
@@ -1379,7 +1377,7 @@ form.actor-sheet #name input[type=text] {
   background-color: initial;
 }
 #base-info table tr td:nth-of-type(1) {
-  width: 150px;
+  min-width: 150px;
 }
 #base-info table tr td:nth-of-type(3) {
   width: 200px;
@@ -1800,7 +1798,7 @@ form.actor-sheet #name input[type=text] {
 }
 
 #attributes-darkhearts {
-  margin-left: 36px;
+  margin-left: 32px;
 }
 #attributes-darkhearts .heart-container {
   justify-content: flex-start;
@@ -1892,6 +1890,7 @@ form.actor-sheet #name input[type=text] {
   color: #68332c;
   background: none;
   text-shadow: 0 1px 2px #d46c1f;
+  text-overflow: ellipsis;
 }
 
 #ray-selection div.ray-line {
