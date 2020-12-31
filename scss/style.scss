@@ -129,7 +129,7 @@ $hover-brightness: 0.8;
         justify-content: space-between;
 
         > *:not(.label-stripe) {
-            /* margin-right: 10px; */
+            margin-right: 10px;
 
             &:last-child {
                 margin-right: 0px;
@@ -235,7 +235,7 @@ $hover-brightness: 0.8;
         font-size: 24px;
         text-align: center;
         padding: 0px 5px;
-        height: 32px !important;
+        height: 36px !important;
         text-transform: capitalize;
     }
 
@@ -312,7 +312,7 @@ $hover-brightness: 0.8;
         color: white;
         margin-bottom: 10px;
         position: relative;
-        padding-top: 2px;
+        padding-top: 3px;
         display: flex;
         font-weight: normal;
         margin: 0;
@@ -666,14 +666,11 @@ $hover-brightness: 0.8;
 // Large Profile Pictures
 .profile-img.profile-big {
     margin: 0px 5px;
-    height: 175px;
-    width: 175px;
-	min-width: 175px;
+    height: 200px;
+    width: 200px;
+	max-width: fit-content;
 	border: none;
 	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
-    border-radius: 5px;
-	border-bottom-right-radius: 0px;
-    border-top-left-radius: 0px;
     background-blend-mode: color-burn;
 	object-fit: cover;
 }
@@ -681,11 +678,9 @@ $hover-brightness: 0.8;
 .profile-img{
 	border: none;
 	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
-    border-radius: 5px;
-	border-bottom-right-radius: 0px;
-    border-top-left-radius: 0px;
     background-blend-mode: color-burn;
 	object-fit: cover;
+	max-width: fit-content;
 }
 
 // Edge List
@@ -1517,7 +1512,7 @@ form.actor-sheet {
 
     .heart-container {
         justify-content: flex-start;
-        @include custom_radio(32px, 32px);
+        @include custom_radio(48px, 48px);
 
         &:hover label {
             transition: opacity 1s;

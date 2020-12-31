@@ -303,7 +303,7 @@
   font-size: 24px;
   text-align: center;
   padding: 0px 5px;
-  height: 32px !important;
+  height: 36px !important;
   text-transform: capitalize;
 }
 * .chat-label-small {
@@ -369,7 +369,7 @@
   color: white;
   margin-bottom: 10px;
   position: relative;
-  padding-top: 2px;
+  padding-top: 3px;
   display: flex;
   font-weight: normal;
   margin: 0;
@@ -630,9 +630,6 @@
 }
 * .teeth-experience input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
-}
-* .tooltip {
-  position: relative;
 }
 * .tooltip .tooltiptext {
   visibility: hidden;
@@ -941,14 +938,11 @@
 
 .profile-img.profile-big {
   margin: 0px 5px;
-  height: 175px;
-  width: 175px;
-  min-width: 175px;
+  height: 200px;
+  width: 200px;
+  max-width: fit-content;
   border: none;
   background: url(../styles/assets/images/background-light.png) repeat #4000004f;
-  border-radius: 5px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 0px;
   background-blend-mode: color-burn;
   object-fit: cover;
 }
@@ -956,11 +950,9 @@
 .profile-img {
   border: none;
   background: url(../styles/assets/images/background-light.png) repeat #4000004f;
-  border-radius: 5px;
-  border-bottom-right-radius: 0px;
-  border-top-left-radius: 0px;
   background-blend-mode: color-burn;
   object-fit: cover;
+  max-width: fit-content;
 }
 
 #edge-list {
@@ -1814,8 +1806,8 @@ form.actor-sheet #name input[type=text] {
   /* Hide the browser's default checkbox */
 }
 #attributes-darkhearts .heart-container label {
-  height: 32px;
-  width: 32px;
+  height: 48px;
+  width: 48px;
   background-image: url("assets/boxes/box-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
