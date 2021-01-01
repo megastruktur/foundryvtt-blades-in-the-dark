@@ -122,8 +122,12 @@ export class WickedActor extends Actor {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
             let position = html.find('[name="pos"]')[0].value;
             let effect = html.find('[name="fx"]')[0].value;
-			let type = html.find('[name="type"]')[0].value;
-            this.rollAttribute(attribute_name, modifier, position, effect, type);
+            let type = html.find('[name="type"]')[0].value;
+            if (attribute_value == null) {
+              this.rollAttribute(attribute_name, modifier, position, effect, type);
+            } else {
+              this.rollAttribute("", (dice_amount - 1 + modifier), position, effect, type);
+            }
           }
         },
         no: {
