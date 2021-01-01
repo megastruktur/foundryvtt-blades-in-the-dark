@@ -1,11 +1,11 @@
-import { bladesRoll } from "./wicked-roll.js";
-import { BladesHelpers } from "./wicked-helpers.js";
+import { wickedRoll } from "./wicked-roll.js";
+import { WickedHelpers } from "./wicked-helpers.js";
 
 /**
  * Extend the basic Actor
  * @extends {Actor}
  */
-export class BladesActor extends Actor {
+export class WickedActor extends Actor {
 
 
   /** @override */
@@ -58,7 +58,7 @@ export class BladesActor extends Actor {
 
   rollAttributePopup(attribute_name, attribute_value = null) {
 
-    let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
+    let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
 	
     // Calculate Dice Amount for Attributes
     var dice_amount = attribute_value ? attribute_value : 0;
@@ -151,7 +151,7 @@ export class BladesActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    bladesRoll(dice_amount, attribute_name, position, effect, type);
+    wickedRoll(dice_amount, attribute_name, position, effect, type);
   }
 
   /* -------------------------------------------- */

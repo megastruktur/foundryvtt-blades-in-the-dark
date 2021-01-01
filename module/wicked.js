@@ -8,21 +8,21 @@
 import { WO } from "./config.js";
 import { registerSystemSettings } from "./settings.js";
 import { preloadHandlebarsTemplates } from "./wicked-templates.js";
-import { bladesRoll, simpleRollPopup } from "./wicked-roll.js";
-import { BladesHelpers } from "./wicked-helpers.js";
-import { BladesActor } from "./wicked-actor.js";
-import { BladesItem } from "./wicked-item.js";
-import { BladesItemSheet } from "./wicked-item-sheet.js";
-import { BladesActorSheet } from "./wicked-actor-sheet.js";
-import { BladesMinionSheet } from "./wicked-minion-sheet.js";
-import { BladesCrewSheet } from "./wicked-dungeon-sheet.js";
-import { BladesClockSheet } from "./wicked-clock-sheet.js";
+import { wickedRoll, simpleRollPopup } from "./wicked-roll.js";
+import { WickedHelpers } from "./wicked-helpers.js";
+import { WickedActor } from "./wicked-actor.js";
+import { WickedItem } from "./wicked-item.js";
+import { WickedItemSheet } from "./wicked-item-sheet.js";
+import { WickedActorSheet } from "./wicked-actor-sheet.js";
+import { WickedMinionSheet } from "./wicked-minion-sheet.js";
+import { WickedDungeonSheet } from "./wicked-dungeon-sheet.js";
+import { WickedClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
 import "./wicked-dicesonice.js";
 
 CONFIG.WO = WO;
 
-window.BladesHelpers = BladesHelpers;
+window.WickedHelpers = WickedHelpers;
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -30,28 +30,28 @@ window.BladesHelpers = BladesHelpers;
 Hooks.once("init", async function() {
   console.log(`Initializing Wicked Ones System`);
 
-  game.blades = {
-    dice: bladesRoll
+  game.wicked = {
+    dice: wickedRoll
   }
 
   // Define Roll template.
   // CONFIG.Dice.template = "systems/wicked-ones/templates/wicked-roll.html"
   // CONFIG.Dice.tooltip = "systems/wicked-ones/templates/wicked-roll-tooltip.html"
 
-  CONFIG.Item.entityClass = BladesItem;
-  CONFIG.Actor.entityClass = BladesActor;
+  CONFIG.Item.entityClass = WickedItem;
+  CONFIG.Actor.entityClass = WickedActor;
 
   // Register System Settings
   registerSystemSettings();
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
-  Actors.registerSheet("blades", BladesMinionSheet, { types: ["minion_pack"], makeDefault: true });
-  Actors.registerSheet("blades", BladesCrewSheet, { types: ["dungeon"], makeDefault: true });
-  Actors.registerSheet("blades", BladesClockSheet, { types: ["clock"], makeDefault: true });
+  Actors.registerSheet("wicked", WickedActorSheet, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("wicked", WickedMinionSheet, { types: ["minion_pack"], makeDefault: true });
+  Actors.registerSheet("wicked", WickedDungeonSheet, { types: ["dungeon"], makeDefault: true });
+  Actors.registerSheet("wicked", WickedClockSheet, { types: ["clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
+  Items.registerSheet("wicked", WickedItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
 
 
@@ -243,14 +243,14 @@ Hooks.once("ready", function() {
  */
 Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
 
-  BladesHelpers.removeDuplicatedItemType(child_data, parent_entity);
+  WickedHelpers.removeDuplicatedItemType(child_data, parent_entity);
 
   return true;
 });
 
 Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
 
-  BladesHelpers.callItemLogic(child_data, parent_entity);
+  WickedHelpers.callItemLogic(child_data, parent_entity);
 
   return true;
 });
@@ -258,7 +258,7 @@ Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
 
 Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
   
-  BladesHelpers.undoItemLogic(child_data, parent_entity);
+  WickedHelpers.undoItemLogic(child_data, parent_entity);
 
   return true;
 });

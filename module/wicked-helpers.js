@@ -1,4 +1,4 @@
-export class BladesHelpers {
+export class WickedHelpers {
 
   /**
    * Removes a duplicate item type from charlist.
@@ -45,7 +45,7 @@ export class BladesHelpers {
             // Add when creating.
             case "addition":
               entity.update({
-                [expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + expression.attribute)) + expression.value
+                [expression.attribute]: Number(WickedHelpers.getNestedProperty(entity, "data." + expression.attribute)) + expression.value
               });
               break;
 
@@ -93,7 +93,7 @@ export class BladesHelpers {
             // Subtract when removing.
             case "addition":
               entity.update({
-                [expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, "data." + expression.attribute)) - expression.value
+                [expression.attribute]: Number(WickedHelpers.getNestedProperty(entity, "data." + expression.attribute)) - expression.value
               });
               break;
 
@@ -223,10 +223,10 @@ export class BladesHelpers {
  * Sorts Special Abilities by Base Calling or other, Source Name, Core Ability Status and then Alphabet
  */
   static specialAbilitySort(a, b) {
-    if (BladesHelpers.isBaseCalling(a.data.source) && !BladesHelpers.isBaseCalling(b.data.source)) {
+    if (WickedHelpers.isBaseCalling(a.data.source) && !WickedHelpers.isBaseCalling(b.data.source)) {
       return -1;
     }
-    if (!BladesHelpers.isBaseCalling(a.data.source) && BladesHelpers.isBaseCalling(b.data.source)) {
+    if (!WickedHelpers.isBaseCalling(a.data.source) && WickedHelpers.isBaseCalling(b.data.source)) {
       return 1;
     }
 
@@ -255,9 +255,12 @@ export class BladesHelpers {
     return 0;
   }
 
+
+  /* -------------------------------------------- */
+
   /**
- * Sorts Tier-3 Rooms by Theme and then Alphabet
- */
+   * Sorts Tier-3 Rooms by Theme and then Alphabet
+   */
   static tierThreeRoomSort(a, b) {
     if (a.data.theme < b.data.theme) {
       return -1;
@@ -278,5 +281,61 @@ export class BladesHelpers {
   }
 
   /* -------------------------------------------- */
+
+  /**
+   * Sorts Monster Races by Primal Type and then Alphabet
+   */
+  static monsterRaceSort(a, b) {
+    if (!a.data.primal && b.data.primal) {
+      return -1;
+    }
+    if (a.data.primal && !b.data.primal) {
+      return 1;
+    }
+
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Sorts Minion Upgrades by Type and then Alphabet
+   */
+  static minionUpgradeSort(a, b) {
+
+    if ((a.data.upgrade_type == "regular") && !(b.data.upgrade_type == "regular")) {
+      return -1;
+    }
+    if (!(a.data.upgrade_type == "regular") && (b.data.upgrade_type == "regular")) {
+      return 1;
+    }
+
+    if ((a.data.upgrade_type == "path") && !(b.data.upgrade_type == "path")) {
+      return -1;
+    }
+    if (!(a.data.upgrade_type == "path") && (b.data.upgrade_type == "path")) {
+      return 1;
+    }
+
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  }
+
+/* -------------------------------------------- */
 
 }

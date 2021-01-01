@@ -1,10 +1,10 @@
 
-import { BladesSheet } from "./wicked-sheet.js";
+import { WickedSheet } from "./wicked-sheet.js";
 
 /**
- * @extends {BladesSheet}
+ * @extends {WickedSheet}
  */
-export class BladesCrewSheet extends BladesSheet {
+export class WickedDungeonSheet extends WickedSheet {
 
   /** @override */
 	static get defaultOptions() {
@@ -53,7 +53,7 @@ export class BladesCrewSheet extends BladesSheet {
 
     // Add a new Cohort (Check if needed for Theme and Room additions)
     html.find('.add-item').click(ev => {
-      BladesHelpers._addOwnedItem(ev, this.actor);
+      WickedHelpers._addOwnedItem(ev, this.actor);
     });
 
   }

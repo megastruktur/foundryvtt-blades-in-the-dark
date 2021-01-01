@@ -149,8 +149,8 @@ $hover-brightness: 0.8;
         font-family: Bitter, Lucida Console, monospace;
         font-weight: 600;
         font-size: 15px;
-		border-radius: 0px;
-		border-color: 1px solid $mud;
+        border-radius: 0px;
+        border-color: 1px solid $mud;
     }
 
     option {
@@ -162,13 +162,14 @@ $hover-brightness: 0.8;
     }
 
 
-	.action-info{
-		margin-top:-20px;
-	}
+    .action-info {
+        margin-top: -20px;
+    }
+
     .editor,
     .editor-content {
         min-height: 280px;
-		background: rgba(0,0,0,0.05);
+        background: rgba(0,0,0,0.05);
     }
 
     .flex-horizontal {
@@ -190,7 +191,7 @@ $hover-brightness: 0.8;
         padding: 4px 5px;
         height: 30px !important;
         text-transform: capitalize;
-		text-shadow: 0 2px $darkmud;
+        text-shadow: 0 2px $darkmud;
     }
 
     .gray-label {
@@ -380,7 +381,7 @@ $hover-brightness: 0.8;
         .big-teeth {
             @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
             justify-content: center;
-			align-items: center;
+            align-items: center;
 
             label {
 
@@ -480,8 +481,7 @@ $hover-brightness: 0.8;
             visibility: hidden;
             position: absolute;
             width: fit-content;
-			max-width: 300px;
-			
+            max-width: 300px;
             font-weight: 600;
             font-family: Bitter;
             background: url(../styles/assets/images/background-light.png) repeat;
@@ -491,32 +491,34 @@ $hover-brightness: 0.8;
             border: 2px solid $bloody;
             padding: 10px;
             border-radius: 4px;
-
             z-index: 9999;
-			text-transform: none;
-			text-shadow:none;
+            text-transform: none;
+            text-shadow: none;
         }
-		.tooltipslow{
-			opacity: 0;	
-			transition: visibility 0.1s, opacity 0.1s;	
-			transition-delay: 0.1s;
-		}
+
+        .tooltipslow {
+            opacity: 0;
+            transition: visibility 0.1s, opacity 0.1s;
+            transition-delay: 0.1s;
+        }
 
         &:hover .tooltiptext {
             visibility: visible;
-			opacity: 1;
-			transition: visibility 0.5s, opacity 0.5s;
-			transition-delay: 1s;
+            opacity: 1;
+            transition: visibility 0.5s, opacity 0.5s;
+            transition-delay: 1s;
         }
     }
 
     .fa-question-circle {
         padding: 2px 3px;
     }
-	.fa-book-dead:before {
-    padding-right: 5px;
-	color:$almost_white;
-}
+
+    .fa-book-dead:before {
+        padding-right: 5px;
+        color: $almost_white;
+    }
+
     .hidden {
         display: none;
     }
@@ -527,7 +529,7 @@ $hover-brightness: 0.8;
         text-shadow: 2px 2px 7px $orange;
     }
 
-    .blades-die-tooltip {
+    .wicked-die-tooltip {
 
         .die {
             font-family: Piedra;

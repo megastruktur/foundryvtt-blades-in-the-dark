@@ -2,7 +2,7 @@
  * Extend the basic ItemSheet
  * @extends {ItemSheet}
  */
-export class BladesItemSheet extends ItemSheet {
+export class WickedItemSheet extends ItemSheet {
 
   /** @override */
 	static get defaultOptions() {

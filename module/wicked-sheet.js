@@ -3,7 +3,7 @@
  * @extends {ActorSheet}
  */
 
-export class BladesSheet extends ActorSheet {
+export class WickedSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
@@ -37,34 +37,70 @@ export class BladesSheet extends ActorSheet {
       input_type = "radio";
     }
 
-    let items = await BladesHelpers.getAllItemsByType(item_type, game);
+    let items = await WickedHelpers.getAllItemsByType(item_type, game);
 
-    // Sort apecial abilities and tier-3 rooms
-    if (items.length > 0 && items[0].type == "specialability") {
-      items.sort(BladesHelpers.specialAbilitySort);
-    } else if (items.length > 0 && items[0].type == "tier3room") {
-      items.sort(BladesHelpers.tierThreeRoomSort);
+    // Sort Special Abilities, Rooms, Upgrades ad Monster Races
+    if (items.length > 0) {
+      switch (items[0].type) {
+        case "minion_upgrade":
+          items.sort(WickedHelpers.minionUpgradeSort);
+          break;
+        case "monster_race":
+          // Remove primals for Minion Sheets
+          if (this.constructor.name == "WickedMinionSheet") {
+            items = items.filter(function (item, index, arr) {
+              return !(item.data.primal);
+            });
+          }
+          items.sort(WickedHelpers.monsterRaceSort);
+          break;
+        case "specialability":
+          items.sort(WickedHelpers.specialAbilitySort);
+          break;
+        case "tier3room":
+          items.sort(WickedHelpers.tierThreeRoomSort);
+          break;
+        default:
+      }
     }
-
 
     let html = `<div id="items-to-add">`;
 
     items.forEach(e => {
       let itemPrefix = ``;
       let itemSuffix = ``;
-      if (item_type == "specialability") {
-        if (typeof e.data.source !== "undefined") {
-          itemPrefix += `(${e.data.source}): `
-        }
-        if (e.data.ability_group == 'group_core') {
-          itemSuffix += ` (Core)`
-        }
-      } else if (item_type == "tier3room") {
-        if (typeof e.data.theme !== "undefined") {
-          itemPrefix += `(${e.data.theme}): `
-        }
-      }
+      switch (item_type) {
+        case "minion_upgrade":
+          if (e.data.upgrade_type == 'external') {
+            itemSuffix += ` (External)`
+          } else if (e.data.upgrade_type == 'path') {
+            itemSuffix += ` (Magic Path)`
+          }
+          break;
 
+        case "monster_race":
+          if (e.data.primal) {
+            itemSuffix += ` (Primal)`
+          }
+          break;
+
+        case "specialability":
+          if (typeof e.data.source !== "undefined") {
+            itemPrefix += `(${e.data.source}): `
+          }
+          if (e.data.ability_group == 'group_core') {
+            itemSuffix += ` (Core)`
+          }
+          break;
+
+        case "tier3room":
+          if (typeof e.data.theme !== "undefined") {
+            itemPrefix += `(${e.data.theme}): `
+          }
+          break;
+
+        default:
+      }
 
       html += `<input id="select-item-${e._id}" type="${input_type}" name="select_items" value="${e._id}">`;
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
@@ -106,7 +142,7 @@ export class BladesSheet extends ActorSheet {
 
   async addItemsToSheet(item_type, el) {
 
-    let items = await BladesHelpers.getAllItemsByType(item_type, game);
+    let items = await WickedHelpers.getAllItemsByType(item_type, game);
     let items_to_add = [];
     el.find("input:checked").each(function () {
 

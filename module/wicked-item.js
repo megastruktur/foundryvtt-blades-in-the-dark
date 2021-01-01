@@ -2,7 +2,7 @@
  * Extend the basic Item
  * @extends {Item}
  */
-export class BladesItem extends Item {
+export class WickedItem extends Item {
 
   /* override */
   prepareData() {

@@ -675,7 +675,7 @@
   color: #400000;
   text-shadow: 2px 2px 7px #d46c1f;
 }
-* .blades-die-tooltip .die {
+* .wicked-die-tooltip .die {
   font-family: Piedra;
   text-transform: uppercase;
   font-weight: normal;
@@ -687,16 +687,16 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-* .blades-die-tooltip .die.critical-success {
+* .wicked-die-tooltip .die.critical-success {
   color: #b12c20;
 }
-* .blades-die-tooltip .die.success {
+* .wicked-die-tooltip .die.success {
   color: #862118;
 }
-* .blades-die-tooltip .die.partial-success {
+* .wicked-die-tooltip .die.partial-success {
   color: #2c3678;
 }
-* .blades-die-tooltip .die.failure {
+* .wicked-die-tooltip .die.failure {
   color: #656666;
 }
 * .clock-zero-label {

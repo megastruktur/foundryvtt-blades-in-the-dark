@@ -5,7 +5,7 @@
  * @param {string} position
  * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "", position = "default", effect = "default", type="fortune") {
+export async function wickedRoll(dice_amount, attribute_name = "", position = "default", effect = "default", type="fortune") {
 
   // Is Dice So Nice enabled ?
   let niceDice = false;
@@ -51,7 +51,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
   let rolls = [];
-  let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
+  let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
   
   // Backward Compat for rolls.
   if (isBelow070) {
@@ -61,7 +61,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   }
 
   // Retrieve Roll status.
-  let roll_status = getBladesRollStatus(rolls, zeromode);
+  let roll_status = getWickedRollStatus(rolls, zeromode);
 
   let position_localize = '';
   switch (position) {
@@ -162,7 +162,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
  * @param {Array} rolls 
  * @param {Boolean} zeromode 
  */
-export function getBladesRollStatus(rolls, zeromode = false) {
+export function getWickedRollStatus(rolls, zeromode = false) {
 
   // Dice API has changed in 0.7.0 so need to keep that in mind.
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
@@ -265,7 +265,7 @@ export async function simpleRollPopup() {
         callback: (html) => {
           let diceQty = html.find('[name="qty"]')[0].value; 
 		  let type = html.find('[name="type"]')[0].value;		  
-          bladesRoll(diceQty, "", "default", "default", type);
+          wickedRoll(diceQty, "", "default", "default", type);
         },
       },
       no: {

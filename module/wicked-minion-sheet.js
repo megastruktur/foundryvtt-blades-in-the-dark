@@ -1,11 +1,11 @@
 
-import { BladesSheet } from "./wicked-sheet.js";
+import { WickedSheet } from "./wicked-sheet.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
- * @extends {BladesSheet}
+ * @extends {WickedSheet}
  */
-export class BladesMinionSheet extends BladesSheet {
+export class WickedMinionSheet extends WickedSheet {
 
   /** @override */
 	static get defaultOptions() {
