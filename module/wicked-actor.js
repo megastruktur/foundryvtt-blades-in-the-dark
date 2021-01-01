@@ -13,6 +13,7 @@ export class WickedActor extends Actor {
     const data = super.getRollData();
 
     data.dice_amount = this.getAttributeDiceToThrow();
+    data.default_bonus = this.getAttributeDefaultBonus();
 
     return data;
   }
@@ -39,13 +40,42 @@ export class WickedActor extends Actor {
     });
 
     for (var attibute_name in this.data.data.attributes) {
-      dice_amount[attibute_name] = 0;
       for (var skill_name in this.data.data.attributes[attibute_name].skills) {
         dice_amount[skill_name] = parseInt(this.data.data.attributes[attibute_name].skills[skill_name]['value'][0])
+      }
 
-        // We add a +1d for every skill higher than 0.
-        if (dice_amount[skill_name] > 0) {
-          dice_amount[attibute_name]++;
+    }
+
+    return dice_amount;
+  }
+
+  /* -------------------------------------------- */
+  /**
+  * Calculate Attribute Default Bonus Dice to throw.
+  */
+  getAttributeDefaultBonus() {
+
+    // Calculate Dice to throw.
+    let dice_amount = {};
+
+    // Add extra values for braineater disciplines and doomseeker eye rays if available
+    this.data.items.forEach(specialAbility => {
+      if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "ds_eyes") {
+        for (var i = 1; i < 10; i++) {
+          dice_amount[specialAbility.data.primal['ds_eye_ray_' + i]] = this.data.data.attributes["guts"].shocked ? -1 : 0;
+        }
+      } else if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "be_psi") {
+        dice_amount[specialAbility.data.primal.be_psi_skill_name] = dice_amount[specialAbility.data.primal['ds_eye_ray_' + i]] = this.data.data.attributes["guts"].shocked ? -1 : 0;
+
+      }
+    });
+
+    for (var attibute_name in this.data.data.attributes) {
+      for (var skill_name in this.data.data.attributes[attibute_name].skills) {
+        if (this.data.type == "minion_pack") {
+          dice_amount[skill_name] = this.data.data.bloodied ? -1 : 0;
+        } else {
+          dice_amount[skill_name] = this.data.data.attributes[attibute_name].shocked ? -1 : 0;
         }
       }
 
@@ -55,16 +85,17 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
-
   rollAttributePopup(attribute_name, attribute_value = null) {
 
     let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
 	
     // Calculate Dice Amount for Attributes
     var dice_amount = attribute_value ? attribute_value : 0;
+    var default_bonus = 0;
     if (attribute_value == null && attribute_name !== "") {
       let roll_data = this.getRollData();
       dice_amount += roll_data.dice_amount[attribute_name];
+      default_bonus += roll_data.default_bonus[attribute_name];
 	  }
 		
 	  //aus Zeile 100: ${dice_amount+document.getElementById('mod').selected.value}
@@ -103,7 +134,7 @@ export class WickedActor extends Actor {
 		  <div class="form-group">
             <label>${game.i18n.localize('FITD.Modifier')}:</label>
             <select id="mod" name="mod">
-              ${this.createListOfDiceMods(-3,+3,0)}
+              ${this.createListOfDiceMods(-3, +3, default_bonus)}
             </select>
           </div>
 		  <div class="form-group">

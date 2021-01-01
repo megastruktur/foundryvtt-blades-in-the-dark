@@ -47,7 +47,7 @@ export class WickedSheet extends ActorSheet {
           break;
         case "monster_race":
           // Remove primals for Minion Sheets
-          if (this.constructor.name == "WickedMinionSheet") {
+          if (this.object.data.type == "minion_pack") {
             items = items.filter(function (item, index, arr) {
               return !(item.data.primal);
             });
