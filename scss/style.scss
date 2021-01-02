@@ -896,7 +896,7 @@ div.item, tr.item {
 
 // MP WO Attribute Section
 #attributes {
-    width: 200px;
+    min-width: fit-content;
     top: 7px;
     position: relative;
 
@@ -1061,6 +1061,17 @@ div.item, tr.item {
             margin-top: 3px;
         }
     }
+	.attribute-description{
+		font-size: 10px;
+		padding: 0px 5px;
+		font-family: Bitter;
+		font-weight: 500;
+	}
+	
+	.skill-description{
+		font-style: italic;
+		font-size: larger;	
+	}
 }
 
 /* All Table Formatting: */
@@ -1514,8 +1525,8 @@ form.actor-sheet {
     margin-left: 32px;
 
     .heart-container {
-        justify-content: flex-start;
-        @include custom_radio(48px, 48px);
+        justify-content: center;
+        @include custom_radio(72px, 72px);
 
         &:hover label {
             transition: opacity 1s;

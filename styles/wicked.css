@@ -1146,7 +1146,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 
 #attributes {
-  width: 200px;
+  min-width: fit-content;
   top: 7px;
   position: relative;
 }
@@ -1331,6 +1331,10 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 #attributes .attributes-container label {
   margin-top: 3px;
+}
+#attributes .skill-description {
+  font-style: italic;
+  font-size: larger;
 }
 
 /* All Table Formatting: */
@@ -1801,13 +1805,13 @@ form.actor-sheet #name input[type=text] {
   margin-left: 32px;
 }
 #attributes-darkhearts .heart-container {
-  justify-content: flex-start;
+  justify-content: center;
   display: flex;
   /* Hide the browser's default checkbox */
 }
 #attributes-darkhearts .heart-container label {
-  height: 48px;
-  width: 48px;
+  height: 72px;
+  width: 72px;
   background-image: url("assets/boxes/box-filled.png");
   background-repeat: no-repeat;
   background-size: contain;

@@ -14,7 +14,7 @@
     <div class="main">
       <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
         <div class="stripe">
-          <label class="attribute-label">{{localize attribute_name}}</label>
+          <label class="attribute-label">{{localize attribute_name}}<span class="attribute-description">{{localize (concat "FITD.Skills" attribute_name "Description")}}</span></label>
         </div>
       </div>
 
@@ -38,7 +38,7 @@
           </label>
           {{/times_from_0}}
 
-          <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
+          <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div><div class="skill-description">{{localize (concat "FITD.Skills" skill_name "Description")}}</div>
           {{/multiboxes}}
         </div>
       </div>
