@@ -11,7 +11,7 @@ export class WickedDungeonSheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/dungeon-sheet.html",
-      width: 700,
+      width: 600,
       height: 850,
       tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "rooms"}]
     });
