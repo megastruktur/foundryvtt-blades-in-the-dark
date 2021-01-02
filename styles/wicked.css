@@ -1146,12 +1146,13 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 
 #attributes {
+  height: fit-content;
   min-width: fit-content;
   top: 7px;
   position: relative;
 }
 #attributes.minion {
-  width: 150px;
+  min-width: 235px;
 }
 #attributes .attribute {
   margin-bottom: 5px;
@@ -1160,6 +1161,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   background-color: #68332c;
   color: #EEEFFF;
   font-size: 17px;
+  padding: 3px 0px;
   padding-left: 5px;
   text-shadow: 0 2px #311815;
 }
@@ -1171,7 +1173,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   width: 32px;
   background-image: url("assets/boxes/shock-empty.png");
   margin-right: 5px;
-  top: -6px;
+  top: -3px;
 }
 #attributes .shock input:checked + label {
   background-image: url("assets/boxes/shock-filled.png");
@@ -1185,7 +1187,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   margin-left: 8px;
   margin-right: 1px;
   padding: 10px;
-  top: -13px;
+  top: -10px;
 }
 #attributes .bloodied input:checked + label {
   background-image: url("assets/boxes/bloodied-filled-white.png");
@@ -1331,6 +1333,12 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 #attributes .attributes-container label {
   margin-top: 3px;
+}
+#attributes .attribute-description {
+  font-size: 10px;
+  padding: 0px 5px;
+  font-family: Bitter;
+  font-weight: 500;
 }
 #attributes .skill-description {
   font-style: italic;

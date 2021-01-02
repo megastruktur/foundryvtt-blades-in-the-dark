@@ -896,12 +896,13 @@ div.item, tr.item {
 
 // MP WO Attribute Section
 #attributes {
+	height: fit-content;
     min-width: fit-content;
     top: 7px;
     position: relative;
 
     &.minion {
-        width: 150px;
+        min-width: 235px;
     }
 
     .attribute {
@@ -912,6 +913,7 @@ div.item, tr.item {
         background-color: $mud;
         color: $almost_white;
         font-size: 17px;
+		padding: 3px 0px;
         padding-left: 5px;
 		text-shadow: 0 2px $darkmud;
     }
@@ -927,7 +929,7 @@ div.item, tr.item {
             width: 32px;
             background-image: url("assets/boxes/shock-empty.png");
             margin-right: 5px;
-            top: -6px;
+            top: -3px;
         }
 
         input:checked + label {
@@ -947,7 +949,7 @@ div.item, tr.item {
             margin-left: 8px;
             margin-right: 1px;
             padding: 10px;
-            top: -13px;
+            top: -10px;
         }
 
         input:checked + label {
