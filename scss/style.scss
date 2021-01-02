@@ -66,6 +66,9 @@ $hover-brightness: 0.8;
         }
     }
 
+	.sheet{
+	min-width: min-content;
+	}
     .dialog .dialog-buttons button {
         background: $mud;
         border-top: 1px outset $orange;
@@ -1064,8 +1067,8 @@ div.item, tr.item {
         }
     }
 	.attribute-description{
-		font-size: 10px;
-		padding: 0px 5px;
+		font-size: 11px;
+		padding-left: 6px;
 		font-family: Bitter;
 		font-weight: 500;
 	}

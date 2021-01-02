@@ -164,6 +164,9 @@
   box-shadow: 0 0 5px #d46c1f;
   background: #d46c1f;
 }
+* .sheet {
+  min-width: min-content;
+}
 * .dialog .dialog-buttons button {
   background: #68332c;
   border-top: 1px outset #d46c1f;
@@ -1335,8 +1338,8 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   margin-top: 3px;
 }
 #attributes .attribute-description {
-  font-size: 10px;
-  padding: 0px 5px;
+  font-size: 11px;
+  padding-left: 6px;
   font-family: Bitter;
   font-weight: 500;
 }
