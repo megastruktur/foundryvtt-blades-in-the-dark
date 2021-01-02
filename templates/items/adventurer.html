@@ -1,0 +1,112 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Adventurer Type --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label>{{ localize "FITD.AdventurerType" }}</label>
+      <select id="adventurer-type-select" name="data.adventurer_type">
+        {{#select data.adventurer_type}}
+        {{#each config.adventurer_types as |name type|}}
+        <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+
+    {{!-- Tier --}}
+    {{#if (eq data.adventurer_type "adventurer")}}
+    <div class="form-group">
+      <label>{{ localize "FITD.Tier" }}</label>
+      <input type="number" name="data.tier" value="{{data.tier}}" min="0" max="4">
+    </div>
+    {{/if}}
+
+    {{!-- Adventurer Class --}}
+    {{#if (eq data.adventurer_type "adventurer")}}
+    <label>{{ localize "FITD.AdventurerClass" }}</label>
+    <input id="adventurer-class-input" list="adventurer-classes" name="data.adventurer_class" value="{{data.adventurer_class}}">
+    <datalist id="adventurer-classes">
+      {{#each config.adventurer_classes as |name type|}}
+      <option value="{{localize name}}"></option>
+      {{/each}}
+    </datalist>
+    {{/if}}
+
+    {{!-- Hireling Type --}}
+    {{#if (eq data.adventurer_type "hireling")}}
+    <label>{{ localize "FITD.HirelingType" }}</label>
+    <input id="hireling-type-input" list="hireling-types" name="data.hireling_type" value="{{data.hireling_type}}">
+    <datalist id="hireling-types">
+      {{#each config.hireling_types as |name type|}}
+      <option value="{{localize name}}"></option>
+      {{/each}}
+    </datalist>
+    {{/if}}
+
+    {{!-- Passive ability --}}
+    <label class="label-stripe">{{localize "FITD.AdventurerPassive"}}</label>
+    <div class="form-group">
+      {{#if (eq data.adventurer_type "hireling")}}
+      <label>{{localize "FITD.HirelingPassiveHint"}}</label>
+      {{/if}}
+      <input id="item-class" type="text" name="data.passive" value="{{data.passive}}">
+    </div>
+
+    <section>
+      <label class="label-stripe">{{localize "FITD.PositiveTraits"}}</label>
+      <div>
+        {{!-- Positive Trait 1 --}}
+        <label>{{ localize "FITD.PositiveTrait" }} 1</label>
+        <input id="adventurer-trait-pos-1" list="positive-traits" name="data.trait_pos_1" value="{{data.trait_pos_1}}">
+        <datalist id="positive-traits">
+          {{#each config.positive_traits as |name type|}}
+          <option value="{{localize name}}"></option>
+          {{/each}}
+        </datalist>
+
+        {{!-- Positive Trait 2 --}}
+        <label>{{ localize "FITD.PositiveTrait" }} 2</label>
+        <input id="adventurer-trait-pos-2" list="positive-traits" name="data.trait_pos_2" value="{{data.trait_pos_2}}">
+      </div>
+
+      <label class="label-stripe">{{localize "FITD.NegativeTraits"}}</label>
+      <div>
+        {{!-- Negative Trait 1 --}}
+        <label>{{ localize "FITD.NegativeTrait" }} 1</label>
+        <input id="adventurer-trait-neg-1" list="negative-traits" name="data.trait_neg_1" value="{{data.trait_neg_1}}">
+        <datalist id="negative-traits">
+          {{#each config.negative_traits as |name type|}}
+          <option value="{{localize name}}"></option>
+          {{/each}}
+        </datalist>
+
+        {{!-- Negative Trait 2 --}}
+        <label>{{ localize "FITD.NegativeTrait" }} 2</label>
+        <input id="adventurer-trait-neg-2" list="negative-traits" name="data.trait_neg_2" value="{{data.trait_neg_2}}">
+      </div>
+
+      <label class="label-stripe">{{localize "FITD.Motivations"}}</label>
+      <div>
+        {{!-- Motivation 1 --}}
+        <label>{{ localize "FITD.Motivation" }} 1</label>
+        <input id="adventurer-motivation-1" list="adventurer-motivations" name="data.motivation_1" value="{{data.motivation_1}}">
+        <datalist id="adventurer-motivations">
+          {{#each config.adventurer_motivations as |name type|}}
+          <option value="{{localize name}}"></option>
+          {{/each}}
+        </datalist>
+
+        {{!-- Motivation 2 --}}
+        <label>{{ localize "FITD.Motivation" }} 2</label>
+        <input id="adventurer-motivation-2" list="adventurer-motivations" name="data.motivation_2" value="{{data.motivation_2}}">
+      </div>
+    </section>
+
+  </section>
+</form>

@@ -83,3 +83,112 @@ WO.rollable_skills = {
   "threaten": "FITD.SkillsThreaten"
 };
 
+WO.adventurer_types = {
+  "adventurer": "FITD.Adventurer",
+  "hireling": "FITD.Hireling"
+};
+
+WO.adventurer_classes = {
+  "academic": "FITD.ClassAcademic",
+  "alchemist": "FITD.ClassAlchemist",
+  "amazon": "FITD.ClassAmazon",
+  "aristocrat": "FITD.ClassAristocrat",
+  "assassin": "FITD.ClassAssassin",
+  "barbarian": "FITD.ClassBarbarian",
+  "bard": "FITD.ClassBard",
+  "buccaneer": "FITD.ClassBuccaneer",
+  "centurion": "FITD.ClassCenturion",
+  "chaosmage": "FITD.ClassChaosMage",
+  "cleric": "FITD.ClassCleric",
+  "deathknight": "FITD.ClassDeathKnight",
+  "defender": "FITD.ClassDefender",
+  "druid": "FITD.ClassDruid",
+  "eldritchwarrior": "FITD.ClassEldritchWarrior",
+  "illusionist": "FITD.ClassIllusionist",
+  "inquisitor": "FITD.ClassInquisitor",
+  "knight": "FITD.ClassKnight",
+  "lancer": "FITD.ClassLancer",
+  "magehunter": "FITD.ClassMageHunter",
+  "monk": "FITD.ClassMonk",
+  "occultslayer": "FITD.ClassOccultSlayer",
+  "ranger": "FITD.ClassRanger",
+  "scout": "FITD.ClassScout",
+  "shadowdancer": "FITD.ClassShadowdancer",
+  "slinger": "FITD.ClassSlinger",
+  "spellbow": "FITD.ClassSpellbow",
+  "templar": "FITD.ClassTemplar",
+  "weaponsmith": "FITD.ClassWeaponsmith",
+  "wildling": "FITD.ClassWildling"
+};
+
+WO.hireling_types = {
+  "archer": "FITD.TypeArcher",
+  "boatman": "FITD.TypeBoatman",
+  "burglar": "FITD.TypeBurglar",
+  "butcher": "FITD.TypeButcher",
+  "carpenter": "FITD.TypeCarpenter",
+  "cartographer": "FITD.TypeCartographer",
+  "chronicler": "FITD.TypeChronicler",
+  "cook": "FITD.TypeCook",
+  "driver": "FITD.TypeDriver",
+  "farmhand": "FITD.TypeFarmhand",
+  "fisherman": "FITD.TypeFisherman",
+  "footman": "FITD.TypeFootman",
+  "footpad": "FITD.TypeFootpad",
+  "forester": "FITD.TypeForester",
+  "guard": "FITD.TypeGuard",
+  "guide": "FITD.TypeGuide",
+  "inventor": "FITD.TypeInventor",
+  "linguist": "FITD.TypeLinguist",
+  "locksmith": "FITD.TypeLocksmith",
+  "lumberjack": "FITD.TypeLumberjack",
+  "mercenary": "FITD.TypeMercenary",
+  "messenger": "FITD.TypeMessenger",
+  "miner": "FITD.TypeMiner",
+  "pathfinder": "FITD.TypePathfinder",
+  "priest": "FITD.TypePriest",
+  "ratcatcher": "FITD.TypeRatCatcher",
+  "rider": "FITD.TypeRider",
+  "sailor": "FITD.TypeSailor",
+  "sawbones": "FITD.TypeSawbones",
+  "scholar": "FITD.TypeScholar",
+  "scribe": "FITD.TypeScribe",
+  "singer": "FITD.TypeSinger",
+  "spelunker": "FITD.TypeSpelunker",
+  "swordsman": "FITD.TypeSwordsman",
+  "trader": "FITD.TypeTrader",
+  "trapfinder": "FITD.TypeTrapfinder"
+};
+
+WO.positive_traits = {
+  "clever": "FITD.TraitClever",
+  "confident": "FITD.TraitConfident",
+  "generous": "FITD.TraitGenerous",
+  "helpful": "FITD.TraitHelpful",
+  "honest": "FITD.TraitHonest",
+  "optimistic": "FITD.TraitOptimistic",
+  "persistent": "FITD.TraitPersistent",
+  "steady": "FITD.TraitSteady"
+};
+
+WO.negative_traits = {
+  "brash": "FITD.TraitBrash",
+  "cocky": "FITD.TraitCocky",
+  "dishonest": "FITD.TraitDishonest",
+  "dumb": "FITD.TraitDumb",
+  "greedy": "FITD.TraitGreedy",
+  "impatient": "FITD.TraitImpatient",
+  "indecisive": "FITD.TraitIndecisive",
+  "stubborn": "FITD.TraitStubborn"
+};
+
+WO.adventurer_motivations = {
+  "challenge": "FITD.MotivationChallenge",
+  "exploration": "FITD.MotivationExploration",
+  "justice": "FITD.MotivationJustice",
+  "respect": "FITD.MotivationRespect",
+  "riches": "FITD.MotivationRiches",
+  "thrills": "FITD.MotivationThrills",
+  "vengeance": "FITD.MotivationVengeance"
+};
+

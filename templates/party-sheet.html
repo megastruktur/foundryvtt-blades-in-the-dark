@@ -1,0 +1,99 @@
+<form class="{{cssClass}} actor-sheet" autocomplete="off">
+
+  <section id="adventure-party" class="flex-vertical">
+
+    {{!-- Adventurer Table --}}
+    <div class="label-stripe flex-horizontal">
+      <p>{{localize "FITD.Adventurers"}}</p>
+      <p><a class="item-add-popup" data-item-type="adventurer"><i class="fas fa-plus-square"></i></a></p>
+    </div>
+    <table id="adventurer-list">
+      <thead>
+        <tr>
+          <td>Tier</td>
+          <td>Class</td>
+          <td>Hearts</td>
+          <td>Moves</td>
+          <td>Passive</td>
+          <td>Traits</td>
+          <td>Motivation</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        {{#each actor.items as |item id|}}
+        {{#if (eq item.type "adventurer")}}
+        {{#if (eq item.data.adventurer_type "adventurer")}}
+        <tr class="item" data-item-id="{{item._id}}">
+          <td>{{item.data.tier}}</td>
+          <td>{{item.data.adventurer_class}}</td>
+          <td>{{item.data.tier}} +1</td>
+          <td>{{item.data.moves_left}}</td>
+          <td>{{item.data.passive}}</td>
+          <td>
+            {{item.data.trait_pos_1}}{{item.data.trait_pos_2}}
+            {{item.data.trait_neg_1}}{{item.data.trait_neg_2}}
+          </td>
+          <td>
+            {{item.data.motivation_1}}{{item.data.motivation_2}}
+          </td>
+          <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+        </tr>
+        {{/if}}
+        {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+
+    {{!-- Hireling Table --}}
+    <div class="label-stripe flex-horizontal">
+      <p>{{localize "FITD.Hirelings"}}</p>
+      <p><a class="item-add-popup" data-item-type="adventurer"><i class="fas fa-plus-square"></i></a></p>
+    </div>
+    <table id="adventurer-list">
+      <thead>
+        <tr>
+          <td>Type</td>
+          <td>Heart</td>
+          <td>Move</td>
+          <td>Passive</td>
+          <td>Traits</td>
+          <td>Motivation</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        {{#each actor.items as |item id|}}
+        {{#if (eq item.type "adventurer")}}
+        {{#if (eq item.data.adventurer_type "hireling")}}
+        <tr class="item" data-item-id="{{item._id}}">
+          <td>{{item.data.hireling_type}}</td>
+          <td>1</td>
+          <td>{{item.data.moves_left}}</td>
+          <td>{{item.data.passive}}</td>
+          <td>
+            {{item.data.trait_pos_1}}{{item.data.trait_pos_2}}
+            {{item.data.trait_neg_1}}{{item.data.trait_neg_2}}
+          </td>
+          <td>
+            {{item.data.motivation_1}}{{item.data.motivation_2}}
+          </td>
+          <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+        </tr>
+        {{/if}}
+        {{/if}}
+        {{/each}}
+      </tbody>
+    </table>
+
+    {{!-- Notes --}}
+    <div id="party-notes" class="flex-vertical">
+      <div class="label-stripe">
+        <p>{{localize "FITD.Notes"}}</p>
+      </div>
+      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+  </section>
+</form>

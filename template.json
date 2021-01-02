@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": [ "character", "minion_pack", "dungeon", "clock" ],
+    "types": [ "character", "minion_pack", "dungeon", "faction", "party", "clock" ],
     "character": {
       "look": "",
       "vilefriend": "",
@@ -155,7 +155,6 @@
       }
     },
     "dungeon": {
-      "name": "",
       "tier": 0,
       "imps": "",
       "entrance": "",
@@ -172,10 +171,28 @@
         "step5": "",
         "step6": ""
       }
+    },
+    "faction": {
+      "category": "",
+      "tier": 0,
+      "clocks": {
+        "1": {
+          "active": false,
+          "text": "",
+          "size": 4,
+          "progress": 0
+        },
+        "2": {
+          "active": false,
+          "text": "",
+          "size": 4,
+          "progress": 0
+        }
+      }
     }
   },
   "Item": {
-    "types": [ "calling", "defense", "project", "duty", "dungeon_theme", "gearsupply", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "tier3room", "wickedimpulse" ],
+    "types": [ "adventurer", "calling", "defense", "project", "duty", "dungeon_theme", "gearsupply", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "tier3room", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -183,6 +200,21 @@
       "logic": {
         "logic": ""
       }
+    },
+    "adventurer": {
+      "adventurer_type": "adventurer",
+      "adventurer_class": "",
+      "hireling_type": "",
+      "tier": 0,
+      "heart_slashes_left": 2,
+      "moves_left": 3,
+      "passive": "",
+      "trait_pos_1": "",
+      "trait_pos_2": "",
+      "trait_neg_1": "",
+      "trait_neg_2": "",
+      "motivation_1": "",
+      "motivation_2": ""
     },
     "gearsupply": {
       "templates": [ "default" ],
