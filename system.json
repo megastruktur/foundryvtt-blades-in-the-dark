@@ -25,6 +25,13 @@
   "download": "https://github.com/eHanus/foundryvtt-wicked-ones/archive/2.10.zip",
   "packs": [
     {
+      "name": "adventurer",
+      "label": "Adventurers",
+      "system": "wicked-ones",
+      "path": "./packs/adventurers.db",
+      "entity": "Item"
+    },
+    {
       "name": "calling",
       "label": "Callings",
       "system": "wicked-ones",

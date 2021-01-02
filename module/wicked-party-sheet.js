@@ -4,16 +4,16 @@ import { WickedSheet } from "./wicked-sheet.js";
 /**
  * @extends {WickedSheet}
  */
-export class WickedDungeonSheet extends WickedSheet {
+export class WickedPartySheet extends WickedSheet {
 
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
-          template: "systems/wicked-ones/templates/dungeon-sheet.html",
-      width: 600,
+          template: "systems/wicked-ones/templates/party-sheet.html",
+      width: 700,
       height: 850,
-      tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "rooms"}]
+      tabs: []
     });
   }
 
@@ -51,7 +51,7 @@ export class WickedDungeonSheet extends WickedSheet {
       element.slideUp(200, () => this.render(false));
     });
 
-    // Add a new Cohort (Check if needed for Theme and Room additions)
+    // Add a new Adventurer
     html.find('.add-item').click(ev => {
       WickedHelpers._addOwnedItem(ev, this.actor);
     });
@@ -67,10 +67,6 @@ export class WickedDungeonSheet extends WickedSheet {
 
     // Update the Item
     super._updateObject(event, formData);
-
-    if (event.target && event.target.name === "data.tier") {
-      this.render(true);
-    }
   }
   /* -------------------------------------------- */
 

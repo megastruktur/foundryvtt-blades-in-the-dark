@@ -704,15 +704,17 @@ $hover-brightness: 0.8;
             font-style: italic;
             text-align: justify;
         }
+    }
 
-        .item-special-feature {
-            padding: 0px;
-            margin: 0px 10px;
-        }
+    .item-special-feature {
+        margin: 0px 10px;
+        border-radius: 20px;
+        background: $mud3f;
+        padding: 10px;
+    }
 
-        .missing-materials {
-            color: $gray;
-        }
+    .missing-materials {
+        color: $gray;
     }
 
     div {
@@ -823,6 +825,36 @@ div.item, tr.item {
         &[for$="-0"] {
             margin-right: 0px;
         }
+    }
+}
+
+// DU Dungeon Theme Bar
+#dungeon-theme-bar {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 18px;
+
+    td:first-child {
+        background-color: $mud;
+        width: 100%;
+        align-self: center;
+        height: 33px;
+    }
+
+    td:last-child {
+        padding: 0px;
+    }
+
+    tr:hover {
+        .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: 1;
+        }
+    }
+
+    tr .item-add-popup {
+        transition: opacity 0.5s;
+        opacity: 0.1;
     }
 }
 

@@ -977,11 +977,13 @@
   font-style: italic;
   text-align: justify;
 }
-.item .item-body .item-special-feature {
-  padding: 0px;
+.item .item-special-feature {
   margin: 0px 10px;
+  border-radius: 20px;
+  background: #68332c3f;
+  padding: 10px;
 }
-.item .item-body .missing-materials {
+.item .missing-materials {
   color: #999;
 }
 .item div {
@@ -1062,6 +1064,29 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 
 #character-recklessxp label[for$="-0"] {
   margin-right: 0px;
+}
+
+#dungeon-theme-bar {
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 18px;
+}
+#dungeon-theme-bar td:first-child {
+  background-color: #68332c;
+  width: 100%;
+  align-self: center;
+  height: 33px;
+}
+#dungeon-theme-bar td:last-child {
+  padding: 0px;
+}
+#dungeon-theme-bar tr:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+#dungeon-theme-bar tr .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
 }
 
 #dungeon-tier {

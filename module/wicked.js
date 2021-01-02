@@ -16,6 +16,7 @@ import { WickedItemSheet } from "./wicked-item-sheet.js";
 import { WickedActorSheet } from "./wicked-actor-sheet.js";
 import { WickedMinionSheet } from "./wicked-minion-sheet.js";
 import { WickedDungeonSheet } from "./wicked-dungeon-sheet.js";
+import { WickedPartySheet } from "./wicked-party-sheet.js";
 import { WickedClockSheet } from "./wicked-clock-sheet.js";
 import * as migrations from "./migration.js";
 import "./wicked-dicesonice.js";
@@ -49,6 +50,7 @@ Hooks.once("init", async function() {
   Actors.registerSheet("wicked", WickedActorSheet, { types: ["character"], makeDefault: true });
   Actors.registerSheet("wicked", WickedMinionSheet, { types: ["minion_pack"], makeDefault: true });
   Actors.registerSheet("wicked", WickedDungeonSheet, { types: ["dungeon"], makeDefault: true });
+  Actors.registerSheet("wicked", WickedPartySheet, { types: ["party"], makeDefault: true });
   Actors.registerSheet("wicked", WickedClockSheet, { types: ["clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("wicked", WickedItemSheet, {makeDefault: true});
