@@ -1645,3 +1645,48 @@ section.rollable-skill {
     font-weight: 700;
     margin-top: 5px;
 }
+
+// PS Adventurer Sheet
+#adventure-party {
+
+    .profile-img{
+        vertical-align: middle;
+    }
+
+    .label-stripe {
+        margin-bottom: 0px;
+    }
+
+    table {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        border-width: 0px;
+    }
+
+    .adventurer-hearts {
+        input {
+            display: none;
+        }
+
+        label {
+            @extend %custom-label;
+            height: 32px;
+            width: 32px;
+            background-image: url("assets/boxes/a-heart-filled.png");
+            //margin-right: 5px;
+            top: -3px;
+        }
+
+        label.slashed-1 {
+            background-image: url("assets/boxes/a-heart-slashed-1.png");
+        }
+
+        label.slashed-2 {
+            background-image: url("assets/boxes/a-heart-slashed-2.png");
+        }
+
+        label.greyed {
+            background-image: url("assets/boxes/a-heart-greyed.png");
+        }
+    }
+}

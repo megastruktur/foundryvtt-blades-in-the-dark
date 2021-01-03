@@ -11,8 +11,8 @@ export class WickedPartySheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/party-sheet.html",
-      width: 700,
-      height: 850,
+      width: 800,
+      height: 750,
       tabs: []
     });
   }
@@ -23,7 +23,23 @@ export class WickedPartySheet extends WickedSheet {
   getData() {
     const data = super.getData();
 
+
     // Override Code for updating the sheet goes here
+    if (true) {
+      let a = 1;
+      data.items.forEach(e => {
+        if (e.type == "adventurer") {
+          e.data.hearts = [];
+          for (var i = 1; i < 6; i++) {
+            if (e.data.tier + 1 >= i) {
+              e.data.hearts[i] = ""
+            } else {
+              e.data.hearts[i] = "greyed"
+            }
+          }
+        }
+      });
+    }
 
     return data;
   }
