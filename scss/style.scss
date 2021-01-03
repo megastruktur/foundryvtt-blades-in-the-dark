@@ -948,7 +948,7 @@ div.item, tr.item {
         background-color: $mud;
         color: $almost_white;
         font-size: 17px;
-		padding: 3px 0px;
+		padding: 4px 0px;
         padding-left: 5px;
 		text-shadow: 0 2px $darkmud;
     }
@@ -1006,7 +1006,7 @@ div.item, tr.item {
     }
 
     #attributes-bloodied {
-        /* margin-bottom: -5px; // was 15px */
+        margin-bottom: 0px;
     }
 
     .bloodied-minion {
@@ -1136,7 +1136,8 @@ table td:first-child {
 
 	#hearts-header {
 		margin-left: 33px;
-		margin-top: -10px;
+		padding-right: 10px;
+		min-width: 135px;
 	}
 // WO MP DS
 form.actor-sheet {
@@ -1559,11 +1560,12 @@ form.actor-sheet {
 
 // WO Dark Hearts
 #attributes-darkhearts {
-    margin-left: 32px;
+    /* margin-left: 32px; */
 
     .heart-container {
         justify-content: center;
-        @include custom_radio(72px, 72px);
+		margin-left: 3px;
+        @include custom_radio(30px, 30px);
 
         &:hover label {
             transition: opacity 1s;
@@ -1572,6 +1574,9 @@ form.actor-sheet {
     }
 }
 
+#hearts-display {
+	display: flex;
+}
 
 // DU MP WO Special Abilities
 #abilities, #loadout {
