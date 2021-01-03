@@ -1988,6 +1988,14 @@ section.rollable-skill div > div #upgrade-skill-rating {
 }
 #adventure-party .adventurer-hearts label.greyed {
   background-image: url("assets/boxes/a-heart-greyed.png");
+  cursor: auto;
+}
+#adventure-party .adventurer-hearts label.greyed:hover {
+  filter: none;
+  opacity: 1;
+}
+#adventure-party .adventurer-hearts label.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=wicked.css.map */

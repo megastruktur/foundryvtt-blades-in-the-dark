@@ -42,15 +42,16 @@
           <td class="adventurer-hearts flex-horizontal">
             {{#each item.data.hearts as |heart_class heart| }}
             <label for="adventurer-{{@item._id}}-heart-{{heart}}" class="adv-heart{{#if heart_class}} {{heart_class}}{{/if}}"></label>
-            <input id="adventurer-{{@item._id}}-heart-{{heart}}" type="checkbox">
+            <input id="adventurer-{{@item._id}}-heart-{{heart}}" type="radio" value="{{heart}}">
             {{/each }}
           </td>
           <td>
-            <div class="attributes-container">
-              {{#multiboxes item.moves_used}}
+            <div class="attributes-container item-radio">
+              {{#multiboxes item.data.moves_used}}
               {{#times_from_0 3}}
               <input type="radio" id="adventurer-{{@item._id}}-move-{{this}}"
-                     name="data.moves_used" value="{{this}}">
+                     value="{{this}}"
+                     data-property-to-set="moves_used">
               <label for="adventurer-{{@item._id}}-move-{{this}}"></label>
               {{/times_from_0}}
               {{/multiboxes}}

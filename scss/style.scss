@@ -1649,7 +1649,7 @@ section.rollable-skill {
 // PS Adventurer Sheet
 #adventure-party {
 
-    .profile-img{
+    .profile-img {
         vertical-align: middle;
     }
 
@@ -1687,6 +1687,16 @@ section.rollable-skill {
 
         label.greyed {
             background-image: url("assets/boxes/a-heart-greyed.png");
+            cursor:auto;
+
+            &:hover {
+                filter: none;
+                opacity: 1;
+            }
+        }
+
+        label.hidden {
+            display: none;
         }
     }
 }
