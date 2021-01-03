@@ -178,7 +178,7 @@ export function getWickedRollStatus(rolls, zeromode = false) {
   let roll_status = "failure"
 
   if (sorted_rolls[0] === 6 && zeromode) {
-    roll_status = "critical-success";
+    roll_status = "success";
   }
   else {
     let use_die;
