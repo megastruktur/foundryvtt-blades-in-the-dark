@@ -921,7 +921,7 @@
 /*
  *  Non-Anchored Styles
  */
-#attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
+#adventure-party .adventurer-hearts label, #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
   height: 24px;
   width: 24px;
   display: block;
@@ -934,7 +934,7 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-#attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
+#adventure-party .adventurer-hearts label:hover, #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
@@ -955,7 +955,6 @@
   background: url(../styles/assets/images/background-light.png) repeat #4000004f;
   background-blend-mode: color-burn;
   object-fit: cover;
-  max-width: fit-content;
 }
 
 #edge-list {
@@ -1070,6 +1069,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   padding-left: 0px;
   padding-right: 0px;
   font-size: 18px;
+  display: table-row;
 }
 #dungeon-theme-bar td:first-child {
   background-color: #68332c;
@@ -1967,6 +1967,44 @@ section.rollable-skill div > div #upgrade-skill-rating {
   font-size: 16px;
   font-weight: 700;
   margin-top: 5px;
+}
+
+#adventure-party .profile-img {
+  vertical-align: middle;
+}
+#adventure-party .label-stripe {
+  margin-bottom: 0px;
+}
+#adventure-party table {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-width: 0px;
+}
+#adventure-party .adventurer-hearts input {
+  display: none;
+}
+#adventure-party .adventurer-hearts label {
+  height: 32px;
+  width: 32px;
+  background-image: url("assets/boxes/a-heart-filled.png");
+  top: -3px;
+}
+#adventure-party .adventurer-hearts label.slashed-1 {
+  background-image: url("assets/boxes/a-heart-slashed-1.png");
+}
+#adventure-party .adventurer-hearts label.slashed-2 {
+  background-image: url("assets/boxes/a-heart-slashed-2.png");
+}
+#adventure-party .adventurer-hearts label.greyed {
+  background-image: url("assets/boxes/a-heart-greyed.png");
+  cursor: auto;
+}
+#adventure-party .adventurer-hearts label.greyed:hover {
+  filter: none;
+  opacity: 1;
+}
+#adventure-party .adventurer-hearts label.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=wicked.css.map */

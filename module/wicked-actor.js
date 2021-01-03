@@ -39,11 +39,15 @@ export class WickedActor extends Actor {
       }
     });
 
-    for (var attibute_name in this.data.data.attributes) {
-      for (var skill_name in this.data.data.attributes[attibute_name].skills) {
-        dice_amount[skill_name] = parseInt(this.data.data.attributes[attibute_name].skills[skill_name]['value'][0])
+    let attr = this.data.data.attributes;
+    for (var attr_name in attr) {
+      for (var skill_name in attr[attr_name].skills) {
+        let val = parseInt(attr[attr_name].skills[skill_name]['value'][0]);
+        if (val == 1 && attr[attr_name].skills[skill_name].practice != 0) {
+          val = 0;
+        }
+        dice_amount[skill_name] = val;
       }
-
     }
 
     return dice_amount;

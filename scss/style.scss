@@ -685,7 +685,7 @@ $hover-brightness: 0.8;
 	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
     background-blend-mode: color-burn;
 	object-fit: cover;
-	max-width: fit-content;
+	// max-width: fit-content;
 }
 
 // Edge List
@@ -833,6 +833,7 @@ div.item, tr.item {
     padding-left: 0px;
     padding-right: 0px;
     font-size: 18px;
+    display: table-row;
 
     td:first-child {
         background-color: $mud;
@@ -1651,4 +1652,59 @@ section.rollable-skill {
     font-size: 16px;
     font-weight: 700;
     margin-top: 5px;
+}
+
+// PS Adventurer Sheet
+#adventure-party {
+
+    .profile-img {
+        vertical-align: middle;
+    }
+
+    .label-stripe {
+        margin-bottom: 0px;
+    }
+
+    table {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        border-width: 0px;
+    }
+
+    .adventurer-hearts {
+        input {
+            display: none;
+        }
+
+        label {
+            @extend %custom-label;
+            height: 32px;
+            width: 32px;
+            background-image: url("assets/boxes/a-heart-filled.png");
+            //margin-right: 5px;
+            top: -3px;
+        }
+
+        label.slashed-1 {
+            background-image: url("assets/boxes/a-heart-slashed-1.png");
+        }
+
+        label.slashed-2 {
+            background-image: url("assets/boxes/a-heart-slashed-2.png");
+        }
+
+        label.greyed {
+            background-image: url("assets/boxes/a-heart-greyed.png");
+            cursor:auto;
+
+            &:hover {
+                filter: none;
+                opacity: 1;
+            }
+        }
+
+        label.hidden {
+            display: none;
+        }
+    }
 }
