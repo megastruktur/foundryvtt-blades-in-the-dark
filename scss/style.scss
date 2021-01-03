@@ -682,7 +682,7 @@ $hover-brightness: 0.8;
 	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
     background-blend-mode: color-burn;
 	object-fit: cover;
-	max-width: fit-content;
+	// max-width: fit-content;
 }
 
 // Edge List
@@ -830,6 +830,7 @@ div.item, tr.item {
     padding-left: 0px;
     padding-right: 0px;
     font-size: 18px;
+    display: table-row;
 
     td:first-child {
         background-color: $mud;

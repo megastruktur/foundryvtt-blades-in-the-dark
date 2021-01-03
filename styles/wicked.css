@@ -952,7 +952,6 @@
   background: url(../styles/assets/images/background-light.png) repeat #4000004f;
   background-blend-mode: color-burn;
   object-fit: cover;
-  max-width: fit-content;
 }
 
 #edge-list {
@@ -1067,6 +1066,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   padding-left: 0px;
   padding-right: 0px;
   font-size: 18px;
+  display: table-row;
 }
 #dungeon-theme-bar td:first-child {
   background-color: #68332c;

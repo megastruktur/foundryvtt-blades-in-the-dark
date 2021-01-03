@@ -12,7 +12,7 @@
           </div>
         </td>
       </tr>
-      <tr id="dungeon-theme-bar" class="label-stripe flex-horizontal">
+      <tr id="dungeon-theme-bar" class="label-stripe">
         <td>
           {{!-- Dungeon Theme Info --}}
           <div>
@@ -41,7 +41,7 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2">
+        <td>
           <div id="special-list">
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "dungeon_theme")}}
@@ -54,6 +54,10 @@
             {{/if}}
             {{/each}}
           </div>
+        </td>
+        <td>
+          {{!-- Small Profile Picture --}}
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
         </td>
       </tr>
     </table>
@@ -79,11 +83,13 @@
           <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
         </div>
 
+        {{!-- Tier-3 Rooms List --}}
         <table id="abilities-list">
           <tbody>
-            {{!-- Tier-3 Rooms List --}}
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "tier3room")}}
+            {{#unless item.flexibility}}
+            {{!-- Rooms from Theme --}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
                 <div class="item-name">{{item.name}}</div>
@@ -95,9 +101,29 @@
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
               </td>
             </tr>
+            {{/unless}}
             {{/if}}
             {{/each}}
-          
+
+            {{!-- Rooms from other Themes --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "tier3room")}}
+            {{#if item.flexibility}}
+            <tr class="item group-flex" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
+              </td>
+              <td>
+                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
           </tbody>
         </table>
       </div>
