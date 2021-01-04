@@ -120,6 +120,8 @@ export class WickedItemSheet extends ItemSheet {
       }
     });
 
+    /* -------------------------------------------- */
+
     // Update Edge List
     html.find('#edge-list input').change(ev => {
       const element = $(ev.currentTarget).parents(".item");
@@ -135,6 +137,25 @@ export class WickedItemSheet extends ItemSheet {
       }
       item.update({ ['data.edges']: newEdges });
     });
+
+    /* -------------------------------------------- */
+
+    // Update Adventurer Custom Field
+    html.find('select.list-with-custom').change(ev => {
+      const element = $(ev.currentTarget).parents(".item");
+      const idOffset = element[0].id.lastIndexOf('-') + 1;
+      const id = element[0].id.substring(idOffset);
+      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      const selected = ev.currentTarget.value;
+      const propertyToSet = ev.currentTarget.dataset.propertyToSet;
+      if (selected != "custom") {
+        item.update({ ['data.' + propertyToSet]: game.i18n.localize(selected) });
+      } else {
+        item.update({ ['data.' + propertyToSet]: "" });
+      }
+    });
+
+    /* -------------------------------------------- */
 
     // Clock Size Changed
     html.find('#clock-type-list .clock-size-picker').click(ev => {

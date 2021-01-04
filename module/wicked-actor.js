@@ -29,6 +29,7 @@ export class WickedActor extends Actor {
           data[i].name = this.getUniqueName(data[i].name);
           if (data[i].data.adventurer_type == "hireling" && data[i].data.hireling_type == "") {
             data[i].data.hireling_type = this.getRandomHirelingType();
+            data[i].data.hireling_type_custom = game.i18n.localize(data[i].data.hireling_type);
           }
         }
       }
@@ -36,6 +37,7 @@ export class WickedActor extends Actor {
       data.name = this.getUniqueName(data.name);
       if (data.data.adventurer_type == "hireling" && data.data.hireling_type == "") {
         data.data.hireling_type = this.getRandomHirelingType();
+        data.data.hireling_type_custom = game.i18n.localize(data.data.hireling_type);
       }
     }
     super.createEmbeddedEntity(embeddedName, data, options);
@@ -64,9 +66,8 @@ export class WickedActor extends Actor {
 
 
   getRandomHirelingType() {
-    return game.i18n.localize(
-      Object.values(CONFIG.WO.hireling_types)[Math.floor(Math.random() * Object.values(CONFIG.WO.hireling_types).length)] ?? ""
-    );
+    return Object.values(CONFIG.WO.hireling_types)[Math.floor(Math.random() * Object.values(CONFIG.WO.hireling_types).length)] ?? ""
+    ;
   }
 
   /* -------------------------------------------- */

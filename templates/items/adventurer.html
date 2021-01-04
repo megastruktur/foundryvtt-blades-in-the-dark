@@ -30,23 +30,35 @@
     {{!-- Adventurer Class --}}
     {{#if (eq data.adventurer_type "adventurer")}}
     <label>{{ localize "FITD.AdventurerClass" }}</label>
-    <input id="adventurer-class-input" list="adventurer-classes" name="data.adventurer_class" value="{{data.adventurer_class}}">
-    <datalist id="adventurer-classes">
+    <select class="list-with-custom" id="adventurer-class-select" name="data.adventurer_class" data-property-to-set="adventurer_class_custom">
+      <option value="">{{localize "FITD.NoneParentheses"}}</option>
+      <option value="custom">{{localize "FITD.Custom"}}</option>
+      {{#select data.adventurer_class}}
       {{#each config.adventurer_classes as |name type|}}
-      <option value="{{localize name}}"></option>
+      <option value="{{name}}">{{localize name}}</option>
       {{/each}}
-    </datalist>
+      {{/select}}
+    </select>
+    {{#if (eq data.adventurer_class "custom")}}
+    <input id="adventurer-custom-class" type="text" name="data.adventurer_class_custom" value="{{data.adventurer_class_custom}}" placeholder="{{localize "FITD.CustomClassHint"}}">
+    {{/if}}
     {{/if}}
 
     {{!-- Hireling Type --}}
     {{#if (eq data.adventurer_type "hireling")}}
     <label>{{ localize "FITD.HirelingType" }}</label>
-    <input id="hireling-type-input" list="hireling-types" name="data.hireling_type" value="{{data.hireling_type}}">
-    <datalist id="hireling-types">
+    <select class="list-with-custom" id="hireling-type-select" name="data.hireling_type" data-property-to-set="hireling_type_custom">
+      <option value="">{{localize "FITD.NoneParentheses"}}</option>
+      <option value="custom">{{localize "FITD.Custom"}}</option>
+      {{#select data.hireling_type}}
       {{#each config.hireling_types as |name type|}}
-      <option value="{{localize name}}"></option>
+      <option value="{{name}}">{{localize name}}</option>
       {{/each}}
-    </datalist>
+      {{/select}}
+    </select>
+    {{#if (eq data.hireling_type "custom")}}
+    <input id="hireling-custom-type" type="text" name="data.hireling_type_custom" value="{{data.hireling_type_custom}}" placeholder="{{localize "FITD.CustomTypeHint"}}">
+    {{/if}}
     {{/if}}
 
     {{!-- Passive ability --}}
@@ -63,48 +75,99 @@
       <div>
         {{!-- Positive Trait 1 --}}
         <label>{{ localize "FITD.PositiveTrait" }} 1</label>
-        <input id="adventurer-trait-pos-1" list="positive-traits" name="data.trait_pos_1" value="{{data.trait_pos_1}}">
-        <datalist id="positive-traits">
+        <select class="list-with-custom" id="adventurer-trait-pos-1" name="data.trait_pos_1" data-property-to-set="trait_pos_1_custom">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          <option value="custom">{{localize "FITD.Custom"}}</option>
+          {{#select data.trait_pos_1}}
           {{#each config.positive_traits as |name type|}}
-          <option value="{{localize name}}"></option>
+          <option value="{{name}}">{{localize name}}</option>
           {{/each}}
-        </datalist>
+          {{/select}}
+        </select>
+        {{#if (eq data.trait_pos_1 "custom")}}
+        <input id="adventurer-trait-pos-1-custom" type="text" name="data.trait_pos_1_custom" value="{{data.trait_pos_1_custom}}" placeholder="{{localize "FITD.CustomTraitHint"}}">
+        {{/if}}
 
         {{!-- Positive Trait 2 --}}
         <label>{{ localize "FITD.PositiveTrait" }} 2</label>
-        <input id="adventurer-trait-pos-2" list="positive-traits" name="data.trait_pos_2" value="{{data.trait_pos_2}}">
+        <select class="list-with-custom" id="adventurer-trait-pos-2" name="data.trait_pos_2" data-property-to-set="trait_pos_2_custom">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          <option value="custom">{{localize "FITD.Custom"}}</option>
+          {{#select data.trait_pos_2}}
+          {{#each config.positive_traits as |name type|}}
+          <option value="{{name}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+        {{#if (eq data.trait_pos_2 "custom")}}
+        <input id="adventurer-trait-pos-2-custom" type="text" name="data.trait_pos_2_custom" value="{{data.trait_pos_2_custom}}" placeholder="{{localize "FITD.CustomTraitHint"}}">
+        {{/if}}
       </div>
 
       <label class="label-stripe">{{localize "FITD.NegativeTraits"}}</label>
       <div>
         {{!-- Negative Trait 1 --}}
         <label>{{ localize "FITD.NegativeTrait" }} 1</label>
-        <input id="adventurer-trait-neg-1" list="negative-traits" name="data.trait_neg_1" value="{{data.trait_neg_1}}">
-        <datalist id="negative-traits">
+        <select class="list-with-custom" id="adventurer-trait-neg-1" name="data.trait_neg_1" data-property-to-set="trait_neg_1_custom">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          <option value="custom">{{localize "FITD.Custom"}}</option>
+          {{#select data.trait_neg_1}}
           {{#each config.negative_traits as |name type|}}
-          <option value="{{localize name}}"></option>
+          <option value="{{name}}">{{localize name}}</option>
           {{/each}}
-        </datalist>
+          {{/select}}
+        </select>
+        {{#if (eq data.trait_neg_1 "custom")}}
+        <input id="adventurer-trait-neg-1-custom" type="text" name="data.trait_neg_1_custom" value="{{data.trait_neg_1_custom}}" placeholder="{{localize "FITD.CustomTraitHint"}}">
+        {{/if}}
 
         {{!-- Negative Trait 2 --}}
         <label>{{ localize "FITD.NegativeTrait" }} 2</label>
-        <input id="adventurer-trait-neg-2" list="negative-traits" name="data.trait_neg_2" value="{{data.trait_neg_2}}">
+        <select class="list-with-custom" id="adventurer-trait-neg-2" name="data.trait_neg_2" data-property-to-set="trait_neg_2_custom">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          <option value="custom">{{localize "FITD.Custom"}}</option>
+          {{#select data.trait_neg_2}}
+          {{#each config.negative_traits as |name type|}}
+          <option value="{{name}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+        {{#if (eq data.trait_neg_2 "custom")}}
+        <input id="adventurer-trait-neg-2-custom" type="text" name="data.trait_neg_2_custom" value="{{data.trait_neg_2_custom}}" placeholder="{{localize "FITD.CustomTraitHint"}}">
+        {{/if}}
       </div>
 
       <label class="label-stripe">{{localize "FITD.Motivations"}}</label>
       <div>
         {{!-- Motivation 1 --}}
         <label>{{ localize "FITD.Motivation" }} 1</label>
-        <input id="adventurer-motivation-1" list="adventurer-motivations" name="data.motivation_1" value="{{data.motivation_1}}">
-        <datalist id="adventurer-motivations">
+        <select class="list-with-custom" id="adventurer-motivation-1" name="data.motivation_1" data-property-to-set="motivation_1_custom">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          <option value="custom">{{localize "FITD.Custom"}}</option>
+          {{#select data.motivation_1}}
           {{#each config.adventurer_motivations as |name type|}}
-          <option value="{{localize name}}"></option>
+          <option value="{{name}}">{{localize name}}</option>
           {{/each}}
-        </datalist>
+          {{/select}}
+        </select>
+        {{#if (eq data.motivation_1 "custom")}}
+        <input id="adventurer-motivation-1-custom" type="text" name="data.motivation_1_custom" value="{{data.motivation_2_custom}}" placeholder="{{localize "FITD.CustomMotivationHint"}}">
+        {{/if}}
 
-        {{!-- Motivation 2 --}}
+        {{!-- Negative Trait 2 --}}
         <label>{{ localize "FITD.Motivation" }} 2</label>
-        <input id="adventurer-motivation-2" list="adventurer-motivations" name="data.motivation_2" value="{{data.motivation_2}}">
+        <select class="list-with-custom" id="adventurer-motivation-2" name="data.motivation_2" data-property-to-set="motivation_2_custom">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          <option value="custom">{{localize "FITD.Custom"}}</option>
+          {{#select data.motivation_2}}
+          {{#each config.adventurer_motivations as |name type|}}
+          <option value="{{name}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+        {{#if (eq data.motivation_2 "custom")}}
+        <input id="adventurer-motivation-2-custom" type="text" name="data.motivation_2_custom" value="{{data.motivation_2_custom}}" placeholder="{{localize "FITD.CustomMotivationHint"}}">
+        {{/if}}
       </div>
     </section>
 

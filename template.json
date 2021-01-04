@@ -204,17 +204,25 @@
     "adventurer": {
       "adventurer_type": "adventurer",
       "adventurer_class": "",
+      "adventurer_class_custom": "",
       "hireling_type": "",
+      "hireling_type_custom": "",
       "tier": 0,
       "heart_slashes": 0,
-      "moves_used":  0,
+      "moves_used": 0,
       "passive": "",
       "trait_pos_1": "",
+      "trait_pos_1_custom": "",
       "trait_pos_2": "",
+      "trait_pos_2_custom": "",
       "trait_neg_1": "",
+      "trait_neg_1_custom": "",
       "trait_neg_2": "",
+      "trait_neg_2_custom": "",
       "motivation_1": "",
-      "motivation_2": ""
+      "motivation_1_custom": "",
+      "motivation_2": "",
+      "motivation_2_custom": ""
     },
     "gearsupply": {
       "templates": [ "default" ],
