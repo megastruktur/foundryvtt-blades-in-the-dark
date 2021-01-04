@@ -18,6 +18,57 @@ export class WickedActor extends Actor {
     return data;
   }
 
+
+  /* -------------------------------------------- */
+
+  /** @override */
+  async createEmbeddedEntity(embeddedName, data, options) {
+    if (data instanceof Array) {
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].type == "adventurer") {
+          data[i].name = this.getUniqueName(data[i].name);
+          if (data[i].data.adventurer_type == "hireling" && data[i].data.hireling_type == "") {
+            data[i].data.hireling_type = this.getRandomHirelingType();
+          }
+        }
+      }
+    } else if (data.type == "adventurer") {
+      data.name = this.getUniqueName(data.name);
+      if (data.data.adventurer_type == "hireling" && data.data.hireling_type == "") {
+        data.data.hireling_type = this.getRandomHirelingType();
+      }
+    }
+    super.createEmbeddedEntity(embeddedName, data, options);
+  }
+
+  /* -------------------------------------------- */
+
+  getUniqueName(oldName) {
+    let namesUsed = [];
+    for (var i = 0; i < this.data.items.length; i++) {
+      namesUsed.push(this.data.items[i].name);
+    }
+
+    let newName = oldName;
+    if (namesUsed.indexOf(newName) != -1) {
+      let j = 1;
+      do {
+        j++;
+        newName = oldName + ' ' + j;
+      } while (namesUsed.indexOf(newName) != -1 || j > 999);
+    }
+    return newName;
+  }
+
+  /* -------------------------------------------- */
+
+
+  getRandomHirelingType() {
+    return game.i18n.localize(
+      Object.values(CONFIG.WO.hireling_types)[Math.floor(Math.random() * Object.values(CONFIG.WO.hireling_types).length)] ?? ""
+    );
+  }
+
   /* -------------------------------------------- */
   /**
    * Calculate Attribute Dice to throw.

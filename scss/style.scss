@@ -1663,6 +1663,10 @@ section.rollable-skill {
         border-width: 0px;
     }
 
+    #adventurer-list thead td:nth-child(4), #hireling-list thead td:nth-child(3) {
+        padding-left: 15px;
+    }
+
     .adventurer-hearts {
         input {
             display: none;
@@ -1687,7 +1691,7 @@ section.rollable-skill {
 
         label.greyed {
             background-image: url("assets/boxes/a-heart-greyed.png");
-            cursor:auto;
+            cursor: auto;
 
             &:hover {
                 filter: none;
@@ -1697,6 +1701,32 @@ section.rollable-skill {
 
         label.hidden {
             display: none;
+        }
+    }
+
+    td.moves-radio {
+        //display: table-cell;
+        div {
+            @include custom_radio(24px, 24px);
+        }
+
+        &:hover > div.attributes-container label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
+
+        label.adv-move-greyed {
+            @extend %custom-label;
+            margin-left: 8px;
+            height: 24px;
+            width: 24px;
+            background-image: url("assets/boxes/box-greyed.png");
+            cursor: auto;
+
+            &:hover {
+                filter: none;
+                opacity: 1;
+            }
         }
     }
 }

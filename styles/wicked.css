@@ -918,7 +918,7 @@
 /*
  *  Non-Anchored Styles
  */
-#adventure-party .adventurer-hearts label, #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
+#adventure-party td.moves-radio label.adv-move-greyed, #adventure-party .adventurer-hearts label, #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
   height: 24px;
   width: 24px;
   display: block;
@@ -931,7 +931,7 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-#adventure-party .adventurer-hearts label:hover, #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
+#adventure-party td.moves-radio label.adv-move-greyed:hover, #adventure-party .adventurer-hearts label:hover, #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
@@ -1971,6 +1971,9 @@ section.rollable-skill div > div #upgrade-skill-rating {
   margin-bottom: 10px;
   border-width: 0px;
 }
+#adventure-party #adventurer-list thead td:nth-child(4), #adventure-party #hireling-list thead td:nth-child(3) {
+  padding-left: 15px;
+}
 #adventure-party .adventurer-hearts input {
   display: none;
 }
@@ -1996,6 +1999,83 @@ section.rollable-skill div > div #upgrade-skill-rating {
 }
 #adventure-party .adventurer-hearts label.hidden {
   display: none;
+}
+#adventure-party td.moves-radio div {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#adventure-party td.moves-radio div label {
+  height: 24px;
+  width: 24px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#adventure-party td.moves-radio div label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 4px;
+  position: relative;
+  top: -4px;
+}
+#adventure-party td.moves-radio div label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#adventure-party td.moves-radio div label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#adventure-party td.moves-radio div input {
+  display: none;
+}
+#adventure-party td.moves-radio div input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#adventure-party td.moves-radio div input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#adventure-party td.moves-radio div input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+}
+#adventure-party td.moves-radio div input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#adventure-party td.moves-radio div input:checked + label.dark-heart {
+  /* animation: glow 2000ms ease-out infinite alternate; */
+  background-image: url("assets/boxes/heart-filled.png");
+}
+#adventure-party td.moves-radio div input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#adventure-party td.moves-radio div input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#adventure-party td.moves-radio:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#adventure-party td.moves-radio label.adv-move-greyed {
+  margin-left: 8px;
+  height: 24px;
+  width: 24px;
+  background-image: url("assets/boxes/box-greyed.png");
+  cursor: auto;
+}
+#adventure-party td.moves-radio label.adv-move-greyed:hover {
+  filter: none;
+  opacity: 1;
 }
 
 /*# sourceMappingURL=wicked.css.map */
