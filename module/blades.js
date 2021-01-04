@@ -49,6 +49,15 @@ Hooks.once("init", async function() {
   preloadHandlebarsTemplates();
 
 
+  // Is the value Turf side.
+  Handlebars.registerHelper('is_turf_side', function(value, options) {
+    if (["left", "right", "top", "bottom"].includes(value)) {
+      return options.fn(this);
+    } else {
+      return options.inverse(this);
+    }
+  });
+
   // Multiboxes.
   Handlebars.registerHelper('multiboxes', function(selected, options) {
     

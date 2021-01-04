@@ -4,8 +4,16 @@
     {{#each turfs_data as |turf id|}}
     <div class="turf-block {{#if turf.value}}turf-selected{{/if}}">
 
-        {{#each turf.connects as |connect|}}
-          <div class="connector {{connect}}"></div>
+        {{#each turf.connects as |connect key|}}
+
+          {{#is_turf_side key}}
+            {{#if connect}}
+            <div class="connector {{key}}"></div>
+            {{/if}}
+          {{else}}
+            <div class="connector {{connect}}"></div>
+          {{/is_turf_side}}
+
         {{/each}}
 
         {{#if ../can_edit}}
@@ -16,10 +24,10 @@
 
           <div>
             {{#multiboxes turf.connects}}
-            <input type="checkbox" name="data.turfs.{{id}}.connects" value="left">
-            <input type="checkbox" name="data.turfs.{{id}}.connects" value="top">
-            <input type="checkbox" name="data.turfs.{{id}}.connects" value="right">
-            <input type="checkbox" name="data.turfs.{{id}}.connects" value="bottom">
+            <input type="checkbox" name="data.turfs.{{id}}.connects.left" {{checked turf.connects.left}}>
+            <input type="checkbox" name="data.turfs.{{id}}.connects.top" {{checked turf.connects.top}}>
+            <input type="checkbox" name="data.turfs.{{id}}.connects.right" {{checked turf.connects.right}}>
+            <input type="checkbox" name="data.turfs.{{id}}.connects.bottom" {{checked turf.connects.bottom}}>
             {{/multiboxes}}
           </div>
 
