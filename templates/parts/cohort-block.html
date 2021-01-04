@@ -27,15 +27,15 @@
       
       <div class="flex-vertical">
         <div class="flex-vertical">
-          {{#each item.data.edges as |edge key|}}
-            {{#with (lookup ../item.data.edges_list edge)}}
-              <div class="description">{{localize description}} <b>({{localize label}})</b></div>
-            {{/with}}
+          {{#each item.data.edges_list as |edge key|}}
+            {{#if edge.selected }}
+              <div class="description">{{localize edge.description}} <b>({{localize edge.label}})</b></div>
+            {{/if}}
           {{/each}}
-          {{#each item.data.flaws as |flaw key|}}
-            {{#with (lookup ../item.data.flaws_list flaw)}}
-              <div class="description">{{localize description}} <b>({{localize label}})</b></div>
-            {{/with}}
+          {{#each item.data.flaws_list as |flaw key|}}
+            {{#if flaw.selected }}
+              <div class="description">{{localize flaw.description}} <b>({{localize flaw.label}})</b></div>
+            {{/if}}
           {{/each}}
         </div>
       </div>

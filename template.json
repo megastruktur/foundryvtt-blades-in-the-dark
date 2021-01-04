@@ -237,38 +237,46 @@
     "edges_list": {
       "Fearsome": {
         "label": "BITD.EdgesFearsome",
-        "description": "BITD.EdgesFearsomeDescription"
+        "description": "BITD.EdgesFearsomeDescription",
+        "selected": false
       },
       "Independent": {
         "label": "BITD.EdgesIndependent",
-        "description": "BITD.EdgesIndependentDescription"
+        "description": "BITD.EdgesIndependentDescription",
+        "selected": false
       },
       "Loyal": {
         "label": "BITD.EdgesLoyal",
-        "description": "BITD.EdgesLoyalDescription"
+        "description": "BITD.EdgesLoyalDescription",
+        "selected": false
       },
       "Tenacious": {
         "label": "BITD.EdgesTenacious",
-        "description": "BITD.EdgesTenaciousDescription"
+        "description": "BITD.EdgesTenaciousDescription",
+        "selected": false
       }
     },
     "flaws": [],
     "flaws_list": {
       "Principled": {
         "label": "BITD.FlawsPrincipled",
-        "description": "BITD.FlawsPrincipledDescription"
+        "description": "BITD.FlawsPrincipledDescription",
+        "selected": false
       },
       "Savage": {
         "label": "BITD.FlawsSavage",
-        "description": "BITD.FlawsSavageDescription"
+        "description": "BITD.FlawsSavageDescription",
+        "selected": false
       },
       "Unreliable": {
         "label": "BITD.FlawsUnreliable",
-        "description": "BITD.FlawsUnreliableDescription"
+        "description": "BITD.FlawsUnreliableDescription",
+        "selected": false
       },
       "Wild": {
         "label": "BITD.FlawsWild",
-        "description": "BITD.FlawsWildDescription"
+        "description": "BITD.FlawsWildDescription",
+        "selected": false
       }
     },
     "harm": ["No"],
