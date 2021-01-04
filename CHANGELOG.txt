@@ -1,3 +1,6 @@
+v2.12
+- Fix turf and cohort edge/flaws checkboxes
+
 v2.11
 - Fix localize for Rolls (@kinote)
 - Adjust avatar image position for Actor, Crew and Item (@olivier-grech)
