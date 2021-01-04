@@ -74,24 +74,22 @@
       <div class="edgeflaw-container flex-vertical">
         <div class="label-stripe">{{localize "BITD.Edges"}}</div>
         {{#each data.edges_list as |edge key|}}
-          {{#multiboxes ../data.edges}}
           <div class="edgeflaw flex-horizontal">
-            <input id="edge-{{key}}" type="checkbox" name="data.edges" value="{{key}}">
-            <label for="edge-{{key}}">{{localize edge.label}}</label>
+            <input id="cohort-{{item._id}}-edge-{{key}}" type="checkbox" name="data.edges_list.{{key}}.selected"
+                   {{checked edge.selected}}>
+            <label for="cohort-{{item._id}}-edge-{{key}}">{{localize edge.label}}</label>
           </div>
-          {{/multiboxes}}
         {{/each}}
       </div>
 
       <div class="edgeflaw-container flex-vertical">
         <div class="label-stripe">{{localize "BITD.Flaws"}}</div>
         {{#each data.flaws_list as |flaw key|}}
-          {{#multiboxes ../data.flaws}}
           <div class="edgeflaw flex-horizontal">
-            <input id="flaw-{{key}}" type="checkbox" name="data.flaws" value="{{key}}">
-            <label for="flaw-{{key}}">{{localize flaw.label}}</label>
+            <input id="cohort-{{item._id}}-flaw-{{key}}" type="checkbox" name="data.flaws_list.{{key}}.selected"
+                   {{checked flaw.selected}}>
+            <label for="cohort-{{item._id}}-flaw-{{key}}">{{localize flaw.label}}</label>
           </div>
-          {{/multiboxes}}
         {{/each}}
       </div>
 
