@@ -164,6 +164,9 @@
   box-shadow: 0 0 5px #d46c1f;
   background: #d46c1f;
 }
+* .sheet {
+  min-width: min-content;
+}
 * .dialog .dialog-buttons button {
   background: #68332c;
   border-top: 1px outset #d46c1f;
@@ -1186,7 +1189,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   background-color: #68332c;
   color: #EEEFFF;
   font-size: 17px;
-  padding: 3px 0px;
+  padding: 4px 0px;
   padding-left: 5px;
   text-shadow: 0 2px #311815;
 }
@@ -1230,7 +1233,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   z-index: -1;
 }
 #attributes #attributes-bloodied {
-  /* margin-bottom: -5px; // was 15px */
+  margin-bottom: 0px;
 }
 #attributes .bloodied-minion input {
   display: none;
@@ -1309,7 +1312,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   background-image: url("assets/boxes/heart-filled.png");
   margin-right: 4px;
   position: relative;
-  top: -4px;
+  top: -2px;
 }
 #attributes .attributes-container label[for$="-0"] {
   height: 8px;
@@ -1360,8 +1363,8 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   margin-top: 3px;
 }
 #attributes .attribute-description {
-  font-size: 10px;
-  padding: 0px 5px;
+  font-size: 11px;
+  padding-left: 6px;
   font-family: Bitter;
   font-weight: 500;
 }
@@ -1391,7 +1394,8 @@ table td:first-child {
 
 #hearts-header {
   margin-left: 33px;
-  margin-top: -10px;
+  padding-right: 10px;
+  min-width: 135px;
 }
 
 form.actor-sheet #name input[type=text] {
@@ -1835,16 +1839,17 @@ form.actor-sheet #name input[type=text] {
 }
 
 #attributes-darkhearts {
-  margin-left: 32px;
+  /* margin-left: 32px; */
 }
 #attributes-darkhearts .heart-container {
   justify-content: center;
+  margin-left: 3px;
   display: flex;
   /* Hide the browser's default checkbox */
 }
 #attributes-darkhearts .heart-container label {
-  height: 72px;
-  width: 72px;
+  height: 30px;
+  width: 30px;
   background-image: url("assets/boxes/box-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -1856,7 +1861,7 @@ form.actor-sheet #name input[type=text] {
   background-image: url("assets/boxes/heart-filled.png");
   margin-right: 4px;
   position: relative;
-  top: -4px;
+  top: -2px;
 }
 #attributes-darkhearts .heart-container label[for$="-0"] {
   height: 8px;
@@ -1903,6 +1908,10 @@ form.actor-sheet #name input[type=text] {
 #attributes-darkhearts .heart-container:hover label {
   transition: opacity 1s;
   opacity: 1;
+}
+
+#hearts-display {
+  display: flex;
 }
 
 #abilities .item-body, #loadout .item-body {
