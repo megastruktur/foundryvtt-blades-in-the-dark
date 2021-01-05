@@ -175,20 +175,12 @@
     "faction": {
       "category": "",
       "tier": 0,
-      "clocks": {
-        "1": {
-          "active": false,
-          "text": "",
-          "size": 4,
-          "progress": 0
-        },
-        "2": {
-          "active": false,
-          "text": "",
-          "size": 4,
-          "progress": 0
-        }
-      }
+      "clock_text_1": "",
+      "clock_text_2": "",
+      "clock_size_1": 0,
+      "clock_size_2": 0,
+      "clock_progress_1": 0,
+      "clock_progress_2": 0
     }
   },
   "Item": {

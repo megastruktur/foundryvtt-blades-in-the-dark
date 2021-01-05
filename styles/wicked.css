@@ -2137,4 +2137,189 @@ section.rollable-skill div > div #upgrade-skill-rating {
   margin-right: 0px;
 }
 
+#faction-sheet div.label-stripe {
+  margin: 0px;
+}
+#faction-sheet #faction-clocks {
+  margin-top: 0px;
+}
+#faction-sheet #faction-clocks td {
+  width: 50%;
+}
+#faction-sheet #faction-clocks td textarea {
+  resize: none;
+}
+#faction-sheet .faction-clock-display {
+  width: 60px;
+}
+#faction-sheet .faction-clock-display.seg-4 {
+  position: relative;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock input[value="0"] {
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-6 {
+  position: relative;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock input[value="0"] {
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-8 {
+  position: relative;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock input[value="0"] {
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(5) {
+  transform: rotate(45deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(7) {
+  transform: rotate(90deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(9) {
+  transform: rotate(135deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(11) {
+  transform: rotate(180deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(13) {
+  transform: rotate(225deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(15) {
+  transform: rotate(270deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(17) {
+  transform: rotate(315deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+#faction-sheet .faction-clock-display .blades-clock {
+  top: -10px;
+}
+#faction-sheet table.name-and-image td:nth-child(2) {
+  width: 60px;
+}
+
 /*# sourceMappingURL=wicked.css.map */

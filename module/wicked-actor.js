@@ -8,6 +8,38 @@ import { WickedHelpers } from "./wicked-helpers.js";
 export class WickedActor extends Actor {
 
 
+  /**
+   * Augment the basic actor data with additional dynamic data.
+   */
+  /** @override */
+  prepareData() {
+    super.prepareData();
+
+    const actorData = this.data;
+    const data = actorData.data;
+    const flags = actorData.flags;
+
+    // Make separate methods for each Actor type (character, npc, etc.) to keep
+    // things organized.
+    if (actorData.type === 'faction') this._prepareFactionData(actorData);
+  }
+
+
+  /**
+   * Prepare Character type specific data
+   */
+  _prepareFactionData(actorData) {
+    const data = actorData.data;
+
+    // Make modifications to data here.
+    data.clock_active_1 = (data.clock_size_1 != 0);
+    data.clock_active_2 = (data.clock_size_2 != 0);
+    data.clock_uid_1 = actorData._id + "-1";
+    data.clock_uid_2 = actorData._id + "-2";
+  }
+
+  /* -------------------------------------------- */
+
   /** @override */
   getRollData() {
     const data = super.getRollData();

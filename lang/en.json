@@ -358,6 +358,12 @@
   "FITD.AbilityLair": "Lair",
   "FITD.RoomGearLocker": "Gear Locker",
 
+  "FITD.Clock": "Clock",
+  "FITD.Clocks": "Clocks",
+  "FITD.Segements": "Segements",
+  "FITD.Off": "Off",
+  "FITD.Project": "Project",
+
   "FITD.BasicInformation": "Basic Information",
   "FITD.Custom": "(Custom)",
   "FITD.Random": "(Random)",

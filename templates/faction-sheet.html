@@ -1,0 +1,91 @@
+<form class="{{cssClass}} actor-sheet" autocomplete="off">
+
+
+  <section id="faction-sheet" class="flex-vertical">
+    <table class="name-and-image">
+      <tr>
+        <td id="name">
+            <input type="text" id="party-{{actor._id}}-name" name="name" value="{{actor.name}}">
+        </td>
+        <td>
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+        </td>
+      </tr>
+    </table>
+
+    {{!-- Clocks Table --}}
+    <div class="label-stripe flex-horizontal">
+      <p>{{localize "FITD.Clocks"}}</p>
+    </div>
+    <table id="faction-clocks">
+      <tbody>
+        <tr>
+          <td>
+            <select class="clock-configuration" id="faction-clock-1-select" name="data.clock_size_1">
+              {{#select data.clock_size_1}}
+              <option value="0">{{localize "FITD.Off"}}</option>
+              <option value="4">4 {{localize "FITD.Segements"}}</option>
+              <option value="6">6 {{localize "FITD.Segements"}}</option>
+              <option value="8">8 {{localize "FITD.Segements"}}</option>
+              {{/select}}
+            </select>
+          </td>
+          <td>
+            <select class="clock-configuration" id="faction-clock-2-select" name="data.clock_size_2">
+              {{#select data.clock_size_2}}
+              <option value="0">{{localize "FITD.Off"}}</option>
+              <option value="4">4 {{localize "FITD.Segements"}}</option>
+              <option value="6">6 {{localize "FITD.Segements"}}</option>
+              <option value="8">8 {{localize "FITD.Segements"}}</option>
+              {{/select}}
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {{!-- Display Clock 1 here --}}
+            <div class="faction-clock-display seg-{{data.clock_size_1}}" id="faction-clock-1-display">
+              {{#if (eq data.clock_active_1 true)}}
+              {{{blades-clock "data.clock_progress_1" data.clock_size_1 data.clock_progress_1 data.clock_uid_1}}}
+              {{/if}}
+            </div>
+          </td>
+          <td>
+            {{!-- Display Clock 2 here --}}
+            <div class="faction-clock-display seg-{{data.clock_size_2}}" id="faction-clock-2-display">
+              {{#if (eq data.clock_active_2 true)}}
+              {{{blades-clock "data.clock_progress_2" data.clock_size_2 data.clock_progress_2 data.clock_uid_2}}}
+              {{/if}}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="faction-clock-text" id="faction-clock-1-text">
+              {{#if (eq data.clock_active_1 true)}}
+              <label>{{localize "FITD.Project"}} 1</label>
+              <textarea rows="4" name="data.clock_text_1">{{data.clock_text_1}}</textarea>
+              {{/if}}
+            </div>
+          </td>
+          <td>
+            <div class="faction-clock-text" id="faction-clock-2-text">
+              {{#if (eq data.clock_active_2 true)}}
+              <label>{{localize "FITD.Project"}} 2</label>
+              <textarea rows="4" name="data.clock_text_2">{{data.clock_text_2}}</textarea>
+              {{/if}}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    {{!-- Notes --}}
+    <div id="party-notes" class="flex-vertical">
+      <div class="label-stripe">
+        <p>{{localize "FITD.Notes"}}</p>
+      </div>
+      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    </div>
+  </section>
+</form>
