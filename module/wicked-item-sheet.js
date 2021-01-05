@@ -148,10 +148,21 @@ export class WickedItemSheet extends ItemSheet {
       const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
       const selected = ev.currentTarget.value;
       const propertyToSet = ev.currentTarget.dataset.propertyToSet;
-      if (selected != "custom") {
-        item.update({ ['data.' + propertyToSet]: game.i18n.localize(selected) });
-      } else {
+      if (selected == "" || selected == "custom") {
         item.update({ ['data.' + propertyToSet]: "" });
+      } else if (selected == "random") {
+        const options = ev.currentTarget.length - 3;
+        const choice = Math.floor(Math.random() * options ) + 3;
+        for (var i = 0; i < ev.currentTarget.length; i++) {
+          if (i == choice) {
+            ev.currentTarget[i].selected = true;
+            item.update({ ['data.' + propertyToSet]: game.i18n.localize(ev.currentTarget[i].value) });
+          } else {
+            ev.currentTarget[i].selected = false;
+          }
+        }
+      } else {
+        item.update({ ['data.' + propertyToSet]: game.i18n.localize(selected) });
       }
     });
 

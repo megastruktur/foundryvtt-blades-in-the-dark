@@ -1671,6 +1671,10 @@ section.rollable-skill {
         padding-left: 15px;
     }
 
+    #adventurer-list thead td:nth-child(8), #hireling-list thead td:nth-child(7) {
+        width: 20px;
+    }
+
     #hireling-list tbody td:nth-child(4) label {
         min-width: 100px;
         width: 20%;
@@ -1714,7 +1718,6 @@ section.rollable-skill {
     }
 
     td.moves-radio {
-        //display: table-cell;
         div {
             @include custom_radio(24px, 24px);
         }
@@ -1762,6 +1765,40 @@ section.rollable-skill {
             &.motivation {
                 color: $almost_black;
             }
+        }
+    }
+}
+
+#adventurer-sheet-body {
+    .label-stripe {
+        padding: 0;
+        margin: 15px 0px 5px 0px;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+
+    & > div:last-child {
+        margin-right: 20px;
+    }
+
+    input {
+        margin-top: 5px;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .class-selector {
+        flex: 3;
+        margin-left: -3px;
+
+        select {
+            margin-top: 5px;
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
         }
     }
 }

@@ -323,7 +323,7 @@
   "FITD.DSOuterEyes": "Outer Eyes",
   "FITD.DSOtherEyes": "Other Eyes",
   "FITD.DSConfigureRays": "Configure Eye Rays",
-  "FITD.NoneParentheses": "(none)",
+  "FITD.NoneParentheses": "(None)",
   "FITD.RayDeath": "Death Ray",
   "FITD.RayTransmo": "Transmogr. Ray",
   "FITD.RayParalysis": "Paralysis Ray",
@@ -358,7 +358,9 @@
   "FITD.AbilityLair": "Lair",
   "FITD.RoomGearLocker": "Gear Locker",
 
+  "FITD.BasicInformation": "Basic Information",
   "FITD.Custom": "(Custom)",
+  "FITD.Random": "(Random)",
   "FITD.AdventurerType": "Adventurer Type",
   "FITD.Adventurer": "Adventurer",
   "FITD.Adventurers": "Adventurers",
