@@ -1971,8 +1971,16 @@ section.rollable-skill div > div #upgrade-skill-rating {
   margin-bottom: 10px;
   border-width: 0px;
 }
+#adventure-party table tr {
+  max-height: 32px;
+}
 #adventure-party #adventurer-list thead td:nth-child(4), #adventure-party #hireling-list thead td:nth-child(3) {
   padding-left: 15px;
+}
+#adventure-party #hireling-list tbody td:nth-child(4) label {
+  min-width: 100px;
+  width: 20%;
+  max-width: 50%;
 }
 #adventure-party .adventurer-hearts input {
   display: none;
@@ -1981,7 +1989,7 @@ section.rollable-skill div > div #upgrade-skill-rating {
   height: 32px;
   width: 32px;
   background-image: url("assets/boxes/a-heart-filled.png");
-  top: -3px;
+  top: -1px;
 }
 #adventure-party .adventurer-hearts label.slashed-1 {
   background-image: url("assets/boxes/a-heart-slashed-1.png");
@@ -2076,6 +2084,27 @@ section.rollable-skill div > div #upgrade-skill-rating {
 #adventure-party td.moves-radio label.adv-move-greyed:hover {
   filter: none;
   opacity: 1;
+}
+#adventure-party .trait-tags {
+  margin-top: 4px;
+}
+#adventure-party .trait-tags label {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+}
+#adventure-party .trait-tags label.positive {
+  color: #2c3678;
+}
+#adventure-party .trait-tags label.negative {
+  color: #68332c;
+}
+#adventure-party .trait-tags label.motivation {
+  color: #191919;
 }
 
 /*# sourceMappingURL=wicked.css.map */

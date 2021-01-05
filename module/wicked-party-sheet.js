@@ -11,8 +11,8 @@ export class WickedPartySheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/party-sheet.html",
-      width: 800,
-      height: 750,
+      width: 830,
+      height: 620,
       tabs: []
     });
   }

@@ -1661,10 +1661,20 @@ section.rollable-skill {
         margin-top: 0px;
         margin-bottom: 10px;
         border-width: 0px;
+
+        tr {
+            max-height: 32px;
+        }
     }
 
     #adventurer-list thead td:nth-child(4), #hireling-list thead td:nth-child(3) {
         padding-left: 15px;
+    }
+
+    #hireling-list tbody td:nth-child(4) label {
+        min-width: 100px;
+        width: 20%;
+        max-width: 50%;
     }
 
     .adventurer-hearts {
@@ -1677,8 +1687,7 @@ section.rollable-skill {
             height: 32px;
             width: 32px;
             background-image: url("assets/boxes/a-heart-filled.png");
-            //margin-right: 5px;
-            top: -3px;
+            top: -1px;
         }
 
         label.slashed-1 {
@@ -1726,6 +1735,32 @@ section.rollable-skill {
             &:hover {
                 filter: none;
                 opacity: 1;
+            }
+        }
+    }
+    // AP Trait Tags
+    .trait-tags {
+        margin-top: 4px;
+
+        label {
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $gray;
+            border-radius: 5px;
+            padding: 2px 4px;
+            margin-bottom: 4px;
+
+            &.positive {
+                color: $mixed;
+            }
+
+            &.negative {
+                color: $mud;
+            }
+
+            &.motivation {
+                color: $almost_black;
             }
         }
     }
