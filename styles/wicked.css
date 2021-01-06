@@ -242,6 +242,26 @@
 * nav {
   margin-bottom: 10px;
 }
+* input[type=checkbox] {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+* input[type=checkbox]:checked {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-image: url("assets/boxes/box-crossed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 * .action-info {
   margin-top: -20px;
 }
@@ -978,7 +998,7 @@
 }
 .item .item-special-feature {
   margin: 0px 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   background: #68332c3f;
   padding: 10px;
 }
@@ -990,6 +1010,10 @@
 }
 .item .item-class-label {
   margin-bottom: 10px;
+}
+
+.item-checkmark {
+  font-weight: 700;
 }
 
 .item-class-label {
@@ -1180,7 +1204,7 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   position: relative;
 }
 #attributes.minion {
-  min-width: 235px;
+  min-width: 245px;
 }
 #attributes .attribute {
   margin-bottom: 5px;
@@ -1448,7 +1472,7 @@ form.actor-sheet #name input[type=text] {
 }
 #character-defenses table tr td:nth-of-type(1) .item-checkmark {
   flex-grow: unset;
-  margin-right: 0px 3px;
+  margin: auto;
 }
 #character-defenses table tr td:nth-of-type(2) {
   display: flex;
@@ -1769,7 +1793,8 @@ form.actor-sheet #name input[type=text] {
   font-weight: 500;
   font-family: Piedra;
   font-size: 20px;
-  padding: 0px 10px;
+  padding: 0px 5px;
+  margin: auto;
 }
 
 #defenses-stress {

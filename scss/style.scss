@@ -163,7 +163,27 @@ $hover-brightness: 0.8;
     nav {
         margin-bottom: 10px;
     }
-
+	
+	input[type="checkbox"] {
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+		background-image: url("assets/boxes/box-empty.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	input[type="checkbox"]:checked {
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		-moz-appearance: none;
+		-o-appearance: none;
+		appearance: none;
+		background-image: url("assets/boxes/box-crossed.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 
     .action-info {
         margin-top: -20px;
@@ -708,7 +728,7 @@ $hover-brightness: 0.8;
 
     .item-special-feature {
         margin: 0px 10px;
-        border-radius: 20px;
+        border-radius: 10px;
         background: $mud3f;
         padding: 10px;
     }
@@ -728,6 +748,9 @@ $hover-brightness: 0.8;
     .item-class-label {
         width: 100px;
     }*/
+}
+.item-checkmark{
+	font-weight: 700;
 }
 
 .item-class-label {
@@ -938,7 +961,7 @@ div.item, tr.item {
     position: relative;
 
     &.minion {
-        min-width: 235px;
+        min-width: 245px;
     }
 
     .attribute {
@@ -1207,7 +1230,7 @@ form.actor-sheet {
 
             td:nth-of-type(1) .item-checkmark {
                 flex-grow: unset;
-                margin-right: 0px 3px;
+                margin: auto;
             }
 
             td:nth-of-type(2) {
@@ -1537,7 +1560,8 @@ form.actor-sheet {
 	font-weight: 500;
 	font-family: Piedra;
 	font-size: 20px;
-	padding: 0px 10px;
+	padding: 0px 5px;
+	margin:auto;
 	}
 // WO Defenses Stress Area
 #defenses-stress {
