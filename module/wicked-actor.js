@@ -8,6 +8,38 @@ import { WickedHelpers } from "./wicked-helpers.js";
 export class WickedActor extends Actor {
 
 
+  /**
+   * Augment the basic actor data with additional dynamic data.
+   */
+  /** @override */
+  prepareData() {
+    super.prepareData();
+
+    const actorData = this.data;
+    const data = actorData.data;
+    const flags = actorData.flags;
+
+    // Make separate methods for each Actor type (character, npc, etc.) to keep
+    // things organized.
+    if (actorData.type === 'faction') this._prepareFactionData(actorData);
+  }
+
+
+  /**
+   * Prepare Character type specific data
+   */
+  _prepareFactionData(actorData) {
+    const data = actorData.data;
+
+    // Make modifications to data here.
+    data.clock_active_1 = (data.clock_size_1 != 0);
+    data.clock_active_2 = (data.clock_size_2 != 0);
+    data.clock_uid_1 = actorData._id + "-1";
+    data.clock_uid_2 = actorData._id + "-2";
+  }
+
+  /* -------------------------------------------- */
+
   /** @override */
   getRollData() {
     const data = super.getRollData();
@@ -16,6 +48,58 @@ export class WickedActor extends Actor {
     data.default_bonus = this.getAttributeDefaultBonus();
 
     return data;
+  }
+
+
+  /* -------------------------------------------- */
+
+  /** @override */
+  async createEmbeddedEntity(embeddedName, data, options) {
+    if (data instanceof Array) {
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].type == "adventurer") {
+          data[i].name = this.getUniqueName(data[i].name);
+          if (data[i].data.adventurer_type == "hireling" && data[i].data.hireling_type == "") {
+            data[i].data.hireling_type = this.getRandomHirelingType();
+            data[i].data.hireling_type_custom = game.i18n.localize(data[i].data.hireling_type);
+          }
+        }
+      }
+    } else if (data.type == "adventurer") {
+      data.name = this.getUniqueName(data.name);
+      if (data.data.adventurer_type == "hireling" && data.data.hireling_type == "") {
+        data.data.hireling_type = this.getRandomHirelingType();
+        data.data.hireling_type_custom = game.i18n.localize(data.data.hireling_type);
+      }
+    }
+    super.createEmbeddedEntity(embeddedName, data, options);
+  }
+
+  /* -------------------------------------------- */
+
+  getUniqueName(oldName) {
+    let namesUsed = [];
+    for (var i = 0; i < this.data.items.length; i++) {
+      namesUsed.push(this.data.items[i].name);
+    }
+
+    let newName = oldName;
+    if (namesUsed.indexOf(newName) != -1) {
+      let j = 1;
+      do {
+        j++;
+        newName = oldName + ' ' + j;
+      } while (namesUsed.indexOf(newName) != -1 || j > 999);
+    }
+    return newName;
+  }
+
+  /* -------------------------------------------- */
+
+
+  getRandomHirelingType() {
+    return Object.values(CONFIG.WO.hireling_types)[Math.floor(Math.random() * Object.values(CONFIG.WO.hireling_types).length)] ?? ""
+    ;
   }
 
   /* -------------------------------------------- */

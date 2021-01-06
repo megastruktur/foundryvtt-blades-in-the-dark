@@ -941,7 +941,7 @@
 /*
  *  Non-Anchored Styles
  */
-#adventure-party .adventurer-hearts label, #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
+#adventure-party td.moves-radio label.adv-move-greyed, #adventure-party .adventurer-hearts label, #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
   height: 24px;
   width: 24px;
   display: block;
@@ -954,7 +954,7 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-#adventure-party .adventurer-hearts label:hover, #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
+#adventure-party td.moves-radio label.adv-move-greyed:hover, #adventure-party .adventurer-hearts label:hover, #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
@@ -2005,6 +2005,20 @@ section.rollable-skill div > div #upgrade-skill-rating {
   margin-bottom: 10px;
   border-width: 0px;
 }
+#adventure-party table tr {
+  max-height: 32px;
+}
+#adventure-party #adventurer-list thead td:nth-child(4), #adventure-party #hireling-list thead td:nth-child(3) {
+  padding-left: 15px;
+}
+#adventure-party #adventurer-list thead td:nth-child(8), #adventure-party #hireling-list thead td:nth-child(7) {
+  width: 20px;
+}
+#adventure-party #hireling-list tbody td:nth-child(4) label {
+  min-width: 100px;
+  width: 20%;
+  max-width: 50%;
+}
 #adventure-party .adventurer-hearts input {
   display: none;
 }
@@ -2012,7 +2026,7 @@ section.rollable-skill div > div #upgrade-skill-rating {
   height: 32px;
   width: 32px;
   background-image: url("assets/boxes/a-heart-filled.png");
-  top: -3px;
+  top: -1px;
 }
 #adventure-party .adventurer-hearts label.slashed-1 {
   background-image: url("assets/boxes/a-heart-slashed-1.png");
@@ -2030,6 +2044,316 @@ section.rollable-skill div > div #upgrade-skill-rating {
 }
 #adventure-party .adventurer-hearts label.hidden {
   display: none;
+}
+#adventure-party td.moves-radio div {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#adventure-party td.moves-radio div label {
+  height: 24px;
+  width: 24px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#adventure-party td.moves-radio div label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 4px;
+  position: relative;
+  top: -4px;
+}
+#adventure-party td.moves-radio div label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#adventure-party td.moves-radio div label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#adventure-party td.moves-radio div input {
+  display: none;
+}
+#adventure-party td.moves-radio div input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#adventure-party td.moves-radio div input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#adventure-party td.moves-radio div input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+}
+#adventure-party td.moves-radio div input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#adventure-party td.moves-radio div input:checked + label.dark-heart {
+  /* animation: glow 2000ms ease-out infinite alternate; */
+  background-image: url("assets/boxes/heart-filled.png");
+}
+#adventure-party td.moves-radio div input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#adventure-party td.moves-radio div input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#adventure-party td.moves-radio:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#adventure-party td.moves-radio label.adv-move-greyed {
+  margin-left: 8px;
+  height: 24px;
+  width: 24px;
+  background-image: url("assets/boxes/box-greyed.png");
+  cursor: auto;
+}
+#adventure-party td.moves-radio label.adv-move-greyed:hover {
+  filter: none;
+  opacity: 1;
+}
+#adventure-party .trait-tags {
+  margin-top: 4px;
+}
+#adventure-party .trait-tags label {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+}
+#adventure-party .trait-tags label.positive {
+  color: #2c3678;
+}
+#adventure-party .trait-tags label.negative {
+  color: #68332c;
+}
+#adventure-party .trait-tags label.motivation {
+  color: #191919;
+}
+
+#adventurer-sheet-body .label-stripe {
+  padding: 0;
+  margin: 15px 0px 5px 0px;
+}
+#adventurer-sheet-body .label-stripe:first-child {
+  margin-top: 0px;
+}
+#adventurer-sheet-body > div:last-child {
+  margin-right: 20px;
+}
+#adventurer-sheet-body input {
+  margin-top: 5px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#adventurer-sheet-body .class-selector {
+  flex: 3;
+  margin-left: -3px;
+}
+#adventurer-sheet-body .class-selector select {
+  margin-top: 5px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#faction-sheet div.label-stripe {
+  margin: 0px;
+}
+#faction-sheet #faction-clocks {
+  margin-top: 0px;
+}
+#faction-sheet #faction-clocks td {
+  width: 50%;
+}
+#faction-sheet #faction-clocks td textarea {
+  resize: none;
+}
+#faction-sheet .faction-clock-display {
+  width: 60px;
+}
+#faction-sheet .faction-clock-display.seg-4 {
+  position: relative;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock input[value="0"] {
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+#faction-sheet .faction-clock-display.seg-6 {
+  position: relative;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock input[value="0"] {
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+#faction-sheet .faction-clock-display.seg-8 {
+  position: relative;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock input[value="0"] {
+  display: none;
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(5) {
+  transform: rotate(45deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(7) {
+  transform: rotate(90deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(9) {
+  transform: rotate(135deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(11) {
+  transform: rotate(180deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(13) {
+  transform: rotate(225deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(15) {
+  transform: rotate(270deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(17) {
+  transform: rotate(315deg) skewY(135deg);
+}
+#faction-sheet .faction-clock-display .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+#faction-sheet .faction-clock-display .blades-clock {
+  top: -10px;
+}
+#faction-sheet table.name-and-image td:nth-child(2) {
+  width: 60px;
 }
 
 /*# sourceMappingURL=wicked.css.map */

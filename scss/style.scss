@@ -1693,6 +1693,24 @@ section.rollable-skill {
         margin-top: 0px;
         margin-bottom: 10px;
         border-width: 0px;
+
+        tr {
+            max-height: 32px;
+        }
+    }
+
+    #adventurer-list thead td:nth-child(4), #hireling-list thead td:nth-child(3) {
+        padding-left: 15px;
+    }
+
+    #adventurer-list thead td:nth-child(8), #hireling-list thead td:nth-child(7) {
+        width: 20px;
+    }
+
+    #hireling-list tbody td:nth-child(4) label {
+        min-width: 100px;
+        width: 20%;
+        max-width: 50%;
     }
 
     .adventurer-hearts {
@@ -1705,8 +1723,7 @@ section.rollable-skill {
             height: 32px;
             width: 32px;
             background-image: url("assets/boxes/a-heart-filled.png");
-            //margin-right: 5px;
-            top: -3px;
+            top: -1px;
         }
 
         label.slashed-1 {
@@ -1719,7 +1736,7 @@ section.rollable-skill {
 
         label.greyed {
             background-image: url("assets/boxes/a-heart-greyed.png");
-            cursor:auto;
+            cursor: auto;
 
             &:hover {
                 filter: none;
@@ -1730,5 +1747,139 @@ section.rollable-skill {
         label.hidden {
             display: none;
         }
+    }
+
+    td.moves-radio {
+        div {
+            @include custom_radio(24px, 24px);
+        }
+
+        &:hover > div.attributes-container label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
+
+        label.adv-move-greyed {
+            @extend %custom-label;
+            margin-left: 8px;
+            height: 24px;
+            width: 24px;
+            background-image: url("assets/boxes/box-greyed.png");
+            cursor: auto;
+
+            &:hover {
+                filter: none;
+                opacity: 1;
+            }
+        }
+    }
+    // AP Trait Tags
+    .trait-tags {
+        margin-top: 4px;
+
+        label {
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $gray;
+            border-radius: 5px;
+            padding: 2px 4px;
+            margin-bottom: 4px;
+
+            &.positive {
+                color: $mixed;
+            }
+
+            &.negative {
+                color: $mud;
+            }
+
+            &.motivation {
+                color: $almost_black;
+            }
+        }
+    }
+}
+
+#adventurer-sheet-body {
+    .label-stripe {
+        padding: 0;
+        margin: 15px 0px 5px 0px;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+
+    & > div:last-child {
+        margin-right: 20px;
+    }
+
+    input {
+        margin-top: 5px;
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .class-selector {
+        flex: 3;
+        margin-left: -3px;
+
+        select {
+            margin-top: 5px;
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}
+
+// FA Goal Clock
+#faction-sheet {
+
+    div.label-stripe {
+        margin: 0px;
+    }
+
+    #faction-clocks { 
+        margin-top: 0px;
+
+        td {
+            width: 50%;
+
+            textarea {
+                resize: none;
+            }
+        }
+    }
+
+    .faction-clock-display {
+        width: 60px;
+
+        &.seg-4 {
+            @include clock(4, 60);
+        }
+
+        &.seg-6 {
+            @include clock(6, 60);
+        }
+
+        &.seg-8 {
+            @include clock(8, 60);
+        }
+
+        .clock-zero-label {
+            position: relative;
+            left: -10px;
+        }
+
+        .blades-clock {
+            top: -10px;
+        }
+    }
+
+    table.name-and-image td:nth-child(2) {
+        width: 60px;
     }
 }

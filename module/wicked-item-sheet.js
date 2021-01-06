@@ -120,6 +120,8 @@ export class WickedItemSheet extends ItemSheet {
       }
     });
 
+    /* -------------------------------------------- */
+
     // Update Edge List
     html.find('#edge-list input').change(ev => {
       const element = $(ev.currentTarget).parents(".item");
@@ -135,6 +137,36 @@ export class WickedItemSheet extends ItemSheet {
       }
       item.update({ ['data.edges']: newEdges });
     });
+
+    /* -------------------------------------------- */
+
+    // Update Adventurer Custom Field
+    html.find('select.list-with-custom').change(ev => {
+      const element = $(ev.currentTarget).parents(".item");
+      const idOffset = element[0].id.lastIndexOf('-') + 1;
+      const id = element[0].id.substring(idOffset);
+      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      const selected = ev.currentTarget.value;
+      const propertyToSet = ev.currentTarget.dataset.propertyToSet;
+      if (selected == "" || selected == "custom") {
+        item.update({ ['data.' + propertyToSet]: "" });
+      } else if (selected == "random") {
+        const options = ev.currentTarget.length - 3;
+        const choice = Math.floor(Math.random() * options ) + 3;
+        for (var i = 0; i < ev.currentTarget.length; i++) {
+          if (i == choice) {
+            ev.currentTarget[i].selected = true;
+            item.update({ ['data.' + propertyToSet]: game.i18n.localize(ev.currentTarget[i].value) });
+          } else {
+            ev.currentTarget[i].selected = false;
+          }
+        }
+      } else {
+        item.update({ ['data.' + propertyToSet]: game.i18n.localize(selected) });
+      }
+    });
+
+    /* -------------------------------------------- */
 
     // Clock Size Changed
     html.find('#clock-type-list .clock-size-picker').click(ev => {

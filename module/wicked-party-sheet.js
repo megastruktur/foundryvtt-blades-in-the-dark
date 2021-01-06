@@ -11,8 +11,8 @@ export class WickedPartySheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/party-sheet.html",
-      width: 800,
-      height: 750,
+      width: 830,
+      height: 620,
       tabs: []
     });
   }
@@ -58,9 +58,27 @@ export class WickedPartySheet extends WickedSheet {
       }
     });
 
+    data.items.forEach(e => {
+      if (e.type == "adventurer" && e.data.adventurer_type == "hireling") {
+        e.data.hearts = [];
+        let slashes_left = e.data.heart_slashes ?? 0;
+        // Distribute slashes
+        if (slashes_left > 1) {
+          e.data.hearts[1] = "slashed-2";
+          slashes_left -= 2;
+        } else if (slashes_left == 1) {
+          e.data.hearts[1] = "slashed-1";
+          slashes_left = 0;
+        } else {
+          e.data.hearts[1] = "";
+        }
+      }
+    });
+
 
     return data;
   }
+
 
   /* -------------------------------------------- */
 
