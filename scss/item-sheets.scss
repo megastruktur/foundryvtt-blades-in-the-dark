@@ -1,0 +1,75 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+// General Formatting
+header {
+    margin-bottom: 10px;
+}
+
+
+// Specialability Item
+form.special-ability-sheet {
+
+    #ray-selection {
+
+        div.ray-line {
+            display: flex;
+            justify-content: space-evenly;
+
+            &:last-child {
+                margin-bottom: 25px;
+            }
+
+            select:nth-child(1) {
+                width: 70%;
+            }
+
+            select:nth-child(2) {
+                width: 20%;
+            }
+        }
+    }
+}
+
+
+// Adventurer Item
+form.adventurer-sheet {
+
+    #adventurer-sheet-body {
+
+        .label-stripe {
+            padding: 0;
+            margin: 15px 0px 5px 0px;
+
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+
+        & > div:last-child {
+            margin-right: 20px;
+        }
+
+        input {
+            margin-top: 5px;
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .class-selector {
+            flex: 3;
+            margin-left: -3px;
+
+            select {
+                margin-top: 5px;
+                width: 100%;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    }
+}

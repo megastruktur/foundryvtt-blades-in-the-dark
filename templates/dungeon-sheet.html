@@ -1,4 +1,4 @@
-<form class="{{cssClass}} actor-sheet" autocomplete="off">
+<form class="{{cssClass}} dungeon-sheet" autocomplete="off">
 
   {{!-- Base Dungeon Information --}}
   <section class="section big-teeth-section flex-vertical">
@@ -6,7 +6,7 @@
     <table>
       <tr>
         <td colspan="2">
-          <div id="name">
+          <div id="name" class="large-name">
             <!-- <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label> -->
             <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>

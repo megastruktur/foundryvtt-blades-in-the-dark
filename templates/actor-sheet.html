@@ -2,12 +2,12 @@
 
 
   {{!-- Base Character Information --}}
-  <section id="base-info" class="section big-teeth-section">
-    <table>
+  <section class="section big-teeth-section">
+    <table class="base-info">
       <tr>
         <td colspan="2">
           {{!-- Character Name --}}
-          <div id="name">
+          <div id="name" class="large-name">
             <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>
         </td>
@@ -35,7 +35,7 @@
         </td>
         <td colspan="1">
           {{!-- Look --}}
-          <div id="look">
+          <div class="text-input" id="look">
             <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
             <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
           </div>
@@ -60,7 +60,7 @@
         </td>
         <td>
           {{!-- Minion Pack --}}
-          <div id="minionpack">
+          <div class="text-input" id="minionpack">
             <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
             <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
           </div>
@@ -85,7 +85,7 @@
         </td>
         <td>
           {{!-- Vile Friend --}}
-          <div id="vilefriend">
+          <div class="text-input" id="vilefriend">
             <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
             <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
           </div>

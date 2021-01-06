@@ -1,0 +1,57 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.faction-sheet {
+
+    // Goal Clock
+    #faction-sheet {
+
+        div.label-stripe {
+            margin: 0px;
+        }
+
+        #faction-clocks {
+            margin-top: 0px;
+
+            td {
+                width: 50%;
+
+                textarea {
+                    resize: none;
+                }
+            }
+        }
+
+        .faction-clock-display {
+            width: 60px;
+
+            &.seg-4 {
+                @include clock(4, 60);
+            }
+
+            &.seg-6 {
+                @include clock(6, 60);
+            }
+
+            &.seg-8 {
+                @include clock(8, 60);
+            }
+
+            .clock-zero-label {
+                position: relative;
+                left: -10px;
+            }
+
+            .blades-clock {
+                top: -10px;
+            }
+        }
+
+        table.name-and-image td:nth-child(2) {
+            width: 60px;
+        }
+    }
+}

@@ -1,291 +1,163 @@
-// Colors
-$lightgray: #CCC;
-$gray: #999;
-$gray3f: #9999993f;
-$red: red;
-$almost_black: #191919;
-$almost_white: #EEEFFF;
-$gold: #DAA520;
-$light_green: #008000;
-$green: #435e3d;
-$blue: #04578f;
-$bloody: #400000;
-$bloody5c: #4000005c;
-$bloodyShadow: #4000004f;
-$orange: #d46c1f;
-$mud: #68332c;
-$darkmud: #311815;
-$mud3f: #68332c3f;
-$paper: #c9c7b8;
-$bone: #fff8e8;
-$crit: #b12c20;
-$success: #862118;
-$mixed: #2c3678;
-$fail: #656666;
-$highlight_red: #a20000;
-
-
-// Transition period for sheet parts that hint what they can do
-$transition-period: 0.2s;
-$hover-opacity: 0.9;
-$hover-brightness: 0.8;
-
 // Imports
+@import 'variables.scss';
+@import 'fonts.scss';
 @import 'mixin.scss';
+
+@import 'actor-sheet.scss';
+@import 'minion-sheet.scss';
+@import 'dungeon-sheet.scss';
+@import 'faction-sheet.scss';
+@import 'party-sheet.scss';
+
+@import 'attributes.scss';
+@import 'item-sheets.scss';
+@import 'chat.scss';
+@import 'dialogs.scss';
 
 
 /*
- *  General Styles
+ *   Layout Styles
  */
-* {
-    header {
-        margin-bottom: 10px;
-    }
 
-    body {
-        font-family: Bitter, sans-serif;
-        font-weight: 500;
-        font-size: 14px;
-    }
-
-    button {
-        font-family: Bitter, sans-serif;
-        font-weight: 500;
-        color: $bone;
-        background: $mud;
-        border-top: 1px outset $orange;
-        border-bottom: 2px outset $orange;
-        border-left: 2px solid darkslategrey;
-        border-right: 2px solid darkslategrey;
-        transition-duration: $transition-period;
-
-        &:hover, &:focus {
-            outline: none;
-            box-shadow: 0 0 5px $orange;
-            background: $orange;
-        }
-    }
-
-	.sheet{
+// Disallow sheet to be reduced in size beyond the minimum needed
+.sheet {
 	min-width: min-content;
-	}
-    .dialog .dialog-buttons button {
-        background: $mud;
-        border-top: 1px outset $orange;
-        border-bottom: 2px outset $orange;
-        border-left: 2px solid darkslategrey;
-        border-right: 2px solid darkslategrey;
+}
+
+.window-app .window-content {
+    background: url(../styles/assets/images/background-light.png) repeat;
+    color: $almost_black;
+    overflow-y: auto;
+    background-size: 300px;
+
+    form.actor-sheet {
+        z-index: 0;
+    }
+}
+
+// TO DO: Check to reduce padding dynamically
+// TO DO: Check if to move notes and hint
+form {
+    &.actor-sheet {
+        padding: 20px;
     }
 
-    * form button {
-        background: $mud;
-        border-top: 1px outset $orange;
-        border-bottom: 2px outset $orange;
-        border-left: 2px solid darkslategrey;
-        border-right: 2px solid darkslategrey;
-    }
-
-    ul {
-        list-style: none;
-    }
-
-    h1, h2, h3, h4 {
-        font-weight: bold;
-    }
-
-    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"], input[type="range"] {
-        font-weight: 600;
-    }
-
-    form {
-        &.actor-sheet {
-            padding: 20px;
-        }
-
-        .notes, .hint {
-            color: $bloody;
-            font-weight: 600;
-        }
-    }
-
-    label {
-        font-weight: 600;
-    }
-
-    textarea {
+    .notes, .hint {
         color: $bloody;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-family: Bitter;
         font-weight: 600;
-        min-height: 80px;
+    }
+}
+
+// TO DO: Trim and maybe move parts to item sheets
+section {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between; // Check if needed
+
+    > *:not(.label-stripe) {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0px;
+        }
     }
 
-    td {
-        padding: 5px;
+    .grow-one {
+        flex-grow: 1;
     }
 
-    section {
-        /* margin-bottom: 10px; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .grow-two {
+        flex-grow: 2;
+    }
+}
 
-        > *:not(.label-stripe) {
-            margin-right: 10px;
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-            &:last-child {
-                margin-right: 0px;
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+// Basic Character Information Table for Wicked One and Minion Pack
+table.base-info {
+    border-top: 5px solid $mud;
+
+    tr {
+
+        td:nth-of-type(1) {
+            min-width: 150px;
+        }
+
+        .item-add-popup {
+            color: $mud;
+        }
+
+        .text-input {
+            color: $mud;
+
+            label {
+                font-weight: 700;
+            }
+
+            input {
+                font-weight: normal;
+                font-family: Piedra;
+                font-size: 20px;
+                border: none;
+                border-radius: 0;
             }
         }
+    }
+}
 
-        .grow-one {
-            flex-grow: 1;
-        }
+nav {
+    margin-bottom: 10px;
+}
 
-        .grow-two {
-            flex-grow: 2;
-        }
+// DU MP WO Nav Container (implement MP version)
+#wo-nav-container, #dun-nav-container, #mp-nav-container {
+    nav a {
+        flex: none;
     }
 
-    select {
-        font-family: Bitter, Lucida Console, monospace;
-        font-weight: 600;
-        font-size: 15px;
-        border-radius: 0px;
-        border-color: 1px solid $mud;
-    }
-
-    option {
-        font-weight: 600;
-    }
-
-    nav {
-        margin-bottom: 10px;
-    }
-
-
-    .action-info {
-        margin-top: -20px;
-    }
-
-    .editor,
-    .editor-content {
-        min-height: 280px;
-        background: rgba(0,0,0,0.05);
-    }
-
-    .flex-horizontal {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .flex-vertical {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .black-label {
-        background-color: $mud;
-        color: $almost_white;
-        font-size: 18px; //21px
-        text-align: center;
-        padding: 4px 5px;
-        height: 30px !important;
-        text-transform: capitalize;
-        text-shadow: 0 2px $darkmud;
-    }
-
-    .gray-label {
-        background-color: $gray;
-        color: $almost_black;
-        font-size: 21px;
-        text-align: center;
-        padding: 0px 5px;
-        height: 30px !important;
-        text-transform: capitalize;
-    }
-
-    .chat-message {
-        padding: 5px;
-        color: $almost_black;
+    .all-items-list {
         font-size: 14px;
-        background: url(../styles/assets/images/background-light.png) repeat;
-        background-size: 300px;
-        box-shadow: inset 0 0 9px 1px $bloodyShadow;
-    }
 
-    .chat-message .message-header .message-sender {
-        font-family: Piedra;
-        font-weight: normal;
-        font-size: 15px;
-    }
+        &:nth-of-type(2n+1) {
+            background: rgba(0, 0, 0, 0.15);
+        }
 
-    .chat-message .message-content {
-        font-family: Bitter;
-        font-size: inherit;
-        font-weight: 600;
-    }
+        div.item-body {
+            margin: 5px 10px;
+        }
 
-    .chat-message .message-header .message-metadata {
-        text-align: right;
-        font-weight: 700;
-    }
-
-    .chat-label {
-        background-color: $almost_black;
-        color: $almost_white;
-        font-size: 24px;
-        text-align: center;
-        padding: 0px 5px;
-        height: 36px !important;
-        text-transform: capitalize;
-    }
-
-    .chat-label-small {
-        background-color: $gray;
-        color: $almost_black;
-        font-size: small;
-        text-align: center;
-        padding: 3px 5px;
-        height: 26px !important;
-    }
-
-    .compendium .directory-list .directory-item {
-        padding: 3px 0;
-        line-height: 48px;
-        border-top: 1px solid transparent;
-        border-bottom: 1px solid $bloody5c;
-        box-shadow: none;
-    }
-
-    .dialog .dialog-buttons button.default {
-        background: $mud;
-        border-top: 1px outset $orange;
-        border-bottom: 2px outset $orange;
-        border-left: 2px solid darkslategrey;
-        border-right: 2px solid darkslategrey;
-
-        &:hover, &:focus {
-            outline: none;
-            box-shadow: 0 0 5px $orange;
-            background: $orange;
+        a.item-delete {
+            margin-right: 10px;
+            align-self: center;
         }
     }
+}
 
-    .label-stripe {
-        text-transform: uppercase;
-        background-color: $mud;
-        color: $almost_white;
-        margin-bottom: 10px;
-        position: relative;
-        padding-left: 10px;
-        padding-right: 10px;
-        display: flex;
-        font-weight: bold;
-        font-size: medium;
 
+/*
+ *   Element Styles
+ */
+
+body {
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+// All Table Formatting:
+table {
+
+    th {
         &:hover {
             .item-add-popup {
                 transition: opacity 0.5s;
@@ -299,407 +171,214 @@ $hover-brightness: 0.8;
         }
     }
 
-    .label-stripe-gray {
-        text-transform: uppercase;
-        background-color: $gray;
-        margin-bottom: 10px;
-        position: relative;
-        padding-left: 10px;
-        padding-right: 10px;
-        display: flex;
-        font-weight: bold;
+    tr:nth-child(even) {
+        background-color: initial;
     }
 
-    .label-stripe-chat {
-        font-family: Piedra;
-        background-color: $mud;
-        color: white;
-        margin-bottom: 10px;
-        position: relative;
-        padding-top: 3px;
-        display: flex;
-        font-weight: normal;
-        margin: 0;
-        border-top-left-radius: 5px;
-        text-shadow: 2px 2px 0 #313131;
+    td, th {
+        padding: 5px;
     }
 
-    .label-type {
-        font-family: Piedra;
-        text-transform: uppercase;
-        color: white;
-        display: flex;
-        font-family: Bitter;
-        font-weight: 600;
-        font-size: 12px;
-        margin: 0;
-        margin-left: auto;
-        border-top-left-radius: 5px;
+    td:first-child {
+        padding-left: 5px;
     }
+}
 
-    .label-stripe-chat-small {
-        text-transform: capitalize;
-        background-color: #bdb7ab;
-        color: $almost_black;
-        margin-bottom: 0px;
-        position: relative;
-        padding-top: 3px;
-        /* display: flex; */
-        font-weight: normal;
-        font-family: Piedra;
-        font-size: 16px;
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+select {
+    font-family: Bitter, Lucida Console, monospace;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 0px;
+    border: 1px solid $mud;
+}
+
+option {
+    font-weight: 600;
+}
+
+input[type="text"], input[type="number"], input[type="password"],
+input[type="date"], input[type="time"], input[type="range"] {
+    font-weight: 600;
+    border: 1px solid $mud;
+    border-radius: 0;
+}
+
+textarea {
+    color: $bloody;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: Bitter;
+    font-weight: 600;
+    min-height: 80px;
+}
+
+
+/*
+ *   Button Styles
+ */
+
+%button-base {
+    background: $mud;
+    border-top: 1px outset $orange;
+    border-bottom: 2px outset $orange;
+    border-left: 2px solid darkslategrey;
+    border-right: 2px solid darkslategrey;
+
+    &:hover, &:focus {
+        outline: none;
+        box-shadow: 0 0 5px $orange;
+        background: $orange;
     }
+}
 
-    .description {
-        font-style: italic;
-        font-weight: 600;
-    }
+// TO DO: Maybe move properties to base & use button as base
+button {
+    @extend %button-base;
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+    color: $bone;
+    transition-duration: $transition-period;
+}
 
-    .rollable-text {
-        transition: color $transition-period;
-    }
+.dialog .dialog-buttons button {
+    @extend %button-base;
+}
 
-    .rollable-text:hover {
-        cursor: pointer;
-        color: $highlight_red;
-    }
-    // Wicked and Reckless XP
-    .big-teeth-section {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 0px;
+// TO DO: Evaluate if needed
+* * form button {
+    @extend %button-base;
+}
 
-        > * {
-            margin-right: 10px;
+.dialog .dialog-buttons button.default {
+    @extend %button-base;
+}
 
-            &:last-child {
-                margin-right: 0px;
-            }
-        }
 
-        &:last-child {
-            margin-right: 0px;
-        }
-        // Wicked XP
-        .big-teeth {
-            @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
-            justify-content: center;
-            align-items: center;
+/*
+ *  Label Styles
+ */
 
-            label {
+.label-stripe {
+    text-transform: uppercase;
+    background-color: $mud;
+    color: $almost_white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+    font-size: medium;
 
-                & {
-                    margin-right: 0px;
-
-                    &:nth-of-type(2) {
-                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
-                        width: 10px;
-                    }
-
-                    &:nth-of-type(2n+3) {
-                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
-                        width: 12px;
-                    }
-
-                    &:last-of-type {
-                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
-                        width: 18px;
-                    }
-                }
-            }
-
-            &.xp-bar input:checked {
-
-                & ~ label {
-
-                    &:nth-of-type(2) {
-                        background-image: url("assets/teeth/xp-tooth-1-empty.png");
-                        width: 10px;
-                    }
-
-                    &:nth-of-type(2n+3) {
-                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
-                        width: 12px;
-                    }
-
-                    &:last-of-type {
-                        background-image: url("assets/teeth/xp-tooth-9-empty.png");
-                        width: 18px;
-                    }
-                }
-
-                & + label {
-                    &:nth-of-type(2) {
-                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
-                        width: 10px;
-                    }
-
-                    &:nth-of-type(2n+3) {
-                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
-                        width: 12px;
-                    }
-
-                    &:last-of-type {
-                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
-                        width: 18px;
-                    }
-                }
-            }
-        }
-        // Gold
-        .big-teeth.gold {
-            @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
-            align-items: center;
-            justify-content: center;
-
-            & label {
-                margin-right: 0px;
-            }
-        }
-        /* Reckless XP */
-        .small-teeth-container {
-
-            .small-teeth-wrap {
-                @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
-                flex-direction: column;
-
-                .small-teeth {
-                    display: flex;
-                    flex-direction: row;
-                }
-            }
-        }
-    }
-    // Experience teeth
-    .teeth-experience {
-        @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-        position: absolute;
-        top: 0px;
-        right: 10px;
-    }
-    // Tooltip.
-    .tooltip {
-
-        .tooltiptext {
-            visibility: hidden;
-            position: absolute;
-            width: fit-content;
-            max-width: 300px;
-            font-weight: 600;
-            font-family: Bitter;
-            background: url(../styles/assets/images/background-light.png) repeat;
-            color: $bloody;
-            font-size: 16px;
-            text-align: justify;
-            border: 2px solid $bloody;
-            padding: 10px;
-            border-radius: 4px;
-            z-index: 9999;
-            text-transform: none;
-            text-shadow: none;
-        }
-
-        .tooltipslow {
-            opacity: 0;
-            transition: visibility 0.1s, opacity 0.1s;
-            transition-delay: 0.1s;
-        }
-
-        &:hover .tooltiptext {
-            visibility: visible;
+    &:hover {
+        .item-add-popup {
+            transition: opacity 0.5s;
             opacity: 1;
-            transition: visibility 0.5s, opacity 0.5s;
-            transition-delay: 1s;
         }
     }
 
-    .fa-question-circle {
-        padding: 2px 3px;
+    .item-add-popup {
+        transition: opacity 0.5s;
+        opacity: 0.1;
     }
+}
 
-    .fa-book-dead:before {
-        padding-right: 5px;
-        color: $almost_white;
-    }
+.black-label {
+    background-color: $mud;
+    color: $almost_white;
+    font-size: 18px;
+    text-align: center;
+    padding: 4px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+    text-shadow: 0 2px $darkmud;
+}
 
-    .hidden {
-        display: none;
-    }
 
-    .tabs .item.active {
-        font-weight: 700;
-        color: $bloody;
-        text-shadow: 2px 2px 7px $orange;
-    }
+/*
+ *  Name & Profile Picture Style
+ */
 
-    .wicked-die-tooltip {
+.large-name input[type="text"] {
+    min-width: 370px;
+    height: 52px;
+    border: none;
+    font-family: Blood Crow;
+    font-size: 55px;
+    font-weight: normal;
+    color: $mud;
+    background: none;
+    text-shadow: 0 1px 2px $orange;
+    text-overflow: ellipsis;
+}
 
-        .die {
-            font-family: Piedra;
-            text-transform: uppercase;
-            font-weight: normal;
-            font-size: 24px;
-            text-align: center;
-            height: 30px;
-            color: white;
-            border-bottom: 3px solid;
-            border-bottom-right-radius: 5px;
-            border-bottom-left-radius: 5px;
+.profile-img {
+    border: none;
+    background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
+    background-blend-mode: color-burn;
+    object-fit: cover;
 
-            &.critical-success {
-                color: $crit;
-            }
-
-            &.success {
-                color: $success;
-            }
-
-            &.partial-success {
-                color: $mixed;
-            }
-
-            &.failure {
-                color: $fail;
-            }
-        }
-    }
-
-    .clock-zero-label {
-        color: $almost_black;
-    }
-
-    .clock-block {
-        .clocks {
-            &.clocks-4 {
-                @include clock(4, 200);
-            }
-
-            &.clocks-6 {
-                @include clock(6, 200);
-            }
-
-            &.clocks-8 {
-                @include clock(8, 200);
-            }
-        }
-    }
-
-    .clock-block .blades-clock-name-type {
-        > * {
-            margin-bottom: 10px;
-            max-width: 220px;
-        }
-    }
-
-    i {
-        &.nullifier {
-            @include changeable($transition-period, $hover-brightness, $hover-opacity, $highlight_red);
-        }
-    }
-
-    .window-app .window-content {
-        background: url(../styles/assets/images/background-light.png) repeat;
-        color: $almost_black;
-        overflow-y: auto;
-        background-size: 300px;
-
-        form.actor-sheet {
-            z-index: 0;
-        }
-    }
-
-    .wicked-die {
-        width: 32px;
-        height: 32px;
-        float: left;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-
-    .wd1 {
-        background-image: url("assets/dice/die-1-grey.png");
-    }
-
-    .wd2 {
-        background-image: url("assets/dice/die-2-grey.png");
-    }
-
-    .wd3 {
-        background-image: url("assets/dice/die-3-grey.png");
-    }
-
-    .wd4 {
-        background-image: url("assets/dice/die-4-blue.png");
-    }
-
-    .wd5 {
-        background-image: url("assets/dice/die-5-blue.png");
-    }
-
-    .wd6 {
-        background-image: url("assets/dice/die-6-red.png");
-    }
-
-    .dice-tooltip .dice-rolls .roll.d6 {
-        font-family: Signika;
-    }
-
-    .flex-evenly {
-        justify-content: space-evenly;
+    &.profile-big {
+        margin: 0px 5px;
+        height: 200px;
+        width: 200px;
+        max-width: fit-content;
     }
 }
 
 
 /*
- *  Non-Anchored Styles
+ *  Clock Styles
  */
 
-// Extension for custom radio button styles via labels
-%custom-label {
-    height: 24px;
-    width: 24px;
-    display: block;
-    background-image: url("assets/boxes/box-empty.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    transition: filter 0.1s;
-    cursor: pointer;
-    position: relative;
-    @include changeable(0.1s, 0.7, 0.7);
+label.clock-zero-label {
+    color: $almost_black;
+
+    i.nullifier {
+        @include changeable($transition-period, $hover-brightness, $hover-opacity, $highlight_red);
+    }
 }
 
-// Large Profile Pictures
-.profile-img.profile-big {
-    margin: 0px 5px;
-    height: 200px;
-    width: 200px;
-	max-width: fit-content;
-	border: none;
-	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
-    background-blend-mode: color-burn;
-	object-fit: cover;
-}
-// Profile Pictures
-.profile-img{
-	border: none;
-	background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
-    background-blend-mode: color-burn;
-	object-fit: cover;
-	// max-width: fit-content;
+.clock-block {
+    .clocks {
+        &.clocks-4 {
+            @include clock(4, 200);
+        }
+
+        &.clocks-6 {
+            @include clock(6, 200);
+        }
+
+        &.clocks-8 {
+            @include clock(8, 200);
+        }
+    }
+
+    .blades-clock-name-type {
+
+        > * {
+            margin-bottom: 10px;
+            max-width: 220px;
+        }
+    }
 }
 
-// Edge List
-#edge-list {
-    display: block;
-}
 
-// Item
+/*
+ *  Item Styles
+ */
+
+// TO DO: Split A, DIV and TR items
 .item {
     justify-content: space-between;
 
     .item-body {
-        /* margin-bottom: 10px; */ //causes problems with Dark Impulses and Race Calling Revelry
-        /* margin-right: 10px; */
+        // margin-bottom: 10px;  // causes problems with Dark Impulses, Monster Race, Calling and Revelry
+        // margin-right: 10px;
         .item-description {
             font-style: italic;
             text-align: justify;
@@ -724,14 +403,35 @@ $hover-brightness: 0.8;
     .item-class-label {
         margin-bottom: 10px;
     }
-    /*.item-body,
-    .item-class-label {
-        width: 100px;
-    }*/
 }
 
-.item-class-label {
-    margin-bottom: 0px;
+// Display all Item Names in Bold
+.item-name {
+    text-align: center;
+    font-weight: 500;
+    font-family: Piedra;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+// Special Abilities
+#abilities, #loadout {
+
+    .item-body {
+        width: auto;
+        font-weight: 500;
+    }
+}
+
+// Special Abilities List
+#abilities-list, #loadout {
+    div.item-name {
+        flex-basis: 25%;
+    }
+
+    div.item-description {
+        width: fit-content;
+    }
 }
 
 // Show Trash bins on hover over ancestor
@@ -748,1114 +448,105 @@ div.item, tr.item {
         opacity: 0;
     }
 }
+
 // Item Add Buttons
 .item-add-popup {
-	padding-left: 10px;
-	font-weight: 700;
-}
-
-// MP Number Padding
-#number {
-    padding-right: 12px;
-
-    label {
-        padding-left: 10px;
-    }
-
-    input {
-        text-align: center;
-        margin: auto;
-        width: 50%;
-        display: block;
-    }
-}
-
-// WO MP Top Entry Field Styles
-#look, #minionpack, #vilefriend, #number {
-    color: $mud;
-
-    input[type="text"], input[type="number"] {
-        font-weight: normal;
-        font-family: Piedra;
-        font-size: 20px;
-        border: none;
-        border-radius: 0;
-    }
-
-    label {
-        font-weight: 700;
-    }
-}
-
-// Input Fields Styling
-    input[type="text"], input[type="number"], input[type="password"], input[type="date"], input[type="time"] {
-        font-weight: 600;
-		border: 1px solid $mud;
-		border-radius: 0;
-    }
-/*
- *  Anchored Styles
- */
-
-// SYS Game Chat Roll Selection
-#chat-controls .roll-type-select {
-    color: $bloody;
-    font-size: 14px;
+    padding-left: 10px;
     font-weight: 700;
 }
 
-// SYS Game Chat Background
-#chat-form textarea {
-    background: url(../styles/assets/images/background-light.png) repeat;
-    background-size: 300px;
-}
-
-// WO Wicked XP
-#character-wickedxp {
-    label {
-        &[for$="-0"] {
-            margin-right: 0px;
-        }
-    }
-}
-
-// WO Reckless XP
-#character-recklessxp {
-    label {
-        &[for$="-0"] {
-            margin-right: 0px;
-        }
-    }
-}
-
-// DU Dungeon Theme Bar
-#dungeon-theme-bar {
-    padding-left: 0px;
-    padding-right: 0px;
-    font-size: 18px;
-    display: table-row;
-
-    td:first-child {
-        background-color: $mud;
-        width: 100%;
-        align-self: center;
-        height: 33px;
-    }
-
-    td:last-child {
-        padding: 0px;
-    }
-
-    tr:hover {
-        .item-add-popup {
-            transition: opacity 0.5s;
-            opacity: 1;
-        }
-    }
-
-    tr .item-add-popup {
-        transition: opacity 0.5s;
-        opacity: 0.1;
-    }
-}
-
-// DU Dungeon Tier Radio
-#dungeon-tier {
-    background-color: $mud3f;
-    height: 33px;
-    width: 145px;
-    display: flex;
-    align-items: center;
-    border: solid;
-    border-width: 2px;
-    border-color: $mud;
-
-    @include custom_radio_round(18px, gray, $almost_white, $almost_black);
-
-    > * {
-        margin-right: 5px;
-    }
-}
-
-// DU MP WO Dialog to add items to actors
-#items-to-add {
-    font-size: medium;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    input[type="radio"],
-    input[type="checkbox"] {
-        display: none;
-
-        &:checked + label {
-            font-weight: 800;
-            color: $bloody;
-        }
-    }
-
-    > flex-horizontal {
-        padding: 3px;
-        border-bottom: 1px solid $bloody5c;
-    }
-
-    label:nth-of-type(2n) {
-        background: $mud3f;
-    }
-}
-
-// DU MP WO Nav Container (implement MP version)
-#wo-nav-container, #dun-nav-container, #mp-nav-container {
-    nav a {
-        flex: none;
-    }
-
-    .all-items-list {
-		font-size: 14px;
-		
-        &:nth-of-type(2n+1) {
-            background: rgba(0, 0, 0, 0.15);
-        }
-
-        div.item-body {
-            margin: 5px 10px;
-        }
-
-        a.item-delete{
-            margin-right: 10px;
-            align-self: center;
-        }
-    }
+.item-class-label {
+    margin-bottom: 0px;
 }
 
 
-// MP WO Attribute Section
-#attributes {
-	height: fit-content;
-    min-width: fit-content;
-    top: 7px;
-    position: relative;
-
-    &.minion {
-        min-width: 235px;
-    }
-
-    .attribute {
-        margin-bottom: 5px;
-    }
-
-    .stripe {
-        background-color: $mud;
-        color: $almost_white;
-        font-size: 17px;
-		padding: 4px 0px;
-        padding-left: 5px;
-		text-shadow: 0 2px $darkmud;
-    }
-
-    .shock {
-        input {
-            display: none;
-        }
-
-        label {
-            @extend %custom-label;
-            height: 32px;
-            width: 32px;
-            background-image: url("assets/boxes/shock-empty.png");
-            margin-right: 5px;
-            top: -3px;
-        }
-
-        input:checked + label {
-            background-image: url("assets/boxes/shock-filled.png");
-        }
-    }
-
-    .bloodied {
-        input {
-            display: none;
-        }
-
-        label {
-            @extend %custom-label;
-            height: 36px;
-            background-image: url("assets/boxes/bloodied-empty.png");
-            margin-left: 8px;
-            margin-right: 1px;
-            padding: 10px;
-            top: -10px;
-        }
-
-        input:checked + label {
-            background-image: url("assets/boxes/bloodied-filled-white.png");
-        }
-
-        input:checked ~ i.splash {
-            display: block;
-            height: 100px;
-            background-image: url("assets/decorations/bloodsplat.png");
-            background-size: 100px 100px;
-            background-repeat: no-repeat;
-            margin: -50px;
-            position: relative;
-            top: -30px;
-            left: 22px;
-            z-index: -1;
-        }
-    }
-
-    #attributes-bloodied {
-        margin-bottom: 0px;
-    }
-
-    .bloodied-minion {
-        input {
-            display: none;
-        }
-
-        label {
-            @extend %custom-label;
-            background-image: url("assets/boxes/bloodied-minion-empty.png");
-            margin: 0px 2px -2px 1px;
-            top: -2px;
-        }
-
-        input:checked + label {
-            background-image: url("assets/boxes/bloodied-minion-filled-white.png");
-        }
-
-        input:checked ~ i.splash {
-            display: block;
-            height: 75px;
-            background-image: url("assets/decorations/bloodsplat.png");
-            background-size: 75px 75px;
-            background-repeat: no-repeat;
-            margin: -40px;
-            position: relative;
-            top: -12px;
-            left: 16px;
-            z-index: -1;
-        }
-    }
-
-    .morale-minion {
-        input {
-            display: none;
-        }
-
-        label {
-            @extend %custom-label;
-            margin-left: 1px;
-            margin-right: 2px;
-            top: -1px;
-        }
-
-        input:checked + label {
-            background-image: url("assets/boxes/box-filled.png");
-        }
-    }
-
-
-    .main {
-        flex-grow: 1;
-
-        div:hover > div.attributes-container label {
-            transition: opacity 1s;
-            opacity: 1;
-        }
-    }
-
-    .attribute-label {
-        font-size: 18px;
-        text-transform: uppercase;
-        background-color: $mud;
-    }
-
-    .attribute-skill-label {
-        font-weight: 800;
-        font-size: 18px;
-        text-transform: uppercase;
-        background-color: unset;
-    }
-
-    .attributes-exp {
-        position: relative;
-        margin-bottom: 2px;
-    }
-
-    .attributes-container {
-        display: flex;
-        margin: 3px 0px;
-        background-color: unset;
-        @include custom_radio(15px, 15px);
-
-        * {
-            margin-right: 5px;
-        }
-
-        label {
-            margin-top: 3px;
-        }
-    }
-	.attribute-description{
-		font-size: 11px;
-		padding-left: 6px;
-		font-family: Bitter;
-		font-weight: 500;
-	}
-	
-	.skill-description{
-		font-style: italic;
-		font-size: larger;	
-	}
+.tabs .item.active {
+    font-weight: 700;
+    color: $bloody;
+    text-shadow: 2px 2px 7px $orange;
 }
 
-/* All Table Formatting: */
-
-table td,
-table th {
-  padding: 5px; // was 0.25em 5px;
-}
-table th{
-      &:hover {
-        .item-add-popup {
-            transition: opacity 0.5s;
-            opacity: 1;
-        }
-    }
-
-    .item-add-popup {
-        transition: opacity 0.5s;
-        opacity: 0.1;
-    }
-}
-table td:first-child {
-    padding-left: 5px;
-}
-
-	#hearts-header {
-		margin-left: 33px;
-		padding-right: 10px;
-		min-width: 135px;
-	}
-// WO MP DS
-form.actor-sheet {
-    #name input[type="text"] {
-        height: 52px;
-        border: none;
-        font-family: Blood Crow;
-        font-size: 55px;
-        font-weight: normal;
-        color: $mud;
-        background: none;
-        text-shadow: 0 1px 2px $orange;
-    }
-}
-
-// WO Basic Character Information
-#base-info table {
-    width: 100%;
-    height: 230px;
-    border-top: 5px solid $mud;
-    // border-bottom: 5px solid $mud;
-    tr {
-        background-color: initial;
-
-        td {
-            &:nth-of-type(1) {
-                min-width: 150px;
-            }
-
-            &:nth-of-type(3) {
-                width: 200px;
-            }
-        }
-
-        &.xp-stripe {
-            background-color: $mud;
-        }
-
-        .item-add-popup {
-            color: $mud;
-        }
-    }
-}
-
-
-// WO Defenses
-#character-defenses {
-    width: 100%;
-
-    table {
-        width: 100%;
-
-        th {
-            background-color: $mud;
-            color: $almost_white;
-            font-size: medium;
-            font-weight: 600;
-			text-shadow: 0 2px $darkmud;
-        }
-
-        input[type="text"] {
-            width: 100%;
-        }
-
-        tr {
-
-            td:nth-of-type(1) .item-checkmark {
-                flex-grow: unset;
-                margin-right: 0px 3px;
-            }
-
-            td:nth-of-type(2) {
-                display: flex;
-                justify-content: center;
-            }
-
-            td:nth-child(3) {
-                text-align:center;
-				padding: 0;
-                
-                .item-name {
-                    text-transform: uppercase;
-                    font-family: 'Blood Crow';
-                    font-size: 28px;
-					margin-right: 0px;
-                    font-weight: normal;
-                }
-            }
-        }
-    }
-}
-
-// WO Supply checkboxes
-#loadout .supply {
-    @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
-}
-
-// WO Gear & Supply Tags
-#loadout {
-
-    .gear-tags {
-        margin-top: 4px;
-
-        label {
-            display: inline-block;
-            border-style: solid;
-            border-width: 1px;
-            border-color: $gray;
-            border-radius: 5px;
-            padding: 2px 4px;
-            margin-bottom: 4px;
-
-            &.quality-mundane {
-                color: $almost_black;
-            }
-
-            &.quality-valuable {
-                color: $mixed;
-            }
-
-            &.quality-powerful {
-                color: $crit;
-            }
-
-            &.edge-tag {
-                color: $orange;
-            }
-
-            &.quantity-steady {
-                color: $green;
-            }
-
-            &.quantity-limited {
-                color: $green;
-            }
-
-            &.quantity-shared {
-                color: $green;
-            }
-        }
-    }
-}
-
-// DU Dungeon Duties
-#duties-tab {
-    .item-body {
-        width: auto;
-        padding: 3px;
-		font-family: Bitter;
-		font-size: 14px;
-    }
-
-    .project-clock {
-        height: 80px;
-        @include clock(4, 40);
-    }
-
-    div.label-stripe {
-        margin-bottom: 0px;
-    }
-
-    table {
-        margin-top: 0px;
-        margin-bottom: 15px;
-    }
-}
-
-// WO Duties Table
-#duties-table {
-    tr {
-        td:nth-of-type(1) {
-            width: 50px;
-			font-weight: 900;
-        }
-
-        td:nth-of-type(2) {
-            min-width: 90px;
-            width: 23%;
-        }
-
-        td:nth-of-type(3) {
-        }
-
-        td:nth-of-type(4) {
-            width: 20px;
-        }
-    }
-}
-
-// WO Projects Table
-#project-clocks-table {
-    tr {
-        td:nth-of-type(1) {
-            width: 50px;
-        }
-
-        td:nth-of-type(2) {
-            min-width: 90px;
-            width: 23%;
-			font-family: Bitter;
-        }
-
-        td:nth-of-type(3) {
-        }
-
-        td:nth-of-type(4) {
-            width: 20px;
-        }
-    }
-}
-
-// WO Abilities Table
-#abilities-list, #loadout {
-    width: 100%;
-    // border-top: 5px solid $mud;
-    tr {
-        background-color: initial;
-
-        td {
-            &:nth-of-type(1) {
-                min-width: 75px;
-                width: 23%;
-            }
-
-            &:nth-of-type(2) {
-                margin-right: 0px;
-                margin-bottom: 0px;
-                padding-bottom: 10px;
-            }
-
-            &:nth-of-type(3) {
-                width: 20px;
-            }
-        }
-
-        &.group-core {
-            background-color: $mud3f;
-        }
-
-        &.group-flex {
-            background-color: $gray3f;
-
-            td.item-body i {
-                font-size: 14px;
-            }
-        }
-
-        &.group-ext {
-            background-color: $gray3f;
-
-            td.item-body i {
-                font-size: 14px;
-            }
-        }
-
-        td div.eye-rays {
-            text-align: center;
-            position: relative;
-            left: 15px;
-            min-width: 420px;
-
-            div.doomseeker-img {
-                margin-top: 30px;
-
-                img {
-                    width: 200px;
-                    height: 200px;
-                    margin: 0px;
-                    border-style: none;
-                    position: relative;
-                    // z-index: 2;
-                    transition: filter 0.1s;
-
-                    &.hovered {
-                        filter: brightness(0.8);
-                        opacity: 0.9;
-                    }
-                }
-
-                area {
-                    cursor: pointer;
-                }
-            }
-
-            div.ray-items {
-                margin-top: -225px;
-                height: 232px;
-                text-align: center;
-            }
-
-            div.ray-items > div {
-                text-align: center;
-                position: relative;
-                width: fit-content;
-                left: 50%;
-                transform: translateX(-50%);
-
-                &:nth-child(1) {
-                    top: 0px;
-                }
-
-                &:nth-child(2) {
-                    top: 12px;
-                    left: 18%;
-                }
-
-                &:nth-child(3) {
-                    top: -22px;
-                    left: 82%;
-                }
-
-                &:nth-child(4) {
-                    top: -17px;
-                    left: 18%;
-                }
-
-                &:nth-child(5) {
-                    top: -34px;
-                    left: 82%;
-                }
-
-                &:nth-child(6) {
-                    top: 25px;
-                    left: 15%;
-                }
-
-                &:nth-child(7) {
-                    top: -9px;
-                    left: 85%;
-                }
-
-                &:nth-child(8) {
-                    top: -4px;
-                    left: 15%;
-                }
-
-                &:nth-child(9) {
-                    top: -21px;
-                    left: 85%;
-                }
-            }
-        }
-
-        &.stolen-face {
-            img {
-                max-height: 100px;
-                width: 75px;
-                object-fit: cover;
-            }
-        }
-    }
-
-    tr.psi-discipline {
-
-        td > div {
-            border-radius: 15px;
-            height: 30px;
-            align-items: center;
-
-            div {
-                flex: none;
-            }
-        }
-    }
-
-    table.gold-monger-path tr {
-        &:nth-child(1) td:nth-child(1) {
-            background: none;
-        }
-
-        &:nth-child(2) td:nth-child(1) {
-            background-position-y: center;
-        }
-
-        &:nth-child(3) td:nth-child(1) {
-            background-position-y: bottom;
-        }
-
-        &:nth-child(4) td:nth-child(1) {
-            background-position-y: center;
-            background-image: url("assets/decorations/verticalline-top.png");
-        }
-
-        td:nth-child(1) {
-            min-width: 32px;
-            width: 32px;
-            background-image: url("assets/decorations/verticalline-bottom.png");
-            background-repeat: no-repeat;
-        }
-    }
-}
-
-/* Display all Item Names in Bold */
-.item-name{
-	text-align: center;
-	font-weight: 500;
-	font-family: Piedra;
-	font-size: 20px;
-	padding: 0px 10px;
-	}
-// WO Defenses Stress Area
-#defenses-stress {
-    display: flex;
-}
-
-// WO Stress Clock
-#character-stress-clock {
-    width: 60px;
-    @include clock(6, 60);
-
-    .clock-zero-label {
-        position: relative;
-        left: -10px;
-    }
-
-    .blades-clock {
-        top: -10px;
-    }
-}
-
-// WO Dark Hearts
-#attributes-darkhearts {
-    /* margin-left: 32px; */
-
-    .heart-container {
-        justify-content: center;
-		margin-left: 3px;
-        @include custom_radio(30px, 30px);
-
-        &:hover label {
-            transition: opacity 1s;
-            opacity: 1;
-        }
-    }
-}
-
-#hearts-display {
-	display: flex;
-}
-
-// DU MP WO Special Abilities
-#abilities, #loadout {
-
-    .item-body {
-        width: auto;
-        font-weight: 500;
-    }
-}
-
-// DU MP WO Special Abilities List
-#abilities-list, #loadout {
-    div.item-name {
-        flex-basis: 25%;
-    }
-
-    div.item-description {
-        width: fit-content;
-    }
-}
-// Name input styling for all sheets
-
-#name input[type="text"] {
-	height: 52px;
-	min-width: 370px;
-	border: none;
-	font-family: Piedra;
-	font-size: 44px;
-	font-weight: normal;
-	color: $mud;
-	background: none;
-	text-shadow: 0 1px 2px $orange;
-	text-overflow: ellipsis;
-}
-
-#ray-selection {
-    
-    div.ray-line {
-        display: flex;
-        justify-content: space-evenly;
-
-        &:last-child {
-            margin-bottom: 25px;
-        }
-
-        select:nth-child(1) {
-            width: 70%;
-        }
-
-        select:nth-child(2) {
-            width: 20%;
-        }
-    }
-}
-
-// MP Upgrade Styles
-section.rollable-skill {
-    div > div {
-        width: 50%;
-
-        label {
-            margin-right: 10px;
-        }
-
-        #upgrade-skill-rating {
-            width: 50px;
-        }
-    }
-}
-
+// Rollable Text in Abilities List
 #abilities-list div.item-rollable-text > div > div {
     font-size: 16px;
     font-weight: 700;
     margin-top: 5px;
 }
 
-// PS Adventurer Sheet
-#adventure-party {
 
-    .profile-img {
-        vertical-align: middle;
-    }
+/*
+ *  Other Class Styles
+ */
 
-    .label-stripe {
-        margin-bottom: 0px;
-    }
+.hidden {
+    display: none;
+}
 
-    table {
-        margin-top: 0px;
-        margin-bottom: 10px;
-        border-width: 0px;
+// Highlight for elements triggering die rolls
+// TO DO: Maybe use changeable
+.rollable-text {
+    transition: color $transition-period;
 
-        tr {
-            max-height: 32px;
-        }
-    }
-
-    #adventurer-list thead td:nth-child(4), #hireling-list thead td:nth-child(3) {
-        padding-left: 15px;
-    }
-
-    #adventurer-list thead td:nth-child(8), #hireling-list thead td:nth-child(7) {
-        width: 20px;
-    }
-
-    #hireling-list tbody td:nth-child(4) label {
-        min-width: 100px;
-        width: 20%;
-        max-width: 50%;
-    }
-
-    .adventurer-hearts {
-        input {
-            display: none;
-        }
-
-        label {
-            @extend %custom-label;
-            height: 32px;
-            width: 32px;
-            background-image: url("assets/boxes/a-heart-filled.png");
-            top: -1px;
-        }
-
-        label.slashed-1 {
-            background-image: url("assets/boxes/a-heart-slashed-1.png");
-        }
-
-        label.slashed-2 {
-            background-image: url("assets/boxes/a-heart-slashed-2.png");
-        }
-
-        label.greyed {
-            background-image: url("assets/boxes/a-heart-greyed.png");
-            cursor: auto;
-
-            &:hover {
-                filter: none;
-                opacity: 1;
-            }
-        }
-
-        label.hidden {
-            display: none;
-        }
-    }
-
-    td.moves-radio {
-        div {
-            @include custom_radio(24px, 24px);
-        }
-
-        &:hover > div.attributes-container label {
-            transition: opacity 1s;
-            opacity: 1;
-        }
-
-        label.adv-move-greyed {
-            @extend %custom-label;
-            margin-left: 8px;
-            height: 24px;
-            width: 24px;
-            background-image: url("assets/boxes/box-greyed.png");
-            cursor: auto;
-
-            &:hover {
-                filter: none;
-                opacity: 1;
-            }
-        }
-    }
-    // AP Trait Tags
-    .trait-tags {
-        margin-top: 4px;
-
-        label {
-            display: inline-block;
-            border-style: solid;
-            border-width: 1px;
-            border-color: $gray;
-            border-radius: 5px;
-            padding: 2px 4px;
-            margin-bottom: 4px;
-
-            &.positive {
-                color: $mixed;
-            }
-
-            &.negative {
-                color: $mud;
-            }
-
-            &.motivation {
-                color: $almost_black;
-            }
-        }
+    &:hover {
+        cursor: pointer;
+        color: $highlight_red;
     }
 }
 
-#adventurer-sheet-body {
-    .label-stripe {
-        padding: 0;
-        margin: 15px 0px 5px 0px;
+// Minimum Size for TinyMCE Editor Box
+// TO DO: Reduce size?
+.editor,
+.editor-content {
+    min-height: 280px;
+    background: rgba(0,0,0,0.05);
+}
 
-        &:first-child {
-            margin-top: 0px;
-        }
+// Styling for opened compendia and directories
+.compendium .directory-list .directory-item {
+    padding: 3px 0;
+    line-height: 48px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid $bloody5c;
+    box-shadow: none;
+}
+
+
+/*
+ *  Tooltip Styles
+ */
+
+.tooltip {
+
+    .tooltiptext {
+        visibility: hidden;
+        position: absolute;
+        width: fit-content;
+        max-width: 300px;
+        font-weight: 600;
+        font-family: Bitter;
+        background: url(../styles/assets/images/background-light.png) repeat;
+        color: $bloody;
+        font-size: 16px;
+        text-align: justify;
+        border: 2px solid $bloody;
+        padding: 10px;
+        border-radius: 4px;
+        z-index: 9999;
+        text-transform: none;
+        text-shadow: none;
     }
 
-    & > div:last-child {
-        margin-right: 20px;
+    .tooltipslow {
+        opacity: 0;
+        transition: visibility 0.1s, opacity 0.1s;
+        transition-delay: 0.1s;
     }
 
-    input {
-        margin-top: 5px;
-        width: 100%;
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
-    .class-selector {
-        flex: 3;
-        margin-left: -3px;
-
-        select {
-            margin-top: 5px;
-            width: 100%;
-            margin-left: 0px;
-            margin-right: 0px;
-        }
+    &:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.5s, opacity 0.5s;
+        transition-delay: 1s;
     }
 }
 
-// FA Goal Clock
-#faction-sheet {
-
-    div.label-stripe {
-        margin: 0px;
-    }
-
-    #faction-clocks { 
-        margin-top: 0px;
-
-        td {
-            width: 50%;
-
-            textarea {
-                resize: none;
-            }
-        }
-    }
-
-    .faction-clock-display {
-        width: 60px;
-
-        &.seg-4 {
-            @include clock(4, 60);
-        }
-
-        &.seg-6 {
-            @include clock(6, 60);
-        }
-
-        &.seg-8 {
-            @include clock(8, 60);
-        }
-
-        .clock-zero-label {
-            position: relative;
-            left: -10px;
-        }
-
-        .blades-clock {
-            top: -10px;
-        }
-    }
-
-    table.name-and-image td:nth-child(2) {
-        width: 60px;
-    }
-}

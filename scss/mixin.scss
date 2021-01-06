@@ -1,3 +1,6 @@
+// Imports
+@import 'variables.scss';
+
 /* 
 *  Elements that can be changed will hint this by dimming and fading a little on hover
 */
@@ -160,9 +163,11 @@
     }
 }
 
+
 /*
  * Custom Radio Squared
  */
+/*
 @mixin custom_radio_square($side) {
 
   display: flex;
@@ -187,7 +192,7 @@
     }
   }
 
-  /* Hide the browser's default checkbox */
+  // Hide the browser's default checkbox
   input {
     display: none;
   
@@ -202,10 +207,13 @@
     }
   }
 }
+*/
+
 
 /*
  * Checkboxes underscored.
  */
+/*
 @mixin check_underscore() {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +227,7 @@
         user-select: none;
         margin-right: 10px;
         @include changeable(0.1s, 0.8, 0.9);
-        /* Hide the browser's default checkbox */
+        // Hide the browser's default checkbox
         input {
             display: none;
 
@@ -234,6 +242,7 @@
         }
     }
 }
+*/
 
 /*
  * Create Clock
@@ -307,9 +316,11 @@
 
 }
 
+
 /*
  * Turf Block
  */
+/*
 @mixin turf_block($turf_width, $turf_height) {
   @include changeable(0.1s, 0.8, 0.9);
 
@@ -399,11 +410,13 @@
     }
   }
 }
+*/
 
 
 /*
  * Toothradio single elements
  */
+/*
  @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
 
   display: flex;
@@ -424,7 +437,7 @@
     }
   }
 
-  /* Hide the browser's default checkbox */
+  // Hide the browser's default checkbox
   input {
   
     display: none;
@@ -436,6 +449,8 @@
     }
   }
 }
+*/
+
 
 /*
  * Custom Radio Round
@@ -474,105 +489,17 @@
   }
 }
 
-/*
- * Fonts
- */
-/* bitter-regular - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-500 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 500;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-500.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-600 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-600.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-700 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 700;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-700.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-800 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 800;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-800.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-900 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 900;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-900.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 400;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-500italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 500;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-500italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-600italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 600;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-600italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-700italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 700;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-700italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-800italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 800;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-800italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-900italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 900;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-900italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* Blood crow-regular - latin */
-@font-face {
-    font-family: 'Blood Crow';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('../fonts/bloodcrow.ttf') format('truetype') /* Safari, Android, iOS */
-}
+ // Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+@mixin custom-label($image: 'assets/boxes/box-empty.png', $height: 24px, $width: 24px, $changeable: true) {
+    height: $height;
+    width: $width;
+    display: block;
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
 
-/* piedra-regular - latin */
-@font-face {
-    font-family: 'Piedra';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('../fonts/piedra-v9-latin-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+    @if $changeable {
+        @include changeable(0.1s, 0.8, 0.9);
+    }
 }

@@ -1,14 +1,14 @@
-<form class="{{cssClass}} actor-sheet" autocomplete="off">
+<form class="{{cssClass}} minion-sheet" autocomplete="off">
 
   {{!-- Minion Pack Name --}}
-  <div id="name">
+  <div id="name" class="large-name">
     <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
   </div>
   <section id="minion-form" class="flex-horizontal">
     <section id="main--minion-form" class="section grow-two">
       {{!-- Base Character Information --}}
-      <section id="base-info" class="section big-teeth-section">
-        <table>
+      <section class="section big-teeth-section">
+        <table class="base-info">
           <tr>
             <td>
               {{!-- Monster Race --}}
@@ -50,7 +50,7 @@
           <tr>
             <td>
               {{!-- Minion Number --}}
-              <div class="item-class-label" id="number">
+              <div class="text-input" id="number">
                 <label for="character-{{actor._id}}-number">{{localize "FITD.Number"}}</label>
                 <input type="number" id="character-{{actor._id}}-number" name="data.number" value="{{data.number}}" min="0" max="10">
               </div>
