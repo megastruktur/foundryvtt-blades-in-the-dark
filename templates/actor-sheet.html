@@ -25,7 +25,7 @@
             {{#if (eq item.type "monster_race")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -50,7 +50,7 @@
             {{#if (eq item.type "calling")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -75,7 +75,7 @@
             {{#if (eq item.type "revelry")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -181,7 +181,7 @@
                         <label for="item-{{item._id}}-checked"></label>
                       </div>
                       <div class="item-body flex-horizontal">
-                        <div class="item-name">{{item.name}}</div>
+                        <div class="item-name item-open-editor">{{item.name}}</div>
                       </div>
                       <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
                     </div>
@@ -200,7 +200,7 @@
                     {{#if (eq item.type "wickedimpulse")}}
                     <div class="item flex-horizontal" data-item-id="{{item._id}}">
                       <div class="item-body flex-horizontal">
-                        <div class="item-name">{{item.name}}</div>
+                        <div class="item-name item-open-editor">{{item.name}}</div>
                       </div>
                       <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
                     </div>
@@ -240,7 +240,7 @@
             {{#if (eq item.data.ability_group "group_base")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
                 <div class="item-description">{{item.data.description}}</div>
@@ -259,10 +259,10 @@
             {{#if (eq item.data.ability_group "group_faces")}}
             <tr class="item stolen-face" data-item-id="{{item._id}}">
               <td class="item-body">
-                <img src="{{item.img}}" title="{{item.name}}" />
+                <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" />
               </td>
               <td>
-                <div class="item-name item-body"><b>{{item.name}}</b></div>
+                <span class="item-body"><b class="item-open-editor">{{item.name}}</b></span>
                 <div class="item-description">{{item.data.description}}</div>
                 <div class="item-checkmark">
                   <div>
@@ -286,7 +286,7 @@
             {{#if (eq item.data.ability_group "group_core")}}
             <tr class="item group-core" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
                 <div class="item-description">{{item.data.description}}</div>
@@ -322,7 +322,7 @@
             {{#if (eq item.data.primal.be_psi_dots "3")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
                 {{#if item.data.primal.be_psi_checked_1}}
@@ -347,7 +347,7 @@
                   <div class="doomseeker-img">
                     <img src="systems/wicked-ones/styles/assets/decorations/doomseeker.png" usemap="#image-map" />
                     <map name="image-map">
-                      <area class="item-body" title="{{localize "FITD.DSConfigureRays"}}" coords="39,116,47,92,37,88,29,65,42,26,61,20,88,4,111,3,120,20,140,17,152,28,154,40,167,51,165,71,165,81,153,87,158,106,182,97,195,108,190,126,168,128,158,139,165,152,173,168,156,179,131,177,120,182,101,194,90,180,77,184,56,181,39,183,25,164,38,155,34,145,28,133,5,125,5,106,24,105" shape="poly">
+                      <area class="item-open-editor" title="{{localize "FITD.DSConfigureRays"}}" coords="39,116,47,92,37,88,29,65,42,26,61,20,88,4,111,3,120,20,140,17,152,28,154,40,167,51,165,71,165,81,153,87,158,106,182,97,195,108,190,126,168,128,158,139,165,152,173,168,156,179,131,177,120,182,101,194,90,180,77,184,56,181,39,183,25,164,38,155,34,145,28,133,5,125,5,106,24,105" shape="poly">
                     </map>
                   </div>
                   <div class="ray-items">
@@ -400,7 +400,7 @@
                       <input type="radio" id="path-{{item._id}}-0" name="{{item._id}}-data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-0"></label>
                     </td>
-                    <td><div class="item-name item-body">{{item.name}}</div></td>
+                    <td><div class="item-name item-body"><span class="item-open-editor">{{item.name}}</span></div></td>
                   </tr>
                   <tr>
                     <td>
@@ -474,7 +474,7 @@
             {{#if (eq item.data.ability_group "group_general")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td class="">
                 <div class="item-description">{{item.data.description}}</div>
@@ -513,7 +513,7 @@
             {{#if (eq item.data.ability_group "group_flex")}}
             <tr class="item group-flex" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
+                <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
               </td>
               <td>
                 <div class="item-description">{{item.data.description}}</div>
@@ -552,7 +552,7 @@
             {{#if (eq item.data.ability_group "group_ext")}}
             <tr class="item group-ext" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
+                <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
               </td>
               <td class="">
                 <div class="item-description">{{item.data.description}}</div>
@@ -618,7 +618,7 @@
             {{#if (eq item.type "gearsupply")}}
             {{#if (eq item.data.gear_or_supply "gear")}}
             <tr class="item" data-item-id="{{item._id}}">
-              <td class="item-body"><div class="item-name">{{item.name}}</div></td>
+              <td class="item-body"><div class="item-name item-open-editor">{{item.name}}</div></td>
               <td>
                 <div class="item-description">{{item.data.description}}</div>
                 <div class="gear-tags">
@@ -666,7 +666,7 @@
             {{#if item.data.supply_desc}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
                 <div class="item-description">{{item.data.supply_desc}}</div>
@@ -715,7 +715,7 @@
             {{#if (eq item.type "gearsupply")}}
             {{#if (eq item.data.gear_or_supply "supply")}}
             <tr class="item" data-item-id="{{item._id}}">
-              <td class="item-body"><div class="item-name">{{item.name}}</div></td>
+              <td class="item-body"><div class="item-name item-open-editor">{{item.name}}</div></td>
               <td>
                 <div class="item-description">
                   {{item.data.description}}
@@ -773,11 +773,11 @@
         <div class="label-stripe flex-horizontal">
           <p><label>{{localize "FITD.DowntimeActions"}}</label></p>
         </div>
-        <table id="abilities-list">
+        <table id="downtime-abilities-list">
           <tbody>
             <tr>
               <td>
-                <div class="item-name">{{localize "FITD.DowntimeAction"}}</div>
+                <div class="">{{localize "FITD.DowntimeAction"}}</div>
               </td>
               <td>
                 <div class="item-description">{{{localize "FITD.DowntimeActionHint"}}}</div>
@@ -794,7 +794,7 @@
             {{#if item.data.downtime_desc}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
                 <div class="item-description">{{item.data.downtime_desc}}</div>
@@ -849,7 +849,7 @@
                   {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
                 </div>
               </td>
-              <td class="item-body"><div class="item-name">{{item.name}}</div></td>
+              <td class="item-body"><div class="item-name item-open-editor">{{item.name}}</div></td>
               <td><div class="item-description">{{item.data.description}}</div></td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
@@ -874,9 +874,15 @@
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "duty")}}
             <tr class="item" data-item-id="{{item._id}}">
-              <td class="item-name item-body">{{item.data.tier}}</td>
-              <td class="item-name item-body">{{item.data.type}}</td>
-              <td class="item-name item-body">{{item.data.description}}</td>
+              <td class="item-body">
+                <span class="item-open-editor">{{item.data.tier}}</span>
+              </td>
+              <td class="item-body">
+                <span class="item-open-editor">{{item.data.type}}</span>
+              </td>
+              <td class="item-body">
+                <span class="item-open-editor item-description">{{item.data.description}}</span>
+              </td>
               <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
             </tr>
             {{/if}}
@@ -901,9 +907,9 @@
         </div>
         {{#each actor.items as |item id|}}
         <div class="item flex-horizontal all-items-list" data-item-id="{{item._id}}">
-          <div class="item-body item-sheet-open flex-horizontal">
-            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-            <div class="item-name">{{item.name}}</div>
+          <div class="item-body flex-horizontal">
+            <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+            <div class="item-name item-open-editor">{{item.name}}</div>
           </div>
           <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
         </div>

@@ -114,34 +114,28 @@ table.base-info {
     }
 }
 
+
+/*
+ *   Navigation Styles
+ */
+
 nav {
     margin-bottom: 10px;
 }
 
-// DU MP WO Nav Container (implement MP version)
+// Highlight selected tab
+.tabs .item.active {
+    font-weight: 700;
+    color: $bloody;
+    text-shadow: 2px 2px 7px $orange;
+}
+
+// Remove line-breaks from nav elements
 #wo-nav-container, #dun-nav-container, #mp-nav-container {
     nav a {
         flex: none;
     }
-
-    .all-items-list {
-        font-size: 14px;
-
-        &:nth-of-type(2n+1) {
-            background: rgba(0, 0, 0, 0.15);
-        }
-
-        div.item-body {
-            margin: 5px 10px;
-        }
-
-        a.item-delete {
-            margin-right: 10px;
-            align-self: center;
-        }
-    }
 }
-
 
 /*
  *   Element Styles
@@ -167,7 +161,7 @@ table {
 
         .item-add-popup {
             transition: opacity 0.5s;
-            opacity: 0.1;
+            opacity: $add-opacity;
         }
     }
 
@@ -283,7 +277,7 @@ button {
 
     .item-add-popup {
         transition: opacity 0.5s;
-        opacity: 0.1;
+        opacity: $add-opacity;
     }
 }
 
@@ -372,71 +366,39 @@ label.clock-zero-label {
  *  Item Styles
  */
 
-// TO DO: Split A, DIV and TR items
+// Item Add Buttons
+.item-add-popup {
+    padding-left: 10px;
+    font-weight: 700;
+}
+
 .item {
-    justify-content: space-between;
 
-    .item-body {
-        // margin-bottom: 10px;  // causes problems with Dark Impulses, Monster Race, Calling and Revelry
-        // margin-right: 10px;
-        .item-description {
-            font-style: italic;
-            text-align: justify;
-        }
+    .item-open-editor {
+        cursor: pointer;
+        @include changeable($transition-period,$hover-brightness, $hover-opacity );
     }
 
-    .item-special-feature {
-        margin: 0px 10px;
-        border-radius: 20px;
-        background: $mud3f;
-        padding: 10px;
+    .item-description {
+        font-style: italic;
+        text-align: justify;
     }
 
-    .missing-materials {
-        color: $gray;
-    }
-
-    div {
-        flex-grow: 2;
-    }
-
-    .item-class-label {
-        margin-bottom: 10px;
-    }
-}
-
-// Display all Item Names in Bold
-.item-name {
-    text-align: center;
-    font-weight: 500;
-    font-family: Piedra;
-    font-size: 20px;
-    padding: 0px 10px;
-}
-
-// Special Abilities
-#abilities, #loadout {
-
-    .item-body {
-        width: auto;
+    // Display all Item Names in Bold
+    .item-name {
+        text-align: center;
         font-weight: 500;
-    }
-}
-
-// Special Abilities List
-#abilities-list, #loadout {
-    div.item-name {
-        flex-basis: 25%;
-    }
-
-    div.item-description {
-        width: fit-content;
+        font-family: Piedra;
+        font-size: 20px;
+        padding: 0px 10px;
     }
 }
 
 // Show Trash bins on hover over ancestor
 div.item, tr.item {
+
     &:hover {
+
         i.fa-trash {
             transition: opacity 1s;
             opacity: 0.5;
@@ -449,28 +411,22 @@ div.item, tr.item {
     }
 }
 
-// Item Add Buttons
-.item-add-popup {
-    padding-left: 10px;
-    font-weight: 700;
-}
+// Item List in tab for all (Wicked One, Minion Pack, Dungeon Sheet)
+.all-items-list {
+    font-size: 14px;
 
-.item-class-label {
-    margin-bottom: 0px;
-}
+    &:nth-of-type(2n+1) {
+        background: rgba(0, 0, 0, 0.15);
+    }
 
+    div.item-body {
+        margin: 5px 10px;
+    }
 
-.tabs .item.active {
-    font-weight: 700;
-    color: $bloody;
-    text-shadow: 2px 2px 7px $orange;
-}
-
-// Rollable Text in Abilities List
-#abilities-list div.item-rollable-text > div > div {
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 5px;
+    a.item-delete {
+        margin-right: 10px;
+        align-self: center;
+    }
 }
 
 

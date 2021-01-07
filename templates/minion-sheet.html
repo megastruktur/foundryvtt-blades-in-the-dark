@@ -18,7 +18,7 @@
                 {{#if (eq item.type "monster_race")}}
                 <div class="item flex-horizontal" data-item-id="{{item._id}}">
                   <div class="item-body flex-horizontal">
-                    <div class="item-name">{{item.name}}</div>
+                    <div class="item-name item-open-editor">{{item.name}}</div>
                   </div>
                   <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
                 </div>
@@ -39,7 +39,7 @@
               {{#if (eq item.type "minion_type")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
                 <div class="item-body flex-horizontal">
-                  <div class="item-name">{{item.name}}</div>
+                  <div class="item-name item-open-editor">{{item.name}}</div>
                 </div>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
               </div>
@@ -64,7 +64,7 @@
               {{#if (eq item.type "minionimpulse")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
                 <div class="item-body flex-horizontal">
-                  <div class="item-name">{{item.name}}</div>
+                  <div class="item-name item-open-editor">{{item.name}}</div>
                 </div>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
               </div>
@@ -79,7 +79,7 @@
       {{!-- Tabs & Attributes --}}
       <section class="flex-horizontal">
 
-        <div id="wo-nav-container" class="tab-content flex-vertical grow-two">
+        <div id="mp-nav-container" class="tab-content flex-vertical grow-two">
 
           {{!-- Nav menu --}}
           <nav class="tabs flex-horizontal">
@@ -107,7 +107,7 @@
                 {{#if (eq item.data.upgrade_type "path")}}
                 <tr class="item" data-item-id="{{item._id}}">
                   <td class="item-body">
-                    <div class="item-name">{{item.name}}</div>
+                    <div class="item-name item-open-editor">{{item.name}}</div>
                   </td>
                   <td>
                     <div class="item-description">{{item.data.description}}</div>
@@ -127,7 +127,7 @@
                 {{#if (eq item.data.upgrade_type "regular")}}
                 <tr class="item" data-item-id="{{item._id}}">
                   <td class="item-body">
-                    <div class="item-name">{{item.name}}</div>
+                    <div class="item-name item-open-editor">{{item.name}}</div>
                   </td>
                   <td>
                     <div class="item-description">{{item.data.description}}</div>
@@ -155,7 +155,7 @@
                 {{#if (eq item.data.upgrade_type "external")}}
                 <tr class="item group-ext" data-item-id="{{item._id}}">
                   <td class="item-body">
-                    <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
+                    <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
                   </td>
                   <td>
                     <div class="item-description">{{item.data.description}}</div>
@@ -169,12 +169,10 @@
                     </div>
                     {{/unless}}
                     {{#unless (eq item.data.upgrade_skill_name "")}}
-                    <div class="item-rollable-text">
-                      <div>
-                        <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{item.data.upgrade_skill_name}}" data-roll-value="{{item.data.upgrade_skill_value}}">
-                          {{localize "FITD.Roll"}} {{localize item.data.upgrade_skill_localization_ref}} ({{item.data.upgrade_skill_value}}D)
-                        </div>
-                      </div>
+                    <div class="attribute-skill-label" >
+                      <span class="item-rollable-text roll-die-attribute rollable-text" data-roll-attribute="{{item.data.upgrade_skill_name}}" data-roll-value="{{item.data.upgrade_skill_value}}">
+                      {{localize "FITD.Roll"}} {{localize item.data.upgrade_skill_localization_ref}} ({{item.data.upgrade_skill_value}}D)
+                      </span>
                     </div>
                     {{/unless}}
                   </td>
@@ -191,7 +189,7 @@
                 {{#if (eq item.type "specialability")}}
                 <tr class="item group-ext" data-item-id="{{item._id}}">
                   <td class="item-body">
-                    <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
+                    <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.External"}})</i></div>
                   </td>
                   <td class="">
                     <div class="item-description">{{item.data.description}}</div>
@@ -242,9 +240,9 @@
             </div>
             {{#each actor.items as |item id|}}
             <div class="item flex-horizontal all-items-list" data-item-id="{{item._id}}">
-              <div class="item-body item-sheet-open flex-horizontal">
-                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                <div class="item-name">{{item.name}}</div>
+              <div class="item-body flex-horizontal">
+                <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>

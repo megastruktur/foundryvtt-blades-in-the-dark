@@ -5,7 +5,6 @@
 
 
 form.minion-sheet {
-
     // MP Number Padding
     #number {
         padding-right: 12px;
@@ -22,18 +21,10 @@ form.minion-sheet {
         }
     }
 
-    // MP Upgrade Styles
-    section.rollable-skill {
-        div > div {
-            width: 50%;
-
-            label {
-                margin-right: 10px;
-            }
-
-            #upgrade-skill-rating {
-                width: 50px;
-            }
-        }
+    // Rollable Text in Abilities List
+    #abilities-list .item-rollable-text {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 5px;
     }
 }

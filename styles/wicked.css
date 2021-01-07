@@ -105,7 +105,9 @@
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -120,218 +122,13 @@
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 /*
  * Fonts
@@ -440,7 +237,9 @@
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -455,218 +254,13 @@
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 form.actor-sheet table.base-info .xp-stripe {
   background-color: #68332c;
@@ -1355,7 +949,9 @@ form.actor-sheet #duties-table tr td:nth-of-type(4) {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -1370,218 +966,13 @@ form.actor-sheet #duties-table tr td:nth-of-type(4) {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 form.minion-sheet #number {
   padding-right: 12px;
@@ -1595,14 +986,10 @@ form.minion-sheet #number input {
   width: 50%;
   display: block;
 }
-form.minion-sheet section.rollable-skill div > div {
-  width: 50%;
-}
-form.minion-sheet section.rollable-skill div > div label {
-  margin-right: 10px;
-}
-form.minion-sheet section.rollable-skill div > div #upgrade-skill-rating {
-  width: 50px;
+form.minion-sheet #abilities-list .item-rollable-text {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 5px;
 }
 
 /*
@@ -1712,7 +1099,9 @@ form.minion-sheet section.rollable-skill div > div #upgrade-skill-rating {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -1727,219 +1116,23 @@ form.minion-sheet section.rollable-skill div > div #upgrade-skill-rating {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
  */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+form.dungeon-sheet .item-special-feature {
+  margin: 0px 10px;
+  border-radius: 20px;
+  background: #68332c3f;
+  padding: 10px;
+}
+form.dungeon-sheet .missing-materials {
+  color: #999;
+}
 form.dungeon-sheet #dungeon-theme-bar {
   padding-left: 0px;
   padding-right: 0px;
@@ -2113,7 +1306,9 @@ form.dungeon-sheet #dungeon-tier > * {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -2128,218 +1323,13 @@ form.dungeon-sheet #dungeon-tier > * {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 form.faction-sheet #faction-sheet div.label-stripe {
   margin: 0px;
@@ -2633,7 +1623,9 @@ form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -2648,218 +1640,13 @@ form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 form.party-sheet #adventure-party .profile-img {
   vertical-align: middle;
@@ -3127,7 +1914,9 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -3142,218 +1931,13 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 #attributes {
   height: fit-content;
@@ -3790,7 +2374,9 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -3805,221 +2391,26 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 header {
   margin-bottom: 10px;
+}
+
+form.minion-upgrade-sheet section.rollable-skill div > div {
+  width: 50%;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div label {
+  margin-right: 10px;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div #upgrade-skill-rating {
+  width: 50px;
 }
 
 form.special-ability-sheet #ray-selection div.ray-line {
@@ -4170,7 +2561,9 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -4185,218 +2578,13 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 #chat .chat-label {
   background-color: #191919;
@@ -4645,7 +2833,9 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -4660,218 +2850,13 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-    display: none;
-
-    &:checked {
-
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-*/
-/*
- * Checkboxes underscored.
- */
-/*
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        // Hide the browser's default checkbox
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
-*/
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-*/
-/*
- * Toothradio single elements
- */
-/*
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Hide the browser's default checkbox
-  input {
-
-    display: none;
-
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
-*/
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 /*
  *  Add-item pop-up dialog Styles
@@ -4990,25 +2975,21 @@ table.base-info tr .text-input input {
   border-radius: 0;
 }
 
+/*
+ *   Navigation Styles
+ */
 nav {
   margin-bottom: 10px;
 }
 
+.tabs .item.active {
+  font-weight: 700;
+  color: #400000;
+  text-shadow: 2px 2px 7px #d46c1f;
+}
+
 #wo-nav-container nav a, #dun-nav-container nav a, #mp-nav-container nav a {
   flex: none;
-}
-#wo-nav-container .all-items-list, #dun-nav-container .all-items-list, #mp-nav-container .all-items-list {
-  font-size: 14px;
-}
-#wo-nav-container .all-items-list:nth-of-type(2n+1), #dun-nav-container .all-items-list:nth-of-type(2n+1), #mp-nav-container .all-items-list:nth-of-type(2n+1) {
-  background: rgba(0, 0, 0, 0.15);
-}
-#wo-nav-container .all-items-list div.item-body, #dun-nav-container .all-items-list div.item-body, #mp-nav-container .all-items-list div.item-body {
-  margin: 5px 10px;
-}
-#wo-nav-container .all-items-list a.item-delete, #dun-nav-container .all-items-list a.item-delete, #mp-nav-container .all-items-list a.item-delete {
-  margin-right: 10px;
-  align-self: center;
 }
 
 /*
@@ -5340,47 +3321,30 @@ label.clock-zero-label i.nullifier:hover {
 /*
  *  Item Styles
  */
-.item {
-  justify-content: space-between;
+.item-add-popup {
+  padding-left: 10px;
+  font-weight: 700;
 }
-.item .item-body .item-description {
+
+.item .item-open-editor {
+  cursor: pointer;
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+.item .item-open-editor:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.item .item-description {
   font-style: italic;
   text-align: justify;
 }
-.item .item-special-feature {
-  margin: 0px 10px;
-  border-radius: 20px;
-  background: #68332c3f;
-  padding: 10px;
-}
-.item .missing-materials {
-  color: #999;
-}
-.item div {
-  flex-grow: 2;
-}
-.item .item-class-label {
-  margin-bottom: 10px;
-}
-
-.item-name {
+.item .item-name {
   text-align: center;
   font-weight: 500;
   font-family: Piedra;
   font-size: 20px;
   padding: 0px 10px;
-}
-
-#abilities .item-body, #loadout .item-body {
-  width: auto;
-  font-weight: 500;
-}
-
-#abilities-list div.item-name, #loadout div.item-name {
-  flex-basis: 25%;
-}
-#abilities-list div.item-description, #loadout div.item-description {
-  width: fit-content;
 }
 
 div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
@@ -5392,25 +3356,18 @@ div.item i.fa-trash, tr.item i.fa-trash {
   opacity: 0;
 }
 
-.item-add-popup {
-  padding-left: 10px;
-  font-weight: 700;
+.all-items-list {
+  font-size: 14px;
 }
-
-.item-class-label {
-  margin-bottom: 0px;
+.all-items-list:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.15);
 }
-
-.tabs .item.active {
-  font-weight: 700;
-  color: #400000;
-  text-shadow: 2px 2px 7px #d46c1f;
+.all-items-list div.item-body {
+  margin: 5px 10px;
 }
-
-#abilities-list div.item-rollable-text > div > div {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 5px;
+.all-items-list a.item-delete {
+  margin-right: 10px;
+  align-self: center;
 }
 
 /*

@@ -5,7 +5,17 @@
 
 
 form.dungeon-sheet {
-
+    // Special feature of the dungeon theme
+    .item-special-feature {
+        margin: 0px 10px;
+        border-radius: 20px;
+        background: $mud3f;
+        padding: 10px;
+    }
+    // Fade Rooms with missing Materials
+    .missing-materials {
+        color: $gray;
+    }
     // Dungeon Theme Bar
     #dungeon-theme-bar {
         padding-left: 0px;
@@ -33,11 +43,9 @@ form.dungeon-sheet {
 
         tr .item-add-popup {
             transition: opacity 0.5s;
-            opacity: 0.1;
+            opacity: $add-opacity;
         }
     }
-
-
     // Dungeon Tier Radio
     #dungeon-tier {
         background-color: $mud3f;
