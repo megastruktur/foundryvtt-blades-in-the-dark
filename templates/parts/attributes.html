@@ -94,23 +94,23 @@
       </div>
     </div>
   </div>
-    <div class="attribute flex-horizontal">
-      <div class="main" id="hearts-display">
-        <div id="hearts-header" class="stripe">
-          <label class="attribute-label">{{localize "FITD.DarkHearts"}}</label>
-		</div>
-	  <div id="attributes-darkhearts">
-		<div class="flex-horizontal heart-container">
-		  {{#multiboxes data.dark_hearts}}
+  <div class="attribute flex-horizontal">
+    <div class="main" id="hearts-display">
+	    <div id="attributes-darkhearts">
+	      <div class="flex-horizontal heart-container">
+		      {{#multiboxes data.dark_hearts}}
 
-		  {{#times_from_0 data.dark_hearts_max}}
-		  <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}" name="data.dark_hearts" value="{{this}}">
-		  <label class="dark-heart" for="{{../actor._id}}-dark-hearts-{{this}}"></label>
-		  {{/times_from_0}}
-		  {{/multiboxes}}
-	    </div>		  
-       </div>
+		      {{#times_from_0 data.dark_hearts_max}}
+		      <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}" name="data.dark_hearts" value="{{this}}">
+		      <label class="dark-heart" for="{{../actor._id}}-dark-hearts-{{this}}"></label>
+		      {{/times_from_0}}
+		      {{/multiboxes}}
+	      </div>		  
       </div>
+      <div id="hearts-footer" class="stripe">
+        <label class="attribute-label">{{localize "FITD.DarkHearts"}}</label>
+	    </div>
     </div>
+  </div>
   {{/if}}
 </div>

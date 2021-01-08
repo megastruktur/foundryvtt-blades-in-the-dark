@@ -694,6 +694,8 @@ form.actor-sheet #loadout .gear-tags label {
   border-radius: 5px;
   padding: 2px 4px;
   margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
 form.actor-sheet #loadout .gear-tags label.quality-mundane {
   color: #191919;
@@ -1720,14 +1722,17 @@ form.party-sheet #adventure-party td.moves-radio div label {
   background-repeat: no-repeat;
   background-size: contain;
   vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
   transition: filter 0.1s;
   cursor: pointer;
-}
-form.party-sheet #adventure-party td.moves-radio div label.dark-heart {
-  background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
-  position: relative;
-  top: -2px;
 }
 form.party-sheet #adventure-party td.moves-radio div label[for$="-0"] {
   height: 8px;
@@ -1756,14 +1761,15 @@ form.party-sheet #adventure-party td.moves-radio div input:checked + label {
   transition: filter 0.1s;
   cursor: pointer;
   background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
 }
 form.party-sheet #adventure-party td.moves-radio div input:checked + label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
-}
-form.party-sheet #adventure-party td.moves-radio div input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
 }
 form.party-sheet #adventure-party td.moves-radio div input:checked + label.practice-one {
   background-image: url("assets/boxes/box-slashed.png");
@@ -1945,8 +1951,110 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
   top: 7px;
   position: relative;
 }
-#attributes.minion {
-  min-width: 235px;
+#attributes .main {
+  flex-grow: 1;
+}
+#attributes .main div:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#attributes .attribute-label {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+#attributes .attribute-skill-label {
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: 2px;
+}
+#attributes .attributes-exp {
+  margin-bottom: 2px;
+}
+#attributes .attributes-container {
+  margin: 3px 3px 3px -8px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes .attributes-container label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes .attributes-container label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#attributes .attributes-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input {
+  display: none;
+}
+#attributes .attributes-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes .attributes-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes .attributes-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
+}
+#attributes .attributes-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes .attributes-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#attributes .attributes-container * {
+  margin-right: 1px;
+}
+#attributes .attributes-container label {
+  margin-top: 3px;
+}
+#attributes .attribute-description {
+  display: none;
+  font-size: 11px;
+  padding-left: 6px;
+  font-family: Bitter;
+  font-weight: 500;
+}
+#attributes .skill-description {
+  font-style: italic;
+  margin-left: 3px;
+  align-self: center;
 }
 #attributes .attribute {
   margin-bottom: 5px;
@@ -2081,52 +2189,33 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
 #attributes .morale-minion input:checked + label {
   background-image: url("assets/boxes/box-filled.png");
 }
-#attributes .main {
-  flex-grow: 1;
-}
-#attributes .main div:hover > div.attributes-container label {
-  transition: opacity 1s;
-  opacity: 1;
-}
-#attributes .attribute-label {
-  font-size: 18px;
-  text-transform: uppercase;
-  background-color: #68332c;
-}
-#attributes .attribute-skill-label {
-  font-weight: 800;
-  font-size: 18px;
-  text-transform: uppercase;
-  background-color: unset;
-}
-#attributes .attributes-exp {
-  position: relative;
-  margin-bottom: 2px;
-}
-#attributes .attributes-container {
-  display: flex;
-  margin: 3px 0px;
-  background-color: unset;
+#attributes #attributes-darkhearts .heart-container {
+  justify-content: start;
+  margin-left: 33px;
+  margin-bottom: 1px;
   display: flex;
   /* Hide the browser's default checkbox */
 }
-#attributes .attributes-container label {
-  height: 15px;
-  width: 15px;
+#attributes #attributes-darkhearts .heart-container label {
+  height: 40px;
+  width: 40px;
   background-image: url("assets/boxes/box-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
   vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
   transition: filter 0.1s;
   cursor: pointer;
 }
-#attributes .attributes-container label.dark-heart {
-  background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
-  position: relative;
-  top: -2px;
-}
-#attributes .attributes-container label[for$="-0"] {
+#attributes #attributes-darkhearts .heart-container label[for$="-0"] {
   height: 8px;
   width: 8px;
   border-radius: 24px;
@@ -2136,135 +2225,59 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
   background-color: #a20000 !important;
   margin-right: 0px;
 }
-#attributes .attributes-container label:hover {
+#attributes #attributes-darkhearts .heart-container label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
-#attributes .attributes-container input {
+#attributes #attributes-darkhearts .heart-container input {
   display: none;
 }
-#attributes .attributes-container input:checked ~ label {
+#attributes #attributes-darkhearts .heart-container input:checked ~ label {
   background-image: url("assets/boxes/box-empty.png");
 }
-#attributes .attributes-container input:checked ~ label.dark-heart {
+#attributes #attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
   background-image: url("assets/boxes/heart-empty.png");
 }
-#attributes .attributes-container input:checked + label {
+#attributes #attributes-darkhearts .heart-container input:checked + label {
   transition: filter 0.1s;
   cursor: pointer;
   background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
 }
-#attributes .attributes-container input:checked + label:hover {
+#attributes #attributes-darkhearts .heart-container input:checked + label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
-#attributes .attributes-container input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
-}
-#attributes .attributes-container input:checked + label.practice-one {
+#attributes #attributes-darkhearts .heart-container input:checked + label.practice-one {
   background-image: url("assets/boxes/box-slashed.png");
 }
-#attributes .attributes-container input:checked + label.practice-two {
+#attributes #attributes-darkhearts .heart-container input:checked + label.practice-two {
   background-image: url("assets/boxes/box-crossed.png");
 }
-#attributes .attributes-container * {
-  margin-right: 5px;
-}
-#attributes .attributes-container label {
-  margin-top: 3px;
-}
-#attributes .attribute-description {
-  font-size: 11px;
-  padding-left: 6px;
-  font-family: Bitter;
-  font-weight: 500;
-}
-#attributes .skill-description {
-  font-style: italic;
-  font-size: larger;
-}
-
-#attributes-darkhearts {
-  /* margin-left: 32px; */
-}
-#attributes-darkhearts .heart-container {
-  justify-content: center;
-  margin-left: 3px;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-#attributes-darkhearts .heart-container label {
-  height: 30px;
-  width: 30px;
-  background-image: url("assets/boxes/box-filled.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  vertical-align: middle;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#attributes-darkhearts .heart-container label.dark-heart {
+#attributes #attributes-darkhearts .heart-container label.dark-heart {
   background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
+  margin-right: 8px;
   position: relative;
   top: -2px;
 }
-#attributes-darkhearts .heart-container label[for$="-0"] {
-  height: 8px;
-  width: 8px;
-  border-radius: 24px;
-  opacity: 0;
-  transition: opacity 1s;
-  background-image: none !important;
-  background-color: #a20000 !important;
-  margin-right: 0px;
-}
-#attributes-darkhearts .heart-container label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#attributes-darkhearts .heart-container input {
-  display: none;
-}
-#attributes-darkhearts .heart-container input:checked ~ label {
-  background-image: url("assets/boxes/box-empty.png");
-}
-#attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
-  background-image: url("assets/boxes/heart-empty.png");
-}
-#attributes-darkhearts .heart-container input:checked + label {
-  transition: filter 0.1s;
-  cursor: pointer;
-  background-image: url("assets/boxes/box-filled.png");
-}
-#attributes-darkhearts .heart-container input:checked + label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#attributes-darkhearts .heart-container input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
-}
-#attributes-darkhearts .heart-container input:checked + label.practice-one {
-  background-image: url("assets/boxes/box-slashed.png");
-}
-#attributes-darkhearts .heart-container input:checked + label.practice-two {
-  background-image: url("assets/boxes/box-crossed.png");
-}
-#attributes-darkhearts .heart-container:hover label {
+#attributes #attributes-darkhearts .heart-container:hover label {
   transition: opacity 1s;
   opacity: 1;
 }
-
-#hearts-header {
+#attributes #attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+}
+#attributes #hearts-footer {
   margin-left: 33px;
   padding-right: 10px;
   min-width: 135px;
-}
-
-#hearts-display {
-  display: flex;
 }
 
 /*

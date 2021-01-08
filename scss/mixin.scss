@@ -115,12 +115,15 @@
             background-size: contain;
             vertical-align: middle;
 
+            /*
             &.dark-heart {
                 background-image: url("assets/boxes/heart-filled.png");
                 margin-right: 4px;
                 position: relative;
                 top: -2px;
             }
+
+            */
 
             &[for$="-0"] {
                 height: 8px;
@@ -156,10 +159,11 @@
                 @include changeable(0.1s, 0.7, 0.7);
                 background-image: url("assets/boxes/box-filled.png");
 
+                /*
                 &.dark-heart {
-                    /* animation: glow 2000ms ease-out infinite alternate; */
+                    // animation: glow 2000ms ease-out infinite alternate;
                     background-image: url("assets/boxes/heart-filled.png");
-                }
+                }*/
 
                 &.practice-one {
                     background-image: url("assets/boxes/box-slashed.png");
