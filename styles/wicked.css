@@ -1,10 +1,113 @@
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
 /* 
 *  Elements that can be changed will hint this by dimming and fading a little on hover
 */
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -19,22 +122,13 @@
  * Custom Radio
  */
 /*
- * Custom Radio Squared
- */
-/*
- * Checkboxes underscored.
- */
-/*
  * Create Clock
  */
 /*
- * Turf Block
- */
-/*
- * Toothradio single elements
- */
-/*
  * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
 /*
  * Fonts
@@ -137,325 +231,67 @@
   font-weight: 400;
   src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
 }
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
 /*
- *  General Styles
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
-* header {
-  margin-bottom: 10px;
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
 }
-* body {
-  font-family: Bitter, sans-serif;
-  font-weight: 500;
-  font-size: 14px;
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+form.actor-sheet table.base-info .xp-stripe {
+  background-color: #68332c;
 }
-* button {
-  font-family: Bitter, sans-serif;
-  font-weight: 500;
-  color: #fff8e8;
-  background: #68332c;
-  border-top: 1px outset #d46c1f;
-  border-bottom: 2px outset #d46c1f;
-  border-left: 2px solid darkslategrey;
-  border-right: 2px solid darkslategrey;
-  transition-duration: 0.2s;
-}
-* button:hover, * button:focus {
-  outline: none;
-  box-shadow: 0 0 5px #d46c1f;
-  background: #d46c1f;
-}
-* .sheet {
-  min-width: min-content;
-}
-* .dialog .dialog-buttons button {
-  background: #68332c;
-  border-top: 1px outset #d46c1f;
-  border-bottom: 2px outset #d46c1f;
-  border-left: 2px solid darkslategrey;
-  border-right: 2px solid darkslategrey;
-}
-* * form button {
-  background: #68332c;
-  border-top: 1px outset #d46c1f;
-  border-bottom: 2px outset #d46c1f;
-  border-left: 2px solid darkslategrey;
-  border-right: 2px solid darkslategrey;
-}
-* ul {
-  list-style: none;
-}
-* h1, * h2, * h3, * h4 {
-  font-weight: bold;
-}
-* input[type=text], * input[type=number], * input[type=password], * input[type=date], * input[type=time], * input[type=range] {
-  font-weight: 600;
-}
-* form.actor-sheet {
-  padding: 20px;
-}
-* form .notes, * form .hint {
-  color: #400000;
-  font-weight: 600;
-}
-* label {
-  font-weight: 600;
-}
-* textarea {
-  color: #400000;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-family: Bitter;
-  font-weight: 600;
-  min-height: 80px;
-}
-* td {
-  padding: 5px;
-}
-* section {
-  /* margin-bottom: 10px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-* section > *:not(.label-stripe) {
-  margin-right: 10px;
-}
-* section > *:not(.label-stripe):last-child {
+form.actor-sheet #character-wickedxp label[for$="-0"] {
   margin-right: 0px;
 }
-* section .grow-one {
-  flex-grow: 1;
+form.actor-sheet #character-recklessxp label[for$="-0"] {
+  margin-right: 0px;
 }
-* section .grow-two {
-  flex-grow: 2;
-}
-* select {
-  font-family: Bitter, Lucida Console, monospace;
-  font-weight: 600;
-  font-size: 15px;
-  border-radius: 0px;
-  border-color: 1px solid #68332c;
-}
-* option {
-  font-weight: 600;
-}
-* nav {
-  margin-bottom: 10px;
-}
-* input[type=checkbox] {
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  background-image: url("assets/boxes/box-empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-* input[type=checkbox]:checked {
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  background-image: url("assets/boxes/box-crossed.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-* .action-info {
-  margin-top: -20px;
-}
-* .editor,
-* .editor-content {
-  min-height: 280px;
-  background: rgba(0, 0, 0, 0.05);
-}
-* .flex-horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-* .flex-vertical {
-  display: flex;
-  flex-direction: column;
-}
-* .black-label {
-  background-color: #68332c;
-  color: #EEEFFF;
-  font-size: 18px;
-  text-align: center;
-  padding: 4px 5px;
-  height: 30px !important;
-  text-transform: capitalize;
-  text-shadow: 0 2px #311815;
-}
-* .gray-label {
-  background-color: #999;
-  color: #191919;
-  font-size: 21px;
-  text-align: center;
-  padding: 0px 5px;
-  height: 30px !important;
-  text-transform: capitalize;
-}
-* .chat-message {
-  padding: 5px;
-  color: #191919;
-  font-size: 14px;
-  background: url(../styles/assets/images/background-light.png) repeat;
-  background-size: 300px;
-  box-shadow: inset 0 0 9px 1px #4000004f;
-}
-* .chat-message .message-header .message-sender {
-  font-family: Piedra;
-  font-weight: normal;
-  font-size: 15px;
-}
-* .chat-message .message-content {
-  font-family: Bitter;
-  font-size: inherit;
-  font-weight: 600;
-}
-* .chat-message .message-header .message-metadata {
-  text-align: right;
-  font-weight: 700;
-}
-* .chat-label {
-  background-color: #191919;
-  color: #EEEFFF;
-  font-size: 24px;
-  text-align: center;
-  padding: 0px 5px;
-  height: 36px !important;
-  text-transform: capitalize;
-}
-* .chat-label-small {
-  background-color: #999;
-  color: #191919;
-  font-size: small;
-  text-align: center;
-  padding: 3px 5px;
-  height: 26px !important;
-}
-* .compendium .directory-list .directory-item {
-  padding: 3px 0;
-  line-height: 48px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid #4000005c;
-  box-shadow: none;
-}
-* .dialog .dialog-buttons button.default {
-  background: #68332c;
-  border-top: 1px outset #d46c1f;
-  border-bottom: 2px outset #d46c1f;
-  border-left: 2px solid darkslategrey;
-  border-right: 2px solid darkslategrey;
-}
-* .dialog .dialog-buttons button.default:hover, * .dialog .dialog-buttons button.default:focus {
-  outline: none;
-  box-shadow: 0 0 5px #d46c1f;
-  background: #d46c1f;
-}
-* .label-stripe {
-  text-transform: uppercase;
-  background-color: #68332c;
-  color: #EEEFFF;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  font-weight: bold;
-  font-size: medium;
-}
-* .label-stripe:hover .item-add-popup {
-  transition: opacity 0.5s;
-  opacity: 1;
-}
-* .label-stripe .item-add-popup {
-  transition: opacity 0.5s;
-  opacity: 0.1;
-}
-* .label-stripe-gray {
-  text-transform: uppercase;
-  background-color: #999;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  font-weight: bold;
-}
-* .label-stripe-chat {
-  font-family: Piedra;
-  background-color: #68332c;
-  color: white;
-  margin-bottom: 10px;
-  position: relative;
-  padding-top: 3px;
-  display: flex;
-  font-weight: normal;
-  margin: 0;
-  border-top-left-radius: 5px;
-  text-shadow: 2px 2px 0 #313131;
-}
-* .label-type {
-  font-family: Piedra;
-  text-transform: uppercase;
-  color: white;
-  display: flex;
-  font-family: Bitter;
-  font-weight: 600;
-  font-size: 12px;
-  margin: 0;
-  margin-left: auto;
-  border-top-left-radius: 5px;
-}
-* .label-stripe-chat-small {
-  text-transform: capitalize;
-  background-color: #bdb7ab;
-  color: #191919;
-  margin-bottom: 0px;
-  position: relative;
-  padding-top: 3px;
-  /* display: flex; */
-  font-weight: normal;
-  font-family: Piedra;
-  font-size: 16px;
-}
-* .description {
-  font-style: italic;
-  font-weight: 600;
-}
-* .rollable-text {
-  transition: color 0.2s;
-}
-* .rollable-text:hover {
-  cursor: pointer;
-  color: #a20000;
-}
-* .big-teeth-section {
+form.actor-sheet .big-teeth-section {
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
-  /* Reckless XP */
 }
-* .big-teeth-section > * {
+form.actor-sheet .big-teeth-section > * {
   margin-right: 10px;
 }
-* .big-teeth-section > *:last-child {
+form.actor-sheet .big-teeth-section > *:last-child {
   margin-right: 0px;
 }
-* .big-teeth-section:last-child {
+form.actor-sheet .big-teeth-section:last-child {
   margin-right: 0px;
 }
-* .big-teeth-section .big-teeth {
+form.actor-sheet .big-teeth-section .big-teeth {
   display: flex;
   /* Hide the browser's default checkbox */
   justify-content: center;
   align-items: center;
 }
-* .big-teeth-section .big-teeth label {
+form.actor-sheet .big-teeth-section .big-teeth label {
   height: 32px;
   width: 11px;
   background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
@@ -465,77 +301,77 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-* .big-teeth-section .big-teeth label:last-of-type {
+form.actor-sheet .big-teeth-section .big-teeth label:last-of-type {
   margin-right: 0px;
 }
-* .big-teeth-section .big-teeth label[for$="-0"] {
+form.actor-sheet .big-teeth-section .big-teeth label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-* .big-teeth-section .big-teeth label[for$="-0"] i {
+form.actor-sheet .big-teeth-section .big-teeth label[for$="-0"] i {
   margin-top: 4px;
 }
-* .big-teeth-section .big-teeth label:hover {
+form.actor-sheet .big-teeth-section .big-teeth label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* .big-teeth-section .big-teeth input {
+form.actor-sheet .big-teeth-section .big-teeth input {
   display: none;
 }
-* .big-teeth-section .big-teeth input:checked ~ label {
+form.actor-sheet .big-teeth-section .big-teeth input:checked ~ label {
   background-image: url("assets/teeth/xp-tooth-3-5-7-empty.png");
 }
-* .big-teeth-section .big-teeth input:checked + label {
+form.actor-sheet .big-teeth-section .big-teeth input:checked + label {
   background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
 }
-* .big-teeth-section .big-teeth label {
+form.actor-sheet .big-teeth-section .big-teeth label {
   margin-right: 0px;
 }
-* .big-teeth-section .big-teeth label:nth-of-type(2) {
+form.actor-sheet .big-teeth-section .big-teeth label:nth-of-type(2) {
   background-image: url("assets/teeth/xp-tooth-1-filled.png");
   width: 10px;
 }
-* .big-teeth-section .big-teeth label:nth-of-type(2n+3) {
+form.actor-sheet .big-teeth-section .big-teeth label:nth-of-type(2n+3) {
   background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
   width: 12px;
 }
-* .big-teeth-section .big-teeth label:last-of-type {
+form.actor-sheet .big-teeth-section .big-teeth label:last-of-type {
   background-image: url("assets/teeth/xp-tooth-9-filled.png");
   width: 18px;
 }
-* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
+form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
   background-image: url("assets/teeth/xp-tooth-1-empty.png");
   width: 10px;
 }
-* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
+form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
   background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
   width: 12px;
 }
-* .big-teeth-section .big-teeth.xp-bar input:checked ~ label:last-of-type {
+form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked ~ label:last-of-type {
   background-image: url("assets/teeth/xp-tooth-9-empty.png");
   width: 18px;
 }
-* .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
+form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
   background-image: url("assets/teeth/xp-tooth-1-filled.png");
   width: 10px;
 }
-* .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
+form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
   background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
   width: 12px;
 }
-* .big-teeth-section .big-teeth.xp-bar input:checked + label:last-of-type {
+form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked + label:last-of-type {
   background-image: url("assets/teeth/xp-tooth-9-filled.png");
   width: 18px;
 }
-* .big-teeth-section .big-teeth.gold {
+form.actor-sheet .big-teeth-section .big-teeth.gold {
   display: flex;
   /* Hide the browser's default checkbox */
   align-items: center;
   justify-content: center;
 }
-* .big-teeth-section .big-teeth.gold label {
+form.actor-sheet .big-teeth-section .big-teeth.gold label {
   height: 20px;
   width: 20px;
   background-image: url("assets/teeth/gold-filled.png");
@@ -545,40 +381,40 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-* .big-teeth-section .big-teeth.gold label:last-of-type {
+form.actor-sheet .big-teeth-section .big-teeth.gold label:last-of-type {
   margin-right: 0px;
 }
-* .big-teeth-section .big-teeth.gold label[for$="-0"] {
+form.actor-sheet .big-teeth-section .big-teeth.gold label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-* .big-teeth-section .big-teeth.gold label[for$="-0"] i {
+form.actor-sheet .big-teeth-section .big-teeth.gold label[for$="-0"] i {
   margin-top: 4px;
 }
-* .big-teeth-section .big-teeth.gold label:hover {
+form.actor-sheet .big-teeth-section .big-teeth.gold label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* .big-teeth-section .big-teeth.gold input {
+form.actor-sheet .big-teeth-section .big-teeth.gold input {
   display: none;
 }
-* .big-teeth-section .big-teeth.gold input:checked ~ label {
+form.actor-sheet .big-teeth-section .big-teeth.gold input:checked ~ label {
   background-image: url("assets/teeth/gold-empty.png");
 }
-* .big-teeth-section .big-teeth.gold input:checked + label {
+form.actor-sheet .big-teeth-section .big-teeth.gold input:checked + label {
   background-image: url("assets/teeth/gold-filled.png");
 }
-* .big-teeth-section .big-teeth.gold label {
+form.actor-sheet .big-teeth-section .big-teeth.gold label {
   margin-right: 0px;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap {
   display: flex;
   /* Hide the browser's default checkbox */
   flex-direction: column;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap label {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label {
   height: 50px;
   width: 17px;
   background-image: url("assets/teeth/shorttooth-red.png");
@@ -587,158 +423,362 @@
   margin-right: 5px;
   cursor: not-allowed;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap label:last-of-type {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label:last-of-type {
   margin-right: 0px;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] i {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] i {
   margin-top: 4px;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap input {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap input {
   display: none;
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked ~ label {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked ~ label {
   background-image: url("assets/teeth/shorttooth-grey.png");
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked + label {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked + label {
   background-image: url("assets/teeth/shorttooth-red.png");
 }
-* .big-teeth-section .small-teeth-container .small-teeth-wrap .small-teeth {
+form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap .small-teeth {
   display: flex;
   flex-direction: row;
 }
-* .teeth-experience {
+form.actor-sheet #defenses-stress {
+  display: flex;
+}
+form.actor-sheet #character-defenses {
+  width: 100%;
+}
+form.actor-sheet #character-defenses table {
+  width: 100%;
+}
+form.actor-sheet #character-defenses table th {
+  background-color: #68332c;
+  color: #EEEFFF;
+  font-size: medium;
+  font-weight: 600;
+  text-shadow: 0 2px #311815;
+}
+form.actor-sheet #character-defenses table input[type=text] {
+  width: 100%;
+}
+form.actor-sheet #character-defenses table tr td:nth-of-type(1) .item-checkmark {
+  flex-grow: unset;
+  margin-right: 0px 3px;
+}
+form.actor-sheet #character-defenses table tr td:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+form.actor-sheet #character-defenses table tr td:nth-child(3) {
+  text-align: center;
+  padding: 0;
+}
+form.actor-sheet #character-defenses table tr td:nth-child(3) .item-name {
+  text-transform: uppercase;
+  font-family: "Blood Crow";
+  font-size: 28px;
+  margin-right: 0px;
+  font-weight: normal;
+}
+form.actor-sheet #character-stress-clock {
+  width: 60px;
+  position: relative;
+}
+form.actor-sheet #character-stress-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.actor-sheet #character-stress-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.actor-sheet #character-stress-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.actor-sheet #character-stress-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.actor-sheet #character-stress-clock .blades-clock input[value="0"] {
+  display: none;
+}
+form.actor-sheet #character-stress-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+form.actor-sheet #character-stress-clock .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+form.actor-sheet #character-stress-clock .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+form.actor-sheet #character-stress-clock .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+form.actor-sheet #character-stress-clock .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+form.actor-sheet #character-stress-clock .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+form.actor-sheet #character-stress-clock .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+form.actor-sheet #character-stress-clock .blades-clock {
+  top: -10px;
+}
+form.actor-sheet #abilities-list, form.actor-sheet #loadout {
+  width: 100%;
+}
+form.actor-sheet #abilities-list tr, form.actor-sheet #loadout tr {
+  background-color: initial;
+}
+form.actor-sheet #abilities-list tr td:nth-of-type(1), form.actor-sheet #loadout tr td:nth-of-type(1) {
+  min-width: 75px;
+  width: 23%;
+}
+form.actor-sheet #abilities-list tr td:nth-of-type(2), form.actor-sheet #loadout tr td:nth-of-type(2) {
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+form.actor-sheet #abilities-list tr td:nth-of-type(3), form.actor-sheet #loadout tr td:nth-of-type(3) {
+  width: 20px;
+}
+form.actor-sheet #abilities-list tr.group-core, form.actor-sheet #loadout tr.group-core {
+  background-color: #68332c3f;
+}
+form.actor-sheet #abilities-list tr.group-flex, form.actor-sheet #loadout tr.group-flex {
+  background-color: #9999993f;
+}
+form.actor-sheet #abilities-list tr.group-flex td.item-body i, form.actor-sheet #loadout tr.group-flex td.item-body i {
+  font-size: 14px;
+}
+form.actor-sheet #abilities-list tr.group-ext, form.actor-sheet #loadout tr.group-ext {
+  background-color: #9999993f;
+}
+form.actor-sheet #abilities-list tr.group-ext td.item-body i, form.actor-sheet #loadout tr.group-ext td.item-body i {
+  font-size: 14px;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays, form.actor-sheet #loadout tr td div.eye-rays {
+  text-align: center;
+  position: relative;
+  left: 15px;
+  min-width: 420px;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img {
+  margin-top: 30px;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img img {
+  width: 200px;
+  height: 200px;
+  margin: 0px;
+  border-style: none;
+  position: relative;
+  transition: filter 0.1s;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img.hovered, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img img.hovered {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img area, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img area {
+  cursor: pointer;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items, form.actor-sheet #loadout tr td div.eye-rays div.ray-items {
+  margin-top: -225px;
+  height: 232px;
+  text-align: center;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div, form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div {
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(1), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(1) {
+  top: 0px;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(2), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(2) {
+  top: 12px;
+  left: 18%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(3), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(3) {
+  top: -22px;
+  left: 82%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(4), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(4) {
+  top: -17px;
+  left: 18%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(5), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(5) {
+  top: -34px;
+  left: 82%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(6), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(6) {
+  top: 25px;
+  left: 15%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(7), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(7) {
+  top: -9px;
+  left: 85%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(8), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(8) {
+  top: -4px;
+  left: 15%;
+}
+form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(9), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(9) {
+  top: -21px;
+  left: 85%;
+}
+form.actor-sheet #abilities-list tr.stolen-face img, form.actor-sheet #loadout tr.stolen-face img {
+  max-height: 100px;
+  width: 75px;
+  object-fit: cover;
+}
+form.actor-sheet #abilities-list tr.psi-discipline td > div, form.actor-sheet #loadout tr.psi-discipline td > div {
+  border-radius: 15px;
+  height: 30px;
+  align-items: center;
+}
+form.actor-sheet #abilities-list tr.psi-discipline td > div div, form.actor-sheet #loadout tr.psi-discipline td > div div {
+  flex: none;
+}
+form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
+  background: none;
+}
+form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(2) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(2) td:nth-child(1) {
+  background-position-y: center;
+}
+form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(3) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(3) td:nth-child(1) {
+  background-position-y: bottom;
+}
+form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(4) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(4) td:nth-child(1) {
+  background-position-y: center;
+  background-image: url("assets/decorations/verticalline-top.png");
+}
+form.actor-sheet #abilities-list table.gold-monger-path tr td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr td:nth-child(1) {
+  min-width: 32px;
+  width: 32px;
+  background-image: url("assets/decorations/verticalline-bottom.png");
+  background-repeat: no-repeat;
+}
+form.actor-sheet #loadout .gear-tags {
+  margin-top: 4px;
+}
+form.actor-sheet #loadout .gear-tags label {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+}
+form.actor-sheet #loadout .gear-tags label.quality-mundane {
+  color: #191919;
+}
+form.actor-sheet #loadout .gear-tags label.quality-valuable {
+  color: #2c3678;
+}
+form.actor-sheet #loadout .gear-tags label.quality-powerful {
+  color: #b12c20;
+}
+form.actor-sheet #loadout .gear-tags label.edge-tag {
+  color: #d46c1f;
+}
+form.actor-sheet #loadout .gear-tags label.quantity-steady {
+  color: #435e3d;
+}
+form.actor-sheet #loadout .gear-tags label.quantity-limited {
+  color: #435e3d;
+}
+form.actor-sheet #loadout .gear-tags label.quantity-shared {
+  color: #435e3d;
+}
+form.actor-sheet #loadout .supply {
   display: flex;
   /* Hide the browser's default checkbox */
-  position: absolute;
-  top: 0px;
-  right: 10px;
 }
-* .teeth-experience label {
-  height: 30px;
-  width: 10px;
-  background-image: url("assets/teeth/stresstooth-red.png");
+form.actor-sheet #loadout .supply label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-white-crossed.png");
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
   transition: filter 0.1s;
   cursor: pointer;
 }
-* .teeth-experience label:last-of-type {
+form.actor-sheet #loadout .supply label:last-of-type {
   margin-right: 0px;
 }
-* .teeth-experience label[for$="-0"] {
+form.actor-sheet #loadout .supply label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-* .teeth-experience label[for$="-0"] i {
+form.actor-sheet #loadout .supply label[for$="-0"] i {
   margin-top: 4px;
 }
-* .teeth-experience label:hover {
+form.actor-sheet #loadout .supply label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* .teeth-experience input {
+form.actor-sheet #loadout .supply input {
   display: none;
 }
-* .teeth-experience input:checked ~ label {
-  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+form.actor-sheet #loadout .supply input:checked ~ label {
+  background-image: url("assets/boxes/box-white-filled.png");
 }
-* .teeth-experience input:checked + label {
-  background-image: url("assets/teeth/stresstooth-red.png");
+form.actor-sheet #loadout .supply input:checked + label {
+  background-image: url("assets/boxes/box-white-crossed.png");
 }
-* .tooltip .tooltiptext {
-  visibility: hidden;
-  position: absolute;
-  width: fit-content;
-  max-width: 300px;
-  font-weight: 600;
+form.actor-sheet #edge-list {
+  display: block;
+}
+form.actor-sheet #duties-tab .item-body {
+  width: auto;
+  padding: 3px;
   font-family: Bitter;
-  background: url(../styles/assets/images/background-light.png) repeat;
-  color: #400000;
-  font-size: 16px;
-  text-align: justify;
-  border: 2px solid #400000;
-  padding: 10px;
-  border-radius: 4px;
-  z-index: 9999;
-  text-transform: none;
-  text-shadow: none;
+  font-size: 14px;
 }
-* .tooltip .tooltipslow {
-  opacity: 0;
-  transition: visibility 0.1s, opacity 0.1s;
-  transition-delay: 0.1s;
-}
-* .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0.5s, opacity 0.5s;
-  transition-delay: 1s;
-}
-* .fa-question-circle {
-  padding: 2px 3px;
-}
-* .fa-book-dead:before {
-  padding-right: 5px;
-  color: #EEEFFF;
-}
-* .hidden {
-  display: none;
-}
-* .tabs .item.active {
-  font-weight: 700;
-  color: #400000;
-  text-shadow: 2px 2px 7px #d46c1f;
-}
-* .wicked-die-tooltip .die {
-  font-family: Piedra;
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 24px;
-  text-align: center;
-  height: 30px;
-  color: white;
-  border-bottom: 3px solid;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-* .wicked-die-tooltip .die.critical-success {
-  color: #b12c20;
-}
-* .wicked-die-tooltip .die.success {
-  color: #862118;
-}
-* .wicked-die-tooltip .die.partial-success {
-  color: #2c3678;
-}
-* .wicked-die-tooltip .die.failure {
-  color: #656666;
-}
-* .clock-zero-label {
-  color: #191919;
-}
-* .clock-block .clocks.clocks-4 {
+form.actor-sheet #duties-tab .project-clock {
+  height: 80px;
   position: relative;
 }
-* .clock-block .clocks.clocks-4 .blades-clock {
+form.actor-sheet #duties-tab .project-clock .blades-clock {
   position: relative;
   padding: 0;
-  width: 200px;
-  height: 200px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
   background-size: cover;
 }
-* .clock-block .clocks.clocks-4 .blades-clock label {
+form.actor-sheet #duties-tab .project-clock .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -749,371 +789,374 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-* .clock-block .clocks.clocks-4 .blades-clock label:hover {
+form.actor-sheet #duties-tab .project-clock .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* .clock-block .clocks.clocks-4 .blades-clock input {
+form.actor-sheet #duties-tab .project-clock .blades-clock input {
   position: absolute;
   display: none;
 }
-* .clock-block .clocks.clocks-4 .blades-clock input[value="0"] {
+form.actor-sheet #duties-tab .project-clock .blades-clock input[value="0"] {
   display: none;
 }
-* .clock-block .clocks.clocks-4 .blades-clock *:nth-child(3) {
+form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(180deg);
 }
-* .clock-block .clocks.clocks-4 .blades-clock *:nth-child(5) {
+form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(5) {
   transform: rotate(90deg) skewY(180deg);
 }
-* .clock-block .clocks.clocks-4 .blades-clock *:nth-child(7) {
+form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(7) {
   transform: rotate(180deg) skewY(180deg);
 }
-* .clock-block .clocks.clocks-4 .blades-clock *:nth-child(9) {
+form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-* .clock-block .clocks.clocks-6 {
-  position: relative;
+form.actor-sheet #duties-tab div.label-stripe {
+  margin-bottom: 0px;
 }
-* .clock-block .clocks.clocks-6 .blades-clock {
-  position: relative;
-  padding: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  list-style: none;
-  overflow: hidden;
-  background-size: cover;
+form.actor-sheet #duties-tab table {
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
-* .clock-block .clocks.clocks-6 .blades-clock label {
-  overflow: hidden;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: 0% 100%;
-  transition: filter 0.1s;
-  cursor: pointer;
+form.actor-sheet #project-clocks-table tr td:nth-of-type(1) {
+  width: 50px;
 }
-* .clock-block .clocks.clocks-6 .blades-clock label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
+form.actor-sheet #project-clocks-table tr td:nth-of-type(2) {
+  min-width: 90px;
+  width: 23%;
+  font-family: Bitter;
 }
-* .clock-block .clocks.clocks-6 .blades-clock input {
-  position: absolute;
-  display: none;
+form.actor-sheet #project-clocks-table tr td:nth-of-type(4) {
+  width: 20px;
 }
-* .clock-block .clocks.clocks-6 .blades-clock input[value="0"] {
-  display: none;
+form.actor-sheet #duties-table tr td:nth-of-type(1) {
+  width: 50px;
+  font-weight: 900;
 }
-* .clock-block .clocks.clocks-6 .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(150deg);
+form.actor-sheet #duties-table tr td:nth-of-type(2) {
+  min-width: 90px;
+  width: 23%;
 }
-* .clock-block .clocks.clocks-6 .blades-clock *:nth-child(5) {
-  transform: rotate(60deg) skewY(150deg);
-}
-* .clock-block .clocks.clocks-6 .blades-clock *:nth-child(7) {
-  transform: rotate(120deg) skewY(150deg);
-}
-* .clock-block .clocks.clocks-6 .blades-clock *:nth-child(9) {
-  transform: rotate(180deg) skewY(150deg);
-}
-* .clock-block .clocks.clocks-6 .blades-clock *:nth-child(11) {
-  transform: rotate(240deg) skewY(150deg);
-}
-* .clock-block .clocks.clocks-6 .blades-clock *:nth-child(13) {
-  transform: rotate(300deg) skewY(150deg);
-}
-* .clock-block .clocks.clocks-8 {
-  position: relative;
-}
-* .clock-block .clocks.clocks-8 .blades-clock {
-  position: relative;
-  padding: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  list-style: none;
-  overflow: hidden;
-  background-size: cover;
-}
-* .clock-block .clocks.clocks-8 .blades-clock label {
-  overflow: hidden;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: 0% 100%;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-* .clock-block .clocks.clocks-8 .blades-clock label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-* .clock-block .clocks.clocks-8 .blades-clock input {
-  position: absolute;
-  display: none;
-}
-* .clock-block .clocks.clocks-8 .blades-clock input[value="0"] {
-  display: none;
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(5) {
-  transform: rotate(45deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(7) {
-  transform: rotate(90deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(9) {
-  transform: rotate(135deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(11) {
-  transform: rotate(180deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(13) {
-  transform: rotate(225deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(15) {
-  transform: rotate(270deg) skewY(135deg);
-}
-* .clock-block .clocks.clocks-8 .blades-clock *:nth-child(17) {
-  transform: rotate(315deg) skewY(135deg);
-}
-* .clock-block .blades-clock-name-type > * {
-  margin-bottom: 10px;
-  max-width: 220px;
-}
-* i.nullifier {
-  transition: filter 0.2s;
-  cursor: pointer;
-}
-* i.nullifier:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-  color: #a20000;
-}
-* .window-app .window-content {
-  background: url(../styles/assets/images/background-light.png) repeat;
-  color: #191919;
-  overflow-y: auto;
-  background-size: 300px;
-}
-* .window-app .window-content form.actor-sheet {
-  z-index: 0;
-}
-* .wicked-die {
-  width: 32px;
-  height: 32px;
-  float: left;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-* .wd1 {
-  background-image: url("assets/dice/die-1-grey.png");
-}
-* .wd2 {
-  background-image: url("assets/dice/die-2-grey.png");
-}
-* .wd3 {
-  background-image: url("assets/dice/die-3-grey.png");
-}
-* .wd4 {
-  background-image: url("assets/dice/die-4-blue.png");
-}
-* .wd5 {
-  background-image: url("assets/dice/die-5-blue.png");
-}
-* .wd6 {
-  background-image: url("assets/dice/die-6-red.png");
-}
-* .dice-tooltip .dice-rolls .roll.d6 {
-  font-family: Signika;
-}
-* .flex-evenly {
-  justify-content: space-evenly;
+form.actor-sheet #duties-table tr td:nth-of-type(4) {
+  width: 20px;
 }
 
 /*
- *  Non-Anchored Styles
+ * Fonts
  */
-#adventure-party td.moves-radio label.adv-move-greyed, #adventure-party .adventurer-hearts label, #attributes .morale-minion label, #attributes .bloodied-minion label, #attributes .bloodied label, #attributes .shock label {
-  height: 24px;
-  width: 24px;
-  display: block;
-  background-image: url("assets/boxes/box-empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: filter 0.1s;
-  cursor: pointer;
-  position: relative;
-  transition: filter 0.1s;
-  cursor: pointer;
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
 }
-#adventure-party td.moves-radio label.adv-move-greyed:hover, #adventure-party .adventurer-hearts label:hover, #attributes .morale-minion label:hover, #attributes .bloodied-minion label:hover, #attributes .bloodied label:hover, #attributes .shock label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
 }
-
-.profile-img.profile-big {
-  margin: 0px 5px;
-  height: 200px;
-  width: 200px;
-  max-width: fit-content;
-  border: none;
-  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
-  background-blend-mode: color-burn;
-  object-fit: cover;
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
 }
-
-.profile-img {
-  border: none;
-  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
-  background-blend-mode: color-burn;
-  object-fit: cover;
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
 }
-
-#edge-list {
-  display: block;
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
 }
-
-.item {
-  justify-content: space-between;
-  /*.item-body,
-  .item-class-label {
-      width: 100px;
-  }*/
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
 }
-.item .item-body {
-  /* margin-bottom: 10px; */
-  /* margin-right: 10px; */
-}
-.item .item-body .item-description {
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
   font-style: italic;
-  text-align: justify;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
 }
-.item .item-special-feature {
-  margin: 0px 10px;
-  border-radius: 10px;
-  background: #68332c3f;
-  padding: 10px;
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
 }
-.item .missing-materials {
-  color: #999;
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
 }
-.item div {
-  flex-grow: 2;
-}
-.item .item-class-label {
-  margin-bottom: 10px;
-}
-
-.item-checkmark {
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
   font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
 }
-
-.item-class-label {
-  margin-bottom: 0px;
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
 }
-
-div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
-  transition: opacity 1s;
-  opacity: 0.5;
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
 }
-div.item i.fa-trash, tr.item i.fa-trash {
-  transition: opacity 1s;
-  opacity: 0;
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
 }
-
-.item-add-popup {
-  padding-left: 10px;
-  font-weight: 700;
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
 }
-
-#number {
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+form.minion-sheet #number {
   padding-right: 12px;
 }
-#number label {
+form.minion-sheet #number label {
   padding-left: 10px;
 }
-#number input {
+form.minion-sheet #number input {
   text-align: center;
   margin: auto;
   width: 50%;
   display: block;
 }
-
-#look, #minionpack, #vilefriend, #number {
-  color: #68332c;
-}
-#look input[type=text], #look input[type=number], #minionpack input[type=text], #minionpack input[type=number], #vilefriend input[type=text], #vilefriend input[type=number], #number input[type=text], #number input[type=number] {
-  font-weight: normal;
-  font-family: Piedra;
-  font-size: 20px;
-  border: none;
-  border-radius: 0;
-}
-#look label, #minionpack label, #vilefriend label, #number label {
+form.minion-sheet #abilities-list .item-rollable-text {
+  font-size: 16px;
   font-weight: 700;
-}
-
-input[type=text], input[type=number], input[type=password], input[type=date], input[type=time] {
-  font-weight: 600;
-  border: 1px solid #68332c;
-  border-radius: 0;
+  margin-top: 5px;
 }
 
 /*
- *  Anchored Styles
+ * Fonts
  */
-#chat-controls .roll-type-select {
-  color: #400000;
-  font-size: 14px;
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
   font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
 }
-
-#chat-form textarea {
-  background: url(../styles/assets/images/background-light.png) repeat;
-  background-size: 300px;
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
 }
-
-#character-wickedxp label[for$="-0"] {
-  margin-right: 0px;
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
 }
-
-#character-recklessxp label[for$="-0"] {
-  margin-right: 0px;
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
 }
-
-#dungeon-theme-bar {
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+form.dungeon-sheet .item-special-feature {
+  margin: 0px 10px;
+  border-radius: 20px;
+  background: #68332c3f;
+  padding: 10px;
+}
+form.dungeon-sheet .missing-materials {
+  color: #999;
+}
+form.dungeon-sheet #dungeon-theme-bar {
   padding-left: 0px;
   padding-right: 0px;
   font-size: 18px;
   display: table-row;
 }
-#dungeon-theme-bar td:first-child {
+form.dungeon-sheet #dungeon-theme-bar td:first-child {
   background-color: #68332c;
   width: 100%;
   align-self: center;
   height: 33px;
 }
-#dungeon-theme-bar td:last-child {
+form.dungeon-sheet #dungeon-theme-bar td:last-child {
   padding: 0px;
 }
-#dungeon-theme-bar tr:hover .item-add-popup {
+form.dungeon-sheet #dungeon-theme-bar tr:hover .item-add-popup {
   transition: opacity 0.5s;
   opacity: 1;
 }
-#dungeon-theme-bar tr .item-add-popup {
+form.dungeon-sheet #dungeon-theme-bar tr .item-add-popup {
   transition: opacity 0.5s;
   opacity: 0.1;
 }
-
-#dungeon-tier {
+form.dungeon-sheet #dungeon-tier {
   background-color: #68332c3f;
   height: 33px;
   width: 145px;
@@ -1125,15 +1168,15 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   display: flex;
   /* Hide the browser's default checkbox */
 }
-#dungeon-tier label {
+form.dungeon-sheet #dungeon-tier label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-#dungeon-tier label:hover {
+form.dungeon-sheet #dungeon-tier label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-#dungeon-tier label:not([for$="-0"]) {
+form.dungeon-sheet #dungeon-tier label:not([for$="-0"]) {
   height: 18px;
   width: 18px;
   background-color: #191919;
@@ -1141,62 +1184,761 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   border: 2px solid #191919;
   border-radius: 9px;
 }
-#dungeon-tier input {
+form.dungeon-sheet #dungeon-tier input {
   display: none;
 }
-#dungeon-tier input:checked ~ label:not([for$="-0"]) {
+form.dungeon-sheet #dungeon-tier input:checked ~ label:not([for$="-0"]) {
   border-color: gray;
   background-color: #EEEFFF;
 }
-#dungeon-tier input:checked + label:not([for$="-0"]) {
+form.dungeon-sheet #dungeon-tier input:checked + label:not([for$="-0"]) {
   background-color: #191919;
   border-color: #191919;
 }
-#dungeon-tier > * {
+form.dungeon-sheet #dungeon-tier > * {
   margin-right: 5px;
 }
 
-#items-to-add {
-  font-size: medium;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
 }
-#items-to-add input[type=radio],
-#items-to-add input[type=checkbox] {
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+form.faction-sheet #faction-sheet div.label-stripe {
+  margin: 0px;
+}
+form.faction-sheet #faction-sheet #faction-clocks {
+  margin-top: 0px;
+}
+form.faction-sheet #faction-sheet #faction-clocks td {
+  width: 50%;
+}
+form.faction-sheet #faction-sheet #faction-clocks td textarea {
+  resize: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display {
+  width: 60px;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 {
+  position: relative;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock input {
+  position: absolute;
   display: none;
 }
-#items-to-add input[type=radio]:checked + label,
-#items-to-add input[type=checkbox]:checked + label {
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock input[value="0"] {
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 {
+  position: relative;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock input[value="0"] {
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 {
+  position: relative;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock input[value="0"] {
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(5) {
+  transform: rotate(45deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(7) {
+  transform: rotate(90deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(9) {
+  transform: rotate(135deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(11) {
+  transform: rotate(180deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(13) {
+  transform: rotate(225deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(15) {
+  transform: rotate(270deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(17) {
+  transform: rotate(315deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+form.faction-sheet #faction-sheet .faction-clock-display .blades-clock {
+  top: -10px;
+}
+form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
+  width: 60px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
   font-weight: 800;
-  color: #400000;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
 }
-#items-to-add > flex-horizontal {
-  padding: 3px;
-  border-bottom: 1px solid #4000005c;
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
 }
-#items-to-add label:nth-of-type(2n) {
-  background: #68332c3f;
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+form.party-sheet #adventure-party .profile-img {
+  vertical-align: middle;
+}
+form.party-sheet #adventure-party .label-stripe {
+  margin-bottom: 0px;
+}
+form.party-sheet #adventure-party table {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-width: 0px;
+}
+form.party-sheet #adventure-party table tr {
+  max-height: 32px;
+}
+form.party-sheet #adventure-party #adventurer-list thead td:nth-child(4), form.party-sheet #adventure-party #hireling-list thead td:nth-child(3) {
+  padding-left: 15px;
+}
+form.party-sheet #adventure-party #adventurer-list thead td:nth-child(8), form.party-sheet #adventure-party #hireling-list thead td:nth-child(7) {
+  width: 20px;
+}
+form.party-sheet #adventure-party #hireling-list tbody td:nth-child(4) label {
+  min-width: 100px;
+  width: 20%;
+  max-width: 50%;
+}
+form.party-sheet #adventure-party .adventurer-hearts input {
+  display: none;
+}
+form.party-sheet #adventure-party .adventurer-hearts label {
+  height: 32px;
+  width: 32px;
+  display: block;
+  background-image: url("assets/boxes/a-heart-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  top: -1px;
+}
+form.party-sheet #adventure-party .adventurer-hearts label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.party-sheet #adventure-party .adventurer-hearts label.slashed-1 {
+  background-image: url("assets/boxes/a-heart-slashed-1.png");
+}
+form.party-sheet #adventure-party .adventurer-hearts label.slashed-2 {
+  background-image: url("assets/boxes/a-heart-slashed-2.png");
+}
+form.party-sheet #adventure-party .adventurer-hearts label.greyed {
+  background-image: url("assets/boxes/a-heart-greyed.png");
+  cursor: auto;
+}
+form.party-sheet #adventure-party .adventurer-hearts label.greyed:hover {
+  filter: none;
+  opacity: 1;
+}
+form.party-sheet #adventure-party .adventurer-hearts label.hidden {
+  display: none;
+}
+form.party-sheet #adventure-party td.moves-radio div {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.party-sheet #adventure-party td.moves-radio div label {
+  height: 24px;
+  width: 24px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.party-sheet #adventure-party td.moves-radio div label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 4px;
+  position: relative;
+  top: -2px;
+}
+form.party-sheet #adventure-party td.moves-radio div label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+form.party-sheet #adventure-party td.moves-radio div label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+form.party-sheet #adventure-party td.moves-radio div input {
+  display: none;
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked + label.dark-heart {
+  /* animation: glow 2000ms ease-out infinite alternate; */
+  background-image: url("assets/boxes/heart-filled.png");
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+form.party-sheet #adventure-party td.moves-radio div input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+form.party-sheet #adventure-party td.moves-radio:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+form.party-sheet #adventure-party td.moves-radio label.adv-move-greyed {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-greyed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-left: 8px;
+}
+form.party-sheet #adventure-party .trait-tags {
+  margin-top: 4px;
+}
+form.party-sheet #adventure-party .trait-tags label {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+}
+form.party-sheet #adventure-party .trait-tags label.positive {
+  color: #2c3678;
+}
+form.party-sheet #adventure-party .trait-tags label.negative {
+  color: #68332c;
+}
+form.party-sheet #adventure-party .trait-tags label.motivation {
+  color: #191919;
 }
 
-#wo-nav-container nav a, #dun-nav-container nav a, #mp-nav-container nav a {
-  flex: none;
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
 }
-#wo-nav-container .all-items-list, #dun-nav-container .all-items-list, #mp-nav-container .all-items-list {
-  font-size: 14px;
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
 }
-#wo-nav-container .all-items-list:nth-of-type(2n+1), #dun-nav-container .all-items-list:nth-of-type(2n+1), #mp-nav-container .all-items-list:nth-of-type(2n+1) {
-  background: rgba(0, 0, 0, 0.15);
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
 }
-#wo-nav-container .all-items-list div.item-body, #dun-nav-container .all-items-list div.item-body, #mp-nav-container .all-items-list div.item-body {
-  margin: 5px 10px;
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
 }
-#wo-nav-container .all-items-list a.item-delete, #dun-nav-container .all-items-list a.item-delete, #mp-nav-container .all-items-list a.item-delete {
-  margin-right: 10px;
-  align-self: center;
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
 }
-
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
 #attributes {
   height: fit-content;
   min-width: fit-content;
@@ -1223,9 +1965,19 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 #attributes .shock label {
   height: 32px;
   width: 32px;
+  display: block;
   background-image: url("assets/boxes/shock-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
   margin-right: 5px;
   top: -3px;
+}
+#attributes .shock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 #attributes .shock input:checked + label {
   background-image: url("assets/boxes/shock-filled.png");
@@ -1235,11 +1987,22 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
 }
 #attributes .bloodied label {
   height: 36px;
+  width: 24px;
+  display: block;
   background-image: url("assets/boxes/bloodied-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
   margin-left: 8px;
   margin-right: 1px;
   padding: 10px;
   top: -10px;
+}
+#attributes .bloodied label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 #attributes .bloodied input:checked + label {
   background-image: url("assets/boxes/bloodied-filled-white.png");
@@ -1263,9 +2026,21 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   display: none;
 }
 #attributes .bloodied-minion label {
+  height: 24px;
+  width: 24px;
+  display: block;
   background-image: url("assets/boxes/bloodied-minion-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
   margin: 0px 2px -2px 1px;
   top: -2px;
+}
+#attributes .bloodied-minion label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 #attributes .bloodied-minion input:checked + label {
   background-image: url("assets/boxes/bloodied-minion-filled-white.png");
@@ -1286,9 +2061,22 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   display: none;
 }
 #attributes .morale-minion label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
   margin-left: 1px;
   margin-right: 2px;
   top: -1px;
+}
+#attributes .morale-minion label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 #attributes .morale-minion input:checked + label {
   background-image: url("assets/boxes/box-filled.png");
@@ -1397,472 +2185,6 @@ input[type=text], input[type=number], input[type=password], input[type=date], in
   font-size: larger;
 }
 
-/* All Table Formatting: */
-table td,
-table th {
-  padding: 5px;
-}
-
-table th:hover .item-add-popup {
-  transition: opacity 0.5s;
-  opacity: 1;
-}
-table th .item-add-popup {
-  transition: opacity 0.5s;
-  opacity: 0.1;
-}
-
-table td:first-child {
-  padding-left: 5px;
-}
-
-#hearts-header {
-  margin-left: 33px;
-  padding-right: 10px;
-  min-width: 135px;
-}
-
-form.actor-sheet #name input[type=text] {
-  height: 52px;
-  border: none;
-  font-family: Blood Crow;
-  font-size: 55px;
-  font-weight: normal;
-  color: #68332c;
-  background: none;
-  text-shadow: 0 1px 2px #d46c1f;
-}
-
-#base-info table {
-  width: 100%;
-  height: 230px;
-  border-top: 5px solid #68332c;
-}
-#base-info table tr {
-  background-color: initial;
-}
-#base-info table tr td:nth-of-type(1) {
-  min-width: 150px;
-}
-#base-info table tr td:nth-of-type(3) {
-  width: 200px;
-}
-#base-info table tr.xp-stripe {
-  background-color: #68332c;
-}
-#base-info table tr .item-add-popup {
-  color: #68332c;
-}
-
-#character-defenses {
-  width: 100%;
-}
-#character-defenses table {
-  width: 100%;
-}
-#character-defenses table th {
-  background-color: #68332c;
-  color: #EEEFFF;
-  font-size: medium;
-  font-weight: 600;
-  text-shadow: 0 2px #311815;
-}
-#character-defenses table input[type=text] {
-  width: 100%;
-}
-#character-defenses table tr td:nth-of-type(1) .item-checkmark {
-  flex-grow: unset;
-  margin: auto;
-}
-#character-defenses table tr td:nth-of-type(2) {
-  display: flex;
-  justify-content: center;
-}
-#character-defenses table tr td:nth-child(3) {
-  text-align: center;
-  padding: 0;
-}
-#character-defenses table tr td:nth-child(3) .item-name {
-  text-transform: uppercase;
-  font-family: "Blood Crow";
-  font-size: 28px;
-  margin-right: 0px;
-  font-weight: normal;
-}
-
-#loadout .supply {
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-#loadout .supply label {
-  height: 15px;
-  width: 15px;
-  background-image: url("assets/boxes/box-white-crossed.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#loadout .supply label:last-of-type {
-  margin-right: 0px;
-}
-#loadout .supply label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  color: #EEEFFF;
-}
-#loadout .supply label[for$="-0"] i {
-  margin-top: 4px;
-}
-#loadout .supply label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-#loadout .supply input {
-  display: none;
-}
-#loadout .supply input:checked ~ label {
-  background-image: url("assets/boxes/box-white-filled.png");
-}
-#loadout .supply input:checked + label {
-  background-image: url("assets/boxes/box-white-crossed.png");
-}
-
-#loadout .gear-tags {
-  margin-top: 4px;
-}
-#loadout .gear-tags label {
-  display: inline-block;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #999;
-  border-radius: 5px;
-  padding: 2px 4px;
-  margin-bottom: 4px;
-}
-#loadout .gear-tags label.quality-mundane {
-  color: #191919;
-}
-#loadout .gear-tags label.quality-valuable {
-  color: #2c3678;
-}
-#loadout .gear-tags label.quality-powerful {
-  color: #b12c20;
-}
-#loadout .gear-tags label.edge-tag {
-  color: #d46c1f;
-}
-#loadout .gear-tags label.quantity-steady {
-  color: #435e3d;
-}
-#loadout .gear-tags label.quantity-limited {
-  color: #435e3d;
-}
-#loadout .gear-tags label.quantity-shared {
-  color: #435e3d;
-}
-
-#duties-tab .item-body {
-  width: auto;
-  padding: 3px;
-  font-family: Bitter;
-  font-size: 14px;
-}
-#duties-tab .project-clock {
-  height: 80px;
-  position: relative;
-}
-#duties-tab .project-clock .blades-clock {
-  position: relative;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  list-style: none;
-  overflow: hidden;
-  background-size: cover;
-}
-#duties-tab .project-clock .blades-clock label {
-  overflow: hidden;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: 0% 100%;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#duties-tab .project-clock .blades-clock label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-#duties-tab .project-clock .blades-clock input {
-  position: absolute;
-  display: none;
-}
-#duties-tab .project-clock .blades-clock input[value="0"] {
-  display: none;
-}
-#duties-tab .project-clock .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(180deg);
-}
-#duties-tab .project-clock .blades-clock *:nth-child(5) {
-  transform: rotate(90deg) skewY(180deg);
-}
-#duties-tab .project-clock .blades-clock *:nth-child(7) {
-  transform: rotate(180deg) skewY(180deg);
-}
-#duties-tab .project-clock .blades-clock *:nth-child(9) {
-  transform: rotate(270deg) skewY(180deg);
-}
-#duties-tab div.label-stripe {
-  margin-bottom: 0px;
-}
-#duties-tab table {
-  margin-top: 0px;
-  margin-bottom: 15px;
-}
-
-#duties-table tr td:nth-of-type(1) {
-  width: 50px;
-  font-weight: 900;
-}
-#duties-table tr td:nth-of-type(2) {
-  min-width: 90px;
-  width: 23%;
-}
-#duties-table tr td:nth-of-type(4) {
-  width: 20px;
-}
-
-#project-clocks-table tr td:nth-of-type(1) {
-  width: 50px;
-}
-#project-clocks-table tr td:nth-of-type(2) {
-  min-width: 90px;
-  width: 23%;
-  font-family: Bitter;
-}
-#project-clocks-table tr td:nth-of-type(4) {
-  width: 20px;
-}
-
-#abilities-list, #loadout {
-  width: 100%;
-}
-#abilities-list tr, #loadout tr {
-  background-color: initial;
-}
-#abilities-list tr td:nth-of-type(1), #loadout tr td:nth-of-type(1) {
-  min-width: 75px;
-  width: 23%;
-}
-#abilities-list tr td:nth-of-type(2), #loadout tr td:nth-of-type(2) {
-  margin-right: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 10px;
-}
-#abilities-list tr td:nth-of-type(3), #loadout tr td:nth-of-type(3) {
-  width: 20px;
-}
-#abilities-list tr.group-core, #loadout tr.group-core {
-  background-color: #68332c3f;
-}
-#abilities-list tr.group-flex, #loadout tr.group-flex {
-  background-color: #9999993f;
-}
-#abilities-list tr.group-flex td.item-body i, #loadout tr.group-flex td.item-body i {
-  font-size: 14px;
-}
-#abilities-list tr.group-ext, #loadout tr.group-ext {
-  background-color: #9999993f;
-}
-#abilities-list tr.group-ext td.item-body i, #loadout tr.group-ext td.item-body i {
-  font-size: 14px;
-}
-#abilities-list tr td div.eye-rays, #loadout tr td div.eye-rays {
-  text-align: center;
-  position: relative;
-  left: 15px;
-  min-width: 420px;
-}
-#abilities-list tr td div.eye-rays div.doomseeker-img, #loadout tr td div.eye-rays div.doomseeker-img {
-  margin-top: 30px;
-}
-#abilities-list tr td div.eye-rays div.doomseeker-img img, #loadout tr td div.eye-rays div.doomseeker-img img {
-  width: 200px;
-  height: 200px;
-  margin: 0px;
-  border-style: none;
-  position: relative;
-  transition: filter 0.1s;
-}
-#abilities-list tr td div.eye-rays div.doomseeker-img img.hovered, #loadout tr td div.eye-rays div.doomseeker-img img.hovered {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-#abilities-list tr td div.eye-rays div.doomseeker-img area, #loadout tr td div.eye-rays div.doomseeker-img area {
-  cursor: pointer;
-}
-#abilities-list tr td div.eye-rays div.ray-items, #loadout tr td div.eye-rays div.ray-items {
-  margin-top: -225px;
-  height: 232px;
-  text-align: center;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div, #loadout tr td div.eye-rays div.ray-items > div {
-  text-align: center;
-  position: relative;
-  width: fit-content;
-  left: 50%;
-  transform: translateX(-50%);
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(1), #loadout tr td div.eye-rays div.ray-items > div:nth-child(1) {
-  top: 0px;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(2), #loadout tr td div.eye-rays div.ray-items > div:nth-child(2) {
-  top: 12px;
-  left: 18%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(3), #loadout tr td div.eye-rays div.ray-items > div:nth-child(3) {
-  top: -22px;
-  left: 82%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(4), #loadout tr td div.eye-rays div.ray-items > div:nth-child(4) {
-  top: -17px;
-  left: 18%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(5), #loadout tr td div.eye-rays div.ray-items > div:nth-child(5) {
-  top: -34px;
-  left: 82%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(6), #loadout tr td div.eye-rays div.ray-items > div:nth-child(6) {
-  top: 25px;
-  left: 15%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(7), #loadout tr td div.eye-rays div.ray-items > div:nth-child(7) {
-  top: -9px;
-  left: 85%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(8), #loadout tr td div.eye-rays div.ray-items > div:nth-child(8) {
-  top: -4px;
-  left: 15%;
-}
-#abilities-list tr td div.eye-rays div.ray-items > div:nth-child(9), #loadout tr td div.eye-rays div.ray-items > div:nth-child(9) {
-  top: -21px;
-  left: 85%;
-}
-#abilities-list tr.stolen-face img, #loadout tr.stolen-face img {
-  max-height: 100px;
-  width: 75px;
-  object-fit: cover;
-}
-#abilities-list tr.psi-discipline td > div, #loadout tr.psi-discipline td > div {
-  border-radius: 15px;
-  height: 30px;
-  align-items: center;
-}
-#abilities-list tr.psi-discipline td > div div, #loadout tr.psi-discipline td > div div {
-  flex: none;
-}
-#abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
-  background: none;
-}
-#abilities-list table.gold-monger-path tr:nth-child(2) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(2) td:nth-child(1) {
-  background-position-y: center;
-}
-#abilities-list table.gold-monger-path tr:nth-child(3) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(3) td:nth-child(1) {
-  background-position-y: bottom;
-}
-#abilities-list table.gold-monger-path tr:nth-child(4) td:nth-child(1), #loadout table.gold-monger-path tr:nth-child(4) td:nth-child(1) {
-  background-position-y: center;
-  background-image: url("assets/decorations/verticalline-top.png");
-}
-#abilities-list table.gold-monger-path tr td:nth-child(1), #loadout table.gold-monger-path tr td:nth-child(1) {
-  min-width: 32px;
-  width: 32px;
-  background-image: url("assets/decorations/verticalline-bottom.png");
-  background-repeat: no-repeat;
-}
-
-/* Display all Item Names in Bold */
-.item-name {
-  text-align: center;
-  font-weight: 500;
-  font-family: Piedra;
-  font-size: 20px;
-  padding: 0px 5px;
-  margin: auto;
-}
-
-#defenses-stress {
-  display: flex;
-}
-
-#character-stress-clock {
-  width: 60px;
-  position: relative;
-}
-#character-stress-clock .blades-clock {
-  position: relative;
-  padding: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  list-style: none;
-  overflow: hidden;
-  background-size: cover;
-}
-#character-stress-clock .blades-clock label {
-  overflow: hidden;
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 100%;
-  height: 100%;
-  transform-origin: 0% 100%;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#character-stress-clock .blades-clock label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-#character-stress-clock .blades-clock input {
-  position: absolute;
-  display: none;
-}
-#character-stress-clock .blades-clock input[value="0"] {
-  display: none;
-}
-#character-stress-clock .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(150deg);
-}
-#character-stress-clock .blades-clock *:nth-child(5) {
-  transform: rotate(60deg) skewY(150deg);
-}
-#character-stress-clock .blades-clock *:nth-child(7) {
-  transform: rotate(120deg) skewY(150deg);
-}
-#character-stress-clock .blades-clock *:nth-child(9) {
-  transform: rotate(180deg) skewY(150deg);
-}
-#character-stress-clock .blades-clock *:nth-child(11) {
-  transform: rotate(240deg) skewY(150deg);
-}
-#character-stress-clock .blades-clock *:nth-child(13) {
-  transform: rotate(300deg) skewY(150deg);
-}
-#character-stress-clock .clock-zero-label {
-  position: relative;
-  left: -10px;
-}
-#character-stress-clock .blades-clock {
-  top: -10px;
-}
-
 #attributes-darkhearts {
   /* margin-left: 32px; */
 }
@@ -1935,28 +2257,867 @@ form.actor-sheet #name input[type=text] {
   opacity: 1;
 }
 
+#hearts-header {
+  margin-left: 33px;
+  padding-right: 10px;
+  min-width: 135px;
+}
+
 #hearts-display {
   display: flex;
 }
 
-#abilities .item-body, #loadout .item-body {
-  width: auto;
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
   font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+header {
+  margin-bottom: 10px;
 }
 
-#abilities-list div.item-name, #loadout div.item-name {
-  flex-basis: 25%;
+form.minion-upgrade-sheet section.rollable-skill div > div {
+  width: 50%;
 }
-#abilities-list div.item-description, #loadout div.item-description {
-  width: fit-content;
+form.minion-upgrade-sheet section.rollable-skill div > div label {
+  margin-right: 10px;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div #upgrade-skill-rating {
+  width: 50px;
 }
 
-#name input[type=text] {
-  height: 52px;
-  min-width: 370px;
-  border: none;
+form.special-ability-sheet #ray-selection div.ray-line {
+  display: flex;
+  justify-content: space-evenly;
+}
+form.special-ability-sheet #ray-selection div.ray-line:last-child {
+  margin-bottom: 25px;
+}
+form.special-ability-sheet #ray-selection div.ray-line select:nth-child(1) {
+  width: 70%;
+}
+form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
+  width: 20%;
+}
+
+form.adventurer-sheet #adventurer-sheet-body .label-stripe {
+  padding: 0;
+  margin: 15px 0px 5px 0px;
+}
+form.adventurer-sheet #adventurer-sheet-body .label-stripe:first-child {
+  margin-top: 0px;
+}
+form.adventurer-sheet #adventurer-sheet-body > div:last-child {
+  margin-right: 20px;
+}
+form.adventurer-sheet #adventurer-sheet-body input {
+  margin-top: 5px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+form.adventurer-sheet #adventurer-sheet-body .class-selector {
+  flex: 3;
+  margin-left: -3px;
+}
+form.adventurer-sheet #adventurer-sheet-body .class-selector select {
+  margin-top: 5px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+#chat .chat-label {
+  background-color: #191919;
+  color: #EEEFFF;
+  font-size: 24px;
+  text-align: center;
+  padding: 0px 5px;
+  height: 36px !important;
+  text-transform: capitalize;
+}
+#chat .chat-label-small {
+  background-color: #999;
+  color: #191919;
+  font-size: small;
+  text-align: center;
+  padding: 3px 5px;
+  height: 26px !important;
+}
+#chat .chat-message {
+  padding: 5px;
+  color: #191919;
+  font-size: 14px;
+  background: url(../styles/assets/images/background-light.png) repeat;
+  background-size: 300px;
+  box-shadow: inset 0 0 9px 1px #4000004f;
+}
+#chat .chat-message .message-header .message-sender {
   font-family: Piedra;
-  font-size: 44px;
+  font-weight: normal;
+  font-size: 15px;
+}
+#chat .chat-message .message-content {
+  font-family: Bitter;
+  font-size: inherit;
+  font-weight: 600;
+}
+#chat .chat-message .message-header .message-metadata {
+  text-align: right;
+  font-weight: 700;
+}
+#chat .label-stripe-chat-small, #chat .label-stripe-chat {
+  font-family: Piedra;
+  font-weight: normal;
+  position: relative;
+  padding-top: 3px;
+}
+#chat .label-stripe-chat {
+  color: white;
+  background-color: #68332c;
+  margin: 0;
+  margin-bottom: 10px;
+  display: flex;
+  border-top-left-radius: 5px;
+  text-shadow: 2px 2px 0 #313131;
+}
+#chat .label-stripe-chat-small {
+  color: #191919;
+  background-color: #bdb7ab;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+#chat .wicked-die-tooltip .label-type {
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  font-family: Bitter;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+  margin-left: auto;
+  border-top-left-radius: 5px;
+}
+#chat .wicked-die-tooltip .die {
+  text-transform: uppercase;
+  color: white;
+  font-family: Piedra;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  height: 30px;
+  border-bottom: 3px solid;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#chat .wicked-die-tooltip .die.critical-success {
+  color: #b12c20;
+}
+#chat .wicked-die-tooltip .die.success {
+  color: #862118;
+}
+#chat .wicked-die-tooltip .die.partial-success {
+  color: #2c3678;
+}
+#chat .wicked-die-tooltip .die.failure {
+  color: #656666;
+}
+#chat .wicked-die-tooltip .wicked-die {
+  width: 32px;
+  height: 32px;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#chat .wicked-die-tooltip .wicked-die.wd1 {
+  background-image: url("assets/dice/die-1-grey.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd2 {
+  background-image: url("assets/dice/die-2-grey.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd3 {
+  background-image: url("assets/dice/die-3-grey.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd4 {
+  background-image: url("assets/dice/die-4-blue.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd5 {
+  background-image: url("assets/dice/die-5-blue.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd6 {
+  background-image: url("assets/dice/die-6-red.png");
+}
+#chat .description {
+  font-style: italic;
+  font-weight: 600;
+}
+#chat .dice-tooltip .dice-rolls .roll.d6 {
+  font-family: Signika;
+}
+
+#chat-controls .roll-type-select {
+  color: #400000;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#chat-form textarea {
+  background: url(../styles/assets/images/background-light.png) repeat;
+  background-size: 300px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/*
+ *  Add-item pop-up dialog Styles
+ */
+#items-to-add {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#items-to-add input[type=radio],
+#items-to-add input[type=checkbox] {
+  display: none;
+}
+#items-to-add input[type=radio]:checked + label,
+#items-to-add input[type=checkbox]:checked + label {
+  font-weight: 800;
+  color: #400000;
+}
+#items-to-add > flex-horizontal {
+  padding: 3px;
+  border-bottom: 1px solid #4000005c;
+}
+#items-to-add label:nth-of-type(2n) {
+  background: #68332c3f;
+}
+
+.fa-question-circle {
+  padding: 2px 3px;
+}
+
+/*
+ *  Rollable text pop-up dialog Styles
+ */
+.action-info {
+  margin-top: -20px;
+}
+
+/*
+ *  Dice roller pop-up dialog Styles
+ */
+/*
+ *   Layout Styles
+ */
+.sheet {
+  min-width: min-content;
+}
+
+.window-app .window-content {
+  background: url(../styles/assets/images/background-light.png) repeat;
+  color: #191919;
+  overflow-y: auto;
+  background-size: 300px;
+}
+.window-app .window-content form.actor-sheet {
+  z-index: 0;
+}
+
+form.actor-sheet {
+  padding: 20px;
+}
+form .notes, form .hint {
+  color: #400000;
+  font-weight: 600;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+section > *:not(.label-stripe) {
+  margin-right: 10px;
+}
+section > *:not(.label-stripe):last-child {
+  margin-right: 0px;
+}
+section .grow-one {
+  flex-grow: 1;
+}
+section .grow-two {
+  flex-grow: 2;
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+table.base-info {
+  border-top: 5px solid #68332c;
+}
+table.base-info tr td:nth-of-type(1) {
+  min-width: 150px;
+}
+table.base-info tr .item-add-popup {
+  color: #68332c;
+}
+table.base-info tr .text-input {
+  color: #68332c;
+}
+table.base-info tr .text-input label {
+  font-weight: 700;
+}
+table.base-info tr .text-input input {
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
+}
+
+/*
+ *   Navigation Styles
+ */
+nav {
+  margin-bottom: 10px;
+}
+
+.tabs .item.active {
+  font-weight: 700;
+  color: #400000;
+  text-shadow: 2px 2px 7px #d46c1f;
+}
+
+#wo-nav-container nav a, #dun-nav-container nav a, #mp-nav-container nav a {
+  flex: none;
+}
+
+/*
+ *   Element Styles
+ */
+body {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+table th:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+table th .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
+}
+table tr:nth-child(even) {
+  background-color: initial;
+}
+table td, table th {
+  padding: 5px;
+}
+table td:first-child {
+  padding-left: 5px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+select {
+  font-family: Bitter, Lucida Console, monospace;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 0px;
+  border: 1px solid #68332c;
+}
+
+option {
+  font-weight: 600;
+}
+
+input[type=text], input[type=number], input[type=password],
+input[type=date], input[type=time], input[type=range] {
+  font-weight: 600;
+  border: 1px solid #68332c;
+  border-radius: 0;
+}
+
+textarea {
+  color: #400000;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Bitter;
+  font-weight: 600;
+  min-height: 80px;
+}
+
+/*
+ *   Button Styles
+ */
+.dialog .dialog-buttons button.default, * * form button, .dialog .dialog-buttons button, button {
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
+.dialog .dialog-buttons button:hover, button:hover, .dialog .dialog-buttons button:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d46c1f;
+  background: #d46c1f;
+}
+
+button {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  color: #fff8e8;
+  transition-duration: 0.2s;
+}
+
+/*
+ *  Label Styles
+ */
+.label-stripe {
+  text-transform: uppercase;
+  background-color: #68332c;
+  color: #EEEFFF;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  font-weight: bold;
+  font-size: medium;
+}
+.label-stripe:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.label-stripe .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
+}
+
+.black-label {
+  background-color: #68332c;
+  color: #EEEFFF;
+  font-size: 18px;
+  text-align: center;
+  padding: 4px 5px;
+  height: 30px !important;
+  text-transform: capitalize;
+  text-shadow: 0 2px #311815;
+}
+
+/*
+ *  Name & Profile Picture Style
+ */
+.large-name input[type=text] {
+  min-width: 370px;
+  height: 52px;
+  border: none;
+  font-family: Blood Crow;
+  font-size: 55px;
   font-weight: normal;
   color: #68332c;
   background: none;
@@ -1964,242 +3125,49 @@ form.actor-sheet #name input[type=text] {
   text-overflow: ellipsis;
 }
 
-#ray-selection div.ray-line {
-  display: flex;
-  justify-content: space-evenly;
+.profile-img {
+  border: none;
+  background: url(../styles/assets/images/background-light.png) repeat #4000004f;
+  background-blend-mode: color-burn;
+  object-fit: cover;
 }
-#ray-selection div.ray-line:last-child {
-  margin-bottom: 25px;
-}
-#ray-selection div.ray-line select:nth-child(1) {
-  width: 70%;
-}
-#ray-selection div.ray-line select:nth-child(2) {
-  width: 20%;
-}
-
-section.rollable-skill div > div {
-  width: 50%;
-}
-section.rollable-skill div > div label {
-  margin-right: 10px;
-}
-section.rollable-skill div > div #upgrade-skill-rating {
-  width: 50px;
+.profile-img.profile-big {
+  margin: 0px 5px;
+  height: 200px;
+  width: 200px;
+  max-width: fit-content;
 }
 
-#abilities-list div.item-rollable-text > div > div {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 5px;
-}
-
-#adventure-party .profile-img {
-  vertical-align: middle;
-}
-#adventure-party .label-stripe {
-  margin-bottom: 0px;
-}
-#adventure-party table {
-  margin-top: 0px;
-  margin-bottom: 10px;
-  border-width: 0px;
-}
-#adventure-party table tr {
-  max-height: 32px;
-}
-#adventure-party #adventurer-list thead td:nth-child(4), #adventure-party #hireling-list thead td:nth-child(3) {
-  padding-left: 15px;
-}
-#adventure-party #adventurer-list thead td:nth-child(8), #adventure-party #hireling-list thead td:nth-child(7) {
-  width: 20px;
-}
-#adventure-party #hireling-list tbody td:nth-child(4) label {
-  min-width: 100px;
-  width: 20%;
-  max-width: 50%;
-}
-#adventure-party .adventurer-hearts input {
-  display: none;
-}
-#adventure-party .adventurer-hearts label {
-  height: 32px;
-  width: 32px;
-  background-image: url("assets/boxes/a-heart-filled.png");
-  top: -1px;
-}
-#adventure-party .adventurer-hearts label.slashed-1 {
-  background-image: url("assets/boxes/a-heart-slashed-1.png");
-}
-#adventure-party .adventurer-hearts label.slashed-2 {
-  background-image: url("assets/boxes/a-heart-slashed-2.png");
-}
-#adventure-party .adventurer-hearts label.greyed {
-  background-image: url("assets/boxes/a-heart-greyed.png");
-  cursor: auto;
-}
-#adventure-party .adventurer-hearts label.greyed:hover {
-  filter: none;
-  opacity: 1;
-}
-#adventure-party .adventurer-hearts label.hidden {
-  display: none;
-}
-#adventure-party td.moves-radio div {
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-#adventure-party td.moves-radio div label {
-  height: 24px;
-  width: 24px;
-  background-image: url("assets/boxes/box-filled.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  vertical-align: middle;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#adventure-party td.moves-radio div label.dark-heart {
-  background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
-  position: relative;
-  top: -4px;
-}
-#adventure-party td.moves-radio div label[for$="-0"] {
-  height: 8px;
-  width: 8px;
-  border-radius: 24px;
-  opacity: 0;
-  transition: opacity 1s;
-  background-image: none !important;
-  background-color: #a20000 !important;
-  margin-right: 0px;
-}
-#adventure-party td.moves-radio div label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#adventure-party td.moves-radio div input {
-  display: none;
-}
-#adventure-party td.moves-radio div input:checked ~ label {
-  background-image: url("assets/boxes/box-empty.png");
-}
-#adventure-party td.moves-radio div input:checked ~ label.dark-heart {
-  background-image: url("assets/boxes/heart-empty.png");
-}
-#adventure-party td.moves-radio div input:checked + label {
-  transition: filter 0.1s;
-  cursor: pointer;
-  background-image: url("assets/boxes/box-filled.png");
-}
-#adventure-party td.moves-radio div input:checked + label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#adventure-party td.moves-radio div input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
-}
-#adventure-party td.moves-radio div input:checked + label.practice-one {
-  background-image: url("assets/boxes/box-slashed.png");
-}
-#adventure-party td.moves-radio div input:checked + label.practice-two {
-  background-image: url("assets/boxes/box-crossed.png");
-}
-#adventure-party td.moves-radio:hover > div.attributes-container label {
-  transition: opacity 1s;
-  opacity: 1;
-}
-#adventure-party td.moves-radio label.adv-move-greyed {
-  margin-left: 8px;
-  height: 24px;
-  width: 24px;
-  background-image: url("assets/boxes/box-greyed.png");
-  cursor: auto;
-}
-#adventure-party td.moves-radio label.adv-move-greyed:hover {
-  filter: none;
-  opacity: 1;
-}
-#adventure-party .trait-tags {
-  margin-top: 4px;
-}
-#adventure-party .trait-tags label {
-  display: inline-block;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #999;
-  border-radius: 5px;
-  padding: 2px 4px;
-  margin-bottom: 4px;
-}
-#adventure-party .trait-tags label.positive {
-  color: #2c3678;
-}
-#adventure-party .trait-tags label.negative {
-  color: #68332c;
-}
-#adventure-party .trait-tags label.motivation {
+/*
+ *  Clock Styles
+ */
+label.clock-zero-label {
   color: #191919;
 }
-
-#adventurer-sheet-body .label-stripe {
-  padding: 0;
-  margin: 15px 0px 5px 0px;
+label.clock-zero-label i.nullifier {
+  transition: filter 0.2s;
+  cursor: pointer;
 }
-#adventurer-sheet-body .label-stripe:first-child {
-  margin-top: 0px;
-}
-#adventurer-sheet-body > div:last-child {
-  margin-right: 20px;
-}
-#adventurer-sheet-body input {
-  margin-top: 5px;
-  width: 100%;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-#adventurer-sheet-body .class-selector {
-  flex: 3;
-  margin-left: -3px;
-}
-#adventurer-sheet-body .class-selector select {
-  margin-top: 5px;
-  width: 100%;
-  margin-left: 0px;
-  margin-right: 0px;
+label.clock-zero-label i.nullifier:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+  color: #a20000;
 }
 
-#faction-sheet div.label-stripe {
-  margin: 0px;
-}
-#faction-sheet #faction-clocks {
-  margin-top: 0px;
-}
-#faction-sheet #faction-clocks td {
-  width: 50%;
-}
-#faction-sheet #faction-clocks td textarea {
-  resize: none;
-}
-#faction-sheet .faction-clock-display {
-  width: 60px;
-}
-#faction-sheet .faction-clock-display.seg-4 {
+.clock-block .clocks.clocks-4 {
   position: relative;
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock {
+.clock-block .clocks.clocks-4 .blades-clock {
   position: relative;
   padding: 0;
-  width: 60px;
-  height: 60px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
   background-size: cover;
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock label {
+.clock-block .clocks.clocks-4 .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -2210,43 +3178,43 @@ section.rollable-skill div > div #upgrade-skill-rating {
   transition: filter 0.1s;
   cursor: pointer;
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock label:hover {
+.clock-block .clocks.clocks-4 .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock input {
+.clock-block .clocks.clocks-4 .blades-clock input {
   position: absolute;
   display: none;
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock input[value="0"] {
+.clock-block .clocks.clocks-4 .blades-clock input[value="0"] {
   display: none;
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(3) {
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(180deg);
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(5) {
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(5) {
   transform: rotate(90deg) skewY(180deg);
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(7) {
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(7) {
   transform: rotate(180deg) skewY(180deg);
 }
-#faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(9) {
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-#faction-sheet .faction-clock-display.seg-6 {
+.clock-block .clocks.clocks-6 {
   position: relative;
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock {
+.clock-block .clocks.clocks-6 .blades-clock {
   position: relative;
   padding: 0;
-  width: 60px;
-  height: 60px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
   background-size: cover;
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock label {
+.clock-block .clocks.clocks-6 .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -2257,49 +3225,49 @@ section.rollable-skill div > div #upgrade-skill-rating {
   transition: filter 0.1s;
   cursor: pointer;
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock label:hover {
+.clock-block .clocks.clocks-6 .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock input {
+.clock-block .clocks.clocks-6 .blades-clock input {
   position: absolute;
   display: none;
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock input[value="0"] {
+.clock-block .clocks.clocks-6 .blades-clock input[value="0"] {
   display: none;
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(3) {
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(150deg);
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(5) {
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(5) {
   transform: rotate(60deg) skewY(150deg);
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(7) {
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(7) {
   transform: rotate(120deg) skewY(150deg);
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(9) {
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(9) {
   transform: rotate(180deg) skewY(150deg);
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(11) {
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(11) {
   transform: rotate(240deg) skewY(150deg);
 }
-#faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(13) {
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(13) {
   transform: rotate(300deg) skewY(150deg);
 }
-#faction-sheet .faction-clock-display.seg-8 {
+.clock-block .clocks.clocks-8 {
   position: relative;
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock {
+.clock-block .clocks.clocks-8 .blades-clock {
   position: relative;
   padding: 0;
-  width: 60px;
-  height: 60px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
   background-size: cover;
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock label {
+.clock-block .clocks.clocks-8 .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -2310,50 +3278,158 @@ section.rollable-skill div > div #upgrade-skill-rating {
   transition: filter 0.1s;
   cursor: pointer;
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock label:hover {
+.clock-block .clocks.clocks-8 .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock input {
+.clock-block .clocks.clocks-8 .blades-clock input {
   position: absolute;
   display: none;
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock input[value="0"] {
+.clock-block .clocks.clocks-8 .blades-clock input[value="0"] {
   display: none;
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(3) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(5) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(5) {
   transform: rotate(45deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(7) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(7) {
   transform: rotate(90deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(9) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(9) {
   transform: rotate(135deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(11) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(11) {
   transform: rotate(180deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(13) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(13) {
   transform: rotate(225deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(15) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(15) {
   transform: rotate(270deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(17) {
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(17) {
   transform: rotate(315deg) skewY(135deg);
 }
-#faction-sheet .faction-clock-display .clock-zero-label {
-  position: relative;
-  left: -10px;
+.clock-block .blades-clock-name-type > * {
+  margin-bottom: 10px;
+  max-width: 220px;
 }
-#faction-sheet .faction-clock-display .blades-clock {
-  top: -10px;
+
+/*
+ *  Item Styles
+ */
+.item-add-popup {
+  padding-left: 10px;
+  font-weight: 700;
 }
-#faction-sheet table.name-and-image td:nth-child(2) {
-  width: 60px;
+
+.item .item-open-editor {
+  cursor: pointer;
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+.item .item-open-editor:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.item .item-description {
+  font-style: italic;
+  text-align: justify;
+}
+.item .item-name {
+  text-align: center;
+  font-weight: 500;
+  font-family: Piedra;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0.5;
+}
+div.item i.fa-trash, tr.item i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.all-items-list {
+  font-size: 14px;
+}
+.all-items-list:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.15);
+}
+.all-items-list div.item-body {
+  margin: 5px 10px;
+}
+.all-items-list a.item-delete {
+  margin-right: 10px;
+  align-self: center;
+}
+
+/*
+ *  Other Class Styles
+ */
+.hidden {
+  display: none;
+}
+
+.rollable-text {
+  transition: color 0.2s;
+}
+.rollable-text:hover {
+  cursor: pointer;
+  color: #a20000;
+}
+
+.editor,
+.editor-content {
+  min-height: 280px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.compendium .directory-list .directory-item {
+  padding: 3px 0;
+  line-height: 48px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #4000005c;
+  box-shadow: none;
+}
+
+/*
+ *  Tooltip Styles
+ */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  width: fit-content;
+  max-width: 300px;
+  font-weight: 600;
+  font-family: Bitter;
+  background: url(../styles/assets/images/background-light.png) repeat;
+  color: #400000;
+  font-size: 16px;
+  text-align: justify;
+  border: 2px solid #400000;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 9999;
+  text-transform: none;
+  text-shadow: none;
+}
+.tooltip .tooltipslow {
+  opacity: 0;
+  transition: visibility 0.1s, opacity 0.1s;
+  transition-delay: 0.1s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s;
+  transition-delay: 1s;
 }
 
 /*# sourceMappingURL=wicked.css.map */

@@ -1,4 +1,4 @@
-<form class="{{cssClass}} actor-sheet" autocomplete="off">
+<form class="{{cssClass}} dungeon-sheet" autocomplete="off">
 
   {{!-- Base Dungeon Information --}}
   <section class="section big-teeth-section flex-vertical">
@@ -6,7 +6,7 @@
     <table>
       <tr>
         <td colspan="2">
-          <div id="name">
+          <div id="name" class="large-name">
             <!-- <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label> -->
             <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>
@@ -46,8 +46,13 @@
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "dungeon_theme")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
-              <div class="item-body flex-vertical">
-                <div class="item-special-feature"><b>{{item.data.special_name}}:</b> {{item.data.special_feature}}</div>
+              <div class="flex-vertical">
+                <div class="item-special-feature">
+                  <span class="item-body">
+                    <b class="item-open-editor">{{item.data.special_name}}:</b>
+                  </span>
+                  {{item.data.special_feature}}
+                </div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -84,7 +89,7 @@
         </div>
 
         {{!-- Tier-3 Rooms List --}}
-        <table id="abilities-list">
+        <table id="rooms-list">
           <tbody>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "tier3room")}}
@@ -92,7 +97,7 @@
             {{!-- Rooms from Theme --}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}</div>
+                <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
                 <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
@@ -111,7 +116,7 @@
             {{#if item.flexibility}}
             <tr class="item group-flex" data-item-id="{{item._id}}">
               <td class="item-body">
-                <div class="item-name">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
+                <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
               </td>
               <td>
                 <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
@@ -133,12 +138,12 @@
         <div class="label-stripe">
           <p>{{localize "FITD.DungeonDescription"}}</p>
         </div>
-        <div id="abilities-list">
+        <div id="theme-description">
           {{#each actor.items as |item id|}}
           {{#if (eq item.type "dungeon_theme")}}
           <div class="item flex-horizontal" data-item-id="{{item._id}}">
             <div class="item-body flex-vertical">
-              <div class="item-name">{{item.name}}</div>
+              <div class="item-name item-open-editor">{{item.name}}</div>
               <div class="item-description">{{item.data.description}}</div>
             </div>
             <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -236,9 +241,9 @@
         </div>
         {{#each actor.items as |item id|}}
         <div class="item flex-horizontal all-items-list" data-item-id="{{item._id}}">
-          <div class="item-body item-sheet-open flex-horizontal">
-            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-            <div class="item-name">{{item.name}}</div>
+          <div class="item-body flex-horizontal">
+            <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+            <div class="item-name item-open-editor">{{item.name}}</div>
           </div>
           <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
         </div>

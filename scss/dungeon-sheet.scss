@@ -1,0 +1,67 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.dungeon-sheet {
+    // Special feature of the dungeon theme
+    .item-special-feature {
+        margin: 0px 10px;
+        border-radius: 20px;
+        background: $mud3f;
+        padding: 10px;
+    }
+    // Fade Rooms with missing Materials
+    .missing-materials {
+        color: $gray;
+    }
+    // Dungeon Theme Bar
+    #dungeon-theme-bar {
+        padding-left: 0px;
+        padding-right: 0px;
+        font-size: 18px;
+        display: table-row;
+
+        td:first-child {
+            background-color: $mud;
+            width: 100%;
+            align-self: center;
+            height: 33px;
+        }
+
+        td:last-child {
+            padding: 0px;
+        }
+
+        tr:hover {
+            .item-add-popup {
+                transition: opacity 0.5s;
+                opacity: 1;
+            }
+        }
+
+        tr .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: $add-opacity;
+        }
+    }
+    // Dungeon Tier Radio
+    #dungeon-tier {
+        background-color: $mud3f;
+        height: 33px;
+        width: 145px;
+        display: flex;
+        align-items: center;
+        border: solid;
+        border-width: 2px;
+        border-color: $mud;
+
+        @include custom_radio_round(18px, gray, $almost_white, $almost_black);
+
+        > * {
+            margin-right: 5px;
+        }
+    }
+}
+

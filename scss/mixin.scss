@@ -1,6 +1,11 @@
+// Imports
+@import 'variables.scss';
+
+
 /* 
 *  Elements that can be changed will hint this by dimming and fading a little on hover
 */
+
 @mixin changeable($transition-period, $hover-brightness, $hover-opacity, $hover-color: null) {
   transition: filter $transition-period;
   cursor: pointer;
@@ -14,9 +19,11 @@
   }
 }
 
+
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
+
 @mixin toothradio($width, $height, $unchecked_background, $checked_background, $changeable: true) {
 
   display: flex;
@@ -72,7 +79,10 @@
 }
 
 
-/* Dark Hearts Glow */
+/*
+ * Dark Hearts Glow
+ */
+
 @keyframes glow {
   0% {
     box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3),inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
@@ -83,9 +93,12 @@
 	border-radius: 11px;
   }
 }
+
+
 /*
  * Custom Radio
  */
+
 @mixin custom_radio($width, $height) {
     display: flex;
     $default_color: $almost_white;
@@ -160,84 +173,11 @@
     }
 }
 
-/*
- * Custom Radio Squared
- */
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  /* Hide the browser's default checkbox */
-  input {
-    display: none;
-  
-    &:checked {
-  
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-
-/*
- * Checkboxes underscored.
- */
-@mixin check_underscore() {
-    display: flex;
-    flex-wrap: wrap;
-
-    label {
-        cursor: pointer;
-        font-size: 19px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin-right: 10px;
-        @include changeable(0.1s, 0.8, 0.9);
-        /* Hide the browser's default checkbox */
-        input {
-            display: none;
-
-            &:checked ~ .checkmark {
-                color: $highlight_red;
-            }
-        }
-
-        .checkmark {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    }
-}
 
 /*
  * Create Clock
  */
+
 @mixin clock($segments, $size, $default_color:null, $accent_color:null) {
 
   $angle: 360 / $segments;
@@ -307,139 +247,11 @@
 
 }
 
-/*
- * Turf Block
- */
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-
-
-/*
- * Toothradio single elements
- */
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-  
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  /* Hide the browser's default checkbox */
-  input {
-  
-    display: none;
-  
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
 
 /*
  * Custom Radio Round
  */
+
  @mixin custom_radio_round($diameter, $circle_border_color, $default_color, $accent_color) {
 
   display: flex;
@@ -474,105 +286,21 @@
   }
 }
 
-/*
- * Fonts
- */
-/* bitter-regular - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-500 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 500;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-500.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-600 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-600.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-700 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 700;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-700.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-800 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 800;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-800.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-900 - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: normal;
-    font-weight: 900;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-900.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 400;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-500italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 500;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-500italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-600italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 600;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-600italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-700italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 700;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-700italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-800italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 800;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-800italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* bitter-900italic - latin_cyrillic */
-@font-face {
-    font-family: 'Bitter';
-    font-style: italic;
-    font-weight: 900;
-    src: local(''), url('../fonts/bitter-v16-latin_cyrillic-900italic.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
-}
-/* Blood crow-regular - latin */
-@font-face {
-    font-family: 'Blood Crow';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('../fonts/bloodcrow.ttf') format('truetype') /* Safari, Android, iOS */
-}
 
-/* piedra-regular - latin */
-@font-face {
-    font-family: 'Piedra';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('../fonts/piedra-v9-latin-regular.woff2') format('woff2') /* Chrome 26+, Opera 23+, Firefox 39+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+
+@mixin custom-label($image: 'assets/boxes/box-empty.png', $height: 24px, $width: 24px, $changeable: true) {
+    height: $height;
+    width: $width;
+    display: block;
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+
+    @if $changeable {
+        @include changeable(0.1s, 0.8, 0.9);
+    }
 }

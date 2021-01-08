@@ -1,0 +1,523 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.actor-sheet {
+
+    // Basic Character Information Table for Wicked One and Minion Pack
+    table.base-info {
+ 
+        .xp-stripe {
+            background-color: $mud;
+        }
+    }
+
+    // WO Wicked XP
+    #character-wickedxp {
+        label {
+            &[for$="-0"] {
+                margin-right: 0px;
+            }
+        }
+    }
+
+    // WO Reckless XP
+    #character-recklessxp {
+        label {
+            &[for$="-0"] {
+                margin-right: 0px;
+            }
+        }
+    }
+
+
+    // Wicked and Reckless XP
+    .big-teeth-section {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0px;
+
+        > * {
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0px;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0px;
+        }
+        // Wicked XP
+        .big-teeth {
+            @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
+            justify-content: center;
+            align-items: center;
+
+            label {
+
+                & {
+                    margin-right: 0px;
+
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
+                        width: 18px;
+                    }
+                }
+            }
+
+            &.xp-bar input:checked {
+
+                & ~ label {
+
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-empty.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-empty.png");
+                        width: 18px;
+                    }
+                }
+
+                & + label {
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
+                        width: 18px;
+                    }
+                }
+            }
+        }
+        // Gold
+        .big-teeth.gold {
+            @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
+            align-items: center;
+            justify-content: center;
+
+            & label {
+                margin-right: 0px;
+            }
+        }
+        // Reckless XP
+        .small-teeth-container {
+
+            .small-teeth-wrap {
+                @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
+                flex-direction: column;
+
+                .small-teeth {
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+
+    // Defenses & Stress Area
+    #defenses-stress {
+        display: flex;
+    }
+
+    // Defenses
+    #character-defenses {
+        width: 100%;
+
+        table {
+            width: 100%;
+
+            th {
+                background-color: $mud;
+                color: $almost_white;
+                font-size: medium;
+                font-weight: 600;
+                text-shadow: 0 2px $darkmud;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+
+            tr {
+
+                td:nth-of-type(1) .item-checkmark {
+                    flex-grow: unset;
+                    margin-right: 0px 3px;
+                }
+
+                td:nth-of-type(2) {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                td:nth-child(3) {
+                    text-align: center;
+                    padding: 0;
+
+                    .item-name {
+                        text-transform: uppercase;
+                        font-family: 'Blood Crow';
+                        font-size: 28px;
+                        margin-right: 0px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    // Stress Clock
+    #character-stress-clock {
+        width: 60px;
+        @include clock(6, 60);
+
+        .clock-zero-label {
+            position: relative;
+            left: -10px;
+        }
+
+        .blades-clock {
+            top: -10px;
+        }
+    }
+
+
+    // Abilities Table
+    #abilities-list, #loadout {
+        width: 100%;
+        // border-top: 5px solid $mud;
+        tr {
+            background-color: initial;
+
+            td {
+                &:nth-of-type(1) {
+                    min-width: 75px;
+                    width: 23%;
+                }
+
+                &:nth-of-type(2) {
+                    margin-right: 0px;
+                    margin-bottom: 0px;
+                    padding-bottom: 10px;
+                }
+
+                &:nth-of-type(3) {
+                    width: 20px;
+                }
+            }
+
+            &.group-core {
+                background-color: $mud3f;
+            }
+
+            &.group-flex {
+                background-color: $gray3f;
+
+                td.item-body i {
+                    font-size: 14px;
+                }
+            }
+
+            &.group-ext {
+                background-color: $gray3f;
+
+                td.item-body i {
+                    font-size: 14px;
+                }
+            }
+
+            td div.eye-rays {
+                text-align: center;
+                position: relative;
+                left: 15px;
+                min-width: 420px;
+
+                div.doomseeker-img {
+                    margin-top: 30px;
+
+                    img {
+                        width: 200px;
+                        height: 200px;
+                        margin: 0px;
+                        border-style: none;
+                        position: relative;
+                        // z-index: 2;
+                        transition: filter 0.1s;
+
+                        &.hovered {
+                            filter: brightness(0.8);
+                            opacity: 0.9;
+                        }
+                    }
+
+                    area {
+                        cursor: pointer;
+                    }
+                }
+
+                div.ray-items {
+                    margin-top: -225px;
+                    height: 232px;
+                    text-align: center;
+                }
+
+                div.ray-items > div {
+                    text-align: center;
+                    position: relative;
+                    width: fit-content;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    &:nth-child(1) {
+                        top: 0px;
+                    }
+
+                    &:nth-child(2) {
+                        top: 12px;
+                        left: 18%;
+                    }
+
+                    &:nth-child(3) {
+                        top: -22px;
+                        left: 82%;
+                    }
+
+                    &:nth-child(4) {
+                        top: -17px;
+                        left: 18%;
+                    }
+
+                    &:nth-child(5) {
+                        top: -34px;
+                        left: 82%;
+                    }
+
+                    &:nth-child(6) {
+                        top: 25px;
+                        left: 15%;
+                    }
+
+                    &:nth-child(7) {
+                        top: -9px;
+                        left: 85%;
+                    }
+
+                    &:nth-child(8) {
+                        top: -4px;
+                        left: 15%;
+                    }
+
+                    &:nth-child(9) {
+                        top: -21px;
+                        left: 85%;
+                    }
+                }
+            }
+
+            &.stolen-face {
+                img {
+                    max-height: 100px;
+                    width: 75px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        tr.psi-discipline {
+
+            td > div {
+                border-radius: 15px;
+                height: 30px;
+                align-items: center;
+
+                div {
+                    flex: none;
+                }
+            }
+        }
+
+        table.gold-monger-path tr {
+            &:nth-child(1) td:nth-child(1) {
+                background: none;
+            }
+
+            &:nth-child(2) td:nth-child(1) {
+                background-position-y: center;
+            }
+
+            &:nth-child(3) td:nth-child(1) {
+                background-position-y: bottom;
+            }
+
+            &:nth-child(4) td:nth-child(1) {
+                background-position-y: center;
+                background-image: url("assets/decorations/verticalline-top.png");
+            }
+
+            td:nth-child(1) {
+                min-width: 32px;
+                width: 32px;
+                background-image: url("assets/decorations/verticalline-bottom.png");
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+
+    // Gear & Supply Tags
+    #loadout {
+
+        .gear-tags {
+            margin-top: 4px;
+
+            label {
+                display: inline-block;
+                border-style: solid;
+                border-width: 1px;
+                border-color: $gray;
+                border-radius: 5px;
+                padding: 2px 4px;
+                margin-bottom: 4px;
+
+                &.quality-mundane {
+                    color: $almost_black;
+                }
+
+                &.quality-valuable {
+                    color: $mixed;
+                }
+
+                &.quality-powerful {
+                    color: $crit;
+                }
+
+                &.edge-tag {
+                    color: $orange;
+                }
+
+                &.quantity-steady {
+                    color: $green;
+                }
+
+                &.quantity-limited {
+                    color: $green;
+                }
+
+                &.quantity-shared {
+                    color: $green;
+                }
+            }
+        }
+    }
+
+
+    // Supply checkboxes
+    #loadout .supply {
+        @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
+    }
+
+
+    // Edge List
+    #edge-list {
+        display: block;
+    }
+
+
+    // Dungeon Duties
+    #duties-tab {
+        .item-body {
+            width: auto;
+            padding: 3px;
+            font-family: Bitter;
+            font-size: 14px;
+        }
+
+        .project-clock {
+            height: 80px;
+            @include clock(4, 40);
+        }
+
+        div.label-stripe {
+            margin-bottom: 0px;
+        }
+
+        table {
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+    }
+
+
+    // Projects Table
+    #project-clocks-table {
+        tr {
+            td:nth-of-type(1) {
+                width: 50px;
+            }
+
+            td:nth-of-type(2) {
+                min-width: 90px;
+                width: 23%;
+                font-family: Bitter;
+            }
+
+            td:nth-of-type(3) {
+            }
+
+            td:nth-of-type(4) {
+                width: 20px;
+            }
+        }
+    }
+
+
+    // Duties Table
+    #duties-table {
+        tr {
+            td:nth-of-type(1) {
+                width: 50px;
+                font-weight: 900;
+            }
+
+            td:nth-of-type(2) {
+                min-width: 90px;
+                width: 23%;
+            }
+
+            td:nth-of-type(3) {
+            }
+
+            td:nth-of-type(4) {
+                width: 20px;
+            }
+        }
+    }
+}

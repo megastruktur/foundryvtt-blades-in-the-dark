@@ -53,7 +53,7 @@ export class WickedActorSheet extends WickedSheet {
     if (!this.options.editable) return;
 
     // Update Inventory Item
-    html.find('.item-body').click(ev => {
+    html.find('.item-open-editor').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
       const item = this.actor.getOwnedItem(element.data("itemId"));
       item.sheet.render(true);

@@ -1,0 +1,30 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.minion-sheet {
+    // MP Number Padding
+    #number {
+        padding-right: 12px;
+
+        label {
+            padding-left: 10px;
+        }
+
+        input {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            display: block;
+        }
+    }
+
+    // Rollable Text in Abilities List
+    #abilities-list .item-rollable-text {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+}

@@ -1,10 +1,10 @@
-<form class="{{cssClass}} actor-sheet" autocomplete="off">
+<form class="{{cssClass}} party-sheet" autocomplete="off">
 
 
   <section id="adventure-party" class="flex-vertical">
     <table>
       <tr>
-        <td id="name">
+        <td id="name" class="large-name">
             <input type="text" id="party-{{actor._id}}-name" name="name" value="{{actor.name}}">
         </td>
         <td>
@@ -37,8 +37,8 @@
           {{#if (eq item.type "adventurer")}}
           {{#if (eq item.data.adventurer_type "adventurer")}}
         <tr class="item" data-item-id="{{item._id}}">
-          <td class="item-sheet-open"><label>{{item.data.tier}}</label></td>
-          <td class="item-sheet-open">{{item.data.adventurer_class_custom}}</td>
+          <td><label class="item-open-editor">{{item.data.tier}}</label></td>
+          <td class="{{#if (eq item.data.adventurer_class_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.adventurer_class_custom}}</span></td>
           <td class="adventurer-hearts">
             <div class="flex-horizontal">
               {{#each item.data.hearts as |heart_class heart| }}
@@ -59,16 +59,16 @@
               {{/multiboxes}}
             </div>
           </td>
-          <td class="item-sheet-open"><label>{{item.data.passive}}</label></td>
-          <td class="trait-tags item-sheet-open">
-            {{#unless (eq item.data.trait_pos_1_custom "")}}<label class="positive">{{item.data.trait_pos_1_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.trait_pos_2_custom "")}}<label class="positive">{{item.data.trait_pos_2_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.trait_neg_1_custom "")}}<label class="negative">{{item.data.trait_neg_1_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.trait_neg_2_custom "")}}<label class="negative">{{item.data.trait_neg_2_custom}}</label>{{/unless}}
+          <td><label class="item-open-editor">{{item.data.passive}}</label></td>
+          <td class="trait-tags">
+            {{#unless (eq item.data.trait_pos_1_custom "")}}<label class="positive item-open-editor">{{item.data.trait_pos_1_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.trait_pos_2_custom "")}}<label class="positive item-open-editor">{{item.data.trait_pos_2_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.trait_neg_1_custom "")}}<label class="negative item-open-editor">{{item.data.trait_neg_1_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.trait_neg_2_custom "")}}<label class="negative item-open-editor">{{item.data.trait_neg_2_custom}}</label>{{/unless}}
           </td>
-          <td class="trait-tags item-sheet-open">
-            {{#unless (eq item.data.motivation_1_custom "")}}<label class="motivation">{{item.data.motivation_1_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.motivation_2_custom "")}}<label class="motivation">{{item.data.motivation_2_custom}}</label>{{/unless}}
+          <td class="trait-tags">
+            {{#unless (eq item.data.motivation_1_custom "")}}<label class="motivation item-open-editor">{{item.data.motivation_1_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.motivation_2_custom "")}}<label class="motivation item-open-editor">{{item.data.motivation_2_custom}}</label>{{/unless}}
           </td>
           <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
         </tr>
@@ -101,7 +101,7 @@
           {{#if (eq item.type "adventurer")}}
           {{#if (eq item.data.adventurer_type "hireling")}}
         <tr class="item" data-item-id="{{item._id}}">
-          <td class="item-sheet-open">{{item.data.hireling_type_custom}}</td>
+          <td class="{{#if (eq item.data.hireling_type_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.hireling_type_custom}}</span></td>
           <td class="adventurer-hearts">
             <div class="flex-horizontal">
               {{#each item.data.hearts as |heart_class heart| }}
@@ -126,16 +126,16 @@
             <label class="adv-move-greyed"></label>
           {{/if}}
           </td>
-          <td class="item-sheet-open"><label>{{item.data.passive}}</label></td>
-          <td class="trait-tags item-sheet-open">
-            {{#unless (eq item.data.trait_pos_1_custom "")}}<label class="positive">{{item.data.trait_pos_1_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.trait_pos_2_custom "")}}<label class="positive">{{item.data.trait_pos_2_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.trait_neg_1_custom "")}}<label class="negative">{{item.data.trait_neg_1_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.trait_neg_2_custom "")}}<label class="negative">{{item.data.trait_neg_2_custom}}</label>{{/unless}}
+          <td><label class="item-open-editor">{{item.data.passive}}</label></td>
+          <td class="trait-tags">
+            {{#unless (eq item.data.trait_pos_1_custom "")}}<label class="positive item-open-editor">{{item.data.trait_pos_1_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.trait_pos_2_custom "")}}<label class="positive item-open-editor">{{item.data.trait_pos_2_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.trait_neg_1_custom "")}}<label class="negative item-open-editor">{{item.data.trait_neg_1_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.trait_neg_2_custom "")}}<label class="negative item-open-editor">{{item.data.trait_neg_2_custom}}</label>{{/unless}}
           </td>
-          <td class="trait-tags item-sheet-open">
-            {{#unless (eq item.data.motivation_1_custom "")}}<label class="motivation">{{item.data.motivation_1_custom}}</label>{{/unless}}
-            {{#unless (eq item.data.motivation_2_custom "")}}<label class="motivation">{{item.data.motivation_2_custom}}</label>{{/unless}}
+          <td class="trait-tags">
+            {{#unless (eq item.data.motivation_1_custom "")}}<label class="motivation item-open-editor">{{item.data.motivation_1_custom}}</label>{{/unless}}
+            {{#unless (eq item.data.motivation_2_custom "")}}<label class="motivation item-open-editor">{{item.data.motivation_2_custom}}</label>{{/unless}}
           </td>
           <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
         </tr>

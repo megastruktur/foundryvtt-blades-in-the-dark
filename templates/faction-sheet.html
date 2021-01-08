@@ -1,14 +1,14 @@
-<form class="{{cssClass}} actor-sheet" autocomplete="off">
+<form class="{{cssClass}} faction-sheet" autocomplete="off">
 
 
   <section id="faction-sheet" class="flex-vertical">
     <table class="name-and-image">
       <tr>
-        <td id="name">
+        <td id="name" class="large-name">
             <input type="text" id="party-{{actor._id}}-name" name="name" value="{{actor.name}}">
         </td>
         <td>
-          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
         </td>
       </tr>
     </table>
