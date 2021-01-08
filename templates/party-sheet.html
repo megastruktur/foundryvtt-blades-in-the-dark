@@ -1,4 +1,4 @@
-<form class="{{cssClass}} party-sheet" autocomplete="off">
+<form class="{{cssClass}} actor-sheet party-sheet" autocomplete="off">
 
 
   <section id="adventure-party" class="flex-vertical">
@@ -37,8 +37,8 @@
           {{#if (eq item.type "adventurer")}}
           {{#if (eq item.data.adventurer_type "adventurer")}}
         <tr class="item" data-item-id="{{item._id}}">
-          <td><label class="item-open-editor">{{item.data.tier}}</label></td>
-          <td class="{{#if (eq item.data.adventurer_class_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.adventurer_class_custom}}</span></td>
+          <td class="tier"><label class="item-open-editor">{{item.data.tier}}</label></td>
+          <td class="class-name {{#if (eq item.data.adventurer_class_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.adventurer_class_custom}}</span></td>
           <td class="adventurer-hearts">
             <div class="flex-horizontal">
               {{#each item.data.hearts as |heart_class heart| }}
@@ -101,7 +101,7 @@
           {{#if (eq item.type "adventurer")}}
           {{#if (eq item.data.adventurer_type "hireling")}}
         <tr class="item" data-item-id="{{item._id}}">
-          <td class="{{#if (eq item.data.hireling_type_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.hireling_type_custom}}</span></td>
+          <td class="type-name {{#if (eq item.data.hireling_type_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.hireling_type_custom}}</span></td>
           <td class="adventurer-hearts">
             <div class="flex-horizontal">
               {{#each item.data.hearts as |heart_class heart| }}

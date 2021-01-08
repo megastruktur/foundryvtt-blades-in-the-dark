@@ -4,59 +4,31 @@
 @import 'mixin.scss';
 
 
-form.actor-sheet {
+form.wicked-one-sheet {
 
-    // Basic Character Information Table for Wicked One and Minion Pack
+
+  /*
+  *   Basic Character Info Table
+  */
+
     table.base-info {
- 
+
         .xp-stripe {
             background-color: $mud;
         }
-    }
 
-    // WO Wicked XP
-    #character-wickedxp {
-        label {
-            &[for$="-0"] {
-                margin-right: 0px;
-            }
-        }
-    }
-
-    // WO Reckless XP
-    #character-recklessxp {
-        label {
-            &[for$="-0"] {
-                margin-right: 0px;
-            }
-        }
-    }
-
-
-    // Wicked and Reckless XP
-    .big-teeth-section {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 0px;
-
-        > * {
-            margin-right: 10px;
-
-            &:last-child {
-                margin-right: 0px;
-            }
-        }
-
-        &:last-child {
-            margin-right: 0px;
-        }
-        // Wicked XP
+        // Wicked & Reckless XP
         .big-teeth {
             @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
             justify-content: center;
             align-items: center;
 
             label {
+
+                &[for$="-0"]:hover {
+                        filter: brightness(1) !important;
+                        opacity: 0.5 !important;
+                    }
 
                 & {
                     margin-right: 0px;
@@ -115,44 +87,27 @@ form.actor-sheet {
                     }
                 }
             }
-        }
-        // Gold
-        .big-teeth.gold {
-            @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
-            align-items: center;
-            justify-content: center;
+        
+            // Gold
+            &.gold {
+                @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
 
-            & label {
-                margin-right: 0px;
-            }
-        }
-        // Reckless XP
-        .small-teeth-container {
-
-            .small-teeth-wrap {
-                @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
-                flex-direction: column;
-
-                .small-teeth {
-                    display: flex;
-                    flex-direction: row;
+                & label {
+                    margin-right: 0px;
                 }
             }
         }
     }
 
 
-    // Defenses & Stress Area
-    #defenses-stress {
-        display: flex;
-    }
+/*
+ *   Defenses, Stress & Impulses
+ */
 
     // Defenses
     #character-defenses {
-        width: 100%;
 
         table {
-            width: 100%;
 
             th {
                 background-color: $mud;
@@ -162,16 +117,7 @@ form.actor-sheet {
                 text-shadow: 0 2px $darkmud;
             }
 
-            input[type="text"] {
-                width: 100%;
-            }
-
             tr {
-
-                td:nth-of-type(1) .item-checkmark {
-                    flex-grow: unset;
-                    margin-right: 0px 3px;
-                }
 
                 td:nth-of-type(2) {
                     display: flex;
@@ -186,6 +132,7 @@ form.actor-sheet {
                         text-transform: uppercase;
                         font-family: 'Blood Crow';
                         font-size: 28px;
+                        margin-left: 12px;
                         margin-right: 0px;
                         font-weight: normal;
                     }
@@ -209,6 +156,14 @@ form.actor-sheet {
         }
     }
 
+/*
+ *   Tabs and Abilities
+ */
+
+    // Nav container margin to attributes
+    #wo-nav-container {
+        margin-right: 8px;
+    }
 
     // Abilities Table
     #abilities-list, #loadout {
@@ -391,7 +346,6 @@ form.actor-sheet {
         }
     }
 
-
     // Gear & Supply Tags
     #loadout {
 
@@ -440,18 +394,15 @@ form.actor-sheet {
         }
     }
 
-
     // Supply checkboxes
     #loadout .supply {
         @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
     }
 
-
     // Edge List
     #edge-list {
         display: block;
     }
-
 
     // Dungeon Duties
     #duties-tab {
@@ -477,7 +428,6 @@ form.actor-sheet {
         }
     }
 
-
     // Projects Table
     #project-clocks-table {
         tr {
@@ -499,7 +449,6 @@ form.actor-sheet {
             }
         }
     }
-
 
     // Duties Table
     #duties-table {

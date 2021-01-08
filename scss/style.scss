@@ -19,7 +19,6 @@
  *   Layout Styles
  */
 
-// Disallow sheet to be reduced in size beyond the minimum needed
 .sheet {
 	min-width: min-content;
 }
@@ -32,34 +31,16 @@
 
     form.actor-sheet {
         z-index: 0;
+        padding: 20px 12px;
     }
 }
 
-// TO DO: Check to reduce padding dynamically
-// TO DO: Check if to move notes and hint
-form {
-    &.actor-sheet {
-        padding: 20px;
-    }
-
-    .notes, .hint {
-        color: $bloody;
-        font-weight: 600;
-    }
-}
-
-// TO DO: Trim and maybe move parts to item sheets
 section {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between; // Check if needed
 
-    > *:not(.label-stripe) {
-        margin-right: 10px;
-
-        &:last-child {
-            margin-right: 0px;
-        }
+    > form:last-child {
+        margin-right: 0px;
     }
 
     .grow-one {
@@ -131,10 +112,8 @@ nav {
 }
 
 // Remove line-breaks from nav elements
-#wo-nav-container, #dun-nav-container, #mp-nav-container {
-    nav a {
-        flex: none;
-    }
+.tab-content  nav a {
+    flex: none;
 }
 
 /*

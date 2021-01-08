@@ -1,7 +1,7 @@
-<form class="{{cssClass}} dungeon-sheet" autocomplete="off">
+<form class="{{cssClass}} actor-sheet dungeon-sheet" autocomplete="off">
 
   {{!-- Base Dungeon Information --}}
-  <section class="section big-teeth-section flex-vertical">
+  <section class="section flex-vertical">
 
     <table>
       <tr>
@@ -16,7 +16,9 @@
         <td>
           {{!-- Dungeon Theme Info --}}
           <div>
-            {{localize "FITD.DungeonTheme"}}:
+            {{#if actor.data.has_no_theme}}
+            {{localize "FITD.DungeonTheme"}}
+            {{/if}}
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "dungeon_theme")}}
             {{item.name}}

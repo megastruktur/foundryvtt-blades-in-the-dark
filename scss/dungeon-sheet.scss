@@ -5,27 +5,16 @@
 
 
 form.dungeon-sheet {
-    // Special feature of the dungeon theme
-    .item-special-feature {
-        margin: 0px 10px;
-        border-radius: 20px;
-        background: $mud3f;
-        padding: 10px;
-    }
-    // Fade Rooms with missing Materials
-    .missing-materials {
-        color: $gray;
-    }
+
     // Dungeon Theme Bar
     #dungeon-theme-bar {
-        padding-left: 0px;
-        padding-right: 0px;
         font-size: 18px;
         display: table-row;
 
         td:first-child {
             background-color: $mud;
             width: 100%;
+            padding-left: 10px;
             align-self: center;
             height: 33px;
         }
@@ -46,6 +35,7 @@ form.dungeon-sheet {
             opacity: $add-opacity;
         }
     }
+
     // Dungeon Tier Radio
     #dungeon-tier {
         background-color: $mud3f;
@@ -56,12 +46,28 @@ form.dungeon-sheet {
         border: solid;
         border-width: 2px;
         border-color: $mud;
-
         @include custom_radio_round(18px, gray, $almost_white, $almost_black);
 
         > * {
             margin-right: 5px;
         }
+    }
+
+    .profile-img {
+        max-width: 135px;
+    }
+
+    // Special feature of the dungeon theme
+    .item-special-feature {
+        margin: 0px 10px;
+        border-radius: 20px;
+        background: $mud3f;
+        padding: 10px;
+    }
+
+    // Fade Rooms with missing Materials
+    .missing-materials {
+        color: $gray;
     }
 }
 

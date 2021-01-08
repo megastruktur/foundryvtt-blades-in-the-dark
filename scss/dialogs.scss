@@ -34,11 +34,11 @@
     label:nth-of-type(2n) {
         background: $mud3f;
     }
-}
 
-// ?-Symbol for tooltips in item-addition pop-up
-.fa-question-circle {
-    padding: 2px 3px;
+    // ?-Symbol for tooltips in item-addition pop-up
+    .fa-question-circle {
+        padding: 2px 3px;
+    }
 }
 
 
@@ -46,8 +46,11 @@
  *  Rollable text pop-up dialog Styles
  */
 
-.action-info {
-    margin-top: -20px;
+#skill-roll{
+
+    .action-info {
+        margin-top: -20px;
+    }
 }
 
 
@@ -55,3 +58,6 @@
  *  Dice roller pop-up dialog Styles
  */
 
+#dice-roller {
+
+}

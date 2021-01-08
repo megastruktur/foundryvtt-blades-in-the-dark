@@ -21,12 +21,33 @@ export class WickedActor extends Actor {
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
+    if (actorData.type === 'dungeon') this._prepareDungeonData(actorData);
     if (actorData.type === 'faction') this._prepareFactionData(actorData);
+  }
+
+/* -------------------------------------------- */
+
+
+  /**
+  * Prepare Dungeon data
+  */
+  _prepareDungeonData(actorData) {
+    const data = actorData.data;
+
+    // Make modifications to data here.
+    data.has_no_theme = true;
+
+    for (var i = 0; i < actorData.items.length; i++) {
+      if (actorData.items[i].type == "dungeon_theme") {
+        data.has_no_theme = false;
+        break;
+      }
+    }
   }
 
 
   /**
-   * Prepare Character type specific data
+   * Prepare Faction data
    */
   _prepareFactionData(actorData) {
     const data = actorData.data;
@@ -193,7 +214,7 @@ export class WickedActor extends Actor {
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
         <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)} (${dice_amount}D)</h2>
-        <form>
+        <form id="skill-roll">
             <div class="form-group">
             <label>${game.i18n.localize('FITD.RollType')}:</label>
             <select id="type" name="type">

@@ -1,4 +1,4 @@
-<form class="{{cssClass}} gear-supply-sheet" autocomplete="off">
+<form class="{{cssClass}} item-sheet gear-supply-sheet" autocomplete="off">
   <header class="sheet-header">
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
@@ -32,20 +32,20 @@
     </div>
 
     {{!-- Description --}}
-    <div id="edge-list" class="form-group">
-      <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <div id="edge-list" class="form-group flex-vertical">
       <textarea name="data.description">{{data.description}}</textarea>
     </div>
 
     {{!-- Edges --}}
-    <div id="edge-list" class="form-group">
-      <label class="label-stripe">{{ localize "FITD.Edges" }}</label>
+    <label class="label-stripe">{{localize "FITD.Edges"}}</label>
+    <div id="edge-list" class="flex-vertical">
       {{#each data.edges}}
-      <div class="flex-horizontal">
+      <div>
         <input type="text" value="{{this}}" data-item-name="{{this}}">
       </div>
       {{/each}}
-      <div class="flex-horizontal">
+      <div>
         <input type="text" value="" placeholder="New Edge">
       </div>
     </div>
