@@ -10,7 +10,10 @@
     <label class="label-stripe">{{localize "FITD.Description"}}</label>
     <textarea name="data.description">{{data.description}}</textarea>
     <label class="label-stripe">{{localize "FITD.IsPrimalMonster"}}</label>
-    <input type="checkbox" name="data.primal" value="{{data.primal}}" {{checked data.primal}}>
+    <div>
+      <input type="checkbox" name="data.primal" value="{{data.primal}}" {{checked data.primal}}>
+      <label>{{localize "FITD.IsPrimalMonsterHint"}}</label>
+    </div>
     {{#if data.primal}}
     <label class="label-stripe">{{localize "FITD.FlashbackClues"}}</label>
     <textarea name="data.flashback_clues">{{data.flashback_clues}}</textarea>

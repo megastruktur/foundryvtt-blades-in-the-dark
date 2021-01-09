@@ -698,6 +698,13 @@ form.wicked-one-sheet #loadout .supply input:checked ~ label {
 form.wicked-one-sheet #loadout .supply input:checked + label {
   background-image: url("assets/boxes/box-white-crossed.png");
 }
+form.wicked-one-sheet #duties-tab .downtime-hints div {
+  margin: 0px 5px;
+  font-style: italic;
+}
+form.wicked-one-sheet #duties-tab .downtime-hints div b {
+  font-style: normal;
+}
 form.wicked-one-sheet #duties-tab .project-clock {
   height: 80px;
   position: relative;

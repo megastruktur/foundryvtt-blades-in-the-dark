@@ -358,6 +358,15 @@ form.wicked-one-sheet {
     // Dungeon Duties
     #duties-tab {
 
+        .downtime-hints div {
+            margin: 0px 5px;
+            font-style: italic;
+
+            b {
+                font-style: normal;
+            }
+        }
+
         .project-clock {
             height: 80px;
             // Functionality will be overridden in wicked-sheet.js

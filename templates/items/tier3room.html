@@ -14,7 +14,10 @@
     <label class="label-stripe">{{localize "FITD.DungeonTheme"}}</label>
     <textarea name="data.theme">{{data.theme}}</textarea>
     <label class="label-stripe">{{localize "FITD.MissingMaterials"}}</label>
-    <input type="checkbox" name="data.missing_materials" {{checked data.missing_materials}}>
+    <div>
+      <input type="checkbox" name="data.missing_materials" {{checked data.missing_materials}}>
+      <label>{{localize "FITD.MissingMaterialsHint"}}</label>
+    </div>
   </section>
 
 </form>
