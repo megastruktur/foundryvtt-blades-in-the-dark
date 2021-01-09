@@ -207,6 +207,27 @@ textarea {
     min-height: 80px;
 }
 
+.standard-checkbox {
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    label {
+        @include custom-label("assets/boxes/box-empty.png", 24px, 24px);
+        margin-right: 5px;
+    }
+
+    input[type="checkbox"]:checked + label {
+        background-image: url("assets/boxes/box-crossed.png");
+    }
+}
+
 
 /*
  *   Button Styles

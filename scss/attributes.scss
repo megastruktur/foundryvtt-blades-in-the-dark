@@ -102,7 +102,7 @@
         label {
             @include custom-label("assets/boxes/bloodied-empty.png", 36px, 24px);
             margin-left: 8px;
-            margin-right: 1px;
+            margin-right: 5px;
             padding: 10px;
             top: -10px;
         }
@@ -211,7 +211,7 @@
     }
 
     #hearts-footer {
-        margin-left: 33px;
+        margin-left: 37px;
         padding-right: 10px;
         min-width: 135px;
     }

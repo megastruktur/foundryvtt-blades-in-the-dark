@@ -624,6 +624,9 @@ form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
   background-image: url("assets/decorations/verticalline-bottom.png");
   background-repeat: no-repeat;
 }
+form.wicked-one-sheet #abilities .flashback-clues {
+  text-align: center;
+}
 form.wicked-one-sheet #loadout .gear-tags {
   margin-top: 4px;
 }
@@ -2075,7 +2078,7 @@ form.party-sheet .trait-tags label.motivation {
   transition: filter 0.1s;
   cursor: pointer;
   margin-left: 8px;
-  margin-right: 1px;
+  margin-right: 5px;
   padding: 10px;
   top: -10px;
 }
@@ -2246,7 +2249,7 @@ form.party-sheet .trait-tags label.motivation {
   background-image: url("assets/boxes/heart-filled.png");
 }
 #attributes #hearts-footer {
-  margin-left: 33px;
+  margin-left: 37px;
   padding-right: 10px;
   min-width: 135px;
 }
@@ -3044,6 +3047,35 @@ textarea {
   font-family: Bitter;
   font-weight: 600;
   min-height: 80px;
+}
+
+.standard-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+}
+.standard-checkbox input[type=checkbox] {
+  display: none;
+}
+.standard-checkbox label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.standard-checkbox label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.standard-checkbox input[type=checkbox]:checked + label {
+  background-image: url("assets/boxes/box-crossed.png");
 }
 
 /*
