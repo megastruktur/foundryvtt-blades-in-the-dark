@@ -341,9 +341,9 @@
             {{/if}}
             {{/if}}
             {{#if (eq item.data.ability_type "ds_eyes")}}
-            <tr class="item" data-item-id="{{item._id}}">
+            <tr class="item eye-rays" data-item-id="{{item._id}}">
               <td colspan="2">
-                <div class="eye-rays">
+                <div class="ray-container">
                   <div class="doomseeker-img">
                     <img src="systems/wicked-ones/styles/assets/decorations/doomseeker.png" usemap="#image-map" />
                     <map name="image-map">
@@ -391,9 +391,9 @@
             </tr>
             {{/if}}
             {{#if (eq item.data.ability_type "gm_path")}}
-            <tr class="item" data-item-id="{{item._id}}">
-              <td class="" colspan="2">
-                <table class="gold-monger-path item-radio">
+            <tr class="item growth-path" data-item-id="{{item._id}}">
+              <td colspan="2">
+                <table class="item-radio">
                   {{#multiboxes data.primal.gm_path_value}}
                   <tr>
                     <td>

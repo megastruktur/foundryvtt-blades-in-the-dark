@@ -130,6 +130,9 @@
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 /*
  * Fonts
  */
@@ -262,10 +265,13 @@
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 form.wicked-one-sheet {
   /*
-  *   Basic Character Info Table
-  */
+   *   Basic Character Info Table
+   */
   /*
    *   Defenses, Stress & Impulses
    */
@@ -489,49 +495,49 @@ form.wicked-one-sheet #character-stress-clock .blades-clock {
 form.wicked-one-sheet #wo-nav-container {
   margin-right: 8px;
 }
-form.wicked-one-sheet #abilities-list, form.wicked-one-sheet #loadout {
-  width: 100%;
-}
-form.wicked-one-sheet #abilities-list tr, form.wicked-one-sheet #loadout tr {
-  background-color: initial;
-}
-form.wicked-one-sheet #abilities-list tr td:nth-of-type(1), form.wicked-one-sheet #loadout tr td:nth-of-type(1) {
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(1), form.wicked-one-sheet #loadout tr td:nth-of-type(1), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(1) {
   min-width: 75px;
   width: 23%;
 }
-form.wicked-one-sheet #abilities-list tr td:nth-of-type(2), form.wicked-one-sheet #loadout tr td:nth-of-type(2) {
-  margin-right: 0px;
-  margin-bottom: 0px;
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(2), form.wicked-one-sheet #loadout tr td:nth-of-type(2), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(2) {
   padding-bottom: 10px;
 }
-form.wicked-one-sheet #abilities-list tr td:nth-of-type(3), form.wicked-one-sheet #loadout tr td:nth-of-type(3) {
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(3), form.wicked-one-sheet #loadout tr td:nth-of-type(3), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(3) {
   width: 20px;
 }
-form.wicked-one-sheet #abilities-list tr.group-core, form.wicked-one-sheet #loadout tr.group-core {
+form.wicked-one-sheet #abilities-list .group-core {
   background-color: #68332c3f;
 }
-form.wicked-one-sheet #abilities-list tr.group-flex, form.wicked-one-sheet #loadout tr.group-flex {
+form.wicked-one-sheet #abilities-list .group-flex {
   background-color: #9999993f;
 }
-form.wicked-one-sheet #abilities-list tr.group-flex td.item-body i, form.wicked-one-sheet #loadout tr.group-flex td.item-body i {
+form.wicked-one-sheet #abilities-list .group-flex td.item-body i {
   font-size: 14px;
 }
-form.wicked-one-sheet #abilities-list tr.group-ext, form.wicked-one-sheet #loadout tr.group-ext {
+form.wicked-one-sheet #abilities-list .group-ext {
   background-color: #9999993f;
 }
-form.wicked-one-sheet #abilities-list tr.group-ext td.item-body i, form.wicked-one-sheet #loadout tr.group-ext td.item-body i {
+form.wicked-one-sheet #abilities-list .group-ext td.item-body i {
   font-size: 14px;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays, form.wicked-one-sheet #loadout tr td div.eye-rays {
+form.wicked-one-sheet #abilities-list tr.psi-discipline td > div {
+  border-radius: 15px;
+  height: 30px;
+  align-items: center;
+}
+form.wicked-one-sheet #abilities-list tr.psi-discipline td > div div {
+  flex: none;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container {
   text-align: center;
   position: relative;
   left: 15px;
   min-width: 420px;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.doomseeker-img, form.wicked-one-sheet #loadout tr td div.eye-rays div.doomseeker-img {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img {
   margin-top: 30px;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img, form.wicked-one-sheet #loadout tr td div.eye-rays div.doomseeker-img img {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img img {
   width: 200px;
   height: 200px;
   margin: 0px;
@@ -539,87 +545,80 @@ form.wicked-one-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img,
   position: relative;
   transition: filter 0.1s;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img.hovered, form.wicked-one-sheet #loadout tr td div.eye-rays div.doomseeker-img img.hovered {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img img.hovered {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.doomseeker-img area, form.wicked-one-sheet #loadout tr td div.eye-rays div.doomseeker-img area {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img area {
   cursor: pointer;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items, form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items {
   margin-top: -225px;
   height: 232px;
   text-align: center;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div, form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div {
   text-align: center;
   position: relative;
   width: fit-content;
   left: 50%;
   transform: translateX(-50%);
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(1), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(1) {
-  top: 0px;
-}
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(2), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(2) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(2) {
   top: 12px;
   left: 18%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(3), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(3) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(3) {
   top: -22px;
   left: 82%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(4), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(4) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(4) {
   top: -17px;
   left: 18%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(5), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(5) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(5) {
   top: -34px;
   left: 82%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(6), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(6) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(6) {
   top: 25px;
   left: 15%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(7), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(7) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(7) {
   top: -9px;
   left: 85%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(8), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(8) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(8) {
   top: -4px;
   left: 15%;
 }
-form.wicked-one-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(9), form.wicked-one-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(9) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(9) {
   top: -21px;
   left: 85%;
 }
-form.wicked-one-sheet #abilities-list tr.stolen-face img, form.wicked-one-sheet #loadout tr.stolen-face img {
-  max-height: 100px;
-  width: 75px;
-  object-fit: cover;
+form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child {
+  text-align: center;
 }
-form.wicked-one-sheet #abilities-list tr.psi-discipline td > div, form.wicked-one-sheet #loadout tr.psi-discipline td > div {
-  border-radius: 15px;
-  height: 30px;
-  align-items: center;
+form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child img {
+  max-height: 120px;
+  max-width: 100px;
+  object-fit: contain;
+  border: 0px;
 }
-form.wicked-one-sheet #abilities-list tr.psi-discipline td > div div, form.wicked-one-sheet #loadout tr.psi-discipline td > div div {
-  flex: none;
-}
-form.wicked-one-sheet #abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), form.wicked-one-sheet #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) {
   background: none;
 }
-form.wicked-one-sheet #abilities-list table.gold-monger-path tr:nth-child(2) td:nth-child(1), form.wicked-one-sheet #loadout table.gold-monger-path tr:nth-child(2) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) {
   background-position-y: center;
 }
-form.wicked-one-sheet #abilities-list table.gold-monger-path tr:nth-child(3) td:nth-child(1), form.wicked-one-sheet #loadout table.gold-monger-path tr:nth-child(3) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) {
   background-position-y: bottom;
 }
-form.wicked-one-sheet #abilities-list table.gold-monger-path tr:nth-child(4) td:nth-child(1), form.wicked-one-sheet #loadout table.gold-monger-path tr:nth-child(4) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) {
   background-position-y: center;
   background-image: url("assets/decorations/verticalline-top.png");
 }
-form.wicked-one-sheet #abilities-list table.gold-monger-path tr td:nth-child(1), form.wicked-one-sheet #loadout table.gold-monger-path tr td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
   min-width: 32px;
   width: 32px;
   background-image: url("assets/decorations/verticalline-bottom.png");
@@ -698,15 +697,6 @@ form.wicked-one-sheet #loadout .supply input:checked ~ label {
 }
 form.wicked-one-sheet #loadout .supply input:checked + label {
   background-image: url("assets/boxes/box-white-crossed.png");
-}
-form.wicked-one-sheet #edge-list {
-  display: block;
-}
-form.wicked-one-sheet #duties-tab .item-body {
-  width: auto;
-  padding: 3px;
-  font-family: Bitter;
-  font-size: 14px;
 }
 form.wicked-one-sheet #duties-tab .project-clock {
   height: 80px;
@@ -918,6 +908,9 @@ form.wicked-one-sheet #duties-table tr td:nth-of-type(4) {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 form.minion-sheet #number {
   padding-right: 12px;
 }
@@ -1070,6 +1063,9 @@ form.minion-sheet #abilities-list .item-rollable-text {
  */
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
  */
 form.dungeon-sheet #dungeon-theme-bar {
   font-size: 18px;
@@ -1279,6 +1275,9 @@ form.dungeon-sheet .missing-materials {
  */
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
  */
 form.faction-sheet #faction-sheet div.label-stripe {
   margin: 0px;
@@ -1597,6 +1596,9 @@ form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 form.party-sheet .profile-img {
   vertical-align: middle;
 }
@@ -1903,6 +1905,9 @@ form.party-sheet .trait-tags label.motivation {
  */
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
  */
 #attributes {
   height: fit-content;
@@ -2371,6 +2376,9 @@ form.party-sheet .trait-tags label.motivation {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 form.item-sheet {
   padding: 15px;
 }
@@ -2560,6 +2568,9 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
  */
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
  */
 #chat .chat-label {
   background-color: #191919;
@@ -2833,6 +2844,9 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 /*
  *  Add-item pop-up dialog Styles
  */
@@ -2946,14 +2960,24 @@ nav {
   margin-bottom: 10px;
 }
 
+.tab-content {
+  margin-right: 8px;
+}
+.tab-content nav a {
+  flex: none;
+}
+.tab-content .tab .label-stripe {
+  margin-bottom: 0px;
+}
+.tab-content .tab table {
+  margin-top: 0px;
+  border: 0px;
+}
+
 .tabs .item.active {
   font-weight: 700;
   color: #400000;
   text-shadow: 2px 2px 7px #d46c1f;
-}
-
-.tab-content nav a {
-  flex: none;
 }
 
 /*

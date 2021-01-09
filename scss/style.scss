@@ -104,6 +104,28 @@ nav {
     margin-bottom: 10px;
 }
 
+// Nav container margin to attributes
+.tab-content {
+    margin-right: 8px;
+
+    // Remove line-breaks from nav elements
+    nav a {
+        flex: none;
+    }
+
+    .tab {
+
+        .label-stripe {
+            margin-bottom: 0px;
+        }
+
+        table {
+            margin-top: 0px;
+            border: 0px;
+        }
+    }
+}
+
 // Highlight selected tab
 .tabs .item.active {
     font-weight: 700;
@@ -111,10 +133,6 @@ nav {
     text-shadow: 2px 2px 7px $orange;
 }
 
-// Remove line-breaks from nav elements
-.tab-content  nav a {
-    flex: none;
-}
 
 /*
  *   Element Styles

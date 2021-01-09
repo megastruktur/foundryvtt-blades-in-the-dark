@@ -308,3 +308,16 @@
         @include changeable(0.1s, 0.8, 0.9);
     }
 }
+
+
+/* 
+ *  Positioning of children by number
+ */
+
+@mixin child_pos($child_num, $pos_top: 0px, $pos_left: 0px) {
+  
+    &:nth-child(#{$child_num}) {
+        top: $pos_top;
+        left: $pos_left;
+    }
+}
