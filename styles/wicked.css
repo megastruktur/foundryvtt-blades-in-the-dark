@@ -702,7 +702,7 @@ form.wicked-one-sheet #loadout .supply input:checked + label {
   background-image: url("assets/boxes/box-white-crossed.png");
 }
 form.wicked-one-sheet #duties-tab .downtime-hints {
-  padding: 3px 5px;
+  padding: 3px 0px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
   justify-content: space-around;
@@ -1164,6 +1164,21 @@ form.dungeon-sheet #rooms .group-flex td.item-body i {
 }
 form.dungeon-sheet #rooms .missing-materials {
   opacity: 0.6;
+}
+form.dungeon-sheet #theme-description {
+  padding-top: 10px;
+}
+form.dungeon-sheet #theme-description ~ div {
+  margin-top: 10px;
+}
+form.dungeon-sheet #theme-description ~ div input {
+  margin: 2px 0px;
+}
+form.dungeon-sheet #masterplan > div:nth-child(n+1) {
+  margin-top: 10px;
+}
+form.dungeon-sheet #masterplan > div:nth-child(n+1) input {
+  margin: 2px 0px;
 }
 
 /*
@@ -3049,6 +3064,22 @@ input[type=text], input[type=number], input[type=password],
 input[type=date], input[type=time], input[type=range] {
   font-weight: 600;
   border: 1px solid #68332c;
+  border-radius: 0;
+  width: 100%;
+}
+
+.text-input {
+  color: #68332c;
+}
+.text-input label {
+  font-weight: 700;
+}
+.text-input input[type=text], .text-input input[type=number], .text-input input[type=password],
+.text-input input[type=date], .text-input input[type=time], .text-input input[type=range] {
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 20px;
+  border: none;
   border-radius: 0;
 }
 

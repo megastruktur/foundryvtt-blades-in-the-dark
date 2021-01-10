@@ -81,5 +81,28 @@ form.dungeon-sheet {
             opacity: 0.6;
         }
     }
+
+    #theme-description {
+        padding-top: 10px;
+
+        & ~ div {
+            margin-top: 10px;
+
+            input {
+                margin: 2px 0px;
+            }
+        }
+    }
+
+    #masterplan {
+
+        & > div:nth-child(n+1) {
+            margin-top: 10px;
+
+            input {
+                margin: 2px 0px;
+            }
+        }
+    }
 }
 
