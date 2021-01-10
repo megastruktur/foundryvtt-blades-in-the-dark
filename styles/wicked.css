@@ -701,11 +701,17 @@ form.wicked-one-sheet #loadout .supply input:checked ~ label {
 form.wicked-one-sheet #loadout .supply input:checked + label {
   background-image: url("assets/boxes/box-white-crossed.png");
 }
-form.wicked-one-sheet #duties-tab .downtime-hints div {
-  margin: 0px 5px;
+form.wicked-one-sheet #duties-tab .downtime-hints {
+  padding: 3px 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  justify-content: space-around;
+}
+form.wicked-one-sheet #duties-tab .downtime-hints > div {
+  margin: 2px 6px;
   font-style: italic;
 }
-form.wicked-one-sheet #duties-tab .downtime-hints div b {
+form.wicked-one-sheet #duties-tab .downtime-hints > div b {
   font-style: normal;
 }
 form.wicked-one-sheet #duties-tab .project-clock {
@@ -1150,8 +1156,14 @@ form.dungeon-sheet .item-special-feature {
   background: #68332c3f;
   padding: 10px;
 }
-form.dungeon-sheet .missing-materials {
-  color: #999;
+form.dungeon-sheet #rooms .group-flex {
+  background-color: #9999993f;
+}
+form.dungeon-sheet #rooms .group-flex td.item-body i {
+  font-size: 14px;
+}
+form.dungeon-sheet #rooms .missing-materials {
+  opacity: 0.6;
 }
 
 /*
@@ -3047,6 +3059,16 @@ textarea {
   font-family: Bitter;
   font-weight: 600;
   min-height: 80px;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.checkbox-container > div {
+  margin-left: 20px;
 }
 
 .standard-checkbox {

@@ -362,12 +362,19 @@ form.wicked-one-sheet {
     // Dungeon Duties
     #duties-tab {
 
-        .downtime-hints div {
-            margin: 0px 5px;
-            font-style: italic;
+        .downtime-hints {
+            padding:  3px 5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+            justify-content: space-around;
 
-            b {
-                font-style: normal;
+            > div {
+                margin: 2px 6px;
+                font-style: italic;
+
+                b {
+                    font-style: normal;
+                }
             }
         }
 

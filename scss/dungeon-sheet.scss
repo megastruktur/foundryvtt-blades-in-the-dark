@@ -65,9 +65,21 @@ form.dungeon-sheet {
         padding: 10px;
     }
 
-    // Fade Rooms with missing Materials
-    .missing-materials {
-        color: $gray;
+    #rooms {
+
+        .group-flex {
+            background-color: $gray3f;
+
+            // Style for flexibility hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        // Fade Rooms with missing Materials
+        .missing-materials {
+            opacity: 0.6;
+        }
     }
 }
 

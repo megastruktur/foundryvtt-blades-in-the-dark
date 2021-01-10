@@ -54,6 +54,26 @@
                     <b class="item-open-editor">{{item.data.special_name}}:</b>
                   </span>
                   {{item.data.special_feature}}
+                  <div class="checkbox-container">
+                    {{#unless (eq item.data.theme_checkbox_1_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-thcbx1-checked" value="{{item.data.theme_checkbox_1_checked}}" {{checked item.data.theme_checkbox_1_checked}} data-property-to-set="theme_checkbox_1_checked">
+                        <label for="item-{{item._id}}-thcbx1-checked"></label>
+                        {{item.data.theme_checkbox_1_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.theme_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-thcbx2-checked" value="{{item.data.theme_checkbox_2_checked}}" {{checked item.data.theme_checkbox_2_checked}} data-property-to-set="theme_checkbox_2_checked">
+                        <label for="item-{{item._id}}-thcbx2-checked"></label>
+                        {{item.data.theme_checkbox_2_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </div>
                 </div>
               </div>
               <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -102,7 +122,29 @@
                 <div class="item-name item-open-editor">{{item.name}}</div>
               </td>
               <td>
-                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
+                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">
+                  {{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}
+                  <div class="checkbox-container">
+                    {{#unless (eq item.data.room_checkbox_1_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
+                        <label for="item-{{item._id}}-rmcbx1-checked"></label>
+                        {{item.data.room_checkbox_1_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.room_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
+                        <label for="item-{{item._id}}-rmcbx2-checked"></label>
+                        {{item.data.room_checkbox_2_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </div>
+                </div>
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -121,7 +163,29 @@
                 <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
               </td>
               <td>
-                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">{{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}</div>
+                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">
+                  {{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}
+                  <div class="checkbox-container">
+                    {{#unless (eq item.data.room_checkbox_1_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
+                        <label for="item-{{item._id}}-rmcbx1-checked"></label>
+                        {{item.data.room_checkbox_1_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.room_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
+                        <label for="item-{{item._id}}-rmcbx2-checked"></label>
+                        {{item.data.room_checkbox_2_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </div>
+                </div>
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>

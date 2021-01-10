@@ -207,8 +207,18 @@ textarea {
     min-height: 80px;
 }
 
-.standard-checkbox {
+.checkbox-container {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
 
+    > div {
+        margin-left: 20px;
+    }
+}
+
+.standard-checkbox {
     display:flex;
     flex-direction: row;
     align-items: center;
