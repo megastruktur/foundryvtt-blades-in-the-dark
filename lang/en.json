@@ -403,6 +403,13 @@
     "CustomMotivationHint": "Enter custom motivation here",
     "Motivation": "Motivation",
     "Motivations": "Motivations",
+    "Side":  "Side",
+
+    "FACTION_SIDE": {
+      "Dark": "Dark",
+      "Neutral": "Neutral",
+      "Light": "Light"
+    },
 
     "ADV_CLASS": {
       "Academic": "Academic",

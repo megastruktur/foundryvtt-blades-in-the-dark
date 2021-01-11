@@ -175,8 +175,8 @@
       }
     },
     "faction": {
-      "category": "",
-      "tier": 0,
+      "category": "neutral",
+      "tier": 1,
       "clock_text_1": "",
       "clock_text_2": "",
       "clock_size_1": 0,

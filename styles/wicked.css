@@ -412,81 +412,6 @@ form.wicked-one-sheet table.base-info .goldmonger-size {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /*
-  label {
-
-      &[for$="-0"]:hover {
-          filter: brightness(1) !important;
-          opacity: 0.5 !important;
-      }
-
-      & {
-          margin-right: 0px;
-
-          &:nth-of-type(2) {
-              background-image: url("assets/teeth/xp-tooth-1-filled.png");
-              width: 10px;
-          }
-
-          &:nth-of-type(2n+3) {
-              background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
-              width: 12px;
-          }
-
-          &:last-of-type {
-              background-image: url("assets/teeth/xp-tooth-9-filled.png");
-              width: 18px;
-          }
-      }
-  }
-
-  &.xp-bar input:checked {
-
-      & ~ label {
-
-          &:nth-of-type(2) {
-              background-image: url("assets/teeth/xp-tooth-1-empty.png");
-              width: 10px;
-          }
-
-          &:nth-of-type(2n+3) {
-              background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
-              width: 12px;
-          }
-
-          &:last-of-type {
-              background-image: url("assets/teeth/xp-tooth-9-empty.png");
-              width: 18px;
-          }
-      }
-
-      & + label {
-          &:nth-of-type(2) {
-              background-image: url("assets/teeth/xp-tooth-1-filled.png");
-              width: 10px;
-          }
-
-          &:nth-of-type(2n+3) {
-              background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
-              width: 12px;
-          }
-
-          &:last-of-type {
-              background-image: url("assets/teeth/xp-tooth-9-filled.png");
-              width: 18px;
-          }
-      }
-  }
-  */
-  /*
-  // Gold
-  &.gold {
-      @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
-
-      & label {
-          margin-right: 0px;
-      }
-  }*/
 }
 form.wicked-one-sheet table.base-info .goldmonger-size input {
   display: none;
@@ -504,11 +429,17 @@ form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) 
   margin-left: 25px;
 }
 form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) label.gm-size-box {
+  transition: filter 0.1s;
+  cursor: pointer;
   background-image: url("assets/boxes/box-white-filled.png");
   display: inline-flex;
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 5px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) label.gm-size-box:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
 }
 form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(2) label.gm-size-box {
   width: 12px;
@@ -1480,6 +1411,19 @@ form.faction-sheet #faction-sheet .large-name input {
 }
 form.faction-sheet #faction-sheet div.label-stripe {
   margin: 0px;
+}
+form.faction-sheet #faction-sheet div.tier-side {
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0px;
+}
+form.faction-sheet #faction-sheet div.tier-side label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+form.faction-sheet #faction-sheet div.tier-side input {
+  margin-right: 20px;
+  text-align: center;
 }
 form.faction-sheet #faction-sheet #faction-clocks {
   margin-top: 0px;
