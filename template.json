@@ -19,17 +19,30 @@
         "name_default": "FITD.RecklessXP",
         "name": "FITD.RecklessXP"
       },
-      "stress_clock": 0,
+      "stress": {
+        "min": 0,
+        "value": 0,
+        "max": 6
+      },
       "bloodied": false,
-      "dark_hearts": 0,
-      "dark_hearts_max": 2,
+      "dark_hearts": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
       "downtime_action_used": false,
-      "gold": 0,
-      "gold_max": 3,
+      "gold": {
+        "min": 0,
+        "value": 0,
+        "max": 3
+      },
       "goldmonger_size": 0,
       "goldmonger_pleased": false,
-      "supply": 0,
-      "supply_max": 2,
+      "supply": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
       "attribute_max_value": 3,
       "attributes": {
         "brains": {
@@ -100,7 +113,11 @@
     "minion_pack": {
       "bloodied": false,
       "morale": false,
-      "number": 4,
+      "number": {
+        "min": 0,
+        "value": 4,
+        "max": 10
+      },
       "attribute_max_value": 2,
       "attributes": {
         "brains": {
@@ -157,7 +174,11 @@
       }
     },
     "dungeon": {
-      "tier": 0,
+      "tier": {
+        "min": 0,
+        "value": 0,
+        "max": 4
+      },
       "imps": "",
       "entrance": "",
       "structure": "",

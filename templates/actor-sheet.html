@@ -130,15 +130,15 @@
         <td>
           {{!-- Gold --}}
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
-            {{#multiboxes data.gold}}
-            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold" value="0" dtype="Radio">
+            {{#multiboxes data.gold.value}}
+            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold.value" value="0" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
               <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
             </div>
 
-            {{#times_from_1 data.gold_max}}
-            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold" value="{{this}}" dtype="Radio">
+            {{#times_from_1 data.gold.max}}
+            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold.value" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-gold-{{this}}"></label>
             {{/times_from_1}}
 
@@ -267,7 +267,7 @@
                 </td>
                 <td>
                   <div id="character-stress-clock">
-                    {{{blades-clock "data.stress_clock" 6 data.stress_clock actor._id}}}
+                    {{{blades-clock "data.stress.value" 6 data.stress.value actor._id}}}
                   </div>
                 </td>
                 <td>
@@ -751,11 +751,11 @@
         {{!-- Supply Table --}}
         <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
           <p class="flex-horizontal">
-            {{#multiboxes data.supply}}
-            <input type="radio" id="character-{{actor._id}}-supply-0" name="data.supply" value="0" dtype="Radio">
+            {{#multiboxes data.supply.value}}
+            <input type="radio" id="character-{{actor._id}}-supply-0" name="data.supply.value" value="0" dtype="Radio">
             <label for="character-{{actor._id}}-supply-0">{{localize "FITD.Supply"}}</label>
-            {{#times_from_1 data.supply_max}}
-            <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply" value="{{this}}" dtype="Radio">
+            {{#times_from_1 data.supply.max}}
+            <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply.value" value="{{this}}" dtype="Radio">
             <label for="character-{{../actor._id}}-supply-{{this}}"></label>
             {{/times_from_1}}
             {{/multiboxes}}
