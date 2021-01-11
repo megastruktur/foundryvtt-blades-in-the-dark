@@ -1,3 +1,6 @@
+v2.14
+- Fixes Dice-so-Nice integration
+
 v2.13
 - Adds Polish translation (thanks rajmundg10)
 
