@@ -176,13 +176,23 @@
     },
     "faction": {
       "category": "neutral",
-      "tier": 1,
-      "clock_text_1": "",
-      "clock_text_2": "",
-      "clock_size_1": 0,
-      "clock_size_2": 0,
-      "clock_progress_1": 0,
-      "clock_progress_2": 0
+      "tier": {
+        "value": 1,
+        "min": 0,
+        "max": 4
+      },
+      "clock1": {
+        "value": 0,
+        "min": 0,
+        "max": 0,
+        "text": ""
+      },
+      "clock2": {
+        "value": 0,
+        "min": 0,
+        "max": 0,
+        "text": ""
+      }
     }
   },
   "Item": {
