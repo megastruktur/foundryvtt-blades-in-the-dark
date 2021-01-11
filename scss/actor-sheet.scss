@@ -4,59 +4,30 @@
 @import 'mixin.scss';
 
 
-form.actor-sheet {
+form.wicked-one-sheet {
 
-    // Basic Character Information Table for Wicked One and Minion Pack
+    /*
+     *   Basic Character Info Table
+     */
+
     table.base-info {
- 
+
         .xp-stripe {
             background-color: $mud;
         }
-    }
 
-    // WO Wicked XP
-    #character-wickedxp {
-        label {
-            &[for$="-0"] {
-                margin-right: 0px;
-            }
-        }
-    }
-
-    // WO Reckless XP
-    #character-recklessxp {
-        label {
-            &[for$="-0"] {
-                margin-right: 0px;
-            }
-        }
-    }
-
-
-    // Wicked and Reckless XP
-    .big-teeth-section {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 0px;
-
-        > * {
-            margin-right: 10px;
-
-            &:last-child {
-                margin-right: 0px;
-            }
-        }
-
-        &:last-child {
-            margin-right: 0px;
-        }
-        // Wicked XP
+        // Wicked & Reckless XP
         .big-teeth {
             @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
             justify-content: center;
             align-items: center;
 
             label {
+
+                &[for$="-0"]:hover {
+                    filter: brightness(1) !important;
+                    opacity: 0.5 !important;
+                }
 
                 & {
                     margin-right: 0px;
@@ -115,44 +86,26 @@ form.actor-sheet {
                     }
                 }
             }
-        }
-        // Gold
-        .big-teeth.gold {
-            @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
-            align-items: center;
-            justify-content: center;
 
-            & label {
-                margin-right: 0px;
-            }
-        }
-        // Reckless XP
-        .small-teeth-container {
+            // Gold
+            &.gold {
+                @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
 
-            .small-teeth-wrap {
-                @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
-                flex-direction: column;
-
-                .small-teeth {
-                    display: flex;
-                    flex-direction: row;
+                & label {
+                    margin-right: 0px;
                 }
             }
         }
     }
 
-
-    // Defenses & Stress Area
-    #defenses-stress {
-        display: flex;
-    }
+    /*
+     *   Defenses, Stress & Impulses
+     */
 
     // Defenses
     #character-defenses {
-        width: 100%;
 
         table {
-            width: 100%;
 
             th {
                 background-color: $mud;
@@ -162,16 +115,7 @@ form.actor-sheet {
                 text-shadow: 0 2px $darkmud;
             }
 
-            input[type="text"] {
-                width: 100%;
-            }
-
             tr {
-
-                td:nth-of-type(1) .item-checkmark {
-                    flex-grow: unset;
-                    margin-right: 0px 3px;
-                }
 
                 td:nth-of-type(2) {
                     display: flex;
@@ -186,6 +130,7 @@ form.actor-sheet {
                         text-transform: uppercase;
                         font-family: 'Blood Crow';
                         font-size: 28px;
+                        margin-left: 12px;
                         margin-right: 0px;
                         font-weight: normal;
                     }
@@ -209,52 +154,76 @@ form.actor-sheet {
         }
     }
 
+    /*
+     *   Tabs and Abilities
+     */
 
-    // Abilities Table
-    #abilities-list, #loadout {
-        width: 100%;
-        // border-top: 5px solid $mud;
-        tr {
-            background-color: initial;
+    #wo-nav-container {
+        margin-right: 8px;
+    }
 
-            td {
-                &:nth-of-type(1) {
-                    min-width: 75px;
-                    width: 23%;
-                }
+    // Abilities and loadout tables
+    #abilities-list, #loadout, #downtime-abilities-list {
 
-                &:nth-of-type(2) {
-                    margin-right: 0px;
-                    margin-bottom: 0px;
-                    padding-bottom: 10px;
-                }
-
-                &:nth-of-type(3) {
-                    width: 20px;
-                }
+        tr td {
+            &:nth-of-type(1) {
+                min-width: 75px;
+                width: 23%;
             }
 
-            &.group-core {
-                background-color: $mud3f;
+            &:nth-of-type(2) {
+                padding-bottom: 10px;
             }
 
-            &.group-flex {
-                background-color: $gray3f;
+            &:nth-of-type(3) {
+                width: 20px;
+            }
+        }
+    }
 
-                td.item-body i {
-                    font-size: 14px;
+    // Main abilities
+    #abilities-list {
+
+        .group-core {
+            background-color: $mud3f;
+        }
+
+        .group-flex {
+            background-color: $gray3f;
+
+            // Style for flexibility hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        .group-ext {
+            background-color: $gray3f;
+
+            // Style for external hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        // Braineater psi-discipline
+        tr.psi-discipline {
+
+            td > div {
+                border-radius: 15px;
+                height: 30px;
+                align-items: center;
+
+                div {
+                    flex: none;
                 }
             }
+        }
 
-            &.group-ext {
-                background-color: $gray3f;
+        // Doomseeker eye-rays
+        tr.eye-rays {
 
-                td.item-body i {
-                    font-size: 14px;
-                }
-            }
-
-            td div.eye-rays {
+            .ray-container{
                 text-align: center;
                 position: relative;
                 left: 15px;
@@ -269,7 +238,6 @@ form.actor-sheet {
                         margin: 0px;
                         border-style: none;
                         position: relative;
-                        // z-index: 2;
                         transition: filter 0.1s;
 
                         &.hovered {
@@ -287,112 +255,78 @@ form.actor-sheet {
                     margin-top: -225px;
                     height: 232px;
                     text-align: center;
-                }
 
-                div.ray-items > div {
-                    text-align: center;
-                    position: relative;
-                    width: fit-content;
-                    left: 50%;
-                    transform: translateX(-50%);
+                    & > div {
+                        text-align: center;
+                        position: relative;
+                        width: fit-content;
+                        left: 50%;
+                        transform: translateX(-50%);
 
-                    &:nth-child(1) {
-                        top: 0px;
-                    }
-
-                    &:nth-child(2) {
-                        top: 12px;
-                        left: 18%;
-                    }
-
-                    &:nth-child(3) {
-                        top: -22px;
-                        left: 82%;
-                    }
-
-                    &:nth-child(4) {
-                        top: -17px;
-                        left: 18%;
-                    }
-
-                    &:nth-child(5) {
-                        top: -34px;
-                        left: 82%;
-                    }
-
-                    &:nth-child(6) {
-                        top: 25px;
-                        left: 15%;
-                    }
-
-                    &:nth-child(7) {
-                        top: -9px;
-                        left: 85%;
-                    }
-
-                    &:nth-child(8) {
-                        top: -4px;
-                        left: 15%;
-                    }
-
-                    &:nth-child(9) {
-                        top: -21px;
-                        left: 85%;
+                        @include child_pos(2,  12px, 18%);
+                        @include child_pos(3, -22px, 82%);
+                        @include child_pos(4, -17px, 18%);
+                        @include child_pos(5, -34px, 82%);
+                        @include child_pos(6,  25px, 15%);
+                        @include child_pos(7,  -9px, 85%);
+                        @include child_pos(8,  -4px, 15%);
+                        @include child_pos(9, -21px, 85%);
                     }
                 }
             }
+        }
 
-            &.stolen-face {
+        // Facestealer face
+        tr.stolen-face {
+
+            td:first-child{
+                text-align: center;
+
                 img {
-                    max-height: 100px;
-                    width: 75px;
-                    object-fit: cover;
+                    max-height: 120px;
+                    max-width: 100px;
+                    object-fit: contain;
+                    border: 0px;
                 }
             }
         }
 
-        tr.psi-discipline {
+        // Goldmonger growth path
+        tr.growth-path {
 
-            td > div {
-                border-radius: 15px;
-                height: 30px;
-                align-items: center;
-
-                div {
-                    flex: none;
+            table tr {
+                &:nth-child(1) td:nth-child(1) {
+                    background: none;
                 }
-            }
-        }
 
-        table.gold-monger-path tr {
-            &:nth-child(1) td:nth-child(1) {
-                background: none;
-            }
+                &:nth-child(2) td:nth-child(1) {
+                    background-position-y: center;
+                }
 
-            &:nth-child(2) td:nth-child(1) {
-                background-position-y: center;
-            }
+                &:nth-child(3) td:nth-child(1) {
+                    background-position-y: bottom;
+                }
 
-            &:nth-child(3) td:nth-child(1) {
-                background-position-y: bottom;
-            }
+                &:nth-child(4) td:nth-child(1) {
+                    background-position-y: center;
+                    background-image: url("assets/decorations/verticalline-top.png");
+                }
 
-            &:nth-child(4) td:nth-child(1) {
-                background-position-y: center;
-                background-image: url("assets/decorations/verticalline-top.png");
-            }
-
-            td:nth-child(1) {
-                min-width: 32px;
-                width: 32px;
-                background-image: url("assets/decorations/verticalline-bottom.png");
-                background-repeat: no-repeat;
+                td:nth-child(1) {
+                    min-width: 32px;
+                    width: 32px;
+                    background-image: url("assets/decorations/verticalline-bottom.png");
+                    background-repeat: no-repeat;
+                }
             }
         }
     }
 
-
-    // Gear & Supply Tags
+    #abilities .flashback-clues {
+        text-align: center;
+    }
+    
+    // Gear & supply tags
     #loadout {
 
         .gear-tags {
@@ -406,63 +340,48 @@ form.actor-sheet {
                 border-radius: 5px;
                 padding: 2px 4px;
                 margin-bottom: 4px;
+                font-size: 12px;
+                font-weight: bold;
 
-                &.quality-mundane {
-                    color: $almost_black;
-                }
-
-                &.quality-valuable {
-                    color: $mixed;
-                }
-
-                &.quality-powerful {
-                    color: $crit;
-                }
-
-                &.edge-tag {
-                    color: $orange;
-                }
-
-                &.quantity-steady {
-                    color: $green;
-                }
-
-                &.quantity-limited {
-                    color: $green;
-                }
-
-                &.quantity-shared {
-                    color: $green;
-                }
+                &.quality-mundane { color: $almost_black;}
+                &.quality-valuable { color: $mixed; }
+                &.quality-powerful { color: $crit; }
+                &.edge-tag { color: $orange; }
+                &.quantity-steady { color: $green; }
+                &.quantity-limited { color: $green; }
+                &.quantity-shared { color: $green; }
             }
         }
     }
-
 
     // Supply checkboxes
     #loadout .supply {
         @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
     }
 
-
-    // Edge List
-    #edge-list {
-        display: block;
-    }
-
-
     // Dungeon Duties
     #duties-tab {
-        .item-body {
-            width: auto;
-            padding: 3px;
-            font-family: Bitter;
-            font-size: 14px;
+
+        .downtime-hints {
+            padding:  3px 0px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+            justify-content: space-around;
+
+            > div {
+                margin: 2px 6px;
+                font-style: italic;
+
+                b {
+                    font-style: normal;
+                }
+            }
         }
 
         .project-clock {
             height: 80px;
-            @include clock(4, 40);
+            // Functionality will be overridden in wicked-sheet.js
+            @include clock(4, 40); 
         }
 
         div.label-stripe {
@@ -474,7 +393,6 @@ form.actor-sheet {
             margin-bottom: 15px;
         }
     }
-
 
     // Projects Table
     #project-clocks-table {
@@ -489,15 +407,11 @@ form.actor-sheet {
                 font-family: Bitter;
             }
 
-            td:nth-of-type(3) {
-            }
-
             td:nth-of-type(4) {
                 width: 20px;
             }
         }
     }
-
 
     // Duties Table
     #duties-table {
@@ -510,9 +424,6 @@ form.actor-sheet {
             td:nth-of-type(2) {
                 min-width: 90px;
                 width: 23%;
-            }
-
-            td:nth-of-type(3) {
             }
 
             td:nth-of-type(4) {

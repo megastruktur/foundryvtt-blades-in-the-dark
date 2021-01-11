@@ -8,7 +8,7 @@ export class WickedHelpers {
    */
   static removeDuplicatedItemType(item_data, actor) {
 
-    let distinct_types = ["dungeon_theme", "calling", "revelry", "monster_race", "minion_type"];
+    let distinct_types = ["dungeon_theme", "calling", "goldmonger_type", "revelry", "monster_race", "minion_type"];
     let should_be_distinct = distinct_types.includes(item_data.type);
     // If the Item has the exact same name - remove it from list.
     // Remove Duplicate items from the array.

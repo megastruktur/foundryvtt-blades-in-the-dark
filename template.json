@@ -225,7 +225,11 @@
       "uses_left": 4
     },
     "goldmonger_type": {
-      "templates": [ "default" ]
+      "templates": [ "default" ],
+      "gm_type": "",
+      "gm_type_custom": "",
+      "gm_antitype": "",
+      "gm_antitype_custom": ""
     },
     "duty": {
       "templates": [ "default" ],
@@ -308,7 +312,11 @@
       "templates": [ "default" ],
       "theme": "",
       "requirements": "",
-      "missing_materials": false
+      "missing_materials": false,
+      "room_checkbox_1_text": "",
+      "room_checkbox_1_checked": false,
+      "room_checkbox_2_text": "",
+      "room_checkbox_2_checked": false
     },
     "minion_upgrade": {
       "templates": [ "default" ],
@@ -338,7 +346,11 @@
     "dungeon_theme": {
       "description": "",
       "special_name": "",
-      "special_feature": ""
+      "special_feature": "",
+      "theme_checkbox_1_text": "",
+      "theme_checkbox_1_checked": false,
+      "theme_checkbox_2_text": "",
+      "theme_checkbox_2_checked": false
     }
   }
 }

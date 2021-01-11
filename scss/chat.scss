@@ -31,23 +31,28 @@
         background: url(../styles/assets/images/background-light.png) repeat;
         background-size: 300px;
         box-shadow: inset 0 0 9px 1px $bloodyShadow;
-    }
 
-    .chat-message .message-header .message-sender {
-        font-family: Piedra;
-        font-weight: normal;
-        font-size: 15px;
-    }
+        .message-header {
 
-    .chat-message .message-content {
-        font-family: Bitter;
-        font-size: inherit;
-        font-weight: 600;
-    }
+            .message-sender {
+                font-family: Piedra;
+                font-weight: normal;
+                font-size: 15px;
+            }
 
-    .chat-message .message-header .message-metadata {
-        text-align: right;
-        font-weight: 700;
+            .message-metadata {
+                text-align: right;
+                font-weight: 700;
+            }
+
+        }
+
+        .message-content {
+            font-family: Bitter;
+            font-size: inherit;
+            font-weight: 600;
+        }
+
     }
 
     %label-stripe-chat-base {
@@ -179,5 +184,3 @@
     background: url(../styles/assets/images/background-light.png) repeat;
     background-size: 300px;
 }
-
-

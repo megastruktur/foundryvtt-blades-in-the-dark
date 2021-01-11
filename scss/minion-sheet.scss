@@ -5,6 +5,7 @@
 
 
 form.minion-sheet {
+
     // MP Number Padding
     #number {
         padding-right: 12px;
@@ -15,10 +16,14 @@ form.minion-sheet {
 
         input {
             text-align: center;
-            margin: auto;
-            width: 50%;
+            margin-left: 10px;
+            width: 60px;
             display: block;
         }
+    }
+
+    #main-minion-form {
+        margin-right: 12px;
     }
 
     // Rollable Text in Abilities List

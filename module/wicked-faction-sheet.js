@@ -11,8 +11,8 @@ export class WickedFactionSheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/faction-sheet.html",
-      width: 570,
-      height: 600,
+      width: 400,
+      height: 500,
       tabs: []
     });
   }

@@ -1,4 +1,4 @@
-<form class="{{cssClass}} faction-sheet" autocomplete="off">
+<form class="{{cssClass}} actor-sheet faction-sheet" autocomplete="off">
 
 
   <section id="faction-sheet" class="flex-vertical">
@@ -19,28 +19,6 @@
     </div>
     <table id="faction-clocks">
       <tbody>
-        <tr>
-          <td>
-            <select class="clock-configuration" id="faction-clock-1-select" name="data.clock_size_1">
-              {{#select data.clock_size_1}}
-              <option value="0">{{localize "FITD.Off"}}</option>
-              <option value="4">4 {{localize "FITD.Segements"}}</option>
-              <option value="6">6 {{localize "FITD.Segements"}}</option>
-              <option value="8">8 {{localize "FITD.Segements"}}</option>
-              {{/select}}
-            </select>
-          </td>
-          <td>
-            <select class="clock-configuration" id="faction-clock-2-select" name="data.clock_size_2">
-              {{#select data.clock_size_2}}
-              <option value="0">{{localize "FITD.Off"}}</option>
-              <option value="4">4 {{localize "FITD.Segements"}}</option>
-              <option value="6">6 {{localize "FITD.Segements"}}</option>
-              <option value="8">8 {{localize "FITD.Segements"}}</option>
-              {{/select}}
-            </select>
-          </td>
-        </tr>
         <tr>
           <td>
             {{!-- Display Clock 1 here --}}
@@ -75,6 +53,28 @@
               <textarea rows="4" name="data.clock_text_2">{{data.clock_text_2}}</textarea>
               {{/if}}
             </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select class="clock-configuration" id="faction-clock-1-select" name="data.clock_size_1">
+              {{#select data.clock_size_1}}
+              <option value="0">{{localize "FITD.Off"}}</option>
+              <option value="4">4 {{localize "FITD.Segements"}}</option>
+              <option value="6">6 {{localize "FITD.Segements"}}</option>
+              <option value="8">8 {{localize "FITD.Segements"}}</option>
+              {{/select}}
+            </select>
+          </td>
+          <td>
+            <select class="clock-configuration" id="faction-clock-2-select" name="data.clock_size_2">
+              {{#select data.clock_size_2}}
+              <option value="0">{{localize "FITD.Off"}}</option>
+              <option value="4">4 {{localize "FITD.Segements"}}</option>
+              <option value="6">6 {{localize "FITD.Segements"}}</option>
+              <option value="8">8 {{localize "FITD.Segements"}}</option>
+              {{/select}}
+            </select>
           </td>
         </tr>
       </tbody>

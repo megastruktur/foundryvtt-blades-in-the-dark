@@ -1,4 +1,4 @@
-<form class="{{cssClass}} special-ability-sheet" autocomplete="off">
+<form class="{{cssClass}} item-sheet special-ability-sheet" autocomplete="off">
   <header class="sheet-header">
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
@@ -64,8 +64,6 @@
       <div class="flex-vertical">
         <label class="label-stripe">{{localize "FITD.Source"}}</label>
         <input id="ability-source" type="text" name="data.source" value="{{data.source}}" placeholder="{{localize 'FITD.SourceExample'}}">
-        <!--<label class="label-stripe">{{localize "FITD.Core"}}</label>
-        <input id="ability-core" type="checkbox" name="data.core" {{checked data.core}}>-->
       </div>
 
       <div class="flex-vertical">

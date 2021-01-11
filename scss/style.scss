@@ -19,7 +19,6 @@
  *   Layout Styles
  */
 
-// Disallow sheet to be reduced in size beyond the minimum needed
 .sheet {
 	min-width: min-content;
 }
@@ -32,34 +31,16 @@
 
     form.actor-sheet {
         z-index: 0;
+        padding: 20px 12px;
     }
 }
 
-// TO DO: Check to reduce padding dynamically
-// TO DO: Check if to move notes and hint
-form {
-    &.actor-sheet {
-        padding: 20px;
-    }
-
-    .notes, .hint {
-        color: $bloody;
-        font-weight: 600;
-    }
-}
-
-// TO DO: Trim and maybe move parts to item sheets
 section {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between; // Check if needed
 
-    > *:not(.label-stripe) {
-        margin-right: 10px;
-
-        &:last-child {
-            margin-right: 0px;
-        }
+    > form:last-child {
+        margin-right: 0px;
     }
 
     .grow-one {
@@ -96,6 +77,7 @@ table.base-info {
             color: $mud;
         }
 
+        // TO DO: Make standard across sheets?
         .text-input {
             color: $mud;
 
@@ -123,6 +105,28 @@ nav {
     margin-bottom: 10px;
 }
 
+// Nav container margin to attributes
+.tab-content {
+    margin-right: 8px;
+
+    // Remove line-breaks from nav elements
+    nav a {
+        flex: none;
+    }
+
+    .tab {
+
+        .label-stripe {
+            margin-bottom: 0px;
+        }
+
+        table {
+            margin-top: 0px;
+            border: 0px;
+        }
+    }
+}
+
 // Highlight selected tab
 .tabs .item.active {
     font-weight: 700;
@@ -130,12 +134,6 @@ nav {
     text-shadow: 2px 2px 7px $orange;
 }
 
-// Remove line-breaks from nav elements
-#wo-nav-container, #dun-nav-container, #mp-nav-container {
-    nav a {
-        flex: none;
-    }
-}
 
 /*
  *   Element Styles
@@ -198,10 +196,28 @@ option {
 }
 
 input[type="text"], input[type="number"], input[type="password"],
-input[type="date"], input[type="time"], input[type="range"] {
+input[type="date"], input[type="time"],   input[type="range"] {
     font-weight: 600;
     border: 1px solid $mud;
     border-radius: 0;
+    width: 100%
+}
+
+.text-input {
+    color: $mud;
+
+    label {
+        font-weight: 700;
+    }
+
+    input[type="text"], input[type="number"], input[type="password"],
+    input[type="date"], input[type="time"],   input[type="range"] {
+        font-weight: normal;
+        font-family: Piedra;
+        font-size: 20px;
+        border: none;
+        border-radius: 0;
+    }
 }
 
 textarea {
@@ -211,6 +227,37 @@ textarea {
     font-family: Bitter;
     font-weight: 600;
     min-height: 80px;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+        margin-left: 20px;
+    }
+}
+
+.standard-checkbox {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    label {
+        @include custom-label("assets/boxes/box-empty.png", 24px, 24px);
+        margin-right: 5px;
+    }
+
+    input[type="checkbox"]:checked + label {
+        background-image: url("assets/boxes/box-crossed.png");
+    }
 }
 
 

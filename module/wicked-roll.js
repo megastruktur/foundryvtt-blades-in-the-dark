@@ -232,7 +232,7 @@ export async function simpleRollPopup() {
     content: `
       <h2>${game.i18n.localize("FITD.RollSomeDice")}</h2>
       <p>${game.i18n.localize("FITD.RollTokenDescription")}</p>
-      <form>
+      <form id="dice-roller">
 		<div class="form-group">
 		<label>${game.i18n.localize('FITD.RollType')}:</label>
 		<select id="type" name="type">

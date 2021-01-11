@@ -11,8 +11,56 @@
     top: 7px;
     position: relative;
 
-    &.minion {
-        min-width: 235px;
+    .main {
+        flex-grow: 1;
+
+        div:hover > div.attributes-container label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
+    }
+
+    .attribute-label {
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .attribute-skill-label {
+        font-weight: 800;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-left: 2px;
+    }
+
+    .attributes-exp {
+        margin-bottom: 2px;
+    }
+
+    .attributes-container {
+        margin: 3px 3px 3px -8px;
+        @include custom_radio(15px, 15px);
+
+        * {
+            margin-right: 1px;
+        }
+
+        label {
+            margin-top: 3px;
+        }
+    }
+
+    .attribute-description {
+        display: none; // TO DO: Hide for now
+        font-size: 11px;
+        padding-left: 6px;
+        font-family: Bitter;
+        font-weight: 500;
+    }
+
+    .skill-description {
+        font-style: italic;
+        margin-left: 3px;
+        align-self: center;
     }
 
     .attribute {
@@ -29,6 +77,7 @@
     }
 
     .shock {
+
         input {
             display: none;
         }
@@ -45,6 +94,7 @@
     }
 
     .bloodied {
+
         input {
             display: none;
         }
@@ -52,7 +102,7 @@
         label {
             @include custom-label("assets/boxes/bloodied-empty.png", 36px, 24px);
             margin-left: 8px;
-            margin-right: 1px;
+            margin-right: 5px;
             padding: 10px;
             top: -10px;
         }
@@ -80,6 +130,7 @@
     }
 
     .bloodied-minion {
+
         input {
             display: none;
         }
@@ -109,6 +160,7 @@
     }
 
     .morale-minion {
+
         input {
             display: none;
         }
@@ -125,87 +177,45 @@
         }
     }
 
+    #attributes-darkhearts {
 
-    .main {
-        flex-grow: 1;
+        .heart-container {
+            justify-content: start;
+            margin-left: 33px;
+            margin-bottom: 1px;
+            @include custom_radio(40px, 40px);
 
-        div:hover > div.attributes-container label {
-            transition: opacity 1s;
-            opacity: 1;
+            label.dark-heart {
+                background-image: url("assets/boxes/heart-filled.png");
+                margin-right: 8px;
+                position: relative;
+                top: -2px;
+            }
+
+            &:hover label {
+                transition: opacity 1s;
+                opacity: 1;
+            }
+
+            input:checked {
+
+                & ~ label.dark-heart {
+                    background-image: url("assets/boxes/heart-empty.png");
+                }
+
+                & + label.dark-heart {
+                    background-image: url("assets/boxes/heart-filled.png");
+                }
+            }
         }
     }
 
-    .attribute-label {
-        font-size: 18px;
-        text-transform: uppercase;
-        background-color: $mud;
-    }
-
-    .attribute-skill-label {
-        font-weight: 800;
-        font-size: 18px;
-        text-transform: uppercase;
-        background-color: unset;
-    }
-
-    .attributes-exp {
-        position: relative;
-        margin-bottom: 2px;
-    }
-
-    .attributes-container {
-        display: flex;
-        margin: 3px 0px;
-        background-color: unset;
-        @include custom_radio(15px, 15px);
-
-        * {
-            margin-right: 5px;
-        }
-
-        label {
-            margin-top: 3px;
-        }
-    }
-
-    .attribute-description {
-        font-size: 11px;
-        padding-left: 6px;
-        font-family: Bitter;
-        font-weight: 500;
-    }
-
-    .skill-description {
-        font-style: italic;
-        font-size: larger;
+    #hearts-footer {
+        margin-left: 37px;
+        padding-right: 10px;
+        min-width: 135px;
     }
 }
 
 
-// WO Dark Hearts
-#attributes-darkhearts {
-    /* margin-left: 32px; */
-    .heart-container {
-        justify-content: center;
-        margin-left: 3px;
-        @include custom_radio(30px, 30px);
-
-        &:hover label {
-            transition: opacity 1s;
-            opacity: 1;
-        }
-    }
-}
-
-
-#hearts-header {
-    margin-left: 33px;
-    padding-right: 10px;
-    min-width: 135px;
-}
-
-
-#hearts-display {
-    display: flex;
-}
 

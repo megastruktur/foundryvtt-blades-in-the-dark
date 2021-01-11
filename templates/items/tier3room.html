@@ -1,4 +1,4 @@
-<form class="{{cssClass}} tier-3-room-sheet" autocomplete="off">
+<form class="{{cssClass}} item-sheet tier-3-room-sheet" autocomplete="off">
   <header class="sheet-header">
       <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       <div class="header-fields">
@@ -14,7 +14,16 @@
     <label class="label-stripe">{{localize "FITD.DungeonTheme"}}</label>
     <textarea name="data.theme">{{data.theme}}</textarea>
     <label class="label-stripe">{{localize "FITD.MissingMaterials"}}</label>
-    <input type="checkbox" name="data.missing_materials" {{checked data.missing_materials}}>
+    <div>
+      <input type="checkbox" name="data.missing_materials" {{checked data.missing_materials}}>
+      <label>{{localize "FITD.MissingMaterialsHint"}}</label>
+    </div>
+    <div class="flex-vertical">
+      <label class="label-stripe">{{localize "FITD.Checkbox"}} 1</label>
+      <input id="room-chbx-1" type="text" name="data.room_checkbox_1_text" value="{{data.room_checkbox_1_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+      <label class="label-stripe">{{localize "FITD.Checkbox"}} 2</label>
+      <input id="room-chbx-2" type="text" name="data.room_checkbox_2_text" value="{{data.room_checkbox_2_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+    </div>
   </section>
 
 </form>

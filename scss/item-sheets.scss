@@ -5,51 +5,12 @@
 
 
 // General Formatting
-header {
-    margin-bottom: 10px;
-}
 
+form.item-sheet {
+    padding: 15px;
 
-// Minion Upgrade Item
-form.minion-upgrade-sheet {
-
-    section.rollable-skill {
-
-        div > div {
-            width: 50%;
-
-            label {
-                margin-right: 10px;
-            }
-
-            #upgrade-skill-rating {
-                width: 50px;
-            }
-        }
-    }
-}
-
-// Specialability Item
-form.special-ability-sheet {
-
-    #ray-selection {
-
-        div.ray-line {
-            display: flex;
-            justify-content: space-evenly;
-
-            &:last-child {
-                margin-bottom: 25px;
-            }
-
-            select:nth-child(1) {
-                width: 70%;
-            }
-
-            select:nth-child(2) {
-                width: 20%;
-            }
-        }
+    section > *:not(.label-stripe) {
+        margin-right: 10px;
     }
 }
 
@@ -92,3 +53,90 @@ form.adventurer-sheet {
         }
     }
 }
+
+
+// Calling Item
+form.calling-sheet { 
+
+}
+
+
+// Downtime Project Item
+form.project-sheet {
+}
+
+
+// Dungeon Duty Item
+form.duty-sheet {
+}
+
+
+// Dungeon Theme Item
+form.dungeon-theme-sheet {
+}
+
+
+// Gear & Supply Item
+form.gear-supply-sheet {
+}
+
+
+// Minion Upgrade Item
+form.minion-upgrade-sheet {
+
+    section.rollable-skill {
+
+        div > div {
+            width: 50%;
+
+            label {
+                margin-right: 10px;
+            }
+
+            #upgrade-skill-rating {
+                width: 50px;
+            }
+        }
+    }
+}
+
+
+// Monster Race Item
+form.monster-race-sheet {
+}
+
+
+// Specialability Item
+form.special-ability-sheet {
+
+    #ray-selection {
+
+        div.ray-line {
+            display: flex;
+            justify-content: space-evenly;
+
+            &:last-child {
+                margin-bottom: 25px;
+            }
+
+            select:nth-child(1) {
+                width: 70%;
+            }
+
+            select:nth-child(2) {
+                width: 20%;
+            }
+        }
+    }
+}
+
+
+// Tier 3 Room Item
+form.tier-3-room-sheet {
+}
+
+
+// Simple Item
+form.simple-sheet {
+}
+

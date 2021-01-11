@@ -130,6 +130,9 @@
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 /*
  * Fonts
  */
@@ -262,36 +265,30 @@
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
-form.actor-sheet table.base-info .xp-stripe {
+/* 
+ *  Positioning of children by number
+ */
+form.wicked-one-sheet {
+  /*
+   *   Basic Character Info Table
+   */
+  /*
+   *   Defenses, Stress & Impulses
+   */
+  /*
+   *   Tabs and Abilities
+   */
+}
+form.wicked-one-sheet table.base-info .xp-stripe {
   background-color: #68332c;
 }
-form.actor-sheet #character-wickedxp label[for$="-0"] {
-  margin-right: 0px;
-}
-form.actor-sheet #character-recklessxp label[for$="-0"] {
-  margin-right: 0px;
-}
-form.actor-sheet .big-teeth-section {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0px;
-}
-form.actor-sheet .big-teeth-section > * {
-  margin-right: 10px;
-}
-form.actor-sheet .big-teeth-section > *:last-child {
-  margin-right: 0px;
-}
-form.actor-sheet .big-teeth-section:last-child {
-  margin-right: 0px;
-}
-form.actor-sheet .big-teeth-section .big-teeth {
+form.wicked-one-sheet table.base-info .big-teeth {
   display: flex;
   /* Hide the browser's default checkbox */
   justify-content: center;
   align-items: center;
 }
-form.actor-sheet .big-teeth-section .big-teeth label {
+form.wicked-one-sheet table.base-info .big-teeth label {
   height: 32px;
   width: 11px;
   background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
@@ -301,77 +298,79 @@ form.actor-sheet .big-teeth-section .big-teeth label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-form.actor-sheet .big-teeth-section .big-teeth label:last-of-type {
+form.wicked-one-sheet table.base-info .big-teeth label:last-of-type {
   margin-right: 0px;
 }
-form.actor-sheet .big-teeth-section .big-teeth label[for$="-0"] {
+form.wicked-one-sheet table.base-info .big-teeth label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-form.actor-sheet .big-teeth-section .big-teeth label[for$="-0"] i {
+form.wicked-one-sheet table.base-info .big-teeth label[for$="-0"] i {
   margin-top: 4px;
 }
-form.actor-sheet .big-teeth-section .big-teeth label:hover {
+form.wicked-one-sheet table.base-info .big-teeth label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.actor-sheet .big-teeth-section .big-teeth input {
+form.wicked-one-sheet table.base-info .big-teeth input {
   display: none;
 }
-form.actor-sheet .big-teeth-section .big-teeth input:checked ~ label {
+form.wicked-one-sheet table.base-info .big-teeth input:checked ~ label {
   background-image: url("assets/teeth/xp-tooth-3-5-7-empty.png");
 }
-form.actor-sheet .big-teeth-section .big-teeth input:checked + label {
+form.wicked-one-sheet table.base-info .big-teeth input:checked + label {
   background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
 }
-form.actor-sheet .big-teeth-section .big-teeth label {
+form.wicked-one-sheet table.base-info .big-teeth label[for$="-0"]:hover {
+  filter: brightness(1) !important;
+  opacity: 0.5 !important;
+}
+form.wicked-one-sheet table.base-info .big-teeth label {
   margin-right: 0px;
 }
-form.actor-sheet .big-teeth-section .big-teeth label:nth-of-type(2) {
+form.wicked-one-sheet table.base-info .big-teeth label:nth-of-type(2) {
   background-image: url("assets/teeth/xp-tooth-1-filled.png");
   width: 10px;
 }
-form.actor-sheet .big-teeth-section .big-teeth label:nth-of-type(2n+3) {
+form.wicked-one-sheet table.base-info .big-teeth label:nth-of-type(2n+3) {
   background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
   width: 12px;
 }
-form.actor-sheet .big-teeth-section .big-teeth label:last-of-type {
+form.wicked-one-sheet table.base-info .big-teeth label:last-of-type {
   background-image: url("assets/teeth/xp-tooth-9-filled.png");
   width: 18px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
   background-image: url("assets/teeth/xp-tooth-1-empty.png");
   width: 10px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
   background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
   width: 12px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked ~ label:last-of-type {
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked ~ label:last-of-type {
   background-image: url("assets/teeth/xp-tooth-9-empty.png");
   width: 18px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
   background-image: url("assets/teeth/xp-tooth-1-filled.png");
   width: 10px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
   background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
   width: 12px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.xp-bar input:checked + label:last-of-type {
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked + label:last-of-type {
   background-image: url("assets/teeth/xp-tooth-9-filled.png");
   width: 18px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold {
+form.wicked-one-sheet table.base-info .big-teeth.gold {
   display: flex;
   /* Hide the browser's default checkbox */
-  align-items: center;
-  justify-content: center;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold label {
+form.wicked-one-sheet table.base-info .big-teeth.gold label {
   height: 20px;
   width: 20px;
   background-image: url("assets/teeth/gold-filled.png");
@@ -381,116 +380,62 @@ form.actor-sheet .big-teeth-section .big-teeth.gold label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold label:last-of-type {
+form.wicked-one-sheet table.base-info .big-teeth.gold label:last-of-type {
   margin-right: 0px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold label[for$="-0"] {
+form.wicked-one-sheet table.base-info .big-teeth.gold label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold label[for$="-0"] i {
+form.wicked-one-sheet table.base-info .big-teeth.gold label[for$="-0"] i {
   margin-top: 4px;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold label:hover {
+form.wicked-one-sheet table.base-info .big-teeth.gold label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold input {
+form.wicked-one-sheet table.base-info .big-teeth.gold input {
   display: none;
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold input:checked ~ label {
+form.wicked-one-sheet table.base-info .big-teeth.gold input:checked ~ label {
   background-image: url("assets/teeth/gold-empty.png");
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold input:checked + label {
+form.wicked-one-sheet table.base-info .big-teeth.gold input:checked + label {
   background-image: url("assets/teeth/gold-filled.png");
 }
-form.actor-sheet .big-teeth-section .big-teeth.gold label {
+form.wicked-one-sheet table.base-info .big-teeth.gold label {
   margin-right: 0px;
 }
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap {
-  display: flex;
-  /* Hide the browser's default checkbox */
-  flex-direction: column;
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label {
-  height: 50px;
-  width: 17px;
-  background-image: url("assets/teeth/shorttooth-red.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-  cursor: not-allowed;
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label:last-of-type {
-  margin-right: 0px;
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  color: #EEEFFF;
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap label[for$="-0"] i {
-  margin-top: 4px;
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap input {
-  display: none;
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked ~ label {
-  background-image: url("assets/teeth/shorttooth-grey.png");
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap input:checked + label {
-  background-image: url("assets/teeth/shorttooth-red.png");
-}
-form.actor-sheet .big-teeth-section .small-teeth-container .small-teeth-wrap .small-teeth {
-  display: flex;
-  flex-direction: row;
-}
-form.actor-sheet #defenses-stress {
-  display: flex;
-}
-form.actor-sheet #character-defenses {
-  width: 100%;
-}
-form.actor-sheet #character-defenses table {
-  width: 100%;
-}
-form.actor-sheet #character-defenses table th {
+form.wicked-one-sheet #character-defenses table th {
   background-color: #68332c;
   color: #EEEFFF;
   font-size: medium;
   font-weight: 600;
   text-shadow: 0 2px #311815;
 }
-form.actor-sheet #character-defenses table input[type=text] {
-  width: 100%;
-}
-form.actor-sheet #character-defenses table tr td:nth-of-type(1) .item-checkmark {
-  flex-grow: unset;
-  margin-right: 0px 3px;
-}
-form.actor-sheet #character-defenses table tr td:nth-of-type(2) {
+form.wicked-one-sheet #character-defenses table tr td:nth-of-type(2) {
   display: flex;
   justify-content: center;
 }
-form.actor-sheet #character-defenses table tr td:nth-child(3) {
+form.wicked-one-sheet #character-defenses table tr td:nth-child(3) {
   text-align: center;
   padding: 0;
 }
-form.actor-sheet #character-defenses table tr td:nth-child(3) .item-name {
+form.wicked-one-sheet #character-defenses table tr td:nth-child(3) .item-name {
   text-transform: uppercase;
   font-family: "Blood Crow";
   font-size: 28px;
+  margin-left: 12px;
   margin-right: 0px;
   font-weight: normal;
 }
-form.actor-sheet #character-stress-clock {
+form.wicked-one-sheet #character-stress-clock {
   width: 60px;
   position: relative;
 }
-form.actor-sheet #character-stress-clock .blades-clock {
+form.wicked-one-sheet #character-stress-clock .blades-clock {
   position: relative;
   padding: 0;
   width: 60px;
@@ -500,7 +445,7 @@ form.actor-sheet #character-stress-clock .blades-clock {
   overflow: hidden;
   background-size: cover;
 }
-form.actor-sheet #character-stress-clock .blades-clock label {
+form.wicked-one-sheet #character-stress-clock .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -511,85 +456,88 @@ form.actor-sheet #character-stress-clock .blades-clock label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-form.actor-sheet #character-stress-clock .blades-clock label:hover {
+form.wicked-one-sheet #character-stress-clock .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.actor-sheet #character-stress-clock .blades-clock input {
+form.wicked-one-sheet #character-stress-clock .blades-clock input {
   position: absolute;
   display: none;
 }
-form.actor-sheet #character-stress-clock .blades-clock input[value="0"] {
+form.wicked-one-sheet #character-stress-clock .blades-clock input[value="0"] {
   display: none;
 }
-form.actor-sheet #character-stress-clock .blades-clock *:nth-child(3) {
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(150deg);
 }
-form.actor-sheet #character-stress-clock .blades-clock *:nth-child(5) {
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(5) {
   transform: rotate(60deg) skewY(150deg);
 }
-form.actor-sheet #character-stress-clock .blades-clock *:nth-child(7) {
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(7) {
   transform: rotate(120deg) skewY(150deg);
 }
-form.actor-sheet #character-stress-clock .blades-clock *:nth-child(9) {
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(9) {
   transform: rotate(180deg) skewY(150deg);
 }
-form.actor-sheet #character-stress-clock .blades-clock *:nth-child(11) {
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(11) {
   transform: rotate(240deg) skewY(150deg);
 }
-form.actor-sheet #character-stress-clock .blades-clock *:nth-child(13) {
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(13) {
   transform: rotate(300deg) skewY(150deg);
 }
-form.actor-sheet #character-stress-clock .clock-zero-label {
+form.wicked-one-sheet #character-stress-clock .clock-zero-label {
   position: relative;
   left: -10px;
 }
-form.actor-sheet #character-stress-clock .blades-clock {
+form.wicked-one-sheet #character-stress-clock .blades-clock {
   top: -10px;
 }
-form.actor-sheet #abilities-list, form.actor-sheet #loadout {
-  width: 100%;
+form.wicked-one-sheet #wo-nav-container {
+  margin-right: 8px;
 }
-form.actor-sheet #abilities-list tr, form.actor-sheet #loadout tr {
-  background-color: initial;
-}
-form.actor-sheet #abilities-list tr td:nth-of-type(1), form.actor-sheet #loadout tr td:nth-of-type(1) {
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(1), form.wicked-one-sheet #loadout tr td:nth-of-type(1), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(1) {
   min-width: 75px;
   width: 23%;
 }
-form.actor-sheet #abilities-list tr td:nth-of-type(2), form.actor-sheet #loadout tr td:nth-of-type(2) {
-  margin-right: 0px;
-  margin-bottom: 0px;
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(2), form.wicked-one-sheet #loadout tr td:nth-of-type(2), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(2) {
   padding-bottom: 10px;
 }
-form.actor-sheet #abilities-list tr td:nth-of-type(3), form.actor-sheet #loadout tr td:nth-of-type(3) {
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(3), form.wicked-one-sheet #loadout tr td:nth-of-type(3), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(3) {
   width: 20px;
 }
-form.actor-sheet #abilities-list tr.group-core, form.actor-sheet #loadout tr.group-core {
+form.wicked-one-sheet #abilities-list .group-core {
   background-color: #68332c3f;
 }
-form.actor-sheet #abilities-list tr.group-flex, form.actor-sheet #loadout tr.group-flex {
+form.wicked-one-sheet #abilities-list .group-flex {
   background-color: #9999993f;
 }
-form.actor-sheet #abilities-list tr.group-flex td.item-body i, form.actor-sheet #loadout tr.group-flex td.item-body i {
+form.wicked-one-sheet #abilities-list .group-flex td.item-body i {
   font-size: 14px;
 }
-form.actor-sheet #abilities-list tr.group-ext, form.actor-sheet #loadout tr.group-ext {
+form.wicked-one-sheet #abilities-list .group-ext {
   background-color: #9999993f;
 }
-form.actor-sheet #abilities-list tr.group-ext td.item-body i, form.actor-sheet #loadout tr.group-ext td.item-body i {
+form.wicked-one-sheet #abilities-list .group-ext td.item-body i {
   font-size: 14px;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays, form.actor-sheet #loadout tr td div.eye-rays {
+form.wicked-one-sheet #abilities-list tr.psi-discipline td > div {
+  border-radius: 15px;
+  height: 30px;
+  align-items: center;
+}
+form.wicked-one-sheet #abilities-list tr.psi-discipline td > div div {
+  flex: none;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container {
   text-align: center;
   position: relative;
   left: 15px;
   min-width: 420px;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img {
   margin-top: 30px;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img img {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img img {
   width: 200px;
   height: 200px;
   margin: 0px;
@@ -597,96 +545,92 @@ form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img, form
   position: relative;
   transition: filter 0.1s;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img img.hovered, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img img.hovered {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img img.hovered {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.doomseeker-img area, form.actor-sheet #loadout tr td div.eye-rays div.doomseeker-img area {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img area {
   cursor: pointer;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items, form.actor-sheet #loadout tr td div.eye-rays div.ray-items {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items {
   margin-top: -225px;
   height: 232px;
   text-align: center;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div, form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div {
   text-align: center;
   position: relative;
   width: fit-content;
   left: 50%;
   transform: translateX(-50%);
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(1), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(1) {
-  top: 0px;
-}
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(2), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(2) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(2) {
   top: 12px;
   left: 18%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(3), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(3) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(3) {
   top: -22px;
   left: 82%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(4), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(4) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(4) {
   top: -17px;
   left: 18%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(5), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(5) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(5) {
   top: -34px;
   left: 82%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(6), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(6) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(6) {
   top: 25px;
   left: 15%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(7), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(7) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(7) {
   top: -9px;
   left: 85%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(8), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(8) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(8) {
   top: -4px;
   left: 15%;
 }
-form.actor-sheet #abilities-list tr td div.eye-rays div.ray-items > div:nth-child(9), form.actor-sheet #loadout tr td div.eye-rays div.ray-items > div:nth-child(9) {
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(9) {
   top: -21px;
   left: 85%;
 }
-form.actor-sheet #abilities-list tr.stolen-face img, form.actor-sheet #loadout tr.stolen-face img {
-  max-height: 100px;
-  width: 75px;
-  object-fit: cover;
+form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child {
+  text-align: center;
 }
-form.actor-sheet #abilities-list tr.psi-discipline td > div, form.actor-sheet #loadout tr.psi-discipline td > div {
-  border-radius: 15px;
-  height: 30px;
-  align-items: center;
+form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child img {
+  max-height: 120px;
+  max-width: 100px;
+  object-fit: contain;
+  border: 0px;
 }
-form.actor-sheet #abilities-list tr.psi-discipline td > div div, form.actor-sheet #loadout tr.psi-discipline td > div div {
-  flex: none;
-}
-form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(1) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(1) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) {
   background: none;
 }
-form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(2) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(2) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) {
   background-position-y: center;
 }
-form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(3) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(3) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) {
   background-position-y: bottom;
 }
-form.actor-sheet #abilities-list table.gold-monger-path tr:nth-child(4) td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr:nth-child(4) td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) {
   background-position-y: center;
   background-image: url("assets/decorations/verticalline-top.png");
 }
-form.actor-sheet #abilities-list table.gold-monger-path tr td:nth-child(1), form.actor-sheet #loadout table.gold-monger-path tr td:nth-child(1) {
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
   min-width: 32px;
   width: 32px;
   background-image: url("assets/decorations/verticalline-bottom.png");
   background-repeat: no-repeat;
 }
-form.actor-sheet #loadout .gear-tags {
+form.wicked-one-sheet #abilities .flashback-clues {
+  text-align: center;
+}
+form.wicked-one-sheet #loadout .gear-tags {
   margin-top: 4px;
 }
-form.actor-sheet #loadout .gear-tags label {
+form.wicked-one-sheet #loadout .gear-tags label {
   display: inline-block;
   border-style: solid;
   border-width: 1px;
@@ -694,33 +638,35 @@ form.actor-sheet #loadout .gear-tags label {
   border-radius: 5px;
   padding: 2px 4px;
   margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
-form.actor-sheet #loadout .gear-tags label.quality-mundane {
+form.wicked-one-sheet #loadout .gear-tags label.quality-mundane {
   color: #191919;
 }
-form.actor-sheet #loadout .gear-tags label.quality-valuable {
+form.wicked-one-sheet #loadout .gear-tags label.quality-valuable {
   color: #2c3678;
 }
-form.actor-sheet #loadout .gear-tags label.quality-powerful {
+form.wicked-one-sheet #loadout .gear-tags label.quality-powerful {
   color: #b12c20;
 }
-form.actor-sheet #loadout .gear-tags label.edge-tag {
+form.wicked-one-sheet #loadout .gear-tags label.edge-tag {
   color: #d46c1f;
 }
-form.actor-sheet #loadout .gear-tags label.quantity-steady {
+form.wicked-one-sheet #loadout .gear-tags label.quantity-steady {
   color: #435e3d;
 }
-form.actor-sheet #loadout .gear-tags label.quantity-limited {
+form.wicked-one-sheet #loadout .gear-tags label.quantity-limited {
   color: #435e3d;
 }
-form.actor-sheet #loadout .gear-tags label.quantity-shared {
+form.wicked-one-sheet #loadout .gear-tags label.quantity-shared {
   color: #435e3d;
 }
-form.actor-sheet #loadout .supply {
+form.wicked-one-sheet #loadout .supply {
   display: flex;
   /* Hide the browser's default checkbox */
 }
-form.actor-sheet #loadout .supply label {
+form.wicked-one-sheet #loadout .supply label {
   height: 15px;
   width: 15px;
   background-image: url("assets/boxes/box-white-crossed.png");
@@ -730,45 +676,49 @@ form.actor-sheet #loadout .supply label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-form.actor-sheet #loadout .supply label:last-of-type {
+form.wicked-one-sheet #loadout .supply label:last-of-type {
   margin-right: 0px;
 }
-form.actor-sheet #loadout .supply label[for$="-0"] {
+form.wicked-one-sheet #loadout .supply label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-form.actor-sheet #loadout .supply label[for$="-0"] i {
+form.wicked-one-sheet #loadout .supply label[for$="-0"] i {
   margin-top: 4px;
 }
-form.actor-sheet #loadout .supply label:hover {
+form.wicked-one-sheet #loadout .supply label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.actor-sheet #loadout .supply input {
+form.wicked-one-sheet #loadout .supply input {
   display: none;
 }
-form.actor-sheet #loadout .supply input:checked ~ label {
+form.wicked-one-sheet #loadout .supply input:checked ~ label {
   background-image: url("assets/boxes/box-white-filled.png");
 }
-form.actor-sheet #loadout .supply input:checked + label {
+form.wicked-one-sheet #loadout .supply input:checked + label {
   background-image: url("assets/boxes/box-white-crossed.png");
 }
-form.actor-sheet #edge-list {
-  display: block;
+form.wicked-one-sheet #duties-tab .downtime-hints {
+  padding: 3px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  justify-content: space-around;
 }
-form.actor-sheet #duties-tab .item-body {
-  width: auto;
-  padding: 3px;
-  font-family: Bitter;
-  font-size: 14px;
+form.wicked-one-sheet #duties-tab .downtime-hints > div {
+  margin: 2px 6px;
+  font-style: italic;
 }
-form.actor-sheet #duties-tab .project-clock {
+form.wicked-one-sheet #duties-tab .downtime-hints > div b {
+  font-style: normal;
+}
+form.wicked-one-sheet #duties-tab .project-clock {
   height: 80px;
   position: relative;
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock {
   position: relative;
   padding: 0;
   width: 40px;
@@ -778,7 +728,7 @@ form.actor-sheet #duties-tab .project-clock .blades-clock {
   overflow: hidden;
   background-size: cover;
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock label {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -789,56 +739,56 @@ form.actor-sheet #duties-tab .project-clock .blades-clock label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock label:hover {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock input {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock input {
   position: absolute;
   display: none;
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock input[value="0"] {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock input[value="0"] {
   display: none;
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(3) {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(180deg);
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(5) {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(5) {
   transform: rotate(90deg) skewY(180deg);
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(7) {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(7) {
   transform: rotate(180deg) skewY(180deg);
 }
-form.actor-sheet #duties-tab .project-clock .blades-clock *:nth-child(9) {
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-form.actor-sheet #duties-tab div.label-stripe {
+form.wicked-one-sheet #duties-tab div.label-stripe {
   margin-bottom: 0px;
 }
-form.actor-sheet #duties-tab table {
+form.wicked-one-sheet #duties-tab table {
   margin-top: 0px;
   margin-bottom: 15px;
 }
-form.actor-sheet #project-clocks-table tr td:nth-of-type(1) {
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1) {
   width: 50px;
 }
-form.actor-sheet #project-clocks-table tr td:nth-of-type(2) {
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(2) {
   min-width: 90px;
   width: 23%;
   font-family: Bitter;
 }
-form.actor-sheet #project-clocks-table tr td:nth-of-type(4) {
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(4) {
   width: 20px;
 }
-form.actor-sheet #duties-table tr td:nth-of-type(1) {
+form.wicked-one-sheet #duties-table tr td:nth-of-type(1) {
   width: 50px;
   font-weight: 900;
 }
-form.actor-sheet #duties-table tr td:nth-of-type(2) {
+form.wicked-one-sheet #duties-table tr td:nth-of-type(2) {
   min-width: 90px;
   width: 23%;
 }
-form.actor-sheet #duties-table tr td:nth-of-type(4) {
+form.wicked-one-sheet #duties-table tr td:nth-of-type(4) {
   width: 20px;
 }
 
@@ -974,6 +924,9 @@ form.actor-sheet #duties-table tr td:nth-of-type(4) {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 form.minion-sheet #number {
   padding-right: 12px;
 }
@@ -982,9 +935,12 @@ form.minion-sheet #number label {
 }
 form.minion-sheet #number input {
   text-align: center;
-  margin: auto;
-  width: 50%;
+  margin-left: 10px;
+  width: 60px;
   display: block;
+}
+form.minion-sheet #main-minion-form {
+  margin-right: 12px;
 }
 form.minion-sheet #abilities-list .item-rollable-text {
   font-size: 16px;
@@ -1124,24 +1080,17 @@ form.minion-sheet #abilities-list .item-rollable-text {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
-form.dungeon-sheet .item-special-feature {
-  margin: 0px 10px;
-  border-radius: 20px;
-  background: #68332c3f;
-  padding: 10px;
-}
-form.dungeon-sheet .missing-materials {
-  color: #999;
-}
+/* 
+ *  Positioning of children by number
+ */
 form.dungeon-sheet #dungeon-theme-bar {
-  padding-left: 0px;
-  padding-right: 0px;
   font-size: 18px;
   display: table-row;
 }
 form.dungeon-sheet #dungeon-theme-bar td:first-child {
   background-color: #68332c;
   width: 100%;
+  padding-left: 10px;
   align-self: center;
   height: 33px;
 }
@@ -1197,6 +1146,39 @@ form.dungeon-sheet #dungeon-tier input:checked + label:not([for$="-0"]) {
 }
 form.dungeon-sheet #dungeon-tier > * {
   margin-right: 5px;
+}
+form.dungeon-sheet .profile-img {
+  max-width: 135px;
+}
+form.dungeon-sheet .item-special-feature {
+  margin: 0px 10px;
+  border-radius: 20px;
+  background: #68332c3f;
+  padding: 10px;
+}
+form.dungeon-sheet #rooms .group-flex {
+  background-color: #9999993f;
+}
+form.dungeon-sheet #rooms .group-flex td.item-body i {
+  font-size: 14px;
+}
+form.dungeon-sheet #rooms .missing-materials {
+  opacity: 0.6;
+}
+form.dungeon-sheet #theme-description {
+  padding-top: 10px;
+}
+form.dungeon-sheet #theme-description ~ div {
+  margin-top: 10px;
+}
+form.dungeon-sheet #theme-description ~ div input {
+  margin: 2px 0px;
+}
+form.dungeon-sheet #masterplan > div:nth-child(n+1) {
+  margin-top: 10px;
+}
+form.dungeon-sheet #masterplan > div:nth-child(n+1) input {
+  margin: 2px 0px;
 }
 
 /*
@@ -1331,6 +1313,27 @@ form.dungeon-sheet #dungeon-tier > * {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
+form.faction-sheet {
+  padding: 5px 5px !important;
+}
+form.faction-sheet #faction-sheet table.name-and-image {
+  margin: 0px;
+  border: none;
+}
+form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
+  width: 50px;
+}
+form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) img {
+  max-height: 50px;
+}
+form.faction-sheet #faction-sheet .large-name input {
+  height: 45px;
+  font-size: 40px;
+  min-width: 250px;
+}
 form.faction-sheet #faction-sheet div.label-stripe {
   margin: 0px;
 }
@@ -1342,6 +1345,7 @@ form.faction-sheet #faction-sheet #faction-clocks td {
 }
 form.faction-sheet #faction-sheet #faction-clocks td textarea {
   resize: none;
+  margin-bottom: 0px;
 }
 form.faction-sheet #faction-sheet .faction-clock-display {
   width: 60px;
@@ -1512,9 +1516,6 @@ form.faction-sheet #faction-sheet .faction-clock-display .clock-zero-label {
 form.faction-sheet #faction-sheet .faction-clock-display .blades-clock {
   top: -10px;
 }
-form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
-  width: 60px;
-}
 
 /*
  * Fonts
@@ -1648,35 +1649,49 @@ form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
-form.party-sheet #adventure-party .profile-img {
+/* 
+ *  Positioning of children by number
+ */
+form.party-sheet .profile-img {
   vertical-align: middle;
 }
-form.party-sheet #adventure-party .label-stripe {
+form.party-sheet .label-stripe {
   margin-bottom: 0px;
 }
-form.party-sheet #adventure-party table {
+form.party-sheet table {
   margin-top: 0px;
   margin-bottom: 10px;
   border-width: 0px;
 }
-form.party-sheet #adventure-party table tr {
+form.party-sheet table tr {
   max-height: 32px;
 }
-form.party-sheet #adventure-party #adventurer-list thead td:nth-child(4), form.party-sheet #adventure-party #hireling-list thead td:nth-child(3) {
+form.party-sheet .tier {
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+form.party-sheet .class-name, form.party-sheet .type-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+form.party-sheet #adventurer-list thead td:nth-child(4),
+form.party-sheet #hireling-list thead td:nth-child(3) {
   padding-left: 15px;
 }
-form.party-sheet #adventure-party #adventurer-list thead td:nth-child(8), form.party-sheet #adventure-party #hireling-list thead td:nth-child(7) {
+form.party-sheet #adventurer-list thead td:nth-child(8),
+form.party-sheet #hireling-list thead td:nth-child(7) {
   width: 20px;
 }
-form.party-sheet #adventure-party #hireling-list tbody td:nth-child(4) label {
+form.party-sheet #hireling-list tbody td:nth-child(4) label {
   min-width: 100px;
   width: 20%;
   max-width: 50%;
 }
-form.party-sheet #adventure-party .adventurer-hearts input {
+form.party-sheet .adventurer-hearts input {
   display: none;
 }
-form.party-sheet #adventure-party .adventurer-hearts label {
+form.party-sheet .adventurer-hearts label {
   height: 32px;
   width: 32px;
   display: block;
@@ -1688,48 +1703,51 @@ form.party-sheet #adventure-party .adventurer-hearts label {
   cursor: pointer;
   top: -1px;
 }
-form.party-sheet #adventure-party .adventurer-hearts label:hover {
+form.party-sheet .adventurer-hearts label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-form.party-sheet #adventure-party .adventurer-hearts label.slashed-1 {
+form.party-sheet .adventurer-hearts label.slashed-1 {
   background-image: url("assets/boxes/a-heart-slashed-1.png");
 }
-form.party-sheet #adventure-party .adventurer-hearts label.slashed-2 {
+form.party-sheet .adventurer-hearts label.slashed-2 {
   background-image: url("assets/boxes/a-heart-slashed-2.png");
 }
-form.party-sheet #adventure-party .adventurer-hearts label.greyed {
+form.party-sheet .adventurer-hearts label.greyed {
   background-image: url("assets/boxes/a-heart-greyed.png");
   cursor: auto;
 }
-form.party-sheet #adventure-party .adventurer-hearts label.greyed:hover {
+form.party-sheet .adventurer-hearts label.greyed:hover {
   filter: none;
   opacity: 1;
 }
-form.party-sheet #adventure-party .adventurer-hearts label.hidden {
+form.party-sheet .adventurer-hearts label.hidden {
   display: none;
 }
-form.party-sheet #adventure-party td.moves-radio div {
+form.party-sheet td.moves-radio div {
   display: flex;
   /* Hide the browser's default checkbox */
 }
-form.party-sheet #adventure-party td.moves-radio div label {
+form.party-sheet td.moves-radio div label {
   height: 24px;
   width: 24px;
   background-image: url("assets/boxes/box-filled.png");
   background-repeat: no-repeat;
   background-size: contain;
   vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
   transition: filter 0.1s;
   cursor: pointer;
 }
-form.party-sheet #adventure-party td.moves-radio div label.dark-heart {
-  background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
-  position: relative;
-  top: -2px;
-}
-form.party-sheet #adventure-party td.moves-radio div label[for$="-0"] {
+form.party-sheet td.moves-radio div label[for$="-0"] {
   height: 8px;
   width: 8px;
   border-radius: 24px;
@@ -1739,43 +1757,44 @@ form.party-sheet #adventure-party td.moves-radio div label[for$="-0"] {
   background-color: #a20000 !important;
   margin-right: 0px;
 }
-form.party-sheet #adventure-party td.moves-radio div label:hover {
+form.party-sheet td.moves-radio div label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
-form.party-sheet #adventure-party td.moves-radio div input {
+form.party-sheet td.moves-radio div input {
   display: none;
 }
-form.party-sheet #adventure-party td.moves-radio div input:checked ~ label {
+form.party-sheet td.moves-radio div input:checked ~ label {
   background-image: url("assets/boxes/box-empty.png");
 }
-form.party-sheet #adventure-party td.moves-radio div input:checked ~ label.dark-heart {
+form.party-sheet td.moves-radio div input:checked ~ label.dark-heart {
   background-image: url("assets/boxes/heart-empty.png");
 }
-form.party-sheet #adventure-party td.moves-radio div input:checked + label {
+form.party-sheet td.moves-radio div input:checked + label {
   transition: filter 0.1s;
   cursor: pointer;
   background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
 }
-form.party-sheet #adventure-party td.moves-radio div input:checked + label:hover {
+form.party-sheet td.moves-radio div input:checked + label:hover {
   filter: brightness(0.7);
   opacity: 0.7;
 }
-form.party-sheet #adventure-party td.moves-radio div input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
-}
-form.party-sheet #adventure-party td.moves-radio div input:checked + label.practice-one {
+form.party-sheet td.moves-radio div input:checked + label.practice-one {
   background-image: url("assets/boxes/box-slashed.png");
 }
-form.party-sheet #adventure-party td.moves-radio div input:checked + label.practice-two {
+form.party-sheet td.moves-radio div input:checked + label.practice-two {
   background-image: url("assets/boxes/box-crossed.png");
 }
-form.party-sheet #adventure-party td.moves-radio:hover > div.attributes-container label {
+form.party-sheet td.moves-radio:hover > div.attributes-container label {
   transition: opacity 1s;
   opacity: 1;
 }
-form.party-sheet #adventure-party td.moves-radio label.adv-move-greyed {
+form.party-sheet td.moves-radio label.adv-move-greyed {
   height: 24px;
   width: 24px;
   display: block;
@@ -1785,10 +1804,11 @@ form.party-sheet #adventure-party td.moves-radio label.adv-move-greyed {
   position: relative;
   margin-left: 8px;
 }
-form.party-sheet #adventure-party .trait-tags {
+form.party-sheet .trait-tags {
   margin-top: 4px;
 }
-form.party-sheet #adventure-party .trait-tags label {
+form.party-sheet .trait-tags label {
+  font-weight: bold;
   display: inline-block;
   border-style: solid;
   border-width: 1px;
@@ -1797,13 +1817,13 @@ form.party-sheet #adventure-party .trait-tags label {
   padding: 2px 4px;
   margin-bottom: 4px;
 }
-form.party-sheet #adventure-party .trait-tags label.positive {
+form.party-sheet .trait-tags label.positive {
   color: #2c3678;
 }
-form.party-sheet #adventure-party .trait-tags label.negative {
+form.party-sheet .trait-tags label.negative {
   color: #68332c;
 }
-form.party-sheet #adventure-party .trait-tags label.motivation {
+form.party-sheet .trait-tags label.motivation {
   color: #191919;
 }
 
@@ -1939,14 +1959,119 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 #attributes {
   height: fit-content;
   min-width: fit-content;
   top: 7px;
   position: relative;
 }
-#attributes.minion {
-  min-width: 245px;
+#attributes .main {
+  flex-grow: 1;
+}
+#attributes .main div:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#attributes .attribute-label {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+#attributes .attribute-skill-label {
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: 2px;
+}
+#attributes .attributes-exp {
+  margin-bottom: 2px;
+}
+#attributes .attributes-container {
+  margin: 3px 3px 3px -8px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes .attributes-container label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes .attributes-container label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#attributes .attributes-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input {
+  display: none;
+}
+#attributes .attributes-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes .attributes-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes .attributes-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
+}
+#attributes .attributes-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes .attributes-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#attributes .attributes-container * {
+  margin-right: 1px;
+}
+#attributes .attributes-container label {
+  margin-top: 3px;
+}
+#attributes .attribute-description {
+  display: none;
+  font-size: 11px;
+  padding-left: 6px;
+  font-family: Bitter;
+  font-weight: 500;
+}
+#attributes .skill-description {
+  font-style: italic;
+  margin-left: 3px;
+  align-self: center;
 }
 #attributes .attribute {
   margin-bottom: 5px;
@@ -1996,7 +2121,7 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
   transition: filter 0.1s;
   cursor: pointer;
   margin-left: 8px;
-  margin-right: 1px;
+  margin-right: 5px;
   padding: 10px;
   top: -10px;
 }
@@ -2081,190 +2206,95 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
 #attributes .morale-minion input:checked + label {
   background-image: url("assets/boxes/box-filled.png");
 }
-#attributes .main {
-  flex-grow: 1;
-}
-#attributes .main div:hover > div.attributes-container label {
-  transition: opacity 1s;
-  opacity: 1;
-}
-#attributes .attribute-label {
-  font-size: 18px;
-  text-transform: uppercase;
-  background-color: #68332c;
-}
-#attributes .attribute-skill-label {
-  font-weight: 800;
-  font-size: 18px;
-  text-transform: uppercase;
-  background-color: unset;
-}
-#attributes .attributes-exp {
-  position: relative;
-  margin-bottom: 2px;
-}
-#attributes .attributes-container {
-  display: flex;
-  margin: 3px 0px;
-  background-color: unset;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-#attributes .attributes-container label {
-  height: 15px;
-  width: 15px;
-  background-image: url("assets/boxes/box-filled.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  vertical-align: middle;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#attributes .attributes-container label.dark-heart {
-  background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
-  position: relative;
-  top: -2px;
-}
-#attributes .attributes-container label[for$="-0"] {
-  height: 8px;
-  width: 8px;
-  border-radius: 24px;
-  opacity: 0;
-  transition: opacity 1s;
-  background-image: none !important;
-  background-color: #a20000 !important;
-  margin-right: 0px;
-}
-#attributes .attributes-container label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#attributes .attributes-container input {
-  display: none;
-}
-#attributes .attributes-container input:checked ~ label {
-  background-image: url("assets/boxes/box-empty.png");
-}
-#attributes .attributes-container input:checked ~ label.dark-heart {
-  background-image: url("assets/boxes/heart-empty.png");
-}
-#attributes .attributes-container input:checked + label {
-  transition: filter 0.1s;
-  cursor: pointer;
-  background-image: url("assets/boxes/box-filled.png");
-}
-#attributes .attributes-container input:checked + label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#attributes .attributes-container input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
-}
-#attributes .attributes-container input:checked + label.practice-one {
-  background-image: url("assets/boxes/box-slashed.png");
-}
-#attributes .attributes-container input:checked + label.practice-two {
-  background-image: url("assets/boxes/box-crossed.png");
-}
-#attributes .attributes-container * {
-  margin-right: 5px;
-}
-#attributes .attributes-container label {
-  margin-top: 3px;
-}
-#attributes .attribute-description {
-  font-size: 11px;
-  padding-left: 6px;
-  font-family: Bitter;
-  font-weight: 500;
-}
-#attributes .skill-description {
-  font-style: italic;
-  font-size: larger;
-}
-
-#attributes-darkhearts {
-  /* margin-left: 32px; */
-}
-#attributes-darkhearts .heart-container {
-  justify-content: center;
-  margin-left: 3px;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
-#attributes-darkhearts .heart-container label {
-  height: 30px;
-  width: 30px;
-  background-image: url("assets/boxes/box-filled.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  vertical-align: middle;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-#attributes-darkhearts .heart-container label.dark-heart {
-  background-image: url("assets/boxes/heart-filled.png");
-  margin-right: 4px;
-  position: relative;
-  top: -2px;
-}
-#attributes-darkhearts .heart-container label[for$="-0"] {
-  height: 8px;
-  width: 8px;
-  border-radius: 24px;
-  opacity: 0;
-  transition: opacity 1s;
-  background-image: none !important;
-  background-color: #a20000 !important;
-  margin-right: 0px;
-}
-#attributes-darkhearts .heart-container label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#attributes-darkhearts .heart-container input {
-  display: none;
-}
-#attributes-darkhearts .heart-container input:checked ~ label {
-  background-image: url("assets/boxes/box-empty.png");
-}
-#attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
-  background-image: url("assets/boxes/heart-empty.png");
-}
-#attributes-darkhearts .heart-container input:checked + label {
-  transition: filter 0.1s;
-  cursor: pointer;
-  background-image: url("assets/boxes/box-filled.png");
-}
-#attributes-darkhearts .heart-container input:checked + label:hover {
-  filter: brightness(0.7);
-  opacity: 0.7;
-}
-#attributes-darkhearts .heart-container input:checked + label.dark-heart {
-  /* animation: glow 2000ms ease-out infinite alternate; */
-  background-image: url("assets/boxes/heart-filled.png");
-}
-#attributes-darkhearts .heart-container input:checked + label.practice-one {
-  background-image: url("assets/boxes/box-slashed.png");
-}
-#attributes-darkhearts .heart-container input:checked + label.practice-two {
-  background-image: url("assets/boxes/box-crossed.png");
-}
-#attributes-darkhearts .heart-container:hover label {
-  transition: opacity 1s;
-  opacity: 1;
-}
-
-#hearts-header {
+#attributes #attributes-darkhearts .heart-container {
+  justify-content: start;
   margin-left: 33px;
+  margin-bottom: 1px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes #attributes-darkhearts .heart-container label {
+  height: 40px;
+  width: 40px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes #attributes-darkhearts .heart-container label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#attributes #attributes-darkhearts .heart-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes #attributes-darkhearts .heart-container input {
+  display: none;
+}
+#attributes #attributes-darkhearts .heart-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#attributes #attributes-darkhearts .heart-container label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+}
+#attributes #attributes-darkhearts .heart-container:hover label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#attributes #attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+}
+#attributes #hearts-footer {
+  margin-left: 37px;
   padding-right: 10px;
   min-width: 135px;
-}
-
-#hearts-display {
-  display: flex;
 }
 
 /*
@@ -2399,32 +2429,14 @@ form.party-sheet #adventure-party .trait-tags label.motivation {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
-header {
-  margin-bottom: 10px;
+/* 
+ *  Positioning of children by number
+ */
+form.item-sheet {
+  padding: 15px;
 }
-
-form.minion-upgrade-sheet section.rollable-skill div > div {
-  width: 50%;
-}
-form.minion-upgrade-sheet section.rollable-skill div > div label {
+form.item-sheet section > *:not(.label-stripe) {
   margin-right: 10px;
-}
-form.minion-upgrade-sheet section.rollable-skill div > div #upgrade-skill-rating {
-  width: 50px;
-}
-
-form.special-ability-sheet #ray-selection div.ray-line {
-  display: flex;
-  justify-content: space-evenly;
-}
-form.special-ability-sheet #ray-selection div.ray-line:last-child {
-  margin-bottom: 25px;
-}
-form.special-ability-sheet #ray-selection div.ray-line select:nth-child(1) {
-  width: 70%;
-}
-form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
-  width: 20%;
 }
 
 form.adventurer-sheet #adventurer-sheet-body .label-stripe {
@@ -2454,6 +2466,30 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
   margin-right: 0px;
 }
 
+form.minion-upgrade-sheet section.rollable-skill div > div {
+  width: 50%;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div label {
+  margin-right: 10px;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div #upgrade-skill-rating {
+  width: 50px;
+}
+
+form.special-ability-sheet #ray-selection div.ray-line {
+  display: flex;
+  justify-content: space-evenly;
+}
+form.special-ability-sheet #ray-selection div.ray-line:last-child {
+  margin-bottom: 25px;
+}
+form.special-ability-sheet #ray-selection div.ray-line select:nth-child(1) {
+  width: 70%;
+}
+form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
+  width: 20%;
+}
+
 /*
  * Fonts
  */
@@ -2585,6 +2621,9 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
  */
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
  */
 #chat .chat-label {
   background-color: #191919;
@@ -2616,14 +2655,14 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
   font-weight: normal;
   font-size: 15px;
 }
+#chat .chat-message .message-header .message-metadata {
+  text-align: right;
+  font-weight: 700;
+}
 #chat .chat-message .message-content {
   font-family: Bitter;
   font-size: inherit;
   font-weight: 600;
-}
-#chat .chat-message .message-header .message-metadata {
-  text-align: right;
-  font-weight: 700;
 }
 #chat .label-stripe-chat-small, #chat .label-stripe-chat {
   font-family: Piedra;
@@ -2858,6 +2897,9 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
 /*
  * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
  */
+/* 
+ *  Positioning of children by number
+ */
 /*
  *  Add-item pop-up dialog Styles
  */
@@ -2884,15 +2926,14 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
 #items-to-add label:nth-of-type(2n) {
   background: #68332c3f;
 }
-
-.fa-question-circle {
+#items-to-add .fa-question-circle {
   padding: 2px 3px;
 }
 
 /*
  *  Rollable text pop-up dialog Styles
  */
-.action-info {
+#skill-roll .action-info {
   margin-top: -20px;
 }
 
@@ -2914,24 +2955,14 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
 }
 .window-app .window-content form.actor-sheet {
   z-index: 0;
-}
-
-form.actor-sheet {
-  padding: 20px;
-}
-form .notes, form .hint {
-  color: #400000;
-  font-weight: 600;
+  padding: 20px 12px;
 }
 
 section {
   display: flex;
   flex-direction: column;
 }
-section > *:not(.label-stripe) {
-  margin-right: 10px;
-}
-section > *:not(.label-stripe):last-child {
+section > form:last-child {
   margin-right: 0px;
 }
 section .grow-one {
@@ -2982,14 +3013,24 @@ nav {
   margin-bottom: 10px;
 }
 
+.tab-content {
+  margin-right: 8px;
+}
+.tab-content nav a {
+  flex: none;
+}
+.tab-content .tab .label-stripe {
+  margin-bottom: 0px;
+}
+.tab-content .tab table {
+  margin-top: 0px;
+  border: 0px;
+}
+
 .tabs .item.active {
   font-weight: 700;
   color: #400000;
   text-shadow: 2px 2px 7px #d46c1f;
-}
-
-#wo-nav-container nav a, #dun-nav-container nav a, #mp-nav-container nav a {
-  flex: none;
 }
 
 /*
@@ -3040,6 +3081,22 @@ input[type=date], input[type=time], input[type=range] {
   font-weight: 600;
   border: 1px solid #68332c;
   border-radius: 0;
+  width: 100%;
+}
+
+.text-input {
+  color: #68332c;
+}
+.text-input label {
+  font-weight: 700;
+}
+.text-input input[type=text], .text-input input[type=number], .text-input input[type=password],
+.text-input input[type=date], .text-input input[type=time], .text-input input[type=range] {
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
 }
 
 textarea {
@@ -3049,6 +3106,45 @@ textarea {
   font-family: Bitter;
   font-weight: 600;
   min-height: 80px;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.checkbox-container > div {
+  margin-left: 20px;
+}
+
+.standard-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+}
+.standard-checkbox input[type=checkbox] {
+  display: none;
+}
+.standard-checkbox label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.standard-checkbox label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.standard-checkbox input[type=checkbox]:checked + label {
+  background-image: url("assets/boxes/box-crossed.png");
 }
 
 /*

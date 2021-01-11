@@ -5,9 +5,29 @@
 
 
 form.faction-sheet {
+    
+    padding: 5px 5px !important;
 
     // Goal Clock
     #faction-sheet {
+
+        table.name-and-image {
+            margin: 0px;
+            border: none;
+
+            td:nth-child(2) {
+                width: 50px;
+                img {
+                    max-height: 50px;
+                }
+            }
+        } 
+
+        .large-name input {
+            height: 45px;
+            font-size: 40px;
+            min-width: 250px;
+        }
 
         div.label-stripe {
             margin: 0px;
@@ -21,6 +41,7 @@ form.faction-sheet {
 
                 textarea {
                     resize: none;
+                    margin-bottom: 0px;
                 }
             }
         }
@@ -48,10 +69,6 @@ form.faction-sheet {
             .blades-clock {
                 top: -10px;
             }
-        }
-
-        table.name-and-image td:nth-child(2) {
-            width: 60px;
         }
     }
 }

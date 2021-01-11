@@ -12,7 +12,7 @@ export class WickedActorSheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/actor-sheet.html",
-      width: 760,
+      width: 820,
       height: 970,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}]
     });
