@@ -287,6 +287,13 @@
     "Face": "Facestealer Face",
     "GMType": "Goldmonger Type",
     "GMAntiType": "Goldmonger Anti-Type",
+    "GMSize": "Size",
+    "TooltipGMSize": "When the dungeon tier increases, you add an action dot and advance one step in two separate growth paths. You may also grow in size when you increase tier.",
+    "TooltipGMSize0": "At tier 0, you're just a tiny whelp and humanoids have scale against you.",
+    "TooltipGMSize1": "By tier 1, you can stand on equal footing with humanoids.",
+    "TooltipGMSize3": "At tier 3, you have scale against humanoids.",
+    "GMPleasedXP": "Pleased XP",
+    "TooltipPleasedXP": "You do not gain wicked or reckless xp. Instead, at the end of each session, you can give 1 xp to the PC that pleased you the most this session. You can still gain practice xp.",
     "GrowthPath": "Goldmonger Growth Path",
     "CustomGMTypeHint": "Enter custom type here",
 

@@ -26,6 +26,8 @@
       "downtime_action_used": false,
       "gold": 0,
       "gold_max": 3,
+      "goldmonger_size": 0,
+      "goldmonger_pleased": false,
       "supply": 0,
       "supply_max": 2,
       "attribute_max_value": 3,
