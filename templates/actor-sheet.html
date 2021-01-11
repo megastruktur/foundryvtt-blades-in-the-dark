@@ -44,6 +44,7 @@
       <tr>
         <td>
           {{!-- Calling --}}
+          {{#unless actor.data.is_primal_monster}}
           <div class="item-block flex-vertical">
             <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="calling">{{localize "FITD.Calling"}}</a></div>
             {{#each actor.items as |item id|}}
@@ -57,6 +58,23 @@
             {{/if}}
             {{/each}}
           </div>
+          {{else}}
+          {{#if (eq actor.data.primal_monster_type (localize "FITD.Goldmonger"))}}
+          <div class="item-block flex-vertical">
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="goldmonger_type">{{localize "FITD.GMType"}}</a></div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "goldmonger_type")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <div class="item-name item-open-editor">{{item.data.gm_type_custom}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+          {{/if}}
+          {{/unless}}
         </td>
         <td>
           {{!-- Minion Pack --}}
@@ -69,6 +87,7 @@
       <tr>
         <td>
           {{!-- Revelry --}}
+          {{#unless (eq actor.data.primal_monster_type (localize "FITD.Goldmonger"))}}
           <div class="item-block flex-vertical">
             <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}</a></div>
             {{#each actor.items as |item id|}}
@@ -82,6 +101,21 @@
             {{/if}}
             {{/each}}
           </div>
+          {{else}}
+          <div class="item-block flex-vertical">
+            <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="goldmonger_type">{{localize "FITD.GMAntiType"}}</a></div>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "goldmonger_type")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <div class="item-name item-open-editor">{{item.data.gm_antitype_custom}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+          {{/unless}}
         </td>
         <td>
           {{!-- Vile Friend --}}
@@ -242,6 +276,28 @@
               </td>
               <td>
                 <div class="item-description">{{item.data.description}}</div>
+                {{#if (eq item.data.ability_type "advanced")}}
+                <div class="checkbox-container">
+                  {{#unless (eq item.data.ability_checkbox_1_text "")}}
+                  <div class="item-checkmark">
+                    <div class="standard-checkbox">
+                      <input type="checkbox" id="item-{{item._id}}-bpcbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                      <label for="item-{{item._id}}-bpcbx1-checked"></label>
+                      {{item.data.ability_checkbox_1_text}}
+                    </div>
+                  </div>
+                  {{/unless}}
+                  {{#unless (eq item.data.ability_checkbox_2_text "")}}
+                  <div class="item-checkmark">
+                    <div class="standard-checkbox">
+                      <input type="checkbox" id="item-{{item._id}}-bpcbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                      <label for="item-{{item._id}}-bpcbx2-checked"></label>
+                      {{item.data.ability_checkbox_2_text}}
+                    </div>
+                  </div>
+                  {{/unless}}
+                </div>
+                {{/if}}
               </td>
               <td>
                 <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>

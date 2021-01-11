@@ -21,11 +21,34 @@ export class WickedActor extends Actor {
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
+    if (actorData.type === 'character') this._prepareWickedOneData(actorData);
     if (actorData.type === 'dungeon') this._prepareDungeonData(actorData);
     if (actorData.type === 'faction') this._prepareFactionData(actorData);
   }
 
+
 /* -------------------------------------------- */
+
+
+  /**
+  * Prepare Wicked One data
+  */
+  _prepareWickedOneData(actorData) {
+    const data = actorData.data;
+
+    // Make modifications to data here.
+    data.is_primal_monster = false;
+    data.primal_monster_type = "";
+
+    for (var i = 0; i < actorData.items.length; i++) {
+      if (actorData.items[i].type == "monster_race") {
+        data.is_primal_monster = actorData.items[i].data.primal;
+        if (data.is_primal_monster) {
+          data.primal_monster_type = actorData.items[i].name;
+        }
+      }
+    }
+  }
 
 
   /**

@@ -225,7 +225,11 @@
       "uses_left": 4
     },
     "goldmonger_type": {
-      "templates": [ "default" ]
+      "templates": [ "default" ],
+      "gm_type": "",
+      "gm_type_custom": "",
+      "gm_antitype": "",
+      "gm_antitype_custom": ""
     },
     "duty": {
       "templates": [ "default" ],
