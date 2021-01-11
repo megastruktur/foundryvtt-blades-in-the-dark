@@ -7,15 +7,6 @@
  */
 export async function bladesRoll(dice_amount, attribute_name = "", position = "risky", effect = "standard") {
 
-  // Is Dice So Nice enabled ?
-  let niceDice = false;
-  
-  try {
-    niceDice = game.settings.get('dice-so-nice', 'settings').enabled;      
-  } catch {
-    console.log("Dice-is-nice! not enabled");
-  }
-
   // ChatMessage.getSpeaker(controlledToken)
   let zeromode = false;
   
@@ -26,14 +17,7 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "r
 
   // show 3d Dice so Nice if enabled
   r.roll();
-  if (niceDice) {
-    game.dice3d.showForRoll(r).then((displayed) => {
-      showChatRollMessage(r, zeromode, attribute_name, position, effect);
-      ui.chat.scrollBottom();
-    });
-  } else {
-    showChatRollMessage(r, zeromode, attribute_name, position, effect)
-  }
+  showChatRollMessage(r, zeromode, attribute_name, position, effect);
 }
 
 /**
@@ -93,7 +77,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   let messageData = {
     speaker: speaker,
     content: result,
-    type: CONST.CHAT_MESSAGE_TYPES.OOC,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
     roll: r
   }
 
