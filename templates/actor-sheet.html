@@ -59,7 +59,7 @@
             {{/each}}
           </div>
           {{else}}
-          {{#if (eq actor.data.primal_monster_type (localize "FITD.Goldmonger"))}}
+          {{#if (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Goldmonger"))}}
           <div class="item-block flex-vertical">
             <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="goldmonger_type">{{localize "FITD.GMType"}}</a></div>
             {{#each actor.items as |item id|}}
@@ -87,7 +87,7 @@
       <tr>
         <td>
           {{!-- Revelry --}}
-          {{#unless (eq actor.data.primal_monster_type (localize "FITD.Goldmonger"))}}
+          {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Goldmonger"))}}
           <div class="item-block flex-vertical">
             <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="revelry">{{localize "FITD.Revelry"}}</a></div>
             {{#each actor.items as |item id|}}
@@ -126,7 +126,7 @@
         </td>
       </tr>
       <tr class="xp-stripe">
-        {{#unless (eq actor.data.primal_monster_type (localize "FITD.Goldmonger"))}}
+        {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Goldmonger"))}}
         <td>
           {{!-- Gold --}}
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
@@ -292,15 +292,15 @@
 
 
       {{!-- Nav menu --}}
-      <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="abilities">{{localize "FITD.Abilities"}}</a>
-        {{#unless (eq actor.data.primal_monster_type (localize "FITD.Goldmonger"))}}
-        <a class="item" data-tab="loadout">{{localize "FITD.Loadout"}}</a>
-        {{/unless}}
-        <a class="item" data-tab="duties">{{localize "FITD.DutiesProjects"}}</a>
-        <a class="item" data-tab="character-notes">{{localize "FITD.Notes"}}</a>
-        <a class="item" data-tab="all-character-items">{{localize "FITD.AllItems"}}</a>
-      </nav>
+    <nav class="tabs flex-horizontal">
+      <a class="item" data-tab="abilities">{{localize "FITD.Abilities"}}</a>
+      {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Goldmonger"))}}
+      <a class="item" data-tab="loadout">{{localize "FITD.Loadout"}}</a>
+      {{/unless}}
+      <a class="item" data-tab="duties">{{localize "FITD.DutiesProjects"}}</a>
+      <a class="item" data-tab="character-notes">{{localize "FITD.Notes"}}</a>
+      <a class="item" data-tab="all-character-items">{{localize "FITD.AllItems"}}</a>
+    </nav>
 
 
       {{!-- Special Abilities Tab --}}
@@ -713,6 +713,7 @@
       {{!-- Gear & Supply Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         {{!-- Gear Table --}}
+        {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Facestealer"))}}
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Gear"}}</p>
           <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
@@ -748,6 +749,7 @@
             {{/each}}
           </tbody>
         </table>
+        {{/unless}}
         {{!-- Supply Table --}}
         <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
           <p class="flex-horizontal">

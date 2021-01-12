@@ -200,17 +200,12 @@ export class WickedHelpers {
    * @param {string} attribute_name 
    * @returns {bool}
    */
-  static isBaseCalling(source_name) {
+  static isPrimalCalling(source_name) {
     switch (source_name) {
-      case game.i18n.localize("FITD.Brute"):
-      case game.i18n.localize("FITD.Conniver"):
-      case game.i18n.localize("FITD.Crafter"):
-      case game.i18n.localize("FITD.Hunter"):
-      case game.i18n.localize("FITD.Marauder"):
-      case game.i18n.localize("FITD.Shadow"):
-      case game.i18n.localize("FITD.Shaman"):
-      case game.i18n.localize("FITD.Warlock"):
-      case game.i18n.localize("FITD.Zealot"):
+      case game.i18n.localize("FITD.GAME_LOGIC.Braineater"):
+      case game.i18n.localize("FITD.GAME_LOGIC.Doomseeker"):
+      case game.i18n.localize("FITD.GAME_LOGIC.Facestealer"):
+      case game.i18n.localize("FITD.GAME_LOGIC.Goldmonger"):
         return true;
       default:
         return false;
@@ -223,10 +218,10 @@ export class WickedHelpers {
  * Sorts Special Abilities by Base Calling or other, Source Name, Core Ability Status and then Alphabet
  */
   static specialAbilitySort(a, b) {
-    if (WickedHelpers.isBaseCalling(a.data.source) && !WickedHelpers.isBaseCalling(b.data.source)) {
+    if (!WickedHelpers.isPrimalCalling(a.data.source) && WickedHelpers.isPrimalCalling(b.data.source)) {
       return -1;
     }
-    if (!WickedHelpers.isBaseCalling(a.data.source) && WickedHelpers.isBaseCalling(b.data.source)) {
+    if (WickedHelpers.isPrimalCalling(a.data.source) && !WickedHelpers.isPrimalCalling(b.data.source)) {
       return 1;
     }
 

@@ -28,17 +28,22 @@ export class WickedActorSheet extends WickedSheet {
     // look for abilities that change the number of gold, supply and dark heart icons
     data.items.forEach(i => {
       if (i.type == "specialability") {
-        if (i.name == game.i18n.localize("FITD.AbilityPackMule")) {
+        if (i.name == game.i18n.localize("FITD.GAME_LOGIC.PackMule")) {
           data.data.supply.max += 1;
-        } else if (i.name == game.i18n.localize("FITD.AbilityStickyFingers")) {
+        } else if (i.name == game.i18n.localize("FITD.GAME_LOGIC.StickyFingers")) {
           data.data.gold.max += 1;
-        } else if (i.name == game.i18n.localize("FITD.AbilityLair") && i.data.primal.gm_path_value == 3) {
+        } else if (i.name == game.i18n.localize("FITD.GAME_LOGIC.Lair") && i.data.primal.gm_path_value == 3) {
           data.data.dark_hearts.max += 1;
-        } else if (i.name == game.i18n.localize("FITD.RoomGearLocker")) {
+        } else if (i.name == game.i18n.localize("FITD.GAME_LOGIC.GearLocker")) {
           data.data.supply.max += 1;
         }
       }
     });
+
+    // check if braineater and remove invoke skill
+    if (data.data.primal_monster_type == game.i18n.localize("FITD.GAME_LOGIC.Braineater")) {
+      delete data.data.attributes.guts.skills.invoke;
+    }
 
     return data;
   }

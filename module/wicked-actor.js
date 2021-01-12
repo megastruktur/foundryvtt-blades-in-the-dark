@@ -39,12 +39,25 @@ export class WickedActor extends Actor {
     // Make modifications to data here.
     data.is_primal_monster = false;
     data.primal_monster_type = "";
+    data.calling_name = "";
 
     for (var i = 0; i < actorData.items.length; i++) {
       if (actorData.items[i].type == "monster_race") {
         data.is_primal_monster = actorData.items[i].data.primal;
         if (data.is_primal_monster) {
           data.primal_monster_type = actorData.items[i].name;
+        }
+      } else if (actorData.items[i].type == "calling") {
+        data.calling_name = actorData.items[i].name;
+      }
+    }
+
+    for (var i = 0; i < actorData.items.length; i++) {
+      if (actorData.items[i].type == "specialability" && actorData.items[i].data.ability_group == "group_general") {
+        if (data.is_primal_monster && actorData.items[i].data.source != data.primal_monster_type) {
+          actorData.items[i].data.ability_group = "group_flex";
+        } else if (actorData.items[i].data.source != data.calling_name) {
+          actorData.items[i].data.ability_group = "group_flex";
         }
       }
     }

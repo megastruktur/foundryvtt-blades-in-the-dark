@@ -370,11 +370,6 @@
     "Warlock": "Warlock",
     "Zealot": "Zealot",
 
-    "AbilityPackMule": "Pack Mule",
-    "AbilityStickyFingers": "Sticky Fingers",
-    "AbilityLair": "Lair",
-    "RoomGearLocker": "Gear Locker",
-
     "Clock": "Clock",
     "Clocks": "Clocks",
     "Segements": "Segements",
@@ -527,6 +522,17 @@
       "Venom": "Venom",
       "Water": "Water",
       "Wind": "Wind"
+    },
+    "GAME_LOGIC": {
+      "_comment": "GAME LOGIC DATA: Keep in sync with item name translations",
+      "PackMule": "Pack Mule",
+      "StickyFingers": "Sticky Fingers",
+      "Lair": "Lair",
+      "GearLocker": "Gear Locker",
+      "Braineater": "Braineater",
+      "Doomseeker": "Doomseeker",
+      "Facestealer": "Facestealer",
+      "Goldmonger": "Goldmonger"
     }
   }
 }
