@@ -516,6 +516,13 @@ div.item, tr.item {
     box-shadow: none;
 }
 
+// Styling for menu entries like Game Settings
+form .notes, form .hint {
+    font-weight: 600;
+}
+form .form-group label {
+    font-weight: 700;
+}
 
 /*
  *  Tooltip Styles
