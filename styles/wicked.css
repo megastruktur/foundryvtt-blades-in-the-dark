@@ -1017,6 +1017,12 @@ form.minion-sheet #number input {
 form.minion-sheet #main-minion-form {
   margin-right: 12px;
 }
+form.minion-sheet #abilities-list .group-ext {
+  background-color: #9999993f;
+}
+form.minion-sheet #abilities-list .group-ext td.item-body i {
+  font-size: 14px;
+}
 form.minion-sheet #abilities-list .item-rollable-text {
   font-size: 16px;
   font-weight: 700;

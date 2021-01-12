@@ -46,7 +46,6 @@ WO.special_ability_groups = {
   "group_core": "FITD.CoreSkill",
   "group_primal": "FITD.PrimalSpecials",
   "group_general": "FITD.GeneralAbilities",
-  "group_flex": "FITD.FlexibilityAbilities",
   "group_ext": "FITD.ExternalAbilities"
 };
 
