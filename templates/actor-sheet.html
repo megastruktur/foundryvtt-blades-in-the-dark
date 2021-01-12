@@ -175,6 +175,7 @@
           </div>
         </td>
         <td>
+          {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Doomseeker"))}}
           {{!-- Reckless XP --}}
           <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
@@ -190,6 +191,22 @@
 
             {{/multiboxes}}
           </div>
+          {{else}}
+          <div id="character-{{actor._id}}-guardianxp" class="big-teeth xp-bar">
+            {{#multiboxes data.recklessxp.value}}
+            <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
+            <div class="tooltip">
+              <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize "FITD.GuardianXP"}}</label>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGuardian"}}}</span>
+            </div>
+            {{#times_from_1 data.recklessxp.max}}
+            <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
+            {{/times_from_1}}
+
+            {{/multiboxes}}
+          </div>
+          {{/unless}}
         </td>
         {{else}}
         <td colspan="2">
@@ -725,6 +742,7 @@
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         {{!-- Gear Table --}}
         {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Facestealer"))}}
+        {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Doomseeker"))}}
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Gear"}}</p>
           <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
@@ -760,6 +778,7 @@
             {{/each}}
           </tbody>
         </table>
+        {{/unless}}
         {{/unless}}
         {{!-- Supply Table --}}
         <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">

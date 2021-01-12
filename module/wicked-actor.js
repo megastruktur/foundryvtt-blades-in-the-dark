@@ -52,6 +52,7 @@ export class WickedActor extends Actor {
       }
     }
 
+    let removeAt = -1;
     for (var i = 0; i < actorData.items.length; i++) {
       if (actorData.items[i].type == "specialability" && actorData.items[i].data.ability_group == "group_general") {
         if (data.is_primal_monster && actorData.items[i].data.source != data.primal_monster_type) {
@@ -59,8 +60,15 @@ export class WickedActor extends Actor {
         } else if (actorData.items[i].data.source != data.calling_name) {
           actorData.items[i].data.ability_group = "group_flex";
         }
+      } else if (actorData.items[i].type == "calling" && data.is_primal_monster) {
+        removeAt = i;
       }
     }
+    // Remove callings for primal monsters
+    if (removeAt != -1) {
+      actorData.items.splice(removeAt, 1);
+    }
+
   }
 
 
