@@ -17,6 +17,7 @@ export class WickedSheet extends ActorSheet {
     html.find('#project-clocks-table .project-clock .blades-clock').click(this._onProjectClockClick.bind(this));
     html.find('.eye-rays area').mouseover(this._onDSMouseOver.bind(this));
     html.find('.eye-rays area').mouseout(this._onDSMouseOut.bind(this));
+    html.find(".open-minion-pack").click(this._onMinionOpenClick.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
     if (this.options.submitOnChange) {
@@ -282,6 +283,28 @@ export class WickedSheet extends ActorSheet {
     // set clock progress to clicked segment
     return item.update({ ['data.clock_progress']: clickedSegement });
 
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Open a Minion Pack sheet
+   * @param {*} event 
+   */
+  async _onMinionOpenClick(event) {
+
+    event.preventDefault();
+    const actor = game.actors.get(this.actor.data.data.minionpack);
+    const sheet = actor.sheet;
+
+    // If the sheet is already rendered:
+    if (sheet.rendered) {
+      sheet.maximize();
+      sheet.bringToTop();
+    }
+
+    // Otherwise render the sheet
+    else sheet.render(true);
   }
 
 /* -------------------------------------------- */

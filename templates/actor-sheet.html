@@ -77,10 +77,10 @@
           {{/unless}}
         </td>
         <td>
-          {{!-- Minion Pack --}}
-          <div class="text-input" id="minionpack">
-            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
-            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
+          {{!-- Vile Friend --}}
+          <div class="text-input" id="vilefriend">
+            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
+            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
           </div>
         </td>
       </tr>
@@ -118,10 +118,21 @@
           {{/unless}}
         </td>
         <td>
-          {{!-- Vile Friend --}}
-          <div class="text-input" id="vilefriend">
-            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
-            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
+          {{!-- Minion Pack --}}
+          <div class="minionpack flex-horizontal" data-item-id="{{item._id}}">
+            <div class="text-input flex-vertical">
+              <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
+              <select name="data.minionpack">
+                {{#select data.minionpack}}
+                <option value="">{{localize "FITD.NoneParentheses"}}</option>
+                {{#each actor.data.existing_minions as |minion id|}}
+                {{debug this}}
+                <option value="{{this._id}}">{{minion.name}}</option>
+                {{/each}}
+                {{/select}}
+              </select>
+            </div>
+            <button class="open-minion-pack" {{#if (eq data.minionpack "")}} disabled {{/if}}>{{localize "FITD.Open"}}</button>
           </div>
         </td>
       </tr>

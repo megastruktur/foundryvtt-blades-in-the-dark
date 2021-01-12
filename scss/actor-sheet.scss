@@ -12,6 +12,33 @@ form.wicked-one-sheet {
 
     table.base-info {
 
+        .minionpack {
+            justify-content: start;
+
+            select {
+                padding: 0px 10px;
+            }
+
+            button {
+                width: auto;
+                padding: 0px 20px;
+                margin-bottom: -1px;
+                margin-left: 20px;
+                align-self: flex-end;
+                
+                &:disabled {
+                    background-color: $gray;
+                    border-top: darkslategrey;
+                    border-bottom: darkslategrey;
+
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+
+        }
+
         .xp-stripe {
             background-color: $mud;
         }

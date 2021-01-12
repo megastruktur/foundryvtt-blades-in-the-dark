@@ -279,6 +279,27 @@ form.wicked-one-sheet {
    *   Tabs and Abilities
    */
 }
+form.wicked-one-sheet table.base-info .minionpack {
+  justify-content: start;
+}
+form.wicked-one-sheet table.base-info .minionpack select {
+  padding: 0px 10px;
+}
+form.wicked-one-sheet table.base-info .minionpack button {
+  width: auto;
+  padding: 0px 20px;
+  margin-bottom: -1px;
+  margin-left: 20px;
+  align-self: flex-end;
+}
+form.wicked-one-sheet table.base-info .minionpack button:disabled {
+  background-color: #999;
+  border-top: darkslategrey;
+  border-bottom: darkslategrey;
+}
+form.wicked-one-sheet table.base-info .minionpack button:disabled:hover {
+  box-shadow: none;
+}
 form.wicked-one-sheet table.base-info .xp-stripe {
   background-color: #68332c;
 }

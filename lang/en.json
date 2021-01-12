@@ -398,7 +398,8 @@
     "CustomMotivationHint": "Enter custom motivation here",
     "Motivation": "Motivation",
     "Motivations": "Motivations",
-    "Side":  "Side",
+    "Side": "Side",
+    "Open": "Open",
 
     "FACTION_SIDE": {
       "Dark": "Dark",
