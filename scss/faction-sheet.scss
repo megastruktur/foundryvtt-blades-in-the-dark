@@ -33,6 +33,22 @@ form.faction-sheet {
             margin: 0px;
         }
 
+        div.tier-side {
+            justify-content: flex-start;
+            align-items: center;
+            margin: 5px 0px;
+
+            label {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+
+            input {
+                margin-right: 20px;
+                text-align: center;
+            }
+        }
+
         #faction-clocks {
             margin-top: 0px;
 

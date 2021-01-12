@@ -98,10 +98,10 @@
     <div class="main" id="hearts-display">
 	    <div id="attributes-darkhearts">
 	      <div class="flex-horizontal heart-container">
-		      {{#multiboxes data.dark_hearts}}
+		      {{#multiboxes data.dark_hearts.value}}
 
-		      {{#times_from_0 data.dark_hearts_max}}
-		      <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}" name="data.dark_hearts" value="{{this}}">
+		      {{#times_from_0 data.dark_hearts.max}}
+		      <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}" name="data.dark_hearts.value" value="{{this}}">
 		      <label class="dark-heart" for="{{../actor._id}}-dark-hearts-{{this}}"></label>
 		      {{/times_from_0}}
 		      {{/multiboxes}}

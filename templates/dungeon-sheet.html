@@ -29,12 +29,12 @@
         </td>
         <td>
           <div id="dungeon-tier">
-            {{#multiboxes data.tier}}
-            <input type="radio" id="dungeon-{{actor._id}}-tier-0" name="data.tier" value="0" dtype="Radio">
+            {{#multiboxes data.tier.value}}
+            <input type="radio" id="dungeon-{{actor._id}}-tier-0" name="data.tier.value" value="0" dtype="Radio">
             <label class="black-label" for="dungeon-{{actor._id}}-tier-0">{{localize "FITD.Tier"}}</label>
 
-            {{#times_from_1 4}}
-            <input type="radio" id="dungeon-{{../actor._id}}-tier-{{this}}" name="data.tier" value="{{this}}" dtype="Radio">
+            {{#times_from_1 data.tier.max}}
+            <input type="radio" id="dungeon-{{../actor._id}}-tier-{{this}}" name="data.tier.value" value="{{this}}" dtype="Radio">
             <label for="dungeon-{{../actor._id}}-tier-{{this}}"></label>
             {{/times_from_1}}
 

@@ -29,13 +29,13 @@ export class WickedActorSheet extends WickedSheet {
     data.items.forEach(i => {
       if (i.type == "specialability") {
         if (i.name == game.i18n.localize("FITD.AbilityPackMule")) {
-          data.data.supply_max += 1;
+          data.data.supply.max += 1;
         } else if (i.name == game.i18n.localize("FITD.AbilityStickyFingers")) {
-          data.data.gold_max += 1;
+          data.data.gold.max += 1;
         } else if (i.name == game.i18n.localize("FITD.AbilityLair") && i.data.primal.gm_path_value == 3) {
-          data.data.dark_hearts_max += 1;
+          data.data.dark_hearts.max += 1;
         } else if (i.name == game.i18n.localize("FITD.RoomGearLocker")) {
-          data.data.supply_max += 1;
+          data.data.supply.max += 1;
         }
       }
     });

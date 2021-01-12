@@ -408,6 +408,81 @@ form.wicked-one-sheet table.base-info .big-teeth.gold input:checked + label {
 form.wicked-one-sheet table.base-info .big-teeth.gold label {
   margin-right: 0px;
 }
+form.wicked-one-sheet table.base-info .goldmonger-size {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size input {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size input:checked + div label.gm-size-box {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+form.wicked-one-sheet table.base-info .goldmonger-size label.black-label:not(.inactive):hover {
+  filter: brightness(1) !important;
+  opacity: 0.5 !important;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) label.gm-size-box {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-white-filled.png");
+  display: inline-flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) label.gm-size-box:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(2) label.gm-size-box {
+  width: 12px;
+  height: 12px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(3) label.gm-size-box {
+  width: 20px;
+  height: 20px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(4) label.gm-size-box {
+  width: 30px;
+  height: 30px;
+}
+form.wicked-one-sheet table.base-info .pleased-xp {
+  display: flex;
+  align-items: center;
+}
+form.wicked-one-sheet table.base-info .pleased-xp input {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .pleased-xp input:checked + label {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+form.wicked-one-sheet table.base-info .pleased-xp label.black-label:hover {
+  filter: brightness(1) !important;
+  opacity: 0.5 !important;
+}
+form.wicked-one-sheet table.base-info .pleased-xp label.pleased-checkbox {
+  height: 20px;
+  width: 20px;
+  display: block;
+  background-image: url("assets/boxes/box-white-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-left: 5px;
+}
+form.wicked-one-sheet table.base-info .pleased-xp label.pleased-checkbox:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
 form.wicked-one-sheet #character-defenses table th {
   background-color: #68332c;
   color: #EEEFFF;
@@ -1336,6 +1411,19 @@ form.faction-sheet #faction-sheet .large-name input {
 }
 form.faction-sheet #faction-sheet div.label-stripe {
   margin: 0px;
+}
+form.faction-sheet #faction-sheet div.tier-side {
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0px;
+}
+form.faction-sheet #faction-sheet div.tier-side label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+form.faction-sheet #faction-sheet div.tier-side input {
+  margin-right: 20px;
+  text-align: center;
 }
 form.faction-sheet #faction-sheet #faction-clocks {
   margin-top: 0px;

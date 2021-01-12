@@ -96,6 +96,86 @@ form.wicked-one-sheet {
                 }
             }
         }
+
+        // Goldmonger Size
+        .goldmonger-size {
+            //@include toothradio(20px, 20px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            input {
+                display: none;
+
+                &:checked + div label.gm-size-box {
+                    background-image: url("assets/boxes/box-white-crossed.png");
+                }
+            }
+
+            label.black-label:not(.inactive):hover {
+                    filter: brightness(1) !important;
+                    opacity: 0.5 !important;
+            }
+
+            div:not(:nth-of-type(1)) {
+                display: flex;
+                align-items: center;
+                margin-left: 25px;
+
+                label.gm-size-box {
+                    @include changeable(0.1s, 0.8, 0.9);
+                    background-image: url("assets/boxes/box-white-filled.png");
+                    display: inline-flex;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin-right: 5px;
+                }
+            } 
+
+            div:nth-of-type(2) {
+                label.gm-size-box{
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+            div:nth-of-type(3) {
+                label.gm-size-box{
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+            div:nth-of-type(4) {
+                label.gm-size-box{
+                    width: 30px;
+                    height: 30px;
+                }
+
+            }
+        }
+
+        .pleased-xp {
+            display: flex;
+            align-items: center;
+            
+            input {
+                display: none;
+
+                &:checked + label {
+                    background-image: url("assets/boxes/box-white-crossed.png");
+                }
+            }
+
+            label.black-label:hover {
+                    filter: brightness(1) !important;
+                    opacity: 0.5 !important;
+            }
+
+            label.pleased-checkbox {
+                @include custom-label("assets/boxes/box-white-filled.png", 20px, 20px);
+                margin-left: 5px;
+            }
+        }
     }
 
     /*
