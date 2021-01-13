@@ -251,52 +251,49 @@ export class WickedActor extends Actor {
       default_bonus += roll_data.default_bonus[attribute_name];
 	  }
 		
-	  //aus Zeile 100: ${dice_amount+document.getElementById('mod').selected.value}
-	  let diceMod = 0;
-
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
         <h2>${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)} (${dice_amount}D)</h2>
         <form id="skill-roll">
-            <div class="form-group">
+          <div class="form-group">
             <label>${game.i18n.localize('FITD.RollType')}:</label>
             <select id="type" name="type">
               <option value="action" selected>${game.i18n.localize('FITD.RollAction')}</option>		  
               <option value="resistance">${game.i18n.localize('FITD.RollResistance')}</option>			  
             </select>
           </div>
-            <div class="form-group">
-				<label>${game.i18n.localize('FITD.Position')}:</label>
-				<select id="pos" name="pos">
-				  <option value="dominant">${game.i18n.localize('FITD.PositionDominant')}</option>
-				  <option value="default" selected>${game.i18n.localize('FITD.PositionDefault')}</option>
-				  <option value="dire">${game.i18n.localize('FITD.PositionDire')}</option>
-				  <option value="deadly">${game.i18n.localize('FITD.PositionDeadly')}</option>
-				</select>
-            </div>
-            <div class="form-group">
-				<label>${game.i18n.localize('FITD.Effect')}:</label>
-				<select id="fx" name="fx">
-				  <option value="strong">${game.i18n.localize('FITD.EffectStrong')}</option>
-				  <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>		  
-				  <option value="weak">${game.i18n.localize('FITD.EffectWeak')}</option>
-				  <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>	  
-				</select>
-			</div>
-		  <div class="form-group">
+          <div class="form-group">
+				    <label>${game.i18n.localize('FITD.Position')}:</label>
+				    <select id="pos" name="pos">
+				      <option value="dominant">${game.i18n.localize('FITD.PositionDominant')}</option>
+				      <option value="default" selected>${game.i18n.localize('FITD.PositionDefault')}</option>
+				      <option value="dire">${game.i18n.localize('FITD.PositionDire')}</option>
+				      <option value="deadly">${game.i18n.localize('FITD.PositionDeadly')}</option>
+				    </select>
+          </div>
+          <div class="form-group">
+				    <label>${game.i18n.localize('FITD.Effect')}:</label>
+				    <select id="fx" name="fx">
+				      <option value="strong">${game.i18n.localize('FITD.EffectStrong')}</option>
+				      <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>		  
+				      <option value="weak">${game.i18n.localize('FITD.EffectWeak')}</option>
+				      <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>	  
+				    </select>
+			    </div>
+		      <div class="form-group">
             <label>${game.i18n.localize('FITD.Modifier')}:</label>
-            <select id="mod" name="mod">
+            <select id="mod" name="mod" data-base-dice="${dice_amount}">
               ${this.createListOfDiceMods(-3, +3, default_bonus)}
             </select>
           </div>
-		  <div class="form-group">
-            <label>${game.i18n.localize('FITD.TotalSkillDice')}:</label>
-			Total not working yet: ${dice_amount+diceMod}
+		      <div class="total-rolled form-group">
+            <label class="total-rolled">${game.i18n.localize('FITD.TotalSkillDice')}: </label>
+			      <label>${dice_amount + default_bonus}D</label>
           </div>		  
         </form>
-		<h2>${game.i18n.localize('FITD.RollOptions')}</h2>
-		<div class="action-info">${game.i18n.localize('FITD.TooltipActions')}</div>
+		    <h2>${game.i18n.localize('FITD.RollOptions')}</h2>
+		    <div class="action-info">${game.i18n.localize('FITD.TooltipActions')}</div>
       `,
       buttons: {
         yes: {
@@ -320,6 +317,9 @@ export class WickedActor extends Actor {
         },
       },
       default: "yes",
+      render: html => {
+        $("#skill-roll #mod").change(this._onDiceModChange);
+      },
     }).render(true);
 
 
@@ -409,5 +409,19 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
+
+
+  /**
+   * Change dice total on display
+   * @param {*} event 
+   */
+  async _onDiceModChange(event) {
+    let mod = this.value;
+    let base = this.dataset.baseDice;
+
+    $("#skill-roll .total-rolled label:nth-child(2)").text(parseInt(base) + parseInt(mod) + "D");
+  }
+
+/* -------------------------------------------- */
 
 }

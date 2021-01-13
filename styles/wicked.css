@@ -3051,6 +3051,13 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 #skill-roll .action-info {
   margin-top: -20px;
 }
+#skill-roll .total-rolled label:nth-child(2) {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: bitter;
+  flex: 3;
+  margin-left: 5px;
+}
 
 /*
  *  Dice roller pop-up dialog Styles
