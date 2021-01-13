@@ -123,6 +123,13 @@
       "entity": "Item"
     },
     {
+      "name": "externalability",
+      "label": "External Abilities",
+      "system": "wicked-ones",
+      "path": "./packs/externalabilities.db",
+      "entity": "Item"
+    },
+    {
       "name": "dungeon_theme",
       "label": "Dungeon Themes",
       "system": "wicked-ones",
