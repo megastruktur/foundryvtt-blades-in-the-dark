@@ -3610,6 +3610,10 @@ div.item i.fa-trash, tr.item i.fa-trash {
   box-shadow: none;
 }
 
+#pause img {
+  content: url("assets/decorations/pause-logo.webp");
+}
+
 /*
  *  Tooltip Styles
  */
