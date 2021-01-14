@@ -12,8 +12,8 @@ export class WickedClockSheet extends WickedSheet {
 	  return mergeObject(super.defaultOptions, {
           classes: ["wicked-ones", "sheet", "actor"],
           template: "systems/wicked-ones/templates/actors/clock-sheet.html",
-      width: 700,
-      height: 970,
+      width: 600,
+      height: 390,
     });
   }
 
