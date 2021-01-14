@@ -97,6 +97,9 @@ export class WickedItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
+    // Update shared supplies across actors
+    html.find('.shared-supply-count').change(this._onSharedSupplyChange.bind(this));
+
     // Update Inventory Item
     html.find('#item-type-select').change(ev => {
       const abilitytype = ev.currentTarget.value;
@@ -181,6 +184,33 @@ export class WickedItemSheet extends ItemSheet {
     });
 
   }
+
+
+  /* -------------------------------------------- */
+
+  /**
+   * Update shared supplies across characters
+   * @param {*} event 
+   */
+  async _onSharedSupplyChange(event) {
+    event.preventDefault();
+
+    let name = this.object.data.name;
+    let value = event.currentTarget.value;
+
+    const actors = game.actors.filter(entry => entry.data.type === "character");
+    actors.forEach(actor => {
+      actor.items.forEach(item => {
+        if (item.name == name && item.type == "gearsupply") {
+          if (item.data.data.gear_or_supply == "supply" && item.data.data.use_type == "shared") {
+            item.update({ ['data.uses_left' ]: value });
+          }
+        }
+      });
+    });
+
+  }
+
 
   /* -------------------------------------------- */
 }

@@ -516,6 +516,9 @@ div.item, tr.item {
     box-shadow: none;
 }
 
+#pause img {
+    content:url("assets/decorations/pause-logo.webp")
+}
 // Styling for menu entries like Game Settings
 form .notes, form .hint {
     font-weight: 600;
@@ -523,6 +526,7 @@ form .notes, form .hint {
 form .form-group label {
     font-weight: 700;
 }
+
 
 /*
  *  Tooltip Styles

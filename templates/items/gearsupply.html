@@ -68,7 +68,7 @@
     {{#unless (eq data.use_type "steady")}}
     <div class="form-group">
       <label>{{ localize "FITD.SupplyUsesLeft" }}</label>
-      <input type="number" name="data.uses_left" value="{{data.uses_left}}" min="0" max="10">
+      <input class="{{#if (eq data.use_type "shared")}}shared-supply-count{{/if}}" type="number" name="data.uses_left" value="{{data.uses_left}}" min="0" max="10">
     </div>
     {{/unless}}
     {{/unless}}

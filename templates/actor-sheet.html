@@ -77,10 +77,10 @@
           {{/unless}}
         </td>
         <td>
-          {{!-- Minion Pack --}}
-          <div class="text-input" id="minionpack">
-            <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
-            <input type="text" id="character-{{actor._id}}-minionpack" name="data.minionpack" value="{{data.minionpack}}">
+          {{!-- Vile Friend --}}
+          <div class="text-input" id="vilefriend">
+            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
+            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
           </div>
         </td>
       </tr>
@@ -118,10 +118,21 @@
           {{/unless}}
         </td>
         <td>
-          {{!-- Vile Friend --}}
-          <div class="text-input" id="vilefriend">
-            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
-            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
+          {{!-- Minion Pack --}}
+          <div class="minionpack flex-horizontal" data-item-id="{{item._id}}">
+            <div class="text-input flex-vertical">
+              <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
+              <select name="data.minionpack">
+                {{#select data.minionpack}}
+                <option value="">{{localize "FITD.NoneParentheses"}}</option>
+                {{#each actor.data.existing_minions as |minion id|}}
+                {{debug this}}
+                <option value="{{this._id}}">{{minion.name}}</option>
+                {{/each}}
+                {{/select}}
+              </select>
+            </div>
+            <button class="open-minion-pack" {{#if (eq data.minionpack "")}} disabled {{/if}}>{{localize "FITD.Open"}}</button>
           </div>
         </td>
       </tr>
@@ -164,6 +175,7 @@
           </div>
         </td>
         <td>
+          {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Doomseeker"))}}
           {{!-- Reckless XP --}}
           <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
@@ -179,6 +191,22 @@
 
             {{/multiboxes}}
           </div>
+          {{else}}
+          <div id="character-{{actor._id}}-guardianxp" class="big-teeth xp-bar">
+            {{#multiboxes data.recklessxp.value}}
+            <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
+            <div class="tooltip">
+              <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize "FITD.GuardianXP"}}</label>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGuardian"}}}</span>
+            </div>
+            {{#times_from_1 data.recklessxp.max}}
+            <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
+            {{/times_from_1}}
+
+            {{/multiboxes}}
+          </div>
+          {{/unless}}
         </td>
         {{else}}
         <td colspan="2">
@@ -714,6 +742,7 @@
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         {{!-- Gear Table --}}
         {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Facestealer"))}}
+        {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Doomseeker"))}}
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Gear"}}</p>
           <p><a class="item-add-popup" data-item-type="gearsupply"><i class="fas fa-plus-square"></i></a></p>
@@ -749,6 +778,7 @@
             {{/each}}
           </tbody>
         </table>
+        {{/unless}}
         {{/unless}}
         {{!-- Supply Table --}}
         <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">

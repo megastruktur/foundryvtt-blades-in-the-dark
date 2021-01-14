@@ -279,6 +279,27 @@ form.wicked-one-sheet {
    *   Tabs and Abilities
    */
 }
+form.wicked-one-sheet table.base-info .minionpack {
+  justify-content: start;
+}
+form.wicked-one-sheet table.base-info .minionpack select {
+  padding: 0px 10px;
+}
+form.wicked-one-sheet table.base-info .minionpack button {
+  width: auto;
+  padding: 0px 20px;
+  margin-bottom: -1px;
+  margin-left: 20px;
+  align-self: flex-end;
+}
+form.wicked-one-sheet table.base-info .minionpack button:disabled {
+  background-color: #999;
+  border-top: darkslategrey;
+  border-bottom: darkslategrey;
+}
+form.wicked-one-sheet table.base-info .minionpack button:disabled:hover {
+  box-shadow: none;
+}
 form.wicked-one-sheet table.base-info .xp-stripe {
   background-color: #68332c;
 }
@@ -3028,6 +3049,13 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 #skill-roll .action-info {
   margin-top: -20px;
 }
+#skill-roll .total-rolled label:nth-child(2) {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: bitter;
+  flex: 3;
+  margin-left: 5px;
+}
 
 /*
  *  Dice roller pop-up dialog Styles
@@ -3589,6 +3617,10 @@ div.item i.fa-trash, tr.item i.fa-trash {
   border-top: 1px solid transparent;
   border-bottom: 1px solid #4000005c;
   box-shadow: none;
+}
+
+#pause img {
+  content: url("assets/decorations/pause-logo.webp");
 }
 
 form .notes, form .hint {

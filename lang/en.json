@@ -303,6 +303,8 @@
     "TooltipGMSize3": "At tier 3, you have scale against humanoids.",
     "GMPleasedXP": "Pleased XP",
     "TooltipPleasedXP": "You do not gain wicked or reckless xp. Instead, at the end of each session, you can give 1 xp to the PC that pleased you the most this session. You can still gain practice xp.",
+    "GuardianXP": "Guardian XP",
+    "TooltipGuardian": "You mark 1 xp for each session in which you were neither bloodied nor went feral. When you hit 3 xp, you can either increase an eye ray's action rating (max of 3d) or add an action dot.",
     "GrowthPath": "Goldmonger Growth Path",
     "CustomGMTypeHint": "Enter custom type here",
 
@@ -407,7 +409,8 @@
     "CustomMotivationHint": "Enter custom motivation here",
     "Motivation": "Motivation",
     "Motivations": "Motivations",
-    "Side":  "Side",
+    "Side": "Side",
+    "Open": "Open",
 
     "FACTION_SIDE": {
       "Dark": "Dark",

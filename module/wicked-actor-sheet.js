@@ -45,6 +45,18 @@ export class WickedActorSheet extends WickedSheet {
       delete data.data.attributes.guts.skills.invoke;
     }
 
+    // Get list of minions
+    data.data.existing_minions = game.actors.filter(entry => entry.data.type === "minion_pack");
+    let found = false;
+    data.data.existing_minions.forEach(i => {
+      if (i._id == data.data.minionpack) {
+        found = true;
+      }
+    });
+    if (!found) {
+      data.data.minionpack = "";
+    }
+
     return data;
   }
 

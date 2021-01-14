@@ -4,7 +4,7 @@
   "description": "Wicked Ones game system",
   "version": "0.1",
   "minimumCoreVersion": "0.7.2",
-  "compatibleCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
   "author": "spearhead",
   "esmodules": [
@@ -120,6 +120,13 @@
       "label": "Special Abilities",
       "system": "wicked-ones",
       "path": "./packs/specialabilities.db",
+      "entity": "Item"
+    },
+    {
+      "name": "externalability",
+      "label": "External Abilities",
+      "system": "wicked-ones",
+      "path": "./packs/externalabilities.db",
       "entity": "Item"
     },
     {
