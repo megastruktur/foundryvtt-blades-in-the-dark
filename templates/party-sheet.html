@@ -31,11 +31,10 @@
           <td></td>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "adventurer")}}
-          {{#if (eq item.data.adventurer_type "adventurer")}}
+      <tbody class="draggable-items">
+        {{#each actor.items as |item id|}}
+        {{#if (eq item.type "adventurer")}}
+        {{#if (eq item.data.adventurer_type "adventurer")}}
         <tr class="item" data-item-id="{{item._id}}">
           <td class="tier"><label class="item-open-editor">{{item.data.tier}}</label></td>
           <td class="class-name {{#if (eq item.data.adventurer_class_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.adventurer_class_custom}}</span></td>
@@ -95,11 +94,10 @@
           <td></td>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          {{#each actor.items as |item id|}}
-          {{#if (eq item.type "adventurer")}}
-          {{#if (eq item.data.adventurer_type "hireling")}}
+      <tbody class="draggable-items">
+        {{#each actor.items as |item id|}}
+        {{#if (eq item.type "adventurer")}}
+        {{#if (eq item.data.adventurer_type "hireling")}}
         <tr class="item" data-item-id="{{item._id}}">
           <td class="type-name {{#if (eq item.data.hireling_type_custom "")}}item-open-editor{{/if}}"><span class="item-open-editor">{{item.data.hireling_type_custom}}</span></td>
           <td class="adventurer-hearts">

@@ -19,6 +19,23 @@ export class WickedSheet extends ActorSheet {
     html.find('.eye-rays area').mouseout(this._onDSMouseOut.bind(this));
     html.find(".open-minion-pack").click(this._onMinionOpenClick.bind(this));
 
+    // Item Dragging
+    if (this.actor.owner) {
+      // Core handlers from foundry.js
+      var handler;
+      if (!isNewerVersion(game.data.version, "0.7")) {
+        handler = ev => this._onDragItemStart(ev);
+      }
+      else {
+        handler = ev => this._onDragStart(ev);
+      }
+      html.find('.draggable-items .item').each((i, item) => {
+        if (item.classList.contains("inventory-header")) return;
+        item.setAttribute("draggable", true);
+        item.addEventListener("dragstart", handler, false);
+      });
+    }
+
     // This is a workaround until is being fixed in FoundryVTT.
     if (this.options.submitOnChange) {
       html.on("change", "textarea", this._onChangeInput.bind(this));  // Use delegated listener on the form

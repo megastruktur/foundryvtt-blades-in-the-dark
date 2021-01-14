@@ -436,6 +436,15 @@ form.wicked-one-sheet {
     // Gear & supply tags
     #loadout {
 
+        .group-ability {
+            background-color: $gray3f;
+
+            // Style for supply ability hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
         .gear-tags {
             margin-top: 4px;
 

@@ -215,9 +215,16 @@ export class WickedHelpers {
 /* -------------------------------------------- */
 
 /**
- * Sorts Special Abilities by Base Calling or other, Source Name, Core Ability Status and then Alphabet
+ * Sorts Special Abilities by External, Primal Calling, Source, Core Status and Alphabet
  */
   static specialAbilitySort(a, b) {
+    if (!(a.data.ability_group == "group_ext") && (b.data.ability_group == "group_ext")) {
+      return -1;
+    }
+    if ((a.data.ability_group == "group_ext") && !(b.data.ability_group == "group_ext")) {
+      return 1;
+    }
+
     if (!WickedHelpers.isPrimalCalling(a.data.source) && WickedHelpers.isPrimalCalling(b.data.source)) {
       return -1;
     }
