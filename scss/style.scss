@@ -23,6 +23,7 @@
 	min-width: min-content;
 }
 
+ /* WO-Borders for windows and sheets*/
 .window-app .window-content {
     background: url(../styles/assets/images/background-light.png) repeat;
     color: $almost_black;
@@ -39,7 +40,7 @@
         padding: 20px 12px;
     }
 }
-
+ /* Overlay-Style for visibility for dialogs (else borders disrupt readability) */
 .dialog-content {
     background-color: #fffaf096;
     border-radius: 5px;

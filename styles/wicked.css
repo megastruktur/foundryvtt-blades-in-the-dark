@@ -1044,6 +1044,9 @@ form.minion-sheet #number input {
 form.minion-sheet #main-minion-form {
   margin-right: 12px;
 }
+form.minion-sheet #picture-td {
+  text-align: right;
+}
 form.minion-sheet #abilities-list .group-ext {
   background-color: #9999993f;
 }
@@ -3073,6 +3076,7 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   min-width: min-content;
 }
 
+/* WO-Borders for windows and sheets*/
 .window-app .window-content {
   background: url(../styles/assets/images/background-light.png) repeat;
   color: #191919;
@@ -3087,6 +3091,7 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   padding: 20px 12px;
 }
 
+/* Overlay-Style for visibility for dialogs (else borders disrupt readability) */
 .dialog-content {
   background-color: #fffaf096;
   border-radius: 5px;
