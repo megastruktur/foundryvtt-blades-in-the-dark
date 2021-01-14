@@ -1,0 +1,37 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.clock-block {
+
+    > section {
+        margin-top: 5px;
+    }
+
+    select {
+        height: 35px;
+        flex: none;
+    }
+
+    .clocks {
+        max-height: 230px;
+    }
+
+    #clock-notes {
+        flex-grow: 1;
+        margin-bottom: 0px;
+        margin-left: 20px;
+
+        .editor {
+            min-height: 230px;
+            max-height: 230px;
+
+            .editor-content {
+                min-height: 230px;
+            }
+        }
+    }
+    
+}
