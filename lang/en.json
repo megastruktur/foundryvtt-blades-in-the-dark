@@ -104,7 +104,7 @@
     "TierTwo": "Tier 2",
     "TierThree": "Tier 3",
     "Type": "Type",
-    "ClockSize": "Clock Segements",
+    "ClockSize": "Clock Segments",
     "ClockProgress": "Clock Progress",
     "Abilities": "Abilities",
     "Upgrades": "Upgrades",
@@ -374,7 +374,7 @@
 
     "Clock": "Clock",
     "Clocks": "Clocks",
-    "Segements": "Segements",
+    "Segements": "Segments",
     "Off": "Off",
     "Project": "Project",
 
