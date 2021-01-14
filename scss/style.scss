@@ -27,12 +27,23 @@
     background: url(../styles/assets/images/background-light.png) repeat;
     color: $almost_black;
     overflow-y: auto;
-    background-size: 300px;
+	
+	background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png),url(../styles/assets/images/background-light.png);
+	background-repeat: repeat-y, repeat-y, repeat;
+	background-size: 70px, 70px, 300px;
+	background-position: left, right, bottom;
+
 
     form.actor-sheet {
         z-index: 0;
         padding: 20px 12px;
     }
+}
+
+.dialog-content {
+    background-color: #fffaf096;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 7px #fffaf096;
 }
 
 section {
@@ -483,6 +494,12 @@ div.item, tr.item {
 /*
  *  Other Class Styles
  */
+
+
+#pause h3 {
+    font-weight: 600;
+    text-shadow: 0px 3px 0px #68332c;
+}
 
 .hidden {
     display: none;
