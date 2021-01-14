@@ -2059,8 +2059,7 @@ form.party-sheet .trait-tags label.motivation {
 #attributes {
   height: fit-content;
   min-width: fit-content;
-  top: 7px;
-  position: relative;
+  margin-top: 7px;
 }
 #attributes .main {
   flex-grow: 1;
@@ -2768,7 +2767,6 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   color: white;
   background-color: #68332c;
   margin: 0;
-  margin-bottom: 10px;
   display: flex;
   border-top-left-radius: 5px;
   text-shadow: 2px 2px 0 #313131;
@@ -3156,6 +3154,10 @@ table td:first-child {
 
 h1, h2, h3, h4 {
   font-weight: bold;
+}
+
+.item-checkmark {
+  font-weight: 700;
 }
 
 select {
@@ -3587,6 +3589,14 @@ div.item i.fa-trash, tr.item i.fa-trash {
   border-top: 1px solid transparent;
   border-bottom: 1px solid #4000005c;
   box-shadow: none;
+}
+
+form .notes, form .hint {
+  font-weight: 600;
+}
+
+form .form-group label {
+  font-weight: 700;
 }
 
 /*
