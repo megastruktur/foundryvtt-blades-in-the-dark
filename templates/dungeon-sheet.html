@@ -44,7 +44,7 @@
       </tr>
       <tr>
         <td>
-          <div id="special-list">
+          <div class="draggable-items" id="special-list">
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "dungeon_theme")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -111,7 +111,7 @@
         </div>
 
         {{!-- Tier-3 Rooms List --}}
-        <table id="rooms-list">
+        <table class="draggable-items" id="rooms-list">
           <tbody>
             {{#each actor.items as |item id|}}
             {{#if (eq item.type "tier3room")}}

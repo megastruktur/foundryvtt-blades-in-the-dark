@@ -13,7 +13,7 @@
             <td>
               {{!-- Monster Race --}}
               <div class="item-block flex-vertical">
-                <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="monster_race">{{localize "FITD.MonsterRace"}}</a></div>
+                <div class="item-class-label draggable-items"><a class="item-add-popup" data-distinct="true" data-item-type="monster_race">{{localize "FITD.MonsterRace"}}</a></div>
                 {{#each actor.items as |item id|}}
                 {{#if (eq item.type "monster_race")}}
                 <div class="item flex-horizontal" data-item-id="{{item._id}}">
@@ -32,7 +32,7 @@
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="draggable-items">
               {{!-- Minion Type --}}
               <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="minion_type">{{localize "FITD.Type"}}</a></div>
               {{#each actor.items as |item id|}}
@@ -57,7 +57,7 @@
             </td>
           </tr>
           <tr>
-            <td>
+            <td class="draggable-items">
               {{!-- Minion Dark Impulse --}}
               <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="minionimpulse">{{localize "FITD.Impulse"}}</a></div>
               {{#each actor.items as |item id|}}
@@ -96,7 +96,7 @@
               <p><a class="item-add-popup" data-item-type="minion_upgrade"><i class="fas fa-plus-square"></i></a></p>
             </div>
 
-            <table id="abilities-list">
+            <table class="draggable-items" id="abilities-list">
               <tbody>
 
 

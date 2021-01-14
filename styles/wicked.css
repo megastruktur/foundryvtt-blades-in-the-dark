@@ -723,6 +723,12 @@ form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
 form.wicked-one-sheet #abilities .flashback-clues {
   text-align: center;
 }
+form.wicked-one-sheet #loadout .group-ability {
+  background-color: #9999993f;
+}
+form.wicked-one-sheet #loadout .group-ability td.item-body i {
+  font-size: 14px;
+}
 form.wicked-one-sheet #loadout .gear-tags {
   margin-top: 4px;
 }
