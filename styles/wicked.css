@@ -1044,6 +1044,9 @@ form.minion-sheet #number input {
 form.minion-sheet #main-minion-form {
   margin-right: 12px;
 }
+form.minion-sheet #picture-td {
+  text-align: right;
+}
 form.minion-sheet #abilities-list .group-ext {
   background-color: #9999993f;
 }
@@ -2244,8 +2247,7 @@ form.clock-block #clock-notes .editor .editor-content {
 #attributes {
   height: fit-content;
   min-width: fit-content;
-  top: 7px;
-  position: relative;
+  margin-top: 7px;
 }
 #attributes .main {
   flex-grow: 1;
@@ -2953,7 +2955,6 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   color: white;
   background-color: #68332c;
   margin: 0;
-  margin-bottom: 10px;
   display: flex;
   border-top-left-radius: 5px;
   text-shadow: 2px 2px 0 #313131;
@@ -3233,15 +3234,26 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   min-width: min-content;
 }
 
+/* WO-Borders for windows and sheets*/
 .window-app .window-content {
   background: url(../styles/assets/images/background-light.png) repeat;
   color: #191919;
   overflow-y: auto;
-  background-size: 300px;
+  background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png), url(../styles/assets/images/background-light.png);
+  background-repeat: repeat-y, repeat-y, repeat;
+  background-size: 70px, 70px, 300px;
+  background-position: left, right, bottom;
 }
 .window-app .window-content form.actor-sheet {
   z-index: 0;
   padding: 20px 12px;
+}
+
+/* Overlay-Style for visibility for dialogs (else borders disrupt readability) */
+.dialog-content {
+  background-color: #fffaf096;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 7px #fffaf096;
 }
 
 section {
@@ -3348,6 +3360,10 @@ table td:first-child {
 
 h1, h2, h3, h4 {
   font-weight: bold;
+}
+
+.item-checkmark {
+  font-weight: 700;
 }
 
 select {
@@ -3755,6 +3771,11 @@ div.item i.fa-trash, tr.item i.fa-trash {
 /*
  *  Other Class Styles
  */
+#pause h3 {
+  font-weight: 600;
+  text-shadow: 0px 3px 0px #68332c;
+}
+
 .hidden {
   display: none;
 }
@@ -3783,6 +3804,14 @@ div.item i.fa-trash, tr.item i.fa-trash {
 
 #pause img {
   content: url("assets/decorations/pause-logo.webp");
+}
+
+form .notes, form .hint {
+  font-weight: 600;
+}
+
+form .form-group label {
+  font-weight: 700;
 }
 
 /*

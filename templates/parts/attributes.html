@@ -37,8 +37,11 @@
                  {{/if}}>
           </label>
           {{/times_from_0}}
-
-          <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div><div class="skill-description">{{localize (concat "FITD.Skills" skill_name "Description")}}</div>
+		<div class="tooltip">
+          <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
+		  <div class="tooltiptext tooltipslow">{{{localize (concat "FITD.Skills" skill_name "Tooltip")}}}</div>
+		</div>
+		  <div class="skill-description">{{localize (concat "FITD.Skills" skill_name "Description")}}</div>
           {{/multiboxes}}
         </div>
       </div>
