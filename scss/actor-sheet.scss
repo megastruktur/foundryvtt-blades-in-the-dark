@@ -493,7 +493,10 @@ form.wicked-one-sheet {
                 }
             }
         }
-
+		#downtime-risk{
+			margin-top: 5px;
+		}
+		
         .project-clock {
             height: 80px;
             // Functionality will be overridden in wicked-sheet.js
@@ -509,7 +512,6 @@ form.wicked-one-sheet {
             margin-bottom: 15px;
         }
     }
-
     // Projects Table
     #project-clocks-table {
         tr {

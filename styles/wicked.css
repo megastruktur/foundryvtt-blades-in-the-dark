@@ -816,6 +816,9 @@ form.wicked-one-sheet #duties-tab .downtime-hints > div {
 form.wicked-one-sheet #duties-tab .downtime-hints > div b {
   font-style: normal;
 }
+form.wicked-one-sheet #duties-tab #downtime-risk {
+  margin-top: 5px;
+}
 form.wicked-one-sheet #duties-tab .project-clock {
   height: 80px;
   position: relative;
@@ -1280,7 +1283,8 @@ form.dungeon-sheet #theme-description {
   padding-top: 10px;
 }
 form.dungeon-sheet #theme-description ~ div {
-  margin-top: 10px;
+  margin-top: 3px;
+  margin-bottom: 5px;
 }
 form.dungeon-sheet #theme-description ~ div input {
   margin: 2px 0px;
@@ -3771,6 +3775,16 @@ div.item i.fa-trash, tr.item i.fa-trash {
 /*
  *  Other Class Styles
  */
+/* WO Roll Popup Formatting of the Roll Options */
+.action-info {
+  padding: 5px;
+  margin-top: -10px;
+  line-height: 1.5em;
+}
+.action-info #team-up {
+  line-height: 1.1em;
+}
+
 #pause h3 {
   font-weight: 600;
   text-shadow: 0px 3px 0px #68332c;
