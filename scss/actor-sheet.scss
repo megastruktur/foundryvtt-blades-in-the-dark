@@ -533,18 +533,24 @@ form.wicked-one-sheet {
     #duties-table {
         tr {
             td:nth-of-type(1) {
-                width: 50px;
-                font-weight: 900;
+                width: 5%;
             }
 
             td:nth-of-type(2) {
-                min-width: 90px;
-                width: 23%;
+                width: 12%;
             }
 
             td:nth-of-type(4) {
                 width: 20px;
             }
+        }
+
+        tbody {
+            
+            td:nth-of-type(1){
+                font-weight: 900;
+                text-align: center;
+            }   
         }
     }
 }

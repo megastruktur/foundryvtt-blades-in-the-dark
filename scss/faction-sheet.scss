@@ -58,6 +58,7 @@ form.faction-sheet {
                 textarea {
                     resize: none;
                     margin-bottom: 0px;
+                    min-height: unset;
                 }
             }
         }
@@ -85,6 +86,10 @@ form.faction-sheet {
             .blades-clock {
                 top: -10px;
             }
+        }
+
+        .editor, .editor-content {
+            min-height: 150px;
         }
     }
 }

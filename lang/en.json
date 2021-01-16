@@ -1,4 +1,10 @@
 {
+  "SETTINGS": {
+    "WOExpandedResults": {
+      "Name": "Expanded roll results",
+      "Label": "Show expanded dice roll result information by default"
+    }
+  },
   "ACTOR": {
     "TypeCharacter": "Wicked One",
     "TypeMinion_pack": "Minion Pack",

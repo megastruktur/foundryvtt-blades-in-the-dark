@@ -231,14 +231,14 @@ Hooks.once("init", async function() {
 Hooks.once("ready", function() {
 
   // Determine whether a system migration is required
-  const currentVersion = game.settings.get("fitd-wo", "systemMigrationVersion");
-  const NEEDS_MIGRATION_VERSION = 0.1;
+  const currentVersion = game.settings.get("wicked-ones", "systemMigrationVersion");
+  const NEEDS_MIGRATION_VERSION = 0.9;
   
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
   
   // Perform the migration
   if ( needMigration && game.user.isGM ) {
-    // migrations.migrateWorld(); Disable migration for now
+    migrations.migrateWorld();
   }
 });
 
@@ -274,4 +274,10 @@ Hooks.on("renderSceneControls", async (app, html) => {
     simpleRollPopup();
   });
   html.append(dice_roller);
+});
+
+Hooks.on("renderChatMessage", (app, html, data) => {
+
+  // Optionally expant the dice results
+  if (game.settings.get("wicked-ones", "showExpandedRollResults")) html.find(".dice-tooltip").addClass('exp');
 });

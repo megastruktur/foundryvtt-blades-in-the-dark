@@ -84,6 +84,14 @@
 
     .wicked-die-tooltip {
 
+        &.dice-roll {
+            display: block;
+
+            .dice-tooltip.exp{
+                display: block;
+            }
+        }
+
         .label-type {
             text-transform: uppercase;
             color: white;
@@ -131,6 +139,7 @@
             float: left;
             background-repeat: no-repeat;
             background-size: contain;
+            color: transparent;
 
             &.wd1 {
                 background-image: url("assets/dice/die-1-grey.png");

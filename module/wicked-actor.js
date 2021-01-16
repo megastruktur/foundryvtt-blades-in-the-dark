@@ -7,6 +7,28 @@ import { WickedHelpers } from "./wicked-helpers.js";
  */
 export class WickedActor extends Actor {
 
+  /**
+  * Create a new entity using provided input data
+  * @override
+  */
+  static async create(data, options = {}) {
+    if (Object.keys(data).includes("type")) {
+
+      switch (data.type) {
+        case "party":
+        case "dungeon":
+          // Replace default image
+          data.img = `systems/wicked-ones/styles/assets/tokens/actors/${data.type}.webp`;
+          break;
+        default:
+      }
+
+
+    }
+    await super.create(data, options);
+  }
+
+  /* -------------------------------------------- */
 
   /**
    * Augment the basic actor data with additional dynamic data.
@@ -71,6 +93,7 @@ export class WickedActor extends Actor {
 
   }
 
+  /* -------------------------------------------- */
 
   /**
   * Prepare Dungeon data
@@ -89,6 +112,7 @@ export class WickedActor extends Actor {
     }
   }
 
+  /* -------------------------------------------- */
 
   /**
    * Prepare Faction data
@@ -168,6 +192,7 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
+
   /**
    * Calculate Attribute Dice to throw.
    */
@@ -203,7 +228,8 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  /**
+
+  /*
   * Calculate Attribute Default Bonus Dice to throw.
   */
   getAttributeDefaultBonus() {
@@ -238,6 +264,7 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
+
   rollAttributePopup(attribute_name, attribute_value = null) {
 
     let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
@@ -410,7 +437,6 @@ export class WickedActor extends Actor {
 
   /* -------------------------------------------- */
 
-
   /**
    * Change dice total on display
    * @param {*} event 
@@ -422,6 +448,6 @@ export class WickedActor extends Actor {
     $("#skill-roll .total-rolled label:nth-child(2)").text(parseInt(base) + parseInt(mod) + "D");
   }
 
-/* -------------------------------------------- */
+  /* -------------------------------------------- */
 
 }
