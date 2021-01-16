@@ -21,8 +21,8 @@ export const migrateWorld = async function() {
   }
 
   // Set the migration as complete
-  game.settings.set("bitd", "systemMigrationVersion", game.system.data.version);
-  ui.notifications.info(`BITD System Migration to version ${game.system.data.version} completed!`, {permanent: true});
+  game.settings.set("wicked-ones", "systemMigrationVersion", game.system.data.version);
+  ui.notifications.info(`WO System Migration to version ${game.system.data.version} completed!`, {permanent: true});
 };
 
 /* -------------------------------------------- */
