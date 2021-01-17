@@ -178,6 +178,8 @@ export class WickedSheet extends ActorSheet {
 
     const attribute_name = $(event.currentTarget).data("rollAttribute");
     const attribute_value = $(event.currentTarget).data("rollValue");
+
+    // Check if an attribute value was passed on the roll
     if (attribute_value) {
       this.actor.rollAttributePopup(attribute_name, attribute_value);
     } else {
@@ -324,5 +326,5 @@ export class WickedSheet extends ActorSheet {
     else sheet.render(true);
   }
 
-/* -------------------------------------------- */
+  /* -------------------------------------------- */
 }

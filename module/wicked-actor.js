@@ -14,11 +14,34 @@ export class WickedActor extends Actor {
   static async create(data, options = {}) {
     if (Object.keys(data).includes("type")) {
 
+      if (!(Object.keys(data).includes("token"))) {
+        data.token = {};
+      }
       switch (data.type) {
-        case "party":
+        case "character":
         case "dungeon":
+        case "faction":
+        case "minion_pack":
+        case "party":
           // Replace default image
-          data.img = `systems/wicked-ones/styles/assets/tokens/actors/${data.type}.webp`;
+          data.img = `systems/wicked-ones/styles/assets/default-images/${data.type}.webp`;
+          data.token.img = `systems/wicked-ones/styles/assets/default-images/${data.type}-token.webp`;
+          break;
+        default:
+      }
+
+      switch (data.type) {
+        case "faction":
+          mergeObject(
+            data.token,
+            {
+              displayName: 50,
+              lockRotation: true,
+              vision: false,
+              actorLink: true
+            },
+            { overwrite: false }
+          );
           break;
         default:
       }
@@ -217,7 +240,9 @@ export class WickedActor extends Actor {
     for (var attr_name in attr) {
       for (var skill_name in attr[attr_name].skills) {
         let val = parseInt(attr[attr_name].skills[skill_name]['value'][0]);
-        if (val == 1 && attr[attr_name].skills[skill_name].practice != 0) {
+        if (val == 1 &&
+            attr[attr_name].skills[skill_name].practice != undefined &&
+            attr[attr_name].skills[skill_name].practice != 0) {
           val = 0;
         }
         dice_amount[skill_name] = val;
