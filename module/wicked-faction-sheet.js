@@ -68,6 +68,9 @@ export class WickedFactionSheet extends WickedSheet {
     tokens.forEach(function (token) {
       token.update(data);
     });
+
+    // Update the Actor
+    return this.object.update(formData);
   }
 
   /* -------------------------------------------- */
