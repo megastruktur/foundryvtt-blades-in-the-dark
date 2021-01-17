@@ -1,12 +1,22 @@
 {
   "name": "wicked-ones",
   "title": "Wicked Ones",
-  "description": "Wicked Ones game system",
+  "description": "Wicked Ones game system including all the content you need to slay some adventurers!",
   "version": "0.1",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
-  "author": "spearhead",
+  "author": "Spearhead, LorduFreeman",
+  "authors": [
+  	{
+  		"name": "Spearhead",
+  		"discord": "Spearhead#4288"
+  	},
+  	{
+  		"name": "LorduFreeman",
+  		"discord": "LorduFreeman#8747"
+  	}
+  ],
   "esmodules": [
     "module/wicked.js"
   ],

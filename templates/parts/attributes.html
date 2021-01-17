@@ -60,7 +60,7 @@
       <label for="{{actor._id}}-bloodied"></label>
       <i class="splash"></i>
     </div>
-	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodied"}}}</span>
+	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodiedMinions"}}}</span>
    </div>
     <div class="main">
       <div class="stripe">
@@ -69,10 +69,13 @@
     </div>
   </div>
   <div id="attributes-morale" class="attribute flex-horizontal">
+   <div class="tooltip">  
     <div class="morale-minion">
       <input type="checkbox" id="{{actor._id}}-morale" name="data.morale"
              value="{{data.morale}}" {{checked data.morale}}>
       <label for="{{actor._id}}-morale"></label>
+	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipMorale"}}}</span>
+   </div>	  
     </div>
     <div class="main">
       <div class="stripe">
@@ -100,6 +103,7 @@
   <div class="attribute flex-horizontal">
     <div class="main" id="hearts-display">
 	    <div id="attributes-darkhearts">
+		 <div class="tooltip">
 	      <div class="flex-horizontal heart-container">
 		      {{#multiboxes data.dark_hearts.value}}
 
@@ -108,8 +112,10 @@
 		      <label class="dark-heart" for="{{../actor._id}}-dark-hearts-{{this}}"></label>
 		      {{/times_from_0}}
 		      {{/multiboxes}}
-	      </div>		  
-      </div>
+	      </div>
+		 <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipDarkHeart"}}}</span>
+		 </div>		  
+       </div>
       <div id="hearts-footer" class="stripe">
         <label class="attribute-label">{{localize "FITD.DarkHearts"}}</label>
 	    </div>
