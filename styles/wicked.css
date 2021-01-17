@@ -3848,6 +3848,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
 .editor-content {
   min-height: 280px;
   background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
 }
 
 .compendium .directory-list .directory-item {
