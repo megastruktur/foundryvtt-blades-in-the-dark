@@ -269,6 +269,13 @@
  *  Positioning of children by number
  */
 form.wicked-one-sheet {
+  /* Top-Decoration Styling  */
+  background: url(../styles/assets/decorations/border-top.png);
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position-x: center;
+  /* background-position-y: 5px;
+
   /*
    *   Basic Character Info Table
    */
@@ -897,6 +904,29 @@ form.wicked-one-sheet #duties-table tr td:nth-of-type(4) {
 form.wicked-one-sheet #duties-table tbody td:nth-of-type(1) {
   font-weight: 900;
   text-align: center;
+}
+form.wicked-one-sheet #tongue-tooltip {
+  margin-left: auto;
+  align-self: center;
+  font-size: x-large;
+  position: relative;
+}
+form.wicked-one-sheet #tongue-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: space-evenly;
+  grid-gap: 10px;
+  grid-column-gap: 20px;
+  font-family: Piedra;
+  text-transform: uppercase;
+  color: black;
+}
+form.wicked-one-sheet #grid-item1 {
+  color: #68332c;
+  grid-column: 1/span 5;
+  font-weight: 700;
+  font-family: Bitter;
+  text-transform: none;
 }
 
 /*
@@ -3847,7 +3877,7 @@ form .form-group label {
   visibility: hidden;
   position: absolute;
   width: fit-content;
-  max-width: 300px;
+  max-width: 400px;
   font-weight: 600;
   font-family: Bitter;
   background: url(../styles/assets/images/background-light.png) repeat;

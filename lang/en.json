@@ -132,6 +132,7 @@
 	"TooltipBloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
 	"TooltipMorale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",
     "TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",
+	"TooltipLightTongue":"<div id='grid-item1'>You know the following Light Tongue Words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div>",
 
     "Roll": "Roll",
     "RollOptions": "Roll Options",
@@ -206,7 +207,7 @@
     "RollLootSuccess": "You pull a mundane or valuable item from the loot.",
     "RollLootMixedSuccess": "You gain 1 gold or spend it on revelry instead.",
     "RollLootFailure": "You enjoy some revelry, gaining a dark heart. If you already have two dark hearts, you instead overdo it!",
-    "RollLootDescription": "Each die rolled gives you something based on its result, not only your highest ones. For every other Mixed, you gain 1 gold or spend it on revelry instead. For every other Failure, you enjoy more revelry, gaining another dark heart. But if you already have two dark hearts, you instead overdo it!",
+    "RollLootDescription": "Each die rolled gives you something based on its result, not only your highest ones. For every other Mixed, you gain 1 gold or spend it on revelry instead. For every other Failure, you enjoy more revelry, gaining another dark heart. But if you already have two dark hearts, you instead overdo it, suffering a frustrating or devastating consequence based on your choice of revelry!",
 
     "RollResistance": "Resistance Roll",
     "RollResistanceCriticalSuccess": "You <strong>clear</strong> 1 stress and <strong>fully</strong> resist the consequence.",
