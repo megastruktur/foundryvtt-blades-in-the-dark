@@ -41,7 +41,7 @@ export class WickedFactionSheet extends WickedSheet {
   }
 
   /* -------------------------------------------- */
-  /*  Form Submission  (Check relevance)          */
+  /*  Form Submission                             */
 	/* -------------------------------------------- */
 
   /** @override */
@@ -49,7 +49,30 @@ export class WickedFactionSheet extends WickedSheet {
 
     // Update the Item
     super._updateObject(event, formData);
+
+    const img = this.actor.data.token.img;
+
+    if (img != "" && img.indexOf(`/default-images/faction-token`) == -1) {
+      return;
+    }
+
+    let image_path = `systems/wicked-ones/styles/assets/default-images/faction-token-${formData['data.category']}-${Math.max(1,formData['data.tier.value'])}.webp`;
+    formData['token.img'] = image_path;
+
+    let data = {
+      img: image_path
+    };
+
+    let tokens = this.actor.getActiveTokens();
+
+    tokens.forEach(function (token) {
+      token.update(data);
+    });
+
+    // Update the Actor
+    return this.object.update(formData);
   }
+
   /* -------------------------------------------- */
 
 }

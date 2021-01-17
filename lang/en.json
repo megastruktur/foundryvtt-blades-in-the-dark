@@ -127,7 +127,7 @@
     "TooltipReckless": "Take an Action Dot when full.<br> Mark 1 XP if you played into either<br>being <strong>Bloodied</strong> or going <strong>Feral</strong> this session.",
     "TooltipActions": "<strong>Assist:</strong> Give +Effect, but open to Consequence<br><strong>Go Hard: </strong>Trade: +Effect for -Position<br><span id='team-up'><strong>Team Up:</strong> Take the highest result, but each PC with a Mixed or Failure takes Stress.</span><br><strong>Dark Bargain:</strong> Trade +1D for a Consequence<br><strong>Dark Heart:</strong> Take +1D on a Roll",
     "TooltipShock": "Take -1D on next Roll, then clears. (Automatically calculated in the Roll)",
-	"TooltipDarkHeart": "Take +1D on a Roll. You can only spend one Dark Heart per Roll.<br><strong>Death Knell:</strong> Take a final Action if you have a Dark Heart left when you die. You take +1D for each Dark Heart you have. Any ally that sees it gains a Dark Heart.",
+	"TooltipDarkHeart": "Take +1D on a Roll. You can only spend one Dark Heart per Roll.<br><strong>Death Knell:</strong> When dying with Dark Hearts take a final action. Add +1D per Dark Heart. Any ally that sees it gains a Dark Heart.",
     "TooltipBloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>.",
 	"TooltipBloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
 	"TooltipMorale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",

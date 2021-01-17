@@ -125,15 +125,15 @@
           "skills": {
             "scan": {
               "label": "FITD.SkillsScan",
-              "value": [ 0 ]
+              "value": 0
             },
             "tinker": {
               "label": "FITD.SkillsTinker",
-              "value": [ 0 ]
+              "value": 0
             },
             "trick": {
               "label": "FITD.SkillsTrick",
-              "value": [ 0 ]
+              "value": 0
             }
           }
         },
@@ -142,15 +142,15 @@
           "skills": {
             "finesse": {
               "label": "FITD.SkillsFinesse",
-              "value": [ 0 ]
+              "value": 0
             },
             "skulk": {
               "label": "FITD.SkillsSkulk",
-              "value": [ 0 ]
+              "value": 0
             },
             "smash": {
               "label": "FITD.SkillsSmash",
-              "value": [ 0 ]
+              "value": 0
             }
           }
         },
@@ -159,15 +159,15 @@
           "skills": {
             "banter": {
               "label": "FITD.SkillsBanter",
-              "value": [ 0 ]
+              "value": 0
             },
             "invoke": {
               "label": "FITD.SkillsInvoke",
-              "value": [ 0 ]
+              "value": 0
             },
             "threaten": {
               "label": "FITD.SkillsThreaten",
-              "value": [ 0 ]
+              "value": 0
             }
           }
         }
