@@ -5,6 +5,13 @@
 
 
 form.wicked-one-sheet {
+	
+	/* Top-Decoration Styling  */
+	background: url(../styles/assets/decorations/border-top.png);
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position-x: center;
+    /* background-position-y: 5px;
 
     /*
      *   Basic Character Info Table
@@ -493,7 +500,10 @@ form.wicked-one-sheet {
                 }
             }
         }
-
+		#downtime-risk{
+			margin-top: 5px;
+		}
+		
         .project-clock {
             height: 80px;
             // Functionality will be overridden in wicked-sheet.js
@@ -509,7 +519,6 @@ form.wicked-one-sheet {
             margin-bottom: 15px;
         }
     }
-
     // Projects Table
     #project-clocks-table {
         tr {
@@ -528,7 +537,7 @@ form.wicked-one-sheet {
             }
         }
     }
-
+	
     // Duties Table
     #duties-table {
         tr {
@@ -553,4 +562,30 @@ form.wicked-one-sheet {
             }   
         }
     }
+	
+   // Notes Table Light Tongue Tooltip Styling
+   #tongue-tooltip{
+		margin-left: auto;
+		align-self: center;
+		font-size: x-large;
+		position: relative;
+	}
+	
+	#tongue-grid{
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		justify-content: space-evenly;
+		grid-gap: 10px;
+		grid-column-gap: 20px;
+		font-family: Piedra;
+		text-transform: uppercase;
+		color: black;
+	}
+	#grid-item1 {
+			color: $mud;
+			grid-column: 1 / span 5;
+			font-weight: 700;
+			font-family: Bitter;
+			text-transform: none;
+	}
 }

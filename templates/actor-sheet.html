@@ -927,6 +927,7 @@
                     <label for="{{actor._id}}-dtaused"></label>
                     {{localize "FITD.DowntimeActionUsed"}}
                   </div>
+				  <div id="downtime-risk">{{{localize "FITD.DowntimeActionRiskIt"}}}</div>
                 </div>
               </td>
             </tr>
@@ -1040,6 +1041,10 @@
       <div class="tab flex-vertical" data-tab="character-notes">
         <div class="label-stripe">
           <p>{{localize "FITD.Notes"}}</p>
+		  <div id="tongue-tooltip" class="tooltip">
+		    <i class="item-add-popup far fa-comment-dots"></i>
+              <span id="tongue-grid" class="tooltiptext tooltipslow">{{{localize "FITD.TooltipLightTongue"}}}</span>
+          </div>
         </div>
         {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
       </div>

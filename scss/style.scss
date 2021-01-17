@@ -497,6 +497,16 @@ div.item, tr.item {
  *  Other Class Styles
  */
 
+/* WO Roll Popup Formatting of the Roll Options */
+.action-info {
+	padding: 5px;
+	margin-top: -10px;
+	line-height: 1.5em;
+	
+	#team-up{
+		line-height: 1.1em;
+	}
+}
 
 #pause h3 {
     font-weight: 600;
@@ -557,7 +567,7 @@ form .form-group label {
         visibility: hidden;
         position: absolute;
         width: fit-content;
-        max-width: 300px;
+        max-width: 400px;
         font-weight: 600;
         font-family: Bitter;
         background: url(../styles/assets/images/background-light.png) repeat;
