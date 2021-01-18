@@ -32,6 +32,10 @@
         background-size: 300px;
         box-shadow: inset 0 0 9px 1px $bloodyShadow;
 
+        &.whisper {
+            background: $privategrey;
+        }
+
         .message-header {
 
             .message-sender {
@@ -89,6 +93,18 @@
 
             .dice-tooltip.exp{
                 display: block;
+            }
+
+            .dice-rolls {
+                list-style: none;
+                display: flex;
+            }
+
+            .zero-hint {
+                font-size: 18px;
+                font-weight: 700;
+                margin-left: 15px;
+                align-self: center;
             }
         }
 

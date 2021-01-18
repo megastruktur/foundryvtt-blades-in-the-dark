@@ -125,16 +125,25 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
       type_localize = 'FITD.RollFortune'	  
   }
 
-    let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize, type: type_localize});
+  let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize, type: type_localize, zeromode: zeromode });
 
   let messageData = {
+    user: game.user._id,
     speaker: speaker,
     content: result,
     type: CHAT_MESSAGE_TYPES.ROLL,
+    sound: CONFIG.sounds.dice,
     roll: r
   }
 
-  CONFIG.ChatMessage.entityClass.create(messageData, {})
+  // Prepare message options
+  const rMode = game.settings.get("core", "rollMode");
+  if (["gmroll", "blindroll"].includes(rMode)) {
+    messageData.whisper = ChatMessage.getWhisperRecipients("GM");
+  }
+  const messageOptions = { rollMode: rMode };
+
+  CONFIG.ChatMessage.entityClass.create(messageData, messageOptions)
 }
 
 /**

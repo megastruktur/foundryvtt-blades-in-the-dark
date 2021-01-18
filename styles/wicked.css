@@ -2971,6 +2971,9 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   background-size: 300px;
   box-shadow: inset 0 0 9px 1px #4000004f;
 }
+#chat .chat-message.whisper {
+  background: #e8e8ef;
+}
 #chat .chat-message .message-header .message-sender {
   font-family: Piedra;
   font-weight: normal;
@@ -3011,6 +3014,16 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 }
 #chat .wicked-die-tooltip.dice-roll .dice-tooltip.exp {
   display: block;
+}
+#chat .wicked-die-tooltip.dice-roll .dice-rolls {
+  list-style: none;
+  display: flex;
+}
+#chat .wicked-die-tooltip.dice-roll .zero-hint {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 15px;
+  align-self: center;
 }
 #chat .wicked-die-tooltip .label-type {
   text-transform: uppercase;

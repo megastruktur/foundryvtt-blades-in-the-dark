@@ -40,7 +40,7 @@
     "DowntimeActions": "Downtime Actions",
     "DowntimeActionHint": "<div><b>Brew</b> potions and alchemicals</div><div><b>Build</b> locks, traps, tricks, and rooms.</div><div><b>Contact</b> vile friends, npcs, or factions.</div><div><b>Craft</b> an item, edge, or contraption.</div><div><b>Incant</b> a ritual.</div><div><b>Recruit</b> a pack of minions.</div><div><b>Torture</b> a prisoner.</div>",
     "DowntimeActionUsed": "Downtime Action Used",
-	"DowntimeActionRiskIt":"<b>Risk it:</b> Re-roll a downtime action but lose its dominant position",
+    "DowntimeActionRiskIt":"<b>Risk it:</b> Re-roll a downtime action but lose its dominant position",
     "MonsterRace": "Monster Race",
     "IsPrimalMonster": "Primal Monster",
     "IsPrimalMonsterHint": "Only check if this is a Primal Monster",
@@ -127,12 +127,12 @@
     "TooltipReckless": "Take an Action Dot when full.<br> Mark 1 XP if you played into either<br>being <strong>Bloodied</strong> or going <strong>Feral</strong> this session.",
     "TooltipActions": "<strong>Assist:</strong> Give +Effect, but open to Consequence<br><strong>Go Hard: </strong>Trade: +Effect for -Position<br><span id='team-up'><strong>Team Up:</strong> Take the highest result, but each PC with a Mixed or Failure takes Stress.</span><br><strong>Dark Bargain:</strong> Trade +1D for a Consequence<br><strong>Dark Heart:</strong> Take +1D on a Roll",
     "TooltipShock": "Take -1D on next Roll, then clears. (Automatically calculated in the Roll)",
-	"TooltipDarkHeart": "Take +1D on a Roll. You can only spend one Dark Heart per Roll.<br><strong>Death Knell:</strong> When dying with Dark Hearts take a final action. Add +1D per Dark Heart. Any ally that sees it gains a Dark Heart.",
+    "TooltipDarkHeart": "Take +1D on a Roll. You can only spend one Dark Heart per Roll.<br><strong>Death Knell:</strong> When dying with Dark Hearts take a final action. Add +1D per Dark Heart. Any ally that sees it gains a Dark Heart.",
     "TooltipBloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>.",
-	"TooltipBloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
-	"TooltipMorale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",
+    "TooltipBloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
+    "TooltipMorale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",
     "TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",
-	"TooltipLightTongue":"<div id='grid-item1'>You know the following Light Tongue Words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div>",
+    "TooltipLightTongue":"<div id='grid-item1'>You know the following Light Tongue Words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div>",
 
     "Roll": "Roll",
     "RollOptions": "Roll Options",
@@ -422,6 +422,7 @@
     "Motivations": "Motivations",
     "Side": "Side",
     "Open": "Open",
+    "ZeroModeHint": "(0D roll)",
 
     "FACTION_SIDE": {
       "Dark": "Dark",
