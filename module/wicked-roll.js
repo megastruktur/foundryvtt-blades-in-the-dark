@@ -7,33 +7,17 @@
  */
 export async function wickedRoll(dice_amount, attribute_name = "", position = "default", effect = "default", type="fortune") {
 
-  // Is Dice So Nice enabled ?
-  let niceDice = false;
-  
-  try {
-    niceDice = game.settings.get('dice-so-nice', 'settings').enabled;      
-  } catch {
-    console.log("Dice-is-nice! not enabled");
-  }
-
-  // ChatMessage.getSpeaker(controlledToken)
   let zeromode = false;
-  
-  if ( dice_amount < 0 ) { dice_amount = 0; }
-  if ( dice_amount == 0 ) { zeromode = true; dice_amount = 2; }
+  if (dice_amount <= 0) {
+    zeromode = true;
+    dice_amount = 2;
+  }
 
   let r = new Roll( `${dice_amount}d6`, {} );
 
-  // show 3d Dice so Nice if enabled
   r.roll();
-  if (niceDice) {
-    game.dice3d.showForRoll(r).then((displayed) => {
-      showChatRollMessage(r, zeromode, attribute_name, position, effect, type);
-      ui.chat.scrollBottom();
-    });
-  } else {
-    showChatRollMessage(r, zeromode, attribute_name, position, effect, type)
-  }
+  showChatRollMessage(r, zeromode, attribute_name, position, effect, type)
+
 }
 
 /**
@@ -146,7 +130,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   let messageData = {
     speaker: speaker,
     content: result,
-    type: CONST.CHAT_MESSAGE_TYPES.OOC,
+    type: CHAT_MESSAGE_TYPES.ROLL,
     roll: r
   }
 
