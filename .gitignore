@@ -6,3 +6,6 @@
 /.vscode
 /scss/src
 /scss/*.bat
+/styles/assets/dice/claws/png
+/styles/assets/dice/dots/png
+/styles/assets/dice/whitedots/png
