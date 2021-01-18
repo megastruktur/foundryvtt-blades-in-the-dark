@@ -123,7 +123,7 @@
 
     "TooltipCoin": "<strong>You can pay Gold to:</strong><br>• Attract a creature<br>• Get help from your vile friend<br>• Get a minion downtime action<br>• Get minions to join a raid<br>• Recruit a minion<br>• Upgrade a minion",
     "TooltipStress": "When the clock is full, <strong>you Go Feral:</strong> You are immediately <strong>compelled</strong>. Abilities used during this action cost no stress.",
-    "TooltipWicked": "Take an ability when full. Mark 1 XP for each you did this session:<br>•You made progress on Your Master Plan.<br>•You jumped into someone else’s Dungeon Scene.<br>•You acted like a monster.<br>•You used Your gear or supply in creative ways.",
+    "TooltipWicked": "Take an ability when full. Mark 1 XP for each you did this session:<br>•You made progress on your Master Plan.<br>•You jumped into someone else’s Dungeon Scene.<br>•You acted like a monster.<br>•You used your gear or supply in creative ways.",
     "TooltipReckless": "Take an Action Dot when full.<br> Mark 1 XP if you played into either<br>being <strong>Bloodied</strong> or going <strong>Feral</strong> this session.",
     "TooltipActions": "<strong>Assist:</strong> Give +Effect, but open to Consequence<br><strong>Go Hard: </strong>Trade: +Effect for -Position<br><span id='team-up'><strong>Team Up:</strong> Take the highest result, but each PC with a Mixed or Failure takes Stress.</span><br><strong>Dark Bargain:</strong> Trade +1D for a Consequence<br><strong>Dark Heart:</strong> Take +1D on a Roll",
     "TooltipShock": "Take -1D on next Roll, then clears. (Automatically calculated in the Roll)",
