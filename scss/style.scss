@@ -26,11 +26,11 @@
 
  /* WO-Borders for windows and sheets*/
 .window-app .window-content {
-    background: url(../styles/assets/images/background-light.png) repeat;
+    background: url(../styles/assets/images/background-light.webp) repeat;
     color: $almost_black;
     overflow-y: auto;
 	
-	background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png),url(../styles/assets/images/background-light.png);
+	background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png),url(../styles/assets/images/background-light.webp);
 	background-repeat: repeat-y, repeat-y, repeat;
 	background-size: 70px, 70px, 300px;
 	background-position: left, right, bottom;
@@ -156,6 +156,8 @@ body {
     font-family: Bitter, sans-serif;
     font-weight: 500;
     font-size: 14px;
+	background: url("../styles/assets/images/WO-Background.webp") no-repeat center;
+    background-size: cover;
 }
 
 
@@ -375,7 +377,7 @@ button {
 
 .profile-img {
     border: none;
-    // background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
+    // background: url(../styles/assets/images/background-light.webp) repeat $bloodyShadow;
     background-blend-mode: color-burn;
     object-fit: cover;
 
@@ -571,7 +573,7 @@ form .form-group label {
         max-width: 400px;
         font-weight: 600;
         font-family: Bitter;
-        background: url(../styles/assets/images/background-light.png) repeat;
+        background: url(../styles/assets/images/background-light.webp) repeat;
         color: $bloody;
         font-size: 16px;
         text-align: justify;
