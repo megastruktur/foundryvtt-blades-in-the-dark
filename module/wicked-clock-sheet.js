@@ -22,7 +22,8 @@ export class WickedClockSheet extends WickedSheet {
   /** @override */
   async _updateObject(event, formData) {
 
-      let image_path = `/systems/wicked-ones/styles/assets/progressclocks-svg/Progress Clock ${formData['data.type']}-${formData['data.value']}.svg`;
+    let image_path = `/systems/wicked-ones/styles/assets/progressclocks-webp/${formData['data.style']}-${formData['data.type']}-${formData['data.value']}.webp`;
+
     formData['img'] = image_path;
     formData['token.img'] = image_path;
 

@@ -66,6 +66,9 @@
 					<li class="wicked-die wd{{{this.roll}}}"></li>
 			{{/if}}
 		{{/each}}
+		{{#if zeromode}}
+			<li class="zero-hint">{{localize "FITD.ZeroModeHint"}}</li>
+		{{/if}}
 	</ol>
 </div>
 
