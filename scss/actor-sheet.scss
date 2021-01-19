@@ -523,10 +523,12 @@ form.wicked-one-sheet {
     #project-clocks-table {
         tr {
             td:nth-of-type(1) {
+                text-align: center;
                 width: 50px;
             }
 
             td:nth-of-type(2) {
+                text-align: center;
                 min-width: 90px;
                 width: 23%;
                 font-family: Bitter;
@@ -542,10 +544,12 @@ form.wicked-one-sheet {
     #duties-table {
         tr {
             td:nth-of-type(1) {
+                text-align: center;
                 width: 5%;
             }
 
             td:nth-of-type(2) {
+                text-align: center;
                 width: 12%;
             }
 
