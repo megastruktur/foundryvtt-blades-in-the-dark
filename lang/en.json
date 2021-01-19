@@ -40,7 +40,7 @@
     "DowntimeActions": "Downtime Actions",
     "DowntimeActionHint": "<div><b>Brew</b> potions and alchemicals</div><div><b>Build</b> locks, traps, tricks, and rooms.</div><div><b>Contact</b> vile friends, npcs, or factions.</div><div><b>Craft</b> an item, edge, or contraption.</div><div><b>Incant</b> a ritual.</div><div><b>Recruit</b> a pack of minions.</div><div><b>Torture</b> a prisoner.</div>",
     "DowntimeActionUsed": "Downtime Action Used",
-    "DowntimeActionRiskIt":"<b>Risk it:</b> Re-roll a downtime action but lose its dominant position",
+    "DowntimeActionRiskIt": "<b>Risk it:</b> Re-roll a downtime action but lose its dominant position",
     "MonsterRace": "Monster Race",
     "IsPrimalMonster": "Primal Monster",
     "IsPrimalMonsterHint": "Only check if this is a Primal Monster",
@@ -132,7 +132,7 @@
     "TooltipBloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
     "TooltipMorale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",
     "TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",
-    "TooltipLightTongue":"<div id='grid-item1'>You know the following Light Tongue Words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div>",
+    "TooltipLightTongue": "<div id='grid-item1'>You know the following Light Tongue Words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div>",
 
     "Roll": "Roll",
     "RollOptions": "Roll Options",
@@ -147,105 +147,9 @@
     "EffectZero": "Zero",
 
     "PosEffEqual": "Equal Footing",
-
-    "RollFailure": "Failure",
-    "RollCriticalSuccess": "Critical!",
-    "RollSuccess": "Success",
-    "RollMixedSuccess": "Mixed",
     "RollSomeDice": "Dice Roller",
     "RollTokenDescription": "Choose your Roll type and how many dice to roll:",
     "RollNumberOfDice": "Number of Dice",
-    "RollDoCrit": "<strong>Yes, and… !</strong> Not only do you get what you want, but you get something else to go along with it!",
-    "RollDo": "<strong>Yes!</strong> You get the results that you hoped for!",
-    "RollDoMixed": "<strong>Yes, but…</strong> You get the results, but they come at a cost. There will be some consequences coming your way. At other times, it may just result in a less effective result.",
-    "RollDoFail": "<strong>No, and…</strong> Things go as poorly as they could have in that situation. You fail to do it and suffer a consequence.",
-
-    "RollAction": "Action Roll",
-    "RollActionCriticalSuccess": "<strong>Yes, and… !</strong> Not only do you get what you want, but you get something else to go along with it!",
-    "RollActionSuccess": "<strong>Yes!</strong> You get the results that you hoped for!",
-    "RollActionMixedSuccess": "<strong>Yes, but…</strong> You get the results, but they come at a cost. There will be some consequences coming your way. At other times, it may just result in a less effective result.",
-    "RollActionFailure": "<strong>No, and…</strong> Things go as poorly as they could have in that situation. You fail to do it and suffer a consequence.",
-
-    "RollBlowback": "Blowback Roll",
-    "RollBlowbackCriticalSuccess": "Each PC gains a <strong>dark heart</strong>. Also, you can choose a faction to take the blame instead of you.",
-    "RollBlowbackSuccess": "Each PC gains a <strong>dark heart</strong>.",
-    "RollBlowbackMixedSuccess": "You suffer minor blowback.",
-    "RollBlowbackFailure": "You suffer major blowback!",
-
-    "RollCalamity": "Calamity Roll",
-    "RollCalamityCriticalSuccess": "Your minions gain <strong>morale</strong> and join the next raid for free. Also, your imps dig into a <strong>success discovery</strong>!",
-    "RollCalamitySuccess": "Your minions gain <strong>morale</strong> and join the next raid for free.",
-    "RollCalamityMixedSuccess": "You suffer a minor calamity.",
-    "RollCalamityFailure": "You suffer a major calamity!",
-
-    "RollDefensiveMove": "Defensive Move Roll",
-    "RollDefensiveMoveCriticalSuccess": "They fully resist it and immediately make a free offensive move.",
-    "RollDefensiveMoveSuccess": "They fully resist it.",
-    "RollDefensiveMoveMixedSuccess": "They partially resist it, reducing it in severity.",
-    "RollDefensiveMoveFailure": "They resist nothing.",
-
-    "RollDiscovery": "Discovery Roll",
-    "RollDiscoveryCriticalSuccess": "A success should clearly improve the dungeon or make the PCs lives better. They're usually placed in the perfect area to best help out the dungeon. <strong>A critical counts as two successes!</strong>",
-    "RollDiscoverySuccess": "A success should clearly improve the dungeon or make the PCs lives better. They're usually placed in the perfect area to best help out the dungeon.",
-    "RollDiscoveryMixedSuccess": "A mixed should be light in impact, perhaps a little good or bad for the PCs depending on how they respond to it. They're usually placed in areas of slight inconvenience.",
-    "RollDiscoveryFailure": "A failure should clearly hurt your dungeon, causing immediate problems for you or making dungeon defense more difficult. They're almost always placed in positions that make it easier for invaders to bypass defenses or interfere with your layout.",
-    "RollEngagement": "Engagement Roll",
-    "RollEngagementCriticalSuccess": "You start with the <strong>upper hand</strong>, in control of the situation. Also, you get a lucky turn of events!",
-    "RollEngagementSuccess": "You start with the <strong>upper hand</strong>, in control of the situation.",
-    "RollEngagementMixedSuccess": "You start on <strong>equal footing</strong>, ready to face the challenge.",
-    "RollEngagementFailure": "You start in a <strong>tight spot</strong>, with consequences being inflicted.",
-
-    "RollLock": "Lock Roll",
-    "RollLockCriticalSuccess": "Each adventurer wastes a move trying to open it, then they go another way unless they have no other option.",
-    "RollLockSuccess": "An adventurer wastes a move trying to open it, then they go another way unless they have no other option.",
-    "RollLockMixedSuccess": "They go another way unless they have no other option.",
-    "RollLockFailure": "They unlock the door and move past it.",
-    "RollLockNote": "❖ When there is no other way forward, roll again for the lock.",
-
-    "RollLoot": "Loot Roll",
-    "RollLootCriticalSuccess": "You pull one mundane or valuable item of your choice per Success from the loot. You may combine two successes into a Critical to pull a powerful item from the loot instead. The GM chooses what it is.",
-    "RollLootSuccess": "You pull a mundane or valuable item from the loot.",
-    "RollLootMixedSuccess": "You gain 1 gold or spend it on revelry instead.",
-    "RollLootFailure": "You enjoy some revelry, gaining a dark heart. If you already have two dark hearts, you instead overdo it!",
-    "RollLootDescription": "Each die rolled gives you something based on its result, not only your highest ones. For every other Mixed, you gain 1 gold or spend it on revelry instead. For every other Failure, you enjoy more revelry, gaining another dark heart. But if you already have two dark hearts, you instead overdo it, suffering a frustrating or devastating consequence based on your choice of revelry!",
-
-    "RollResistance": "Resistance Roll",
-    "RollResistanceCriticalSuccess": "You <strong>clear</strong> 1 stress and <strong>fully</strong> resist the consequence.",
-    "RollResistanceSuccess": "You spend 1 stress to <strong>fully</strong> resist the consequence.",
-    "RollResistanceMixedSuccess": "You spend 2 stress to <strong>partially</strong> resist the consequence.",
-    "RollResistanceFailure": "You spend 3 stress to <strong>partially</strong> resist the consequence.",
-
-    "RollCreature": "Creature Roll",
-    "RollCreatureCriticalSuccess": "You damage two adventurers of your choice. <strong>Roll again.</strong>",
-    "RollCreatureSuccess": "You damage an adventurer of your choice. <strong>Roll again.</strong>",
-    "RollCreatureMixedSuccess": "You damage an adventurer of the GM's choice and the creature is knocked out of the fight.",
-    "RollCreatureFailure": "The creature is slain or flees the dungeon for good.",
-    "RollCreatureNote": "❖ You can't damage the same adventurer twice in a row unless they're alone.",
-
-    "RollTrap": "Trap Roll",
-    "RollTrapCriticalSuccess": "You damage two adventurers of your choice. <strong>Roll again.</strong>",
-    "RollTrapSuccess": "You damage an adventurer of your choice. <strong>Roll again.</strong>",
-    "RollTrapMixedSuccess": "You damage an adventurer of the GM's choice.",
-    "RollTrapFailure": "The trap is disabled or avoided by the adventurers.",
-    "RollTrapNote": "You can't damage the same adventurer twice in a row unless they're alone.",
-
-    "RollStartingLoc": "Starting Location Roll",
-    "RollStartingLocCriticalSuccess": "StartingLoc Roll",
-    "RollStartingLocSuccess": "A success starts you off in a good position. You begin in the exact dungeon room you want to be in with weapons nearby.",
-    "RollStartingLocMixedSuccess": "A mixed starts you off in a less than ideal situation. You might not have weapons or maybe just not begin in a great location. You're likely busy doing some other task.",
-    "RollStartingLocFailure": "A failure starts you off in a terrible position. You're far from the action, rather distracted by something you're doing, likely without weapons, or maybe even sleeping. The adventurers have a decisive advantage against you.",
-
-    "RollPathing": "Pathing Roll",
-    "RollPathingCriticalSuccess": "Pathing Roll",
-    "RollPathingSuccess": "On a mixed or success, the adventurers go the way the players want them to.",
-    "RollPathingMixedSuccess": "On a mixed or success, the adventurers go the way the players want them to.",
-    "RollPathingFailure": "On a mixed or success, the adventurers go the way the players want them to. On a failure, <strong>they go the other way.</strong>",
-
-    "RollFortune": "Fortune Roll",
-    "RollFortuneCriticalSuccess": "It's an ideal situation as you get what you were hoping for. Also, you get more than you were hoping for!",
-    "RollFortuneSuccess": "It's an ideal situation as you get what you were hoping for.",
-    "RollFortuneMixedSuccess": "It's pretty good, but not perfect, with a tinge of disappointment.",
-    "RollFortuneFailure": "Things go about as poorly as they could.",
 
     "SkillsBrains": "Brains",
     "SkillsScan": "Scan",
@@ -423,6 +327,136 @@
     "Side": "Side",
     "Open": "Open",
     "ZeroModeHint": "(0D roll)",
+
+    "ROLL": {
+      "Critical": "Critical!",
+      "Success": "Success",
+      "Mixed": "Mixed",
+      "Failure": "Failure",
+
+      "DO": {
+        "Critical": "<strong>Yes, and… !</strong> Not only do you get what you want, but you get something else to go along with it!",
+        "Success": "<strong>Yes!</strong> You get the results that you hoped for!",
+        "Mixed": "<strong>Yes, but…</strong> You get the results, but they come at a cost. There will be some consequences coming your way. At other times, it may just result in a less effective result.",
+        "Failure": "<strong>No, and…</strong> Things go as poorly as they could have in that situation. You fail to do it and suffer a consequence."
+      },
+
+      "ACTION": {
+        "Name": "Action Roll",
+        "Critical": "<strong>Yes, and… !</strong> Not only do you get what you want, but you get something else to go along with it!",
+        "Success": "<strong>Yes!</strong> You get the results that you hoped for!",
+        "Mixed": "<strong>Yes, but…</strong> You get the results, but they come at a cost. There will be some consequences coming your way. At other times, it may just result in a less effective result.",
+        "Failure": "<strong>No, and…</strong> Things go as poorly as they could have in that situation. You fail to do it and suffer a consequence."
+      },
+
+      "BLOWBACK": {
+        "Name": "Blowback Roll",
+        "Critical": "Each PC gains a <strong>dark heart</strong>. Also, you can choose a faction to take the blame instead of you.",
+        "Success": "Each PC gains a <strong>dark heart</strong>.",
+        "Mixed": "You suffer minor blowback.",
+        "Failure": "You suffer major blowback!"
+      },
+
+      "CALAMITY": {
+        "Name": "Calamity Roll",
+        "Critical": "Your minions gain <strong>morale</strong> and join the next raid for free. Also, your imps dig into a <strong>success discovery</strong>!",
+        "Success": "Your minions gain <strong>morale</strong> and join the next raid for free.",
+        "Mixed": "You suffer a minor calamity.",
+        "Failure": "You suffer a major calamity!"
+      },
+
+      "DEFENSIVE": {
+        "Name": "Defensive Move Roll",
+        "Critical": "They fully resist it and immediately make a free offensive move.",
+        "Success": "They fully resist it.",
+        "Mixed": "They partially resist it, reducing it in severity.",
+        "Failure": "They resist nothing."
+      },
+
+      "DISCOVERY": {
+        "Name": "Discovery Roll",
+        "Critical": "A success should clearly improve the dungeon or make the PCs lives better. They're usually placed in the perfect area to best help out the dungeon. <strong>A critical counts as two successes!</strong>",
+        "Success": "A success should clearly improve the dungeon or make the PCs lives better. They're usually placed in the perfect area to best help out the dungeon.",
+        "Mixed": "A mixed should be light in impact, perhaps a little good or bad for the PCs depending on how they respond to it. They're usually placed in areas of slight inconvenience.",
+        "Failure": "A failure should clearly hurt your dungeon, causing immediate problems for you or making dungeon defense more difficult. They're almost always placed in positions that make it easier for invaders to bypass defenses or interfere with your layout."
+      },
+
+      "ENGAGEMENT": {
+        "Name": "Engagement Roll",
+        "Critical": "You start with the <strong>upper hand</strong>, in control of the situation. Also, you get a lucky turn of events!",
+        "Success": "You start with the <strong>upper hand</strong>, in control of the situation.",
+        "Mixed": "You start on <strong>equal footing</strong>, ready to face the challenge.",
+        "Failure": "You start in a <strong>tight spot</strong>, with consequences being inflicted."
+      },
+
+      "LOCK": {
+        "Name": "Lock Roll",
+        "Critical": "Each adventurer wastes a move trying to open it, then they go another way unless they have no other option.",
+        "Success": "An adventurer wastes a move trying to open it, then they go another way unless they have no other option.",
+        "Mixed": "They go another way unless they have no other option.",
+        "Failure": "They unlock the door and move past it.",
+        "Note": "❖ When there is no other way forward, roll again for the lock."
+      },
+
+      "LOOT": {
+        "Name": "Loot Roll",
+        "Critical": "You may combine two successes into a Critical to pull a powerful item from the loot. The GM chooses what it is.",
+        "Success": "You pull a mundane or valuable item from the loot.",
+        "Mixed": "You gain 1 gold or spend it on revelry instead.",
+        "Failure": "You enjoy some revelry, gaining a dark heart.",
+        "Note": "If you gain excess dark hearts, you overdo it, suffering a frustrating or devastating consequence based your revelry!"
+      },
+
+      "RESISTANCE": {
+        "Name": "Resistance Roll",
+        "Critical": "You <strong>clear</strong> 1 stress and <strong>fully</strong> resist the consequence.",
+        "Success": "You spend 1 stress to <strong>fully</strong> resist the consequence.",
+        "Mixed": "You spend 2 stress to <strong>partially</strong> resist the consequence.",
+        "Failure": "You spend 3 stress to <strong>partially</strong> resist the consequence."
+      },
+
+      "CREATURE": {
+        "Name": "Creature Roll",
+        "Critical": "You damage two adventurers of your choice. <strong>Roll again.</strong>",
+        "Success": "You damage an adventurer of your choice. <strong>Roll again.</strong>",
+        "Mixed": "You damage an adventurer of the GM's choice and the creature is knocked out of the fight.",
+        "Failure": "The creature is slain or flees the dungeon for good.",
+        "Note": "❖ You can't damage the same adventurer twice in a row unless they're alone."
+      },
+
+      "TRAP": {
+        "Name": "Trap Roll",
+        "Critical": "You damage two adventurers of your choice. <strong>Roll again.</strong>",
+        "Success": "You damage an adventurer of your choice. <strong>Roll again.</strong>",
+        "Mixed": "You damage an adventurer of the GM's choice.",
+        "Failure": "The trap is disabled or avoided by the adventurers.",
+        "Note": "You can't damage the same adventurer twice in a row unless they're alone."
+      },
+
+      "STARTING": {
+        "Name": "Starting Location Roll",
+        "Critical": "StartingLoc Roll",
+        "Success": "A success starts you off in a good position. You begin in the exact dungeon room you want to be in with weapons nearby.",
+        "Mixed": "A mixed starts you off in a less than ideal situation. You might not have weapons or maybe just not begin in a great location. You're likely busy doing some other task.",
+        "Failure": "A failure starts you off in a terrible position. You're far from the action, rather distracted by something you're doing, likely without weapons, or maybe even sleeping. The adventurers have a decisive advantage against you."
+      },
+
+      "PATHING": {
+        "Name": "Pathing Roll",
+        "CriticalSuccess": "Pathing Roll",
+        "Success": "On a mixed or success, the adventurers go the way the players want them to.",
+        "MixedSuccess": "On a mixed or success, the adventurers go the way the players want them to.",
+        "Failure": "On a mixed or success, the adventurers go the way the players want them to. On a failure, <strong>they go the other way.</strong>"
+      },
+
+      "FORTUNE": {
+        "Name": "Fortune Roll",
+        "Critical": "It's an ideal situation as you get what you were hoping for. Also, you get more than you were hoping for!",
+        "Success": "It's an ideal situation as you get what you were hoping for.",
+        "Mixed": "It's pretty good, but not perfect, with a tinge of disappointment.",
+        "Failure": "Things go about as poorly as they could."
+      }
+    },
 
     "FACTION_SIDE": {
       "Dark": "Dark",

@@ -311,8 +311,8 @@ export class WickedActor extends Actor {
           <div class="form-group">
             <label>${game.i18n.localize('FITD.RollType')}:</label>
             <select id="type" name="type">
-              <option value="action" selected>${game.i18n.localize('FITD.RollAction')}</option>		  
-              <option value="resistance">${game.i18n.localize('FITD.RollResistance')}</option>			  
+              <option value="action" selected>${game.i18n.localize('FITD.ROLL.ACTION.Name')}</option>		  
+              <option value="resistance">${game.i18n.localize('FITD.ROLL.RESISTANCE.Name')}</option>			  
             </select>
           </div>
           <div class="form-group">

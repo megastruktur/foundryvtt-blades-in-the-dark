@@ -3048,13 +3048,13 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-#chat .wicked-die-tooltip .die.critical-success {
+#chat .wicked-die-tooltip .die.critical {
   color: #b12c20;
 }
 #chat .wicked-die-tooltip .die.success {
   color: #862118;
 }
-#chat .wicked-die-tooltip .die.partial-success {
+#chat .wicked-die-tooltip .die.mixed {
   color: #2c3678;
 }
 #chat .wicked-die-tooltip .die.failure {

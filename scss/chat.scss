@@ -132,7 +132,7 @@
             border-bottom-right-radius: 5px;
             border-bottom-left-radius: 5px;
 
-            &.critical-success {
+            &.critical {
                 color: $crit;
             }
 
@@ -140,7 +140,7 @@
                 color: $success;
             }
 
-            &.partial-success {
+            &.mixed {
                 color: $mixed;
             }
 

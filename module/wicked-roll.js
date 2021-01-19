@@ -78,54 +78,32 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
     default:            
       effect_localize = 'FITD.EffectDefault'	  
   }
-  
-  let type_localize = '';
-  switch (type) {
-    case 'action':
-      type_localize = 'FITD.RollAction'
-      break;                
-    case 'blowback':        
-      type_localize = 'FITD.RollBlowback'
-      break;                
-    case 'calamity':        
-      type_localize = 'FITD.RollCalamity'
-      break;               
-    case 'defensiveMove':   
-      type_localize = 'FITD.RollDefensiveMove'
-      break;                
-    case 'discovery':       
-      type_localize = 'FITD.RollDiscovery'
-      break;                
-    case 'engagement':      
-      type_localize = 'FITD.RollEngagement'
-      break;                
-    case 'lock':           
-      type_localize = 'FITD.RollLock'
-      break;               
-    case 'loot':           
-      type_localize = 'FITD.RollLoot'
-      break;               
-    case 'resistance':    
-      type_localize = 'FITD.RollResistance'
-      break;                
-    case 'creature':        
-      type_localize = 'FITD.RollCreature'
-      break;                
-    case 'trap':            
-      type_localize = 'FITD.RollTrap'
-      break;                
-    case 'startingLoc':     
-      type_localize = 'FITD.RollStartingLoc'
-      break;                
-    case 'pathing':         
-      type_localize = 'FITD.RollPathing'
-      break;   	  
-    case 'fortune':     
-    default:            
-      type_localize = 'FITD.RollFortune'	  
+
+  let roll_type = game.i18n.localize('FITD.ROLL.' + type.toUpperCase() + '.Name');
+  let roll_status_text = game.i18n.localize('FITD.ROLL.' + roll_status.capitalize());
+  let roll_description = game.i18n.localize('FITD.ROLL.' + type.toUpperCase() + '.' + roll_status.capitalize() );
+
+  // Append special description information
+  if (type == 'creature') {
+    roll_description += '<br/>' + game.i18n.localize('FITD.ROLL.CREATURE.Note');
+  } else if (type == 'lock') {
+    roll_description += '<br/>' + game.i18n.localize('FITD.ROLL.LOCK.Note');
+  } else if (type == 'loot') {
+    if (!zeromode && rolls.length > 1) {
+      roll_description = "";
+      if (roll_status == "critical") {
+        roll_description += ' ' + game.i18n.localize('FITD.ROLL.' + type.toUpperCase() + '.' + roll_status.capitalize());
+      }
+      roll_description += '<ul>'
+      for (var i = 0; i < rolls.length; i++) {
+        roll_description += '<li>' + game.i18n.localize('FITD.ROLL.' + type.toUpperCase() + '.' + getWickedRollStatus([rolls[i]], false).capitalize()) + '</li>';
+      }
+      roll_description += '</ul>'
+    }
+    roll_description += '<p>' + game.i18n.localize('FITD.ROLL.LOOT.Note') + '</p>';
   }
 
-  let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position_localize, effect: effect_localize, type: type_localize, zeromode: zeromode });
+  let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_type: roll_type, roll_status_class: roll_status, roll_status_text: roll_status_text, attribute_label: attribute_label, position: position_localize, effect: effect_localize, roll_description: roll_description, zeromode: zeromode });
 
   let messageData = {
     user: game.user._id,
@@ -196,7 +174,7 @@ export function getWickedRollStatus(rolls, zeromode = false) {
     else if (use_die === 6) {
       // 6,6 - critical success
       if (prev_use_die && prev_use_die === 6) {
-        roll_status = "critical-success";
+        roll_status = "critical";
       }
       // 6 - success
       else {
@@ -205,7 +183,7 @@ export function getWickedRollStatus(rolls, zeromode = false) {
     }
     // else (4,5) = partial success
     else {
-      roll_status = "partial-success";
+      roll_status = "mixed";
     }
 
   }
@@ -229,18 +207,18 @@ export async function simpleRollPopup() {
 		<div class="form-group">
 		<label>${game.i18n.localize('FITD.RollType')}:</label>
 		<select id="type" name="type">
-		  <option value="fortune" selected>${game.i18n.localize('FITD.RollFortune')}</option>		  
-		  <option value="blowback">${game.i18n.localize('FITD.RollBlowback')}</option>
-		  <option value="calamity">${game.i18n.localize('FITD.RollCalamity')}</option>
-		  <option value="defensiveMove">${game.i18n.localize('FITD.RollDefensiveMove')}</option>
-		  <option value="discovery">${game.i18n.localize('FITD.RollDiscovery')}</option>
-		  <option value="engagement">${game.i18n.localize('FITD.RollEngagement')}</option>
-		  <option value="lock">${game.i18n.localize('FITD.RollLock')}</option>
-		  <option value="loot">${game.i18n.localize('FITD.RollLoot')}</option>
-		  <option value="creature">${game.i18n.localize('FITD.RollCreature')}</option>
-		  <option value="trap">${game.i18n.localize('FITD.RollTrap')}</option>
-		  <option value="startingLoc">${game.i18n.localize('FITD.RollStartingLoc')}</option>
-		  <option value="pathing">${game.i18n.localize('FITD.RollPathing')}</option>		  
+		  <option value="fortune" selected>${game.i18n.localize('FITD.ROLL.FORTUNE.Name')}</option>		  
+		  <option value="blowback">${game.i18n.localize('FITD.ROLL.BLOWBACK.Name')}</option>
+		  <option value="calamity">${game.i18n.localize('FITD.ROLL.CALAMITY.Name')}</option>
+		  <option value="defensive">${game.i18n.localize('FITD.ROLL.DEFENSIVE.Name')}</option>
+		  <option value="discovery">${game.i18n.localize('FITD.ROLL.DISCOVERY.Name')}</option>
+		  <option value="engagement">${game.i18n.localize('FITD.ROLL.ENGAGEMENT.Name')}</option>
+		  <option value="lock">${game.i18n.localize('FITD.ROLL.LOCK.Name')}</option>
+		  <option value="loot">${game.i18n.localize('FITD.ROLL.LOOT.Name')}</option>
+		  <option value="creature">${game.i18n.localize('FITD.ROLL.CREATURE.Name')}</option>
+		  <option value="trap">${game.i18n.localize('FITD.ROLL.TRAP.Name')}</option>
+		  <option value="starting">${game.i18n.localize('FITD.ROLL.STARTING.Name')}</option>
+		  <option value="pathing">${game.i18n.localize('FITD.ROLL.PATHING.Name')}</option>		  
 		</select>
 	  </div>
         <div class="form-group">
