@@ -101,6 +101,10 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
       roll_description += '</ul>'
     }
     roll_description += '<p>' + game.i18n.localize('FITD.ROLL.LOOT.Note') + '</p>';
+  } else if (type == 'resistance' && position == 'deadly') {
+    if (roll_status == 'failure' || roll_status == 'mixed') {
+      roll_description = game.i18n.localize('FITD.ROLL.RESISTDEATH.' + roll_status.capitalize());
+    }
   }
 
   let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_type: roll_type, roll_status_class: roll_status, roll_status_text: roll_status_text, attribute_label: attribute_label, position: position_localize, effect: effect_localize, roll_description: roll_description, zeromode: zeromode });

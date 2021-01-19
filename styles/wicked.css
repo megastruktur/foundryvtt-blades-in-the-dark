@@ -3280,8 +3280,11 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 /*
  *  Rollable text pop-up dialog Styles
  */
+#skill-roll {
+  min-height: 360px;
+}
 #skill-roll .action-info {
-  margin-top: -20px;
+  margin-top: 0px;
 }
 #skill-roll .total-rolled label:nth-child(2) {
   font-size: 15px;

@@ -128,7 +128,7 @@
     "TooltipActions": "<strong>Assist:</strong> Give +Effect, but open to Consequence<br><strong>Go Hard: </strong>Trade: +Effect for -Position<br><span id='team-up'><strong>Team Up:</strong> Take the highest result, but each PC with a Mixed or Failure takes Stress.</span><br><strong>Dark Bargain:</strong> Trade +1D for a Consequence<br><strong>Dark Heart:</strong> Take +1D on a Roll",
     "TooltipShock": "Take -1D on next Roll, then clears. (Automatically calculated in the Roll)",
     "TooltipDarkHeart": "Take +1D on a Roll. You can only spend one Dark Heart per Roll.<br><strong>Death Knell:</strong> When dying with Dark Hearts take a final action. Add +1D per Dark Heart. Any ally that sees it gains a Dark Heart.",
-    "TooltipBloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>.",
+    "TooltipBloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>. If you receive another significant wound while bloodied, you <strong>die</strong>.",
     "TooltipBloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
     "TooltipMorale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",
     "TooltipProjects": "<strong>•Brew</strong> potions and alchemicals.<br><strong>•Build</strong> locks, traps, tricks, and rooms.<br><strong>•Contact</strong> vile friends, npcs, or factions.<br><strong>•Craft</strong> an item, edge, or contraption.<br><strong>•Incant</strong> a ritual.<br><strong>•Recruit</strong> a pack of minions.<br><strong>•Torture</strong> a prisoner.<br><br><strong>•Risk it!</strong><br>Re-roll a Downtime Action but lose its Dominant Position.",
@@ -188,6 +188,9 @@
     "SkillsthreatenTooltip": "When you THREATEN, you forcefully compel someone to obey or fear you.",
 
     "Position": "Position",
+    "DeadlyPosition": "Roll to resist death",
+    "No": "No",
+    "Yes": "Yes",
     "Effect": "Effect",
     "BaseSkillDice": "Base Skill Dice",
     "TotalSkillDice": "Total Skill Dice",
@@ -413,6 +416,11 @@
         "Success": "You spend 1 stress to <strong>fully</strong> resist the consequence.",
         "Mixed": "You spend 2 stress to <strong>partially</strong> resist the consequence.",
         "Failure": "You spend 3 stress to <strong>partially</strong> resist the consequence."
+      },
+
+      "RESISTDEATH": {
+        "Mixed": "The consequence is reduced in severity but <strong>still devastating</strong>. Maybe you get knocked out of the scene, a clock starts as you start bleeding to death, or you lose a limb.",
+        "Failure": "<strong>You die</strong>. If you have dark hearts, perform your <strong>death knell</strong>!"
       },
 
       "CREATURE": {
