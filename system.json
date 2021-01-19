@@ -6,6 +6,7 @@
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
+  "background": "styles/assets/images/WO-Header.webp",
   "author": "Spearhead, LorduFreeman",
   "authors": [
   	{

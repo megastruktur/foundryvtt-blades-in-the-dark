@@ -1327,6 +1327,9 @@ form.dungeon-sheet #masterplan > div:nth-child(n+1) {
 form.dungeon-sheet #masterplan > div:nth-child(n+1) input {
   margin: 2px 0px;
 }
+form.dungeon-sheet #masterplan > div:first-child {
+  margin-top: 0;
+}
 
 /*
  * Fonts
@@ -2967,7 +2970,7 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
   padding: 5px;
   color: #191919;
   font-size: 14px;
-  background: url(../styles/assets/images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.webp) repeat;
   background-size: 300px;
   box-shadow: inset 0 0 9px 1px #4000004f;
 }
@@ -3101,7 +3104,7 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 }
 
 #chat-form textarea {
-  background: url(../styles/assets/images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.webp) repeat;
   background-size: 300px;
 }
 
@@ -3296,10 +3299,10 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 
 /* WO-Borders for windows and sheets*/
 .window-app .window-content {
-  background: url(../styles/assets/images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.webp) repeat;
   color: #191919;
   overflow-y: auto;
-  background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png), url(../styles/assets/images/background-light.png);
+  background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png), url(../styles/assets/images/background-light.webp);
   background-repeat: repeat-y, repeat-y, repeat;
   background-size: 70px, 70px, 300px;
   background-position: left, right, bottom;
@@ -3398,6 +3401,8 @@ body {
   font-family: Bitter, sans-serif;
   font-weight: 500;
   font-size: 14px;
+  background: url("../styles/assets/images/WO-Background.webp") no-repeat center;
+  background-size: cover;
 }
 
 table th:hover .item-add-popup {
@@ -3861,6 +3866,7 @@ div.item i.fa-trash, tr.item i.fa-trash {
 .editor-content {
   min-height: 280px;
   background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
 }
 
 .compendium .directory-list .directory-item {
@@ -3883,6 +3889,38 @@ form .form-group label {
   font-weight: 700;
 }
 
+/* Global Tab Style Formatting */
+nav.tabs.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+nav.tabs.flex-horizontal .item {
+  text-align: center;
+  color: black;
+  background-color: #8080803d;
+  line-height: 2rem;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0px 2px;
+  box-shadow: inset 0 2px 3px 0px #68332c;
+  flex: auto;
+}
+nav.tabs.flex-horizontal .item.active {
+  font-weight: 700;
+  color: white;
+  background-color: #68332c;
+  box-shadow: none;
+}
+nav.tabs.flex-horizontal > :first-child {
+  margin-left: 0;
+}
+nav.tabs.flex-horizontal > :last-child {
+  margin-right: 0;
+}
+
 /*
  *  Tooltip Styles
  */
@@ -3893,7 +3931,7 @@ form .form-group label {
   max-width: 400px;
   font-weight: 600;
   font-family: Bitter;
-  background: url(../styles/assets/images/background-light.png) repeat;
+  background: url(../styles/assets/images/background-light.webp) repeat;
   color: #400000;
   font-size: 16px;
   text-align: justify;

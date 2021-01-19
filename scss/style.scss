@@ -26,11 +26,11 @@
 
  /* WO-Borders for windows and sheets*/
 .window-app .window-content {
-    background: url(../styles/assets/images/background-light.png) repeat;
+    background: url(../styles/assets/images/background-light.webp) repeat;
     color: $almost_black;
     overflow-y: auto;
 	
-	background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png),url(../styles/assets/images/background-light.png);
+	background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png),url(../styles/assets/images/background-light.webp);
 	background-repeat: repeat-y, repeat-y, repeat;
 	background-size: 70px, 70px, 300px;
 	background-position: left, right, bottom;
@@ -156,6 +156,8 @@ body {
     font-family: Bitter, sans-serif;
     font-weight: 500;
     font-size: 14px;
+	background: url("../styles/assets/images/WO-Background.webp") no-repeat center;
+    background-size: cover;
 }
 
 
@@ -375,7 +377,7 @@ button {
 
 .profile-img {
     border: none;
-    // background: url(../styles/assets/images/background-light.png) repeat $bloodyShadow;
+    // background: url(../styles/assets/images/background-light.webp) repeat $bloodyShadow;
     background-blend-mode: color-burn;
     object-fit: cover;
 
@@ -534,6 +536,7 @@ div.item, tr.item {
 .editor-content {
     min-height: 280px;
     background: rgba(0,0,0,0.05);
+	padding: 10px;
 }
 
 // Styling for opened compendia and directories
@@ -555,6 +558,45 @@ form .notes, form .hint {
 form .form-group label {
     font-weight: 700;
 }
+ /* Global Tab Style Formatting */
+
+nav.tabs.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: space-between;
+    margin: 0;
+	
+	& .item {
+		text-align: center;
+		color: black;
+		background-color:#8080803d;
+		line-height: 2rem;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin: 0px 2px;
+		box-shadow: inset 0 2px 3px 0px $mud;
+		flex: auto;
+	}
+
+	& .item.active {
+		font-weight: 700;
+		color: white;
+		background-color: $mud;
+		box-shadow: none;
+	}
+	
+	& > :first-child {
+		margin-left: 0;
+	}
+
+	& > :last-child {
+		margin-right: 0;
+	}
+}
+
+ 
+
 
 
 /*
@@ -570,7 +612,7 @@ form .form-group label {
         max-width: 400px;
         font-weight: 600;
         font-family: Bitter;
-        background: url(../styles/assets/images/background-light.png) repeat;
+        background: url(../styles/assets/images/background-light.webp) repeat;
         color: $bloody;
         font-size: 16px;
         text-align: justify;

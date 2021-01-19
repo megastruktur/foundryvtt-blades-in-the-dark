@@ -28,7 +28,7 @@
         padding: 5px;
         color: $almost_black;
         font-size: 14px;
-        background: url(../styles/assets/images/background-light.png) repeat;
+        background: url(../styles/assets/images/background-light.webp) repeat;
         background-size: 300px;
         box-shadow: inset 0 0 9px 1px $bloodyShadow;
 
@@ -205,6 +205,6 @@
 
 // Game Chat Background
 #chat-form textarea {
-    background: url(../styles/assets/images/background-light.png) repeat;
+    background: url(../styles/assets/images/background-light.webp) repeat;
     background-size: 300px;
 }
