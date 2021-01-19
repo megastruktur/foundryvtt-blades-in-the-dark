@@ -104,6 +104,9 @@ form.dungeon-sheet {
                 margin: 2px 0px;
             }
         }
+		& > div:first-child {
+			margin-top: 0;
+		}
     }
 }
 

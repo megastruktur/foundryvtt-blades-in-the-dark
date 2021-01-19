@@ -558,6 +558,45 @@ form .notes, form .hint {
 form .form-group label {
     font-weight: 700;
 }
+ /* Global Tab Style Formatting */
+
+nav.tabs.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+	justify-content: space-between;
+    margin: 0;
+	
+	& .item {
+		text-align: center;
+		color: black;
+		background-color:#8080803d;
+		line-height: 2rem;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin: 0px 2px;
+		box-shadow: inset 0 2px 3px 0px $mud;
+		flex: auto;
+	}
+
+	& .item.active {
+		font-weight: 700;
+		color: white;
+		background-color: $mud;
+		box-shadow: none;
+	}
+	
+	& > :first-child {
+		margin-left: 0;
+	}
+
+	& > :last-child {
+		margin-right: 0;
+	}
+}
+
+ 
+
 
 
 /*
