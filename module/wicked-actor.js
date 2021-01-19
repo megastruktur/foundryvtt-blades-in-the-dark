@@ -26,6 +26,10 @@ export class WickedActor extends Actor {
           // Replace default image
           data.img = `systems/wicked-ones/styles/assets/default-images/${data.type}.webp`;
           data.token.img = `systems/wicked-ones/styles/assets/default-images/${data.type}-token.webp`;
+          data.token.actorLink = true;
+          break;
+        case "clock":
+          data.token.actorLink = true;
           break;
         default:
       }
