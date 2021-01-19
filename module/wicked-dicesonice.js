@@ -4,20 +4,20 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
    dice3d.addDicePreset({
 	   type: "d6",
 	   labels: [
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-1.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-2.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-3.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-4.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-5.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-6.png"	   
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-1.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-2.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-3.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-4.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-5.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-6.webp"	   
 	   ],
 	   bumpMaps: [
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-1-b.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-2-b.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-3-b.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-4-b.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-5-b.png",
-       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-6-b.png"	  
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-1-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-2-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-3-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-4-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-5-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/whitedots/d6-6-b.webp"	  
 		],
 		system: "WhiteDots",
 		colorset:"Wicked Dice"
@@ -27,20 +27,20 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
    dice3d.addDicePreset({
 	   type: "d6",
 	   labels: [
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-1.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-2.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-3.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-4.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-5.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-6.png"	   
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-1.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-2.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-3.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-4.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-5.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-6.webp"	   
 	   ],
 	   bumpMaps: [
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-1-b.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-2-b.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-3-b.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-4-b.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-5-b.png",
-       "../systems/wicked-ones/styles/assets/dice/dots/d6-6-b.png"	  
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-1-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-2-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-3-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-4-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-5-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/dots/d6-6-b.webp"	  
 		],
 		system: "BlackDots",
 		colorset:"Wicked Dice"
@@ -51,20 +51,20 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
    dice3d.addDicePreset({
 	   type: "d6",
 	   labels: [
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-1.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-2.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-3.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-4.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-5.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-6.png"	   
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-1.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-2.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-3.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-4.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-5.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-6.webp"	   
 	   ],
 	   bumpMaps: [
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-1-b.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-2-b.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-3-b.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-4-b.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-5-b.png",
-       "../systems/wicked-ones/styles/assets/dice/claws/d6-6-b.png"	  
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-1-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-2-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-3-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-4-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-5-b.webp",
+       "../systems/wicked-ones/styles/assets/dice/claws/d6-6-b.webp"	  
 		],
 		system: "Claws",
 		colorset:"Wicked Dice"
@@ -95,6 +95,6 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
         edge: '#707070',
 		material: 'metal',
 		font:"Didot",
-		texture: "../systems/wicked-ones/styles/assets/dice/dots/texture.png",
+		texture: "../systems/wicked-ones/styles/assets/dice/dots/texture.webp",
       },"default");
     });
