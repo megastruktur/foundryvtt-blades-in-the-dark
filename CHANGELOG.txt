@@ -1,3 +1,6 @@
+v2.15
+- Fixes all Tokens to be force "actor linked"
+
 v2.14
 - Fixes Dice-so-Nice integration
 

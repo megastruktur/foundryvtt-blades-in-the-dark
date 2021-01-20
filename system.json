@@ -2,7 +2,7 @@
   "name": "blades-in-the-dark",
   "title": "Blades in the Dark",
   "description": "Blades in the dark game system.",
-  "version": "2.14",
+  "version": "2.15",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
@@ -37,7 +37,7 @@
   ],
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
   "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/2.14.zip",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/2.15.zip",
   "packs": [
     {
       "name": "class",
