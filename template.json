@@ -234,6 +234,7 @@
       }
     },
     "adventurer": {
+      "templates": [ "default" ],
       "adventurer_type": "adventurer",
       "adventurer_class": "",
       "adventurer_class_custom": "",
@@ -283,7 +284,7 @@
       "clock_progress": 0
     },
     "defense": {
-      "description": "",
+      "templates": [ "default" ],
       "checked": false
     },
     "calling": {
@@ -384,7 +385,7 @@
       "templates": [ "default" ]
     },
     "dungeon_theme": {
-      "description": "",
+      "templates": [ "default" ],
       "special_name": "",
       "special_feature": "",
       "theme_checkbox_1_text": "",

@@ -9,6 +9,20 @@
  */
 
 // Pop-up dialog to add items to actors
+#add-items-popup {
+    max-height: 90%;
+    top: 5%;
+
+    .dialog-content {
+        overflow-y: scroll;
+    }
+
+    .dialog-buttons {
+        max-height: 34px;
+        margin-top: 5px;
+    }
+}
+
 #items-to-add {
     font-size: medium;
     display: flex;
@@ -46,8 +60,14 @@
  *  Rollable text pop-up dialog Styles
  */
 
+#dice-roll-popup {
+
+    .dialog-buttons {
+        max-height: 34px;
+    }
+}
+
 #skill-roll{
-    min-height: 360px;
 
     .action-info {
         margin-top: 0px;

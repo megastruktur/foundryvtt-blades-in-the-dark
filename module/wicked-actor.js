@@ -305,7 +305,11 @@ export class WickedActor extends Actor {
       let roll_data = this.getRollData();
       dice_amount += roll_data.dice_amount[attribute_name];
       default_bonus += roll_data.default_bonus[attribute_name];
-	  }
+    }
+
+    let options = {
+      id: "dice-roll-popup",
+    }
 		
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
@@ -389,7 +393,7 @@ export class WickedActor extends Actor {
         $("#skill-roll #type").change(this._onRollTypeChange);
         $("#skill-roll #mod").change(this._onDiceModChange);
       },
-    }).render(true);
+    }, options).render(true);
 
 
   }

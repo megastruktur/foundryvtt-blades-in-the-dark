@@ -111,6 +111,7 @@
     "TierTwo": "Tier 2",
     "TierThree": "Tier 3",
     "Type": "Type",
+    "ItemIsOfType": "Item is a",
     "ClockSize": "Clock Segments",
     "ClockProgress": "Clock Progress",
     "Abilities": "Abilities",
