@@ -46,6 +46,14 @@ export class WickedSheet extends ActorSheet {
 
 
   async _onItemAddClick(event) {
+    // Check if a pop-up item picker is open and bring that one to the front
+    for (var i in ui.windows) {
+      if (ui.windows[i].id == "add-items-popup") {
+        ui.windows[i].bringToTop();
+        return;
+      }
+    }
+
     event.preventDefault();
     const item_type = $(event.currentTarget).data("itemType")
     const distinct = $(event.currentTarget).data("distinct")
