@@ -18,11 +18,58 @@ export const migrateWorld = async function() {
         console.error(err);
       }
     }
+
+    // Migrate Token Link for Character and Crew
+    if (a.data.type === 'character' || a.data.type === 'crew') {
+      try {
+        const updateData = _migrateTokenLink(a.data);
+        if ( !isObjectEmpty(updateData) ) {
+          console.log(`Migrating Token Link for ${a.name}`);
+          await a.update(updateData, {enforceTypes: false});
+        }
+      } catch(err) {
+        console.error(err);
+      }
+    }
+
+  }
+
+  // Migrate Actor Link
+  for ( let s of game.scenes.entities ) {
+    try {
+      const updateData = _migrateSceneData(s.data);
+      if ( !isObjectEmpty(updateData) ) {
+        console.log(`Migrating Scene entity ${s.name}`);
+        await s.update(updateData, {enforceTypes: false});
+      }
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   // Set the migration as complete
   game.settings.set("bitd", "systemMigrationVersion", game.system.data.version);
   ui.notifications.info(`BITD System Migration to version ${game.system.data.version} completed!`, {permanent: true});
+};
+
+
+/* -------------------------------------------- */
+
+/**
+ * Migrate a single Scene entity to incorporate changes to the data model of it's actor data overrides
+ * Return an Object of updateData to be applied
+ * @param {Object} scene  The Scene data to Update
+ * @return {Object}       The updateData to apply
+ */
+export const _migrateSceneData = function(scene) {
+  const tokens = duplicate(scene.tokens);
+  return {
+    tokens: tokens.map(t => {
+      t.actorLink = true;
+      t.actorData = {};
+      return t;
+    })
+  };
 };
 
 /* -------------------------------------------- */
@@ -91,6 +138,22 @@ function _migrateActor(actor) {
   //   if ( k in b ) updateData[`data.bonuses.${k}`] = b[k];
   //   else updateData[`data.bonuses.-=${k}`] = null;
   // }
+}
+
+/* -------------------------------------------- */
+
+
+/**
+ * Make Token be an Actor link.
+ * @param {Actor} actor   The actor to Update
+ * @return {Object}       The updateData to apply
+ */
+function _migrateTokenLink(actor) {
+
+  let updateData = {}
+  updateData['token.actorLink'] = true;
+
+  return updateData;
 }
 
 /* -------------------------------------------- */

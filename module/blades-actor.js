@@ -7,6 +7,22 @@ import { BladesHelpers } from "./blades-helpers.js";
  */
 export class BladesActor extends Actor {
 
+  /** @override */
+  static async create(data, options={}) {
+
+    data.token = data.token || {};
+
+    // For Crew and Character set the Token to sync with charsheet.
+    switch (data.type) {
+      case 'character':
+      case 'crew':
+        data.token.actorLink = true;
+        break;
+    }
+
+
+    return super.create(data, options);
+  }
 
   /** @override */
   getRollData() {
