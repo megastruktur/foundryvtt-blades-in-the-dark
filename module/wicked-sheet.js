@@ -87,7 +87,9 @@ export class WickedSheet extends ActorSheet {
     items.forEach(e => {
       let itemPrefix = ``;
       let itemSuffix = ``;
+      let itemTooltip = e.data.description ?? "";
       switch (item_type) {
+
         case "minion_upgrade":
           if (e.data.upgrade_type == 'external') {
             itemSuffix += ` (External)`
@@ -109,6 +111,9 @@ export class WickedSheet extends ActorSheet {
           if (e.data.ability_group == 'group_core') {
             itemSuffix += ` (Core)`
           }
+          if (itemTooltip == "") {
+            itemTooltip = game.i18n.localize('FITD.ItemIsOfType') + ' ' +  game.i18n.localize(CONFIG.WO.special_ability_types[e.data.ability_type]);
+          }
           break;
 
         case "tier3room":
@@ -116,13 +121,16 @@ export class WickedSheet extends ActorSheet {
             itemPrefix += `(${e.data.theme}): `
           }
           break;
-
+        
         default:
       }
 
       html += `<input id="select-item-${e._id}" type="${input_type}" name="select_items" value="${e._id}">`;
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
-      html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix} <i class="tooltip fas fa-question-circle"><span class="tooltiptext">${e.data.description}</span></i>`;
+      html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix}`;
+      if (itemTooltip != "") {
+        html += `<i class="tooltip fas fa-question-circle"><span class="tooltiptext">${itemTooltip}</span></i>`;
+      }
       html += `</label>`;
     });
 
@@ -132,7 +140,7 @@ export class WickedSheet extends ActorSheet {
     let title = game.i18n.has(label) ? game.i18n.localize(label) : item_type;
 
     let options = {
-      // width: "500"
+      id: "add-items-popup"
     }
 
     let dialog = new Dialog({
@@ -150,7 +158,10 @@ export class WickedSheet extends ActorSheet {
           callback: () => false
         }
       },
-      default: "two"
+      default: "two",
+      render: html => {
+        $('i.tooltip').on('mouseover', this._onTooltipHover);
+      },
     }, options);
 
     dialog.render(true);
@@ -327,4 +338,25 @@ export class WickedSheet extends ActorSheet {
   }
 
   /* -------------------------------------------- */
+
+  /**
+   * Reposition scrollable tooltip on hover 
+   * @param {*} event 
+   */
+  async _onTooltipHover(event) {
+
+    var $menuItem = $(this);
+    var $tooltipElement = $('> span', $menuItem);
+
+    var menuItemPos = $menuItem.position();
+
+    $tooltipElement.css({
+      top: menuItemPos.top,
+      left: menuItemPos.left + Math.round($menuItem.outerWidth() * 0.75)
+    });
+  }
+
+  /* -------------------------------------------- */
+
 }
+

@@ -3250,6 +3250,18 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 /*
  *  Add-item pop-up dialog Styles
  */
+#add-items-popup {
+  max-height: 90%;
+  top: 5%;
+}
+#add-items-popup .dialog-content {
+  overflow-y: scroll;
+}
+#add-items-popup .dialog-buttons {
+  max-height: 34px;
+  margin-top: 5px;
+}
+
 #items-to-add {
   font-size: medium;
   display: flex;
@@ -3280,9 +3292,10 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
 /*
  *  Rollable text pop-up dialog Styles
  */
-#skill-roll {
-  min-height: 360px;
+#dice-roll-popup .dialog-buttons {
+  max-height: 34px;
 }
+
 #skill-roll .action-info {
   margin-top: 0px;
 }
