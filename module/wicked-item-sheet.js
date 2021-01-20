@@ -24,50 +24,89 @@ export class WickedItemSheet extends ItemSheet {
     const data = super.getData(options);
     data.config = CONFIG.WO;
 
-    if (data.data.ability_type == "ds_eyes") {
+    // Prepare special ability data
+    if (data.item.type == "specialability") {
 
-      let assigned_rays = [];
-      let available_rays = {};
+      if (data.data.ability_type == "ds_eyes") {
 
-      // Iterate through ray selectors and populate assigned rays
-      for (var i = 1; i < 10; i++) {
-        if (data.data.primal['ds_eye_ray_' + i] != "") {
-          assigned_rays.push(data.data.primal['ds_eye_ray_' + i]);
+        let assigned_rays = [];
+        let available_rays = {};
+
+        // Iterate through ray selectors and populate assigned rays
+        for (var i = 1; i < 10; i++) {
+          if (data.data.primal['ds_eye_ray_' + i] != "") {
+            assigned_rays.push(data.data.primal['ds_eye_ray_' + i]);
+          }
+        }
+
+        // Iterate through all rays and populate available rays
+        for (const [key, value] of Object.entries(CONFIG.WO.doomseeker_eye_rays)) {
+          if (assigned_rays.indexOf(key) == -1) {
+            available_rays[key] = CONFIG.WO.doomseeker_eye_rays[key];
+          }
+        }
+
+        // Iterate through ray selectors and pupulate available rays for selector
+        for (var i = 1; i < 10; i++) {
+          data.config["available_rays" + i] = {};
+          let val = data.data.primal['ds_eye_ray_' + i];
+          if (val != "") {
+            // Add own selected avalue as available
+            data.config['available_rays' + i][val] = CONFIG.WO.doomseeker_eye_rays[val];
+          }
+
+          // Add available values to the list to select from
+          for (const [key, value] of Object.entries(available_rays)) {
+            available_rays[key] = CONFIG.WO.doomseeker_eye_rays[key];
+            data.config['available_rays' + i][key] = CONFIG.WO.doomseeker_eye_rays[key];
+          }
         }
       }
 
-      // Iterate through all rays and populate available rays
-      for (const [key, value] of Object.entries(CONFIG.WO.doomseeker_eye_rays)) {
-        if (assigned_rays.indexOf(key) == -1) {
-          available_rays[key] = CONFIG.WO.doomseeker_eye_rays[key];
-        }
+      if (data.data.ability_type == "be_psi") {
+        data.data.source = game.i18n.localize("FITD.Braineater");
+      } else if (data.data.ability_type == "ds_eyes") {
+        data.data.source = game.i18n.localize("FITD.Doomseeker");
+      } else if (data.data.ability_type == "fs_face") {
+        data.data.source = game.i18n.localize("FITD.Facestealer");
+      } else if (data.data.ability_type == "gm_path") {
+        data.data.source = game.i18n.localize("FITD.Goldmonger");
       }
 
-      // Iterate through ray selectors and pupulate available rays for selector
-      for (var i = 1; i < 10; i++) {
-        data.config["available_rays" + i] = {};
-        let val = data.data.primal['ds_eye_ray_' + i];
-        if (val != "") {
-          // Add own selected avalue as available
-          data.config['available_rays' + i][val] = CONFIG.WO.doomseeker_eye_rays[val];
-        }
+    } else {
+      switch (data.item.type) {
+        // Prepare dungeon duty data
+        case "duty":
+          data.data.type_hint_prompt = "";
+          data.data.type_hint_paragraph1 = "";
+          data.data.type_hint_paragraph2 = "";
+          switch (data.data.type) {
+            case "FITD.DUTY_TYPE.Creature":
+              data.data.type_hint_prompt = game.i18n.localize("FITD.DUTY_TYPE.HINT.CreaturePrompt");
+              data.data.type_hint_paragraph1 = game.i18n.localize("FITD.DUTY_TYPE.HINT.CreatureParagraph");
+              break;
+            case "FITD.DUTY_TYPE.Lock":
+              data.data.type_hint_prompt = game.i18n.localize("FITD.DUTY_TYPE.HINT.LockPrompt");
+              data.data.type_hint_paragraph1 = game.i18n.localize("FITD.DUTY_TYPE.HINT.LockParagraph1");
+              data.data.type_hint_paragraph2 = game.i18n.localize("FITD.DUTY_TYPE.HINT.LockParagraph2");
+              break;
+            case "FITD.DUTY_TYPE.Trap":
+              data.data.type_hint_prompt = game.i18n.localize("FITD.DUTY_TYPE.HINT.TrapPrompt");
+              data.data.type_hint_paragraph1 = game.i18n.localize("FITD.DUTY_TYPE.HINT.TrapParagraph1");
+              data.data.type_hint_paragraph2 = game.i18n.localize("FITD.DUTY_TYPE.HINT.TrapParagraph2");
+              break;
+            case "FITD.DUTY_TYPE.Trick":
+              data.data.type_hint_prompt = game.i18n.localize("FITD.DUTY_TYPE.HINT.TrickPrompt");
+              data.data.type_hint_paragraph1 = game.i18n.localize("FITD.DUTY_TYPE.HINT.TrickParagraph");
+              break;
 
-        // Add available values to the list to select from
-        for (const [key, value] of Object.entries(available_rays)) {
-          available_rays[key] = CONFIG.WO.doomseeker_eye_rays[key];
-          data.config['available_rays' + i][key] = CONFIG.WO.doomseeker_eye_rays[key];
-        }
+            default:
+          }
+          break;
+
+        default:
       }
-    }
 
-    if (data.data.ability_type == "be_psi") {
-      data.data.source = game.i18n.localize("FITD.Braineater");
-    } else if (data.data.ability_type == "ds_eyes") {
-      data.data.source = game.i18n.localize("FITD.Doomseeker");
-    } else if (data.data.ability_type == "fs_face") {
-      data.data.source = game.i18n.localize("FITD.Facestealer");
-    } else if (data.data.ability_type == "gm_path") {
-      data.data.source = game.i18n.localize("FITD.Goldmonger");
     }
 
     return data;
