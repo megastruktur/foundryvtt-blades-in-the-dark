@@ -211,3 +211,11 @@ WO.goldmonger_types = {
   "wind": "FITD.GM_TYPE.Wind"
 };
 
+WO.duty_types = {
+  "creature": "FITD.DUTY_TYPE.Creature",
+  "discovery": "FITD.DUTY_TYPE.Discovery",
+  "lock": "FITD.DUTY_TYPE.Lock",
+  "room": "FITD.DUTY_TYPE.Room",
+  "trap": "FITD.DUTY_TYPE.Trap",
+  "trick": "FITD.DUTY_TYPE.Trick"
+};

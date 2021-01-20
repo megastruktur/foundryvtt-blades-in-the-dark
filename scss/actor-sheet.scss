@@ -34,13 +34,7 @@ form.wicked-one-sheet {
                 align-self: flex-end;
                 
                 &:disabled {
-                    background-color: $gray;
-                    border-top: darkslategrey;
-                    border-bottom: darkslategrey;
-
-                    &:hover {
-                        box-shadow: none;
-                    }
+                    display: none;
                 }
             }
 

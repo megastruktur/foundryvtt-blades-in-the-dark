@@ -68,6 +68,20 @@ form.project-sheet {
 
 // Dungeon Duty Item
 form.duty-sheet {
+    
+    .description-entry {
+        min-width: 300px;
+        max-width: 500px;
+
+        label {
+            font-size: 14px;
+            font-weight: 800;
+        }
+        
+        p {
+            text-align: justify;
+        }
+    }
 }
 
 

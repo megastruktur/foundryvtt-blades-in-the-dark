@@ -300,12 +300,7 @@ form.wicked-one-sheet table.base-info .minionpack button {
   align-self: flex-end;
 }
 form.wicked-one-sheet table.base-info .minionpack button:disabled {
-  background-color: #999;
-  border-top: darkslategrey;
-  border-bottom: darkslategrey;
-}
-form.wicked-one-sheet table.base-info .minionpack button:disabled:hover {
-  box-shadow: none;
+  display: none;
 }
 form.wicked-one-sheet table.base-info .xp-stripe {
   background-color: #68332c;
@@ -2792,6 +2787,18 @@ form.adventurer-sheet #adventurer-sheet-body .class-selector select {
   width: 100%;
   margin-left: 0px;
   margin-right: 0px;
+}
+
+form.duty-sheet .description-entry {
+  min-width: 300px;
+  max-width: 500px;
+}
+form.duty-sheet .description-entry label {
+  font-size: 14px;
+  font-weight: 800;
+}
+form.duty-sheet .description-entry p {
+  text-align: justify;
 }
 
 form.minion-upgrade-sheet section.rollable-skill div > div {

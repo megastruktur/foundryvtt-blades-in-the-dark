@@ -275,7 +275,8 @@
     "duty": {
       "templates": [ "default" ],
       "tier": 0,
-      "type": ""
+      "type": "",
+      "type_custom": ""
     },
     "project": {
       "templates": [ "default" ],

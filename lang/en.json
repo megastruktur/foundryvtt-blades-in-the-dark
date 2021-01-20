@@ -57,6 +57,7 @@
     "VileFriend": "Vile Friend",
     "LessEffect": "Less Effect",
     "Description": "Description",
+    "DescriptionHint": "Enter a short description here...",
     "Loadout": "Gear & Supply",
     "GearOrSupply": "Gear or Supply",
     "QualityCategory": "Quality Category",
@@ -331,6 +332,7 @@
     "Side": "Side",
     "Open": "Open",
     "ZeroModeHint": "(0D roll)",
+    "CustomDutyTypeHint": "Enter a custom duty type here",
 
     "ROLL": {
       "Critical": "Critical!",
@@ -589,6 +591,26 @@
       "Venom": "Venom",
       "Water": "Water",
       "Wind": "Wind"
+    },
+    "DUTY_TYPE": {
+      "Creature": "Creature",
+      "Discovery": "Disovery",
+      "Lock": "Lock",
+      "Room": "Room",
+      "Trap": "Trap",
+      "Trick": "Trick",
+      "HINT": {
+        "CreaturePrompt": "Describe an unintelligent monster and two traits:",
+        "CreatureParagraph": "clever, corrupted, corrosive, diseased, incorporeal, flaming, freezing, magical, oozing, sneaky, strong, swarming, terrifying, tireless, venomous",
+        "LockPrompt": "Describe the door materials and the lock mechanism",
+        "LockParagraph1": "<strong>Door materials</strong>: bars, bone, crystal, ice, iron, magical field, roots, stone, wood",
+        "LockParagraph2": "<strong>Lock mechanisms</strong>: arcane, bar, bolt, heavy object, mortise, lock, padlock, password, pulley, pressure plate, puzzle, rim lock, timed",
+        "TrapPrompt": "Describe the mechanism and its trigger",
+        "TrapParagraph1": "<strong>Mechanisms</strong>: crushing wall, darts, spikes, fire, boulder, sawblade, pendulum blade, gas, lightning coil, lightning arc, swing blade, explosive barrel, pitfall, floor blade",
+        "TrapParagraph2": "<strong>Triggers</strong>: pressure plate, tripwire, magical detection, illusion or disguise, sound, item removal, false door",
+        "TrickPrompt": "Describe an intent and its trigger.",
+        "TrickParagraph": "Each trick has an intent, something that happens to the adventurers, and a trigger which causes the trick to happen."
+      }
     },
     "GAME_LOGIC": {
       "_comment": "GAME LOGIC DATA: Keep in sync with item name translations",
