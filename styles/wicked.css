@@ -300,12 +300,7 @@ form.wicked-one-sheet table.base-info .minionpack button {
   align-self: flex-end;
 }
 form.wicked-one-sheet table.base-info .minionpack button:disabled {
-  background-color: #999;
-  border-top: darkslategrey;
-  border-bottom: darkslategrey;
-}
-form.wicked-one-sheet table.base-info .minionpack button:disabled:hover {
-  box-shadow: none;
+  display: none;
 }
 form.wicked-one-sheet table.base-info .xp-stripe {
   background-color: #68332c;
