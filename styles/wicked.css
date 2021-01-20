@@ -506,6 +506,9 @@ form.wicked-one-sheet table.base-info .pleased-xp label.pleased-checkbox:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
+form.wicked-one-sheet table.base-info a.item-delete {
+  align-self: center;
+}
 form.wicked-one-sheet #character-defenses table th {
   background-color: #68332c;
   color: #EEEFFF;
@@ -528,6 +531,9 @@ form.wicked-one-sheet #character-defenses table tr td:nth-child(3) .item-name {
   margin-left: 12px;
   margin-right: 0px;
   font-weight: normal;
+}
+form.wicked-one-sheet #character-defenses a.item-delete {
+  align-self: center;
 }
 form.wicked-one-sheet #character-stress-clock {
   width: 60px;
@@ -1077,6 +1083,9 @@ form.minion-sheet #number input {
 }
 form.minion-sheet #main-minion-form {
   margin-right: 12px;
+}
+form.minion-sheet #main-minion-form a.item-delete {
+  align-self: center;
 }
 form.minion-sheet #picture-td {
   text-align: right;
