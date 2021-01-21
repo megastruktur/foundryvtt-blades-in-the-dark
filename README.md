@@ -1,5 +1,6 @@
-# Wicked Ones Game System for FoundryVTT
+<p align="center"><img src="readme-images/WWfoundry.png"></img></p>
 
+# Wicked Ones Game System for Foundry
 ### For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
 
 Based on the great Blades in the Dark system by `megastruktur`.
