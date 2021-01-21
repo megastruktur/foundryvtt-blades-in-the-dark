@@ -9,10 +9,10 @@ The module contains six "actor" types: Wicked Ones, Minion Packs, Dungeons, Fact
 
 Most parts of these sheets can be filled in by selecting and customizing "items". Those consist of: Adventurers, Callings, Defenses, Downtime Projects, Dungeon Duties, Rooms and Themes, Gear, Supply, Impulses, Monster Races, Revelries and more.
 
-Most of the items and content from the book can be found in the compendia, imported as usual and edit to entirely customize your game if you want to! No love for Strongholds? Just edit them until they fit your campaign theme. You want a new Calling with custom abilities? Easy to do, just make up new ones on the fly.
+Most of the items and official content from the book can be found in the compendia, imported as usual and edited to entirely customize your game if you want to! No love for Strongholds? Just edit them until they fit your campaign theme. You want a new Calling with custom abilities? Easy to do, just make up new ones on the fly.
 
 - To reset XP, Gold and other counters just click on the label name
-- To add items you can click a corresponding link or drag items from the associated compendium to the sheet
+- To add items you can click a corresponding link OR use the + Buttons. Dragging items from the associated compendium to the sheet works as well.
 - Many clickable parts of the sheet display additional information on hovering over them for a while, for example Gold, XP, Stress, Attributes or Shock.
 - To see the description of a Calling, Dark Impulse, Ability, etc you can just click on the added item and see all the info in the popup
 - When adding a new item you can hover over the "Question Mark" icon to see the item's description
@@ -30,20 +30,17 @@ Most of the items and content from the book can be found in the compendia, impor
 #### GM Rolls
 - GM Rolls are done using the dice icon on the left side of the screen, last icon in the toolbar. Clicking pops up a Roll Prompt containing every type of role described in the book.
 
-## Logic field
-Logic field is a json with params which allows to implement some logic when the Item of corresponding type is added or removed.
-#### Example (from the Vault 1 crew upgrade)
-`{"attribute":"data.vault.max","operator":"addition","value":4,"requirement":""}`
-- `attribute` - the attribute to affect
-- `operator` - what is done to attribute
-- `value` - the value for operator
-- `requirement` - is not used
-#### Operators list
-- `addition` - is added when item is attached and substracted when removed
-- `attribute_change` - changes the "attribute" to value and when removed - uses the "attribute_default" to restore
+## Screenshots of the system
+(click for full size)
+### Wicked One and Minion Sheet
+<img src =readme-images/wominionscompendia.png width =600px></img>
+### Adventurers, Dungeons and Clocks Sheets
+<img src =readme-images/othersheets.png width =600px></img>
+### Example World Map with Faction Markers
+<img src =readme-images/factions.png width =600px></img>
+### An example of Editable Items
 
 ## To be done
-- Adding pictures to this readme
 - Graphical improvements
 
 ## To be done in the far future
@@ -54,5 +51,5 @@ Logic field is a json with params which allows to implement some logic when the 
 
 ## Credits
 - This work is based on Wicked Ones by Ben Nielson (http://b-design.io/) and Victor Costa, a huge **Thank You!** to both of them for letting us use the wonderful official written and graphical content from the book to fill our system with!
-- Wicked Ones is based on Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+- Wicked Ones is based on Blades in the Dark (Forged in the Dark License) (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 
