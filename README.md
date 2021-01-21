@@ -34,7 +34,7 @@ Most of the items and official content from the book can be found in the compend
 ## Screenshots of the system
 (click for full size)
 ### Wicked One and Minion Sheet
-Items or abilities are added by either clicking the description title or the **+** icon appearing on hover, deleting is done by clicking the trash bin appearing on hover. Dragging and dropping from a Compendium works as well. Many elements display **tooltips** after **hovering over them** for a while.
+Items or abilities are added by either clicking the description title or the **+** icon appearing on hover, deleting is done by clicking the trash bin appearing on hover. **Red dots** appearing on mouse-over or (0) for clocks are used to **reset skill bars or clocks**. **Practice XP** is shown by a slash or cross in the first skill square. Dragging and dropping from a Compendium works as well. Many elements display **tooltips** after **hovering over them** for a while.
 ![Main Sheets](readme-images/wominionscompendia.png)
 ### Adventurers, Dungeons and Clocks Sheets
 ![Adventurers, Dungeons and Clocks Sheets](readme-images/othersheets.png)
