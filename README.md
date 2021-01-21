@@ -33,13 +33,11 @@ Most of the items and official content from the book can be found in the compend
 ## Screenshots of the system
 (click for full size)
 ### Wicked One and Minion Sheet
-<img src =readme-images/wominionscompendia.png width =600px></img>
+![Main Sheets](readme-images/wominionscompendia.png)
 ### Adventurers, Dungeons and Clocks Sheets
-<img src =readme-images/othersheets.png width =600px></img>
+![Adventurers, Dungeons and Clocks Sheets](readme-images/othersheets.png)
 ### Example World Map with Faction Markers
-<img src =readme-images/factions.png width =600px></img>
-### An example of Editable Items
-
+![Example World Map](readme-images/factions.png)
 ## To be done
 - Graphical improvements
 
