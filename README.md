@@ -47,7 +47,7 @@ All proper rolls give you their outcome right in the chat (and you can click the
 Skill-Roller pops up on clicking skills on the sheets, adjusts to selected options. Multi-Roller contains all the other rolls the GM and players need for things like Engagement, Dungeon Defense and other purposes
 ![Popups](readme-images/rollers.png)
 ### A few editable item windows
-Every item entry is clickable and customizable! Enter your own descriptions and customize your world.
+Every item entry is clickable and customizable (both in title and description)! Enter your own descriptions and customize your world.
 ![Editable items](readme-images/items.png)
 
 ## To be done
