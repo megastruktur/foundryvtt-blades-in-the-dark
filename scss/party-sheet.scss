@@ -1,0 +1,130 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+// Adventure Party Sheet
+form.party-sheet {
+
+    .profile-img {
+        vertical-align: middle;
+    }
+
+    .label-stripe {
+        margin-bottom: 0px;
+    }
+
+    table {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        border-width: 0px;
+
+        tr {
+            max-height: 32px;
+        }
+    }
+
+    .tier {
+        font-size: 16px;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .class-name, .type-name {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    #adventurer-list thead td:nth-child(4),
+    #hireling-list thead td:nth-child(3) {
+        padding-left: 15px;
+    }
+
+    #adventurer-list thead td:nth-child(8),
+    #hireling-list thead td:nth-child(7) {
+        width: 20px;
+    }
+
+    #hireling-list tbody td:nth-child(4) label {
+        min-width: 100px;
+        width: 20%;
+        max-width: 50%;
+    }
+
+    .adventurer-hearts {
+        input {
+            display: none;
+        }
+
+        label {
+            @include custom-label("assets/boxes/a-heart-filled.png", 32px, 32px);
+            top: -1px;
+
+            &.slashed-1 {
+                background-image: url("assets/boxes/a-heart-slashed-1.png");
+            }
+
+            &.slashed-2 {
+                background-image: url("assets/boxes/a-heart-slashed-2.png");
+            }
+
+            &.greyed {
+                background-image: url("assets/boxes/a-heart-greyed.png");
+                cursor: auto;
+
+                &:hover {
+                    filter: none;
+                    opacity: 1;
+                }
+            }
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+
+    td.moves-radio {
+        div {
+            @include custom_radio(24px, 24px);
+        }
+
+        &:hover > div.attributes-container label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
+
+        label.adv-move-greyed {
+            @include custom-label("assets/boxes/box-greyed.png", 24px, 24px, false);
+            margin-left: 8px;
+        }
+    }
+
+    .trait-tags {
+        margin-top: 4px;
+
+        label {
+            font-weight: bold;
+            display: inline-block;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $gray;
+            border-radius: 5px;
+            padding: 2px 4px;
+            margin-bottom: 4px;
+
+            &.positive {
+                color: $mixed;
+            }
+
+            &.negative {
+                color: $mud;
+            }
+
+            &.motivation {
+                color: $almost_black;
+            }
+        }
+    }
+}

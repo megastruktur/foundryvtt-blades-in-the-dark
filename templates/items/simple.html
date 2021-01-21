@@ -1,14 +1,14 @@
-<form class="{{cssClass}}" autocomplete="off">
+<form class="{{cssClass}} item-sheet simple-sheet" autocomplete="off">
   <header class="sheet-header">
       <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
       </div>
   </header>
   
   {{!-- Sheet Body --}}
   <section class="sheet-body flex-vertical">
-    <label class="label-stripe">{{localize "BITD.Description"}}</label>
-    <textarea rows="20" name="data.description">{{data.description}}</textarea>
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description" placeholder="{{localize "FITD.DescriptionHint"}}">{{data.description}}</textarea>
   </section>
 </form>

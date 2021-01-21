@@ -1,0 +1,220 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+// Attribute Section
+#attributes {
+    height: fit-content;
+    min-width: fit-content;
+    margin-top: 7px;
+
+    .main {
+        flex-grow: 1;
+
+        div:hover > div.attributes-container label {
+            transition: opacity 1s;
+            opacity: 1;
+        }
+    }
+
+    .attribute-label {
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .attribute-skill-label {
+        font-weight: 800;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-left: 2px;
+    }
+
+    .attributes-exp {
+        margin-bottom: 2px;
+    }
+
+    .attributes-container {
+        margin: 3px 3px 3px -8px;
+        @include custom_radio(15px, 15px);
+
+        * {
+            margin-right: 1px;
+        }
+
+        label {
+            margin-top: 3px;
+        }
+    }
+
+    .attribute-description {
+        display: none; // TO DO: Hide for now
+        font-size: 11px;
+        padding-left: 6px;
+        font-family: Bitter;
+        font-weight: 500;
+    }
+
+    .skill-description {
+        font-style: italic;
+        margin-left: 3px;
+        align-self: center;
+    }
+
+    .attribute {
+        margin-bottom: 5px;
+    }
+
+    .stripe {
+        background-color: $mud;
+        color: $almost_white;
+        font-size: 17px;
+        padding: 4px 0px;
+        padding-left: 5px;
+        text-shadow: 0 2px $darkmud;
+    }
+
+    .shock {
+
+        input {
+            display: none;
+        }
+
+        label {
+            @include custom-label("assets/boxes/shock-empty.png", 32px, 32px);
+            margin-right: 5px;
+            top: -3px;
+        }
+
+        input:checked + label {
+            background-image: url("assets/boxes/shock-filled.png");
+        }
+    }
+
+    .bloodied {
+
+        input {
+            display: none;
+        }
+
+        label {
+            @include custom-label("assets/boxes/bloodied-empty.png", 36px, 24px);
+            margin-left: 8px;
+            margin-right: 5px;
+            padding: 10px;
+            top: -10px;
+        }
+
+        input:checked + label {
+            background-image: url("assets/boxes/bloodied-filled-white.png");
+        }
+
+        input:checked ~ i.splash {
+            display: block;
+            height: 100px;
+            background-image: url("assets/decorations/bloodsplat.png");
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+            margin: -50px;
+            position: relative;
+            top: -30px;
+            left: 22px;
+            z-index: -1;
+        }
+    }
+
+    #attributes-bloodied {
+        margin-bottom: 0px;
+    }
+
+    .bloodied-minion {
+
+        input {
+            display: none;
+        }
+
+        label {
+            @include custom-label("assets/boxes/bloodied-minion-empty.png");
+            margin: 0px 2px -2px 1px;
+            top: -2px;
+        }
+
+        input:checked + label {
+            background-image: url("assets/boxes/bloodied-minion-filled-white.png");
+        }
+
+        input:checked ~ i.splash {
+            display: block;
+            height: 75px;
+            background-image: url("assets/decorations/bloodsplat.png");
+            background-size: 75px 75px;
+            background-repeat: no-repeat;
+            margin: -40px;
+            position: relative;
+            top: -12px;
+            left: 16px;
+            z-index: -1;
+        }
+    }
+
+    .morale-minion {
+
+        input {
+            display: none;
+        }
+
+        label {
+            @include custom-label();
+            margin-left: 1px;
+            margin-right: 2px;
+            top: -1px;
+        }
+
+        input:checked + label {
+            background-image: url("assets/boxes/box-filled.png");
+        }
+    }
+
+    #attributes-darkhearts {
+
+        .heart-container {
+            justify-content: start;
+            margin-left: 33px;
+            margin-bottom: 1px;
+            @include custom_radio(40px, 40px);
+
+            label.dark-heart {
+                background-image: url("assets/boxes/heart-filled.png");
+                margin-right: 8px;
+                position: relative;
+                top: -2px;
+            }
+
+            &:hover label {
+                transition: opacity 1s;
+                opacity: 1;
+            }
+
+            input:checked {
+
+                & ~ label.dark-heart {
+                    background-image: url("assets/boxes/heart-empty.png");
+                }
+
+                & + label.dark-heart {
+                    background-image: url("assets/boxes/heart-filled.png");
+                }
+            }
+        }
+    }
+
+    #hearts-footer {
+        margin-left: 37px;
+        padding-right: 10px;
+        min-width: 135px;
+    }
+}
+
+
+

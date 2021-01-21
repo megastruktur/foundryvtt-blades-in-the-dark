@@ -1,0 +1,55 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.minion-sheet {
+
+    // MP Number Padding
+    #number {
+        padding-right: 12px;
+
+        label {
+            padding-left: 10px;
+        }
+
+        input {
+            text-align: center;
+            margin-left: 10px;
+            width: 60px;
+            display: block;
+        }
+    }
+
+    #main-minion-form {
+        margin-right: 12px;
+
+        a.item-delete {
+            align-self: center;
+        }
+    }
+
+	#picture-td{
+		text-align: right;
+	}
+
+    // Rollable Text in Abilities List
+    #abilities-list {
+
+        .group-ext {
+            background-color: $gray3f;
+
+            // Style for external hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        .item-rollable-text {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 5px;
+        } 
+    }
+}

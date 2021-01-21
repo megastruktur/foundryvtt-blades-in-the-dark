@@ -1,0 +1,24 @@
+<form class="{{cssClass}} item-sheet dungeon-theme-sheet" autocomplete="off">
+  <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
+      </div>
+  </header>
+
+  <section class="flex-vertical">
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description">{{data.description}}</textarea>
+    <label class="label-stripe">{{localize "FITD.SpecialName"}}</label>
+    <textarea name="data.special_name">{{data.special_name}}</textarea>
+    <label class="label-stripe">{{localize "FITD.SpecialDescription"}}</label>
+    <textarea name="data.special_feature">{{data.special_feature}}</textarea>
+    <div class="flex-vertical">
+      <label class="label-stripe">{{localize "FITD.Checkbox"}} 1</label>
+      <input id="theme-chbx-1" type="text" name="data.theme_checkbox_1_text" value="{{data.theme_checkbox_1_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+      <label class="label-stripe">{{localize "FITD.Checkbox"}} 2</label>
+      <input id="theme-chbx-2" type="text" name="data.theme_checkbox_2_text" value="{{data.theme_checkbox_2_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+    </div>
+  </section>
+
+</form>

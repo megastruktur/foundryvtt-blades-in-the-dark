@@ -1,411 +1,398 @@
 {
-"Actor": {
-  "types": ["character", "crew", "\uD83D\uDD5B clock"],
-  "character": {
-    "alias": "",
-    "stress": {
-      "value": [0],
-      "max": 9,
-      "max_default": 9,
-      "name_default": "BITD.Stress",
-      "name": "BITD.Stress"
-    },
-    "trauma": {
-      "max": 4,
-      "max_default": 4,
-      "value": [0],
-      "name": "BITD.Trauma",
-      "name_default": "BITD.Trauma",
-      "list": [0]
-    },
-    "healing-clock": [0],
-    "experience": [0],
-    "coins": [0],
-    "coins_stashed": [0],
-    "special_abilities": [],
-    "loadout": 0,
-    "load_level": "",
-    "harm": {
-        "light": {
-          "one": "",
-          "two": ""
-        },
-        "medium": {
-          "one": "",
-          "two": ""
-        },
-        "heavy": {
-          "one": ""
-        },
-        "deadly": {
-          "one": ""
-        }
-    },
-    "armor-uses": {
-      "armor": 0,
-      "heavy": 0,
-      "special": 0
-    },
-    "attributes": {
-        "insight": {
-          "exp": [0],
-          "label": "BITD.SkillsInsight",
+  "Actor": {
+    "types": [ "character", "minion_pack", "dungeon", "faction", "party", "clock" ],
+    "character": {
+      "look": "",
+      "vilefriend": "",
+      "minionpack": "",
+      "wickedxp": {
+        "value": 0,
+        "max": 9,
+        "max_default": 9,
+        "name_default": "FITD.WickedXP",
+        "name": "FITD.WickedXP"
+      },
+      "recklessxp": {
+        "value": 0,
+        "max": 3,
+        "max_default": 3,
+        "name_default": "FITD.RecklessXP",
+        "name": "FITD.RecklessXP"
+      },
+      "stress": {
+        "min": 0,
+        "value": 0,
+        "max": 6
+      },
+      "bloodied": false,
+      "dark_hearts": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
+      "downtime_action_used": false,
+      "gold": {
+        "min": 0,
+        "value": 0,
+        "max": 3
+      },
+      "goldmonger_size": 0,
+      "goldmonger_pleased": false,
+      "supply": {
+        "min": 0,
+        "value": 0,
+        "max": 2
+      },
+      "attribute_max_value": 3,
+      "attributes": {
+        "brains": {
+          "shocked": false,
+          "label": "FITD.SkillsBrains",
           "skills": {
-            "hunt": {
-              "label": "BITD.SkillsHunt",
-              "value": [0]
-            },
-            "study": {
-              "label": "BITD.SkillsStudy",
-              "value": [0]
-            },
-            "survey": {
-              "label": "BITD.SkillsSurvey",
-              "value": [0]
+            "scan": {
+              "label": "FITD.SkillsScan",
+              "value": 0,
+              "practice": 0
             },
             "tinker": {
-              "label": "BITD.SkillsTinker",
-              "value": [0]
+              "label": "FITD.SkillsTinker",
+              "value": 0,
+              "practice": 0
+            },
+            "trick": {
+              "label": "FITD.SkillsTrick",
+              "value": 0,
+              "practice": 0
             }
           }
         },
-        "prowess": {
-          "exp": [0],
-          "label": "BITD.SkillsProwess",
+        "muscles": {
+          "shocked": false,
+          "label": "FITD.SkillsMuscles",
           "skills": {
             "finesse": {
-              "label": "BITD.SkillsFinesse",
-              "value": [0]
+              "label": "FITD.SkillsFinesse",
+              "value": 0,
+              "practice": 0
             },
-            "prowl": {
-              "label": "BITD.SkillsProwl",
-              "value": [0]
+            "skulk": {
+              "label": "FITD.SkillsSkulk",
+              "value": 0,
+              "practice": 0
             },
-            "skirmish": {
-              "label": "BITD.SkillsSkirmish",
-              "value": [0]
-            },
-            "wreck": {
-              "label": "BITD.SkillsWreck",
-              "value": [0]
+            "smash": {
+              "label": "FITD.SkillsSmash",
+              "value": 0,
+              "practice": 0
             }
           }
         },
-        "resolve": {
-          "exp": [0],
-          "label": "BITD.SkillsResolve",
+        "guts": {
+          "shocked": false,
+          "label": "FITD.SkillsGuts",
           "skills": {
-            "attune": {
-              "label": "BITD.SkillsAttune",
-              "value": [0]
+            "banter": {
+              "label": "FITD.SkillsBanter",
+              "value": 0,
+              "practice": 0
             },
-            "command": {
-              "label": "BITD.SkillsCommand",
-              "value": [0]
+            "invoke": {
+              "label": "FITD.SkillsInvoke",
+              "value": 0,
+              "practice": 0
             },
-            "consort": {
-              "label": "BITD.SkillsConsort",
-              "value": [0]
-            },
-            "sway": {
-              "label": "BITD.SkillsSway",
-              "value": [0]
+            "threaten": {
+              "label": "FITD.SkillsThreaten",
+              "value": 0,
+              "practice": 0
             }
           }
         }
-    }
-  },
-  "crew": {
-    "name": "",
-    "reputation": [0],
-    "lair": "",
-    "tier": [0],
-    "deity": "",
-    "hold": ["strong"],
-    "experience": [0],
-    "hold_types": ["weak", "strong"],
-    "coins": {
-      "max": 4,
-      "value": [0]
-    },
-    "vault": {
-      "value": [0],
-      "max": 0
-    },
-    "turfs": [8],
-    "features": [],
-    "heat": [0],
-    "wanted": [0]
-  },
-  "\uD83D\uDD5B clock": {
-    "name": "",
-    "type": 4,
-    "value": "0"
-  }
-},
-"Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
-  "templates": {
-    "default": {
-      "description": ""
-    },
-    "ability": {
-      "description": "",
-      "class": "",
-      "price": 1
-    },
-    "logic": {
-      "logic": ""
-    }
-  },
-  "item": {
-    "templates": ["default", "logic"],
-    "class": "",
-    "load": 0
-  },
-  "class": {
-    "templates": ["default", "logic"],
-    "experience_clues": "",
-    "base_skills": {
-      "hunt": [0],
-      "study": [0],
-      "survey": [0],
-      "tinker": [0],
-      "finesse": [0],
-      "prowl": [0],
-      "skirmish": [0],
-      "wreck": [0],
-      "attune": [0],
-      "command": [0],
-      "consort": [0],
-      "sway": [0]
-    }
-  },
-  "ability": {
-    "templates": ["ability", "logic"]
-  },
-  "heritage": {
-    "templates": ["default"]
-  },
-  "background": {
-    "templates": ["default"]
-  },
-  "vice": {
-    "templates": ["default"]
-  },
-  "cohort": {
-    "templates": ["default"],
-    "cohort": ["Gang"],
-    "scale": 0,
-    "quality": 0,
-    "cohort_list": {
-      "Gang": {
-        "label": "BITD.Gang"
-      },
-      "Expert": {
-        "label": "BITD.Expert"
       }
     },
-    "gang_type": ["Adepts"],
-    "gang_type_list": {
-
-      "Adepts": {
-        "label": "BITD.GangTypeAdepts",
-        "description": "BITD.GangTypeAdeptsDescription"
+    "minion_pack": {
+      "bloodied": false,
+      "morale": false,
+      "number": {
+        "min": 0,
+        "value": 4,
+        "max": 10
       },
-      "Rooks": {
-        "label": "BITD.GangTypeRooks",
-        "description": "BITD.GangTypeRooksDescription"
-      },
-      "Rovers": {
-        "label": "BITD.GangTypeRovers",
-        "description": "BITD.GangTypeRoversDescription"
-      },
-      "Skulks": {
-        "label": "BITD.GangTypeSkulks",
-        "description": "BITD.GangTypeSkulksDescription"
-      },
-      "Thugs": {
-        "label": "BITD.GangTypeThugs",
-        "description": "BITD.GangTypeThugsDescription"
+      "attribute_max_value": 2,
+      "attributes": {
+        "brains": {
+          "label": "FITD.SkillsBrains",
+          "skills": {
+            "scan": {
+              "label": "FITD.SkillsScan",
+              "value": 0
+            },
+            "tinker": {
+              "label": "FITD.SkillsTinker",
+              "value": 0
+            },
+            "trick": {
+              "label": "FITD.SkillsTrick",
+              "value": 0
+            }
+          }
+        },
+        "muscles": {
+          "label": "FITD.SkillsMuscles",
+          "skills": {
+            "finesse": {
+              "label": "FITD.SkillsFinesse",
+              "value": 0
+            },
+            "skulk": {
+              "label": "FITD.SkillsSkulk",
+              "value": 0
+            },
+            "smash": {
+              "label": "FITD.SkillsSmash",
+              "value": 0
+            }
+          }
+        },
+        "guts": {
+          "label": "FITD.SkillsGuts",
+          "skills": {
+            "banter": {
+              "label": "FITD.SkillsBanter",
+              "value": 0
+            },
+            "invoke": {
+              "label": "FITD.SkillsInvoke",
+              "value": 0
+            },
+            "threaten": {
+              "label": "FITD.SkillsThreaten",
+              "value": 0
+            }
+          }
+        }
       }
     },
-    "expert_type": "",
-    "status": [],
-    "statuses": [],
-    "edges": [],
-    "edges_list": {
-      "Fearsome": {
-        "label": "BITD.EdgesFearsome",
-        "description": "BITD.EdgesFearsomeDescription"
+    "dungeon": {
+      "tier": {
+        "min": 0,
+        "value": 0,
+        "max": 4
       },
-      "Independent": {
-        "label": "BITD.EdgesIndependent",
-        "description": "BITD.EdgesIndependentDescription"
-      },
-      "Loyal": {
-        "label": "BITD.EdgesLoyal",
-        "description": "BITD.EdgesLoyalDescription"
-      },
-      "Tenacious": {
-        "label": "BITD.EdgesTenacious",
-        "description": "BITD.EdgesTenaciousDescription"
+      "imps": "",
+      "entrance": "",
+      "structure": "",
+      "lighting": "",
+      "atmospherics": "",
+      "hoard": "",
+      "notes": "",
+      "master_plan": {
+        "step1": "",
+        "step2": "",
+        "step3": "",
+        "step4": "",
+        "step5": "",
+        "step6": ""
       }
     },
-    "flaws": [],
-    "flaws_list": {
-      "Principled": {
-        "label": "BITD.FlawsPrincipled",
-        "description": "BITD.FlawsPrincipledDescription"
-      },
-      "Savage": {
-        "label": "BITD.FlawsSavage",
-        "description": "BITD.FlawsSavageDescription"
-      },
-      "Unreliable": {
-        "label": "BITD.FlawsUnreliable",
-        "description": "BITD.FlawsUnreliableDescription"
-      },
-      "Wild": {
-        "label": "BITD.FlawsWild",
-        "description": "BITD.FlawsWildDescription"
-      }
-    },
-    "harm": ["No"],
-    "harm_list": {
-      "No": {
-        "label": "BITD.HarmNoHarm",
-        "description": "BITD.HarmNoHarmDescription",
-        "value": 0
-      },
-      "Weakened": {
-        "label": "BITD.HarmWeakened",
-        "description": "BITD.HarmWeakenedDescription",
-        "value": 1
-      },
-      "Impaired": {
-        "label": "BITD.HarmImpaired",
-        "description": "BITD.HarmImpairedDescription",
-        "value": 2
-      },
-      "Broken": {
-        "label": "BITD.HarmBroken",
-        "description": "BITD.HarmBrokenDescription",
-        "value": 3
-      },
-      "Dead": {
-        "label": "BITD.HarmDead",
-        "description": "BITD.HarmDeadDescription",
-        "value": 4
-      }
-    },
-    "armor": false
-  },
-  "crew_reputation": {
-    "templates": ["default"]
-  },
-  "crew_upgrade": {
-    "templates": ["ability", "logic"],
-    "crew_type": ""
-  },
-  "crew_ability": {
-    "templates": ["ability"]
-  },
-  "crew_type": {
-    "description": "",
-    "experience_clues": "",
-    "turfs": {
-      "1": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "2": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "3": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "4": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "5": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "6": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "7": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "8": {
-        "name": "BITD.Lair",
+    "faction": {
+      "category": "neutral",
+      "tier": {
         "value": 1,
-        "description": "",
-        "connects": []
+        "min": 0,
+        "max": 4
       },
-      "9": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
+      "clock1": {
+        "value": 0,
+        "min": 0,
+        "max": 0,
+        "text": ""
       },
-      "10": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "11": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "12": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "13": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "14": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "15": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
+      "clock2": {
+        "value": 0,
+        "min": 0,
+        "max": 0,
+        "text": ""
       }
+    },
+    "clock": {
+      "name": "",
+      "type": 4,
+      "value": "0",
+      "notes": "",
+      "style": "red"
+    }
+  },
+  "Item": {
+    "types": [ "adventurer", "calling", "defense", "project", "duty", "dungeon_theme", "gearsupply", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "tier3room", "wickedimpulse" ],
+    "templates": {
+      "default": {
+        "description": ""
+      },
+      "logic": {
+        "logic": ""
+      }
+    },
+    "adventurer": {
+      "templates": [ "default" ],
+      "adventurer_type": "adventurer",
+      "adventurer_class": "",
+      "adventurer_class_custom": "",
+      "hireling_type": "",
+      "hireling_type_custom": "",
+      "tier": 0,
+      "heart_slashes": 0,
+      "moves_used": 0,
+      "passive": "",
+      "trait_pos_1": "",
+      "trait_pos_1_custom": "",
+      "trait_pos_2": "",
+      "trait_pos_2_custom": "",
+      "trait_neg_1": "",
+      "trait_neg_1_custom": "",
+      "trait_neg_2": "",
+      "trait_neg_2_custom": "",
+      "motivation_1": "",
+      "motivation_1_custom": "",
+      "motivation_2": "",
+      "motivation_2_custom": ""
+    },
+    "gearsupply": {
+      "templates": [ "default" ],
+      "gear_or_supply": "gear",
+      "quality_category": "mundane",
+      "edges": {},
+      "use_type": "unlimited",
+      "uses_left": 4
+    },
+    "goldmonger_type": {
+      "templates": [ "default" ],
+      "gm_type": "",
+      "gm_type_custom": "",
+      "gm_antitype": "",
+      "gm_antitype_custom": ""
+    },
+    "duty": {
+      "templates": [ "default" ],
+      "tier": 0,
+      "type": "",
+      "type_custom": ""
+    },
+    "project": {
+      "templates": [ "default" ],
+      "clock_sizes": [ 4, 6, 8 ],
+      "clock_size": 4,
+      "clock_progress": 0
+    },
+    "defense": {
+      "templates": [ "default" ],
+      "checked": false
+    },
+    "calling": {
+      "templates": [ "default" ],
+      "flashback_clues": ""
+    },
+    "specialability": {
+      "templates": [ "default" ],
+      "ability_type": "basic",
+      "ability_group": "group_general",
+      "source": "",
+      "ability_checkbox_1_text": "",
+      "ability_checkbox_1_checked": false,
+      "ability_checkbox_2_text": "",
+      "ability_checkbox_2_checked": false,
+      "supply_desc": "",
+      "supply_checkbox_1_text": "",
+      "supply_checkbox_1_checked": false,
+      "supply_checkbox_2_text": "",
+      "supply_checkbox_2_checked": false,
+      "downtime_desc": "",
+      "downtime_checkbox_1_text": "",
+      "downtime_checkbox_1_checked": false,
+      "downtime_checkbox_2_text": "",
+      "downtime_checkbox_2_checked": false,
+      "primal": {
+        "be_psi_skill_name": "",
+        "be_psi_dots": 0,
+        "be_psi_name_1": "",
+        "be_psi_desc_1": "",
+        "be_psi_checked_1": "",
+        "be_psi_name_2": "",
+        "be_psi_desc_2": "",
+        "be_psi_checked_2": "",
+        "ds_eye_ray_1": "",
+        "ds_eye_ray_1_val": 3,
+        "ds_eye_ray_2": "",
+        "ds_eye_ray_2_val": 2,
+        "ds_eye_ray_3": "",
+        "ds_eye_ray_3_val": 2,
+        "ds_eye_ray_4": "",
+        "ds_eye_ray_4_val": 2,
+        "ds_eye_ray_5": "",
+        "ds_eye_ray_5_val": 2,
+        "ds_eye_ray_6": "",
+        "ds_eye_ray_6_val": 1,
+        "ds_eye_ray_7": "",
+        "ds_eye_ray_7_val": 1,
+        "ds_eye_ray_8": "",
+        "ds_eye_ray_8_val": 1,
+        "ds_eye_ray_9": "",
+        "ds_eye_ray_9_val": 1,
+        "gm_path_value": 0,
+        "gm_desc_1": "",
+        "gm_desc_2": "",
+        "gm_desc_3": "",
+        "gm_checkbox_1_text": "",
+        "gm_checkbox_1_checked": false,
+        "gm_checkbox_2_text": "",
+        "gm_checkbox_2_checked": false,
+        "gm_checkbox_3_text": "",
+        "gm_checkbox_3_checked": false
+      }
+    },
+    "tier3room": {
+      "templates": [ "default" ],
+      "theme": "",
+      "requirements": "",
+      "missing_materials": false,
+      "room_checkbox_1_text": "",
+      "room_checkbox_1_checked": false,
+      "room_checkbox_2_text": "",
+      "room_checkbox_2_checked": false
+    },
+    "minion_upgrade": {
+      "templates": [ "default" ],
+      "upgrade_type": "regular",
+      "upgrade_checkbox_text": "",
+      "upgrade_checkbox_checked": false,
+      "upgrade_skill_name": "",
+      "upgrade_skill_value": 2
+    },
+    "minion_job": {
+      "templates": [ "default" ]
+    },
+    "monster_race": {
+      "templates": [ "default" ],
+      "primal": false,
+      "flashback_clues": ""
+    },
+    "wickedimpulse": {
+      "templates": [ "default" ]
+    },
+    "minionimpulse": {
+      "templates": [ "default" ]
+    },
+    "revelry": {
+      "templates": [ "default" ]
+    },
+    "dungeon_theme": {
+      "templates": [ "default" ],
+      "special_name": "",
+      "special_feature": "",
+      "theme_checkbox_1_text": "",
+      "theme_checkbox_1_checked": false,
+      "theme_checkbox_2_text": "",
+      "theme_checkbox_2_checked": false
     }
   }
-}
 }

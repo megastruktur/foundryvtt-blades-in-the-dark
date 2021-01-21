@@ -1,20 +1,36 @@
 <form class="{{cssClass}} clock-block" autocomplete="off">
 
-    <div class="flexcol blades-clock-name-type">
-        {{#if editable}}
-        <input type="text" id="{{actor._id}}-clock-name" name="name" value="{{actor.name}}">
-
-        <select data-type="String" name="data.type">
-            {{#select data.type}}
-            <option value="4">4</option>
-            <option value="6">6</option>
-            <option value="8">8</option>
-            {{/select}}
-        </select>
-        {{/if}}
-
-        <div class="clocks clocks-{{data.type}}">
-            {{{blades-clock "data.value" data.type data.value item._id}}}
-        </div>
+  {{#if editable}}
+  <div class="large-name">
+    <input type="text" id="clock-{{actor._id}}-name" name="name" value="{{actor.name}}">
+  </div>
+  <section id="clock-{{actor._id}}-sheet" class="flex-horizontal">
+    <div class="flexcol blades-clock-type">
+      <select data-type="String" name="data.type">
+        {{#select data.type}}
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        {{/select}}
+      </select>
+      <select data-type="String" name="data.style">
+        {{#select data.style}}
+        <option value="transparent">Transparent</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        {{/select}}
+      </select>
+      <div class="clocks clocks-{{data.type}}">
+        {{{blades-clock "data.value" data.type data.value item._id}}}
+      </div>
     </div>
+    <div id="clock-notes" class="flex-vertical">
+      <div class="label-stripe">
+        <p>{{localize "FITD.Notes"}}</p>
+      </div>
+      {{editor content=data.notes target="data.notes" button=true owner=owner editable=editable}}
+    </div>
+  </section>
+  {{/if}}
 </form>

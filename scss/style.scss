@@ -1,709 +1,642 @@
-// Colors
-$lightgray: #CCC;
-$gray: #999;
-$red: red;
-$almost_black: #191813;
-$almost_white: #EEEFFF;
-$gold: #DAA520;
-$green: #008000;
-$light_green: #12a012;
-$blue: #04578f;
-
-// Transition period for sheet parts that hint what they can do
-$transition-period: 0.2s;
-$hover-opacity: 0.9;
-$hover-brightness: 0.8;
-
 // Imports
+@import 'variables.scss';
+@import 'fonts.scss';
 @import 'mixin.scss';
 
+@import 'actor-sheet.scss';
+@import 'minion-sheet.scss';
+@import 'dungeon-sheet.scss';
+@import 'faction-sheet.scss';
+@import 'party-sheet.scss';
+@import 'clock-sheet.scss';
+
+@import 'attributes.scss';
+@import 'item-sheets.scss';
+@import 'chat.scss';
+@import 'dialogs.scss';
+
+
 /*
- * General Styles
+ *   Layout Styles
  */
-* {
-  font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 
-  header {
-    margin-bottom: 10px;
-  }
+.sheet {
+	min-width: min-content;
+}
 
-  ul {
-    list-style: none;
-  }
+ /* WO-Borders for windows and sheets*/
+.window-app .window-content {
+    background: url(../styles/assets/images/background-light.webp) repeat;
+    color: $almost_black;
+    overflow-y: auto;
+	
+	background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png),url(../styles/assets/images/background-light.webp);
+	background-repeat: repeat-y, repeat-y, repeat;
+	background-size: 70px, 70px, 300px;
+	background-position: left, right, bottom;
 
-  form {
-    &.actor-sheet {
-      padding: 20px;
+
+    form.actor-sheet {
+        z-index: 0;
+        padding: 20px 12px;
     }
-  }
+}
+ /* Overlay-Style for visibility for dialogs (else borders disrupt readability) */
+.dialog-content {
+    background-color: #fffaf096;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 7px #fffaf096;
+}
 
-  textarea {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-
-  td {
-    padding: 5px;
-  }
-
-  section {
-    margin-bottom: 10px;
+section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
-    > *:not(.label-stripe) {
-      margin-right: 10px;
 
-      &:last-child {
+    > form:last-child {
         margin-right: 0px;
-      }
     }
 
     .grow-one {
-      flex-grow: 1;
+        flex-grow: 1;
     }
 
     .grow-two {
-      flex-grow: 2;
+        flex-grow: 2;
     }
+}
 
-    &.experience {
-      margin-bottom: 0px;
-      justify-content: center;
-    }
-  }
-
-  nav {
-    margin-bottom: 10px;
-  }
-
-  .editor,
-  .editor-content {
-    min-height: 280px;
-  }
-
-  .flex-horizontal {
+.flex-horizontal {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
+}
 
-  .flex-vertical {
+.flex-vertical {
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .black-label {
-    background-color: $almost_black;
-    color: $almost_white;
-    font-size: 21px;
-    text-align: center;
-    padding: 0px 5px;
-    height: 30px !important;
-    text-transform: capitalize;
-  }
+// Basic Character Information Table for Wicked One and Minion Pack
+table.base-info {
+    border-top: 5px solid $mud;
 
-  .gray-label {
-    background-color: $gray;
-    color: $almost_black;
-    font-size: 21px;
-    text-align: center;
-    padding: 0px 5px;
-    height: 30px !important;
-    text-transform: capitalize;
-  }
+    tr {
 
-  .chat-label {
-    background-color: $almost_black;
-    color: $almost_white;
-    font-size: 21px;
-    text-align: center;
-    padding: 0px 5px;
-    height: 30px !important;
-    text-transform: capitalize;
-  }
-  .chat-label-small {
-    background-color: $gray;
-    color: $almost_black;
-    font-size: small;
-    text-align: center;
-    padding: 3px 5px;
-    height: 20px !important;
-  }
-
-  .label-stripe {
-    text-transform: uppercase;
-    background-color: $almost_black;
-    color: $almost_white;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    font-weight: bold;
-  }
-
-  .label-stripe-gray {
-    text-transform: uppercase;
-    background-color: $gray;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: flex;
-    font-weight: bold;
-  }
-
-  .label-stripe-chat {
-    text-transform: uppercase;
-    background-color: $almost_black;
-    color: $almost_white;
-    margin-bottom: 10px;
-    position: relative;
-    padding-top: 3px;
-    display: flex;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .label-stripe-chat-small {
-    text-transform: capitalize;
-    background-color: $gray;
-    color: $almost_black;
-    margin-bottom: 10px;
-    position: relative;
-    padding-top: 3px;
-    display: flex;
-    font-weight: bold;
-  }
-
-  .description {
-    font-style: italic;
-  }
-
-  .rollable-text {
-    transition: color $transition-period;
-  }
-  .rollable-text:hover {
-    cursor: pointer;
-    color: $red;
-  }
-
-  // Stress and Trauma
-
-  .big-teeth-section {
-
-    border-top: 3px solid $almost_black;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0px;
-
-    > * {
-      margin-right: 10px;
-
-      &:last-child {
-        margin-right: 0px;
-      }
-    }
-
-    &:last-child {
-      margin-right: 0px;
-    }
-
-    // Stress
-    .big-teeth {
-      @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-    }
-
-    /* Trauma */
-    .small-teeth-container {
-
-      .small-teeth-wrap {
-        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
-        flex-direction: column;
-
-        .small-teeth {
-          display: flex;
-          flex-direction: row;
+        td:nth-of-type(1) {
+            min-width: 150px;
         }
-      }
+
+        .item-add-popup {
+            color: $mud;
+        }
+
+        // TO DO: Make standard across sheets?
+        .text-input {
+            color: $mud;
+
+            label {
+                font-weight: 700;
+            }
+
+            input {
+                font-weight: normal;
+                font-family: Piedra;
+                font-size: 20px;
+                border: none;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+
+/*
+ *   Navigation Styles
+ */
+
+nav {
+    margin-bottom: 10px;
+}
+
+// Nav container margin to attributes
+.tab-content {
+    margin-right: 8px;
+
+    // Remove line-breaks from nav elements
+    nav a {
+        flex: none;
     }
 
-    #trauma-list {
-      @include check_underscore();
-      justify-content: space-between;
-      align-items: flex-start;
+    .tab {
+
+        .label-stripe {
+            margin-bottom: 0px;
+        }
+
+        table {
+            margin-top: 0px;
+            border: 0px;
+        }
+    }
+}
+
+// Highlight selected tab
+.tabs .item.active {
+    font-weight: 700;
+    color: $bloody;
+    text-shadow: 2px 2px 7px $orange;
+}
+
+
+/*
+ *   Element Styles
+ */
+
+body {
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+	background: url("../styles/assets/images/WO-Background.webp") no-repeat center;
+    background-size: cover;
+}
+
+
+// All Table Formatting:
+table {
+    width: 100.1%;
+
+    th {
+        &:hover {
+            .item-add-popup {
+                transition: opacity 0.5s;
+                opacity: 1;
+            }
+        }
+
+        .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: $add-opacity;
+        }
     }
 
-  }
+    tr:nth-child(even) {
+        background-color: initial;
+    }
 
-  #character-stress {
+    td, th {
+        padding: 5px;
+    }
+
+    td:first-child {
+        padding-left: 5px;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+.item-checkmark{
+	font-weight: 700;
+}
+
+select {
+    font-family: Bitter, Lucida Console, monospace;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 0px;
+    border: 1px solid $mud;
+}
+
+option {
+    font-weight: 600;
+}
+
+input[type="text"], input[type="number"], input[type="password"],
+input[type="date"], input[type="time"],   input[type="range"] {
+    font-weight: 600;
+    border: 1px solid $mud;
+    border-radius: 0;
+    width: 100%
+}
+
+.text-input {
+    color: $mud;
+
     label {
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  // Abilities
-  #abilities {
-
-    .item-name {
-      width: 70px;
-    }
-    .item-body {
-      width: auto;
-    }
-    .item-description {
-      width: 200px;
+        font-weight: 700;
     }
 
-    .label-stripe {
-      p:first-child {
-        margin-right: 10px;
-      }
+    input[type="text"], input[type="number"], input[type="password"],
+    input[type="date"], input[type="time"],   input[type="range"] {
+        font-weight: normal;
+        font-family: Piedra;
+        font-size: 20px;
+        border: none;
+        border-radius: 0;
     }
+}
 
-  }
+textarea {
+    color: $bloody;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: Bitter;
+    font-weight: 600;
+    min-height: 80px;
+    resize: none;
+}
 
-  // Experience teeth
-  .teeth-experience {
-    @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-    position: absolute;
-    top: 0px;
-    right: 10px;
-  }
-
-  #harm-armor {
-    
+.checkbox-container {
     display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
 
-    // Harm
-    #character-harm {
-  
-      width: 100%;
-  
-      table {
-        width: 100%;
-  
-        th {
-          background-color: $almost_black;
-          color: $almost_white;
-        }
-  
-        input[type="text"] {
-          width: 100%;
-        }
-      }
+    > div {
+        margin-left: 20px;
     }
-  
-    // Clock
-    #character-health-clock {
-      margin: 0 auto;
-      @include clock(4, 88);
+}
+
+.standard-checkbox {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+
+    input[type="checkbox"] {
+        display: none;
     }
 
-    #character-armor-uses {
-
-      div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-  }
-
-
-  #attributes {
-
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-
-    .stripe {
-      background-color: $almost_black;
-      color: $almost_white;
-      font-size: 17px;
-      padding-left: 5px;
-    }
-
-    .attribute-label,
-    .attribute-skill-label {
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    .attribute-skill-label {
-      letter-spacing: 1px;
-    }
-    .attributes-exp {
-
-      position: relative;
-      margin-bottom: 10px;
-
-      .stripe-tooth-body {
-        @include toothradio(10px, 30px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
-        position: absolute;
-        top: 0px;
-        right: 0px;
-      }
-    }
-    
-    .attributes-container {
-      display: flex;
-      margin: 3px 0px;
-      @include custom_radio(15px, 15px);
-
-      * {
+    label {
+        @include custom-label("assets/boxes/box-empty.png", 24px, 24px);
         margin-right: 5px;
-      }
     }
-  }
 
-  // ITEM
-  .item {
+    input[type="checkbox"]:checked + label {
+        background-image: url("assets/boxes/box-crossed.png");
+    }
+}
 
-    justify-content: space-between;
 
-    .item-body {
-  
-      margin-bottom: 10px;
-      * {
-        margin-right: 10px;
-      }
-  
-      .item-description {
+/*
+ *   Button Styles
+ */
+
+%button-base {
+    background: $mud;
+    border-top: 1px outset $orange;
+    border-bottom: 2px outset $orange;
+    border-left: 2px solid darkslategrey;
+    border-right: 2px solid darkslategrey;
+
+    &:hover, &:focus {
+        outline: none;
+        box-shadow: 0 0 5px $orange;
+        background: $orange;
+    }
+}
+
+// TO DO: Maybe move properties to base & use button as base
+button {
+    @extend %button-base;
+    font-family: Bitter, sans-serif;
+    font-weight: 500;
+    color: $bone;
+    transition-duration: $transition-period;
+}
+
+.dialog .dialog-buttons button {
+    @extend %button-base;
+}
+
+// TO DO: Evaluate if needed
+* * form button {
+    @extend %button-base;
+}
+
+.dialog .dialog-buttons button.default {
+    @extend %button-base;
+}
+
+
+/*
+ *  Label Styles
+ */
+
+.label-stripe {
+    text-transform: uppercase;
+    background-color: $mud;
+    color: $almost_white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+    font-size: medium;
+
+    &:hover {
+        .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: 1;
+        }
+    }
+
+    .item-add-popup {
+        transition: opacity 0.5s;
+        opacity: $add-opacity;
+    }
+}
+
+.black-label {
+    background-color: $mud;
+    color: $almost_white;
+    font-size: 18px;
+    text-align: center;
+    padding: 4px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+    text-shadow: 0 2px $darkmud;
+}
+
+
+/*
+ *  Name & Profile Picture Style
+ */
+
+.large-name input[type="text"] {
+    min-width: 370px;
+    height: 52px;
+    border: none;
+    font-family: Blood Crow;
+    font-size: 55px;
+    font-weight: normal;
+    color: $mud;
+    background: none;
+    text-shadow: 0 1px 2px $orange;
+    text-overflow: ellipsis;
+}
+
+.profile-img {
+    border: none;
+    // background: url(../styles/assets/images/background-light.webp) repeat $bloodyShadow;
+    background-blend-mode: color-burn;
+    object-fit: cover;
+
+    &.profile-big {
+        margin: 0px 5px;
+        height: 200px;
+        width: 200px;
+        max-width: fit-content;
+    }
+}
+
+
+/*
+ *  Clock Styles
+ */
+
+label.clock-zero-label {
+    color: $almost_black;
+
+    i.nullifier {
+        @include changeable($transition-period, $hover-brightness, $hover-opacity, $highlight_red);
+    }
+}
+
+.clock-block {
+    .clocks {
+        &.clocks-4 {
+            @include clock(4, 200);
+        }
+
+        &.clocks-6 {
+            @include clock(6, 200);
+        }
+
+        &.clocks-8 {
+            @include clock(8, 200);
+        }
+    }
+
+    .blades-clock-name-type {
+
+        > * {
+            margin-bottom: 10px;
+            max-width: 220px;
+        }
+    }
+}
+
+
+/*
+ *  Item Styles
+ */
+
+// Item Add Buttons
+.item-add-popup {
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.item {
+
+    .item-open-editor {
+        cursor: pointer;
+        @include changeable($transition-period,$hover-brightness, $hover-opacity );
+    }
+
+    .item-description {
         font-style: italic;
         text-align: justify;
-      }
     }
 
-    div {
-      flex-grow: 2;
+    // Display all Item Names in Bold
+    .item-name {
+        text-align: center;
+        font-weight: 500;
+        font-family: Piedra;
+        font-size: 20px;
+        padding: 0px 10px;
     }
-    .item-control {
-      flex-grow: 1;
-    }
-    .item-body,
-    .item-class-label {
-      width: 100px;
-    }
-  }
-    
-  .item-class-label {
-    margin-bottom: 10px;
-  }
+}
 
-  #name,
-  #lair,
-  #alias {
-    margin-bottom: 10px;
-  }
+// Show Trash bins on hover over ancestor
+div.item, tr.item {
 
-  .profile-img {
-    margin: 0px 30px;
-  }
+    &:hover {
 
-  $coin_size: 15px;
-  $coin_margin: 3px;
-
-  .coins {
-    @include custom_radio_square($coin_size);
-    flex-wrap: wrap;
-
-    input ~ label {
-      margin-right: $coin_margin;
-      margin-bottom: $coin_margin;
-
-      &[for$="0"] {
-        border-width: 2px;
-      }
-
-      @include changeable($transition-period, $hover-brightness, $hover-opacity);
-    }
-
-    &.coins-hands {
-      width: 36px;
-    }
-
-    &.coins-stashed {
-      width: 190px;
-    }
-    
-  }
-  
-  // Crew Coins
-  .crew-coins {
-    @include custom_radio_square($coin_size);
-    flex-wrap: wrap;
-    max-width: 4 * ($coin_size + $coin_margin);
-
-    label {
-      margin-right: $coin_margin;
-      margin-bottom: $coin_margin;
-    }
-  }
-
-
-  // Reputation
-  #crew-reputation {
-    border-top: 3px solid $almost_black;
-    @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-
-    input[disabled="disabled"] + label {
-      background-image: url(assets/teeth/stresstooth-black.png);
-    }
-  }
-
-  // Turfs.
-
-  #turf-list {
-
-    display: flex;
-    flex-direction: column;
-
-    .turf-row {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      *:first-child {
-        margin-left: 0px;
-      }
-      *:last-child {
-        margin-right: 0px;
-      }
-    }
-  
-    &.section-non-editable {
-      .turf-block {
-        @include turf_block(130px, 100px);
-      }
-    }
-
-    &.section-editable {
-      .turf-block {
-        @include turf_block(130px, 125px);
-      }
-    }
-  }
-
-  #crew-hold {
-    border-top: 3px solid $almost_black;
-    @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-    width: 221px;
-  }
-
-  #crew-tier {
-
-    background-color: $gray;
-    height: 33px;
-    width: 145px;
-    display: flex;
-    align-items: center;
-    border-top: 3px solid $almost_black;
-
-    @include custom_radio_round(18px, gray, $almost_white, $almost_black);
-
-    > * {
-      margin-right: 5px;
-    }
-      
-  }
-
-  #heat-wanted {
-    justify-content: none;
-  }
-
-  .experience-clues-container {
-    width: 340px;
-    font-size: 12px;
-
-    .experience-clues-description {
-      font-weight: bold;
-    }
-
-    .experience-clues {
-      font-style: italic;
-    }
-  }
-
-  .class-name {
-    width: 512px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 48px;
-    text-transform: uppercase;
-    border: 3px solid $almost_black;
-
-    .big-name {
-      font-weight: bold;
-    }
-
-    .big-description {
-      font-size: 20px;
-      color: $almost_black;
-    }
-  }
-
-  // Cohorts styling
-  .edgeflaw {
-
-    input {
-      display: none;
-
-      &:checked {
-
-        & + label {
-          color: $red;
+        i.fa-trash {
+            transition: opacity 1s;
+            opacity: 0.5;
         }
-
-      }
     }
 
-  }
-
-  #gang-expert-type-selector {
-
-    #gang-type-boxes {
-      flex-wrap: wrap;
+    i.fa-trash {
+        transition: opacity 1s;
+        opacity: 0;
     }
-  }
+}
 
-  .cohorts {
-    flex-wrap: wrap;
-    
-    .cohort-block-wrapper {
-      width: 400px;
-    }
-    .label-stripe {
-      margin-bottom: 0px;
+// Item List in tab for all (Wicked One, Minion Pack, Dungeon Sheet)
+.all-items-list {
+    font-size: 14px;
+
+    &:nth-of-type(2n+1) {
+        background: rgba(0, 0, 0, 0.15);
     }
 
-    .cohort-body {
-      > div {
-        margin-bottom: 10px;
-      }
+    div.item-body {
+        margin: 5px 10px;
     }
 
-    .cohort-block-harm {
-
-      justify-content: space-around;
-
-      input[type="radio"] {
-        display: none;
-  
-        &:checked + label {
-          color: $almost_white;
-          font-weight: bold;
-          background-color: $almost_black;
-        }
-      }
-
-      label {
-        border: 2px solid $almost_black;
-        border-top: none;
-        padding: 5px;
-      }
+    a.item-delete {
+        margin-right: 10px;
+        align-self: center;
     }
-  }
+}
 
-  // Add Items modal styling.
-  #items-to-add {
 
+/*
+ *  Other Class Styles
+ */
+
+/* WO Roll Popup Formatting of the Roll Options */
+.action-info {
+	padding: 5px;
+	margin-top: -10px;
+	line-height: 1.5em;
+	
+	#team-up{
+		line-height: 1.1em;
+	}
+}
+
+#pause h3 {
+    font-weight: 600;
+    text-shadow: 0px 3px 0px #68332c;
+}
+
+.hidden {
+    display: none;
+}
+
+// Highlight for elements triggering die rolls
+// TO DO: Maybe use changeable
+.rollable-text {
+    transition: color $transition-period;
+
+    &:hover {
+        cursor: pointer;
+        color: $highlight_red;
+    }
+}
+
+// Minimum Size for TinyMCE Editor Box
+// TO DO: Reduce size?
+.editor,
+.editor-content {
+    min-height: 280px;
+    background: rgba(0,0,0,0.05);
+	padding: 10px;
+}
+
+// Styling for opened compendia and directories
+.compendium .directory-list .directory-item {
+    padding: 3px 0;
+    line-height: 48px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid $bloody5c;
+    box-shadow: none;
+}
+
+#pause img {
+    content:url("assets/decorations/pause-logo.webp")
+}
+// Styling for menu entries like Game Settings
+form .notes, form .hint {
+    font-weight: 600;
+}
+form .form-group label {
+    font-weight: 700;
+}
+ /* Global Tab Style Formatting */
+
+nav.tabs.flex-horizontal {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+	justify-content: space-between;
+    margin: 0;
+	
+	& .item {
+		text-align: center;
+		color: black;
+		background-color:#8080803d;
+		line-height: 2rem;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin: 0px 2px;
+		box-shadow: inset 0 2px 3px 0px $mud;
+		flex: auto;
+	}
 
-    input[type="radio"],
-    input[type="checkbox"] {
-      display: none;
+	& .item.active {
+		font-weight: 700;
+		color: white;
+		background-color: $mud;
+		box-shadow: none;
+	}
+	
+	& > :first-child {
+		margin-left: 0;
+	}
 
-      &:checked + label {
-        font-weight: bold;
-      }
-    }
-  }
+	& > :last-child {
+		margin-right: 0;
+	}
+}
 
-  // Tooltip.
-  .tooltip {
+ 
+
+
+
+/*
+ *  Tooltip Styles
+ */
+
+.tooltip {
 
     .tooltiptext {
-      visibility: hidden;
-      width: 200px;
-      background-color: $almost_black;
-      color: $almost_white;
-      text-align: center;
-      padding: 5px;
-      border-radius: 6px;
-     
-      // Position
-      position: absolute;
-      z-index: 9999;
+        visibility: hidden;
+        position: fixed;
+        width: fit-content;
+        max-width: 400px;
+        font-weight: 600;
+        font-family: Bitter;
+        background: url(../styles/assets/images/background-light.webp) repeat;
+        color: $bloody;
+        font-size: 16px;
+        text-align: justify;
+        border: 2px solid $bloody;
+        padding: 10px;
+        border-radius: 4px;
+        z-index: 9999;
+        text-transform: none;
+        text-shadow: none;
+    }
+
+    .tooltipslow {
+        opacity: 0;
+        transition: visibility 0.1s, opacity 0.1s;
+        transition-delay: 0.1s;
     }
 
     &:hover .tooltiptext {
-      visibility: visible;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.5s, opacity 0.5s;
+        transition-delay: 1s;
     }
-  }
-
-  .blades-die-tooltip {
-
-    .die {
-      font-weight: bold;
-      text-transform: capitalize;
-      font-size: large;
-
-      &.critical-success {
-        color: $light_green;
-      }
-
-      &.success {
-        color: $green;
-      }
-
-      &.partial-success {
-        color: $blue;
-      }
-
-      &.failure {
-        color: $red;
-      }
-    }
-
-  }
-
-  .clock-zero-label {
-    color: $almost_black;
-  }
-
-  .clock-block {
-    .clocks {
-      &.clocks-4 {
-        @include clock(4, 200);
-      }
-      &.clocks-6 {
-        @include clock(6, 200);
-      }
-      &.clocks-8 {
-        @include clock(8, 200);
-      }
-    }
-  }
-
-  .clock-block .blades-clock-name-type {
-    > * {
-      margin-bottom: 10px;
-      max-width: 220px;
-    }
-  }
-
-  i {
-    &.nullifier {
-      @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
-    }
-  }
 }
+

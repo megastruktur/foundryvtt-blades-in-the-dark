@@ -1,0 +1,112 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.dungeon-sheet {
+
+    // Dungeon Theme Bar
+    #dungeon-theme-bar {
+        font-size: 18px;
+        display: table-row;
+
+        td:first-child {
+            background-color: $mud;
+            width: 100%;
+            padding-left: 10px;
+            align-self: center;
+            height: 33px;
+        }
+
+        td:last-child {
+            padding: 0px;
+        }
+
+        tr:hover {
+            .item-add-popup {
+                transition: opacity 0.5s;
+                opacity: 1;
+            }
+        }
+
+        tr .item-add-popup {
+            transition: opacity 0.5s;
+            opacity: $add-opacity;
+        }
+    }
+
+    // Dungeon Tier Radio
+    #dungeon-tier {
+        background-color: $mud3f;
+        height: 33px;
+        width: 145px;
+        display: flex;
+        align-items: center;
+        border: solid;
+        border-width: 2px;
+        border-color: $mud;
+        @include custom_radio_round(18px, gray, $almost_white, $almost_black);
+
+        > * {
+            margin-right: 5px;
+        }
+    }
+
+    .profile-img {
+        max-width: 135px;
+    }
+
+    // Special feature of the dungeon theme
+    .item-special-feature {
+        margin: 0px 10px;
+        border-radius: 20px;
+        background: $mud3f;
+        padding: 10px;
+    }
+
+    #rooms {
+
+        .group-flex {
+            background-color: $gray3f;
+
+            // Style for flexibility hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        // Fade Rooms with missing Materials
+        .missing-materials {
+            opacity: 0.6;
+        }
+    }
+
+    #theme-description {
+        padding-top: 10px;
+
+        & ~ div {
+            margin-top: 3px;
+			margin-bottom: 5px;
+
+            input {
+                margin: 2px 0px;
+            }
+        }
+    }
+
+    #masterplan {
+
+        & > div:nth-child(n+1) {
+            margin-top: 10px;
+
+            input {
+                margin: 2px 0px;
+            }
+        }
+		& > div:first-child {
+			margin-top: 0;
+		}
+    }
+}
+

@@ -1,0 +1,4046 @@
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.wicked-one-sheet {
+  /* Top-Decoration Styling  */
+  background: url(../styles/assets/decorations/border-top.png);
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position-x: center;
+  /* background-position-y: 5px;
+
+  /*
+   *   Basic Character Info Table
+   */
+  /*
+   *   Defenses, Stress & Impulses
+   */
+  /*
+   *   Tabs and Abilities
+   */
+}
+form.wicked-one-sheet table.base-info .minionpack {
+  justify-content: start;
+}
+form.wicked-one-sheet table.base-info .minionpack select {
+  padding: 0px 10px;
+}
+form.wicked-one-sheet table.base-info .minionpack button {
+  width: auto;
+  padding: 0px 20px;
+  margin-bottom: -1px;
+  margin-left: 20px;
+  align-self: flex-end;
+}
+form.wicked-one-sheet table.base-info .minionpack button:disabled {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .xp-stripe {
+  background-color: #68332c;
+}
+form.wicked-one-sheet table.base-info .big-teeth {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  justify-content: center;
+  align-items: center;
+}
+form.wicked-one-sheet table.base-info .big-teeth label {
+  height: 32px;
+  width: 11px;
+  background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet table.base-info .big-teeth label:last-of-type {
+  margin-right: 0px;
+}
+form.wicked-one-sheet table.base-info .big-teeth label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+form.wicked-one-sheet table.base-info .big-teeth label[for$="-0"] i {
+  margin-top: 4px;
+}
+form.wicked-one-sheet table.base-info .big-teeth label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet table.base-info .big-teeth input {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .big-teeth input:checked ~ label {
+  background-image: url("assets/teeth/xp-tooth-3-5-7-empty.png");
+}
+form.wicked-one-sheet table.base-info .big-teeth input:checked + label {
+  background-image: url("assets/teeth/xp-tooth-3-5-7-filled.png");
+}
+form.wicked-one-sheet table.base-info .big-teeth label[for$="-0"]:hover {
+  filter: brightness(1) !important;
+  opacity: 0.5 !important;
+}
+form.wicked-one-sheet table.base-info .big-teeth label {
+  margin-right: 0px;
+}
+form.wicked-one-sheet table.base-info .big-teeth label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-filled.png");
+  width: 10px;
+}
+form.wicked-one-sheet table.base-info .big-teeth label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+  width: 12px;
+}
+form.wicked-one-sheet table.base-info .big-teeth label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-filled.png");
+  width: 18px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked ~ label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-empty.png");
+  width: 10px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked ~ label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
+  width: 12px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked ~ label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-empty.png");
+  width: 18px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked + label:nth-of-type(2) {
+  background-image: url("assets/teeth/xp-tooth-1-filled.png");
+  width: 10px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked + label:nth-of-type(2n+3) {
+  background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+  width: 12px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.xp-bar input:checked + label:last-of-type {
+  background-image: url("assets/teeth/xp-tooth-9-filled.png");
+  width: 18px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold label {
+  height: 20px;
+  width: 20px;
+  background-image: url("assets/teeth/gold-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold label:last-of-type {
+  margin-right: 0px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold label[for$="-0"] i {
+  margin-top: 4px;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold input {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold input:checked ~ label {
+  background-image: url("assets/teeth/gold-empty.png");
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold input:checked + label {
+  background-image: url("assets/teeth/gold-filled.png");
+}
+form.wicked-one-sheet table.base-info .big-teeth.gold label {
+  margin-right: 0px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size input {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size input:checked + div label.gm-size-box {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+form.wicked-one-sheet table.base-info .goldmonger-size label.black-label:not(.inactive):hover {
+  filter: brightness(1) !important;
+  opacity: 0.5 !important;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) label.gm-size-box {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-white-filled.png");
+  display: inline-flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:not(:nth-of-type(1)) label.gm-size-box:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(2) label.gm-size-box {
+  width: 12px;
+  height: 12px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(3) label.gm-size-box {
+  width: 20px;
+  height: 20px;
+}
+form.wicked-one-sheet table.base-info .goldmonger-size div:nth-of-type(4) label.gm-size-box {
+  width: 30px;
+  height: 30px;
+}
+form.wicked-one-sheet table.base-info .pleased-xp {
+  display: flex;
+  align-items: center;
+}
+form.wicked-one-sheet table.base-info .pleased-xp input {
+  display: none;
+}
+form.wicked-one-sheet table.base-info .pleased-xp input:checked + label {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+form.wicked-one-sheet table.base-info .pleased-xp label.black-label:hover {
+  filter: brightness(1) !important;
+  opacity: 0.5 !important;
+}
+form.wicked-one-sheet table.base-info .pleased-xp label.pleased-checkbox {
+  height: 20px;
+  width: 20px;
+  display: block;
+  background-image: url("assets/boxes/box-white-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-left: 5px;
+}
+form.wicked-one-sheet table.base-info .pleased-xp label.pleased-checkbox:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet table.base-info a.item-delete {
+  align-self: center;
+}
+form.wicked-one-sheet #character-defenses table th {
+  background-color: #68332c;
+  color: #EEEFFF;
+  font-size: medium;
+  font-weight: 600;
+  text-shadow: 0 2px #311815;
+}
+form.wicked-one-sheet #character-defenses table tr td:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+form.wicked-one-sheet #character-defenses table tr td:nth-child(3) {
+  text-align: center;
+  padding: 0;
+}
+form.wicked-one-sheet #character-defenses table tr td:nth-child(3) .item-name {
+  text-transform: uppercase;
+  font-family: "Blood Crow";
+  font-size: 28px;
+  margin-left: 12px;
+  margin-right: 0px;
+  font-weight: normal;
+}
+form.wicked-one-sheet #character-defenses a.item-delete {
+  align-self: center;
+}
+form.wicked-one-sheet #character-stress-clock {
+  width: 60px;
+  position: relative;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock input[value="0"] {
+  display: none;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+form.wicked-one-sheet #character-stress-clock:hover .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.wicked-one-sheet #character-stress-clock .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0;
+}
+form.wicked-one-sheet #character-stress-clock .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+form.wicked-one-sheet #character-stress-clock .blades-clock {
+  top: -10px;
+}
+form.wicked-one-sheet #wo-nav-container {
+  margin-right: 8px;
+}
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(1), form.wicked-one-sheet #loadout tr td:nth-of-type(1), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(1) {
+  min-width: 75px;
+  width: 23%;
+}
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(2), form.wicked-one-sheet #loadout tr td:nth-of-type(2), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(2) {
+  padding-bottom: 10px;
+}
+form.wicked-one-sheet #abilities-list tr td:nth-of-type(3), form.wicked-one-sheet #loadout tr td:nth-of-type(3), form.wicked-one-sheet #downtime-abilities-list tr td:nth-of-type(3) {
+  width: 20px;
+}
+form.wicked-one-sheet #abilities-list .group-core {
+  background-color: #68332c3f;
+}
+form.wicked-one-sheet #abilities-list .group-flex {
+  background-color: #9999993f;
+}
+form.wicked-one-sheet #abilities-list .group-flex td.item-body i {
+  font-size: 14px;
+}
+form.wicked-one-sheet #abilities-list .group-ext {
+  background-color: #9999993f;
+}
+form.wicked-one-sheet #abilities-list .group-ext td.item-body i {
+  font-size: 14px;
+}
+form.wicked-one-sheet #abilities-list tr.psi-discipline td > div {
+  border-radius: 15px;
+  height: 30px;
+  align-items: center;
+}
+form.wicked-one-sheet #abilities-list tr.psi-discipline td > div div {
+  flex: none;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container {
+  text-align: center;
+  position: relative;
+  left: 15px;
+  min-width: 420px;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img {
+  margin-top: 30px;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img img {
+  width: 200px;
+  height: 200px;
+  margin: 0px;
+  border-style: none;
+  position: relative;
+  transition: filter 0.1s;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img img.hovered {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.doomseeker-img area {
+  cursor: pointer;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items {
+  margin-top: -225px;
+  height: 232px;
+  text-align: center;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div {
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(2) {
+  top: 12px;
+  left: 18%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(3) {
+  top: -22px;
+  left: 82%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(4) {
+  top: -17px;
+  left: 18%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(5) {
+  top: -34px;
+  left: 82%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(6) {
+  top: 25px;
+  left: 15%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(7) {
+  top: -9px;
+  left: 85%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(8) {
+  top: -4px;
+  left: 15%;
+}
+form.wicked-one-sheet #abilities-list tr.eye-rays .ray-container div.ray-items > div:nth-child(9) {
+  top: -21px;
+  left: 85%;
+}
+form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child {
+  text-align: center;
+}
+form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child img {
+  max-height: 120px;
+  max-width: 100px;
+  object-fit: contain;
+  border: 0px;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) {
+  background: none;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) {
+  background-position-y: center;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) {
+  background-position-y: bottom;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) {
+  background-position-y: center;
+  background-image: url("assets/decorations/verticalline-top.png");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
+  min-width: 32px;
+  width: 32px;
+  background-image: url("assets/decorations/verticalline-bottom.png");
+  background-repeat: no-repeat;
+}
+form.wicked-one-sheet #abilities .flashback-clues {
+  text-align: center;
+}
+form.wicked-one-sheet #loadout .group-ability {
+  background-color: #9999993f;
+}
+form.wicked-one-sheet #loadout .group-ability td.item-body i {
+  font-size: 14px;
+}
+form.wicked-one-sheet #loadout .gear-tags {
+  margin-top: 4px;
+}
+form.wicked-one-sheet #loadout .gear-tags label {
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+form.wicked-one-sheet #loadout .gear-tags label.quality-mundane {
+  color: #191919;
+}
+form.wicked-one-sheet #loadout .gear-tags label.quality-valuable {
+  color: #2c3678;
+}
+form.wicked-one-sheet #loadout .gear-tags label.quality-powerful {
+  color: #b12c20;
+}
+form.wicked-one-sheet #loadout .gear-tags label.edge-tag {
+  color: #d46c1f;
+}
+form.wicked-one-sheet #loadout .gear-tags label.quantity-steady {
+  color: #435e3d;
+}
+form.wicked-one-sheet #loadout .gear-tags label.quantity-limited {
+  color: #435e3d;
+}
+form.wicked-one-sheet #loadout .gear-tags label.quantity-shared {
+  color: #435e3d;
+}
+form.wicked-one-sheet #loadout .supply {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.wicked-one-sheet #loadout .supply label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-white-crossed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #loadout .supply label:last-of-type {
+  margin-right: 0px;
+}
+form.wicked-one-sheet #loadout .supply label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+form.wicked-one-sheet #loadout .supply label[for$="-0"] i {
+  margin-top: 4px;
+}
+form.wicked-one-sheet #loadout .supply label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet #loadout .supply input {
+  display: none;
+}
+form.wicked-one-sheet #loadout .supply input:checked ~ label {
+  background-image: url("assets/boxes/box-white-filled.png");
+}
+form.wicked-one-sheet #loadout .supply input:checked + label {
+  background-image: url("assets/boxes/box-white-crossed.png");
+}
+form.wicked-one-sheet #duties-tab .downtime-hints {
+  padding: 3px 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  justify-content: space-around;
+}
+form.wicked-one-sheet #duties-tab .downtime-hints > div {
+  margin: 2px 6px;
+  font-style: italic;
+}
+form.wicked-one-sheet #duties-tab .downtime-hints > div b {
+  font-style: normal;
+}
+form.wicked-one-sheet #duties-tab #downtime-risk {
+  margin-top: 5px;
+}
+form.wicked-one-sheet #duties-tab .project-clock {
+  height: 80px;
+  position: relative;
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock input[value="0"] {
+  display: none;
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+form.wicked-one-sheet #duties-tab .project-clock .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+form.wicked-one-sheet #duties-tab div.label-stripe {
+  margin-bottom: 0px;
+}
+form.wicked-one-sheet #duties-tab table {
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1) {
+  text-align: center;
+  width: 50px;
+}
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1):hover .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1) .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0;
+}
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(2) {
+  text-align: center;
+  min-width: 90px;
+  width: 23%;
+  font-family: Bitter;
+}
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(4) {
+  width: 20px;
+}
+form.wicked-one-sheet #duties-table tr td:nth-of-type(1) {
+  text-align: center;
+  width: 5%;
+}
+form.wicked-one-sheet #duties-table tr td:nth-of-type(2) {
+  text-align: center;
+  width: 12%;
+}
+form.wicked-one-sheet #duties-table tr td:nth-of-type(4) {
+  width: 20px;
+}
+form.wicked-one-sheet #duties-table tbody td:nth-of-type(1) {
+  font-weight: 900;
+  text-align: center;
+}
+form.wicked-one-sheet #tongue-tooltip {
+  margin-left: auto;
+  align-self: center;
+  font-size: x-large;
+  position: relative;
+}
+form.wicked-one-sheet #tongue-grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: space-evenly;
+  grid-gap: 10px;
+  grid-column-gap: 20px;
+  font-family: Piedra;
+  text-transform: uppercase;
+  color: black;
+}
+form.wicked-one-sheet #grid-item1 {
+  color: #68332c;
+  grid-column: 1/span 5;
+  font-weight: 700;
+  font-family: Bitter;
+  text-transform: none;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.minion-sheet #number {
+  padding-right: 12px;
+}
+form.minion-sheet #number label {
+  padding-left: 10px;
+}
+form.minion-sheet #number input {
+  text-align: center;
+  margin-left: 10px;
+  width: 60px;
+  display: block;
+}
+form.minion-sheet #main-minion-form {
+  margin-right: 12px;
+}
+form.minion-sheet #main-minion-form a.item-delete {
+  align-self: center;
+}
+form.minion-sheet #picture-td {
+  text-align: right;
+}
+form.minion-sheet #abilities-list .group-ext {
+  background-color: #9999993f;
+}
+form.minion-sheet #abilities-list .group-ext td.item-body i {
+  font-size: 14px;
+}
+form.minion-sheet #abilities-list .item-rollable-text {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.dungeon-sheet #dungeon-theme-bar {
+  font-size: 18px;
+  display: table-row;
+}
+form.dungeon-sheet #dungeon-theme-bar td:first-child {
+  background-color: #68332c;
+  width: 100%;
+  padding-left: 10px;
+  align-self: center;
+  height: 33px;
+}
+form.dungeon-sheet #dungeon-theme-bar td:last-child {
+  padding: 0px;
+}
+form.dungeon-sheet #dungeon-theme-bar tr:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+form.dungeon-sheet #dungeon-theme-bar tr .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
+}
+form.dungeon-sheet #dungeon-tier {
+  background-color: #68332c3f;
+  height: 33px;
+  width: 145px;
+  display: flex;
+  align-items: center;
+  border: solid;
+  border-width: 2px;
+  border-color: #68332c;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.dungeon-sheet #dungeon-tier label {
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.dungeon-sheet #dungeon-tier label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.dungeon-sheet #dungeon-tier label:not([for$="-0"]) {
+  height: 18px;
+  width: 18px;
+  background-color: #191919;
+  vertical-align: middle;
+  border: 2px solid #191919;
+  border-radius: 9px;
+}
+form.dungeon-sheet #dungeon-tier input {
+  display: none;
+}
+form.dungeon-sheet #dungeon-tier input:checked ~ label:not([for$="-0"]) {
+  border-color: gray;
+  background-color: #EEEFFF;
+}
+form.dungeon-sheet #dungeon-tier input:checked + label:not([for$="-0"]) {
+  background-color: #191919;
+  border-color: #191919;
+}
+form.dungeon-sheet #dungeon-tier > * {
+  margin-right: 5px;
+}
+form.dungeon-sheet .profile-img {
+  max-width: 135px;
+}
+form.dungeon-sheet .item-special-feature {
+  margin: 0px 10px;
+  border-radius: 20px;
+  background: #68332c3f;
+  padding: 10px;
+}
+form.dungeon-sheet #rooms .group-flex {
+  background-color: #9999993f;
+}
+form.dungeon-sheet #rooms .group-flex td.item-body i {
+  font-size: 14px;
+}
+form.dungeon-sheet #rooms .missing-materials {
+  opacity: 0.6;
+}
+form.dungeon-sheet #theme-description {
+  padding-top: 10px;
+}
+form.dungeon-sheet #theme-description ~ div {
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+form.dungeon-sheet #theme-description ~ div input {
+  margin: 2px 0px;
+}
+form.dungeon-sheet #masterplan > div:nth-child(n+1) {
+  margin-top: 10px;
+}
+form.dungeon-sheet #masterplan > div:nth-child(n+1) input {
+  margin: 2px 0px;
+}
+form.dungeon-sheet #masterplan > div:first-child {
+  margin-top: 0;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.faction-sheet {
+  padding: 5px 5px !important;
+}
+form.faction-sheet #faction-sheet table.name-and-image {
+  margin: 0px;
+  border: none;
+}
+form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) {
+  width: 50px;
+}
+form.faction-sheet #faction-sheet table.name-and-image td:nth-child(2) img {
+  max-height: 50px;
+}
+form.faction-sheet #faction-sheet .large-name input {
+  height: 45px;
+  font-size: 40px;
+  min-width: 250px;
+}
+form.faction-sheet #faction-sheet div.label-stripe {
+  margin: 0px;
+}
+form.faction-sheet #faction-sheet div.tier-side {
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0px;
+}
+form.faction-sheet #faction-sheet div.tier-side label {
+  font-size: 20px;
+  margin-right: 10px;
+}
+form.faction-sheet #faction-sheet div.tier-side input {
+  margin-right: 20px;
+  text-align: center;
+}
+form.faction-sheet #faction-sheet #faction-clocks {
+  margin-top: 0px;
+}
+form.faction-sheet #faction-sheet #faction-clocks td {
+  width: 50%;
+}
+form.faction-sheet #faction-sheet #faction-clocks td textarea {
+  resize: none;
+  margin-bottom: 0px;
+  min-height: unset;
+}
+form.faction-sheet #faction-sheet .faction-clock-display {
+  width: 60px;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 {
+  position: relative;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock input[value="0"] {
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-4 .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 {
+  position: relative;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock input[value="0"] {
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-6 .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 {
+  position: relative;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock input[value="0"] {
+  display: none;
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(5) {
+  transform: rotate(45deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(7) {
+  transform: rotate(90deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(9) {
+  transform: rotate(135deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(11) {
+  transform: rotate(180deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(13) {
+  transform: rotate(225deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(15) {
+  transform: rotate(270deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display.seg-8 .blades-clock *:nth-child(17) {
+  transform: rotate(315deg) skewY(135deg);
+}
+form.faction-sheet #faction-sheet .faction-clock-display .clock-zero-label {
+  position: relative;
+  left: -10px;
+}
+form.faction-sheet #faction-sheet .faction-clock-display .blades-clock {
+  top: -10px;
+}
+form.faction-sheet #faction-sheet .editor, form.faction-sheet #faction-sheet .editor-content {
+  min-height: 150px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.party-sheet .profile-img {
+  vertical-align: middle;
+}
+form.party-sheet .label-stripe {
+  margin-bottom: 0px;
+}
+form.party-sheet table {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  border-width: 0px;
+}
+form.party-sheet table tr {
+  max-height: 32px;
+}
+form.party-sheet .tier {
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+}
+form.party-sheet .class-name, form.party-sheet .type-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+form.party-sheet #adventurer-list thead td:nth-child(4),
+form.party-sheet #hireling-list thead td:nth-child(3) {
+  padding-left: 15px;
+}
+form.party-sheet #adventurer-list thead td:nth-child(8),
+form.party-sheet #hireling-list thead td:nth-child(7) {
+  width: 20px;
+}
+form.party-sheet #hireling-list tbody td:nth-child(4) label {
+  min-width: 100px;
+  width: 20%;
+  max-width: 50%;
+}
+form.party-sheet .adventurer-hearts input {
+  display: none;
+}
+form.party-sheet .adventurer-hearts label {
+  height: 32px;
+  width: 32px;
+  display: block;
+  background-image: url("assets/boxes/a-heart-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  top: -1px;
+}
+form.party-sheet .adventurer-hearts label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.party-sheet .adventurer-hearts label.slashed-1 {
+  background-image: url("assets/boxes/a-heart-slashed-1.png");
+}
+form.party-sheet .adventurer-hearts label.slashed-2 {
+  background-image: url("assets/boxes/a-heart-slashed-2.png");
+}
+form.party-sheet .adventurer-hearts label.greyed {
+  background-image: url("assets/boxes/a-heart-greyed.png");
+  cursor: auto;
+}
+form.party-sheet .adventurer-hearts label.greyed:hover {
+  filter: none;
+  opacity: 1;
+}
+form.party-sheet .adventurer-hearts label.hidden {
+  display: none;
+}
+form.party-sheet td.moves-radio div {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.party-sheet td.moves-radio div label {
+  height: 24px;
+  width: 24px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.party-sheet td.moves-radio div label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+form.party-sheet td.moves-radio div label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+form.party-sheet td.moves-radio div input {
+  display: none;
+}
+form.party-sheet td.moves-radio div input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+form.party-sheet td.moves-radio div input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+form.party-sheet td.moves-radio div input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
+}
+form.party-sheet td.moves-radio div input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+form.party-sheet td.moves-radio div input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+form.party-sheet td.moves-radio div input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+form.party-sheet td.moves-radio:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+form.party-sheet td.moves-radio label.adv-move-greyed {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-greyed.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin-left: 8px;
+}
+form.party-sheet .trait-tags {
+  margin-top: 4px;
+}
+form.party-sheet .trait-tags label {
+  font-weight: bold;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin-bottom: 4px;
+}
+form.party-sheet .trait-tags label.positive {
+  color: #2c3678;
+}
+form.party-sheet .trait-tags label.negative {
+  color: #68332c;
+}
+form.party-sheet .trait-tags label.motivation {
+  color: #191919;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.clock-block > section {
+  margin-top: 5px;
+}
+form.clock-block select {
+  height: 35px;
+  flex: none;
+}
+form.clock-block .clocks {
+  max-height: 230px;
+}
+form.clock-block #clock-notes {
+  flex-grow: 1;
+  margin-bottom: 0px;
+  margin-left: 20px;
+}
+form.clock-block #clock-notes .editor {
+  min-height: 230px;
+  max-height: 230px;
+}
+form.clock-block #clock-notes .editor .editor-content {
+  min-height: 230px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+#attributes {
+  height: fit-content;
+  min-width: fit-content;
+  margin-top: 7px;
+}
+#attributes .main {
+  flex-grow: 1;
+}
+#attributes .main div:hover > div.attributes-container label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#attributes .attribute-label {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+#attributes .attribute-skill-label {
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-left: 2px;
+}
+#attributes .attributes-exp {
+  margin-bottom: 2px;
+}
+#attributes .attributes-container {
+  margin: 3px 3px 3px -8px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes .attributes-container label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes .attributes-container label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#attributes .attributes-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input {
+  display: none;
+}
+#attributes .attributes-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes .attributes-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes .attributes-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
+}
+#attributes .attributes-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes .attributes-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes .attributes-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#attributes .attributes-container * {
+  margin-right: 1px;
+}
+#attributes .attributes-container label {
+  margin-top: 3px;
+}
+#attributes .attribute-description {
+  display: none;
+  font-size: 11px;
+  padding-left: 6px;
+  font-family: Bitter;
+  font-weight: 500;
+}
+#attributes .skill-description {
+  font-style: italic;
+  margin-left: 3px;
+  align-self: center;
+}
+#attributes .attribute {
+  margin-bottom: 5px;
+}
+#attributes .stripe {
+  background-color: #68332c;
+  color: #EEEFFF;
+  font-size: 17px;
+  padding: 4px 0px;
+  padding-left: 5px;
+  text-shadow: 0 2px #311815;
+}
+#attributes .shock input {
+  display: none;
+}
+#attributes .shock label {
+  height: 32px;
+  width: 32px;
+  display: block;
+  background-image: url("assets/boxes/shock-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-right: 5px;
+  top: -3px;
+}
+#attributes .shock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#attributes .shock input:checked + label {
+  background-image: url("assets/boxes/shock-filled.png");
+}
+#attributes .bloodied input {
+  display: none;
+}
+#attributes .bloodied label {
+  height: 36px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/bloodied-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-right: 5px;
+  padding: 10px;
+  top: -10px;
+}
+#attributes .bloodied label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#attributes .bloodied input:checked + label {
+  background-image: url("assets/boxes/bloodied-filled-white.png");
+}
+#attributes .bloodied input:checked ~ i.splash {
+  display: block;
+  height: 100px;
+  background-image: url("assets/decorations/bloodsplat.png");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  margin: -50px;
+  position: relative;
+  top: -30px;
+  left: 22px;
+  z-index: -1;
+}
+#attributes #attributes-bloodied {
+  margin-bottom: 0px;
+}
+#attributes .bloodied-minion input {
+  display: none;
+}
+#attributes .bloodied-minion label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/bloodied-minion-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin: 0px 2px -2px 1px;
+  top: -2px;
+}
+#attributes .bloodied-minion label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#attributes .bloodied-minion input:checked + label {
+  background-image: url("assets/boxes/bloodied-minion-filled-white.png");
+}
+#attributes .bloodied-minion input:checked ~ i.splash {
+  display: block;
+  height: 75px;
+  background-image: url("assets/decorations/bloodsplat.png");
+  background-size: 75px 75px;
+  background-repeat: no-repeat;
+  margin: -40px;
+  position: relative;
+  top: -12px;
+  left: 16px;
+  z-index: -1;
+}
+#attributes .morale-minion input {
+  display: none;
+}
+#attributes .morale-minion label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-left: 1px;
+  margin-right: 2px;
+  top: -1px;
+}
+#attributes .morale-minion label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+#attributes .morale-minion input:checked + label {
+  background-image: url("assets/boxes/box-filled.png");
+}
+#attributes #attributes-darkhearts .heart-container {
+  justify-content: start;
+  margin-left: 33px;
+  margin-bottom: 1px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+#attributes #attributes-darkhearts .heart-container label {
+  height: 40px;
+  width: 40px;
+  background-image: url("assets/boxes/box-filled.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  /*
+  &.dark-heart {
+      background-image: url("assets/boxes/heart-filled.png");
+      margin-right: 4px;
+      position: relative;
+      top: -2px;
+  }
+
+  */
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+#attributes #attributes-darkhearts .heart-container label[for$="-0"] {
+  height: 8px;
+  width: 8px;
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 1s;
+  background-image: none !important;
+  background-color: #a20000 !important;
+  margin-right: 0px;
+}
+#attributes #attributes-darkhearts .heart-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes #attributes-darkhearts .heart-container input {
+  display: none;
+}
+#attributes #attributes-darkhearts .heart-container input:checked ~ label {
+  background-image: url("assets/boxes/box-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-image: url("assets/boxes/box-filled.png");
+  /*
+  &.dark-heart {
+      // animation: glow 2000ms ease-out infinite alternate;
+      background-image: url("assets/boxes/heart-filled.png");
+  }*/
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.practice-one {
+  background-image: url("assets/boxes/box-slashed.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.practice-two {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+#attributes #attributes-darkhearts .heart-container label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+  margin-right: 8px;
+  position: relative;
+  top: -2px;
+}
+#attributes #attributes-darkhearts .heart-container:hover label {
+  transition: opacity 1s;
+  opacity: 1;
+}
+#attributes #attributes-darkhearts .heart-container input:checked ~ label.dark-heart {
+  background-image: url("assets/boxes/heart-empty.png");
+}
+#attributes #attributes-darkhearts .heart-container input:checked + label.dark-heart {
+  background-image: url("assets/boxes/heart-filled.png");
+}
+#attributes #hearts-footer {
+  margin-left: 37px;
+  padding-right: 10px;
+  min-width: 135px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+form.item-sheet {
+  padding: 15px;
+}
+form.item-sheet section > *:not(.label-stripe) {
+  margin-right: 10px;
+}
+
+form.adventurer-sheet #adventurer-sheet-body .label-stripe {
+  padding: 0;
+  margin: 15px 0px 5px 0px;
+}
+form.adventurer-sheet #adventurer-sheet-body .label-stripe:first-child {
+  margin-top: 0px;
+}
+form.adventurer-sheet #adventurer-sheet-body > div:last-child {
+  margin-right: 20px;
+}
+form.adventurer-sheet #adventurer-sheet-body input {
+  margin-top: 5px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+form.adventurer-sheet #adventurer-sheet-body .class-selector {
+  flex: 3;
+  margin-left: -3px;
+}
+form.adventurer-sheet #adventurer-sheet-body .class-selector select {
+  margin-top: 5px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+form.duty-sheet .description-entry {
+  min-width: 300px;
+  max-width: 500px;
+}
+form.duty-sheet .description-entry label {
+  font-size: 14px;
+  font-weight: 800;
+}
+form.duty-sheet .description-entry p {
+  text-align: justify;
+}
+
+form.minion-upgrade-sheet section.rollable-skill div > div {
+  width: 50%;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div label {
+  margin-right: 10px;
+}
+form.minion-upgrade-sheet section.rollable-skill div > div #upgrade-skill-rating {
+  width: 50px;
+}
+
+form.special-ability-sheet #ray-selection div.ray-line {
+  display: flex;
+  justify-content: space-evenly;
+}
+form.special-ability-sheet #ray-selection div.ray-line:last-child {
+  margin-bottom: 25px;
+}
+form.special-ability-sheet #ray-selection div.ray-line select:nth-child(1) {
+  width: 70%;
+}
+form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
+  width: 20%;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+#chat .chat-label {
+  background-color: #191919;
+  color: #EEEFFF;
+  font-size: 24px;
+  text-align: center;
+  padding: 0px 5px;
+  height: 36px !important;
+  text-transform: capitalize;
+}
+#chat .chat-label-small {
+  background-color: #999;
+  color: #191919;
+  font-size: small;
+  text-align: center;
+  padding: 3px 5px;
+  height: 26px !important;
+}
+#chat .chat-message {
+  padding: 5px;
+  color: #191919;
+  font-size: 14px;
+  background: url(../styles/assets/images/background-light.webp) repeat;
+  background-size: 300px;
+  box-shadow: inset 0 0 9px 1px #4000004f;
+}
+#chat .chat-message.whisper {
+  background: #e8e8ef;
+}
+#chat .chat-message .message-header .message-sender {
+  font-family: Piedra;
+  font-weight: normal;
+  font-size: 15px;
+}
+#chat .chat-message .message-header .message-metadata {
+  text-align: right;
+  font-weight: 700;
+}
+#chat .chat-message .message-content {
+  font-family: Bitter;
+  font-size: inherit;
+  font-weight: 600;
+}
+#chat .label-stripe-chat-small, #chat .label-stripe-chat {
+  font-family: Piedra;
+  font-weight: normal;
+  position: relative;
+  padding-top: 3px;
+}
+#chat .label-stripe-chat {
+  color: white;
+  background-color: #68332c;
+  margin: 0;
+  display: flex;
+  border-top-left-radius: 5px;
+  text-shadow: 2px 2px 0 #313131;
+}
+#chat .label-stripe-chat-small {
+  color: #191919;
+  background-color: #bdb7ab;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+#chat .wicked-die-tooltip.dice-roll {
+  display: block;
+}
+#chat .wicked-die-tooltip.dice-roll .dice-tooltip.exp {
+  display: block;
+}
+#chat .wicked-die-tooltip.dice-roll .dice-rolls {
+  list-style: none;
+  display: flex;
+}
+#chat .wicked-die-tooltip.dice-roll .zero-hint {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 15px;
+  align-self: center;
+}
+#chat .wicked-die-tooltip .label-type {
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  font-family: Bitter;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+  margin-left: auto;
+  border-top-left-radius: 5px;
+}
+#chat .wicked-die-tooltip .die {
+  text-transform: uppercase;
+  color: white;
+  font-family: Piedra;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  height: 30px;
+  border-bottom: 3px solid;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#chat .wicked-die-tooltip .die.critical {
+  color: #b12c20;
+}
+#chat .wicked-die-tooltip .die.success {
+  color: #862118;
+}
+#chat .wicked-die-tooltip .die.mixed {
+  color: #2c3678;
+}
+#chat .wicked-die-tooltip .die.failure {
+  color: #656666;
+}
+#chat .wicked-die-tooltip .wicked-die {
+  width: 32px;
+  height: 32px;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: transparent;
+}
+#chat .wicked-die-tooltip .wicked-die.wd1 {
+  background-image: url("assets/dice/die-1-grey.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd2 {
+  background-image: url("assets/dice/die-2-grey.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd3 {
+  background-image: url("assets/dice/die-3-grey.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd4 {
+  background-image: url("assets/dice/die-4-blue.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd5 {
+  background-image: url("assets/dice/die-5-blue.png");
+}
+#chat .wicked-die-tooltip .wicked-die.wd6 {
+  background-image: url("assets/dice/die-6-red.png");
+}
+#chat .description {
+  font-style: italic;
+  font-weight: 600;
+}
+#chat .dice-tooltip .dice-rolls .roll.d6 {
+  font-family: Signika;
+}
+
+#chat-controls .roll-type-select {
+  color: #400000;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#chat-form textarea {
+  background: url(../styles/assets/images/background-light.webp) repeat;
+  background-size: 300px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+/*
+ *  Add-item pop-up dialog Styles
+ */
+#add-items-popup {
+  max-height: 90%;
+  top: 5%;
+}
+#add-items-popup .dialog-content {
+  overflow-y: scroll;
+}
+#add-items-popup .dialog-buttons {
+  max-height: 34px;
+  margin-top: 5px;
+}
+
+#items-to-add {
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#items-to-add input[type=radio],
+#items-to-add input[type=checkbox] {
+  display: none;
+}
+#items-to-add input[type=radio]:checked + label,
+#items-to-add input[type=checkbox]:checked + label {
+  font-weight: 800;
+  color: #400000;
+}
+#items-to-add > flex-horizontal {
+  padding: 3px;
+  border-bottom: 1px solid #4000005c;
+}
+#items-to-add label:nth-of-type(2n) {
+  background: #68332c3f;
+}
+#items-to-add .fa-question-circle {
+  padding: 2px 3px;
+}
+
+/*
+ *  Rollable text pop-up dialog Styles
+ */
+#dice-roll-popup .dialog-buttons {
+  max-height: 34px;
+}
+
+#skill-roll .action-info {
+  margin-top: 0px;
+}
+#skill-roll .total-rolled label:nth-child(2) {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: bitter;
+  flex: 3;
+  margin-left: 5px;
+}
+
+/*
+ *  Dice roller pop-up dialog Styles
+ */
+/*
+ *   Layout Styles
+ */
+.sheet {
+  min-width: min-content;
+}
+
+/* WO-Borders for windows and sheets*/
+.window-app .window-content {
+  background: url(../styles/assets/images/background-light.webp) repeat;
+  color: #191919;
+  overflow-y: auto;
+  background: url(../styles/assets/decorations/border-left.png), url(../styles/assets/decorations/border-right.png), url(../styles/assets/images/background-light.webp);
+  background-repeat: repeat-y, repeat-y, repeat;
+  background-size: 70px, 70px, 300px;
+  background-position: left, right, bottom;
+}
+.window-app .window-content form.actor-sheet {
+  z-index: 0;
+  padding: 20px 12px;
+}
+
+/* Overlay-Style for visibility for dialogs (else borders disrupt readability) */
+.dialog-content {
+  background-color: #fffaf096;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 7px #fffaf096;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+section > form:last-child {
+  margin-right: 0px;
+}
+section .grow-one {
+  flex-grow: 1;
+}
+section .grow-two {
+  flex-grow: 2;
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+table.base-info {
+  border-top: 5px solid #68332c;
+}
+table.base-info tr td:nth-of-type(1) {
+  min-width: 150px;
+}
+table.base-info tr .item-add-popup {
+  color: #68332c;
+}
+table.base-info tr .text-input {
+  color: #68332c;
+}
+table.base-info tr .text-input label {
+  font-weight: 700;
+}
+table.base-info tr .text-input input {
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
+}
+
+/*
+ *   Navigation Styles
+ */
+nav {
+  margin-bottom: 10px;
+}
+
+.tab-content {
+  margin-right: 8px;
+}
+.tab-content nav a {
+  flex: none;
+}
+.tab-content .tab .label-stripe {
+  margin-bottom: 0px;
+}
+.tab-content .tab table {
+  margin-top: 0px;
+  border: 0px;
+}
+
+.tabs .item.active {
+  font-weight: 700;
+  color: #400000;
+  text-shadow: 2px 2px 7px #d46c1f;
+}
+
+/*
+ *   Element Styles
+ */
+body {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  background: url("../styles/assets/images/WO-Background.webp") no-repeat center;
+  background-size: cover;
+}
+
+table {
+  width: 100.1%;
+}
+table th:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+table th .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
+}
+table tr:nth-child(even) {
+  background-color: initial;
+}
+table td, table th {
+  padding: 5px;
+}
+table td:first-child {
+  padding-left: 5px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+.item-checkmark {
+  font-weight: 700;
+}
+
+select {
+  font-family: Bitter, Lucida Console, monospace;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 0px;
+  border: 1px solid #68332c;
+}
+
+option {
+  font-weight: 600;
+}
+
+input[type=text], input[type=number], input[type=password],
+input[type=date], input[type=time], input[type=range] {
+  font-weight: 600;
+  border: 1px solid #68332c;
+  border-radius: 0;
+  width: 100%;
+}
+
+.text-input {
+  color: #68332c;
+}
+.text-input label {
+  font-weight: 700;
+}
+.text-input input[type=text], .text-input input[type=number], .text-input input[type=password],
+.text-input input[type=date], .text-input input[type=time], .text-input input[type=range] {
+  font-weight: normal;
+  font-family: Piedra;
+  font-size: 20px;
+  border: none;
+  border-radius: 0;
+}
+
+textarea {
+  color: #400000;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: Bitter;
+  font-weight: 600;
+  min-height: 80px;
+  resize: none;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.checkbox-container > div {
+  margin-left: 20px;
+}
+
+.standard-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+}
+.standard-checkbox input[type=checkbox] {
+  display: none;
+}
+.standard-checkbox label {
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-image: url("assets/boxes/box-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  transition: filter 0.1s;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.standard-checkbox label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.standard-checkbox input[type=checkbox]:checked + label {
+  background-image: url("assets/boxes/box-crossed.png");
+}
+
+/*
+ *   Button Styles
+ */
+.dialog .dialog-buttons button.default, * * form button, .dialog .dialog-buttons button, button {
+  background: #68332c;
+  border-top: 1px outset #d46c1f;
+  border-bottom: 2px outset #d46c1f;
+  border-left: 2px solid darkslategrey;
+  border-right: 2px solid darkslategrey;
+}
+.dialog .dialog-buttons button:hover, button:hover, .dialog .dialog-buttons button:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #d46c1f;
+  background: #d46c1f;
+}
+
+button {
+  font-family: Bitter, sans-serif;
+  font-weight: 500;
+  color: #fff8e8;
+  transition-duration: 0.2s;
+}
+
+/*
+ *  Label Styles
+ */
+.label-stripe {
+  text-transform: uppercase;
+  background-color: #68332c;
+  color: #EEEFFF;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  font-weight: bold;
+  font-size: medium;
+}
+.label-stripe:hover .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+.label-stripe .item-add-popup {
+  transition: opacity 0.5s;
+  opacity: 0.1;
+}
+
+.black-label {
+  background-color: #68332c;
+  color: #EEEFFF;
+  font-size: 18px;
+  text-align: center;
+  padding: 4px 5px;
+  height: 30px !important;
+  text-transform: capitalize;
+  text-shadow: 0 2px #311815;
+}
+
+/*
+ *  Name & Profile Picture Style
+ */
+.large-name input[type=text] {
+  min-width: 370px;
+  height: 52px;
+  border: none;
+  font-family: Blood Crow;
+  font-size: 55px;
+  font-weight: normal;
+  color: #68332c;
+  background: none;
+  text-shadow: 0 1px 2px #d46c1f;
+  text-overflow: ellipsis;
+}
+
+.profile-img {
+  border: none;
+  background-blend-mode: color-burn;
+  object-fit: cover;
+}
+.profile-img.profile-big {
+  margin: 0px 5px;
+  height: 200px;
+  width: 200px;
+  max-width: fit-content;
+}
+
+/*
+ *  Clock Styles
+ */
+label.clock-zero-label {
+  color: #191919;
+}
+label.clock-zero-label i.nullifier {
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+label.clock-zero-label i.nullifier:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+  color: #a20000;
+}
+
+.clock-block .clocks.clocks-4 {
+  position: relative;
+}
+.clock-block .clocks.clocks-4 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+.clock-block .clocks.clocks-4 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+.clock-block .clocks.clocks-4 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.clock-block .clocks.clocks-4 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+.clock-block .clocks.clocks-4 .blades-clock input[value="0"] {
+  display: none;
+}
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+.clock-block .clocks.clocks-4 .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+.clock-block .clocks.clocks-6 {
+  position: relative;
+}
+.clock-block .clocks.clocks-6 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+.clock-block .clocks.clocks-6 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+.clock-block .clocks.clocks-6 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.clock-block .clocks.clocks-6 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+.clock-block .clocks.clocks-6 .blades-clock input[value="0"] {
+  display: none;
+}
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(150deg);
+}
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(5) {
+  transform: rotate(60deg) skewY(150deg);
+}
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(7) {
+  transform: rotate(120deg) skewY(150deg);
+}
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(9) {
+  transform: rotate(180deg) skewY(150deg);
+}
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+.clock-block .clocks.clocks-6 .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
+}
+.clock-block .clocks.clocks-8 {
+  position: relative;
+}
+.clock-block .clocks.clocks-8 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+.clock-block .clocks.clocks-8 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+.clock-block .clocks.clocks-8 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.clock-block .clocks.clocks-8 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+.clock-block .clocks.clocks-8 .blades-clock input[value="0"] {
+  display: none;
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(5) {
+  transform: rotate(45deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(7) {
+  transform: rotate(90deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(9) {
+  transform: rotate(135deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(11) {
+  transform: rotate(180deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(13) {
+  transform: rotate(225deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(15) {
+  transform: rotate(270deg) skewY(135deg);
+}
+.clock-block .clocks.clocks-8 .blades-clock *:nth-child(17) {
+  transform: rotate(315deg) skewY(135deg);
+}
+.clock-block .blades-clock-name-type > * {
+  margin-bottom: 10px;
+  max-width: 220px;
+}
+
+/*
+ *  Item Styles
+ */
+.item-add-popup {
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.item .item-open-editor {
+  cursor: pointer;
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+.item .item-open-editor:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+.item .item-description {
+  font-style: italic;
+  text-align: justify;
+}
+.item .item-name {
+  text-align: center;
+  font-weight: 500;
+  font-family: Piedra;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+div.item:hover i.fa-trash, tr.item:hover i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0.5;
+}
+div.item i.fa-trash, tr.item i.fa-trash {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.all-items-list {
+  font-size: 14px;
+}
+.all-items-list:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.15);
+}
+.all-items-list div.item-body {
+  margin: 5px 10px;
+}
+.all-items-list a.item-delete {
+  margin-right: 10px;
+  align-self: center;
+}
+
+/*
+ *  Other Class Styles
+ */
+/* WO Roll Popup Formatting of the Roll Options */
+.action-info {
+  padding: 5px;
+  margin-top: -10px;
+  line-height: 1.5em;
+}
+.action-info #team-up {
+  line-height: 1.1em;
+}
+
+#pause h3 {
+  font-weight: 600;
+  text-shadow: 0px 3px 0px #68332c;
+}
+
+.hidden {
+  display: none;
+}
+
+.rollable-text {
+  transition: color 0.2s;
+}
+.rollable-text:hover {
+  cursor: pointer;
+  color: #a20000;
+}
+
+.editor,
+.editor-content {
+  min-height: 280px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px;
+}
+
+.compendium .directory-list .directory-item {
+  padding: 3px 0;
+  line-height: 48px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #4000005c;
+  box-shadow: none;
+}
+
+#pause img {
+  content: url("assets/decorations/pause-logo.webp");
+}
+
+form .notes, form .hint {
+  font-weight: 600;
+}
+
+form .form-group label {
+  font-weight: 700;
+}
+
+/* Global Tab Style Formatting */
+nav.tabs.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+nav.tabs.flex-horizontal .item {
+  text-align: center;
+  color: black;
+  background-color: #8080803d;
+  line-height: 2rem;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin: 0px 2px;
+  box-shadow: inset 0 2px 3px 0px #68332c;
+  flex: auto;
+}
+nav.tabs.flex-horizontal .item.active {
+  font-weight: 700;
+  color: white;
+  background-color: #68332c;
+  box-shadow: none;
+}
+nav.tabs.flex-horizontal > :first-child {
+  margin-left: 0;
+}
+nav.tabs.flex-horizontal > :last-child {
+  margin-right: 0;
+}
+
+/*
+ *  Tooltip Styles
+ */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: fixed;
+  width: fit-content;
+  max-width: 400px;
+  font-weight: 600;
+  font-family: Bitter;
+  background: url(../styles/assets/images/background-light.webp) repeat;
+  color: #400000;
+  font-size: 16px;
+  text-align: justify;
+  border: 2px solid #400000;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 9999;
+  text-transform: none;
+  text-shadow: none;
+}
+.tooltip .tooltipslow {
+  opacity: 0;
+  transition: visibility 0.1s, opacity 0.1s;
+  transition-delay: 0.1s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s;
+  transition-delay: 1s;
+}
+
+/*# sourceMappingURL=wicked.css.map */

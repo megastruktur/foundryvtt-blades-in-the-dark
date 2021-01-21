@@ -1,0 +1,77 @@
+<form class="{{cssClass}} item-sheet gear-supply-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Gear or Supply Type --}}
+  <section class="sheet-body">
+    <div class="form-group">
+      <label>{{ localize "FITD.GearOrSupply" }}</label>
+      <select id="gearsupply-type-select" name="data.gear_or_supply">
+        {{#select data.gear_or_supply}}
+        {{#each config.gear_supply_types as |name type|}}
+        <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+
+    {{!-- Quality category --}}
+    <div class="form-group">
+      <label>{{ localize "FITD.QualityCategory" }}</label>
+      <select id="gearsupply-quality-select" name="data.quality_category">
+        {{#select data.quality_category}}
+        {{#each config.gear_quality_types as |name type|}}
+        <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+
+    {{!-- Description --}}
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <div class="form-group flex-vertical">
+      <textarea name="data.description">{{data.description}}</textarea>
+    </div>
+
+    {{!-- Edges --}}
+    <label class="label-stripe">{{localize "FITD.Edges"}}</label>
+    <div id="edge-list" class="flex-vertical">
+      {{#each data.edges}}
+      <div>
+        <input type="text" value="{{this}}" data-item-name="{{this}}">
+      </div>
+      {{/each}}
+      <div>
+        <input type="text" value="" placeholder="New Edge">
+      </div>
+    </div>
+
+    {{!-- Limited Uses Type --}}
+    {{#if (eq data.gear_or_supply "supply")}}
+    <div class="form-group">
+      <label>{{ localize "FITD.UsageLimit" }}</label>
+      <select id="gearsupply-limit-select" name="data.use_type">
+        {{#select data.use_type}}
+        {{#each config.gear_supply_use_types as |name type|}}
+        <option value="{{type}}">{{localize name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+
+    {{!-- Uses Left --}}
+    {{#unless (eq data.use_type "unlimited")}}
+    {{#unless (eq data.use_type "steady")}}
+    <div class="form-group">
+      <label>{{ localize "FITD.SupplyUsesLeft" }}</label>
+      <input class="{{#if (eq data.use_type "shared")}}shared-supply-count{{/if}}" type="number" name="data.uses_left" value="{{data.uses_left}}" min="0" max="10">
+    </div>
+    {{/unless}}
+    {{/unless}}
+    {{/if}}
+  </section>
+</form>

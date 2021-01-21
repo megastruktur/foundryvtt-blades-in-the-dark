@@ -1,0 +1,47 @@
+<div class="dice-roll wicked-die-tooltip">
+	{{#if attribute_label}}
+		<div class="chat-label label-stripe-chat">
+			{{localize attribute_label}}
+			<div class="label-type">{{roll_type}}</div>
+		</div>
+		{{else}} 
+<div class="chat-label label-stripe-chat">{{roll_type}}</div>
+	{{/if}}
+
+	{{#if (eq roll_type (localize "FITD.ROLL.ACTION.Name"))}}
+		{{#if (eq position "FITD.PositionDefault")}}   
+			{{#if (eq effect "FITD.EffectDefault")}}   
+				<!-- If position and effect are default, Equal Footing is displayed for the roll-->
+				<div class="chat-label-small label-stripe-chat-small">
+				{{{localize "FITD.PosEffEqual"}}}
+				</div>
+			{{else}}   
+				<div class="chat-label-small label-stripe-chat-small">
+				{{{localize position}}} | {{{localize effect}}}
+				</div>
+			{{/if}}
+		{{else}}   
+			<div class="chat-label-small label-stripe-chat-small">
+				{{{localize position}}} | {{{localize effect}}}
+			</div>
+		{{/if}}
+		<!-- no Pos or Effect if Roll Type is not Action-->
+	{{/if}}
+
+	<div class="die {{roll_status_class}}">{{localize roll_status_text}}</div>
+	<div class="description dice-tooltip"><p>{{{roll_description}}}</p></div>
+
+	<ol class="dice-rolls">
+		{{#each this.rolls}}
+			{{#if this.result}}
+					<li class="wicked-die wd{{{this.result}}}"></li>
+				{{else}}
+					<li class="wicked-die wd{{{this.roll}}}"></li>
+			{{/if}}
+		{{/each}}
+		{{#if zeromode}}
+			<li class="zero-hint">{{localize "FITD.ZeroModeHint"}}</li>
+		{{/if}}
+	</ol>
+</div>
+

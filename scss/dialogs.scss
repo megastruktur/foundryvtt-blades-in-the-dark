@@ -1,0 +1,95 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+/*
+ *  Add-item pop-up dialog Styles
+ */
+
+// Pop-up dialog to add items to actors
+#add-items-popup {
+    max-height: 90%;
+    top: 5%;
+
+    .dialog-content {
+        overflow-y: scroll;
+    }
+
+    .dialog-buttons {
+        max-height: 34px;
+        margin-top: 5px;
+    }
+}
+
+#items-to-add {
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        display: none;
+
+        &:checked + label {
+            font-weight: 800;
+            color: $bloody;
+        }
+    }
+
+    > flex-horizontal {
+        padding: 3px;
+        border-bottom: 1px solid $bloody5c;
+    }
+
+    label:nth-of-type(2n) {
+        background: $mud3f;
+    }
+
+    // ?-Symbol for tooltips in item-addition pop-up
+    .fa-question-circle {
+        padding: 2px 3px;
+    }
+}
+
+
+/*
+ *  Rollable text pop-up dialog Styles
+ */
+
+#dice-roll-popup {
+
+    .dialog-buttons {
+        max-height: 34px;
+    }
+}
+
+#skill-roll{
+
+    .action-info {
+        margin-top: 0px;
+    }
+
+    .total-rolled {
+        
+        label:nth-child(2) {
+            font-size: 15px;
+            font-weight: 600;
+            font-family: bitter;
+            flex: 3;
+            margin-left: 5px;
+        }
+    }
+}
+
+
+/*
+ *  Dice roller pop-up dialog Styles
+ */
+
+#dice-roller {
+
+}

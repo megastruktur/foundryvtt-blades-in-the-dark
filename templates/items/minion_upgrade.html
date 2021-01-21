@@ -1,0 +1,59 @@
+<form class="{{cssClass}} item-sheet minion-upgrade-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Minion Upgrade Type --}}
+  <div class="form-group">
+    <label>{{ localize "FITD.MinionUpgradeType" }}</label>
+    <select id="upgrade-type-select" name="data.upgrade_type">
+      {{#select data.upgrade_type}}
+      {{#each config.minion_upgrade_types as |name type|}}
+      <option value="{{type}}">{{localize name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+
+  {{!-- Description --}}
+  <section class="sheet-body">
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description">{{data.description}}</textarea>
+  </section>
+
+  {{!-- Checkbox --}}
+  <section class="sheet-body">
+    <div class="flex-vertical">
+      <label class="label-stripe">{{localize "FITD.Checkbox"}}</label>
+      <input id="upgrade-chbx" type="text" name="data.upgrade_checkbox_text" value="{{data.upgrade_checkbox_text}}" placeholder="{{localize 'FITD.CheckboxExample'}}">
+    </div>
+  </section>
+
+  {{!-- Rollable Skill --}}
+  {{#if (eq data.upgrade_type "external")}}
+  <section class="sheet-body rollable-skill">
+    <label class="label-stripe">{{localize "FITD.RollableSkill"}}</label>
+    <div class="flex-horizontal">
+      <div>
+        <label>{{localize "FITD.SkillName"}}</label>
+        <select id="upgrade-skill-select" name="data.upgrade_skill_name">
+          <option value="">{{localize "FITD.NoneParentheses"}}</option>
+          {{#select data.upgrade_skill_name}}
+          {{#each config.rollable_skills as |name type|}}
+          <option value="{{type}}">{{localize name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      <div>
+        <label>{{localize "FITD.SkillRating"}}</label>
+        <input type="number" id="upgrade-skill-rating" name="data.upgrade_skill_value" value="{{data.upgrade_skill_value}}" min="0" max="4">
+      </div>
+    </div>
+  </section>
+  {{/if}}
+
+</form>

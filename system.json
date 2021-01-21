@@ -1,107 +1,157 @@
 {
-  "name": "blades-in-the-dark",
-  "title": "Blades in the Dark",
-  "description": "Blades in the dark game system.",
-  "version": "2.10",
+  "name": "wicked-ones",
+  "title": "Wicked Ones",
+  "description": "Official system for the Wicked Ones game made by Bandit Camp. Including official compendium content, all you need to slay some adventurers!",
+  "version": "0.9",
   "minimumCoreVersion": "0.7.2",
-  "compatibleCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
-  "author": "megastruktur",
+  "background": "styles/assets/images/WO-Header.webp",
+  "author": "Spearhead, LorduFreeman",
+  "authors": [
+    {
+      "name": "Spearhead",
+      "discord": "Spearhead#4288"
+    },
+    {
+      "name": "LorduFreeman",
+      "discord": "LorduFreeman#8747"
+    }
+  ],
   "esmodules": [
-    "module/blades.js"
+    "module/wicked.js"
   ],
   "styles": [
-    "styles/blades.css"
+    "styles/wicked.css"
   ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
-    },
-    {
-      "lang": "ru",
-      "name": "Russian",
-      "path": "lang/ru.json"
-    },
-    {
-      "lang": "es",
-      "name": "Spanish",
-      "path": "lang/es.json"
     }
   ],
-  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/2.10.zip",
+  "url": "https://github.com/eHanus/foundryvtt-wicked-ones/",
+  "manifest": "https://raw.githubusercontent.com/eHanus/foundryvtt-wicked-ones/master/system.json",
+  "download": "https://github.com/eHanus/foundryvtt-wicked-ones/archive/2.10.zip",
   "packs": [
     {
-      "name": "class",
-      "label": "Classes",
-      "system": "blades-in-the-dark",
-      "path": "./packs/classes.db",
+      "name": "adventurer",
+      "label": "Adventurers",
+      "system": "wicked-ones",
+      "path": "./packs/adventurers.db",
       "entity": "Item"
     },
     {
-      "name": "heritage",
-      "label": "Heritages",
-      "system": "blades-in-the-dark",
-      "path": "./packs/heritages.db",
+      "name": "calling",
+      "label": "Callings",
+      "system": "wicked-ones",
+      "path": "./packs/callings.db",
       "entity": "Item"
     },
     {
-      "name": "vice",
-      "label": "Vices",
-      "system": "blades-in-the-dark",
-      "path": "./packs/vices.db",
+      "name": "minion_upgrade",
+      "label": "Minion Upgrades",
+      "system": "wicked-ones",
+      "path": "./packs/minion_upgrades.db",
       "entity": "Item"
     },
     {
-      "name": "background",
-      "label": "Backgrounds",
-      "system": "blades-in-the-dark",
-      "path": "./packs/backgrounds.db",
+      "name": "minion_type",
+      "label": "Minion Types",
+      "system": "wicked-ones",
+      "path": "./packs/minion_types.db",
       "entity": "Item"
     },
     {
-      "name": "item",
-      "label": "Items",
-      "system": "blades-in-the-dark",
-      "path": "./packs/items.db",
+      "name": "monster_race",
+      "label": "Monster Races",
+      "system": "wicked-ones",
+      "path": "./packs/monsterraces.db",
       "entity": "Item"
     },
     {
-      "name": "ability",
-      "label": "Abilities",
-      "system": "blades-in-the-dark",
-      "path": "./packs/abilities.db",
+      "name": "goldmonger_type",
+      "label": "Goldmonger Types",
+      "system": "wicked-ones",
+      "path": "./packs/goldmongertypes.db",
       "entity": "Item"
     },
     {
-      "name": "crew_reputation",
-      "label": "Crew Reputation",
-      "system": "blades-in-the-dark",
-      "path": "./packs/crew_reputation.db",
+      "name": "revelry",
+      "label": "Revelries",
+      "system": "wicked-ones",
+      "path": "./packs/revelries.db",
       "entity": "Item"
     },
     {
-      "name": "crew_type",
-      "label": "Crew Types",
-      "system": "blades-in-the-dark",
-      "path": "./packs/crew_types.db",
+      "name": "wickedimpulse",
+      "label": "Wicked One Impulses",
+      "system": "wicked-ones",
+      "path": "./packs/wickedimpulses.db",
       "entity": "Item"
     },
     {
-      "name": "crew_upgrade",
-      "label": "Crew Upgrades",
-      "system": "blades-in-the-dark",
-      "path": "./packs/crew_upgrades.db",
+      "name": "defense",
+      "label": "Defenses",
+      "system": "wicked-ones",
+      "path": "./packs/defenses.db",
       "entity": "Item"
     },
     {
-      "name": "crew_ability",
-      "label": "Crew Abilities",
-      "system": "blades-in-the-dark",
-      "path": "./packs/crew_abilities.db",
+      "name": "minionimpulse",
+      "label": "Minion Impulses",
+      "system": "wicked-ones",
+      "path": "./packs/minionimpulses.db",
+      "entity": "Item"
+    },
+    {
+      "name": "gearsupply",
+      "label": "Gear & Supply",
+      "system": "wicked-ones",
+      "path": "./packs/gearsupply.db",
+      "entity": "Item"
+    },
+    {
+      "name": "duty",
+      "label": "Duties",
+      "system": "wicked-ones",
+      "path": "./packs/duties.db",
+      "entity": "Item"
+    },
+    {
+      "name": "project",
+      "label": "Projects",
+      "system": "wicked-ones",
+      "path": "./packs/projects.db",
+      "entity": "Item"
+    },
+    {
+      "name": "specialability",
+      "label": "Special Abilities",
+      "system": "wicked-ones",
+      "path": "./packs/specialabilities.db",
+      "entity": "Item"
+    },
+    {
+      "name": "externalability",
+      "label": "External Abilities",
+      "system": "wicked-ones",
+      "path": "./packs/externalabilities.db",
+      "entity": "Item"
+    },
+    {
+      "name": "dungeon_theme",
+      "label": "Dungeon Themes",
+      "system": "wicked-ones",
+      "path": "./packs/dungeon_themes.db",
+      "entity": "Item"
+    },
+    {
+      "name": "tier3room",
+      "label": "Tier-3 Rooms",
+      "system": "wicked-ones",
+      "path": "./packs/tier3rooms.db",
       "entity": "Item"
     }
   ]

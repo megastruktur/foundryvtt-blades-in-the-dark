@@ -3,7 +3,7 @@
  * @return {Promise}      A Promise which resolves once the migration is completed
  */
 export const migrateWorld = async function() {
-  ui.notifications.info(`Applying BITD Actors migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, {permanent: true});
+  ui.notifications.info(`Applying WO Actors migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, {permanent: true});
 
   // Migrate World Actors
   for ( let a of game.actors.entities ) {
@@ -21,8 +21,8 @@ export const migrateWorld = async function() {
   }
 
   // Set the migration as complete
-  game.settings.set("bitd", "systemMigrationVersion", game.system.data.version);
-  ui.notifications.info(`BITD System Migration to version ${game.system.data.version} completed!`, {permanent: true});
+  game.settings.set("wicked-ones", "systemMigrationVersion", game.system.data.version);
+  ui.notifications.info(`WO System Migration to version ${game.system.data.version} completed!`, {permanent: true});
 };
 
 /* -------------------------------------------- */
@@ -40,50 +40,7 @@ function _migrateActor(actor) {
 
   let updateData = {}
 
-  // Migrate Skills
-  const attributes = game.system.model.Actor.character.attributes;
-  for ( let attribute_name of Object.keys(actor.data.attributes || {}) ) {
-
-    // Insert attribute label
-    if (typeof actor.data.attributes[attribute_name].label === 'undefined') {
-      updateData[`data.attributes.${attribute_name}.label`] = attributes[attribute_name].label;
-    }
-    for ( let skill_name of Object.keys(actor.data.attributes[attribute_name]['skills']) ) {
-
-      // Insert skill label
-      // Copy Skill value
-      if (typeof actor.data.attributes[attribute_name].skills[skill_name].label === 'undefined') {
-
-        // Create Label.
-        updateData[`data.attributes.${attribute_name}.skills.${skill_name}.label`] = attributes[attribute_name].skills[skill_name].label;
-        // Migrate from skillname = [0]
-        let skill_tmp = actor.data.attributes[attribute_name].skills[skill_name];
-        if (Array.isArray(skill_tmp)) {
-          updateData[`data.attributes.${attribute_name}.skills.${skill_name}.value`] = [skill_tmp[0]];
-        }
-        
-      }
-    }
-  }
-
-  // Migrate Stress to Array
-  if (typeof actor.data.stress[0] !== 'undefined') {
-    updateData[`data.stress.value`] = actor.data.stress;
-    updateData[`data.stress.max`] = 9;
-    updateData[`data.stress.max_default`] = 9;
-    updateData[`data.stress.name_default`] = "BITD.Stress";
-    updateData[`data.stress.name`] = "BITD.Stress";
-  }
-
-  // Migrate Trauma to Array
-  if (typeof actor.data.trauma === 'undefined') {
-    updateData[`data.trauma.list`] = actor.data.traumas;
-    updateData[`data.trauma.value`] = [actor.data.traumas.length];
-    updateData[`data.trauma.max`] = 4;
-    updateData[`data.trauma.max_default`] = 4;
-    updateData[`data.trauma.name_default`] = "BITD.Trauma";
-    updateData[`data.trauma.name`] = "BITD.Trauma";
-  }
+  // Add future migration code to change DB entries
 
   return updateData;
 

@@ -1,0 +1,35 @@
+// Colors
+$lightgray: #CCC;
+$gray: #999;
+$gray3f: #9999993f;
+$privategrey: #e8e8ef;
+$red: red;
+$almost_black: #191919;
+$almost_white: #EEEFFF;
+$gold: #DAA520;
+$light_green: #008000;
+$green: #435e3d;
+$blue: #04578f;
+$bloody: #400000;
+$bloody5c: #4000005c;
+$bloodyShadow: #4000004f;
+$orange: #d46c1f;
+$mud: #68332c;
+$darkmud: #311815;
+$mud3f: #68332c3f;
+$paper: #c9c7b8;
+$bone: #fff8e8;
+$crit: #b12c20;
+$success: #862118;
+$mixed: #2c3678;
+$fail: #656666;
+$highlight_red: #a20000;
+
+
+// Transition period for sheet parts that hint what they can do
+$transition-period: 0.2s;
+$hover-opacity: 0.9;
+$hover-brightness: 0.8;
+
+// Add pop-up opacity
+$add-opacity: 0.1;

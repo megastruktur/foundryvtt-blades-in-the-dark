@@ -1,0 +1,156 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+// General Formatting
+
+form.item-sheet {
+    padding: 15px;
+
+    section > *:not(.label-stripe) {
+        margin-right: 10px;
+    }
+}
+
+
+// Adventurer Item
+form.adventurer-sheet {
+
+    #adventurer-sheet-body {
+
+        .label-stripe {
+            padding: 0;
+            margin: 15px 0px 5px 0px;
+
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+
+        & > div:last-child {
+            margin-right: 20px;
+        }
+
+        input {
+            margin-top: 5px;
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .class-selector {
+            flex: 3;
+            margin-left: -3px;
+
+            select {
+                margin-top: 5px;
+                width: 100%;
+                margin-left: 0px;
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+
+// Calling Item
+form.calling-sheet { 
+
+}
+
+
+// Downtime Project Item
+form.project-sheet {
+}
+
+
+// Dungeon Duty Item
+form.duty-sheet {
+    
+    .description-entry {
+        min-width: 300px;
+        max-width: 500px;
+
+        label {
+            font-size: 14px;
+            font-weight: 800;
+        }
+        
+        p {
+            text-align: justify;
+        }
+    }
+}
+
+
+// Dungeon Theme Item
+form.dungeon-theme-sheet {
+}
+
+
+// Gear & Supply Item
+form.gear-supply-sheet {
+}
+
+
+// Minion Upgrade Item
+form.minion-upgrade-sheet {
+
+    section.rollable-skill {
+
+        div > div {
+            width: 50%;
+
+            label {
+                margin-right: 10px;
+            }
+
+            #upgrade-skill-rating {
+                width: 50px;
+            }
+        }
+    }
+}
+
+
+// Monster Race Item
+form.monster-race-sheet {
+}
+
+
+// Specialability Item
+form.special-ability-sheet {
+
+    #ray-selection {
+
+        div.ray-line {
+            display: flex;
+            justify-content: space-evenly;
+
+            &:last-child {
+                margin-bottom: 25px;
+            }
+
+            select:nth-child(1) {
+                width: 70%;
+            }
+
+            select:nth-child(2) {
+                width: 20%;
+            }
+        }
+    }
+}
+
+
+// Tier 3 Room Item
+form.tier-3-room-sheet {
+}
+
+
+// Simple Item
+form.simple-sheet {
+}
+

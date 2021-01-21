@@ -1,0 +1,23 @@
+<form class="{{cssClass}} item-sheet monster-race-sheet" autocomplete="off">
+  <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
+      </div>
+  </header>
+  
+  <section class="flex-vertical">
+    <label class="label-stripe">{{localize "FITD.Description"}}</label>
+    <textarea name="data.description">{{data.description}}</textarea>
+    <label class="label-stripe">{{localize "FITD.IsPrimalMonster"}}</label>
+    <div>
+      <input type="checkbox" name="data.primal" value="{{data.primal}}" {{checked data.primal}}>
+      <label>{{localize "FITD.IsPrimalMonsterHint"}}</label>
+    </div>
+    {{#if data.primal}}
+    <label class="label-stripe">{{localize "FITD.FlashbackClues"}}</label>
+    <textarea name="data.flashback_clues">{{data.flashback_clues}}</textarea>
+    {{/if}}
+  </section>
+
+</form>

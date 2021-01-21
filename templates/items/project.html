@@ -1,0 +1,39 @@
+<form class="{{cssClass}} item-sheet project-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+<section class="sheet-body flex-vertical">
+  <label class="label-stripe">{{localize "FITD.ClockSize"}}</label>
+  <div id="clock-type-list" class="flex-horizontal">
+    {{#each data.clock_sizes as |size key|}}
+    {{#multiboxes ../data.clock_size}}
+    <div>
+      <label for="project-size-{{size}}">{{size}}</label>
+      <input type="radio" id="project-size-{{size}}" class="clock-size-picker" name="data.clock_size" value="{{size}}">
+    </div>
+    {{/multiboxes}}
+    {{/each}}
+  </div>
+
+  <label class="label-stripe">{{localize "FITD.ClockProgress"}}</label>
+
+  <div id="clock-progress-list" class="flex-horizontal">
+    {{#times_from_0 data.clock_size}}
+    {{#multiboxes ../data.clock_progress}}
+    <div>
+      <label for="progress-{{this}}">{{this}}</label>
+      <input type="radio" id="progress-{{this}}" name="data.clock_progress" value="{{this}}">
+    </div>
+    {{/multiboxes}}
+    {{/times_from_0}}
+  </div>
+
+  <label class="label-stripe">{{localize "FITD.Description"}}</label>
+  <textarea name="data.description" placeholder="{{localize "FITD.DescriptionHint"}}">{{data.description}}</textarea>
+</section>
+</form>

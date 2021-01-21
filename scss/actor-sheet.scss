@@ -1,0 +1,601 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.wicked-one-sheet {
+	
+	/* Top-Decoration Styling  */
+	background: url(../styles/assets/decorations/border-top.png);
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-position-x: center;
+    /* background-position-y: 5px;
+
+    /*
+     *   Basic Character Info Table
+     */
+
+    table.base-info {
+
+        .minionpack {
+            justify-content: start;
+
+            select {
+                padding: 0px 10px;
+            }
+
+            button {
+                width: auto;
+                padding: 0px 20px;
+                margin-bottom: -1px;
+                margin-left: 20px;
+                align-self: flex-end;
+                
+                &:disabled {
+                    display: none;
+                }
+            }
+
+        }
+
+        .xp-stripe {
+            background-color: $mud;
+        }
+
+        // Wicked & Reckless XP
+        .big-teeth {
+            @include toothradio(11px, 32px, "assets/teeth/xp-tooth-3-5-7-empty.png", "assets/teeth/xp-tooth-3-5-7-filled.png");
+            justify-content: center;
+            align-items: center;
+
+            label {
+
+                &[for$="-0"]:hover {
+                    filter: brightness(1) !important;
+                    opacity: 0.5 !important;
+                }
+
+                & {
+                    margin-right: 0px;
+
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
+                        width: 18px;
+                    }
+                }
+            }
+
+            &.xp-bar input:checked {
+
+                & ~ label {
+
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-empty.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-empty.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-empty.png");
+                        width: 18px;
+                    }
+                }
+
+                & + label {
+                    &:nth-of-type(2) {
+                        background-image: url("assets/teeth/xp-tooth-1-filled.png");
+                        width: 10px;
+                    }
+
+                    &:nth-of-type(2n+3) {
+                        background-image: url("assets/teeth/xp-tooth-2-4-6-8-filled.png");
+                        width: 12px;
+                    }
+
+                    &:last-of-type {
+                        background-image: url("assets/teeth/xp-tooth-9-filled.png");
+                        width: 18px;
+                    }
+                }
+            }
+
+            // Gold
+            &.gold {
+                @include toothradio(20px, 20px, "assets/teeth/gold-empty.png", "assets/teeth/gold-filled.png");
+
+                & label {
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        // Goldmonger Size
+        .goldmonger-size {
+            //@include toothradio(20px, 20px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            input {
+                display: none;
+
+                &:checked + div label.gm-size-box {
+                    background-image: url("assets/boxes/box-white-crossed.png");
+                }
+            }
+
+            label.black-label:not(.inactive):hover {
+                    filter: brightness(1) !important;
+                    opacity: 0.5 !important;
+            }
+
+            div:not(:nth-of-type(1)) {
+                display: flex;
+                align-items: center;
+                margin-left: 25px;
+
+                label.gm-size-box {
+                    @include changeable(0.1s, 0.8, 0.9);
+                    background-image: url("assets/boxes/box-white-filled.png");
+                    display: inline-flex;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin-right: 5px;
+                }
+            } 
+
+            div:nth-of-type(2) {
+                label.gm-size-box{
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+            div:nth-of-type(3) {
+                label.gm-size-box{
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+            div:nth-of-type(4) {
+                label.gm-size-box{
+                    width: 30px;
+                    height: 30px;
+                }
+
+            }
+        }
+
+        .pleased-xp {
+            display: flex;
+            align-items: center;
+            
+            input {
+                display: none;
+
+                &:checked + label {
+                    background-image: url("assets/boxes/box-white-crossed.png");
+                }
+            }
+
+            label.black-label:hover {
+                    filter: brightness(1) !important;
+                    opacity: 0.5 !important;
+            }
+
+            label.pleased-checkbox {
+                @include custom-label("assets/boxes/box-white-filled.png", 20px, 20px);
+                margin-left: 5px;
+            }
+        }
+
+        a.item-delete {
+            align-self: center;
+        }
+
+    }
+
+    /*
+     *   Defenses, Stress & Impulses
+     */
+
+    // Defenses
+    #character-defenses {
+
+        table {
+
+            th {
+                background-color: $mud;
+                color: $almost_white;
+                font-size: medium;
+                font-weight: 600;
+                text-shadow: 0 2px $darkmud;
+            }
+
+            tr {
+
+                td:nth-of-type(2) {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                td:nth-child(3) {
+                    text-align: center;
+                    padding: 0;
+
+                    .item-name {
+                        text-transform: uppercase;
+                        font-family: 'Blood Crow';
+                        font-size: 28px;
+                        margin-left: 12px;
+                        margin-right: 0px;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+
+        a.item-delete {
+            align-self: center;
+        }
+    }
+
+    // Stress Clock
+    #character-stress-clock {
+        width: 60px;
+        @include clock(6, 60);
+        @include clock_zero_hover();
+        
+        .clock-zero-label {
+            position: relative;
+            left: -10px;
+        }
+
+        .blades-clock {
+            top: -10px;
+        }
+    }
+
+
+    /*
+     *   Tabs and Abilities
+     */
+
+    #wo-nav-container {
+        margin-right: 8px;
+    }
+
+    // Abilities and loadout tables
+    #abilities-list, #loadout, #downtime-abilities-list {
+
+        tr td {
+            &:nth-of-type(1) {
+                min-width: 75px;
+                width: 23%;
+            }
+
+            &:nth-of-type(2) {
+                padding-bottom: 10px;
+            }
+
+            &:nth-of-type(3) {
+                width: 20px;
+            }
+        }
+    }
+
+    // Main abilities
+    #abilities-list {
+
+        .group-core {
+            background-color: $mud3f;
+        }
+
+        .group-flex {
+            background-color: $gray3f;
+
+            // Style for flexibility hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        .group-ext {
+            background-color: $gray3f;
+
+            // Style for external hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        // Braineater psi-discipline
+        tr.psi-discipline {
+
+            td > div {
+                border-radius: 15px;
+                height: 30px;
+                align-items: center;
+
+                div {
+                    flex: none;
+                }
+            }
+        }
+
+        // Doomseeker eye-rays
+        tr.eye-rays {
+
+            .ray-container{
+                text-align: center;
+                position: relative;
+                left: 15px;
+                min-width: 420px;
+
+                div.doomseeker-img {
+                    margin-top: 30px;
+
+                    img {
+                        width: 200px;
+                        height: 200px;
+                        margin: 0px;
+                        border-style: none;
+                        position: relative;
+                        transition: filter 0.1s;
+
+                        &.hovered {
+                            filter: brightness(0.8);
+                            opacity: 0.9;
+                        }
+                    }
+
+                    area {
+                        cursor: pointer;
+                    }
+                }
+
+                div.ray-items {
+                    margin-top: -225px;
+                    height: 232px;
+                    text-align: center;
+
+                    & > div {
+                        text-align: center;
+                        position: relative;
+                        width: fit-content;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        @include child_pos(2,  12px, 18%);
+                        @include child_pos(3, -22px, 82%);
+                        @include child_pos(4, -17px, 18%);
+                        @include child_pos(5, -34px, 82%);
+                        @include child_pos(6,  25px, 15%);
+                        @include child_pos(7,  -9px, 85%);
+                        @include child_pos(8,  -4px, 15%);
+                        @include child_pos(9, -21px, 85%);
+                    }
+                }
+            }
+        }
+
+        // Facestealer face
+        tr.stolen-face {
+
+            td:first-child{
+                text-align: center;
+
+                img {
+                    max-height: 120px;
+                    max-width: 100px;
+                    object-fit: contain;
+                    border: 0px;
+                }
+            }
+        }
+
+        // Goldmonger growth path
+        tr.growth-path {
+
+            table tr {
+                &:nth-child(1) td:nth-child(1) {
+                    background: none;
+                }
+
+                &:nth-child(2) td:nth-child(1) {
+                    background-position-y: center;
+                }
+
+                &:nth-child(3) td:nth-child(1) {
+                    background-position-y: bottom;
+                }
+
+                &:nth-child(4) td:nth-child(1) {
+                    background-position-y: center;
+                    background-image: url("assets/decorations/verticalline-top.png");
+                }
+
+                td:nth-child(1) {
+                    min-width: 32px;
+                    width: 32px;
+                    background-image: url("assets/decorations/verticalline-bottom.png");
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+
+    #abilities .flashback-clues {
+        text-align: center;
+    }
+    
+    // Gear & supply tags
+    #loadout {
+
+        .group-ability {
+            background-color: $gray3f;
+
+            // Style for supply ability hint
+            td.item-body i {
+                font-size: 14px;
+            }
+        }
+
+        .gear-tags {
+            margin-top: 4px;
+
+            label {
+                display: inline-block;
+                border-style: solid;
+                border-width: 1px;
+                border-color: $gray;
+                border-radius: 5px;
+                padding: 2px 4px;
+                margin-bottom: 4px;
+                font-size: 12px;
+                font-weight: bold;
+
+                &.quality-mundane { color: $almost_black;}
+                &.quality-valuable { color: $mixed; }
+                &.quality-powerful { color: $crit; }
+                &.edge-tag { color: $orange; }
+                &.quantity-steady { color: $green; }
+                &.quantity-limited { color: $green; }
+                &.quantity-shared { color: $green; }
+            }
+        }
+    }
+
+    // Supply checkboxes
+    #loadout .supply {
+        @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-crossed.png");
+    }
+
+    // Dungeon Duties
+    #duties-tab {
+
+        .downtime-hints {
+            padding:  3px 0px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+            justify-content: space-around;
+
+            > div {
+                margin: 2px 6px;
+                font-style: italic;
+
+                b {
+                    font-style: normal;
+                }
+            }
+        }
+		#downtime-risk{
+			margin-top: 5px;
+		}
+		
+        .project-clock {
+            height: 80px;
+            // Functionality will be overridden in wicked-sheet.js
+            @include clock(4, 40); 
+        }
+
+        div.label-stripe {
+            margin-bottom: 0px;
+        }
+
+        table {
+            margin-top: 0px;
+            margin-bottom: 15px;
+        }
+    }
+    // Projects Table
+    #project-clocks-table {
+        tr {
+            td:nth-of-type(1) {
+                @include clock_zero_hover();
+                text-align: center;
+                width: 50px;
+            }
+
+            td:nth-of-type(2) {
+                text-align: center;
+                min-width: 90px;
+                width: 23%;
+                font-family: Bitter;
+            }
+
+            td:nth-of-type(4) {
+                width: 20px;
+            }
+        }
+    }
+	
+    // Duties Table
+    #duties-table {
+        tr {
+            td:nth-of-type(1) {
+                text-align: center;
+                width: 5%;
+            }
+
+            td:nth-of-type(2) {
+                text-align: center;
+                width: 12%;
+            }
+
+            td:nth-of-type(4) {
+                width: 20px;
+            }
+        }
+
+        tbody {
+            
+            td:nth-of-type(1){
+                font-weight: 900;
+                text-align: center;
+            }   
+        }
+    }
+	
+   // Notes Table Light Tongue Tooltip Styling
+   #tongue-tooltip{
+		margin-left: auto;
+		align-self: center;
+		font-size: x-large;
+		position: relative;
+	}
+	
+	#tongue-grid{
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		justify-content: space-evenly;
+		grid-gap: 10px;
+		grid-column-gap: 20px;
+		font-family: Piedra;
+		text-transform: uppercase;
+		color: black;
+	}
+	#grid-item1 {
+			color: $mud;
+			grid-column: 1 / span 5;
+			font-weight: 700;
+			font-family: Bitter;
+			text-transform: none;
+	}
+}

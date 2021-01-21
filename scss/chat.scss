@@ -1,0 +1,210 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+#chat {
+
+    .chat-label {
+        background-color: $almost_black;
+        color: $almost_white;
+        font-size: 24px;
+        text-align: center;
+        padding: 0px 5px;
+        height: 36px !important;
+        text-transform: capitalize;
+    }
+
+    .chat-label-small {
+        background-color: $gray;
+        color: $almost_black;
+        font-size: small;
+        text-align: center;
+        padding: 3px 5px;
+        height: 26px !important;
+    }
+
+    .chat-message {
+        padding: 5px;
+        color: $almost_black;
+        font-size: 14px;
+        background: url(../styles/assets/images/background-light.webp) repeat;
+        background-size: 300px;
+        box-shadow: inset 0 0 9px 1px $bloodyShadow;
+
+        &.whisper {
+            background: $privategrey;
+        }
+
+        .message-header {
+
+            .message-sender {
+                font-family: Piedra;
+                font-weight: normal;
+                font-size: 15px;
+            }
+
+            .message-metadata {
+                text-align: right;
+                font-weight: 700;
+            }
+
+        }
+
+        .message-content {
+            font-family: Bitter;
+            font-size: inherit;
+            font-weight: 600;
+        }
+
+    }
+
+    %label-stripe-chat-base {
+        font-family: Piedra;
+        font-weight: normal;
+        position: relative;
+        padding-top: 3px;
+    }
+
+    .label-stripe-chat {
+        @extend %label-stripe-chat-base;
+        color: white;
+        background-color: $mud;
+        margin: 0;
+        display: flex;
+        border-top-left-radius: 5px;
+        text-shadow: 2px 2px 0 #313131;
+    }
+
+    .label-stripe-chat-small {
+        @extend %label-stripe-chat-base;
+        color: $almost_black;
+        background-color: #bdb7ab;
+        margin-bottom: 0px;
+        // display: flex;
+        text-transform: capitalize;
+        font-size: 16px;
+    }
+
+    .wicked-die-tooltip {
+
+        &.dice-roll {
+            display: block;
+
+            .dice-tooltip.exp{
+                display: block;
+            }
+
+            .dice-rolls {
+                list-style: none;
+                display: flex;
+            }
+
+            .zero-hint {
+                font-size: 18px;
+                font-weight: 700;
+                margin-left: 15px;
+                align-self: center;
+            }
+        }
+
+        .label-type {
+            text-transform: uppercase;
+            color: white;
+            display: flex;
+            font-family: Bitter;
+            font-weight: 600;
+            font-size: 12px;
+            margin: 0;
+            margin-left: auto;
+            border-top-left-radius: 5px;
+        }
+
+        .die {
+            text-transform: uppercase;
+            color: white;
+            font-family: Piedra;
+            font-weight: normal;
+            font-size: 24px;
+            text-align: center;
+            height: 30px;
+            border-bottom: 3px solid;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+            &.critical {
+                color: $crit;
+            }
+
+            &.success {
+                color: $success;
+            }
+
+            &.mixed {
+                color: $mixed;
+            }
+
+            &.failure {
+                color: $fail;
+            }
+        }
+
+        .wicked-die {
+            width: 32px;
+            height: 32px;
+            float: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: transparent;
+
+            &.wd1 {
+                background-image: url("assets/dice/die-1-grey.png");
+            }
+
+            &.wd2 {
+                background-image: url("assets/dice/die-2-grey.png");
+            }
+
+            &.wd3 {
+                background-image: url("assets/dice/die-3-grey.png");
+            }
+
+            &.wd4 {
+                background-image: url("assets/dice/die-4-blue.png");
+            }
+
+            &.wd5 {
+                background-image: url("assets/dice/die-5-blue.png");
+            }
+
+            &.wd6 {
+                background-image: url("assets/dice/die-6-red.png");
+            }
+        }
+    }
+
+    .description {
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    // TO DO: Check if used
+    .dice-tooltip .dice-rolls .roll.d6 {
+        font-family: Signika;
+    }
+}
+
+
+// Game Chat Roll Selection
+#chat-controls .roll-type-select {
+    color: $bloody;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+// Game Chat Background
+#chat-form textarea {
+    background: url(../styles/assets/images/background-light.webp) repeat;
+    background-size: 300px;
+}

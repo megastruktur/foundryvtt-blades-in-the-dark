@@ -1,0 +1,321 @@
+<form class="{{cssClass}} actor-sheet dungeon-sheet" autocomplete="off">
+
+  {{!-- Base Dungeon Information --}}
+  <section class="section flex-vertical">
+
+    <table>
+      <tr>
+        <td colspan="2">
+          <div id="name" class="large-name">
+            <!-- <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label> -->
+            <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
+          </div>
+        </td>
+      </tr>
+      <tr id="dungeon-theme-bar" class="label-stripe">
+        <td>
+          {{!-- Dungeon Theme Info --}}
+          <div>
+            {{#if actor.data.has_no_theme}}
+            {{localize "FITD.DungeonTheme"}}
+            {{/if}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "dungeon_theme")}}
+            {{item.name}}
+            {{/if}}
+            {{/each}}
+            <a class="item-add-popup" data-distinct="true" data-item-type="dungeon_theme"><i class="fas fa-plus-square"></i></a>
+          </div>
+        </td>
+        <td>
+          <div id="dungeon-tier">
+            {{#multiboxes data.tier.value}}
+            <input type="radio" id="dungeon-{{actor._id}}-tier-0" name="data.tier.value" value="0" dtype="Radio">
+            <label class="black-label" for="dungeon-{{actor._id}}-tier-0">{{localize "FITD.Tier"}}</label>
+
+            {{#times_from_1 data.tier.max}}
+            <input type="radio" id="dungeon-{{../actor._id}}-tier-{{this}}" name="data.tier.value" value="{{this}}" dtype="Radio">
+            <label for="dungeon-{{../actor._id}}-tier-{{this}}"></label>
+            {{/times_from_1}}
+
+            {{/multiboxes}}
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="draggable-items" id="special-list">
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "dungeon_theme")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="flex-vertical">
+                <div class="item-special-feature">
+                  <span class="item-body">
+                    <b class="item-open-editor">{{item.data.special_name}}:</b>
+                  </span>
+                  {{item.data.special_feature}}
+                  <div class="checkbox-container">
+                    {{#unless (eq item.data.theme_checkbox_1_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-thcbx1-checked" value="{{item.data.theme_checkbox_1_checked}}" {{checked item.data.theme_checkbox_1_checked}} data-property-to-set="theme_checkbox_1_checked">
+                        <label for="item-{{item._id}}-thcbx1-checked"></label>
+                        {{item.data.theme_checkbox_1_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.theme_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-thcbx2-checked" value="{{item.data.theme_checkbox_2_checked}}" {{checked item.data.theme_checkbox_2_checked}} data-property-to-set="theme_checkbox_2_checked">
+                        <label for="item-{{item._id}}-thcbx2-checked"></label>
+                        {{item.data.theme_checkbox_2_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </div>
+                </div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+            {{/if}}
+            {{/each}}
+          </div>
+        </td>
+        <td>
+          {{!-- Small Profile Picture --}}
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  {{!-- Navigation & Tabs --}}
+  <section class="flex-horizontal">
+    <div id="dun-nav-container" class="tab-content flex-vertical grow-two">
+
+      {{!-- Nav menu --}}
+      <nav class="tabs flex-horizontal">
+        <a class="item" data-tab="rooms">{{localize "FITD.TierThreeRooms"}}</a>
+        <a class="item" data-tab="description">{{localize "FITD.DungeonDescription"}}</a>
+        <a class="item" data-tab="masterplan">{{localize "FITD.MasterPlan"}}</a>
+        <a class="item" data-tab="dungeon-notes">{{localize "FITD.Notes"}}</a>
+        <a class="item" data-tab="all-dungeon-items">{{localize "FITD.AllItems"}}</a>
+      </nav>
+
+      {{!-- Tier-3 Rooms Tab --}}
+      <div id="rooms" class="tab flex-vertical" data-tab="rooms">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.TierThreeRooms"}}</p>
+          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+
+        {{!-- Tier-3 Rooms List --}}
+        <table class="draggable-items" id="rooms-list">
+          <tbody>
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "tier3room")}}
+            {{#unless item.flexibility}}
+            {{!-- Rooms from Theme --}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name item-open-editor">{{item.name}}</div>
+              </td>
+              <td>
+                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">
+                  {{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}
+                  <div class="checkbox-container">
+                    {{#unless (eq item.data.room_checkbox_1_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
+                        <label for="item-{{item._id}}-rmcbx1-checked"></label>
+                        {{item.data.room_checkbox_1_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.room_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
+                        <label for="item-{{item._id}}-rmcbx2-checked"></label>
+                        {{item.data.room_checkbox_2_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/unless}}
+            {{/if}}
+            {{/each}}
+
+            {{!-- Rooms from other Themes --}}
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "tier3room")}}
+            {{#if item.flexibility}}
+            <tr class="item group-flex" data-item-id="{{item._id}}">
+              <td class="item-body">
+                <div class="item-name item-open-editor">{{item.name}}<br /><i>({{localize "FITD.Flexibility"}})</i></div>
+              </td>
+              <td>
+                <div class="item-description{{#if item.data.missing_materials}} missing-materials{{/if}}">
+                  {{item.data.description}}{{#if item.data.missing_materials}} ({{localize 'FITD.MissingMaterials'}}){{/if}}
+                  <div class="checkbox-container">
+                    {{#unless (eq item.data.room_checkbox_1_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
+                        <label for="item-{{item._id}}-rmcbx1-checked"></label>
+                        {{item.data.room_checkbox_1_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.room_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
+                        <label for="item-{{item._id}}-rmcbx2-checked"></label>
+                        {{item.data.room_checkbox_2_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+            {{/if}}
+            {{/if}}
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+
+      {{!-- Descriptions Tab --}}
+      <div id="description" class="tab flex-vertical" data-tab="description">
+        <div class="label-stripe">
+          <p>{{localize "FITD.DungeonDescription"}}</p>
+        </div>
+        <div id="theme-description">
+          {{#each actor.items as |item id|}}
+          {{#if (eq item.type "dungeon_theme")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-vertical">
+              <div class="item-name item-open-editor">{{item.name}}</div>
+              <div class="item-description">{{item.data.description}}</div>
+            </div>
+            <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.Entrance"}}</label>
+          {{#if (eq data.entrance "")}}
+          <label>{{localize "FITD.EntranceHints"}}</label>
+          {{/if}}		  
+          <input type="text" id="entrance-description-input" name="data.entrance" value="{{data.entrance}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.Structure"}}</label>
+          {{#if (eq data.structure "")}}
+          <label>{{localize "FITD.StructureHints"}}</label>
+          {{/if}}		  
+          <input type="text" id="structure-description-input" name="data.structure" value="{{data.structure}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.Lighting"}}</label>
+          {{#if (eq data.lighting "")}}
+          <label>{{localize "FITD.LightingHints"}}</label>
+          {{/if}}		  
+          <input type="text" id="lighting-description-input" name="data.lighting" value="{{data.lighting}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.Atmospherics"}}</label>
+          {{#if (eq data.atmospherics "")}}
+          <label>{{localize "FITD.AtmosphericsHints"}}</label>
+          {{/if}}		  
+          <input type="text" id="atmospherics-description-input" name="data.atmospherics" value="{{data.atmospherics}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.Hoard"}}</label>
+          {{#if (eq data.hoard "")}}
+          <label>{{localize "FITD.HoardHints"}}</label>
+          {{/if}}		  
+          <input type="text" id="hoard-description-input" name="data.hoard" value="{{data.hoard}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.Imps"}}</label>
+          {{#if (eq data.imps "")}}
+          <label>{{localize "FITD.ImpsHints1"}}</label><br />
+          <label>{{localize "FITD.ImpsHints2"}}</label>
+          {{/if}}		  
+          <input type="text" id="imps-description-input" name="data.imps" value="{{data.imps}}">
+        </div>
+      </div>
+
+      {{!-- Master Plan Tab --}}
+      <div id="masterplan" class="tab flex-vertical" data-tab="masterplan">
+        <div class="label-stripe">
+          <p>{{localize "FITD.MasterPlan"}}</p>
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.StepOne"}}</label>
+          <input type="text" name="data.master_plan.step1" value="{{data.master_plan.step1}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.StepTwo"}}</label>
+          <input type="text" name="data.master_plan.step2" value="{{data.master_plan.step2}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.StepThree"}}</label>
+          <input type="text" name="data.master_plan.step3" value="{{data.master_plan.step3}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.StepFour"}}</label>
+          <input type="text" name="data.master_plan.step4" value="{{data.master_plan.step4}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.StepFive"}}</label>
+          <input type="text" name="data.master_plan.step5" value="{{data.master_plan.step5}}">
+        </div>
+        <div class="text-input">
+          <label class="label-stripe">{{localize "FITD.StepSix"}}</label>
+          <input type="text" name="data.master_plan.step6" value="{{data.master_plan.step6}}">
+        </div>
+      </div>
+
+      {{!-- Notes Tab --}}
+      <div id="dungeon-notes" class="tab flex-vertical" data-tab="dungeon-notes">
+        <div class="label-stripe">
+          <p>{{localize "FITD.Notes"}}</p>
+        </div>
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      </div>
+
+      {{!-- Full Item List --}}
+      <div id="all-dungeon-items" class="tab grow-two flex-vertical" data-tab="all-dungeon-items">
+        <div class="label-stripe">
+          <p><label>{{localize "FITD.AllItems"}}</label></p>
+        </div>
+        {{#each actor.items as |item id|}}
+        <div class="item flex-horizontal all-items-list" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+            <div class="item-name item-open-editor">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</form>

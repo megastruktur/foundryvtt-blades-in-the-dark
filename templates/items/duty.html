@@ -1,0 +1,40 @@
+<form class="{{cssClass}} item-sheet duty-sheet" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}"/></h1>
+        </div>
+    </header>
+    
+    {{!-- Sheet Body --}}
+<section class="sheet-body flex-vertical">
+  <label class="label-stripe">{{localize "FITD.Tier"}}</label>
+  <input id="item-class" type="number" min="0" max="4" name="data.tier" value="{{data.tier}}">
+  <label class="label-stripe">{{localize "FITD.Type"}}</label>
+  <div class="flex-vertical type-selector">
+    <select class="list-with-custom" id="duty-type-select" name="data.type" data-property-to-set="type_custom">
+      {{#select data.type}}
+      <option value="">{{localize "FITD.NoneParentheses"}}</option>
+      <option value="custom">{{localize "FITD.Custom"}}</option>
+      {{#each config.duty_types as |name type|}}
+      <option value="{{name}}">{{localize name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+    {{#if (eq data.type "custom")}}
+    <input id="duty-custom-type" type="text" name="data.type_custom" value="{{data.type_custom}}" placeholder="{{localize "FITD.CustomDutyTypeHint"}}">
+    {{/if}}
+  </div>
+  <label class="label-stripe">{{localize "FITD.Description"}}</label>
+  <div class="flex-vertical description-entry">
+    <textarea name="data.description" placeholder="{{localize "FITD.DescriptionHint"}}">{{data.description}}</textarea>
+    {{#unless (eq data.type_hint_prompt "")}}
+      <label>{{{data.type_hint_prompt}}}</label>
+      <p>{{{data.type_hint_paragraph1}}}</p>
+      {{#unless (eq data.type_hint_paragraph2 "")}}
+        <p>{{{data.type_hint_paragraph2}}}</p>
+      {{/unless}}
+    {{/unless}}
+  </div>
+</section>
+</form>

@@ -1,6 +1,11 @@
+// Imports
+@import 'variables.scss';
+
+
 /* 
 *  Elements that can be changed will hint this by dimming and fading a little on hover
 */
+
 @mixin changeable($transition-period, $hover-brightness, $hover-opacity, $hover-color: null) {
   transition: filter $transition-period;
   cursor: pointer;
@@ -14,9 +19,11 @@
   }
 }
 
+
 /*
  * Toothradio. Some (eg trauma) are not changeable, hence the option.
  */
+
 @mixin toothradio($width, $height, $unchecked_background, $checked_background, $changeable: true) {
 
   display: flex;
@@ -71,139 +78,110 @@
   }
 }
 
+
+/*
+ * Dark Hearts Glow
+ */
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3),inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+	border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8),inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+	border-radius: 11px;
+  }
+}
+
+
 /*
  * Custom Radio
  */
+
 @mixin custom_radio($width, $height) {
+    display: flex;
+    $default_color: $almost_white;
+    $accent_color: $almost_black;
+    $circle_border_color: $almost_black;
 
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $almost_black;
-  $circle_border_color: $almost_black;
+    label {
 
-  label {
+        & {
+            height: $height;
+            width: $width;
+            background-image: url("assets/boxes/box-filled.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            vertical-align: middle;
 
-    & {
-      height: $height;
-      width: $width;
-      background-color: $accent_color;
+            /*
+            &.dark-heart {
+                background-image: url("assets/boxes/heart-filled.png");
+                margin-right: 4px;
+                position: relative;
+                top: -2px;
+            }
 
-      vertical-align: middle;
-      border: 2px solid $circle_border_color;
-      border-radius: 24px;
+            */
 
-      &[for$="-0"] {
-        height: 5px;
-        width: 5px;
-        border-radius: 24px;
-        background-image: none !important;
-        background-color: $red !important;
-        margin-right: 0px;
-      }
+            &[for$="-0"] {
+                height: 8px;
+                width: 8px;
+                border-radius: 24px;
+                opacity: 0;
+                transition: opacity 1s;
+                background-image: none !important;
+                background-color: $highlight_red !important;
+                margin-right: 0px;
+            }
 
-      @include changeable(0.1s, 0.7, 0.7);
+            @include changeable(0.1s, 0.7, 0.7);
+        }
     }
-  }
-
-  /* Hide the browser's default checkbox */
-  input {
-    display: none;
-  
-    &:checked {
-  
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        // Less opacity here cos otherwise it's barely visible on the dark
-        @include changeable(0.1s, 0.7, 0.7); 
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-
-/*
- * Custom Radio Squared
- */
-@mixin custom_radio_square($side) {
-
-  display: flex;
-  $default_color: $almost_white;
-  $accent_color: $gold;
-  $circle_border_color: $almost_black;
-
-  label {
-
-    & {
-      height: $side;
-      width: $side;
-      background-color: $accent_color;
-
-      vertical-align: middle;
-      border: 1px solid $circle_border_color;
-
-      &[for$="-0"] {
-        margin-right: 0px;
-      }
-      @include changeable(0.1s, 0.8, 0.9);
-    }
-  }
-
-  /* Hide the browser's default checkbox */
-  input {
-    display: none;
-  
-    &:checked {
-  
-      & ~ label {
-        background-color: $default_color;
-      }
-      & + label {
-        background-color: $accent_color;
-      }
-    }
-  }
-}
-
-/*
- * Checkboxes underscored.
- */
-@mixin check_underscore() {
-
-  display: flex;
-  flex-wrap: wrap;
-  label {
-    cursor: pointer;
-    font-size: 19px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin-right: 10px;
-    @include changeable(0.1s, 0.8, 0.9);
-
     /* Hide the browser's default checkbox */
     input {
-      
-      display: none;
+        display: none;
 
-      &:checked ~ .checkmark {
-        color: $red;
-      }
+        &:checked {
+
+            & ~ label {
+                background-image: url("assets/boxes/box-empty.png");
+
+                &.dark-heart {
+                    background-image: url("assets/boxes/heart-empty.png");
+                }
+            }
+
+
+            & + label {
+                // Less opacity here cos otherwise it's barely visible on the dark
+                @include changeable(0.1s, 0.7, 0.7);
+                background-image: url("assets/boxes/box-filled.png");
+
+                /*
+                &.dark-heart {
+                    // animation: glow 2000ms ease-out infinite alternate;
+                    background-image: url("assets/boxes/heart-filled.png");
+                }*/
+
+                &.practice-one {
+                    background-image: url("assets/boxes/box-slashed.png");
+                }
+
+                &.practice-two {
+                    background-image: url("assets/boxes/box-crossed.png");
+                }
+            }
+        }
     }
-
-    .checkmark {
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
-
 }
+
 
 /*
  * Create Clock
  */
+
 @mixin clock($segments, $size, $default_color:null, $accent_color:null) {
 
   $angle: 360 / $segments;
@@ -273,139 +251,11 @@
 
 }
 
-/*
- * Turf Block
- */
-@mixin turf_block($turf_width, $turf_height) {
-  @include changeable(0.1s, 0.8, 0.9);
-
-
-  $turf_margin: 20px;
-  $connector_height: $turf_height/10;
-  $connector_width: $turf_margin * 2;
-
-  width: $turf_width;
-  height: $turf_height;
-  background-color: $lightgray;
-  position: relative;
-  margin: $turf_margin;
-  flex-grow: initial;
-
-  &.turf-selected {
-    .connector {
-      background-color: $gray;
-      z-index: 1;
-    }
-  }
-
-  .connector {
-
-    position: absolute;
-    display: block;
-    background-color: $lightgray;
-
-    &.right,
-    &.left {
-      width: $turf_margin * 2;
-      height: $turf_height/5;
-      top: $turf_height/2 - $turf_height/10;
-    }
-    &.left {
-      left: -$turf_margin * 2;
-    }
-    &.right {
-      left: $turf_width;
-    }
-
-    &.top,
-    &.bottom {
-      height: $turf_margin * 2;
-      width: $turf_height/5;
-      left: $turf_width/2 - $turf_height/10;
-    }
-    &.top {
-      top: -$turf_margin * 2;
-    }
-    &.bottom {
-      top: $turf_height;
-    }
-  }
-
-
-  &.turf-selected {
-    background-color: $gray;
-  }
-
-  .turf-description {
-    border: none;
-    background: none;
-    resize: none;
-    width: $turf_width;
-    text-align: center;
-    min-height: auto;
-    font-size: 12px;
-  }
-
-  .turf-name {
-    border: none;
-    border-radius: 0px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  input[type="checkbox"] {
-    transform: scale(1);
-  }
-
-  .turf-control {
-    &.turf-select {
-      position: absolute;
-      top: -7px;
-      left: -7px;
-    }
-  }
-}
-
-
-/*
- * Toothradio single elements
- */
- @mixin toothradio_single($width, $height, $unchecked_background, $checked_background) {
-
-  display: flex;
-
-  label {
-    @include changeable(0.1s, 0.8, 0.9);
-    & {
-      height: $height;
-      width: $width;
-      background-image: url($unchecked_background);
-      background-repeat: no-repeat;
-      background-size: contain;
-      margin-right: 5px;
-  
-      &:last-of-type {
-        margin-right: 0px;
-      }
-    }
-  }
-
-  /* Hide the browser's default checkbox */
-  input {
-  
-    display: none;
-  
-    &:checked {
-      & + label {
-        background-image: url($checked_background);
-      }
-    }
-  }
-}
 
 /*
  * Custom Radio Round
  */
+
  @mixin custom_radio_round($diameter, $circle_border_color, $default_color, $accent_color) {
 
   display: flex;
@@ -438,4 +288,52 @@
       }
     }
   }
+}
+
+
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+
+@mixin custom-label($image: 'assets/boxes/box-empty.png', $height: 24px, $width: 24px, $changeable: true) {
+    height: $height;
+    width: $width;
+    display: block;
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+
+    @if $changeable {
+        @include changeable(0.1s, 0.8, 0.9);
+    }
+}
+
+
+/* 
+ *  Positioning of children by number
+ */
+
+@mixin child_pos($child_num, $pos_top: 0px, $pos_left: 0px) {
+  
+    &:nth-child(#{$child_num}) {
+        top: $pos_top;
+        left: $pos_left;
+    }
+}
+
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+
+@mixin clock_zero_hover($transition-period: 1s, $hover-opacity: 0.7) {
+            &:hover .clock-zero-label {
+            transition: opacity $transition-period;
+            opacity: $hover-opacity;
+        }
+
+        .clock-zero-label {
+            transition: opacity $transition-period;
+            opacity: 0;
+        }
 }

@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+.vs
+.vscode
+scss/src
+scss/*.bat
+styles/assets/dice/claws/png
+styles/assets/dice/dots/png
+styles/assets/dice/whitedots/png
+styles/assets/images/png
