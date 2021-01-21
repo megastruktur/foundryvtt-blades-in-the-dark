@@ -1,10 +1,16 @@
-# Wicked Ones Game System for FoundryVTT
+<p align="center"><img src="readme-images/WWfoundry.png"></img></p>
 
+# Wicked Ones Game System for Foundry
 ### For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
 
 Based on the great Blades in the Dark system by `megastruktur`.
 #### Scroll down for pretty pictures, yeeeees.
-
+## Install
+### Using the manifest
+- Copy the following url: https://github.com/eHanus/foundryvtt-wicked-ones/releases/latest/download/system.json
+- Paste it into the Manifest URL field in the Install System dialog in your Foundry app.
+### Using Foundry System Browser
+Navigate to the Wicked Ones system and hit install!
 ## Usage
 The module contains six "actor" types: Wicked Ones, Minion Packs, Dungeons, Factions, Adventurer Parties and finally Clocks, each with their own customized styled sheets.
 
@@ -55,6 +61,14 @@ Skill-Roller pops up on **clicking skills on the sheets**, adjusts to selected o
 ### A few editable item windows
 **Every item entry is clickable and customizable** (both in title and description)! Enter your own descriptions and customize your world.
 ![Editable items](readme-images/items.png)
+## Mod Recommendations
+- **Dice So Nice!** to use the 3D dice coming with this system
+- **Pings** OR **Pointers and Pings** if you want pings like in other VTTs and dislike having always visible cursors
+- **Chat Images** it's always nice to be able to post or drag inspirational images into the chat when world building
+- **Drag Upload** Good for populating the map fast with tokens you do not need to fill with stats (Monster or Human Camps)
+- **Select tool everywhere** + **Better Text Drawings** help with dealing with dungeon drawing
+
+**Disclaimer**: These Recommendations are not checked for compatibility and are compatible as of now, but that might change! Many other mods may come in handy as well depending on what you want to do in your game.
 
 ## To be done
 - Bugfixes
