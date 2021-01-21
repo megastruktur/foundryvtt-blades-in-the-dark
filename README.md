@@ -14,7 +14,7 @@ Most of the items and official content from the book can be found in the compend
 
 - To reset XP, Gold and other counters just click on the label name
 - To add items you can click a corresponding link OR use the + Buttons. Dragging items from the associated compendium to the sheet works as well.
-- Many clickable parts of the sheet display additional information on hovering over them for a while, for example Gold, XP, Stress, Attributes or Shock.
+- Many clickable parts of the sheet display additional information on hovering over them for a while, for example Gold, XP, Stress, Skills or Shock.
 - To see the description of a Calling, Dark Impulse, Ability, etc you can just click on the added item and see all the info in the popup
 - When adding a new item you can hover over the "Question Mark" icon to see the item's description
 - To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet
