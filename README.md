@@ -1,6 +1,6 @@
 # Wicked Ones Game System for FoundryVTT
 
-For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
+### For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
 
 Based on the great Blades in the Dark system by `megastruktur`.
 #### Scroll down for pretty pictures, yeeeees.
