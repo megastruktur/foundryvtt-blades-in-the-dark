@@ -8,7 +8,7 @@
 <div class="chat-label label-stripe-chat">{{roll_type}}</div>
 	{{/if}}
 
-	{{#if (eq roll_type "FITD.ROLL.ACTION.Name")}}   
+	{{#if (eq roll_type (localize "FITD.ROLL.ACTION.Name"))}}
 		{{#if (eq position "FITD.PositionDefault")}}   
 			{{#if (eq effect "FITD.EffectDefault")}}   
 				<!-- If position and effect are default, Equal Footing is displayed for the roll-->

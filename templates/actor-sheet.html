@@ -126,7 +126,6 @@
                 {{#select data.minionpack}}
                 <option value="">{{localize "FITD.NoneParentheses"}}</option>
                 {{#each actor.data.existing_minions as |minion id|}}
-                {{debug this}}
                 <option value="{{this._id}}">{{minion.name}}</option>
                 {{/each}}
                 {{/select}}
