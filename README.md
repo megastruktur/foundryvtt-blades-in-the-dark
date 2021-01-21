@@ -26,8 +26,7 @@ Most of the items and official content from the book can be found in the compend
 - Actions and Resistance Rolls are rolled by clicking the appropriate Action Attribute, opening a Roll Popup with further options
 - Practice XP can be counted by clicking the first empty checkbox of each skill, filling it up until full.
 #### Clocks
-- To add clock go to Actors tab and create a new actor of type "🕛 Clock"
-- To share it to other players just drag it to a scene
+- To add a clock, go to the Actors tab and create a new actor of type "🕛 Clock". You can drag it onto the scene to create a clock token displaying progress synced with the sidebar clock (great to have progress always visible on scenes). You can edit the token as usual to change the size as well.
 #### GM Rolls
 - GM Rolls are done using the dice icon on the left side of the screen, last icon in the toolbar. Clicking pops up a Roll Prompt containing every type of role described in the book.
 
