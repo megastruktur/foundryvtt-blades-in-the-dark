@@ -28,7 +28,9 @@ Most of the items and official content from the book can be found in the compend
 #### Clocks
 - To add a clock, go to the Actors tab and create a new actor of type "🕛 Clock". You can drag it onto the scene to create a clock token displaying progress synced with the sidebar clock (great to have progress always visible on scenes). You can edit the token as usual to change the size as well.
 #### GM Rolls
-- GM Rolls are done using the dice icon on the left side of the screen, last icon in the toolbar. Clicking pops up a Roll Prompt containing every type of role described in the book.
+- GM Rolls are done using the dice icon on the left side of the screen, last icon in the toolbar. Clicking pops up a Roll Prompt containing every type of role described in the book. Players may roll less commonly needed rolls like Creature Rolls, Trap Rolls or Loot Rolls here. 
+#### Translation
+The system can be translated, see the en.json file, make your own version (for example ger.json for german) and write us if you want to get your language included!
 
 ## Screenshots of the system
 (click for full size)
