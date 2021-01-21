@@ -2,7 +2,7 @@
   "name": "wicked-ones",
   "title": "Wicked Ones",
   "description": "Wicked Ones game system including all the content you need to slay some adventurers!",
-  "version": "0.1",
+  "version": "0.9",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
