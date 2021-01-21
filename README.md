@@ -3,7 +3,9 @@
 # Wicked Ones Game System for Foundry
 ### For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
 
+Link to the [Wicked Ones home page](<https://banditcamp.io/wickedones/> "Wicked Ones – Bandit Camp")
 Based on the great Blades in the Dark system by `megastruktur`.
+
 #### Scroll down for pretty pictures, yeeeees.
 ## Install
 ### Using the manifest
@@ -86,6 +88,6 @@ Skill-Roller pops up on **clicking skills on the sheets**, adjusts to selected o
 - If you cannot find the drag-n-dropped item, refer to the "All" tab on each sheet
 
 ## Credits
-- This work is based on Wicked Ones by Ben Nielson (http://b-design.io/) and Victor Costa, a huge **Thank You!** to both of them for letting us use the wonderful official written and graphical content from the book to fill our system with!
+- This work is based on Wicked Ones by Ben Nielson and Victor Costa, a huge **Thank You!** to both of them for letting us use the wonderful official written and graphical content from the book to fill our system with!
 - Wicked Ones is based on Blades in the Dark (Forged in the Dark License) (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 
