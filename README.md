@@ -33,6 +33,8 @@ Most of the items and official content from the book can be found in the compend
 The system can be translated, see the en.json file, make your own version (for example ger.json for german) and write us if you want to get your language included. Do not hesitate to ask us for help if you want to translate the game into your language!
 #### Player Permissions
 If you want players to have freedom to create their own items, changing their permissions to Trusted or GM Assistant or setting custom permissions is advised. Without permissions they can still add or edit all items and descriptions on their sheet but not create new ones in the sidebar. By default permissions should be sufficient to create a regular or custom character.
+#### Additional Assets
+Getting the official Wicked Ones assets pack is highly recommended if you want to use the Sandbox Maps (like the one shown down below) or things like monster tokens! The Asset Pack should be downloadable on either DrivethroughRPG or somewhere on Kickstarter if you backed the game.
 
 ## Screenshots of the system
 (click for full size)
