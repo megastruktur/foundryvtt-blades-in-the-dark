@@ -32,7 +32,7 @@ Most of the items and official content from the book can be found in the compend
 #### Translation
 The system can be translated, see the en.json file, make your own version (for example ger.json for german) and write us if you want to get your language included. Do not hesitate to ask us for help if you want to translate the game into your language!
 #### Player Permissions
-If you want players to have freedom to create their own items, changing their permissions to Trust or GM Assistant or setting custom permissions is advised. Without permissions they can still add or edit all items and descriptions on their sheet but not create new ones in the sidebar. By default permission should be sufficient to create a regular or custom character.
+If you want players to have freedom to create their own items, changing their permissions to Trusted or GM Assistant or setting custom permissions is advised. Without permissions they can still add or edit all items and descriptions on their sheet but not create new ones in the sidebar. By default permissions should be sufficient to create a regular or custom character.
 
 ## Screenshots of the system
 (click for full size)
