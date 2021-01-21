@@ -4,6 +4,7 @@
 ### For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
 
 Link to the [Wicked Ones home page](<https://banditcamp.io/wickedones/> "Wicked Ones – Bandit Camp")
+
 Based on the great Blades in the Dark system by `megastruktur`.
 
 #### Scroll down for pretty pictures, yeeeees.
