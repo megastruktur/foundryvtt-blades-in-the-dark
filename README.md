@@ -3,6 +3,7 @@
 For questions or reporting bugs contact us on Discord: `Spearhead#4288` or `LorduFreeman#8747`.
 
 Based on the great Blades in the Dark system by `megastruktur`.
+#### Scroll down for pretty pictures, yeeeees.
 
 ## Usage
 The module contains six "actor" types: Wicked Ones, Minion Packs, Dungeons, Factions, Adventurer Parties and finally Clocks, each with their own customized styled sheets.
@@ -37,7 +38,18 @@ Most of the items and official content from the book can be found in the compend
 ### Adventurers, Dungeons and Clocks Sheets
 ![Adventurers, Dungeons and Clocks Sheets](readme-images/othersheets.png)
 ### Example World Map with Faction Markers
+Tiers are shown by the inner spikes of their tokens, Aligment is shown by their colour. Drag and drop a created faction to the scene to create this kind of token for them.
 ![Example World Map](readme-images/factions.png)
+### Example Rolls and custom "Claw Marks" dice (if you use the Dice So Nice! module)
+All proper rolls give you their outcome right in the chat (and you can click the result to hide descriptions, optional default to hidden toggle available in the system settings!) If you use Dice So Nice! you have the choice of four custom Wicked Ones sets: Dots (white or dark), Claw Marks or classic numbers, with dots being the default.
+![Rolls and Dice](readme-images/dice.png)
+### Roller Pop-Ups, Multi-Roller on the left and Skill-Roller on the right
+Skill-Roller pops up on clicking skills on the sheets, adjusts to selected options. Multi-Roller contains all the other rolls the GM and players need for things like Engagement, Dungeon Defense and other purposes
+![Popups](readme-images/rollers.png)
+### A few editable item windows
+Every item entry is clickable and customizable! Enter your own descriptions and customize your world.
+![Editable items](readme-images/items.png)
+
 ## To be done
 - Graphical improvements
 
