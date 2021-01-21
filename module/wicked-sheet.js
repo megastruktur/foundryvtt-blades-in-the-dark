@@ -18,6 +18,7 @@ export class WickedSheet extends ActorSheet {
     html.find('.eye-rays area').mouseover(this._onDSMouseOver.bind(this));
     html.find('.eye-rays area').mouseout(this._onDSMouseOut.bind(this));
     html.find(".open-minion-pack").click(this._onMinionOpenClick.bind(this));
+    html.find(".tooltip").on('mouseover', this._onTooltipHover);
 
     // Item Dragging
     if (this.actor.owner) {
@@ -355,12 +356,32 @@ export class WickedSheet extends ActorSheet {
 
     var $menuItem = $(this);
     var $tooltipElement = $('> span', $menuItem);
+    if ($tooltipElement.length == 0) {
+      $tooltipElement = $('> .tooltiptext', $menuItem);
+    }
+    if ($tooltipElement.length == 0) return;
 
-    var menuItemPos = $menuItem.position();
+    var itemRect = this.getBoundingClientRect();
+    var margin = this.style.margin;
+    var scrnX = window.innerWidth;
+    var scrnY = window.innerHeight;
+    var toolRect = $tooltipElement[0].getBoundingClientRect();
+    var newX = itemRect.right + 5;
+    var newY = itemRect.top;
+
+    // place left if tooltip won't fit on the right
+    if (itemRect.right + toolRect.width + 25 > scrnX) {
+      newX = itemRect.left - toolRect.width - 5;
+    }
+
+    // align bottom if tooltip won't fit below
+    if (itemRect.top + toolRect.height + 25 > scrnY) {
+      newY = itemRect.bottom - toolRect.height;
+    }
 
     $tooltipElement.css({
-      top: menuItemPos.top,
-      left: menuItemPos.left + Math.round($menuItem.outerWidth() * 0.75)
+      top: newY,
+      left: newX,
     });
   }
 

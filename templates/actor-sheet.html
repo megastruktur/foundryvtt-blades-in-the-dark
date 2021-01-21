@@ -145,7 +145,7 @@
             <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold.value" value="0" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipCoin"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Coin"}}}</span>
             </div>
 
             {{#times_from_1 data.gold.max}}
@@ -163,7 +163,7 @@
             <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipWicked"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Wicked"}}}</span>
             </div>
 
             {{#times_from_1 data.wickedxp.max}}
@@ -182,7 +182,7 @@
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipReckless"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Reckless"}}}</span>
             </div>
             {{#times_from_1 data.recklessxp.max}}
             <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
@@ -197,7 +197,7 @@
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize "FITD.GuardianXP"}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGuardian"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Guardian"}}}</span>
             </div>
             {{#times_from_1 data.recklessxp.max}}
             <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
@@ -214,26 +214,26 @@
           <div id="character-{{actor._id}}-size" class="goldmonger-size">
             <div class="tooltip">
               <label class="black-label inactive">{{localize "FITD.GMSize"}}:</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGMSize"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}}</span>
             </div>
             {{#multiboxes data.goldmonger_size}}
             <input type="radio" id="character-{{actor._id}}-size-0" name="data.goldmonger_size" value="0" dtype="Radio">
             <div class="tooltip">
               <label class="black-label tooltip" for="character-{{actor._id}}-size-0">Tier 0</label>
               <label class="gm-size-box" for="character-{{actor._id}}-size-0"></label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGMSize"}}} {{{localize "FITD.TooltipGMSize0"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}} {{{localize "FITD.TOOLTIP.GMSize0"}}}</span>
             </div>
             <input type="radio" id="character-{{actor._id}}-size-1" name="data.goldmonger_size" value="1" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-size-1">Tier 1</label>
               <label class="gm-size-box" for="character-{{actor._id}}-size-1"></label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGMSize"}}} {{{localize "FITD.TooltipGMSize1"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}} {{{localize "FITD.TOOLTIP.GMSize1"}}}</span>
             </div>
             <input type="radio" id="character-{{actor._id}}-size-3" name="data.goldmonger_size" value="3" dtype="Radio">
             <div class="tooltip">
               <label class="black-label" for="character-{{actor._id}}-size-3">Tier 3</label>
               <label class="gm-size-box" for="character-{{actor._id}}-size-3"></label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipGMSize"}}} {{{localize "FITD.TooltipGMSize3"}}}</span>
+              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}} {{{localize "FITD.TOOLTIP.GMSize3"}}}</span>
             </div>
             {{/multiboxes}}
           </div>
@@ -247,7 +247,7 @@
                      value="data.goldmonger_pleased" {{checked data.goldmonger_pleased}}>
               <label class="pleased-checkbox" for="character-{{actor._id}}-pleased-xp"></label>
             </div>
-            <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipPleasedXP"}}}</span>
+            <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.PleasedXP"}}}</span>
           </div>
         </td>
         {{/unless}}
@@ -269,7 +269,7 @@
                 <th class="black-white">
                   {{localize "FITD.Defenses"}} <a class="item-add-popup" data-distinct="false" data-item-type="defense"><i class="fas fa-plus-square"></i></a>
                 </th>
-                <th class="black-white tooltip">{{localize "FITD.Stress"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipStress"}}}</span></th>
+                <th class="black-white tooltip">{{localize "FITD.Stress"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Stress"}}}</span></th>
                 <th class="black-white">
                   {{localize "FITD.Impulse"}} <a class="item-add-popup" data-distinct="false" data-item-type="wickedimpulse"><i class="fas fa-plus-square"></i></a>
                 </th>
@@ -973,7 +973,7 @@
         </table>
 
         <div class="label-stripe flex-horizontal">
-          <p class="tooltip">{{localize "FITD.Projects"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipProjects"}}}</span></p>
+          <p class="tooltip">{{localize "FITD.Projects"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.ProjectsHelp"}}}</span></p>
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <table id="project-clocks-table">
@@ -1043,7 +1043,7 @@
           <p>{{localize "FITD.Notes"}}</p>
 		  <div id="tongue-tooltip" class="tooltip">
 		    <i class="item-add-popup far fa-comment-dots"></i>
-              <span id="tongue-grid" class="tooltiptext tooltipslow">{{{localize "FITD.TooltipLightTongue"}}}</span>
+              <span id="tongue-grid" class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.LightTongue"}}}</span>
           </div>
         </div>
         {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}

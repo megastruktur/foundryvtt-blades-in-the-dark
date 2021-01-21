@@ -608,7 +608,7 @@ nav.tabs.flex-horizontal {
 
     .tooltiptext {
         visibility: hidden;
-        position: absolute;
+        position: fixed;
         width: fit-content;
         max-width: 400px;
         font-weight: 600;

@@ -260,7 +260,8 @@ form.wicked-one-sheet {
     #character-stress-clock {
         width: 60px;
         @include clock(6, 60);
-
+        @include clock_zero_hover();
+        
         .clock-zero-label {
             position: relative;
             left: -10px;
@@ -270,6 +271,7 @@ form.wicked-one-sheet {
             top: -10px;
         }
     }
+
 
     /*
      *   Tabs and Abilities
@@ -526,6 +528,7 @@ form.wicked-one-sheet {
     #project-clocks-table {
         tr {
             td:nth-of-type(1) {
+                @include clock_zero_hover();
                 text-align: center;
                 width: 50px;
             }

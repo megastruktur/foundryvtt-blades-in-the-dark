@@ -2,14 +2,13 @@
   {{#each data.attributes as |attribute attribute_name|}}
   <div id="attributes-{{attribute_name}}" class="attribute flex-horizontal">
     {{#if (ne @root.actor.type "minion_pack")}}
-	<div class="tooltip">
-		<div class="shock">
-		  <input type="checkbox" id="attributes-{{../actor._id}}-{{attribute_name}}-shocked" name="data.attributes.{{attribute_name}}.shocked"
-				 value="{{shocked}}" {{checked shocked}}>
-		  <label for="attributes-{{../actor._id}}-{{attribute_name}}-shocked"></label>
-		</div>
-		<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipShock"}}}</span>
-	</div>
+	  <div class="tooltip">
+		  <div class="shock">
+		    <input type="checkbox" id="attributes-{{../actor._id}}-{{attribute_name}}-shocked" name="data.attributes.{{attribute_name}}.shocked" value="{{shocked}}" {{checked shocked}}>
+		    <label for="attributes-{{../actor._id}}-{{attribute_name}}-shocked"></label>
+		  </div>
+		  <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Shock"}}}</span>
+	  </div>
     {{/if}}
     <div class="main">
       <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
@@ -19,7 +18,6 @@
       </div>
 
       {{!-- Skills --}}
-
       {{#each attribute.skills as |skill skill_name|}}
       <div class="flex-horizontal">
         <div class="attributes-container">
@@ -29,39 +27,37 @@
           {{#times_from_0 @root.data.attribute_max_value}}
           <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
                  name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
-          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}" 
-                 {{#if (eq ../../../actor.type "character")}}
-                   class="skill-practice-xp
-                   {{#if (eq ../this.practice 1)}} practice-one{{/if}}
-                   {{#if (eq ../this.practice 2)}} practice-two{{/if}}"
-                 {{/if}}>
+          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}" title="{{localize "FITD.TOOLTIP.Reset"}}"
+            {{#if (eq ../../../actor.type "character")}}
+              class="skill-practice-xp
+              {{#if (eq ../this.practice 1)}} practice-one{{/if}}
+              {{#if (eq ../this.practice 2)}} practice-two{{/if}}"
+            {{/if}}>
           </label>
           {{/times_from_0}}
-		<div class="tooltip">
-          <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
-		  <div class="tooltiptext tooltipslow">{{{localize (concat "FITD.Skills" skill_name "Tooltip")}}}</div>
-		</div>
-		  <div class="skill-description">{{localize (concat "FITD.Skills" skill_name "Description")}}</div>
+		      <div class="tooltip">
+            <div class="attribute-skill-label roll-die-attribute rollable-text" data-roll-attribute="{{skill_name}}">{{localize skill.label}}</div>
+		        <div class="tooltiptext tooltipslow">{{{localize (concat "FITD.TOOLTIP.Skills" skill_name)}}}</div>
+		      </div>
+		      <div class="skill-description">{{localize (concat "FITD.Skills" skill_name "Description")}}</div>
           {{/multiboxes}}
         </div>
       </div>
       {{/each}}
     </div>
-
   </div>
   {{/each}}
 
   {{#if (eq actor.type "minion_pack")}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
-   <div class="tooltip">
-    <div class="bloodied-minion">
-      <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
-             value="{{data.bloodied}}" {{checked data.bloodied}}>
-      <label for="{{actor._id}}-bloodied"></label>
-      <i class="splash"></i>
+    <div class="tooltip">
+      <div class="bloodied-minion">
+        <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied" value="{{data.bloodied}}" {{checked data.bloodied}}>
+        <label for="{{actor._id}}-bloodied"></label>
+        <i class="splash"></i>
+      </div>
+	    <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.BloodiedMinions"}}}</span>
     </div>
-	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodiedMinions"}}}</span>
-   </div>
     <div class="main">
       <div class="stripe">
         <label class="attribute-label">{{localize "FITD.Bloodied"}}</label>
@@ -69,13 +65,12 @@
     </div>
   </div>
   <div id="attributes-morale" class="attribute flex-horizontal">
-   <div class="tooltip">  
-    <div class="morale-minion">
-      <input type="checkbox" id="{{actor._id}}-morale" name="data.morale"
-             value="{{data.morale}}" {{checked data.morale}}>
-      <label for="{{actor._id}}-morale"></label>
-	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipMorale"}}}</span>
-   </div>	  
+    <div class="tooltip">  
+      <div class="morale-minion">
+        <input type="checkbox" id="{{actor._id}}-morale" name="data.morale" value="{{data.morale}}" {{checked data.morale}}>
+        <label for="{{actor._id}}-morale"></label>
+      </div>	  
+	    <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Morale"}}}</span>
     </div>
     <div class="main">
       <div class="stripe">
@@ -85,15 +80,14 @@
   </div>
   {{else}}
   <div id="attributes-bloodied" class="attribute flex-horizontal">
-   <div class="tooltip">
-    <div class="bloodied">
-      <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied"
-             value="{{data.bloodied}}" {{checked data.bloodied}}>
-      <label for="{{actor._id}}-bloodied"></label>
-      <i class="splash"></i>
+    <div class="tooltip">
+      <div class="bloodied">
+        <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied" value="{{data.bloodied}}" {{checked data.bloodied}}>
+        <label for="{{actor._id}}-bloodied"></label>
+        <i class="splash"></i>
+      </div>
+	    <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Bloodied"}}}</span>
     </div>
-	<span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipBloodied"}}}</span>
-   </div>
     <div class="main">
       <div class="stripe">
         <label class="attribute-label">{{localize "FITD.Bloodied"}}</label>
@@ -103,19 +97,18 @@
   <div class="attribute flex-horizontal">
     <div class="main" id="hearts-display">
 	    <div id="attributes-darkhearts">
-		 <div class="tooltip">
-	      <div class="flex-horizontal heart-container">
+	      <div class="flex-horizontal heart-container tooltip">
 		      {{#multiboxes data.dark_hearts.value}}
 
 		      {{#times_from_0 data.dark_hearts.max}}
 		      <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}" name="data.dark_hearts.value" value="{{this}}">
 		      <label class="dark-heart" for="{{../actor._id}}-dark-hearts-{{this}}"></label>
 		      {{/times_from_0}}
+
 		      {{/multiboxes}}
+		      <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.DarkHeart"}}}</span>
 	      </div>
-		 <span class="tooltiptext tooltipslow">{{{localize "FITD.TooltipDarkHeart"}}}</span>
-		 </div>		  
-       </div>
+		  </div>		  
       <div id="hearts-footer" class="stripe">
         <label class="attribute-label">{{localize "FITD.DarkHearts"}}</label>
 	    </div>

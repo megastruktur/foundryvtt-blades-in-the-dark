@@ -321,3 +321,19 @@
         left: $pos_left;
     }
 }
+
+/* 
+ *  Make clock resets invisible unless hovered
+ */
+
+@mixin clock_zero_hover($transition-period: 1s, $hover-opacity: 0.7) {
+            &:hover .clock-zero-label {
+            transition: opacity $transition-period;
+            opacity: $hover-opacity;
+        }
+
+        .clock-zero-label {
+            transition: opacity $transition-period;
+            opacity: 0;
+        }
+}

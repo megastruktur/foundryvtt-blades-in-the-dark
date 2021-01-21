@@ -361,7 +361,7 @@ export class WickedActor extends Actor {
             </div>		  
           </form>
 		      <h2>${game.i18n.localize('FITD.RollOptions')}</h2>
-		      <div class="action-info">${game.i18n.localize('FITD.TooltipActions')}</div>
+		      <div class="action-info">${game.i18n.localize('FITD.ActionsHelp')}</div>
         </div>
       `,
       buttons: {
