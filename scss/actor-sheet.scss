@@ -204,6 +204,11 @@ form.wicked-one-sheet {
                 margin-left: 5px;
             }
         }
+
+        a.item-delete {
+            align-self: center;
+        }
+
     }
 
     /*
@@ -244,6 +249,10 @@ form.wicked-one-sheet {
                     }
                 }
             }
+        }
+
+        a.item-delete {
+            align-self: center;
         }
     }
 
