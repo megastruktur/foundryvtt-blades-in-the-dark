@@ -133,6 +133,9 @@
 /* 
  *  Positioning of children by number
  */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
 /*
  * Fonts
  */
@@ -267,6 +270,9 @@
  */
 /* 
  *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
  */
 form.wicked-one-sheet {
   /* Top-Decoration Styling  */
@@ -589,6 +595,14 @@ form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(11) {
 form.wicked-one-sheet #character-stress-clock .blades-clock *:nth-child(13) {
   transform: rotate(300deg) skewY(150deg);
 }
+form.wicked-one-sheet #character-stress-clock:hover .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.wicked-one-sheet #character-stress-clock .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0;
+}
 form.wicked-one-sheet #character-stress-clock .clock-zero-label {
   position: relative;
   left: -10px;
@@ -886,6 +900,14 @@ form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1) {
   text-align: center;
   width: 50px;
 }
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1):hover .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(1) .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0;
+}
 form.wicked-one-sheet #project-clocks-table tr td:nth-of-type(2) {
   text-align: center;
   min-width: 90px;
@@ -1069,6 +1091,9 @@ form.wicked-one-sheet #grid-item1 {
 /* 
  *  Positioning of children by number
  */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
 form.minion-sheet #number {
   padding-right: 12px;
 }
@@ -1236,6 +1261,9 @@ form.minion-sheet #abilities-list .item-rollable-text {
  */
 /* 
  *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
  */
 form.dungeon-sheet #dungeon-theme-bar {
   font-size: 18px;
@@ -1473,6 +1501,9 @@ form.dungeon-sheet #masterplan > div:first-child {
  */
 /* 
  *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
  */
 form.faction-sheet {
   padding: 5px 5px !important;
@@ -1827,6 +1858,9 @@ form.faction-sheet #faction-sheet .editor, form.faction-sheet #faction-sheet .ed
 /* 
  *  Positioning of children by number
  */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
 form.party-sheet .profile-img {
   vertical-align: middle;
 }
@@ -2137,6 +2171,9 @@ form.party-sheet .trait-tags label.motivation {
 /* 
  *  Positioning of children by number
  */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
 form.clock-block > section {
   margin-top: 5px;
 }
@@ -2294,6 +2331,9 @@ form.clock-block #clock-notes .editor .editor-content {
  */
 /* 
  *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
  */
 #attributes {
   height: fit-content;
@@ -2764,6 +2804,9 @@ form.clock-block #clock-notes .editor .editor-content {
 /* 
  *  Positioning of children by number
  */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
 form.item-sheet {
   padding: 15px;
 }
@@ -2968,6 +3011,9 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
  */
 /* 
  *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
  */
 #chat .chat-label {
   background-color: #191919;
@@ -3262,6 +3308,9 @@ form.special-ability-sheet #ray-selection div.ray-line select:nth-child(2) {
  */
 /* 
  *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
  */
 /*
  *  Add-item pop-up dialog Styles
@@ -3965,7 +4014,7 @@ nav.tabs.flex-horizontal > :last-child {
  */
 .tooltip .tooltiptext {
   visibility: hidden;
-  position: absolute;
+  position: fixed;
   width: fit-content;
   max-width: 400px;
   font-weight: 600;
