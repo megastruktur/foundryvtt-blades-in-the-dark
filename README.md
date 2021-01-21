@@ -30,7 +30,9 @@ Most of the items and official content from the book can be found in the compend
 #### GM Rolls
 - GM Rolls are done using the dice icon on the left side of the screen, last icon in the toolbar. Clicking pops up a Roll Prompt containing every type of role described in the book. Players may roll less commonly needed rolls like Creature Rolls, Trap Rolls or Loot Rolls here. 
 #### Translation
-The system can be translated, see the en.json file, make your own version (for example ger.json for german) and write us if you want to get your language included!
+The system can be translated, see the en.json file, make your own version (for example ger.json for german) and write us if you want to get your language included. Do not hesitate to ask us for help if you want to translate the game into your language!
+#### Player Permissions
+If you want players to have freedom to create their own items, changing their permissions to Trust or GM Assistant or setting custom permissions is advised. Without permissions they can still add or edit all items and descriptions on their sheet but not create new ones in the sidebar. By default permission should be sufficient to create a regular or custom character.
 
 ## Screenshots of the system
 (click for full size)
@@ -53,13 +55,19 @@ Skill-Roller pops up on **clicking skills on the sheets**, adjusts to selected o
 ![Editable items](readme-images/items.png)
 
 ## To be done
-- Graphical improvements
+- Bugfixes
+- Style improvements for the primal monsters
+- Dashboard sheet for the GM for easy tracking of past invasions, pocketed blowback and other game data
+- Explore the possible addition of context menus
+- Ability to drag skills into the macro bar for easy access
+- Quality of life improvements and limited automation
+- Evaluate user input for further improvements
 
 ## To be done in the far future
 - Add UA Content when it comes out (and after getting permission of course) ;)
 
 ## Troubleshooting
-- If you can't find the drag-n-dropped item, refer to the "All" tab on each sheet
+- If you cannot find the drag-n-dropped item, refer to the "All" tab on each sheet
 
 ## Credits
 - This work is based on Wicked Ones by Ben Nielson (http://b-design.io/) and Victor Costa, a huge **Thank You!** to both of them for letting us use the wonderful official written and graphical content from the book to fill our system with!
