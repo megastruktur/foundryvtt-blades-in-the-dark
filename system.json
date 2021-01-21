@@ -2,21 +2,21 @@
   "name": "wicked-ones",
   "title": "Wicked Ones",
   "description": "Official system for the Wicked Ones game made by Bandit Camp. Including official compendium content, all you need to slay some adventurers!",
-  "version": "0.1",
+  "version": "0.9",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
   "background": "styles/assets/images/WO-Header.webp",
   "author": "Spearhead, LorduFreeman",
   "authors": [
-  	{
-  		"name": "Spearhead",
-  		"discord": "Spearhead#4288"
-  	},
-  	{
-  		"name": "LorduFreeman",
-  		"discord": "LorduFreeman#8747"
-  	}
+    {
+      "name": "Spearhead",
+      "discord": "Spearhead#4288"
+    },
+    {
+      "name": "LorduFreeman",
+      "discord": "LorduFreeman#8747"
+    }
   ],
   "esmodules": [
     "module/wicked.js"
