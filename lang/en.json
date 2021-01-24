@@ -618,6 +618,10 @@
         "TrickParagraph": "Each trick has an intent, something that happens to the adventurers, and a trigger which causes the trick to happen."
       }
     },
+    "ERRORS": {
+      "NoActorAssigned": "No actor is assigned to your player",
+      "NoMinionPackLinked": "No minion pack was found linked to your actor"
+    },
     "GAME_LOGIC": {
       "_comment": "GAME LOGIC DATA: Keep in sync with item name translations",
       "PackMule": "Pack Mule",
