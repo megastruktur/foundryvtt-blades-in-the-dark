@@ -365,6 +365,8 @@
       "upgrade_type": "regular",
       "upgrade_checkbox_text": "",
       "upgrade_checkbox_checked": false,
+      "upgrade_checkbox_2_text": "",
+      "upgrade_checkbox_2_checked": false,
       "upgrade_skill_name": "",
       "upgrade_skill_value": 2
     },

@@ -134,9 +134,18 @@
                     {{#unless (eq item.data.upgrade_checkbox_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-ucbx-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
-                        <label for="item-{{item._id}}-ucbx-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-ucbx1-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
+                        <label for="item-{{item._id}}-ucbx1-checked"></label>
                         {{item.data.upgrade_checkbox_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.upgrade_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-ucbx2-checked" value="{{item.data.upgrade_checkbox_2_checked}}" {{checked item.data.upgrade_checkbox_2_checked}} data-property-to-set="upgrade_checkbox_2_checked">
+                        <label for="item-{{item._id}}-ucbx2-checked"></label>
+                        {{item.data.upgrade_checkbox_2_text}}
                       </div>
                     </div>
                     {{/unless}}
@@ -165,6 +174,15 @@
                         <input type="checkbox" id="item-{{item._id}}-ucbx-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
                         <label for="item-{{item._id}}-ucbx-checked"></label>
                         {{item.data.upgrade_checkbox_text}}
+                      </div>
+                    </div>
+                    {{/unless}}
+                    {{#unless (eq item.data.upgrade_checkbox_2_text "")}}
+                    <div class="item-checkmark">
+                      <div class="standard-checkbox">
+                        <input type="checkbox" id="item-{{item._id}}-ucbx2-checked" value="{{item.data.upgrade_checkbox_2_checked}}" {{checked item.data.upgrade_checkbox_2_checked}} data-property-to-set="upgrade_checkbox_2_checked">
+                        <label for="item-{{item._id}}-ucbx2-checked"></label>
+                        {{item.data.upgrade_checkbox_2_text}}
                       </div>
                     </div>
                     {{/unless}}
