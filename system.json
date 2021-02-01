@@ -162,6 +162,13 @@
       "entity": "RollTable"
     },
     {
+      "name": "dungeon-generator",
+      "label": "Dungeon Generator",
+      "system": "wicked-ones",
+      "path": "packs/dungeon-generator.db",
+      "entity": "RollTable"
+    },
+    {
       "name": "wo-macros",
       "label": "Macros",
       "system": "wicked-ones",
