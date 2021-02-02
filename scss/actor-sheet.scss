@@ -326,6 +326,10 @@ form.wicked-one-sheet {
         }
 
         // Braineater psi-discipline
+        .psi-discipline .item-radio {
+            @include toothradio(15px, 15px, "assets/boxes/box-white-filled.png", "assets/boxes/box-white-dotted.png");
+        }
+
         tr.psi-discipline {
 
             td > div {

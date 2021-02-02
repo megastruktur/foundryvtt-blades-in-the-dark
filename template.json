@@ -313,6 +313,7 @@
       "downtime_checkbox_2_checked": false,
       "primal": {
         "be_psi_skill_name": "",
+        "be_psi_skill_tooltip": "",
         "be_psi_dots": 0,
         "be_psi_name_1": "",
         "be_psi_desc_1": "",

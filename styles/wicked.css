@@ -638,6 +638,45 @@ form.wicked-one-sheet #abilities-list .group-ext {
 form.wicked-one-sheet #abilities-list .group-ext td.item-body i {
   font-size: 14px;
 }
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-white-dotted.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label:last-of-type {
+  margin-right: 0px;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label[for$="-0"] i {
+  margin-top: 4px;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio input {
+  display: none;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio input:checked ~ label {
+  background-image: url("assets/boxes/box-white-filled.png");
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio input:checked + label {
+  background-image: url("assets/boxes/box-white-dotted.png");
+}
 form.wicked-one-sheet #abilities-list tr.psi-discipline td > div {
   border-radius: 15px;
   height: 30px;

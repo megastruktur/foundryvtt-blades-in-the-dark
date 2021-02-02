@@ -267,6 +267,8 @@
 
     "BESkillName": "Psionics Skill Name",
     "BESkillNameHint": "Name to show up next to the skill dots",
+    "BESkillTooltip": "Psionics Skill Tooltip",
+    "BESkillTooltipHint": "Tooltip to show when hovering over the name",
     "BEMasteryAbilityName1": "First Mastery Name",
     "BEMasteryAbilityDesc1": "First Mastery Description",
     "BEMasteryAbilityName2": "Second Mastery Name",

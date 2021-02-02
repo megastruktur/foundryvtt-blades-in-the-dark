@@ -433,7 +433,10 @@
             <tr id="discipline-{{item._id}}" class="item psi-discipline" data-item-id="{{item._id}}">
               <td colspan="3">
                 <div class="label-stripe item-radio">
-                  <div class="roll-die-attribute rollable-text" data-roll-attribute="{{data.primal.be_psi_skill_name}}">{{data.primal.be_psi_skill_name}}</div>
+                  <div class="roll-die-attribute rollable-text tooltip" data-roll-attribute="{{data.primal.be_psi_skill_name}}">
+                    {{data.primal.be_psi_skill_name}}
+                    <span class="tooltiptext tooltipslow">{{{data.primal.be_psi_skill_tooltip}}}</span>
+                  </div>
                   {{#multiboxes data.primal.be_psi_dots}}
                   <input type="radio" id="discipline-{{item._id}}-0" name="{{item._id}}-data.primal.be_psi_dots" value="0" dtype="Radio" data-property-to-set="primal.be_psi_dots">
                   <label for="discipline-{{item._id}}-0"></label>
