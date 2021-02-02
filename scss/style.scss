@@ -597,18 +597,14 @@ nav.tabs.flex-horizontal {
 	}
 }
 
- 
-
-
 
 /*
  *  Tooltip Styles
  */
 
-.tooltip {
-
-    .tooltiptext {
+#wo-tooltip {
         visibility: hidden;
+        opacity: 0;
         position: fixed;
         width: fit-content;
         max-width: 400px;
@@ -624,19 +620,13 @@ nav.tabs.flex-horizontal {
         z-index: 9999;
         text-transform: none;
         text-shadow: none;
-    }
 
-    .tooltipslow {
-        opacity: 0;
-        transition: visibility 0.1s, opacity 0.1s;
-        transition-delay: 0.1s;
-    }
-
-    &:hover .tooltiptext {
+        &.show {
         visibility: visible;
         opacity: 1;
         transition: visibility 0.5s, opacity 0.5s;
         transition-delay: 1s;
     }
 }
+
 

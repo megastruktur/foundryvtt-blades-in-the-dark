@@ -134,7 +134,7 @@
       "Bloodied": "Take <strong>Shock</strong> to all Attributes, clears when <strong>all Shock is clear</strong>. If you receive another significant wound while bloodied, you <strong>die</strong>.",
       "BloodiedMinions": "Your Minions take -1D to all Rolls while bloodied and clear bloodied only on recovery.",
       "Morale": "You can spend Morale to take +1D on an Action or Fortune Roll. Morale is gained from Calamity Rolls or awarded by the GM for outstanding story moments.",
-      "LightTongue": "<div id='grid-item1'>You know the following Light Tongue Words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div>",
+      "LightTongue": "<div id='tongue-grid'><div>You know the following Light Tongue words:</div><div>You</div><div>One</div><div>Yes</div><div>Go</div><div>Eat</div><div>Me</div><div>Two</div><div>No</div><div>Do</div><div>Give</div><div>Us</div><div>Three</div><div>Maybe</div><div>Stop</div><div>Get</div><div>It</div><div>More</div><div>Now</div><div>Kill</div><div>Gold</div></div>",
       "GMSize": "When the dungeon tier increases, you add an action dot and advance one step in two separate growth paths. You may also grow in size when you increase tier.",
       "GMSize0": "At tier 0, you're just a tiny whelp and humanoids have scale against you.",
       "GMSize1": "By tier 1, you can stand on equal footing with humanoids.",
@@ -280,15 +280,49 @@
     "DSOtherEyes": "Other Eyes",
     "DSConfigureRays": "Configure Eye Rays",
     "NoneParentheses": "(None)",
-    "RayDeath": "Death Ray",
-    "RayTransmo": "Transmogr. Ray",
-    "RayParalysis": "Paralysis Ray",
-    "RayBewitchment": "Bewitchment Ray",
-    "RayTime": "Time Ray",
-    "RayNullMagic": "Null-Magic Ray",
-    "RayVision": "Vision Ray",
-    "RayTelekinesis": "Telekinesis Ray",
-    "RayFear": "Fear Ray",
+
+    "EYE_RAYS": {
+      "NONE": {
+        "Name": "(none)",
+        "Tooltip": "No ray assigned"
+      },
+      "BEWITCH": {
+        "Name": "Bewitchment Ray",
+        "Tooltip": "Makes the target act to help you in some way."
+      },
+      "DEATH": {
+        "Name": "Death Ray",
+        "Tooltip": "Harms any living thing it hits, necrotizing flesh and plant matter."
+      },
+      "FEAR": {
+        "Name": "Fear Ray",
+        "Tooltip": "Strikes fear in their heart, pushing them towards irrational action."
+      },
+      "NULL": {
+        "Name": "Null-Magic Ray",
+        "Tooltip": "Creates a small area inside which magic does not function."
+      },
+      "PARA": {
+        "Name": "Paralysis Ray",
+        "Tooltip": "Wrecks a target's nerves, temporarily paralyzing them."
+      },
+      "TELE": {
+        "Name": "Telekinesis Ray",
+        "Tooltip": "Moves objects and other non-living, solid matter."
+      },
+      "TIME": {
+        "Name": "Time Ray",
+        "Tooltip": "Modifies time, speeding it up or slowing it down, in a limited bubble."
+      },
+      "TRANS": {
+        "Name": "Transmogr. Ray",
+        "Tooltip": "Shapes inanimate objects into new forms."
+      },
+      "VISION": {
+        "Name": "Vision Ray",
+        "Tooltip": "Sees the unseeable, such as through walls or at great distances."
+      }
+    },
 
     "FSGrafted": "Grafted",
 

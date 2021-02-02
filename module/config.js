@@ -53,15 +53,15 @@ WO.special_ability_hidden_groups =
   ["group_faces", "group_primal"];
 
 WO.doomseeker_eye_rays = {
-  "FITD.RayBewitchment": "FITD.RayBewitchment",
-  "FITD.RayDeath": "FITD.RayDeath",
-  "FITD.RayFear": "FITD.RayFear",
-  "FITD.RayNullMagic": "FITD.RayNullMagic",
-  "FITD.RayParalysis": "FITD.RayParalysis",
-  "FITD.RayTelekinesis": "FITD.RayTelekinesis",
-  "FITD.RayTime": "FITD.RayTime",
-  "FITD.RayTransmo": "FITD.RayTransmo",
-  "FITD.RayVision": "FITD.RayVision"
+  "bewitch": "FITD.EYE_RAYS.BEWITCH",
+  "death": "FITD.EYE_RAYS.DEATH",
+  "fear": "FITD.EYE_RAYS.FEAR",
+  "null": "FITD.EYE_RAYS.NULL",
+  "para": "FITD.EYE_RAYS.PARA",
+  "tele": "FITD.EYE_RAYS.TELE",
+  "time": "FITD.EYE_RAYS.TIME",
+  "trans": "FITD.EYE_RAYS.TRANS",
+  "vision": "FITD.EYE_RAYS.VISION"
 };
 
 WO.minion_upgrade_types = {

@@ -576,30 +576,24 @@ form.wicked-one-sheet {
             }   
         }
     }
-	
-   // Notes Table Light Tongue Tooltip Styling
-   #tongue-tooltip{
-		margin-left: auto;
-		align-self: center;
-		font-size: x-large;
-		position: relative;
-	}
-	
-	#tongue-grid{
-		display: grid;
-		grid-template-columns: auto auto auto auto auto;
-		justify-content: space-evenly;
-		grid-gap: 10px;
-		grid-column-gap: 20px;
-		font-family: Piedra;
-		text-transform: uppercase;
-		color: black;
-	}
-	#grid-item1 {
-			color: $mud;
-			grid-column: 1 / span 5;
-			font-weight: 700;
-			font-family: Bitter;
-			text-transform: none;
+}
+
+// Notes Table Light Tongue Tooltip Styling (Needs to be played outside of main sheet context)
+#tongue-grid{
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
+	justify-content: space-evenly;
+	grid-gap: 10px;
+	grid-column-gap: 20px;
+	font-family: Piedra;
+	text-transform: uppercase;
+	color: black;
+
+	& div:first-child {
+		color: $mud;
+		grid-column: 1 / span 5;
+		font-weight: 700;
+		font-family: Bitter;
+		text-transform: none;
 	}
 }
