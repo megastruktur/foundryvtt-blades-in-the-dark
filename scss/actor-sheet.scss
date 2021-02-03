@@ -417,29 +417,98 @@ form.wicked-one-sheet {
         // Goldmonger growth path
         tr.growth-path {
 
+            table {
+                background: none;
+
+                &:hover i.fab.nullifier {
+                    transition: opacity 1s;
+                    opacity: 0.7;
+                }
+
+                i.fab.nullifier {
+                    transition: opacity 1s;
+                    opacity: 0;
+                }
+            }
+
+            table td input {
+                display: none;
+            }
+
             table tr {
                 &:nth-child(1) td:nth-child(1) {
                     background: none;
+
+                    label {
+                        top: 10px;
+                        left: 2px;
+                        background: none !important;
+                    }
                 }
 
                 &:nth-child(2) td:nth-child(1) {
-                    background-position-y: center;
+                    background-position-y: 4px;
+                    background-image: url("assets/boxes/box-top-empty.webp");
+
+                    &.filled {
+                        background-image: url("assets/boxes/box-top-filled.webp");
+                    }
+                    
+                    label {
+                        top: 5px;
+                    }
                 }
 
                 &:nth-child(3) td:nth-child(1) {
-                    background-position-y: bottom;
+                    background-position-y: -112px;
+                    background-image: url("assets/boxes/box-center-empty.webp");
+
+                    &.filled {
+                        background-image: url("assets/boxes/box-center-filled.webp");
+                    }
+
+                    label {
+                        top: 9px;
+                    }
                 }
 
                 &:nth-child(4) td:nth-child(1) {
-                    background-position-y: center;
-                    background-image: url("assets/decorations/verticalline-top.png");
+                    background-position-y: -108px;
+                    background-image: url("assets/boxes/box-bottom-empty.webp");
+
+                    &.filled {
+                        background-image: url("assets/boxes/box-bottom-filled.webp");
+                    }
+
+                    label {
+                        top: 5px;
+                    }
                 }
 
                 td:nth-child(1) {
+                    position: relative;
                     min-width: 32px;
                     width: 32px;
-                    background-image: url("assets/decorations/verticalline-bottom.png");
+                    background-size: 50%;
                     background-repeat: no-repeat;
+
+                    label {
+                        width: 13px;
+                        height: 13px;
+                        display: block;
+                        position: absolute;
+                        top: 0px;
+                        left: 2px;
+                        transition: filter 0.2s, background-color 0.2s, opacity 0.2s;
+                        cursor: pointer;
+
+                        &:hover {
+                            filter: brightness(0.8);
+                            opacity: 0.6;
+                            background-color: $highlight_red;
+                        }
+                    }
+
                 }
             }
         }

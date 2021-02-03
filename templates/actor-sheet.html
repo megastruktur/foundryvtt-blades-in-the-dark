@@ -536,12 +536,12 @@
                   <tr>
                     <td>
                       <input type="radio" id="path-{{item._id}}-0" name="{{item._id}}-data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
-                      <label for="path-{{item._id}}-0"></label>
+                      <label for="path-{{item._id}}-0"><i class="fab fa-creative-commons-zero nullifier tooltip" data-tooltip="{{localize "FITD.TOOLTIP.Reset"}}"></i></label>
                     </td>
                     <td><div class="item-name item-body"><span class="item-open-editor">{{item.name}}</span></div></td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="{{#if (gt item.data.primal.gm_path_value 0)}}filled{{/if}}">
                       <input type="radio" id="path-{{item._id}}-1" name="{{item._id}}-data.primal.gm_path_value" value="1" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-1"></label>
                     </td>
@@ -559,7 +559,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="{{#if (gt item.data.primal.gm_path_value 1)}}filled{{/if}}">
                       <input type="radio" id="path-{{item._id}}-2" name="{{item._id}}-data.primal.gm_path_value" value="2" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-2"></label>
                     </td>
@@ -577,7 +577,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="{{#if (gt item.data.primal.gm_path_value 2)}}filled{{/if}}">
                       <input type="radio" id="path-{{item._id}}-3" name="{{item._id}}-data.primal.gm_path_value" value="3" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-3"></label>
                     </td>

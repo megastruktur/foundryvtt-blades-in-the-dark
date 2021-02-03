@@ -762,24 +762,79 @@ form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child img {
   object-fit: contain;
   border: 0px;
 }
+form.wicked-one-sheet #abilities-list tr.growth-path table {
+  background: none;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table:hover i.fab.nullifier {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table i.fab.nullifier {
+  transition: opacity 1s;
+  opacity: 0;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table td input {
+  display: none;
+}
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) {
   background: none;
 }
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) label {
+  top: 10px;
+  left: 2px;
+  background: none !important;
+}
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) {
-  background-position-y: center;
+  background-position-y: 4px;
+  background-image: url("assets/boxes/box-top-empty.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1).filled {
+  background-image: url("assets/boxes/box-top-filled.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) label {
+  top: 5px;
 }
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) {
-  background-position-y: bottom;
+  background-position-y: -112px;
+  background-image: url("assets/boxes/box-center-empty.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1).filled {
+  background-image: url("assets/boxes/box-center-filled.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) label {
+  top: 9px;
 }
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) {
-  background-position-y: center;
-  background-image: url("assets/decorations/verticalline-top.png");
+  background-position-y: -108px;
+  background-image: url("assets/boxes/box-bottom-empty.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1).filled {
+  background-image: url("assets/boxes/box-bottom-filled.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) label {
+  top: 5px;
 }
 form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
+  position: relative;
   min-width: 32px;
   width: 32px;
-  background-image: url("assets/decorations/verticalline-bottom.png");
+  background-size: 50%;
   background-repeat: no-repeat;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) label {
+  width: 13px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  transition: filter 0.2s, background-color 0.2s, opacity 0.2s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) label:hover {
+  filter: brightness(0.8);
+  opacity: 0.6;
+  background-color: #a20000;
 }
 form.wicked-one-sheet #abilities .flashback-clues {
   text-align: center;
