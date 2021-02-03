@@ -138,7 +138,8 @@ export class WickedSheet extends ActorSheet {
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
       html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix}`;
       if (itemTooltip != "") {
-        html += `<i class="tooltip fas fa-question-circle"><span class="tooltiptext">${itemTooltip}</span></i>`;
+        var cleanTip = itemTooltip.replace('"', '&quot;');
+        html += `<i class="tooltip quick fas fa-question-circle" data-tooltip="${cleanTip}"></i>`;
       }
       html += `</label>`;
     });
@@ -169,7 +170,7 @@ export class WickedSheet extends ActorSheet {
       },
       default: "two",
       render: html => {
-        $('i.tooltip').on('mouseover', this._onTooltipHover);
+        $('i.tooltip').hover(this._onTooltipHover, this._onTooltipHoverEnd);
       },
     }, options);
 
@@ -385,6 +386,9 @@ export class WickedSheet extends ActorSheet {
     $tt_ele.style.top = newY + 'px';
     $tt_ele.style.left = newX + 'px';
 
+    if (this.classList.contains('quick')) {
+      $tt_ele.classList.add('quick');
+    }
     $tt_ele.classList.add('show');
   }
 
@@ -400,6 +404,7 @@ export class WickedSheet extends ActorSheet {
 
     if ($tt_ele != null) {
       $tt_ele.classList.remove('show');
+      $tt_ele.classList.remove('quick');
     }
   }
 

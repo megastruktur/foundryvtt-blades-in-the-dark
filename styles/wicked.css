@@ -4127,5 +4127,9 @@ nav.tabs.flex-horizontal > :last-child {
   transition: visibility 0.5s, opacity 0.5s;
   transition-delay: 1s;
 }
+#wo-tooltip.show.quick {
+  transition: visibility 0.2s, opacity 0.2s;
+  transition-delay: 0.3s;
+}
 
 /*# sourceMappingURL=wicked.css.map */
