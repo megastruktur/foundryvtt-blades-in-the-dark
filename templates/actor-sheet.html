@@ -142,9 +142,8 @@
           <div id="character-{{actor._id}}-gold" class="big-teeth gold">
             {{#multiboxes data.gold.value}}
             <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold.value" value="0" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Coin")}}}">
               <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Coin"}}}</span>
             </div>
 
             {{#times_from_1 data.gold.max}}
@@ -160,9 +159,8 @@
           <div id="character-{{actor._id}}-wickedxp" class="big-teeth xp-bar">
             {{#multiboxes data.wickedxp.value}}
             <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Wicked")}}}" >
               <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Wicked"}}}</span>
             </div>
 
             {{#times_from_1 data.wickedxp.max}}
@@ -179,9 +177,8 @@
           <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Reckless")}}}" >
               <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Reckless"}}}</span>
             </div>
             {{#times_from_1 data.recklessxp.max}}
             <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
@@ -194,9 +191,8 @@
           <div id="character-{{actor._id}}-guardianxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
             <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Guardian")}}}" >
               <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize "FITD.GuardianXP"}}</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Guardian"}}}</span>
             </div>
             {{#times_from_1 data.recklessxp.max}}
             <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
@@ -211,42 +207,37 @@
         <td colspan="2">
           {{!-- Goldmonger Size --}}
           <div id="character-{{actor._id}}-size" class="goldmonger-size">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}}">
               <label class="black-label inactive">{{localize "FITD.GMSize"}}:</label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}}</span>
             </div>
             {{#multiboxes data.goldmonger_size}}
             <input type="radio" id="character-{{actor._id}}-size-0" name="data.goldmonger_size" value="0" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}} {{{escdq (localize "FITD.TOOLTIP.GMSize0")}}}">
               <label class="black-label tooltip" for="character-{{actor._id}}-size-0">Tier 0</label>
               <label class="gm-size-box" for="character-{{actor._id}}-size-0"></label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}} {{{localize "FITD.TOOLTIP.GMSize0"}}}</span>
             </div>
             <input type="radio" id="character-{{actor._id}}-size-1" name="data.goldmonger_size" value="1" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}} {{{escdq (localize "FITD.TOOLTIP.GMSize1")}}}">
               <label class="black-label" for="character-{{actor._id}}-size-1">Tier 1</label>
               <label class="gm-size-box" for="character-{{actor._id}}-size-1"></label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}} {{{localize "FITD.TOOLTIP.GMSize1"}}}</span>
             </div>
             <input type="radio" id="character-{{actor._id}}-size-3" name="data.goldmonger_size" value="3" dtype="Radio">
-            <div class="tooltip">
+            <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}} {{{escdq (localize "FITD.TOOLTIP.GMSize3")}}}">
               <label class="black-label" for="character-{{actor._id}}-size-3">Tier 3</label>
               <label class="gm-size-box" for="character-{{actor._id}}-size-3"></label>
-              <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.GMSize"}}} {{{localize "FITD.TOOLTIP.GMSize3"}}}</span>
             </div>
             {{/multiboxes}}
           </div>
         </td>
         <td>
           {{!-- Pleased XP --}}
-          <div class="tooltip">
+          <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.PleasedXP")}}}" >
             <div class="pleased-xp">
               <label class="black-label" for="character-{{actor._id}}-pleased-xp">{{localize "FITD.GMPleasedXP"}}:</label>
               <input type="checkbox" id="character-{{actor._id}}-pleased-xp" name="data.goldmonger_pleased"
                      value="data.goldmonger_pleased" {{checked data.goldmonger_pleased}}>
               <label class="pleased-checkbox" for="character-{{actor._id}}-pleased-xp"></label>
             </div>
-            <span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.PleasedXP"}}}</span>
           </div>
         </td>
         {{/unless}}
@@ -268,7 +259,7 @@
                 <th class="black-white">
                   {{localize "FITD.Defenses"}} <a class="item-add-popup" data-distinct="false" data-item-type="defense"><i class="fas fa-plus-square"></i></a>
                 </th>
-                <th class="black-white tooltip">{{localize "FITD.Stress"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.Stress"}}}</span></th>
+                <th class="black-white tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Stress")}}}">{{localize "FITD.Stress"}}</th>
                 <th class="black-white">
                   {{localize "FITD.Impulse"}} <a class="item-add-popup" data-distinct="false" data-item-type="wickedimpulse"><i class="fas fa-plus-square"></i></a>
                 </th>
@@ -433,7 +424,9 @@
             <tr id="discipline-{{item._id}}" class="item psi-discipline" data-item-id="{{item._id}}">
               <td colspan="3">
                 <div class="label-stripe item-radio">
-                  <div class="roll-die-attribute rollable-text" data-roll-attribute="{{data.primal.be_psi_skill_name}}">{{data.primal.be_psi_skill_name}}</div>
+                  <div class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq data.primal.be_psi_skill_tooltip}}}" data-roll-attribute="{{data.primal.be_psi_skill_name}}">
+                    {{data.primal.be_psi_skill_name}}
+                  </div>
                   {{#multiboxes data.primal.be_psi_dots}}
                   <input type="radio" id="discipline-{{item._id}}-0" name="{{item._id}}-data.primal.be_psi_dots" value="0" dtype="Radio" data-property-to-set="primal.be_psi_dots">
                   <label for="discipline-{{item._id}}-0"></label>
@@ -472,41 +465,60 @@
                 <div class="ray-container">
                   <div class="doomseeker-img">
                     <img src="systems/wicked-ones/styles/assets/decorations/doomseeker.png" usemap="#image-map" />
-                    <map name="image-map">
-                      <area class="item-open-editor" title="{{localize "FITD.DSConfigureRays"}}" coords="39,116,47,92,37,88,29,65,42,26,61,20,88,4,111,3,120,20,140,17,152,28,154,40,167,51,165,71,165,81,153,87,158,106,182,97,195,108,190,126,168,128,158,139,165,152,173,168,156,179,131,177,120,182,101,194,90,180,77,184,56,181,39,183,25,164,38,155,34,145,28,133,5,125,5,106,24,105" shape="poly">
+                    <map name="image-map" class="tooltip" data-tooltip="{{{escdq (localize "FITD.DSConfigureRays")}}}">
+                      <area class="item-open-editor"  coords="39,116,47,92,37,88,29,65,42,26,61,20,88,4,111,3,120,20,140,17,152,28,154,40,167,51,165,71,165,81,153,87,158,106,182,97,195,108,190,126,168,128,158,139,165,152,173,168,156,179,131,177,120,182,101,194,90,180,77,184,56,181,39,183,25,164,38,155,34,145,28,133,5,125,5,106,24,105" shape="poly">
                     </map>
                   </div>
                   <div class="ray-items">
                     <div>
-                      <b>{{localize "FITD.DSMainEye"}}:</b> <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_1}}">{{localize item.data.primal.ds_eye_ray_1}} <b>{{item.data.primal.ds_eye_ray_1_val}}D</b></span>
+                      <b>{{localize "FITD.DSMainEye"}}: </b>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_1_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_1_name}}">
+                        {{item.data.primal.ds_eye_ray_1_name}} <b>{{item.data.primal.ds_eye_ray_1_val}}D</b>
+                      </span>
                     </div>
                     <div>
                       <b>{{localize "FITD.DSOtherEyes"}}:</b><br />
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_6}}">{{localize item.data.primal.ds_eye_ray_6}} <b>{{item.data.primal.ds_eye_ray_6_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_6_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_6_name}}">
+                        {{item.data.primal.ds_eye_ray_6_name}} <b>{{item.data.primal.ds_eye_ray_6_val}}D</b>
+                      </span>
                     </div>
                     <div>
                       <b>{{localize "FITD.DSOtherEyes"}}:</b><br />
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_7}}">{{localize item.data.primal.ds_eye_ray_7}} <b>{{item.data.primal.ds_eye_ray_7_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_7_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_7_name}}">
+                        {{item.data.primal.ds_eye_ray_7_name}} <b>{{item.data.primal.ds_eye_ray_7_val}}D</b>
+                      </span>
                     </div>
                     <div>
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_8}}">{{localize item.data.primal.ds_eye_ray_8}} <b>{{item.data.primal.ds_eye_ray_8_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_8_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_8_name}}">
+                        {{item.data.primal.ds_eye_ray_8_name}} <b>{{item.data.primal.ds_eye_ray_8_val}}D</b>
+                      </span>
                     </div>
                     <div>
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_9}}">{{localize item.data.primal.ds_eye_ray_9}} <b>{{item.data.primal.ds_eye_ray_9_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_9_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_9_name}}">
+                        {{item.data.primal.ds_eye_ray_9_name}} <b>{{item.data.primal.ds_eye_ray_9_val}}D</b>
+                      </span>
                     </div>
                     <div>
                       <b>{{localize "FITD.DSOuterEyes"}}:</b><br />
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_2}}">{{localize item.data.primal.ds_eye_ray_2}} <b>{{item.data.primal.ds_eye_ray_2_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_2_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_2_name}}">
+                        {{item.data.primal.ds_eye_ray_2_name}} <b>{{item.data.primal.ds_eye_ray_2_val}}D</b>
+                      </span>
                     </div>
                     <div>
                       <b>{{localize "FITD.DSOuterEyes"}}:</b><br />
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_3}}">{{localize item.data.primal.ds_eye_ray_3}} <b>{{item.data.primal.ds_eye_ray_3_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_3_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_3_name}}">
+                        {{item.data.primal.ds_eye_ray_3_name}} <b>{{item.data.primal.ds_eye_ray_3_val}}D</b>
+                      </span>
                     </div>
                     <div>
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_4}}">{{localize item.data.primal.ds_eye_ray_4}} <b>{{item.data.primal.ds_eye_ray_4_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_4_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_4_name}}">
+                        {{item.data.primal.ds_eye_ray_4_name}} <b>{{item.data.primal.ds_eye_ray_4_val}}D</b>
+                      </span>
                     </div>
                     <div>
-                      <span class="roll-die-attribute rollable-text" data-roll-attribute="{{item.data.primal.ds_eye_ray_5}}">{{localize item.data.primal.ds_eye_ray_5}} <b>{{item.data.primal.ds_eye_ray_5_val}}D</b></span>
+                      <span class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq item.data.primal.ds_eye_ray_5_tooltip}}}" data-roll-attribute="{{item.data.primal.ds_eye_ray_5_name}}">
+                        {{item.data.primal.ds_eye_ray_5_name}} <b>{{item.data.primal.ds_eye_ray_5_val}}D</b>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -524,12 +536,12 @@
                   <tr>
                     <td>
                       <input type="radio" id="path-{{item._id}}-0" name="{{item._id}}-data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
-                      <label for="path-{{item._id}}-0"></label>
+                      <label for="path-{{item._id}}-0"><i class="fab fa-creative-commons-zero nullifier tooltip" data-tooltip="{{localize "FITD.TOOLTIP.Reset"}}"></i></label>
                     </td>
                     <td><div class="item-name item-body"><span class="item-open-editor">{{item.name}}</span></div></td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="{{#if (gt item.data.primal.gm_path_value 0)}}filled{{/if}}">
                       <input type="radio" id="path-{{item._id}}-1" name="{{item._id}}-data.primal.gm_path_value" value="1" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-1"></label>
                     </td>
@@ -547,7 +559,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="{{#if (gt item.data.primal.gm_path_value 1)}}filled{{/if}}">
                       <input type="radio" id="path-{{item._id}}-2" name="{{item._id}}-data.primal.gm_path_value" value="2" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-2"></label>
                     </td>
@@ -565,7 +577,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td class="{{#if (gt item.data.primal.gm_path_value 2)}}filled{{/if}}">
                       <input type="radio" id="path-{{item._id}}-3" name="{{item._id}}-data.primal.gm_path_value" value="3" dtype="Radio" data-property-to-set="primal.gm_path_value">
                       <label for="path-{{item._id}}-3"></label>
                     </td>
@@ -972,7 +984,7 @@
         </table>
 
         <div class="label-stripe flex-horizontal">
-          <p class="tooltip">{{localize "FITD.Projects"}}<span class="tooltiptext tooltipslow">{{{localize "FITD.ProjectsHelp"}}}</span></p>
+          <p class="tooltip" data-tooltip="{{{escdq (localize "FITD.ProjectsHelp")}}}">{{localize "FITD.Projects"}}</p>
           <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
         <table id="project-clocks-table">
@@ -1040,10 +1052,9 @@
       <div class="tab flex-vertical" data-tab="character-notes">
         <div class="label-stripe">
           <p>{{localize "FITD.Notes"}}</p>
-		  <div id="tongue-tooltip" class="tooltip">
-		    <i class="item-add-popup far fa-comment-dots"></i>
-              <span id="tongue-grid" class="tooltiptext tooltipslow">{{{localize "FITD.TOOLTIP.LightTongue"}}}</span>
-          </div>
+		    <div id="tongue-tooltip" class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.LightTongue")}}}">
+		      <i class="item-add-popup far fa-comment-dots"></i>
+        </div>
         </div>
         {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
       </div>

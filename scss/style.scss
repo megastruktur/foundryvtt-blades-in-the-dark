@@ -597,46 +597,41 @@ nav.tabs.flex-horizontal {
 	}
 }
 
- 
-
-
 
 /*
  *  Tooltip Styles
  */
 
-.tooltip {
+#wo-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: fit-content;
+    max-width: 400px;
+    font-weight: 600;
+    font-family: Bitter;
+    background: url(../styles/assets/images/background-light.webp) repeat;
+    color: $bloody;
+    font-size: 16px;
+    text-align: justify;
+    border: 2px solid $bloody;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 9999;
+    text-transform: none;
+    text-shadow: none;
 
-    .tooltiptext {
-        visibility: hidden;
-        position: fixed;
-        width: fit-content;
-        max-width: 400px;
-        font-weight: 600;
-        font-family: Bitter;
-        background: url(../styles/assets/images/background-light.webp) repeat;
-        color: $bloody;
-        font-size: 16px;
-        text-align: justify;
-        border: 2px solid $bloody;
-        padding: 10px;
-        border-radius: 4px;
-        z-index: 9999;
-        text-transform: none;
-        text-shadow: none;
-    }
+    &.show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s;
+    transition-delay: 1s;
 
-    .tooltipslow {
-        opacity: 0;
-        transition: visibility 0.1s, opacity 0.1s;
-        transition-delay: 0.1s;
-    }
-
-    &:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-        transition: visibility 0.5s, opacity 0.5s;
-        transition-delay: 1s;
+        &.quick {
+            transition: visibility 0.2s, opacity 0.2s;
+            transition-delay: 0.3s;
+        }
     }
 }
+
 

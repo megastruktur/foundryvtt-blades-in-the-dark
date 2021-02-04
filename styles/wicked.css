@@ -638,6 +638,45 @@ form.wicked-one-sheet #abilities-list .group-ext {
 form.wicked-one-sheet #abilities-list .group-ext td.item-body i {
   font-size: 14px;
 }
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio {
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label {
+  height: 15px;
+  width: 15px;
+  background-image: url("assets/boxes/box-white-dotted.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label:last-of-type {
+  margin-right: 0px;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label[for$="-0"] i {
+  margin-top: 4px;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio input {
+  display: none;
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio input:checked ~ label {
+  background-image: url("assets/boxes/box-white-filled.png");
+}
+form.wicked-one-sheet #abilities-list .psi-discipline .item-radio input:checked + label {
+  background-image: url("assets/boxes/box-white-dotted.png");
+}
 form.wicked-one-sheet #abilities-list tr.psi-discipline td > div {
   border-radius: 15px;
   height: 30px;
@@ -723,24 +762,79 @@ form.wicked-one-sheet #abilities-list tr.stolen-face td:first-child img {
   object-fit: contain;
   border: 0px;
 }
+form.wicked-one-sheet #abilities-list tr.growth-path table {
+  background: none;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table:hover i.fab.nullifier {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table i.fab.nullifier {
+  transition: opacity 1s;
+  opacity: 0;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table td input {
+  display: none;
+}
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) {
   background: none;
 }
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(1) td:nth-child(1) label {
+  top: 10px;
+  left: 2px;
+  background: none !important;
+}
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) {
-  background-position-y: center;
+  background-position-y: 4px;
+  background-image: url("assets/boxes/box-top-empty.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1).filled {
+  background-image: url("assets/boxes/box-top-filled.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(2) td:nth-child(1) label {
+  top: 5px;
 }
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) {
-  background-position-y: bottom;
+  background-position-y: -112px;
+  background-image: url("assets/boxes/box-center-empty.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1).filled {
+  background-image: url("assets/boxes/box-center-filled.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(3) td:nth-child(1) label {
+  top: 9px;
 }
 form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) {
-  background-position-y: center;
-  background-image: url("assets/decorations/verticalline-top.png");
+  background-position-y: -108px;
+  background-image: url("assets/boxes/box-bottom-empty.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1).filled {
+  background-image: url("assets/boxes/box-bottom-filled.webp");
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr:nth-child(4) td:nth-child(1) label {
+  top: 5px;
 }
 form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) {
+  position: relative;
   min-width: 32px;
   width: 32px;
-  background-image: url("assets/decorations/verticalline-bottom.png");
+  background-size: 50%;
   background-repeat: no-repeat;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) label {
+  width: 13px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  transition: filter 0.2s, background-color 0.2s, opacity 0.2s;
+  cursor: pointer;
+}
+form.wicked-one-sheet #abilities-list tr.growth-path table tr td:nth-child(1) label:hover {
+  filter: brightness(0.8);
+  opacity: 0.6;
+  background-color: #a20000;
 }
 form.wicked-one-sheet #abilities .flashback-clues {
   text-align: center;
@@ -932,13 +1026,8 @@ form.wicked-one-sheet #duties-table tbody td:nth-of-type(1) {
   font-weight: 900;
   text-align: center;
 }
-form.wicked-one-sheet #tongue-tooltip {
-  margin-left: auto;
-  align-self: center;
-  font-size: x-large;
-  position: relative;
-}
-form.wicked-one-sheet #tongue-grid {
+
+#tongue-grid {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   justify-content: space-evenly;
@@ -948,7 +1037,7 @@ form.wicked-one-sheet #tongue-grid {
   text-transform: uppercase;
   color: black;
 }
-form.wicked-one-sheet #grid-item1 {
+#tongue-grid div:first-child {
   color: #68332c;
   grid-column: 1/span 5;
   font-weight: 700;
@@ -4013,8 +4102,9 @@ nav.tabs.flex-horizontal > :last-child {
 /*
  *  Tooltip Styles
  */
-.tooltip .tooltiptext {
+#wo-tooltip {
   visibility: hidden;
+  opacity: 0;
   position: fixed;
   width: fit-content;
   max-width: 400px;
@@ -4031,16 +4121,15 @@ nav.tabs.flex-horizontal > :last-child {
   text-transform: none;
   text-shadow: none;
 }
-.tooltip .tooltipslow {
-  opacity: 0;
-  transition: visibility 0.1s, opacity 0.1s;
-  transition-delay: 0.1s;
-}
-.tooltip:hover .tooltiptext {
+#wo-tooltip.show {
   visibility: visible;
   opacity: 1;
   transition: visibility 0.5s, opacity 0.5s;
   transition-delay: 1s;
+}
+#wo-tooltip.show.quick {
+  transition: visibility 0.2s, opacity 0.2s;
+  transition-delay: 0.3s;
 }
 
 /*# sourceMappingURL=wicked.css.map */

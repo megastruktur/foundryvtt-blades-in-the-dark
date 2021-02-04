@@ -18,7 +18,7 @@ export class WickedSheet extends ActorSheet {
     html.find('.eye-rays area').mouseover(this._onDSMouseOver.bind(this));
     html.find('.eye-rays area').mouseout(this._onDSMouseOut.bind(this));
     html.find(".open-minion-pack").click(this._onMinionOpenClick.bind(this));
-    html.find(".tooltip").on('mouseover', this._onTooltipHover);
+    html.find(".tooltip").hover(this._onTooltipHover, this._onTooltipHoverEnd);
 
     // Item Dragging
     if (this.actor.owner) {
@@ -138,7 +138,8 @@ export class WickedSheet extends ActorSheet {
       html += `<label class="flex-horizontal" for="select-item-${e._id}">`;
       html += `${itemPrefix}${game.i18n.localize(e.name)}${itemSuffix}`;
       if (itemTooltip != "") {
-        html += `<i class="tooltip fas fa-question-circle"><span class="tooltiptext">${itemTooltip}</span></i>`;
+        var cleanTip = itemTooltip.replace('"', '&quot;');
+        html += `<i class="tooltip quick fas fa-question-circle" data-tooltip="${cleanTip}"></i>`;
       }
       html += `</label>`;
     });
@@ -169,7 +170,7 @@ export class WickedSheet extends ActorSheet {
       },
       default: "two",
       render: html => {
-        $('i.tooltip').on('mouseover', this._onTooltipHover);
+        $('i.tooltip').hover(this._onTooltipHover, this._onTooltipHoverEnd);
       },
     }, options);
 
@@ -349,23 +350,26 @@ export class WickedSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Reposition scrollable tooltip on hover 
+   * Create tooltip on hover 
    * @param {*} event 
    */
   async _onTooltipHover(event) {
 
-    var $menuItem = $(this);
-    var $tooltipElement = $('> span', $menuItem);
-    if ($tooltipElement.length == 0) {
-      $tooltipElement = $('> .tooltiptext', $menuItem);
+    var $tt_ele = document.getElementById("wo-tooltip");
+
+    if ($tt_ele == null) {
+      $tt_ele = document.createElement('div');
+      $tt_ele.id = 'wo-tooltip';
+      document.body.appendChild($tt_ele);
     }
-    if ($tooltipElement.length == 0) return;
+    
+    $tt_ele.innerHTML = this.dataset.tooltip ?? "";
+    if ($tt_ele.innerHTML.length == 0) return;
 
     var itemRect = this.getBoundingClientRect();
-    var margin = this.style.margin;
     var scrnX = window.innerWidth;
     var scrnY = window.innerHeight;
-    var toolRect = $tooltipElement[0].getBoundingClientRect();
+    var toolRect = $tt_ele.getBoundingClientRect();
     var newX = itemRect.right + 5;
     var newY = itemRect.top;
 
@@ -379,13 +383,32 @@ export class WickedSheet extends ActorSheet {
       newY = itemRect.bottom - toolRect.height;
     }
 
-    $tooltipElement.css({
-      top: newY,
-      left: newX,
-    });
+    $tt_ele.style.top = newY + 'px';
+    $tt_ele.style.left = newX + 'px';
+
+    if (this.classList.contains('quick')) {
+      $tt_ele.classList.add('quick');
+    }
+    $tt_ele.classList.add('show');
   }
 
   /* -------------------------------------------- */
+
+  /**
+   * Remove tooltip on mouseout
+   * @param {*} event 
+   */
+  async _onTooltipHoverEnd(event) {
+
+    var $tt_ele = document.getElementById("wo-tooltip");
+
+    if ($tt_ele != null) {
+      $tt_ele.classList.remove('show');
+      $tt_ele.classList.remove('quick');
+    }
+  }
+
+
 
 }
 

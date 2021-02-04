@@ -153,6 +153,27 @@
       "system": "wicked-ones",
       "path": "./packs/tier3rooms.db",
       "entity": "Item"
+    },
+    {
+      "name": "rollable-tables",
+      "label": "Rollable Tables",
+      "system": "wicked-ones",
+      "path": "packs/rollable-tables.db",
+      "entity": "RollTable"
+    },
+    {
+      "name": "dungeon-generator",
+      "label": "Dungeon Generator",
+      "system": "wicked-ones",
+      "path": "packs/dungeon-generator.db",
+      "entity": "RollTable"
+    },
+    {
+      "name": "wo-macros",
+      "label": "Macros",
+      "system": "wicked-ones",
+      "path": "packs/macros.db",
+      "entity": "Macro"
     }
   ]
 }

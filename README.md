@@ -75,7 +75,6 @@ Skill-Roller pops up on **clicking skills on the sheets**, adjusts to selected o
 
 ## To be done
 - Bugfixes
-- Style improvements for the primal monsters
 - Dashboard sheet for the GM for easy tracking of past invasions, pocketed blowback and other game data
 - Explore the possible addition of context menus
 - Ability to drag skills into the macro bar for easy access

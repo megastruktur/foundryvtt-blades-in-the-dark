@@ -160,6 +160,18 @@ Hooks.once("init", async function() {
     return outStr;
   });
 
+  // Escape double quotes and concatenate helper
+  // Usage: (escdq 'text1' 'text2' ...)
+  Handlebars.registerHelper('escdq', function () {
+    var outStr = '';
+    for (var arg in arguments) {
+      if (typeof arguments[arg] != 'object') {
+        outStr += arguments[arg].replace('"', "&quot;");
+      }
+    }
+    return outStr;
+  });
+
 
   /**
    * @inheritDoc
@@ -206,7 +218,7 @@ Hooks.once("init", async function() {
     }
 
     // Label for 0
-    html += `<label class="clock-zero-label" for="clock-0-${uniq_id}}"><i class="fab fa-creative-commons-zero nullifier" title="${game.i18n.localize('FITD.TOOLTIP.Reset')}"></i></label>`;
+    html += `<label class="clock-zero-label" for="clock-0-${uniq_id}}"><i class="fab fa-creative-commons-zero nullifier tooltip" data-tooltip="${game.i18n.localize('FITD.TOOLTIP.Reset')}"></i></label>`;
       html += `<div id="blades-clock-${uniq_id}" class="blades-clock clock-${type} clock-${type}-${current_value}" style="background-image:url('/systems/wicked-ones/styles/assets/progressclocks-webp/transparent-${type}-${current_value}.webp');">`;
 
     let zero_checked = (parseInt(current_value) === 0) ? 'checked="checked"' : '';

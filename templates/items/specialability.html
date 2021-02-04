@@ -112,6 +112,8 @@
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "FITD.BESkillName"}}</label>
       <input type="text" name="data.primal.be_psi_skill_name" value="{{data.primal.be_psi_skill_name}}" placeholder="{{localize 'FITD.BESkillNameHint'}}">
+      <label class="label-stripe">{{localize "FITD.BESkillTooltip"}}</label>
+      <input type="text" name="data.primal.be_psi_skill_tooltip" value="{{data.primal.be_psi_skill_tooltip}}" placeholder="{{localize 'FITD.BESkillTooltipHint'}}">
     </div>
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "FITD.BEMasteryAbilityName1"}}</label>
@@ -146,7 +148,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_1}}
             {{#each config.available_rays1 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -166,7 +168,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_2}}
             {{#each config.available_rays2 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -183,7 +185,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_3}}
             {{#each config.available_rays3 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -200,7 +202,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_4}}
             {{#each config.available_rays4 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -217,7 +219,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_5}}
             {{#each config.available_rays5 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -237,7 +239,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_6}}
             {{#each config.available_rays6 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -254,7 +256,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_7}}
             {{#each config.available_rays7 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -271,7 +273,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_8}}
             {{#each config.available_rays8 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -288,7 +290,7 @@
             <option value="">{{localize "FITD.NoneParentheses"}}</option>
             {{#select data.primal.ds_eye_ray_9}}
             {{#each config.available_rays9 as |name type|}}
-            <option value="{{type}}">{{localize name}}</option>
+            <option value="{{type}}">{{localize (concat name ".Name")}}</option>
             {{/each}}
             {{/select}}
           </select>

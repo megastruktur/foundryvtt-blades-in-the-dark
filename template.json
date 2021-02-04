@@ -313,6 +313,7 @@
       "downtime_checkbox_2_checked": false,
       "primal": {
         "be_psi_skill_name": "",
+        "be_psi_skill_tooltip": "",
         "be_psi_dots": 0,
         "be_psi_name_1": "",
         "be_psi_desc_1": "",
@@ -365,6 +366,8 @@
       "upgrade_type": "regular",
       "upgrade_checkbox_text": "",
       "upgrade_checkbox_checked": false,
+      "upgrade_checkbox_2_text": "",
+      "upgrade_checkbox_2_checked": false,
       "upgrade_skill_name": "",
       "upgrade_skill_value": 2
     },

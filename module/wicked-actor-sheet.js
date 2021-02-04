@@ -26,6 +26,7 @@ export class WickedActorSheet extends WickedSheet {
 
 
     // look for abilities that change the number of gold, supply and dark heart icons
+    // also check for Doomseeker rays and add translations
     data.items.forEach(i => {
       if (i.type == "specialability") {
         if (i.name == game.i18n.localize("FITD.GAME_LOGIC.PackMule")) {
@@ -36,11 +37,16 @@ export class WickedActorSheet extends WickedSheet {
           data.data.dark_hearts.max += 1;
         } else if (i.name == game.i18n.localize("FITD.GAME_LOGIC.GearLocker")) {
           data.data.supply.max += 1;
+        } else if (i.data.ability_type == "ds_eyes") {
+          for (var j = 1; j < 10; j++) {
+            i.data.primal['ds_eye_ray_' + j + '_name'] = game.i18n.localize(CONFIG.WO.doomseeker_eye_rays[i.data.primal['ds_eye_ray_' + j]] + '.Name');
+            i.data.primal['ds_eye_ray_' + j + '_tooltip'] = game.i18n.localize(CONFIG.WO.doomseeker_eye_rays[i.data.primal['ds_eye_ray_' + j]] + '.Tooltip');
+          }
         }
       }
     });
 
-    // check if braineater and remove invoke skill
+    // check if Braineater and remove invoke skill
     if (data.data.primal_monster_type == game.i18n.localize("FITD.GAME_LOGIC.Braineater")) {
       delete data.data.attributes.guts.skills.invoke;
     }

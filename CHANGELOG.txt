@@ -1,3 +1,10 @@
+v0.9.3 added rollable tables to compendia
+       updated some items for the 1.1 version of the rulebook
+       improved style for the Braineater, Doomseeker and Goldmonger UI elements
+       reworked tooltip system and added more tooltips for primal monsters
+       updated minion upgrades to support a second checkbox
+       NOTE: due to a data change 0.9.2 Doomseeker characters need to re-do their eye ray configurations
+
 v0.9.2 more fixes to publishing workflow
 
 v0.9.1 fixes to publishing workflow
