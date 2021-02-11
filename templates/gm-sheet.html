@@ -1,0 +1,83 @@
+<form class="{{cssClass}} actor-sheet gm-sheet" autocomplete="off">
+
+
+  <section id="gm-info" class="flex-vertical">
+    <table>
+      <tr>
+        <td id="name" class="large-name">
+            <input type="text" id="gm-{{actor._id}}-name" name="name" value="{{actor.name}}">
+        </td>
+        <td>
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+        </td>
+      </tr>
+    </table>
+
+    {{!-- Insert Cycle of Play, Hints, Pocketed Blowback & Calamity --}}
+
+  </section>
+
+  {{!-- Navigation & Tabs --}}
+  <section class="flex-horizontal">
+    <div id="dun-nav-container" class="tab-content flex-vertical grow-two">
+
+      {{!-- Nav menu --}}
+      <nav class="tabs flex-horizontal">
+        <a class="item" data-tab="players">{{localize "FITD.Players"}}</a>
+        <a class="item" data-tab="clocks">{{localize "FITD.Clocks"}}</a>
+        <a class="item" data-tab="invasions">{{localize "FITD.Invasions"}}</a>
+        <a class="item" data-tab="notes">{{localize "FITD.Notes"}}</a>
+        <a class="item" data-tab="all-dungeon-items">{{localize "FITD.AllItems"}}</a>
+      </nav>
+
+      {{!-- Players Tab --}}
+      <div id="players-tab" class="tab flex-vertical" data-tab="players">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.TierThreeRooms"}}</p>
+          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+      </div>
+
+      {{!-- Clocks Tab --}}
+      <div id="clock-tab" class="tab flex-vertical" data-tab="clocks">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.TierThreeRooms"}}</p>
+          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+      </div>
+
+      {{!-- Invasions Tab --}}
+      <div id="invasions-tab" class="tab flex-vertical" data-tab="invasions">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.TierThreeRooms"}}</p>
+          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+      </div>
+
+      {{!-- Notes Tab --}}
+      <div id="notes-tab" class="tab flex-vertical" data-tab="notes">
+        <div class="label-stripe">
+          <p>{{localize "FITD.Notes"}}</p>
+        </div>
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      </div>
+
+      {{!-- Full Item List --}}
+      <div id="all-dungeon-items" class="tab grow-two flex-vertical" data-tab="all-dungeon-items">
+        <div class="label-stripe">
+          <p><label>{{localize "FITD.AllItems"}}</label></p>
+        </div>
+        {{#each actor.items as |item id|}}
+        <div class="item flex-horizontal all-items-list" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+            <div class="item-name item-open-editor">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/each}}
+      </div>
+
+    </div>
+  </section>
+</form>

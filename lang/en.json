@@ -11,7 +11,8 @@
     "TypeDungeon": "Dungeon",
     "TypeFaction": "Faction",
     "TypeParty": "Adventurer Party",
-    "TypeClock": "⏰ Clock"
+    "TypeClock": "⏰ Clock",
+    "TypeGm_sheet": "GM Sheet"
   },
   "ITEM": {
     "TypeItem": "Item",
@@ -122,6 +123,9 @@
     "DutiesProjects": "Downtime",
     "Duties": "Dungeon Duties",
     "Projects": "Downtime Projects",
+    "Players": "Players",
+    "Clocks": "Clocks",
+    "Invasions": "Invasions",
 
     "TOOLTIP": {
       "Reset": "Reset",
