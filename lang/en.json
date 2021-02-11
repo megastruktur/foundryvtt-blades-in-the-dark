@@ -658,6 +658,63 @@
         "TrickParagraph": "Each trick has an intent, something that happens to the adventurers, and a trigger which causes the trick to happen."
       }
     },
+    "CYCLE": {
+      "Name": "Cycle of Play",
+      "HEADINGS": {
+        "Lurking": "Lurking",
+        "Calamity": "Calamity",
+        "Raiding": "Raiding",
+        "Blowback": "Blowback"
+      },
+      "PHASE1": {
+        "Name": "Recovery",
+        "Hint": "All stress, Shock and Bloodied condition clear<br/>Used supply slots and defenses clear.<br/>Once per cycle abilities, items, and rooms refresh.<br/>Recovery happens after invasions that occur from blowback."
+      },
+      "PHASE2": {
+        "Name": "Loot Roll",
+        "Hint": ""
+      },
+      "PHASE3": {
+        "Name": "Downtime",
+        "Hint": ""
+      },
+      "PHASE4": {
+        "Name": "Dungeon Logic Review",
+        "Hint": ""
+      },
+      "PHASE5": {
+        "Name": "Calamity Roll",
+        "Hint": ""
+      },
+      "PHASE6": {
+        "Name": "Calamity",
+        "Hint": ""
+      },
+      "PHASE7": {
+        "Name": "Goal + Target",
+        "Hint": ""
+      },
+      "PHASE8": {
+        "Name": "Plan + Details",
+        "Hint": ""
+      },
+      "PHASE9": {
+        "Name": "Engagement Roll",
+        "Hint": ""
+      },
+      "PHASE10": {
+        "Name": "Raid Plan Review",
+        "Hint": ""
+      },
+      "PHASE11": {
+        "Name": "Blowback Roll",
+        "Hint": ""
+      },
+      "PHASE12": {
+        "Name": "Blowback",
+        "Hint": ""
+      }
+    },
     "ERRORS": {
       "NoActorAssigned": "No actor is assigned to your player",
       "NoMinionPackLinked": "No minion pack was found linked to your actor"
