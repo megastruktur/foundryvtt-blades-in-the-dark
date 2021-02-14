@@ -37,7 +37,7 @@
   ],
   "url": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark",
   "manifest": "https://raw.githubusercontent.com/jonasPri/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://raw.githubusercontent.com/jonasPri/foundryvtt-blades-in-the-dark/archive/master.zip",
+  "download": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark/archive/master.zip",
   "packs": [
     {
       "name": "class",
