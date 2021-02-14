@@ -1,0 +1,38 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+      <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Faction'}}"/></h1>
+      </div>
+  </header>
+
+
+  <section class="flex-vertical">
+	<label class="label-stripe">{{localize "BITD.Description"}}</label>
+    <textarea rows="2" name="data.description">{{data.description}}</textarea>
+	<label class="label-stripe">{{localize "BITD.FactionType"}}</label>
+    {{data.type}}<br><br>
+	<label class="label-stripe">{{localize "BITD.Tier"}}</label>
+    <textarea rows="1" name="data.tier">{{data.tier}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Goal"}}</label>
+    {{data.goal}}<br><br>
+    <label class="label-stripe">{{localize "BITD.NotableNPCs"}}</label>
+    <textarea rows="10" name="data.notables">{{data.notables}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Turf"}}</label>
+    <textarea rows="2" name="data.turf">{{data.turf}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Assets"}}</label>
+    <textarea rows="1" name="data.assets">{{data.assets}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Quirks"}}</label>
+    <textarea rows="1" name="data.quirks">{{data.quirks}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Allies"}}</label>
+    <textarea rows="1" name="data.allies">{{data.allies}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Enemies"}}</label>
+    <textarea rows="1" name="data.enemies">{{data.enemies}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Situation"}}</label>
+    <textarea rows="10" name="data.situation">{{data.situation}}</textarea>
+
+
+
+  </section>
+
+</form>
