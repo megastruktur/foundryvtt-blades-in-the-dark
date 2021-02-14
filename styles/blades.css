@@ -28,6 +28,15 @@
 /*
  * General Styles
  */
+:root {
+	--almost_white: #eeefff;
+	--red: #ff0000;
+	--holoblue: #33b5e5;
+	--holobluemed: #84d2ef;
+	--holobluelt: #ade1f4;
+	--redmed: #ff6666;
+	--redlt: #ffb2b2;
+}
 * {
   font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 }
@@ -124,6 +133,25 @@
   text-transform: uppercase;
   background-color: #191813;
   color: #EEEFFF;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  font-weight: bold;
+}
+* .label-stripe .hoverlink {
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+* .label-stripe .hoverlink:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* .label-stripe-red {
+  text-transform: uppercase;
+  background-color: #191813;
+  color: red;
   margin-bottom: 10px;
   position: relative;
   padding-left: 10px;
@@ -301,17 +329,101 @@
 * #character-stress label[for$="-0"] {
   margin-right: 0px;
 }
-* #abilities .item-name {
-  width: 70px;
+* #faction-items .item-name {
+  width: 150px;
 }
+* #all-items .item-name,
+* #loadout .item-name,
+* #upgrades .item-name,
+* #abilities .item-name {
+  width: auto;
+  text-align: left;
+}
+* #faction-items .item-body,
+* #loadout .item-body,
+* #upgrades .item-body,
 * #abilities .item-body {
   width: auto;
 }
+* #faction-items .item-description,
+* #loadout .item-description,
+* #upgrades .item-description,
 * #abilities .item-description {
-  width: 200px;
+  width: 300px;
 }
+* #factions .label-stripe p:first-child,
+* #loadout .label-stripe p:first-child,
+* #loadout .label-stripe-red p:first-child,
+* #upgrades .label-stripe p:first-child,
 * #abilities .label-stripe p:first-child {
   margin-right: 10px;
+}
+* .teeth-experience-red {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: float;
+  top: 0px;
+  right: 10px;
+}
+* .teeth-experience-faction {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: float !important;
+  top: 0px;
+  right: 10px;
+}
+* .teeth-experience-faction label {
+  height: 30px;
+  width: 10px;
+  background-image: url("assets/teeth/stresstooth-blue.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .teeth-experience-faction label:last-of-type {
+  margin-right: 0px;
+}
+* .teeth-experience-faction label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+* .teeth-experience-faction label[for$="-0"] i {
+  margin-top: 4px;
+}
+* .teeth-experience-faction label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* .teeth-experience-faction input {
+  display: none;
+}
+* .teeth-experience-faction input + label {
+  background-image: url("assets/teeth/stresstooth-halfgrey.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-7"] {
+  background-image: url("assets/teeth/stresstooth-blue.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-6"] {
+  background-image: url("assets/teeth/stresstooth-6.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-5"] {
+  background-image: url("assets/teeth/stresstooth-5.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-4"] {
+  background-image: url("assets/teeth/stresstooth-4.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-3"] {
+  background-image: url("assets/teeth/stresstooth-3.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-2"] {
+  background-image: url("assets/teeth/stresstooth-2.png");
+}
+* .teeth-experience-faction input:checked + label[for$="-1"] {
+  background-image: url("assets/teeth/stresstooth-red.png");
 }
 * .teeth-experience {
   display: flex;
@@ -323,6 +435,16 @@
 * .teeth-experience label {
   height: 30px;
   width: 10px;
+  background-image: url("assets/teeth/stresstooth-blue.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .teeth-experience-red label {
+  height: 30px;
+  width: 10px;
   background-image: url("assets/teeth/stresstooth-red.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -330,30 +452,39 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
+* .teeth-experience-red label:last-of-type,
 * .teeth-experience label:last-of-type {
   margin-right: 0px;
 }
+* .teeth-experience-red label[for$="-0"],
 * .teeth-experience label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
+* .teeth-experience-red label[for$="-0"] i,
 * .teeth-experience label[for$="-0"] i {
   margin-top: 4px;
 }
+* .teeth-experience-red label:hover,
 * .teeth-experience label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
+* .teeth-experience-red input,
 * .teeth-experience input {
   display: none;
 }
+* .teeth-experience-red input:checked ~ label,
 * .teeth-experience input:checked ~ label {
   background-image: url("assets/teeth/stresstooth-halfgrey.png");
 }
-* .teeth-experience input:checked + label {
+* .teeth-experience-red input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
+}
+* .teeth-experience input:checked + label {
+  background-image: url("assets/teeth/stresstooth-blue.png");
 }
 * #harm-armor {
   display: flex;
@@ -408,16 +539,22 @@
   display: none;
 }
 * #harm-armor #character-health-clock .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(180deg);
+  transform: rotate(0deg) skewY(150deg);
 }
 * #harm-armor #character-health-clock .blades-clock *:nth-child(5) {
-  transform: rotate(90deg) skewY(180deg);
+  transform: rotate(60deg) skewY(150deg);
 }
 * #harm-armor #character-health-clock .blades-clock *:nth-child(7) {
-  transform: rotate(180deg) skewY(180deg);
+  transform: rotate(120deg) skewY(150deg);
 }
 * #harm-armor #character-health-clock .blades-clock *:nth-child(9) {
-  transform: rotate(270deg) skewY(180deg);
+  transform: rotate(180deg) skewY(150deg);
+}
+* #harm-armor #character-health-clock .blades-clock *:nth-child(11) {
+  transform: rotate(240deg) skewY(150deg);
+}
+* #harm-armor #character-health-clock .blades-clock *:nth-child(13) {
+  transform: rotate(300deg) skewY(150deg);
 }
 * #harm-armor #character-armor-uses div {
   display: flex;
@@ -427,7 +564,7 @@
 * #attributes {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 245px;
 }
 * #attributes .stripe {
   background-color: #191813;
@@ -439,6 +576,7 @@
 * #attributes .attribute-skill-label {
   font-weight: bold;
   text-transform: uppercase;
+  margin-right: 10px;
 }
 * #attributes .attribute-skill-label {
   letter-spacing: 1px;
@@ -447,14 +585,22 @@
   position: relative;
   margin-bottom: 10px;
 }
-* #attributes .attributes-exp .stripe-tooth-body {
+* #attributes .attributes-exp .stripe-tooth-body-red {
   display: flex;
   /* Hide the browser's default checkbox */
   position: absolute;
   top: 0px;
   right: 0px;
 }
-* #attributes .attributes-exp .stripe-tooth-body label {
+* #attributes .attributes-exp .stripe-tooth-body-blue {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-left: 40px;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red label {
   height: 30px;
   width: 10px;
   background-image: url("assets/teeth/xptooth-red.png");
@@ -464,30 +610,65 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-* #attributes .attributes-exp .stripe-tooth-body label:last-of-type {
+* #attributes .attributes-exp .stripe-tooth-body-blue label {
+  height: 30px;
+  width: 10px;
+  background-image: url("assets/teeth/xptooth-blue.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red label:last-of-type {
   margin-right: 0px;
 }
-* #attributes .attributes-exp .stripe-tooth-body label[for$="-0"] {
+* #attributes .attributes-exp .stripe-tooth-body-blue label:last-of-type {
+  margin-right: 0px;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
-* #attributes .attributes-exp .stripe-tooth-body label[for$="-0"] i {
+* #attributes .attributes-exp .stripe-tooth-body-blue label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red label[for$="-0"] i {
   margin-top: 4px;
 }
-* #attributes .attributes-exp .stripe-tooth-body label:hover {
+* #attributes .attributes-exp .stripe-tooth-body-blue label[for$="-0"] i {
+  margin-top: 4px;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* #attributes .attributes-exp .stripe-tooth-body input {
+* #attributes .attributes-exp .stripe-tooth-body-blue label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red input {
   display: none;
 }
-* #attributes .attributes-exp .stripe-tooth-body input:checked ~ label {
+* #attributes .attributes-exp .stripe-tooth-body-blue input {
+  display: none;
+}
+* #attributes .attributes-exp .stripe-tooth-body-red input:checked ~ label {
   background-image: url("assets/teeth/xptooth-white.png");
 }
-* #attributes .attributes-exp .stripe-tooth-body input:checked + label {
+* #attributes .attributes-exp .stripe-tooth-body-blue input:checked ~ label {
+  background-image: url("assets/teeth/xptooth-white.png");
+}
+* #attributes .attributes-exp .stripe-tooth-body-red input:checked + label {
   background-image: url("assets/teeth/xptooth-red.png");
+}
+* #attributes .attributes-exp .stripe-tooth-body-blue input:checked + label {
+  background-image: url("assets/teeth/xptooth-blue.png");
 }
 * #attributes .attributes-container {
   display: flex;
@@ -535,12 +716,178 @@
 * #attributes .attributes-container * {
   margin-right: 5px;
 }
+* #systems {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+* #systems .stripe {
+  background-color: #191813;
+  color: #EEEFFF;
+  font-size: 17px;
+  padding-left: 5px;
+}
+* #systems .stripe-damage {
+  background-color: #6E0101;
+  color: #EEEFFF;
+  font-size: 17px;
+  padding-left: 5px;
+}
+* #systems .system-label,
+* #systems .system-skill-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+* #systems .system-label-damage {
+  padding-left: 25px;
+  text-transform: uppercase;
+}
+* #systems .system-skill-label {
+  letter-spacing: 1px;
+}
+* #systems .systems-value {
+  position: relative;
+  margin-bottom: 10px;
+}
+* #systems .systems-value .stripe-tooth-body-red {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+* #systems .systems-value .stripe-tooth-body-blue {
+  display: flex;
+  /* Hide the browser's default checkbox */
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+* #systems .systems-value .stripe-tooth-body-red label {
+  height: 30px;
+  width: 10px;
+  background-image: url("assets/teeth/xptooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #systems .systems-value .stripe-tooth-body-blue label {
+  height: 30px;
+  width: 10px;
+  background-image: url("assets/teeth/xptooth-blue.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #systems .systems-value .stripe-tooth-body-red label:last-of-type {
+  margin-right: 0px;
+}
+* #systems .systems-value .stripe-tooth-body-blue label:last-of-type {
+  margin-right: 0px;
+}
+* #systems .systems-value .stripe-tooth-body-red label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+* #systems .systems-value .stripe-tooth-body-blue label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+* #systems .systems-value .stripe-tooth-body-red label[for$="-0"] i {
+  margin-top: 4px;
+}
+* #systems .systems-value .stripe-tooth-body-blue label[for$="-0"] i {
+  margin-top: 4px;
+}
+* #systems .systems-value .stripe-tooth-body-red label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* #systems .systems-value .stripe-tooth-body-blue label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* #systems .systems-value .stripe-tooth-body-red input {
+  display: none;
+}
+* #systems .systems-value .stripe-tooth-body-blue input {
+  display: none;
+}
+* #systems .systems-value .stripe-tooth-body-red input:checked ~ label {
+  background-image: url("assets/teeth/xptooth-white.png");
+}
+* #systems .systems-value .stripe-tooth-body-blue input:checked ~ label {
+  background-image: url("assets/teeth/xptooth-white.png");
+}
+* #systems .systems-value .stripe-tooth-body-red input:checked + label {
+  background-image: url("assets/teeth/xptooth-red.png");
+}
+* #systems .systems-value .stripe-tooth-body-blue input:checked + label {
+  background-image: url("assets/teeth/xptooth-blue.png");
+}
+* #systems .systems-container {
+  display: flex;
+  margin: 3px 0px;
+  display: flex;
+  /* Hide the browser's default checkbox */
+}
+* #systems .systems-container label {
+  height: 15px;
+  width: 15px;
+  background-color: #191813;
+  vertical-align: middle;
+  border: 2px solid #191813;
+  border-radius: 24px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* #systems .systems-container label[for$="-0"] {
+  height: 5px;
+  width: 5px;
+  border-radius: 24px;
+  background-image: none !important;
+  background-color: red !important;
+  margin-right: 0px;
+}
+* #systems .systems-container label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+* #systems .systems-container input {
+  display: none;
+}
+* #systems .systems-container input:checked ~ label {
+  background-color: #EEEFFF;
+}
+* #systems .systems-container input:checked + label {
+  transition: filter 0.1s;
+  cursor: pointer;
+  background-color: #191813;
+}
+* #systems .systems-container input:checked + label:hover {
+  filter: brightness(0.7);
+  opacity: 0.7;
+}
+* #systems .systems-container * {
+  margin-right: 5px;
+}
 * .item {
   justify-content: space-between;
+  font-weight: bold;
 }
+* .item .ship-body,
 * .item .item-body {
   margin-bottom: 10px;
 }
+* .item .ship-body *,
 * .item .item-body * {
   margin-right: 10px;
 }
@@ -548,15 +895,22 @@
   font-style: italic;
   text-align: justify;
 }
+* #all-items .item div {
+	flex-grow: 0;
+}
 * .item div {
-  flex-grow: 2;
+  flex-grow: 3;
 }
 * .item .item-control {
   flex-grow: 1;
 }
+* #all-items .item .item-body {
+	width: auto;
+}
+* .item .ship-body,
 * .item .item-body,
 * .item .item-class-label {
-  width: 100px;
+  width: 135px;
 }
 * .item-class-label {
   margin-bottom: 10px;
@@ -566,6 +920,7 @@
 * #alias {
   margin-bottom: 10px;
 }
+* .character-healing-clock,
 * .coins {
   display: flex;
   /* Hide the browser's default checkbox */
@@ -575,6 +930,34 @@
   height: 15px;
   width: 15px;
   background-color: #DAA520;
+  vertical-align: middle;
+  border: 1px solid #191813;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .coins.healing label,
+* .coins.debt label {
+  height: 15px;
+  width: 15px;
+  background-color: #FC0303;
+  vertical-align: middle;
+  border: 1px solid #191813;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .coins.gambits label {
+  height: 15px;
+  width: 15px;
+  background-color: #03A33E;
+  vertical-align: middle;
+  border: 1px solid #191813;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .coins.loadout label {
+  height: 15px;
+  width: 15px;
+  background-color: #191813;
   vertical-align: middle;
   border: 1px solid #191813;
   transition: filter 0.1s;
@@ -596,6 +979,19 @@
 * .coins input:checked + label {
   background-color: #DAA520;
 }
+* .coins.healing input:checked + label,
+* .coins.debt input:checked + label {
+  background-color: #FC0303;
+}
+* .coins.gambits input:checked + label {
+  background-color: #03A33E;
+}
+* .coins.loadout input:checked + label {
+  background-color: #191813;
+}
+* #loadout-max .coins label {
+  margin-left: 15px;
+}
 * .coins input ~ label {
   margin-right: 3px;
   margin-bottom: 3px;
@@ -609,8 +1005,11 @@
   filter: brightness(0.8);
   opacity: 0.9;
 }
+* .coins.healing {
+  width: 42px;
+}
 * .coins.coins-hands {
-  width: 36px;
+  width: 72px;
 }
 * .coins.coins-stashed {
   width: 190px;
@@ -881,7 +1280,7 @@
 * #crew-hold input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-* #crew-tier {
+* #crew-qual {
   background-color: #999;
   height: 33px;
   width: 145px;
@@ -891,15 +1290,15 @@
   display: flex;
   /* Hide the browser's default checkbox */
 }
-* #crew-tier label {
+* #crew-qual label {
   transition: filter 0.1s;
   cursor: pointer;
 }
-* #crew-tier label:hover {
+* #crew-qual label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* #crew-tier label:not([for$="-0"]) {
+* #crew-qual label:not([for$="-0"]) {
   height: 18px;
   width: 18px;
   background-color: #191813;
@@ -907,18 +1306,18 @@
   border: 2px solid #191813;
   border-radius: 9px;
 }
-* #crew-tier input {
+* #crew-qual input {
   display: none;
 }
-* #crew-tier input:checked ~ label:not([for$="-0"]) {
+* #crew-qual input:checked ~ label:not([for$="-0"]) {
   border-color: gray;
   background-color: #EEEFFF;
 }
-* #crew-tier input:checked + label:not([for$="-0"]) {
+* #crew-qual input:checked + label:not([for$="-0"]) {
   background-color: #191813;
   border-color: #191813;
 }
-* #crew-tier > * {
+* #crew-qual > * {
   margin-right: 5px;
 }
 * #heat-wanted {
@@ -1072,16 +1471,16 @@
   display: none;
 }
 * .clock-block .clocks.clocks-4 .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(180deg);
+  transform: rotate(-45deg) skewY(180deg);
 }
 * .clock-block .clocks.clocks-4 .blades-clock *:nth-child(5) {
-  transform: rotate(90deg) skewY(180deg);
+  transform: rotate(45deg) skewY(180deg);
 }
 * .clock-block .clocks.clocks-4 .blades-clock *:nth-child(7) {
-  transform: rotate(180deg) skewY(180deg);
+  transform: rotate(135deg) skewY(180deg);
 }
 * .clock-block .clocks.clocks-4 .blades-clock *:nth-child(9) {
-  transform: rotate(270deg) skewY(180deg);
+  transform: rotate(180deg) skewY(180deg);
 }
 * .clock-block .clocks.clocks-6 {
   position: relative;
@@ -1119,22 +1518,22 @@
   display: none;
 }
 * .clock-block .clocks.clocks-6 .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(150deg);
+  transform: rotate(-30deg) skewY(150deg);
 }
 * .clock-block .clocks.clocks-6 .blades-clock *:nth-child(5) {
-  transform: rotate(60deg) skewY(150deg);
+  transform: rotate(30deg) skewY(150deg);
 }
 * .clock-block .clocks.clocks-6 .blades-clock *:nth-child(7) {
-  transform: rotate(120deg) skewY(150deg);
+  transform: rotate(90deg) skewY(150deg);
 }
 * .clock-block .clocks.clocks-6 .blades-clock *:nth-child(9) {
-  transform: rotate(180deg) skewY(150deg);
+  transform: rotate(150deg) skewY(150deg);
 }
 * .clock-block .clocks.clocks-6 .blades-clock *:nth-child(11) {
-  transform: rotate(240deg) skewY(150deg);
+  transform: rotate(210deg) skewY(150deg);
 }
 * .clock-block .clocks.clocks-6 .blades-clock *:nth-child(13) {
-  transform: rotate(300deg) skewY(150deg);
+  transform: rotate(270deg) skewY(150deg);
 }
 * .clock-block .clocks.clocks-8 {
   position: relative;
@@ -1172,28 +1571,164 @@
   display: none;
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(3) {
-  transform: rotate(0deg) skewY(135deg);
+  transform: rotate(-22.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(5) {
-  transform: rotate(45deg) skewY(135deg);
+  transform: rotate(22.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(7) {
-  transform: rotate(90deg) skewY(135deg);
+  transform: rotate(67.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(9) {
-  transform: rotate(135deg) skewY(135deg);
+  transform: rotate(112.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(11) {
-  transform: rotate(180deg) skewY(135deg);
+  transform: rotate(157.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(13) {
-  transform: rotate(225deg) skewY(135deg);
+  transform: rotate(202.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(15) {
-  transform: rotate(270deg) skewY(135deg);
+  transform: rotate(247.5deg) skewY(135deg);
 }
 * .clock-block .clocks.clocks-8 .blades-clock *:nth-child(17) {
-  transform: rotate(315deg) skewY(135deg);
+  transform: rotate(292.5deg) skewY(135deg);
+}
+* .clock-block .clocks.clocks-10 {
+  position: relative;
+}
+* .clock-block .clocks.clocks-10 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+* .clock-block .clocks.clocks-10 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .clock-block .clocks.clocks-10 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* .clock-block .clocks.clocks-10 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+* .clock-block .clocks.clocks-10 .blades-clock input[value="0"] {
+  display: none;
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(3) {
+  transform: rotate(-18deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(5) {
+  transform: rotate(18deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(7) {
+  transform: rotate(54deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(9) {
+  transform: rotate(90deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(11) {
+  transform: rotate(126deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(13) {
+  transform: rotate(162deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(15) {
+  transform: rotate(198deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(17) {
+  transform: rotate(234deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(19) {
+  transform: rotate(270deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-10 .blades-clock *:nth-child(21) {
+  transform: rotate(306deg) skewY(127.5deg);
+}
+* .clock-block .clocks.clocks-12 {
+  position: relative;
+}
+* .clock-block .clocks.clocks-12 .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+* .clock-block .clocks.clocks-12 .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+* .clock-block .clocks.clocks-12 .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+* .clock-block .clocks.clocks-12 .blades-clock input {
+  position: absolute;
+  display: none;
+}
+* .clock-block .clocks.clocks-12 .blades-clock input[value="0"] {
+  display: none;
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(3) {
+  transform: rotate(-15deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(5) {
+  transform: rotate(15deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(7) {
+  transform: rotate(45deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(9) {
+  transform: rotate(75deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(11) {
+  transform: rotate(105deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(13) {
+  transform: rotate(135deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(15) {
+  transform: rotate(165deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(17) {
+  transform: rotate(195deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(19) {
+  transform: rotate(225deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(21) {
+  transform: rotate(255deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(23) {
+  transform: rotate(285deg) skewY(123.75deg);
+}
+* .clock-block .clocks.clocks-12 .blades-clock *:nth-child(25) {
+  transform: rotate(315deg) skewY(123.75deg);
 }
 * .clock-block .blades-clock-name-type > * {
   margin-bottom: 10px;

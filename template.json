@@ -1,6 +1,6 @@
 {
 "Actor": {
-  "types": ["character", "crew", "\uD83D\uDD5B clock"],
+  "types": ["character", "crew", "\uD83D\uDD5B clock", "factions"],
   "character": {
     "alias": "",
     "stress": {
@@ -141,10 +141,13 @@
     "name": "",
     "type": 4,
     "value": "0"
+  },
+    "factions": {
+	"name": ""
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+  "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
   "templates": {
     "default": {
       "description": ""
@@ -156,6 +159,38 @@
     },
     "logic": {
       "logic": ""
+    }
+  },
+  "faction": {
+    "templates": ["default"],
+	"type": "",
+  "tier": 0,
+	"goal_1": "",
+  "goal_1_clock_max": 0,
+  "goal_2": "",
+	"goal_2_clock_max": 0,
+	"turf": "",
+	"assets": "",
+	"quirks": "",
+	"notables": "",
+	"allies": "",
+	"enemies": "",
+	"situation": "",
+  "goal_clock": 0,
+  "notes": "",
+  "hold": {
+    "value": [1],
+    "max": 2,
+    "max_default": 2,
+    "name_default": "BITD.Hold",
+    "name": "BITD.Hold"
+  },
+	"status": {
+      "value": [4],
+      "max": 7,
+      "max_default": 7,
+      "name_default": "BITD.Status",
+      "name": "BITD.Status"
     }
   },
   "item": {
@@ -417,3 +452,4 @@
   }
 }
 }
+

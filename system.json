@@ -2,7 +2,7 @@
   "name": "blades-in-the-dark",
   "title": "Blades in the Dark",
   "description": "Blades in the dark game system.",
-  "version": "2.15",
+  "version": "2.15.1",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
@@ -35,9 +35,9 @@
       "path": "lang/pl.json"
     }
   ],
-  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/2.15.zip",
+  "url": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark",
+  "manifest": "https://raw.githubusercontent.com/jonasPri/foundryvtt-blades-in-the-dark/master/system.json",
+  "download": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark/archive/master.zip",
   "packs": [
     {
       "name": "class",
@@ -107,6 +107,13 @@
       "label": "Crew Abilities",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_abilities.db",
+      "entity": "Item"
+    },
+	{
+      "name": "faction",
+      "label": "Factions",
+      "system": "blades-in-the-dark",
+      "path": "./packs/factions.db",
       "entity": "Item"
     }
   ]

@@ -1,0 +1,24 @@
+<div id="loadout" class="flex-vertical">
+		
+		<div class="label-stripe">
+		
+           <p>{{localize "BITD.Factions"}}</p>
+          <p><a class="item-add-popup" data-item-type="faction"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <div>
+          {{#each actor.items as |faction id|}}
+          {{#if (eq faction.type "faction")}}
+            <div class="item flex-horizontal" data-item-id="{{faction._id}}">
+              <div class="item-body flex-horizontal">
+                <img src="{{faction.img}}" title="{{faction.name}}" width="24" height="24"/>
+                <div class="item-name">{{faction.name}}</div>
+                <div class="item-description">{{faction.data.description}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+          {{/if}}
+          {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="faction">{{localize "BITD.AddItem"}}</a></div>
+        </div>
+
+</div>
