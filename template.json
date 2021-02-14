@@ -158,6 +158,27 @@
       "logic": ""
     }
   },
+    "faction": {
+    "templates": ["default"],
+	"type": "",
+	"tier": 0,
+	"goal": "",
+	"goal_clock_max": 0,
+	"turf": "",
+	"assets": "",
+	"quirks": "",
+	"notables": "",
+	"allies": "",
+	"enemies": "",
+	"situation": "",
+	"goal_clock": 0,
+	"status": {
+      "value": [4],
+      "max": 7,
+      "max_default": 7,
+      "name_default": "BITD.Status",
+      "name": "BITD.Status"
+    },
   "item": {
     "templates": ["default", "logic"],
     "class": "",
