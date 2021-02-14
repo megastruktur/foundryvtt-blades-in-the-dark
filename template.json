@@ -144,7 +144,7 @@
   }
 },
 "Item": {
-  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+  "types": ["item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability", "faction"],
   "templates": {
     "default": {
       "description": ""
