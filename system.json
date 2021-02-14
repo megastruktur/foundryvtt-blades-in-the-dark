@@ -1,12 +1,12 @@
 {
   "name": "blades-in-the-dark_jonas",
-  "title": "Blades in the Dark",
+  "title": "Blades in the Dark v2",
   "description": "Blades in the dark game system.",
-  "version": "2.15",
+  "version": "2.X",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
-  "author": "megastruktur",
+  "author": "jonasPri",
   "esmodules": [
     "module/blades.js"
   ],
@@ -35,84 +35,84 @@
       "path": "lang/pl.json"
     }
   ],
-  "url": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark",
-  "manifest": "https://raw.githubusercontent.com/jonasPri/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark/archive/master.zip",
+  "url": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark_jonas",
+  "manifest": "https://raw.githubusercontent.com/jonasPri/foundryvtt-blades-in-the-dark_jonas/master/system.json",
+  "download": "https://github.com/jonasPri/foundryvtt-blades-in-the-dark_jonas/archive/master.zip",
   "packs": [
     {
       "name": "class",
       "label": "Classes",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/classes.db",
       "entity": "Item"
     },
     {
       "name": "heritage",
       "label": "Heritages",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/heritages.db",
       "entity": "Item"
     },
     {
       "name": "vice",
       "label": "Vices",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/vices.db",
       "entity": "Item"
     },
     {
       "name": "background",
       "label": "Backgrounds",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/backgrounds.db",
       "entity": "Item"
     },
     {
       "name": "item",
       "label": "Items",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/items.db",
       "entity": "Item"
     },
     {
       "name": "ability",
       "label": "Abilities",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/abilities.db",
       "entity": "Item"
     },
     {
       "name": "crew_reputation",
       "label": "Crew Reputation",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/crew_reputation.db",
       "entity": "Item"
     },
     {
       "name": "crew_type",
       "label": "Crew Types",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/crew_types.db",
       "entity": "Item"
     },
     {
       "name": "crew_upgrade",
       "label": "Crew Upgrades",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/crew_upgrades.db",
       "entity": "Item"
     },
     {
       "name": "crew_ability",
       "label": "Crew Abilities",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/crew_abilities.db",
       "entity": "Item"
     },
 	{
       "name": "faction",
       "label": "Factions",
-      "system": "blades-in-the-dark",
+      "system": "blades-in-the-dark_jonas",
       "path": "./packs/factions.db",
       "entity": "Item"
     }
