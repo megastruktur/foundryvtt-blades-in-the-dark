@@ -112,7 +112,7 @@
 	{
       "name": "faction",
       "label": "Factions",
-      "system": "scum-and-villainy",
+      "system": "blades-in-the-dark",
       "path": "./packs/factions.db",
       "entity": "Item"
     }
