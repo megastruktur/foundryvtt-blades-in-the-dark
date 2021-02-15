@@ -56,13 +56,11 @@
 				{{#multiboxes faction.data.hold}}
 				<div class="flex-horizontal">
 				  <div class="gray-label">{{localize "BITD.Weak"}}</div>
-				  <input id="faction-hold-weak" type="radio" name="faction.data.hold" value="weak">
-				  <label for="faction-hold-weak"></label>
+				  <input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="1" type="radio" id="faction-{{id}}-hold-weak" value="weak" dtype="Radio">
 				</div>
 				<div class="flex-horizontal">
 				  <div class="gray-label">{{localize "BITD.Strong"}}</div>
-				  <input id="faction-hold-strong" type="radio" name="faction.data.hold" value="strong">
-				  <label for="faction-hold-strong"></label>
+				  <input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="1" type="radio" id="faction-{{id}}-hold-strong" value="strong" dtype="Radio">
 				</div>
 				{{/multiboxes}}
 			  </div>
