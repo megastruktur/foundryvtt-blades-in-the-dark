@@ -4,13 +4,13 @@ import { BladesSheet } from "./blades-sheet.js";
 /**
  * @extends {BladesSheet}
  */
-export class BladesUniverseSheet extends BladesSheet {
+export class BladesFactonSheet extends BladesSheet {
 
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-  	  classes: ["scum-and-villainy", "sheet", "actor"],
-  	  template: "systems/scum-and-villainy/templates/universe-sheet.html",
+  	  classes: ["blades-in-the-dark", "sheet", "actor"],
+  	  template: "systems/blades-in-the-dark/templates/faction-sheet.html",
       width: 800,
       height: 'auto',
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content"}]
