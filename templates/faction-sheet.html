@@ -51,15 +51,13 @@
 				</div>
 			  </div>
 			
-			  <div id="faction-jobs" class="teeth-experience">
-				<label for="faction-{{id}}-jobs-0">{{localize "BITD.Jobs"}}</label>
-				<label for="faction-{{id}}-jobs-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>
-				{{#multiboxes faction.data.jobs.value}}
-					<input class="update-box" data-utype="jobs" data-item="{{faction._id}}" data-value="0" type="radio" id="faction-{{id}}-jobs-0" value="0" dtype="Radio">
-					{{#times_from_1 faction.data.jobs.max}}
-						<input class="update-box" data-utype="jobs" data-item="{{faction._id}}" data-value="{{this}}" type="radio" id="faction-{{id}}-jobs-{{this}}" value="{{this}}" dtype="Radio">
-						<label for="faction-{{id}}-jobs-{{this}}"></label>
-					{{/times_from_1}}
+			  <div id="faction-hold" class="teeth-experience">
+				<label for="faction-{{id}}-jobs-0">{{localize "BITD.Hold"}}</label>
+				{{#multiboxes faction.data.hold}}
+				<input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="W" type="radio" id="faction-{{id}}-hold-w" value="w" dtype="Radio">
+				<label for="faction-{{id}}-hold-w"></label>
+				<input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="S" type="radio" id="faction-{{id}}-hold-s" value="s" dtype="Radio">
+				<label for="faction-{{id}}-hold-s"></label>
 					{{/multiboxes}}
 			  </div>
 			

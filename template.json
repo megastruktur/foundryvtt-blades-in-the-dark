@@ -164,7 +164,8 @@
   "faction": {
     "templates": ["default"],
 	"type": "",
-	"tier": 0,
+  "tier": 0,
+  "hold": "",
 	"goal": "",
 	"goal_clock_max": 0,
 	"turf": "",

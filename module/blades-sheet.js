@@ -117,6 +117,9 @@ export class BladesSheet extends ActorSheet {
     
     if ( update_type == "status" ) {
       var update = {_id: item_id, data:{status:{value: update_value}}};
+    }
+    else if (update_type == "hold") {
+      var update = {_id: item_id, data:{hold:{value: update_value}}};
     } else {
       console.log("update attempted for type undefined in blades-sheet.js onUpdateBoxClick function");
       return;
