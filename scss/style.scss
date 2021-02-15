@@ -494,6 +494,7 @@ $hover-brightness: 0.8;
     border-top: 3px solid $almost_black;
     @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
     width: 221px;
+    background-color: black;
   }
 
   #crew-tier {
