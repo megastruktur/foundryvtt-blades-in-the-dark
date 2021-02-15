@@ -51,14 +51,20 @@
 				</div>
 			  </div>
 			
-			  <div id="faction-hold" class="teeth-experience">
-				<label for="faction-{{id}}-jobs-0">{{localize "BITD.Hold"}}</label>
-				{{#multiboxes faction.data.hold}}
-				<input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="W" type="radio" id="faction-{{id}}-hold-w" value="w" dtype="Radio">
-				<label for="faction-{{id}}-hold-w"></label>
-				<input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="S" type="radio" id="faction-{{id}}-hold-s" value="s" dtype="Radio">
-				<label for="faction-{{id}}-hold-s"></label>
-					{{/multiboxes}}
+			  <div id="faction-hold" class="flex-horizontal">
+				<div class="black-label">{{localize "BITD.Hold"}}</div>
+				{{#multiboxes data.hold}}
+				<div class="flex-horizontal">
+				  <div class="gray-label">{{localize "BITD.Weak"}}</div>
+				  <input id="faction-hold-weak" type="radio" name="data.hold" value="weak">
+				  <label for="faction-hold-weak"></label>
+				</div>
+				<div class="flex-horizontal">
+				  <div class="gray-label">{{localize "BITD.Strong"}}</div>
+				  <input id="faction-hold-strong" type="radio" name="data.hold" value="strong">
+				  <label for="faction-hold-strong"></label>
+				</div>
+				{{/multiboxes}}
 			  </div>
 			
               
