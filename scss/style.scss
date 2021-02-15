@@ -490,13 +490,6 @@ $hover-brightness: 0.8;
     width: 221px;
   }
 
-  #faction-hold {
-    border-top: 3px solid $almost_black;
-    @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
-    width: 221px;
-    background-color: black;
-  }
-
   #crew-tier {
 
     background-color: $gray;
