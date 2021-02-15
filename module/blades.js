@@ -49,6 +49,8 @@ Hooks.once("init", async function() {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
+  
+  Actors.registeredSheets.forEach(element => console.log(element.Actor.name));
 
 
   // Is the value Turf side.

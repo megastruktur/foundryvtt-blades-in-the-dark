@@ -2,7 +2,7 @@
   "name": "blades-in-the-dark",
   "title": "Blades in the Dark v2",
   "description": "Blades in the dark game system.",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,
@@ -108,13 +108,6 @@
       "system": "blades-in-the-dark",
       "path": "./packs/crew_abilities.db",
       "entity": "Item"
-    },
-		{
-      "name": "factions",
-      "label": "Factions",
-      "system": "blades-in-the-dark",
-      "path": "./packs/factionsHolder.db",
-      "entity": "Actor"
     },
 	{
       "name": "faction",
