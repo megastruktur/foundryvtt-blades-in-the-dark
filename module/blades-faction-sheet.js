@@ -4,7 +4,7 @@ import { BladesSheet } from "./blades-sheet.js";
 /**
  * @extends {BladesSheet}
  */
-export class BladesFactonSheet extends BladesSheet {
+export class BladesFactionSheet extends BladesSheet {
 
   /** @override */
 	static get defaultOptions() {

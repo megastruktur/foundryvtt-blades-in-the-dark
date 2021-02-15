@@ -181,7 +181,8 @@
       "max_default": 7,
       "name_default": "BITD.Status",
       "name": "BITD.Status"
-    },
+    }
+  },
   "item": {
     "templates": ["default", "logic"],
     "class": "",
@@ -441,4 +442,4 @@
   }
 }
 }
-}
+
