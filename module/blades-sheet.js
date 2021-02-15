@@ -11,6 +11,7 @@ export class BladesSheet extends ActorSheet {
 	activateListeners(html) {
     super.activateListeners(html);
     html.find(".item-add-popup").click(this._onItemAddClick.bind(this));
+    html.find(".update-box").click(this._onUpdateBoxClick.bind(this));
 
     // This is a workaround until is being fixed in FoundryVTT.
     if ( this.options.submitOnChange ) {
@@ -103,6 +104,29 @@ export class BladesSheet extends ActorSheet {
 
   }
 
+  /* -------------------------------------------- */
+
+  async _onUpdateBoxClick(event) {
+    event.preventDefault();
+    const item_id = $(event.currentTarget).data("item");
+    var update_value = $(event.currentTarget).data("value");
+      const update_type = $(event.currentTarget).data("utype");
+      if ( update_value == undefined) {
+      update_value = document.getElementById('fac-' + update_type + '-' + item_id).value;
+    };
+    
+    if ( update_type == "status" ) {
+      var update = {_id: item_id, data:{status:{value: update_value}}};
+    } else {
+      console.log("update attempted for type undefined in blades-sheet.js onUpdateBoxClick function");
+      return;
+    };
+    console.log(update);
+    await this.actor.updateEmbeddedEntity("OwnedItem", update);
+    
+     
+    }
+  
   /* -------------------------------------------- */
 
 }
