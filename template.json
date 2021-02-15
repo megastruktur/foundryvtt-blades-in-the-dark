@@ -165,8 +165,6 @@
     "templates": ["default"],
 	"type": "",
   "tier": 0,
-  "hold": ["strong"],
-  "hold_types": ["weak", "strong"],
 	"goal": "",
 	"goal_clock_max": 0,
 	"turf": "",
@@ -176,7 +174,14 @@
 	"allies": "",
 	"enemies": "",
 	"situation": "",
-	"goal_clock": 0,
+  "goal_clock": 0,
+  "hold": {
+    "value": [1],
+    "max": 2,
+    "max_default": 2,
+    "name_default": "BITD.Hold",
+    "name": "BITD.Hold"
+  },
 	"status": {
       "value": [4],
       "max": 7,
