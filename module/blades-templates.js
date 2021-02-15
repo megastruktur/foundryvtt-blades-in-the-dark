@@ -12,7 +12,8 @@ export const preloadHandlebarsTemplates = async function() {
     "systems/blades-in-the-dark/templates/parts/coins.html",
     "systems/blades-in-the-dark/templates/parts/attributes.html",
     "systems/blades-in-the-dark/templates/parts/turf-list.html",
-    "systems/blades-in-the-dark/templates/parts/cohort-block.html"
+    "systems/blades-in-the-dark/templates/parts/cohort-block.html",
+    "systems/blades-in-the-dark/templates/parts/factions.html"
   ];
 
   // Load the template parts
