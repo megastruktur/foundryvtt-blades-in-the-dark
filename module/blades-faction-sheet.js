@@ -11,7 +11,7 @@ export class BladesFactionSheet extends BladesSheet {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/faction-sheet.html",
-      width: 800,
+      width: 900,
       height: 'auto',
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content"}]
     });
