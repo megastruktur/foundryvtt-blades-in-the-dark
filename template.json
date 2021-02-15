@@ -1,6 +1,6 @@
 {
 "Actor": {
-  "types": ["character", "crew", "\uD83D\uDD5B clock"],
+  "types": ["character", "crew", "\uD83D\uDD5B clock", "factions"],
   "character": {
     "alias": "",
     "stress": {
@@ -141,6 +141,9 @@
     "name": "",
     "type": 4,
     "value": "0"
+  },
+    "factions": {
+	"name": ""
   }
 },
 "Item": {
