@@ -41,4 +41,11 @@ export class BladesItemSheet extends ItemSheet {
   }
 
   /* -------------------------------------------- */
+
+  /** @override */
+getData() {
+  const data = super.getData();
+  data.isGm = game.user.isGm;
+  return data;
+}
 }

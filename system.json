@@ -2,7 +2,7 @@
   "name": "blades-in-the-dark",
   "title": "Blades in the Dark v2",
   "description": "Blades in the dark game system.",
-  "version": "2.1.30",
+  "version": "2.1.31",
   "minimumCoreVersion": "0.7.2",
   "compatibleCoreVersion": "0.7.9",
   "templateVersion": 1,

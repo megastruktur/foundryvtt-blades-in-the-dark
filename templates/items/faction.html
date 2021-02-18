@@ -15,25 +15,25 @@
 	<label class="label-stripe">{{localize "BITD.Tier"}}</label>
     <textarea rows="1" name="data.tier">{{data.tier}}</textarea>
 	<label class="label-stripe">{{localize "BITD.Notes"}}</label>
-    <textarea rows="2" name="data.turf">{{data.notes}}</textarea>
-    {{#if game.user.isGM }}
-	<label class="label-stripe">{{localize "BITD.Goal"}}</label>
-    Clock {{data.goal_1_clock_max}}:<br>{{data.goal_1}}<br><br>
-    Clock {{data.goal_2_clock_max}}:<br>{{data.goal_2}}<br><br>
-    <label class="label-stripe">{{localize "BITD.NotableNPCs"}}</label>
-    <textarea rows="10" name="data.notables">{{data.notables}}</textarea>
-	<label class="label-stripe">{{localize "BITD.Turf"}}</label>
-    <textarea rows="2" name="data.turf">{{data.turf}}</textarea>
-	<label class="label-stripe">{{localize "BITD.Assets"}}</label>
-    <textarea rows="1" name="data.assets">{{data.assets}}</textarea>
-	<label class="label-stripe">{{localize "BITD.Quirks"}}</label>
-    <textarea rows="1" name="data.quirks">{{data.quirks}}</textarea>
-	<label class="label-stripe">{{localize "BITD.Allies"}}</label>
-    <textarea rows="1" name="data.allies">{{data.allies}}</textarea>
-	<label class="label-stripe">{{localize "BITD.Enemies"}}</label>
-    <textarea rows="1" name="data.enemies">{{data.enemies}}</textarea>
-	<label class="label-stripe">{{localize "BITD.Situation"}}</label>
-    <textarea rows="10" name="data.situation">{{data.situation}}</textarea>
+    <textarea rows="2" name="data.notes">{{data.notes}}</textarea>
+    {{#if data.isGM }}
+        <label class="label-stripe">{{localize "BITD.Goal"}}</label>
+        Clock {{data.goal_1_clock_max}}:<br>{{data.goal_1}}<br><br>
+        Clock {{data.goal_2_clock_max}}:<br>{{data.goal_2}}<br><br>
+        <label class="label-stripe">{{localize "BITD.NotableNPCs"}}</label>
+        <textarea rows="10" name="data.notables">{{data.notables}}</textarea>
+        <label class="label-stripe">{{localize "BITD.Turf"}}</label>
+        <textarea rows="2" name="data.turf">{{data.turf}}</textarea>
+        <label class="label-stripe">{{localize "BITD.Assets"}}</label>
+        <textarea rows="1" name="data.assets">{{data.assets}}</textarea>
+        <label class="label-stripe">{{localize "BITD.Quirks"}}</label>
+        <textarea rows="1" name="data.quirks">{{data.quirks}}</textarea>
+        <label class="label-stripe">{{localize "BITD.Allies"}}</label>
+        <textarea rows="1" name="data.allies">{{data.allies}}</textarea>
+        <label class="label-stripe">{{localize "BITD.Enemies"}}</label>
+        <textarea rows="1" name="data.enemies">{{data.enemies}}</textarea>
+        <label class="label-stripe">{{localize "BITD.Situation"}}</label>
+        <textarea rows="10" name="data.situation">{{data.situation}}</textarea>
     {{/if}}
   </section>
 
