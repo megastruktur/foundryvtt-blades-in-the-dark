@@ -14,11 +14,10 @@
     {{data.type}}<br><br>
 	<label class="label-stripe">{{localize "BITD.Tier"}}</label>
     <textarea rows="1" name="data.tier">{{data.tier}}</textarea>
-    {{#if game.user.isGM }}
 	<label class="label-stripe">{{localize "BITD.Notes"}}</label>
     <textarea rows="2" name="data.notes">{{data.notes}}</textarea>
-    {{/if}}
-    {{#if data.isGm }}
+    
+    {{#if isGm }}
         <label class="label-stripe">{{localize "BITD.Goal"}}</label>
         Clock {{data.goal_1_clock_max}}:<br>{{data.goal_1}}<br><br>
         Clock {{data.goal_2_clock_max}}:<br>{{data.goal_2}}<br><br>
