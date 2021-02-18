@@ -177,6 +177,7 @@
 	"enemies": "",
 	"situation": "",
   "goal_clock": 0,
+  "notes": "",
   "hold": {
     "value": [1],
     "max": 2,

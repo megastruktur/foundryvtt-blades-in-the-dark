@@ -14,6 +14,9 @@
     {{data.type}}<br><br>
 	<label class="label-stripe">{{localize "BITD.Tier"}}</label>
     <textarea rows="1" name="data.tier">{{data.tier}}</textarea>
+	<label class="label-stripe">{{localize "BITD.Notes"}}</label>
+    <textarea rows="2" name="data.turf">{{data.notes}}</textarea>
+    {{#if game.user.isGM }}
 	<label class="label-stripe">{{localize "BITD.Goal"}}</label>
     Clock {{data.goal_1_clock_max}}:<br>{{data.goal_1}}<br><br>
     Clock {{data.goal_2_clock_max}}:<br>{{data.goal_2}}<br><br>
@@ -31,9 +34,7 @@
     <textarea rows="1" name="data.enemies">{{data.enemies}}</textarea>
 	<label class="label-stripe">{{localize "BITD.Situation"}}</label>
     <textarea rows="10" name="data.situation">{{data.situation}}</textarea>
-
-
-
+    {{/if}}
   </section>
 
 </form>
