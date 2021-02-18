@@ -16,6 +16,7 @@
     <textarea rows="1" name="data.tier">{{data.tier}}</textarea>
 	<label class="label-stripe">{{localize "BITD.Notes"}}</label>
     <textarea rows="2" name="data.notes">{{data.notes}}</textarea>
+    {{data.isGM}}
     {{#if data.isGM }}
         <label class="label-stripe">{{localize "BITD.Goal"}}</label>
         Clock {{data.goal_1_clock_max}}:<br>{{data.goal_1}}<br><br>
