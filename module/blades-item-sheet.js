@@ -45,9 +45,7 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
 getData() {
   const data = super.getData();
-  data.isGm = game.user.isGm;
-  console.log(data.isGm);
-  console.log(game.user.isGm);
+  data.isGm = game.user.isGM;
   return data;
 }
 }
