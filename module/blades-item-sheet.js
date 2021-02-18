@@ -49,7 +49,6 @@ getData() {
   console.log(game.user);
   console.log(game.user.isGM);
   data.isGm = game.user.isGM;
-  sheetData["isGM"] = game.user.isGM;
   return data;
 }
 }
