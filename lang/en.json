@@ -671,51 +671,99 @@
       },
       "PHASE1": {
         "Name": "Recovery",
-        "Hint": "All stress, Shock and Bloodied condition clear<br/>Used supply slots and defenses clear.<br/>Once per cycle abilities, items, and rooms refresh.<br/>Recovery happens after invasions that occur from blowback."
+        "Hint1": "All stress, Shock and Bloodied condition clear.",
+        "Hint2": "Used supply slots and defenses clear.",
+        "Hint3": "Once per cycle abilities, items, and rooms refresh.",
+        "Hint4": "Recovery happens after invasions that occur from blowback."
       },
       "PHASE2": {
         "Name": "Loot Roll",
-        "Hint": ""
+        "Hint1": "Roll a number of dice equal to the amount of loot you hauled in from your last raid.",
+        "Hint2": "Each die rolled gives you something based on its result.",
+        "Hint3": "May combine two successes into a critical for a powerful item chosen by the GM.",
+        "Hint4": "Gaining excess Dark Hearts causes monsters to overdo their revelry.",
+        "Hint5": "Overdoing it causes damage to the monsters or the dungeon in a frustrating or devastating consequence."
       },
       "PHASE3": {
         "Name": "Downtime",
-        "Hint": ""
+        "Hint1": "Each player gets one downtime action, plus any extra from calling abilities.",
+        "Hint2": "Players can pay their minions 1 gold to perform a downtime action.",
+        "Hint3": "Downtime actions are usually made with dominant position. (Torture is an expection)",
+        "Hint4": "Risk It: Players can reroll any dominant downtime action with normal position instead.",
+        "Hint5": "The GM rolls the dungeon tier for the imps’ downtime action."
       },
       "PHASE4": {
         "Name": "Dungeon Logic Review",
-        "Hint": ""
+        "Hint1": "5 factors determine the amount of malcontent in the Dungeon. The GM needs to build a gut feeling for this dungeon logic",
+        "Hint2": "Atmosphere: Does the layout feel like a dungeon and do the minions enjoy living there? They want your dungeon to make sense, feel like a dungeon, and have at least some rooms that they can enjoy. They desire a place that feels evil and dungeony.",
+        "Hint3": "Growth: Has the dungeon been steadily growing, increasing in tier and adding rooms and discoveries? They yearn for power as much as their masters do because belonging to a strong dungeon means greater raids and more revelry.",
+        "Hint4": "Hierarchy: Are weaker creatures likely to face adventurers before stronger ones? Powerful monsters, such as upgraded minions, think it’s beneath them to face the enemy first.",
+        "Hint5": "Loot and Revelry: Has there been a steady flow of loot into the dungeon and has the dungeon survived your revelry intact? Making sure you go out of your way to increase loot rolls helps keep grumbling down.",
+        "Hint6": "Worthy Masters: Have you formulated a solid master plan and garnered a reputation of evil? You have to present a strong front and any chinks in that armor quickly become apparent to those below you."
       },
       "PHASE5": {
         "Name": "Calamity Roll",
-        "Hint": ""
+        "Hint1": "GM rolls 1-3 dice depending on how much the Denizens are grumbling.",
+        "Hint2": "Sample calamities are weak or normal dungeon invasions, denizen trouble, structural problems and outside interference."
       },
       "PHASE6": {
         "Name": "Calamity",
-        "Hint": ""
+        "Hint1": "The GM decides what form the calamity takes.",
+        "Hint2": "It can be something that is immediately accepted and resolved or you can jump into a scene to try to deal with the fallout of the situation.",
+        "Hint3": "Calamity can’t be resisted and may be pocketed by the GM and brought out at an opportune time later.",
+        "Hint4": "Minor calamity is an inconvenience, but one that you’re likely equipped to ignore or handle.",
+        "Hint5": "Major calamity is an immediately pressing concern that must be dealt with."
       },
       "PHASE7": {
         "Name": "Goal + Target",
-        "Hint": ""
+        "Hint1": "Players come up with a goal to pursue. When indecision or disputes arise, use a power struggle to resolve it.",
+        "Hint2": "Players look for a target that makes sense for their goal.",
+        "Hint3": "Targets belong to factions, being one small part of the overall faction.",
+        "Hint4": "You are on equal footing with factions at your tier.  Hitting equal or higher tier targets gives more loot.",
+        "Hint5": "The GM decides what type of raid scene makes sense. When the goal is not very challenging, it can focus on the approach (Difficulty in getting to the target) or the getaway (Difficulty in getting out of the area)."
       },
       "PHASE8": {
         "Name": "Plan + Details",
-        "Hint": ""
+        "Hint1": "Choose a raid plan and set some details.",
+        "Hint2": "Ambush: Hit them when they least expect it, making sure they don’t take any of you down in the process. Why is their guard down? Where are you waiting? What’s the signal?",
+        "Hint3": "Assault: Bring full force to bear, driving off or killing all those who stand against you. Where does the assault begin? Who leads the way? Do you avoid any targets?",
+        "Hint4": "Negotiation: Talk it out, tell lies, or offer something to get what you want, spilling as little blood as possible. Where’s the meeting spot? What are you offering? Are you there in good faith?",
+        "Hint5": "Stealth: Slip in, find what you’re after, and slip out quietly, being noticed as little as possible. Where do you slip in? What time of day is it? Do you split up?",
+        "Hint6": "Strike: Bust in, get what you want, and run out quickly, without deviating from your goal. How do you get in? Who signals to get out? What guards your prize?",
+        "Hint7": "Trickery: Confuse, lure, or trick them into doing what you want, without letting on until it’s too late. What do you want them to do? Why would they do that? Does it matter if they know after?"
       },
       "PHASE9": {
         "Name": "Engagement Roll",
-        "Hint": ""
+        "Hint1": "The GM rolls engagement, considering the following factors.",
+        "Hint2": "The dungeon’s tier vs. the target’s faction’s tier.",
+        "Hint3": "The target is particularly strong/weak against the chosen plan.",
+        "Hint4": "The PCs are working with good/bad information.",
+        "Hint5": "The faction has been hit by the dungeon before or they’re caught unaware.",
+        "Hint6": "Recent events in the sandbox has the faction on the lookout for trouble",
+        "Hint7": "During a raid, you take +1d to your loot roll for: Target faction at least equal to dungeon tier, each tier target faction is above the dungeon tier, each source of good loot you grabbed, each adventurer taken out."
       },
       "PHASE10": {
         "Name": "Raid Plan Review",
-        "Hint": ""
+        "Hint1": "After the raid, review the raid plan together and how well you followed it. The GM is the final judge.",
+        "Hint2": "Ambush: Minimize your own losses. (1d: You took heavy damage. 2d: There were a few injuries. 3d: Nobody in your group was injured)",
+        "Hint3": "Assault: Kill or drive off all opposing you. (1d: Significant forces remained when you left. 2d: Most on the scene fled or were killed. 3d: It was a complete slaughter, crushing all)",
+        "Hint4": "Negotiation: Avoid conflict. (1d: It devolved into a bloody fight. 2d: Things were tense, but nobody died. 3d: You maintained control throughout)",
+        "Hint5": "Stealth: Avoid being noticed. (1d: You were clearly spotted and identified. 2d: You were spotted, but recovered. 3d: They had no idea of your presence)",
+        "Hint6": "Strike: Stick to the path and get out quickly. (1d: You got caught up in other endeavors. 2d: There were a few distractions. 3d: You didn’t diverge from the plan once)",
+        "Hint7": "Trickery: Don’t let on until it’s too late. (1d: They saw right through your intentions. 2d: They did as you wanted, but were suspicious. 3d: They did exactly as you wanted)"
       },
       "PHASE11": {
         "Name": "Blowback Roll",
-        "Hint": ""
+        "Hint1": "How did the raid plan go? (1d: off the rails, 2d: a little awry, 3d: perfectly)",
+        "Hint2": "Possible consequences: Weak to strong dungeon invasion, travel trouble, factions/sandbox trouble, ambush / capture."
       },
       "PHASE12": {
         "Name": "Blowback",
-        "Hint": ""
+        "Hint1": "Blowback can be something that is immediately accepted and resolved or you can jump into a scene to try to deal with the fallout of the situation.",
+        "Hint2": "The GM decides what form blowback takes.",
+        "Hint3": "It can’t be resisted and may be pocketed by the GM and brought out at an opportune time later.",
+        "Hint4": "Minor blowback is an inconvenience, but one that you’re likely equipped to ignore or handle.",
+        "Hint5": "Major blowback is an immediately pressing concern that must be dealt with."
       }
     },
     "ERRORS": {
