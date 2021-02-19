@@ -121,9 +121,68 @@
       {{!-- Invasions Tab --}}
       <div id="invasions-tab" class="tab flex-vertical" data-tab="invasions">
         <div class="label-stripe flex-horizontal">
-          <p>{{localize "FITD.Invasions"}}</p>
-          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
+          <p>{{localize "FITD.MajorInvasions"}}</p>
+          <p><a class="item-add-popup" data-item-type="invasion"><i class="fas fa-plus-square"></i></a></p>
         </div>
+        <table class="draggable-items" id="invasion-list">
+            <thead>
+              <tr>
+                <td>Inv #</td>
+                <td>{{ localize "FITD.Tier" }} 0</td>
+                <td>{{ localize "FITD.Tier" }} 1</td>
+                <td>{{ localize "FITD.Tier" }} 2</td>
+                <td>{{ localize "FITD.Tier" }} 3</td>
+                <td>{{ localize "FITD.Tier" }} 4</td>
+                <td>{{ localize "FITD.Hirelings" }}</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each actor.items as |item id|}}
+              {{#if (eq item.type "invasion")}}
+              {{!-- Major Invasions --}}
+              <tr class="item" data-item-id="{{item._id}}">
+                <td class="item-body">
+                  <div class="item-name item-open-editor">{{item.data.inv_number}}</div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_0}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_1}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_2}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_3}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_4}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.hirelings}}
+                  </div>
+                </td>
+                <td>
+                  <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              {{/if}}
+              {{/each}}
+            </tbody>
+          </table>
       </div>
 
       {{!-- Notes Tab --}}

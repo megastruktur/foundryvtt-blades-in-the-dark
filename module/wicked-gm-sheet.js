@@ -22,6 +22,16 @@ export class WickedGMSheet extends WickedSheet {
   /** @override */
   getData() {
     const data = super.getData();
+
+    // look for abilities that change the number of gold, supply and dark heart icons
+    // also check for Doomseeker rays and add translations
+    let invasion_count = 1;
+    data.items.forEach(i => {
+      if (i.type == "invasion") {
+        i.data.inv_number = invasion_count++;
+      }
+    });
+
     return data;
   }
 
