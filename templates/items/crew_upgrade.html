@@ -9,7 +9,7 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body flex-vertical">
     <label class="label-stripe">{{localize "BITD.Description"}}</label>
-    <textarea name="data.description">{{data.description}}</textarea>
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
     <label class="label-stripe">{{localize "BITD.CrewType"}}</label>
     <input type="text" name="data.class" value="{{data.class}}">
     <label class="label-stripe">{{localize "BITD.Price"}}</label>

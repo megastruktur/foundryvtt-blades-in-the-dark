@@ -30,10 +30,10 @@ export class BladesActorSheet extends BladesSheet {
     data.data.loadout = loadout;
     
     // Encumbrance Levels
-    let load_level=["light","light","light","light","normal","normal","heavy","Encumbered",
-			"Encumbered","Encumbered","over max"];
-    let mule_level=["light","light","light","light","light","light","normal","normal",
-			"heavy","Encumbered","over max"];
+    let load_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal","BITD.Heavy","BITD.Encumbered",
+			"BITD.Encumbered","BITD.Encumbered","BITD.OverMax"];
+    let mule_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal",
+			"BITD.Heavy","BITD.Encumbered","BITD.OverMax"];
     let mule_present=0;
  
     //Sanity Check

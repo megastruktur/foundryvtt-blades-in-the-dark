@@ -8,17 +8,17 @@
   
   <section class="flex-vertical">
     <label class="label-stripe">{{localize "BITD.Description"}}</label>
-    <textarea name="data.description">{{data.description}}</textarea>
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
     <label class="label-stripe">{{localize "BITD.ExpClues"}}</label>
     <div><i>- {{localize "BITD.ClassExpClue1"}}</i></div>
     <div>{{localize "BITD.ClassExpClueDescription"}}</div>
     <div><i>- {{localize "BITD.ClassExpClue2"}}</i></div>
     <div><i>- {{localize "BITD.ClassExpClue3"}}</i></div>
-    <textarea name="data.experience_clues">{{data.experience_clues}}</textarea>
+    {{editor content=data.experience_clues target="data.experience_clues" button=true owner=owner editable=editable}}
 
     {{isG}}
     <label class="label-stripe">{{localize "BITD.Logic"}}</label>
-    <textarea name="data.logic">{{data.logic}}</textarea>
+    {{editor content=data.logic target="data.logic" button=true owner=owner editable=editable}}
   </section>
 
 </form>

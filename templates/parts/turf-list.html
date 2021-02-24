@@ -40,7 +40,7 @@
         {{else}}
           <p class="turf-name">{{localize turf.name}}</p>
           {{#if turf.description}}
-          <p class="turf-description">{{localize turf.description}}</p>
+          <p class="turf-description">{{{localize turf.description}}}</p>
           {{/if}}
           {{#noteq id "8"}}
           <a class="turf-control turf-select" title="Select" data-turf-id="{{id}}" data-turf-status="{{turf.value}}"><i class="fas fa-circle"></i></a>

@@ -74,7 +74,7 @@
 }
 * .editor,
 * .editor-content {
-  min-height: 280px;
+  min-height: 150px;
 }
 * .flex-horizontal {
   display: flex;
@@ -693,9 +693,14 @@
 * #crew-reputation input[disabled=disabled] + label {
   background-image: url(assets/teeth/stresstooth-black.png);
 }
+* #turf-container {
+  overflow-x: scroll;
+  overflow-y: clip;
+}
 * #turf-list {
   display: flex;
   flex-direction: column;
+  width: 855px;
 }
 * #turf-list .turf-row {
   display: flex;

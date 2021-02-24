@@ -8,7 +8,7 @@
     
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-      <textarea name="data.description">{{data.description}}</textarea>
+      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
     </section>
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "BITD.AbilityPrice"}}</label>
