@@ -11,7 +11,7 @@ export class BladesCrewSheet extends BladesSheet {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
-      width: 930,
+      width: 940,
       height: 1020,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "turfs"}]
     });

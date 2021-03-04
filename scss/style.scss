@@ -80,7 +80,7 @@ $hover-brightness: 0.8;
 
   .editor,
   .editor-content {
-    min-height: 280px;
+    min-height: 150px;
   }
 
   .flex-horizontal {
@@ -453,10 +453,16 @@ $hover-brightness: 0.8;
 
   // Turfs.
 
+  #turf-container {
+    overflow-x: scroll;
+    overflow-y: clip;
+  }
+
   #turf-list {
 
     display: flex;
     flex-direction: column;
+    width: 855px;
 
     .turf-row {
       display: flex;
