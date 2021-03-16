@@ -175,19 +175,31 @@ export class BladesHelpers {
    * @returns {string}
    */
   static getAttributeLabel(attribute_name) {
-        // Calculate Dice to throw.
         let attribute_labels = {};
         const attributes = game.system.model.Actor.character.attributes;
         
-        for (var attibute_name in attributes) {
-          attribute_labels[attibute_name] = attributes[attibute_name].label;
-          for (var skill_name in attributes[attibute_name].skills) {
-            attribute_labels[skill_name] = attributes[attibute_name].skills[skill_name].label;
+        for (var attribute in attributes) {
+          attribute_labels[attribute] = attributes[attribute].label;
+          for (var skill_name in attributes[attribute].skills) {
+            attribute_labels[skill_name] = attributes[attribute].skills[skill_name].label;
           }
     
         }
     
         return attribute_labels[attribute_name];
+  }
+  
+  /**
+   * Returns true if the attribute is an action
+   *
+   * @param {string} attribute_name 
+   * @returns {bool}
+   */
+  static isAttributeAction(attribute_name) {
+        let attribute_labels = {};
+        const attributes = game.system.model.Actor.character.attributes;
+        
+        return !(attribute_name in attributes);
   }
 
   /* -------------------------------------------- */

@@ -29,10 +29,6 @@ Hooks.once("init", async function() {
     dice: bladesRoll
   }
 
-  // Define Roll template.
-  // CONFIG.Dice.template = "systems/blades-in-the-dark/templates/blades-roll.html"
-  // CONFIG.Dice.tooltip = "systems/blades-in-the-dark/templates/blades-roll-tooltip.html"
-
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
 
