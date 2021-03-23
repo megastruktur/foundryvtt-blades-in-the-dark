@@ -22,7 +22,7 @@ export class BladesActorSheet extends BladesSheet {
 
   /** @override */
   getData() {
-    const data = super.getData();
+    var data = super.getData();
 
     // Calculate Load
     let loadout = 0;
@@ -58,6 +58,8 @@ export class BladesActorSheet extends BladesSheet {
     } else {
       data.data.load_level=load_level[loadout];   
     }
+    
+    data.load_levels = ["BITD.Light", "BITD.Normal", "BITD.Heavy"];
 
     return data;
   }

@@ -246,25 +246,33 @@ $hover-brightness: 0.8;
     }
   }
 
-  // Abilities
-  #abilities {
-
+  //Abilitiers and loadout
+  #abilities, #loadout {
     .item-name {
-      width: 70px;
+      width: 100px;
     }
     .item-body {
       width: auto;
     }
     .item-description {
-      width: 200px;
+      width: 260px;
     }
+  }
 
+  // Abilities
+  #abilities {
     .label-stripe {
       p:first-child {
         margin-right: 10px;
       }
     }
-
+  }
+  
+  // Loadout
+  #loadout {
+    .item-add-popup {
+      margin-left: 10px;
+    }
   }
 
   // Experience teeth
@@ -706,6 +714,35 @@ $hover-brightness: 0.8;
   i {
     &.nullifier {
       @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
+    }
+  }
+
+  #loadout {
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+      background: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right;
+      padding: 0 20px 0 0;
+      margin: 0.1em -6px 0 0;
+      background-color: $almost_black;
+      font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      text-align: right;
+
+      option {
+        color: white;
+      }
+    }
+
+    select:hover {
+      color: red;
     }
   }
 }
