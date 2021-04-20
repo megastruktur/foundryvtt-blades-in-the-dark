@@ -2424,6 +2424,214 @@ form.clock-block #clock-notes .editor .editor-content {
 /* 
  *  Make clock resets invisible unless hovered
  */
+form.gm-sheet .project-clock {
+  height: 80px;
+  position: relative;
+}
+form.gm-sheet .project-clock .blades-clock {
+  position: relative;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  list-style: none;
+  overflow: hidden;
+  background-size: cover;
+}
+form.gm-sheet .project-clock .blades-clock label {
+  overflow: hidden;
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 100%;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+form.gm-sheet .project-clock .blades-clock label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+form.gm-sheet .project-clock .blades-clock input {
+  position: absolute;
+  display: none;
+}
+form.gm-sheet .project-clock .blades-clock input[value="0"] {
+  display: none;
+}
+form.gm-sheet .project-clock .blades-clock *:nth-child(3) {
+  transform: rotate(0deg) skewY(180deg);
+}
+form.gm-sheet .project-clock .blades-clock *:nth-child(5) {
+  transform: rotate(90deg) skewY(180deg);
+}
+form.gm-sheet .project-clock .blades-clock *:nth-child(7) {
+  transform: rotate(180deg) skewY(180deg);
+}
+form.gm-sheet .project-clock .blades-clock *:nth-child(9) {
+  transform: rotate(270deg) skewY(180deg);
+}
+form.gm-sheet #project-clocks-table tr td:nth-of-type(1) {
+  text-align: center;
+  width: 50px;
+}
+form.gm-sheet #project-clocks-table tr td:nth-of-type(1):hover .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0.7;
+}
+form.gm-sheet #project-clocks-table tr td:nth-of-type(1) .clock-zero-label {
+  transition: opacity 1s;
+  opacity: 0;
+}
+form.gm-sheet #project-clocks-table tr td:nth-of-type(2) {
+  text-align: center;
+  min-width: 90px;
+  width: 23%;
+  font-family: Bitter;
+}
+form.gm-sheet #project-clocks-table tr td:nth-of-type(4) {
+  width: 20px;
+}
+
+/*
+ * Fonts
+ */
+/* bitter-regular - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-regular.woff2") format("woff2");
+}
+/* bitter-500 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500.woff2") format("woff2");
+}
+/* bitter-600 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600.woff2") format("woff2");
+}
+/* bitter-700 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700.woff2") format("woff2");
+}
+/* bitter-800 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800.woff2") format("woff2");
+}
+/* bitter-900 - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900.woff2") format("woff2");
+}
+/* bitter-italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 400;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-italic.woff2") format("woff2");
+}
+/* bitter-500italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 500;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-500italic.woff2") format("woff2");
+}
+/* bitter-600italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 600;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-600italic.woff2") format("woff2");
+}
+/* bitter-700italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 700;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-700italic.woff2") format("woff2");
+}
+/* bitter-800italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 800;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-800italic.woff2") format("woff2");
+}
+/* bitter-900italic - latin_cyrillic */
+@font-face {
+  font-family: "Bitter";
+  font-style: italic;
+  font-weight: 900;
+  src: local(""), url("../fonts/bitter-v16-latin_cyrillic-900italic.woff2") format("woff2");
+}
+/* Blood crow-regular - latin */
+@font-face {
+  font-family: "Blood Crow";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/bloodcrow.ttf") format("truetype");
+}
+/* piedra-regular - latin */
+@font-face {
+  font-family: "Piedra";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/piedra-v9-latin-regular.woff2") format("woff2");
+}
+/* 
+*  Elements that can be changed will hint this by dimming and fading a little on hover
+*/
+/*
+ * Toothradio. Some (eg trauma) are not changeable, hence the option.
+ */
+/*
+ * Dark Hearts Glow
+ */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px 5px rgba(104, 51, 44, 0.3), inset 0 0 5px 5px rgba(104, 51, 44, 0.3);
+    border-radius: 5px;
+  }
+  100% {
+    box-shadow: 0 0 15px 3px rgba(104, 51, 144, 0.8), inset 0 0 8px 3px rgba(104, 51, 144, 0.6);
+    border-radius: 11px;
+  }
+}
+/*
+ * Custom Radio
+ */
+/*
+ * Create Clock
+ */
+/*
+ * Custom Radio Round
+ */
+/*
+ * Custom label for shocked, bloodied, morale, adventurer hearts and a single hireling move
+ */
+/* 
+ *  Positioning of children by number
+ */
+/* 
+ *  Make clock resets invisible unless hovered
+ */
 #attributes {
   height: fit-content;
   min-width: fit-content;

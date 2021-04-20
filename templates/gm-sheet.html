@@ -95,27 +95,44 @@
 
       {{!-- Nav menu --}}
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="players">{{localize "FITD.Players"}}</a>
         <a class="item" data-tab="clocks">{{localize "FITD.Clocks"}}</a>
         <a class="item" data-tab="invasions">{{localize "FITD.Invasions"}}</a>
         <a class="item" data-tab="notes">{{localize "FITD.Notes"}}</a>
         <a class="item" data-tab="all-dungeon-items">{{localize "FITD.AllItems"}}</a>
       </nav>
 
-      {{!-- Players Tab --}}
-      <div id="players-tab" class="tab flex-vertical" data-tab="players">
-        <div class="label-stripe flex-horizontal">
-          <p>{{localize "FITD.Players"}}</p>
-          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
-        </div>
-      </div>
-
       {{!-- Clocks Tab --}}
       <div id="clock-tab" class="tab flex-vertical" data-tab="clocks">
         <div class="label-stripe flex-horizontal">
           <p>{{localize "FITD.Clocks"}}</p>
-          <p><a class="item-add-popup" data-item-type="tier3room"><i class="fas fa-plus-square"></i></a></p>
+          <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
         </div>
+        <table id="project-clocks-table">
+          <thead>
+            <tr>
+              <td>Clock</td>
+              <td>Name</td>
+              <td>Description</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody class="draggable-items">
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "project")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="flex-horizontal project-clock">
+                <div id="project-clock-{{item._id}}">
+                  {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
+                </div>
+              </td>
+              <td class="item-body"><div class="item-name item-open-editor">{{item.name}}</div></td>
+              <td><div class="item-description">{{item.data.description}}</div></td>
+              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
       </div>
 
       {{!-- Invasions Tab --}}

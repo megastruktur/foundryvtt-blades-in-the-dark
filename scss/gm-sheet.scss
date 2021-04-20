@@ -4,9 +4,36 @@
 @import 'mixin.scss';
 
 
-form.gamemaster {
+form.gm-sheet {
     
-    padding: 5px 5px !important;
+    //padding: 5px 5px !important;
 
+    .project-clock {
+            height: 80px;
+            // Functionality will be overridden in wicked-sheet.js
+            @include clock(4, 40); 
+        }
+
+    // Clocks Table
+    #project-clocks-table {
+        tr {
+            td:nth-of-type(1) {
+                @include clock_zero_hover();
+                text-align: center;
+                width: 50px;
+            }
+
+            td:nth-of-type(2) {
+                text-align: center;
+                min-width: 90px;
+                width: 23%;
+                font-family: Bitter;
+            }
+
+            td:nth-of-type(4) {
+                width: 20px;
+            }
+        }
+    }
 
 }

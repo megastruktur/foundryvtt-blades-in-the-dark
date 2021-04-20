@@ -13,7 +13,7 @@ export class WickedGMSheet extends WickedSheet {
           template: "systems/wicked-ones/templates/gm-sheet.html",
       width: 830,
       height: 850,
-      tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "players" }]
+      tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "clocks" }]
     });
   }
 
