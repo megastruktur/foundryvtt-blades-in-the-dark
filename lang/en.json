@@ -674,7 +674,8 @@
         "Hint1": "All stress, Shock and Bloodied condition clear.",
         "Hint2": "Used supply slots and defenses clear.",
         "Hint3": "Once per cycle abilities, items, and rooms refresh.",
-        "Hint4": "Recovery happens after invasions that occur from blowback."
+        "Hint4": "Dungeon attracts a creature to the lowest tier empty lair.",
+        "Hint5": "Recovery happens after invasions that occur from blowback."
       },
       "PHASE2": {
         "Name": "Loot Roll",
