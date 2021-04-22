@@ -46,7 +46,7 @@ export class BladesHelpers {
             case "addition":
               mergeObject(
                 logic_update,
-                {[expression.attribute]: Number(SaVHelpers.getNestedProperty(entity, prefix + expression.attribute)) + expression.value},
+                {[expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, prefix + expression.attribute)) + expression.value},
                 {insertKeys: true}
               );
             break;
@@ -99,7 +99,7 @@ export class BladesHelpers {
             case "addition":
               mergeObject(
                 logic_update,
-                {[expression.attribute]: Number(SaVHelpers.getNestedProperty(entity, prefix + expression.attribute)) - expression.value},
+                {[expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, prefix + expression.attribute)) - expression.value},
                 {insertKeys: true}
               );
             break;
