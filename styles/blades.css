@@ -301,17 +301,20 @@
 * #character-stress label[for$="-0"] {
   margin-right: 0px;
 }
-* #abilities .item-name {
-  width: 70px;
+* #abilities .item-name, * #loadout .item-name {
+  width: 100px;
 }
-* #abilities .item-body {
+* #abilities .item-body, * #loadout .item-body {
   width: auto;
 }
-* #abilities .item-description {
-  width: 200px;
+* #abilities .item-description, * #loadout .item-description {
+  width: 260px;
 }
 * #abilities .label-stripe p:first-child {
   margin-right: 10px;
+}
+* #loadout .item-add-popup {
+  margin-left: 10px;
 }
 * .teeth-experience {
   display: flex;
@@ -1211,6 +1214,30 @@
 * i.nullifier:hover {
   filter: brightness(0.8);
   opacity: 0.9;
+  color: red;
+}
+* #loadout select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  background: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right;
+  padding: 0 20px 0 0;
+  margin: 0.1em -6px 0 0;
+  background-color: #191813;
+  font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-align: right;
+}
+* #loadout select option {
+  color: white;
+}
+* #loadout select:hover {
   color: red;
 }
 

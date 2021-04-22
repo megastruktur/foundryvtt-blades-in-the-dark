@@ -285,8 +285,13 @@
       {{!-- Owned Items Tab --}}
       <div id="loadout" class="tab flex-vertical" data-tab="loadout">
         <div class="label-stripe flex-horizontal">
-           <p>{{localize "BITD.Loadout"}}: {{data.loadout}}/{{localize data.load_level}} </p>
-          <p><a class="item-add-popup" data-item-type="item"><i class="fas fa-plus-square"></i></a></p>
+           <p>{{localize "BITD.Loadout"}} <a class="item-add-popup" data-item-type="item"><i class="fas fa-plus-square"></i></a></p>
+           <p>{{data.loadout}}/{{localize data.load_level}} </p>
+           <div class="dropdown">
+             <select name="data.selected_load_level">
+               {{selectOptions load_levels selected=data.selected_load_level localize=true}}
+             </select>
+           </div>
         </div>
         <div>
           {{#each actor.items as |item id|}}
