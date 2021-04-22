@@ -186,7 +186,6 @@ export class BladesHelpers {
    * @returns {string}
    */
   static getAttributeLabel(attribute_name) {
-        // Calculate Dice to throw.
         let attribute_labels = {};
         const attributes = game.system.model.Actor.character.attributes;
 
@@ -199,6 +198,19 @@ export class BladesHelpers {
         }
 
         return attribute_labels[attribute_name];
+  }
+  
+  /**
+   * Returns true if the attribute is an action
+   *
+   * @param {string} attribute_name 
+   * @returns {bool}
+   */
+  static isAttributeAction(attribute_name) {
+        let attribute_labels = {};
+        const attributes = game.system.model.Actor.character.attributes;
+        
+        return !(attribute_name in attributes);
   }
 
   /* -------------------------------------------- */
