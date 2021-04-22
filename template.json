@@ -25,6 +25,7 @@
     "special_abilities": [],
     "loadout": 0,
     "load_level": "",
+    "selected_load_level": "",
     "harm": {
         "light": {
           "one": "",

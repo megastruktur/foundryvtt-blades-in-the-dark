@@ -30,7 +30,7 @@
 
     <div class="grow-two flex-vertical">
       <div id="lair">
-        <label for="crew-lair">Lair</label>
+        <label for="crew-lair">{{localize "BITD.Lair"}}</label>
         <input type="text" id="crew-lair" name="data.lair" value="{{data.lair}}">
       </div>
 
@@ -224,7 +224,7 @@
     {{!-- Crew XP --}}
     <div class="flex-fertical">
       <div class="big-teeth-section">
-        <div class="big-teeth">
+        <div id="crew-xp" class="big-teeth">
           <label class="black-label" for="crew-experience-0">{{localize "BITD.CrewXP"}}</label>
           {{#multiboxes data.experience}}
           <input type="radio" id="crew-experience-0" name="data.experience" value="0" dtype="Radio">
@@ -275,7 +275,7 @@
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
-            <div class="item-description">{{item.data.description}}</div>
+            <div class="item-description">{{{item.data.description}}}</div>
           </div>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
@@ -294,7 +294,7 @@
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <b><div class="item-name">{{item.name}}</div></b>
-            <div class="item-description">{{item.data.description}}</div>
+            <div class="item-description">{{{item.data.description}}}</div>
           </div>
           <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>

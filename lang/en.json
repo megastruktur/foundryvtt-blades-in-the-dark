@@ -166,6 +166,11 @@
   "BITD.Position": "Position",
   "BITD.Effect": "Effect",
   "BITD.Modifier": "Modifier",
+  
+  "BITD.Light": "light",
+  "BITD.Normal": "normal",
+  "BITD.Encumbered": "encumbered",
+  "BITD.OverMax": "over max",
 
   "BITD.Drain": "Drain",
   "BITD.Wear": "Wear",
