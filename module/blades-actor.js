@@ -64,9 +64,7 @@ export class BladesActor extends Actor {
     // const roll = new Roll("1d20 + @abilities.wis.mod", actor.getRollData());
     let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
 
-    new Dialog({
-      title: `${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}`,
-      content: `
+    var content = `
         <h2>${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}</h2>
         <form>
           <div class="form-group">
@@ -74,25 +72,37 @@ export class BladesActor extends Actor {
             <select id="mod" name="mod">
               ${this.createListOfDiceMods(-3,+3,0)}
             </select>
+          </div>`;
+    if (BladesHelpers.isAttributeAction(attribute_name)) {
+      content += `
+            <div class="form-group">
+              <label>${game.i18n.localize('BITD.Position')}:</label>
+              <select id="pos" name="pos">
+                <option value="controlled">${game.i18n.localize('BITD.PositionControlled')}</option>
+                <option value="risky" selected>${game.i18n.localize('BITD.PositionRisky')}</option>
+                <option value="desperate">${game.i18n.localize('BITD.PositionDesperate')}</option>
+              </select>
             </div>
             <div class="form-group">
-            <label>${game.i18n.localize('BITD.Position')}:</label>
-            <select id="pos" name="pos">
-              <option value="controlled">${game.i18n.localize('BITD.PositionControlled')}</option>
-              <option value="risky" selected>${game.i18n.localize('BITD.PositionRisky')}</option>
-              <option value="desperate">${game.i18n.localize('BITD.PositionDesperate')}</option>
-            </select>
-            </div>
-            <div class="form-group">
-            <label>${game.i18n.localize('BITD.Effect')}:</label>
-            <select id="fx" name="fx">
-              <option value="limited">${game.i18n.localize('BITD.EffectLimited')}</option>
-              <option value="standard" selected>${game.i18n.localize('BITD.EffectStandard')}</option>
-              <option value="great">${game.i18n.localize('BITD.EffectGreat')}</option>
-            </select>
-          </div>
+              <label>${game.i18n.localize('BITD.Effect')}:</label>
+              <select id="fx" name="fx">
+                <option value="limited">${game.i18n.localize('BITD.EffectLimited')}</option>
+                <option value="standard" selected>${game.i18n.localize('BITD.EffectStandard')}</option>
+                <option value="great">${game.i18n.localize('BITD.EffectGreat')}</option>
+              </select>
+            </div>`;
+    } else {
+        content += `
+            <input  id="pos" name="pos" type="hidden" value="">
+            <input id="fx" name="fx" type="hidden" value="">`;
+    }
+    content += `
         </form>
-      `,
+      `;
+    
+    new Dialog({
+      title: `${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}`,
+      content: content,
       buttons: {
         yes: {
           icon: "<i class='fas fa-check'></i>",

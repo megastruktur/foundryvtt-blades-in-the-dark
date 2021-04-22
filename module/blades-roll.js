@@ -46,33 +46,40 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   // Retrieve Roll status.
   let roll_status = getBladesRollStatus(rolls, zeromode);
 
-  let position_localize = '';
-  switch (position) {
-    case 'controlled':
-      position_localize = 'BITD.PositionControlled'
-      break;
-    case 'desperate':
-      position_localize = 'BITD.PositionDesperate'
-      break;
-    case 'risky':
-    default:
-      position_localize = 'BITD.PositionRisky'
-  }
+  let result;
+  if (BladesHelpers.isAttributeAction(attribute_name)) {
+    let position_localize = '';
+    switch (position) {
+      case 'controlled':
+        position_localize = 'BITD.PositionControlled'
+        break;
+      case 'desperate':
+        position_localize = 'BITD.PositionDesperate'
+        break;
+      case 'risky':
+      default:
+        position_localize = 'BITD.PositionRisky'
+    }
 
-  let effect_localize = '';
-  switch (effect) {
-    case 'limited':
-      effect_localize = 'BITD.EffectLimited'
-      break;
-    case 'great':
-      effect_localize = 'BITD.EffectGreat'
-      break;
-    case 'standard':
-    default:
-      effect_localize = 'BITD.EffectStandard'
-  }
+    let effect_localize = '';
+    switch (effect) {
+      case 'limited':
+        effect_localize = 'BITD.EffectLimited'
+        break;
+      case 'great':
+        effect_localize = 'BITD.EffectGreat'
+        break;
+      case 'standard':
+      default:
+        effect_localize = 'BITD.EffectStandard'
+    }
 
-  let result = await renderTemplate("systems/blades-in-the-dark/templates/blades-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, position_localize: position_localize, effect: effect, effect_localize: effect_localize});
+    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/action-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, position_localize: position_localize, effect: effect, effect_localize: effect_localize});
+  } else {
+    let stress = getBladesRollStress(rolls, zeromode);
+    
+    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/resistance-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, stress: stress});
+  }
 
   let messageData = {
     speaker: speaker,
@@ -149,6 +156,57 @@ export function getBladesRollStatus(rolls, zeromode = false) {
   }
 
   return roll_status;
+
+}
+/**
+ * Get stress of the Roll.
+ * @param {Array} rolls 
+ * @param {Boolean} zeromode 
+ */
+export function getBladesRollStress(rolls, zeromode = false) {
+
+  var stress = 6;
+
+  // Dice API has changed in 0.7.0 so need to keep that in mind.
+  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
+
+  let sorted_rolls = [];
+  // Sort roll values from lowest to highest.
+  if (isBelow070) {
+    sorted_rolls = rolls.map(i => i.roll).sort();
+  } else {
+    sorted_rolls = rolls.map(i => i.result).sort();
+  }
+
+  let roll_status = "failure"
+
+  if (sorted_rolls[0] === 6 && zeromode) {
+    stress = -1;
+  }
+  else {
+    let use_die;
+    let prev_use_die = false;
+
+    if (zeromode) {
+      use_die = sorted_rolls[0];
+    }
+    else {
+      use_die = sorted_rolls[sorted_rolls.length - 1];
+
+      if (sorted_rolls.length - 2 >= 0) {
+        prev_use_die = sorted_rolls[sorted_rolls.length - 2]
+      }
+    }
+
+    if (use_die === 6 && prev_use_die && prev_use_die === 6) {
+      stress = -1;
+    } else {
+      stress = 6 - use_die;
+    }
+
+  }
+
+  return stress;
 
 }
 

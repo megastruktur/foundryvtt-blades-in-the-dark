@@ -15,6 +15,7 @@ import { BladesItemSheet } from "./blades-item-sheet.js";
 import { BladesActorSheet } from "./blades-actor-sheet.js";
 import { BladesCrewSheet } from "./blades-crew-sheet.js";
 import { BladesClockSheet } from "./blades-clock-sheet.js";
+import { BladesFactionSheet } from "./blades-faction-sheet.js";
 import * as migrations from "./migration.js";
 
 window.BladesHelpers = BladesHelpers;
@@ -29,10 +30,6 @@ Hooks.once("init", async function() {
     dice: bladesRoll
   }
 
-  // Define Roll template.
-  // CONFIG.Dice.template = "systems/blades-in-the-dark/templates/blades-roll.html"
-  // CONFIG.Dice.tooltip = "systems/blades-in-the-dark/templates/blades-roll-tooltip.html"
-
   CONFIG.Item.entityClass = BladesItem;
   CONFIG.Actor.entityClass = BladesActor;
 
@@ -43,10 +40,13 @@ Hooks.once("init", async function() {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
   Actors.registerSheet("blades", BladesCrewSheet, { types: ["crew"], makeDefault: true });
+  Actors.registerSheet("blades", BladesFactionSheet, { types: ["factions"], makeDefault: true });
   Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
+  
+  Actors.registeredSheets.forEach(element => console.log(element.Actor.name));
 
 
   // Is the value Turf side.
@@ -60,14 +60,14 @@ Hooks.once("init", async function() {
 
   // Multiboxes.
   Handlebars.registerHelper('multiboxes', function(selected, options) {
-    
+
     let html = options.fn(this);
 
     // Fix for single non-array values.
     if ( !Array.isArray(selected) ) {
       selected = [selected];
     }
-    
+
     if (typeof selected !== 'undefined') {
       selected.forEach(selected_value => {
         if (selected_value !== false) {
@@ -82,7 +82,7 @@ Hooks.once("init", async function() {
 
   // Trauma Counter
   Handlebars.registerHelper('traumacounter', function(selected, options) {
-    
+
     let html = options.fn(this);
 
     var count = 0;
@@ -93,7 +93,7 @@ Hooks.once("init", async function() {
     }
 
     if (count > 4) count = 4;
-    
+
     const rgx = new RegExp(' value=\"' + count + '\"');
     return html.replace(rgx, "$& checked=\"checked\"");
 
@@ -250,7 +250,7 @@ Hooks.once("init", async function() {
 
     for (let i = 1; i <= parseInt(type); i++) {
       let checked = (parseInt(current_value) === i) ? 'checked="checked"' : '';
-      html += `        
+      html += `
         <input type="radio" value="${i}" id="clock-${i}-${uniq_id}" name="${parameter_name}" ${checked}>
         <label for="clock-${i}-${uniq_id}"></label>
       `;
@@ -270,9 +270,9 @@ Hooks.once("ready", function() {
   // Determine whether a system migration is required
   const currentVersion = game.settings.get("bitd", "systemMigrationVersion");
   const NEEDS_MIGRATION_VERSION = 2.15;
-  
+
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
-  
+
   // Perform the migration
   if ( needMigration && game.user.isGM ) {
     migrations.migrateWorld();
@@ -289,15 +289,15 @@ Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
   return true;
 });
 
-Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
+Hooks.on("createOwnedItem", async (parent_entity, child_data, options, userId) => {
 
-  BladesHelpers.callItemLogic(child_data, parent_entity);
+  await BladesHelpers.callItemLogic(child_data, parent_entity);
   return true;
 });
 
-Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
-  
-  BladesHelpers.undoItemLogic(child_data, parent_entity);
+Hooks.on("deleteOwnedItem", async (parent_entity, child_data, options, userId) => {
+
+  await BladesHelpers.undoItemLogic(child_data, parent_entity);
   return true;
 });
 // getSceneControlButtons
