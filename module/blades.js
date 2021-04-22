@@ -15,6 +15,7 @@ import { BladesItemSheet } from "./blades-item-sheet.js";
 import { BladesActorSheet } from "./blades-actor-sheet.js";
 import { BladesCrewSheet } from "./blades-crew-sheet.js";
 import { BladesClockSheet } from "./blades-clock-sheet.js";
+import { BladesFactionSheet } from "./blades-faction-sheet.js";
 import * as migrations from "./migration.js";
 
 window.BladesHelpers = BladesHelpers;
@@ -39,10 +40,13 @@ Hooks.once("init", async function() {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
   Actors.registerSheet("blades", BladesCrewSheet, { types: ["crew"], makeDefault: true });
+  Actors.registerSheet("blades", BladesFactionSheet, { types: ["factions"], makeDefault: true });
   Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   preloadHandlebarsTemplates();
+  
+  Actors.registeredSheets.forEach(element => console.log(element.Actor.name));
 
 
   // Is the value Turf side.

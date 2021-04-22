@@ -1,3 +1,7 @@
+v2.16
+- Changes to the item logic process to eliminate DB write-locking
+- Loadout selector
+
 v2.15
 - Fixes all Tokens to be force "actor linked"
 
