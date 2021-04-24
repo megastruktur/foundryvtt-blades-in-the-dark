@@ -42,7 +42,7 @@ export class WickedClockSheet extends WickedSheet {
     formData['img'] = image_path;
     formData['token.img'] = image_path;
 
-    let data = {
+    let update = {
       img: image_path,
       width: 1,
       height: 1,
@@ -54,11 +54,12 @@ export class WickedClockSheet extends WickedSheet {
     };
 
 		let tokens = this.actor.getActiveTokens();
+    let data = [];
 
     tokens.forEach(function (token) {
 			data.push(mergeObject(
 				{_id: token.id},
-				image
+				update
 			));
     });
 
