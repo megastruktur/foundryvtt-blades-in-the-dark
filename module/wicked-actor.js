@@ -150,8 +150,8 @@ export class WickedActor extends Actor {
     // Make modifications to data here.
     data.clock_active_1 = (data.clock1.max != 0);
     data.clock_active_2 = (data.clock2.max != 0);
-    data.clock_uid_1 = actorData._id + "-1";
-    data.clock_uid_2 = actorData._id + "-2";
+    data.clock_uid_1 = actorData.id + "-1";
+    data.clock_uid_2 = actorData.id + "-2";
   }
 
   /* -------------------------------------------- */
@@ -170,7 +170,7 @@ export class WickedActor extends Actor {
   /* -------------------------------------------- */
 
   /** @override */
-  async createEmbeddedEntity(embeddedName, data, options) {
+  async createEmbeddedDocuments(embeddedName, data, options) {
     if (data instanceof Array) {
       for (var i = 0; i < data.length; i++) {
         if (data[i].type == "adventurer") {
@@ -188,7 +188,7 @@ export class WickedActor extends Actor {
         data.data.hireling_type_custom = game.i18n.localize(data.data.hireling_type);
       }
     }
-    super.createEmbeddedEntity(embeddedName, data, options);
+    super.createEmbeddedDocuments(embeddedName, data, options);
   }
 
   /* -------------------------------------------- */
@@ -297,7 +297,7 @@ export class WickedActor extends Actor {
   rollAttributePopup(attribute_name, attribute_value = null) {
 
     let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
-	
+
     // Calculate Dice Amount for Attributes
     var dice_amount = attribute_value ? attribute_value : 0;
     var default_bonus = 0;
@@ -310,7 +310,7 @@ export class WickedActor extends Actor {
     let options = {
       id: "dice-roll-popup",
     }
-		
+
     new Dialog({
       title: `${game.i18n.localize('FITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: `
@@ -320,8 +320,8 @@ export class WickedActor extends Actor {
             <div class="form-group">
               <label>${game.i18n.localize('FITD.RollType')}:</label>
               <select id="type" name="type">
-                <option value="action" selected>${game.i18n.localize('FITD.ROLL.ACTION.Name')}</option>		  
-                <option value="resistance">${game.i18n.localize('FITD.ROLL.RESISTANCE.Name')}</option>			  
+                <option value="action" selected>${game.i18n.localize('FITD.ROLL.ACTION.Name')}</option>
+                <option value="resistance">${game.i18n.localize('FITD.ROLL.RESISTANCE.Name')}</option>
               </select>
             </div>
             <div class="form-group roll-type-action">
@@ -344,9 +344,9 @@ export class WickedActor extends Actor {
 				      <label>${game.i18n.localize('FITD.Effect')}:</label>
 				      <select id="fx" name="fx">
 				        <option value="strong">${game.i18n.localize('FITD.EffectStrong')}</option>
-				        <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>		  
+				        <option value="default" selected>${game.i18n.localize('FITD.EffectDefault')}</option>
 				        <option value="weak">${game.i18n.localize('FITD.EffectWeak')}</option>
-				        <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>	  
+				        <option value="zero">${game.i18n.localize('FITD.EffectZero')}</option>
 				      </select>
 			      </div>
 		        <div class="form-group">
@@ -358,7 +358,7 @@ export class WickedActor extends Actor {
 		        <div class="total-rolled form-group">
               <label class="total-rolled">${game.i18n.localize('FITD.TotalSkillDice')}: </label>
 			        <label>${dice_amount + default_bonus}D</label>
-            </div>		  
+            </div>
           </form>
 		      <h2>${game.i18n.localize('FITD.RollOptions')}</h2>
 		      <div class="action-info">${game.i18n.localize('FITD.ActionsHelp')}</div>
@@ -399,7 +399,7 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  
+
   rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect, type) {
 
     let dice_amount = 0;
@@ -422,27 +422,27 @@ export class WickedActor extends Actor {
    *  which can be performed.
    */
   createListOfActions() {
-  
+
     let text, attribute, skill;
     let attributes = this.data.data.attributes;
-  
+
     for ( attribute in attributes ) {
-  
+
       var skills = attributes[attribute].skills;
-  
+
       text += `<optgroup label="${attribute} Actions">`;
       text += `<option value="${attribute}">${attribute} (Resist)</option>`;
-  
+
       for ( skill in skills ) {
         text += `<option value="${skill}">${skill}</option>`;
       }
-  
+
       text += `</optgroup>`;
-  
+
     }
-  
+
     return text;
-  
+
   }
 
   /* -------------------------------------------- */
@@ -452,20 +452,20 @@ export class WickedActor extends Actor {
    *
    * @param {int} rs
    *  Min die modifier
-   * @param {int} re 
+   * @param {int} re
    *  Max die modifier
    * @param {int} s
    *  Selected die
    */
   createListOfDiceMods(rs, re, s) {
-  
+
     var text = ``;
     var i = 0;
-  
+
     if ( s == "" ) {
       s = 0;
     }
-  
+
     for ( i  = rs; i <= re; i++ ) {
       var plus = "";
       if ( i >= 0 ) { plus = "+" };
@@ -473,19 +473,19 @@ export class WickedActor extends Actor {
       if ( i == s ) {
         text += ` selected`;
       }
-      
+
       text += `>${plus}${i}D</option>`;
     }
-  
+
     return text;
-  
+
   }
 
   /* -------------------------------------------- */
 
   /**
    * Change dice total on display
-   * @param {*} event 
+   * @param {*} event
    */
   async _onDiceModChange(event) {
     let mod = this.value;
@@ -495,10 +495,10 @@ export class WickedActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  
+
   /**
    * Change options for different roll types
-   * @param {*} event 
+   * @param {*} event
    */
   async _onRollTypeChange(event) {
 

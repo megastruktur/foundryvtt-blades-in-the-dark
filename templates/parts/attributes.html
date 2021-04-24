@@ -4,8 +4,8 @@
     {{#if (ne @root.actor.type "minion_pack")}}
 	  <div class="tooltip" data-tooltip="{{{localize "FITD.TOOLTIP.Shock"}}}">
 		  <div class="shock">
-		    <input type="checkbox" id="attributes-{{../actor._id}}-{{attribute_name}}-shocked" name="data.attributes.{{attribute_name}}.shocked" value="{{shocked}}" {{checked shocked}}>
-		    <label for="attributes-{{../actor._id}}-{{attribute_name}}-shocked"></label>
+		    <input type="checkbox" id="attributes-{{../actor.id}}-{{attribute_name}}-shocked" name="data.attributes.{{attribute_name}}.shocked" value="{{shocked}}" {{checked shocked}}>
+		    <label for="attributes-{{../actor.id}}-{{attribute_name}}-shocked"></label>
 		  </div>
 	  </div>
     {{/if}}
@@ -22,17 +22,17 @@
         <div class="attributes-container">
 
           {{#multiboxes skill.value}}
-          
+
           {{#times_from_0 @root.data.attribute_max_value}}
-          <input type="radio" id="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
+          <input type="radio" id="attributes-{{../../../actor.id}}-{{skill_name}}-{{this}}"
                  name="data.attributes.{{attribute_name}}.skills.{{skill_name}}.value" value="{{this}}">
-          <label for="attributes-{{../../../actor._id}}-{{skill_name}}-{{this}}"
+          <label for="attributes-{{../../../actor.id}}-{{skill_name}}-{{this}}"
             {{#if (eq this 0)}} data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Reset")}}}" {{/if}}
             {{#if (eq ../../../actor.type "character")}}
               class="skill-practice-xp
               {{#if (eq ../this.practice 1)}} practice-one{{/if}}
               {{#if (eq ../this.practice 2)}} practice-two{{/if}}
-              {{#if (eq this 0)}} tooltip {{/if}}" 
+              {{#if (eq this 0)}} tooltip {{/if}}"
             {{else}}
               {{#if (eq this 0)}} class="tooltip" {{/if}}
             {{/if}}>
@@ -54,8 +54,8 @@
   <div id="attributes-bloodied" class="attribute flex-horizontal">
     <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.BloodiedMinions")}}}">
       <div class="bloodied-minion">
-        <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied" value="{{data.bloodied}}" {{checked data.bloodied}}>
-        <label for="{{actor._id}}-bloodied"></label>
+        <input type="checkbox" id="{{actor.id}}-bloodied" name="data.bloodied" value="{{data.bloodied}}" {{checked data.bloodied}}>
+        <label for="{{actor.id}}-bloodied"></label>
         <i class="splash"></i>
       </div>
     </div>
@@ -68,9 +68,9 @@
   <div id="attributes-morale" class="attribute flex-horizontal">
     <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Morale")}}}">
       <div class="morale-minion">
-        <input type="checkbox" id="{{actor._id}}-morale" name="data.morale" value="{{data.morale}}" {{checked data.morale}}>
-        <label for="{{actor._id}}-morale"></label>
-      </div>	  
+        <input type="checkbox" id="{{actor.id}}-morale" name="data.morale" value="{{data.morale}}" {{checked data.morale}}>
+        <label for="{{actor.id}}-morale"></label>
+      </div>
     </div>
     <div class="main">
       <div class="stripe">
@@ -82,8 +82,8 @@
   <div id="attributes-bloodied" class="attribute flex-horizontal">
     <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Bloodied")}}}">
       <div class="bloodied">
-        <input type="checkbox" id="{{actor._id}}-bloodied" name="data.bloodied" value="{{data.bloodied}}" {{checked data.bloodied}}>
-        <label for="{{actor._id}}-bloodied"></label>
+        <input type="checkbox" id="{{actor.id}}-bloodied" name="data.bloodied" value="{{data.bloodied}}" {{checked data.bloodied}}>
+        <label for="{{actor.id}}-bloodied"></label>
         <i class="splash"></i>
       </div>
     </div>
@@ -100,8 +100,8 @@
 		      {{#multiboxes data.dark_hearts.value}}
 
 		      {{#times_from_0 data.dark_hearts.max}}
-		      <input type="radio" id="{{../actor._id}}-dark-hearts-{{this}}" name="data.dark_hearts.value" value="{{this}}">
-		      <label class="dark-heart tooltip" for="{{../actor._id}}-dark-hearts-{{this}}" 
+		      <input type="radio" id="{{../actor.id}}-dark-hearts-{{this}}" name="data.dark_hearts.value" value="{{this}}">
+		      <label class="dark-heart tooltip" for="{{../actor.id}}-dark-hearts-{{this}}"
             {{#if (eq this 0)}}
               data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Reset")}}}"
             {{else}}
@@ -112,7 +112,7 @@
 
 		      {{/multiboxes}}
 	      </div>
-		  </div>		  
+		  </div>
       <div id="hearts-footer" class="stripe">
         <label class="attribute-label">{{localize "FITD.DarkHearts"}}</label>
 	    </div>

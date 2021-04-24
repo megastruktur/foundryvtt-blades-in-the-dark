@@ -23,6 +23,10 @@ export class WickedItemSheet extends ItemSheet {
   async getData(options) {
     const data = super.getData(options);
     data.config = CONFIG.WO;
+		data.editable = this.options.editable;
+    const itemData = data.data;
+		data.item = itemData;
+		data.data = itemData.data;
 
     // Prepare special ability data
     if (data.item.type == "specialability") {
@@ -169,7 +173,7 @@ export class WickedItemSheet extends ItemSheet {
       const element = $(ev.currentTarget).parents(".item");
       const idOffset = element[0].id.lastIndexOf('-') + 1;
       const id = element[0].id.substring(idOffset);
-      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      const item = this.actor ? this.actor.items.get(id) : this.object;
       const newEdges = [];
       const inputs = html.find('#edge-list input');
       for (var i = 0; i < inputs.length; i++) {
@@ -187,7 +191,7 @@ export class WickedItemSheet extends ItemSheet {
       const element = $(ev.currentTarget).parents(".item");
       const idOffset = element[0].id.lastIndexOf('-') + 1;
       const id = element[0].id.substring(idOffset);
-      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      const item = this.actor ? this.actor.items.get(id) : this.object;
       const selected = ev.currentTarget.value;
       const propertyToSet = ev.currentTarget.dataset.propertyToSet;
       if (selected == "" || selected == "custom") {
@@ -215,7 +219,7 @@ export class WickedItemSheet extends ItemSheet {
       const element = $(ev.currentTarget).parents(".item");
       const idOffset = element[0].id.lastIndexOf('-') + 1;
       const id = element[0].id.substring(idOffset);
-      const item = this.actor ? this.actor.getOwnedItem(id) : this.object;
+      const item = this.actor ? this.actor.items.get(id) : this.object;
       if (ev.target.value < item.data.data.clock_progress) {
         item.update({ ['data.clock_progress']: ev.target.value });
       }
@@ -229,7 +233,7 @@ export class WickedItemSheet extends ItemSheet {
 
   /**
    * Update shared supplies across characters
-   * @param {*} event 
+   * @param {*} event
    */
   async _onSharedSupplyChange(event) {
     event.preventDefault();

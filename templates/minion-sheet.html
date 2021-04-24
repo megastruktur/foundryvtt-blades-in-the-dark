@@ -2,7 +2,7 @@
 
   {{!-- Minion Pack Name --}}
   <div id="name" class="large-name">
-    <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
+    <input type="text" id="character-{{actor.id}}-name" name="name" value="{{actor.name}}">
   </div>
   <section id="minion-form" class="flex-horizontal">
     <section id="main-minion-form" class="section grow-two">
@@ -51,8 +51,8 @@
             <td>
               {{!-- Minion Number --}}
               <div class="text-input" id="number">
-                <label for="character-{{actor._id}}-number">{{localize "FITD.Number"}}</label>
-                <input type="number" id="character-{{actor._id}}-number" name="data.number.value" value="{{data.number.value}}" min="0" max="10">
+                <label for="character-{{actor.id}}-number">{{localize "FITD.Number"}}</label>
+                <input type="number" id="character-{{actor.id}}-number" name="data.number.value" value="{{data.number.value}}" min="0" max="10">
               </div>
             </td>
           </tr>
@@ -92,7 +92,7 @@
           {{!-- Special Abilities Tab --}}
           <div id="abilities" class="tab flex-vertical" data-tab="upgrades">
             <div class="label-stripe flex-horizontal">
-              <p><label for="character-{{actor._id}}-experience-0">{{localize "FITD.Upgrades"}}</label></p>
+              <p><label for="character-{{actor.id}}-experience-0">{{localize "FITD.Upgrades"}}</label></p>
               <p><a class="item-add-popup" data-item-type="minion_upgrade"><i class="fas fa-plus-square"></i></a></p>
             </div>
 
@@ -134,8 +134,8 @@
                     {{#unless (eq item.data.upgrade_checkbox_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-ucbx1-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
-                        <label for="item-{{item._id}}-ucbx1-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-ucbx1-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
+                        <label for="item-{{item.id}}-ucbx1-checked"></label>
                         {{item.data.upgrade_checkbox_text}}
                       </div>
                     </div>
@@ -143,8 +143,8 @@
                     {{#unless (eq item.data.upgrade_checkbox_2_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-ucbx2-checked" value="{{item.data.upgrade_checkbox_2_checked}}" {{checked item.data.upgrade_checkbox_2_checked}} data-property-to-set="upgrade_checkbox_2_checked">
-                        <label for="item-{{item._id}}-ucbx2-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-ucbx2-checked" value="{{item.data.upgrade_checkbox_2_checked}}" {{checked item.data.upgrade_checkbox_2_checked}} data-property-to-set="upgrade_checkbox_2_checked">
+                        <label for="item-{{item.id}}-ucbx2-checked"></label>
                         {{item.data.upgrade_checkbox_2_text}}
                       </div>
                     </div>
@@ -171,8 +171,8 @@
                     {{#unless (eq item.data.upgrade_checkbox_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-ucbx-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
-                        <label for="item-{{item._id}}-ucbx-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-ucbx-checked" value="{{item.data.upgrade_checkbox_checked}}" {{checked item.data.upgrade_checkbox_checked}} data-property-to-set="upgrade_checkbox_checked">
+                        <label for="item-{{item.id}}-ucbx-checked"></label>
                         {{item.data.upgrade_checkbox_text}}
                       </div>
                     </div>
@@ -180,8 +180,8 @@
                     {{#unless (eq item.data.upgrade_checkbox_2_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-ucbx2-checked" value="{{item.data.upgrade_checkbox_2_checked}}" {{checked item.data.upgrade_checkbox_2_checked}} data-property-to-set="upgrade_checkbox_2_checked">
-                        <label for="item-{{item._id}}-ucbx2-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-ucbx2-checked" value="{{item.data.upgrade_checkbox_2_checked}}" {{checked item.data.upgrade_checkbox_2_checked}} data-property-to-set="upgrade_checkbox_2_checked">
+                        <label for="item-{{item.id}}-ucbx2-checked"></label>
                         {{item.data.upgrade_checkbox_2_text}}
                       </div>
                     </div>
@@ -215,8 +215,8 @@
                     {{#unless (eq item.data.ability_checkbox_1_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
-                        <label for="item-{{item._id}}-acbx1-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                        <label for="item-{{item.id}}-acbx1-checked"></label>
                         {{item.data.ability_checkbox_1_text}}
                       </div>
                     </div>
@@ -224,8 +224,8 @@
                     {{#unless (eq item.data.ability_checkbox_2_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
-                        <label for="item-{{item._id}}-acbx2-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                        <label for="item-{{item.id}}-acbx2-checked"></label>
                         {{item.data.ability_checkbox_2_text}}
                       </div>
                     </div>

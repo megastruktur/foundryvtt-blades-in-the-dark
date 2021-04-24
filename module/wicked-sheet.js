@@ -21,7 +21,7 @@ export class WickedSheet extends ActorSheet {
     html.find(".tooltip").hover(this._onTooltipHover, this._onTooltipHoverEnd);
 
     // Item Dragging
-    if (this.actor.owner) {
+    if (this.document.isOwner) {
       // Core handlers from foundry.js
       var handler;
       if (!isNewerVersion(game.data.version, "0.7")) {
@@ -130,7 +130,7 @@ export class WickedSheet extends ActorSheet {
             itemPrefix += `(${e.data.theme}): `
           }
           break;
-        
+
         default:
       }
 
@@ -187,13 +187,13 @@ export class WickedSheet extends ActorSheet {
 
       items_to_add.push(items.find(e => e._id === $(this).val()));
     });
-    this.actor.createEmbeddedEntity("OwnedItem", items_to_add);
+    this.document.createEmbeddedDocuments("Item", items_to_add);
   }
   /* -------------------------------------------- */
 
   /**
    * Roll an Attribute die.
-   * @param {*} event 
+   * @param {*} event
    */
   async _onRollAttributeDieClick(event) {
 
@@ -202,9 +202,9 @@ export class WickedSheet extends ActorSheet {
 
     // Check if an attribute value was passed on the roll
     if (attribute_value) {
-      this.actor.rollAttributePopup(attribute_name, attribute_value);
+      this.document.rollAttributePopup(attribute_name, attribute_value);
     } else {
-      this.actor.rollAttributePopup(attribute_name);
+      this.document.rollAttributePopup(attribute_name);
     }
 
   }
@@ -217,7 +217,7 @@ export class WickedSheet extends ActorSheet {
     const attribute_name = pressed_button.name.split(".")[2];
     const skill_name = pressed_button.name.split(".")[4];
     const temp_var = pressed_button.value;
-    let skill = this.actor.data.data.attributes[attribute_name].skills[skill_name];
+    let skill = this.document.data.data.attributes[attribute_name].skills[skill_name];
 
     // Set Practice XP
     if (temp_var == 0 || temp_var > 1 || skill.value > 1) {
@@ -240,7 +240,7 @@ export class WickedSheet extends ActorSheet {
     }
 
     // Update Data
-    this.actor.update({ ['data.attributes.' + attribute_name + '.skills.' + skill_name + '.practice']: skill.practice });
+    this.document.update({ ['data.attributes.' + attribute_name + '.skills.' + skill_name + '.practice']: skill.practice });
 
     // Submit click
     pressed_button.click();
@@ -255,7 +255,7 @@ export class WickedSheet extends ActorSheet {
     event.preventDefault();
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
     const propertyToSet = event.currentTarget.dataset.propertyToSet;
-    const item = this.actor.getOwnedItem(itemId);
+    const item = this.document.items.get(itemId);
     return item.update({ ['data.' + propertyToSet]: event.target.checked });
   }
 
@@ -268,7 +268,7 @@ export class WickedSheet extends ActorSheet {
     event.preventDefault();
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
     const propertyToSet = event.currentTarget.dataset.propertyToSet;
-    const item = this.actor.getOwnedItem(itemId);
+    const item = this.document.items.get(itemId);
     return item.update({ ['data.' + propertyToSet]: event.target.value });
   }
 
@@ -300,7 +300,7 @@ export class WickedSheet extends ActorSheet {
   async _onProjectClockClick(event) {
     event.preventDefault();
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
-    const item = this.actor.getOwnedItem(itemId);
+    const item = this.document.items.get(itemId);
 
     if (event.target.value == 0) {
       // set clock progress to 0
@@ -318,10 +318,10 @@ export class WickedSheet extends ActorSheet {
     }
     const slope = (offsetX >= 0 ? Math.atan2(offsetX, offsetY) : Math.atan2(offsetX, offsetY) + 2 * Math.PI);
     const segmentArc = Math.PI * 2 / item.data.data.clock_size;
-    const clickedSegement = Math.ceil(slope / segmentArc);
+    const clickedSegment = Math.ceil(slope / segmentArc);
 
     // set clock progress to clicked segment
-    return item.update({ ['data.clock_progress']: clickedSegement });
+    return item.update({ ['data.clock_progress']: clickedSegment });
 
   }
 
@@ -329,12 +329,12 @@ export class WickedSheet extends ActorSheet {
 
   /**
    * Open a Minion Pack sheet
-   * @param {*} event 
+   * @param {*} event
    */
   async _onMinionOpenClick(event) {
 
     event.preventDefault();
-    const actor = game.actors.get(this.actor.data.data.minionpack);
+    const actor = game.actors.get(this.document.data.data.minionpack);
     const sheet = actor.sheet;
 
     // If the sheet is already rendered:
@@ -350,8 +350,8 @@ export class WickedSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Create tooltip on hover 
-   * @param {*} event 
+   * Create tooltip on hover
+   * @param {*} event
    */
   async _onTooltipHover(event) {
 
@@ -362,7 +362,7 @@ export class WickedSheet extends ActorSheet {
       $tt_ele.id = 'wo-tooltip';
       document.body.appendChild($tt_ele);
     }
-    
+
     $tt_ele.innerHTML = this.dataset.tooltip ?? "";
     if ($tt_ele.innerHTML.length == 0) return;
 
@@ -396,7 +396,7 @@ export class WickedSheet extends ActorSheet {
 
   /**
    * Remove tooltip on mouseout
-   * @param {*} event 
+   * @param {*} event
    */
   async _onTooltipHoverEnd(event) {
 
@@ -411,4 +411,3 @@ export class WickedSheet extends ActorSheet {
 
 
 }
-

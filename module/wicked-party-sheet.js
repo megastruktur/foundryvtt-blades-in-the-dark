@@ -22,6 +22,10 @@ export class WickedPartySheet extends WickedSheet {
   /** @override */
   getData() {
     const data = super.getData();
+		data.editable = this.options.editable;
+    const actorData = data.data;
+		data.actor = actorData;
+		data.data = actorData.data;
 
     // Override Code for updating the sheet goes here
     let max_tier = 0;
@@ -90,7 +94,7 @@ export class WickedPartySheet extends WickedSheet {
 
     let selected_heart = event.currentTarget.control.value;
     const itemId = event.currentTarget.closest(".item").dataset.itemId;
-    const item = this.actor.getOwnedItem(itemId);
+    const item = this.document.items.get(itemId);
 
     const hearts = item.data.data.tier + 1;
     const slashes = item.data.data.heart_slashes ?? 0;
@@ -123,20 +127,20 @@ export class WickedPartySheet extends WickedSheet {
     // Update Inventory Item
     html.find('.item-open-editor').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(element.data("itemId"));
+      const item = this.document.items.get(element.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(element.data("itemId"));
+      this.document.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
 
     // Add a new Adventurer
     html.find('.add-item').click(ev => {
-      WickedHelpers._addOwnedItem(ev, this.actor);
+      WickedHelpers._addOwnedItem(ev, this.document);
     });
 
     // Update Hearts

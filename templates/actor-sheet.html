@@ -8,7 +8,7 @@
         <td colspan="2">
           {{!-- Character Name --}}
           <div id="name" class="large-name">
-            <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
+            <input type="text" id="character-{{actor.id}}-name" name="name" value="{{actor.name}}">
           </div>
         </td>
         <td rowspan="4">
@@ -36,8 +36,8 @@
         <td colspan="1">
           {{!-- Look --}}
           <div class="text-input" id="look">
-            <label for="character-{{actor._id}}-look">{{localize "FITD.Look"}}</label>
-            <input type="text" id="character-{{actor._id}}-look" name="data.look" value="{{data.look}}">
+            <label for="character-{{actor.id}}-look">{{localize "FITD.Look"}}</label>
+            <input type="text" id="character-{{actor.id}}-look" name="data.look" value="{{data.look}}">
           </div>
         </td>
       </tr>
@@ -79,8 +79,8 @@
         <td>
           {{!-- Vile Friend --}}
           <div class="text-input" id="vilefriend">
-            <label for="character-{{actor._id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
-            <input type="text" id="character-{{actor._id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
+            <label for="character-{{actor.id}}-vilefriend">{{localize "FITD.VileFriend"}}</label>
+            <input type="text" id="character-{{actor.id}}-vilefriend" name="data.vilefriend" value="{{data.vilefriend}}">
           </div>
         </td>
       </tr>
@@ -121,12 +121,12 @@
           {{!-- Minion Pack --}}
           <div class="minionpack flex-horizontal" data-item-id="{{item._id}}">
             <div class="text-input flex-vertical">
-              <label for="character-{{actor._id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
+              <label for="character-{{actor.id}}-minionpack">{{localize "FITD.MinionPack"}}</label>
               <select name="data.minionpack">
                 {{#select data.minionpack}}
                 <option value="">{{localize "FITD.NoneParentheses"}}</option>
                 {{#each actor.data.existing_minions as |minion id|}}
-                <option value="{{this._id}}">{{minion.name}}</option>
+                <option value="{{this.id}}">{{minion.name}}</option>
                 {{/each}}
                 {{/select}}
               </select>
@@ -139,16 +139,16 @@
         {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Goldmonger"))}}
         <td>
           {{!-- Gold --}}
-          <div id="character-{{actor._id}}-gold" class="big-teeth gold">
+          <div id="character-{{actor.id}}-gold" class="big-teeth gold">
             {{#multiboxes data.gold.value}}
-            <input type="radio" id="character-{{actor._id}}-gold-0" name="data.gold.value" value="0" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-gold-0" name="data.gold.value" value="0" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Coin")}}}">
-              <label class="black-label" for="character-{{actor._id}}-gold-0">{{localize "FITD.Coin"}}</label>
+              <label class="black-label" for="character-{{actor.id}}-gold-0">{{localize "FITD.Coin"}}</label>
             </div>
 
             {{#times_from_1 data.gold.max}}
-            <input type="radio" id="character-{{../actor._id}}-gold-{{this}}" name="data.gold.value" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-gold-{{this}}"></label>
+            <input type="radio" id="character-{{../actor.id}}-gold-{{this}}" name="data.gold.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor.id}}-gold-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
@@ -156,16 +156,16 @@
         </td>
         <td>
           {{!-- Wicked XP --}}
-          <div id="character-{{actor._id}}-wickedxp" class="big-teeth xp-bar">
+          <div id="character-{{actor.id}}-wickedxp" class="big-teeth xp-bar">
             {{#multiboxes data.wickedxp.value}}
-            <input type="radio" id="character-{{actor._id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-wickedxp-0" name="data.wickedxp.value" value="0" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Wicked")}}}" >
-              <label class="black-label" for="character-{{actor._id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
+              <label class="black-label" for="character-{{actor.id}}-wickedxp-0">{{localize data.wickedxp.name}}</label>
             </div>
 
             {{#times_from_1 data.wickedxp.max}}
-            <input type="radio" id="character-{{../actor._id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-wickedxp-{{this}}"></label>
+            <input type="radio" id="character-{{../actor.id}}-wickedxp-{{this}}" name="data.wickedxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor.id}}-wickedxp-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
@@ -174,29 +174,29 @@
         <td>
           {{#unless (eq actor.data.primal_monster_type (localize "FITD.GAME_LOGIC.Doomseeker"))}}
           {{!-- Reckless XP --}}
-          <div id="character-{{actor._id}}-recklessxp" class="big-teeth xp-bar">
+          <div id="character-{{actor.id}}-recklessxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
-            <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Reckless")}}}" >
-              <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
+              <label class="black-label" for="character-{{actor.id}}-recklessxp-0">{{localize data.recklessxp.name}}</label>
             </div>
             {{#times_from_1 data.recklessxp.max}}
-            <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
+            <input type="radio" id="character-{{../actor.id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor.id}}-recklessxp-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
           </div>
           {{else}}
-          <div id="character-{{actor._id}}-guardianxp" class="big-teeth xp-bar">
+          <div id="character-{{actor.id}}-guardianxp" class="big-teeth xp-bar">
             {{#multiboxes data.recklessxp.value}}
-            <input type="radio" id="character-{{actor._id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-recklessxp-0" name="data.recklessxp.value" value="0" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.Guardian")}}}" >
-              <label class="black-label" for="character-{{actor._id}}-recklessxp-0">{{localize "FITD.GuardianXP"}}</label>
+              <label class="black-label" for="character-{{actor.id}}-recklessxp-0">{{localize "FITD.GuardianXP"}}</label>
             </div>
             {{#times_from_1 data.recklessxp.max}}
-            <input type="radio" id="character-{{../actor._id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-recklessxp-{{this}}"></label>
+            <input type="radio" id="character-{{../actor.id}}-recklessxp-{{this}}" name="data.recklessxp.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor.id}}-recklessxp-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
@@ -206,25 +206,25 @@
         {{else}}
         <td colspan="2">
           {{!-- Goldmonger Size --}}
-          <div id="character-{{actor._id}}-size" class="goldmonger-size">
+          <div id="character-{{actor.id}}-size" class="goldmonger-size">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}}">
               <label class="black-label inactive">{{localize "FITD.GMSize"}}:</label>
             </div>
             {{#multiboxes data.goldmonger_size}}
-            <input type="radio" id="character-{{actor._id}}-size-0" name="data.goldmonger_size" value="0" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-size-0" name="data.goldmonger_size" value="0" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}} {{{escdq (localize "FITD.TOOLTIP.GMSize0")}}}">
-              <label class="black-label tooltip" for="character-{{actor._id}}-size-0">Tier 0</label>
-              <label class="gm-size-box" for="character-{{actor._id}}-size-0"></label>
+              <label class="black-label tooltip" for="character-{{actor.id}}-size-0">Tier 0</label>
+              <label class="gm-size-box" for="character-{{actor.id}}-size-0"></label>
             </div>
-            <input type="radio" id="character-{{actor._id}}-size-1" name="data.goldmonger_size" value="1" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-size-1" name="data.goldmonger_size" value="1" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}} {{{escdq (localize "FITD.TOOLTIP.GMSize1")}}}">
-              <label class="black-label" for="character-{{actor._id}}-size-1">Tier 1</label>
-              <label class="gm-size-box" for="character-{{actor._id}}-size-1"></label>
+              <label class="black-label" for="character-{{actor.id}}-size-1">Tier 1</label>
+              <label class="gm-size-box" for="character-{{actor.id}}-size-1"></label>
             </div>
-            <input type="radio" id="character-{{actor._id}}-size-3" name="data.goldmonger_size" value="3" dtype="Radio">
+            <input type="radio" id="character-{{actor.id}}-size-3" name="data.goldmonger_size" value="3" dtype="Radio">
             <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.GMSize")}}} {{{escdq (localize "FITD.TOOLTIP.GMSize3")}}}">
-              <label class="black-label" for="character-{{actor._id}}-size-3">Tier 3</label>
-              <label class="gm-size-box" for="character-{{actor._id}}-size-3"></label>
+              <label class="black-label" for="character-{{actor.id}}-size-3">Tier 3</label>
+              <label class="gm-size-box" for="character-{{actor.id}}-size-3"></label>
             </div>
             {{/multiboxes}}
           </div>
@@ -233,10 +233,10 @@
           {{!-- Pleased XP --}}
           <div class="tooltip" data-tooltip="{{{escdq (localize "FITD.TOOLTIP.PleasedXP")}}}" >
             <div class="pleased-xp">
-              <label class="black-label" for="character-{{actor._id}}-pleased-xp">{{localize "FITD.GMPleasedXP"}}:</label>
-              <input type="checkbox" id="character-{{actor._id}}-pleased-xp" name="data.goldmonger_pleased"
+              <label class="black-label" for="character-{{actor.id}}-pleased-xp">{{localize "FITD.GMPleasedXP"}}:</label>
+              <input type="checkbox" id="character-{{actor.id}}-pleased-xp" name="data.goldmonger_pleased"
                      value="data.goldmonger_pleased" {{checked data.goldmonger_pleased}}>
-              <label class="pleased-checkbox" for="character-{{actor._id}}-pleased-xp"></label>
+              <label class="pleased-checkbox" for="character-{{actor.id}}-pleased-xp"></label>
             </div>
           </div>
         </td>
@@ -273,8 +273,8 @@
                     {{#if (eq item.type "defense")}}
                     <div class="item flex-horizontal" data-item-id="{{item._id}}">
                       <div class="item-checkmark standard-checkbox">
-                        <input type="checkbox" id="item-{{item._id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}} data-property-to-set="checked">
-                        <label for="item-{{item._id}}-checked"></label>
+                        <input type="checkbox" id="item-{{item.id}}-checked" value="{{item.data.checked}}" {{checked item.data.checked}} data-property-to-set="checked">
+                        <label for="item-{{item.id}}-checked"></label>
                         <div class="item-name item-open-editor">{{item.name}}</div>
                       </div>
                       <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
@@ -324,7 +324,7 @@
       {{!-- Special Abilities Tab --}}
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe flex-horizontal">
-          <p><label for="character-{{actor._id}}-experience-0">{{localize "FITD.Abilities"}}</label></p>
+          <p><label for="character-{{actor.id}}-experience-0">{{localize "FITD.Abilities"}}</label></p>
           <p><a class="item-add-popup" data-item-type="specialability"><i class="fas fa-plus-square"></i></a></p>
         </div>
 
@@ -345,8 +345,8 @@
                   {{#unless (eq item.data.ability_checkbox_1_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-bpcbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
-                      <label for="item-{{item._id}}-bpcbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-bpcbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                      <label for="item-{{item.id}}-bpcbx1-checked"></label>
                       {{item.data.ability_checkbox_1_text}}
                     </div>
                   </div>
@@ -354,8 +354,8 @@
                   {{#unless (eq item.data.ability_checkbox_2_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-bpcbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
-                      <label for="item-{{item._id}}-bpcbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-bpcbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                      <label for="item-{{item.id}}-bpcbx2-checked"></label>
                       {{item.data.ability_checkbox_2_text}}
                     </div>
                   </div>
@@ -384,8 +384,8 @@
                 <div class="item-description">{{item.data.description}}</div>
                 <div class="item-checkmark">
                   <div class="standard-checkbox">
-                    <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
-                    <label for="item-{{item._id}}-acbx1-checked"></label>{{localize "FITD.FSGrafted"}}
+                    <input type="checkbox" id="item-{{item.id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                    <label for="item-{{item.id}}-acbx1-checked"></label>{{localize "FITD.FSGrafted"}}
                   </div>
                 </div>
               </td>
@@ -421,18 +421,18 @@
             {{#if (eq item.type "specialability")}}
             {{#if (eq item.data.ability_group "group_primal")}}
             {{#if (eq item.data.ability_type "be_psi")}}
-            <tr id="discipline-{{item._id}}" class="item psi-discipline" data-item-id="{{item._id}}">
+            <tr id="discipline-{{item.id}}" class="item psi-discipline" data-item-id="{{item._id}}">
               <td colspan="3">
                 <div class="label-stripe item-radio">
                   <div class="roll-die-attribute rollable-text tooltip" data-tooltip="{{{escdq data.primal.be_psi_skill_tooltip}}}" data-roll-attribute="{{data.primal.be_psi_skill_name}}">
                     {{data.primal.be_psi_skill_name}}
                   </div>
                   {{#multiboxes data.primal.be_psi_dots}}
-                  <input type="radio" id="discipline-{{item._id}}-0" name="{{item._id}}-data.primal.be_psi_dots" value="0" dtype="Radio" data-property-to-set="primal.be_psi_dots">
-                  <label for="discipline-{{item._id}}-0"></label>
+                  <input type="radio" id="discipline-{{item.id}}-0" name="{{item.id}}-data.primal.be_psi_dots" value="0" dtype="Radio" data-property-to-set="primal.be_psi_dots">
+                  <label for="discipline-{{item.id}}-0"></label>
                   {{#times_from_1 3}}
-                  <input type="radio" id="discipline-{{item._id}}-{{this}}" name="{{item._id}}-data.primal.be_psi_dots" value="{{this}}" dtype="Radio" data-property-to-set="primal.be_psi_dots">
-                  <label for="discipline-{{item._id}}-{{this}}"></label>
+                  <input type="radio" id="discipline-{{item.id}}-{{this}}" name="{{item.id}}-data.primal.be_psi_dots" value="{{this}}" dtype="Radio" data-property-to-set="primal.be_psi_dots">
+                  <label for="discipline-{{item.id}}-{{this}}"></label>
                   {{/times_from_1}}
                   {{/multiboxes}}
                 </div>
@@ -535,23 +535,23 @@
                   {{#multiboxes data.primal.gm_path_value}}
                   <tr>
                     <td>
-                      <input type="radio" id="path-{{item._id}}-0" name="{{item._id}}-data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
-                      <label for="path-{{item._id}}-0"><i class="fab fa-creative-commons-zero nullifier tooltip" data-tooltip="{{localize "FITD.TOOLTIP.Reset"}}"></i></label>
+                      <input type="radio" id="path-{{item.id}}-0" name="{{item.id}}-data.primal.gm_path_value" value="0" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item.id}}-0"><i class="fab fa-creative-commons-zero nullifier tooltip" data-tooltip="{{localize "FITD.TOOLTIP.Reset"}}"></i></label>
                     </td>
                     <td><div class="item-name item-body"><span class="item-open-editor">{{item.name}}</span></div></td>
                   </tr>
                   <tr>
                     <td class="{{#if (gt item.data.primal.gm_path_value 0)}}filled{{/if}}">
-                      <input type="radio" id="path-{{item._id}}-1" name="{{item._id}}-data.primal.gm_path_value" value="1" dtype="Radio" data-property-to-set="primal.gm_path_value">
-                      <label for="path-{{item._id}}-1"></label>
+                      <input type="radio" id="path-{{item.id}}-1" name="{{item.id}}-data.primal.gm_path_value" value="1" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item.id}}-1"></label>
                     </td>
                     <td>
                       <div class="item-description">{{item.data.primal.gm_desc_1}}</div>
                       {{#unless (eq item.data.primal.gm_checkbox_1_text "")}}
                       <div class="item-checkmark">
                         <div class="standard-checkbox">
-                          <input type="checkbox" id="item-{{item._id}}-gmcbx1-checked" value="{{item.data.primal.gm_checkbox_1_checked}}" {{checked item.data.primal.gm_checkbox_1_checked}} data-property-to-set="primal.gm_checkbox_1_checked">
-                          <label for="item-{{item._id}}-gmcbx1-checked"></label>
+                          <input type="checkbox" id="item-{{item.id}}-gmcbx1-checked" value="{{item.data.primal.gm_checkbox_1_checked}}" {{checked item.data.primal.gm_checkbox_1_checked}} data-property-to-set="primal.gm_checkbox_1_checked">
+                          <label for="item-{{item.id}}-gmcbx1-checked"></label>
                           {{item.data.primal.gm_checkbox_1_text}}
                         </div>
                       </div>
@@ -560,16 +560,16 @@
                   </tr>
                   <tr>
                     <td class="{{#if (gt item.data.primal.gm_path_value 1)}}filled{{/if}}">
-                      <input type="radio" id="path-{{item._id}}-2" name="{{item._id}}-data.primal.gm_path_value" value="2" dtype="Radio" data-property-to-set="primal.gm_path_value">
-                      <label for="path-{{item._id}}-2"></label>
+                      <input type="radio" id="path-{{item.id}}-2" name="{{item.id}}-data.primal.gm_path_value" value="2" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item.id}}-2"></label>
                     </td>
                     <td>
                       <div class="item-description">{{item.data.primal.gm_desc_2}}</div>
                       {{#unless (eq item.data.primal.gm_checkbox_2_text "")}}
                       <div class="item-checkmark">
                         <div class="standard-checkbox">
-                          <input type="checkbox" id="item-{{item._id}}-gmcbx2-checked" value="{{item.data.primal.gm_checkbox_2_checked}}" {{checked item.data.primal.gm_checkbox_2_checked}} data-property-to-set="primal.gm_checkbox_2_checked">
-                          <label for="item-{{item._id}}-gmcbx2-checked"></label>
+                          <input type="checkbox" id="item-{{item.id}}-gmcbx2-checked" value="{{item.data.primal.gm_checkbox_2_checked}}" {{checked item.data.primal.gm_checkbox_2_checked}} data-property-to-set="primal.gm_checkbox_2_checked">
+                          <label for="item-{{item.id}}-gmcbx2-checked"></label>
                           {{item.data.primal.gm_checkbox_2_text}}
                         </div>
                       </div>
@@ -578,16 +578,16 @@
                   </tr>
                   <tr>
                     <td class="{{#if (gt item.data.primal.gm_path_value 2)}}filled{{/if}}">
-                      <input type="radio" id="path-{{item._id}}-3" name="{{item._id}}-data.primal.gm_path_value" value="3" dtype="Radio" data-property-to-set="primal.gm_path_value">
-                      <label for="path-{{item._id}}-3"></label>
+                      <input type="radio" id="path-{{item.id}}-3" name="{{item.id}}-data.primal.gm_path_value" value="3" dtype="Radio" data-property-to-set="primal.gm_path_value">
+                      <label for="path-{{item.id}}-3"></label>
                     </td>
                     <td>
                       <div class="item-description">{{item.data.primal.gm_desc_3}}</div>
                       {{#unless (eq item.data.primal.gm_checkbox_3_text "")}}
                       <div class="item-checkmark">
                         <div class="standard-checkbox">
-                          <input type="checkbox" id="item-{{item._id}}-gmcbx3-checked" value="{{item.data.primal.gm_checkbox_3_checked}}" {{checked item.data.primal.gm_checkbox_3_checked}} data-property-to-set="primal.gm_checkbox_3_checked">
-                          <label for="item-{{item._id}}-gmcbx3-checked"></label>
+                          <input type="checkbox" id="item-{{item.id}}-gmcbx3-checked" value="{{item.data.primal.gm_checkbox_3_checked}}" {{checked item.data.primal.gm_checkbox_3_checked}} data-property-to-set="primal.gm_checkbox_3_checked">
+                          <label for="item-{{item.id}}-gmcbx3-checked"></label>
                           {{item.data.primal.gm_checkbox_3_text}}
                         </div>
                       </div>
@@ -621,8 +621,8 @@
                   {{#unless (eq item.data.ability_checkbox_1_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
-                      <label for="item-{{item._id}}-acbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                      <label for="item-{{item.id}}-acbx1-checked"></label>
                       {{item.data.ability_checkbox_1_text}}
                     </div>
                   </div>
@@ -630,8 +630,8 @@
                   {{#unless (eq item.data.ability_checkbox_2_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
-                      <label for="item-{{item._id}}-acbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                      <label for="item-{{item.id}}-acbx2-checked"></label>
                       {{item.data.ability_checkbox_2_text}}
                     </div>
                   </div>
@@ -662,8 +662,8 @@
                   {{#unless (eq item.data.ability_checkbox_1_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
-                      <label for="item-{{item._id}}-acbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                      <label for="item-{{item.id}}-acbx1-checked"></label>
                       {{item.data.ability_checkbox_1_text}}
                     </div>
                   </div>
@@ -671,8 +671,8 @@
                   {{#unless (eq item.data.ability_checkbox_2_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
-                      <label for="item-{{item._id}}-acbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                      <label for="item-{{item.id}}-acbx2-checked"></label>
                       {{item.data.ability_checkbox_2_text}}
                     </div>
                   </div>
@@ -703,8 +703,8 @@
                   {{#unless (eq item.data.ability_checkbox_1_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
-                      <label for="item-{{item._id}}-acbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-acbx1-checked" value="{{item.data.ability_checkbox_1_checked}}" {{checked item.data.ability_checkbox_1_checked}} data-property-to-set="ability_checkbox_1_checked">
+                      <label for="item-{{item.id}}-acbx1-checked"></label>
                       {{item.data.ability_checkbox_1_text}}
                     </div>
                   </div>
@@ -712,8 +712,8 @@
                   {{#unless (eq item.data.ability_checkbox_2_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
-                      <label for="item-{{item._id}}-acbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-acbx2-checked" value="{{item.data.ability_checkbox_2_checked}}" {{checked item.data.ability_checkbox_2_checked}} data-property-to-set="ability_checkbox_2_checked">
+                      <label for="item-{{item.id}}-acbx2-checked"></label>
                       {{item.data.ability_checkbox_2_text}}
                     </div>
                   </div>
@@ -792,14 +792,14 @@
         {{/unless}}
         {{/unless}}
         {{!-- Supply Table --}}
-        <div id="character-{{actor._id}}-supply" class="label-stripe flex-horizontal supply">
+        <div id="character-{{actor.id}}-supply" class="label-stripe flex-horizontal supply">
           <p class="flex-horizontal">
             {{#multiboxes data.supply.value}}
-            <input type="radio" id="character-{{actor._id}}-supply-0" name="data.supply.value" value="0" dtype="Radio">
-            <label for="character-{{actor._id}}-supply-0">{{localize "FITD.Supply"}}</label>
+            <input type="radio" id="character-{{actor.id}}-supply-0" name="data.supply.value" value="0" dtype="Radio">
+            <label for="character-{{actor.id}}-supply-0">{{localize "FITD.Supply"}}</label>
             {{#times_from_1 data.supply.max}}
-            <input type="radio" id="character-{{../actor._id}}-supply-{{this}}" name="data.supply.value" value="{{this}}" dtype="Radio">
-            <label for="character-{{../actor._id}}-supply-{{this}}"></label>
+            <input type="radio" id="character-{{../actor.id}}-supply-{{this}}" name="data.supply.value" value="{{this}}" dtype="Radio">
+            <label for="character-{{../actor.id}}-supply-{{this}}"></label>
             {{/times_from_1}}
             {{/multiboxes}}
           </p>
@@ -824,10 +824,10 @@
                 <div class="checkbox-container">
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-scbx1-checked" value="{{item.data.supply_checkbox_1_checked}}" {{checked item.data.supply_checkbox_1_checked}} data-property-to-set="supply_checkbox_1_checked">
-                      <label for="item-{{item._id}}-scbx1-checked"></label>
-                      <input type="checkbox" id="item-{{item._id}}-scbx2-checked" value="{{item.data.supply_checkbox_2_checked}}" {{checked item.data.supply_checkbox_2_checked}} data-property-to-set="supply_checkbox_2_checked">
-                      <label for="item-{{item._id}}-scbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-scbx1-checked" value="{{item.data.supply_checkbox_1_checked}}" {{checked item.data.supply_checkbox_1_checked}} data-property-to-set="supply_checkbox_1_checked">
+                      <label for="item-{{item.id}}-scbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-scbx2-checked" value="{{item.data.supply_checkbox_2_checked}}" {{checked item.data.supply_checkbox_2_checked}} data-property-to-set="supply_checkbox_2_checked">
+                      <label for="item-{{item.id}}-scbx2-checked"></label>
                       {{item.data.supply_checkbox_1_text}}
                     </div>
                   </div>
@@ -839,8 +839,8 @@
                   {{#unless (eq item.data.supply_checkbox_1_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-scbx1-checked" value="{{item.data.supply_checkbox_1_checked}}" {{checked item.data.supply_checkbox_1_checked}} data-property-to-set="supply_checkbox_1_checked">
-                      <label for="item-{{item._id}}-scbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-scbx1-checked" value="{{item.data.supply_checkbox_1_checked}}" {{checked item.data.supply_checkbox_1_checked}} data-property-to-set="supply_checkbox_1_checked">
+                      <label for="item-{{item.id}}-scbx1-checked"></label>
                       {{item.data.supply_checkbox_1_text}}
                     </div>
                   </div>
@@ -848,8 +848,8 @@
                   {{#unless (eq item.data.supply_checkbox_2_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-scbx2-checked" value="{{item.data.supply_checkbox_2_checked}}" {{checked item.data.supply_checkbox_2_checked}} data-property-to-set="supply_checkbox_2_checked">
-                      <label for="item-{{item._id}}-scbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-scbx2-checked" value="{{item.data.supply_checkbox_2_checked}}" {{checked item.data.supply_checkbox_2_checked}} data-property-to-set="supply_checkbox_2_checked">
+                      <label for="item-{{item.id}}-scbx2-checked"></label>
                       {{item.data.supply_checkbox_2_text}}
                     </div>
                   </div>
@@ -934,8 +934,8 @@
                 </div>
                 <div class="checkbox-container">
                   <div class="standard-checkbox">
-                    <input type="checkbox" id="{{actor._id}}-dtaused" name="data.downtime_action_used" {{checked data.downtime_action_used}}>
-                    <label for="{{actor._id}}-dtaused"></label>
+                    <input type="checkbox" id="{{actor.id}}-dtaused" name="data.downtime_action_used" {{checked data.downtime_action_used}}>
+                    <label for="{{actor.id}}-dtaused"></label>
                     {{localize "FITD.DowntimeActionUsed"}}
                   </div>
 				  <div id="downtime-risk">{{{localize "FITD.DowntimeActionRiskIt"}}}</div>
@@ -957,8 +957,8 @@
                   {{#unless (eq item.data.downtime_checkbox_1_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-dtcbx1-checked" value="{{item.data.downtime_checkbox_1_checked}}" {{checked item.data.downtime_checkbox_1_checked}} data-property-to-set="downtime_checkbox_1_checked">
-                      <label for="item-{{item._id}}-dtcbx1-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-dtcbx1-checked" value="{{item.data.downtime_checkbox_1_checked}}" {{checked item.data.downtime_checkbox_1_checked}} data-property-to-set="downtime_checkbox_1_checked">
+                      <label for="item-{{item.id}}-dtcbx1-checked"></label>
                       {{item.data.downtime_checkbox_1_text}}
                     </div>
                   </div>
@@ -966,8 +966,8 @@
                   {{#unless (eq item.data.downtime_checkbox_2_text "")}}
                   <div class="item-checkmark">
                     <div class="standard-checkbox">
-                      <input type="checkbox" id="item-{{item._id}}-dtcbx2-checked" value="{{item.data.downtime_checkbox_2_checked}}" {{checked item.data.downtime_checkbox_2_checked}} data-property-to-set="downtime_checkbox_2_checked">
-                      <label for="item-{{item._id}}-dtcbx2-checked"></label>
+                      <input type="checkbox" id="item-{{item.id}}-dtcbx2-checked" value="{{item.data.downtime_checkbox_2_checked}}" {{checked item.data.downtime_checkbox_2_checked}} data-property-to-set="downtime_checkbox_2_checked">
+                      <label for="item-{{item.id}}-dtcbx2-checked"></label>
                       {{item.data.downtime_checkbox_2_text}}
                     </div>
                   </div>
@@ -1001,8 +1001,8 @@
             {{#if (eq item.type "project")}}
             <tr class="item" data-item-id="{{item._id}}">
               <td class="flex-horizontal project-clock">
-                <div id="project-clock-{{item._id}}">
-                  {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
+                <div id="project-clock-{{item.id}}">
+                  {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item.id}}}
                 </div>
               </td>
               <td class="item-body"><div class="item-name item-open-editor">{{item.name}}</div></td>

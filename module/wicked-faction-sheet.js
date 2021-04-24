@@ -22,9 +22,13 @@ export class WickedFactionSheet extends WickedSheet {
   /** @override */
   getData() {
     const data = super.getData();
-
+		data.editable = this.options.editable;
+    const actorData = data.data;
+		data.actor = actorData;
+		data.data = actorData.data;
+		
     // Override Code for updating the sheet goes here
-    
+
     return data;
   }
 
@@ -58,16 +62,21 @@ export class WickedFactionSheet extends WickedSheet {
 
     let image_path = `systems/wicked-ones/styles/assets/default-images/faction-token-${formData['data.category']}-${Math.max(1,formData['data.tier.value'])}.webp`;
     formData['token.img'] = image_path;
-
-    let data = {
+    let data = [];
+    let image = {
       img: image_path
     };
 
     let tokens = this.actor.getActiveTokens();
 
     tokens.forEach(function (token) {
-      token.update(data);
+			data.push(mergeObject(
+				{_id: token.id},
+				image
+			));
     });
+
+    await TokenDocument.updateDocuments(data, {parent: game.scenes.current});
 
     // Update the Actor
     return this.object.update(formData);

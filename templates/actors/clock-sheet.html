@@ -2,9 +2,9 @@
 
   {{#if editable}}
   <div class="large-name">
-    <input type="text" id="clock-{{actor._id}}-name" name="name" value="{{actor.name}}">
+    <input type="text" id="clock-{{actor.id}}-name" name="name" value="{{actor.name}}">
   </div>
-  <section id="clock-{{actor._id}}-sheet" class="flex-horizontal">
+  <section id="clock-{{actor.id}}-sheet" class="flex-horizontal">
     <div class="flexcol blades-clock-type">
       <select data-type="String" name="data.type">
         {{#select data.type}}
@@ -22,7 +22,7 @@
         {{/select}}
       </select>
       <div class="clocks clocks-{{data.type}}">
-        {{{blades-clock "data.value" data.type data.value item._id}}}
+        {{{blades-clock "data.value" data.type data.value item.id}}}
       </div>
     </div>
     <div id="clock-notes" class="flex-vertical">
