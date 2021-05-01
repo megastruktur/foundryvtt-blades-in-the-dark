@@ -1,0 +1,231 @@
+<form class="{{cssClass}} actor-sheet gm-sheet" autocomplete="off">
+
+
+  <section id="gm-info" class="flex-vertical">
+    <table>
+      <tr>
+        <td id="name" class="large-name">
+            <input type="text" id="gm-{{actor._id}}-name" name="name" value="{{actor.name}}">
+        </td>
+        <td>
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+        </td>
+      </tr>
+    </table>
+
+    {{!-- Insert Cycle of Play, Hints, Pocketed Blowback & Calamity --}}
+    <div class="label-stripe flex-horizontal cycle-headline">{{localize "FITD.CYCLE.Name"}}</div>
+    <table class="cycle-of-play">
+      <thead>
+        <tr>
+          <td>{{localize "FITD.CYCLE.HEADINGS.Lurking"}}</td>
+          <td>{{localize "FITD.CYCLE.HEADINGS.Calamity"}}</td>
+          <td>{{localize "FITD.CYCLE.HEADINGS.Raiding"}}</td>
+          <td>{{localize "FITD.CYCLE.HEADINGS.Blowback"}}</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#multiboxes data.current_phase.value}}
+        <tr>
+          <td>
+            <input type="radio" id="current_phase-1" name="data.current_phase.value" value="1">
+            <label for="current_phase-1">{{localize "FITD.CYCLE.PHASE1.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-4" name="data.current_phase.value" value="4">
+            <label for="current_phase-4">{{localize "FITD.CYCLE.PHASE4.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-7" name="data.current_phase.value" value="7">
+            <label for="current_phase-7">{{localize "FITD.CYCLE.PHASE7.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-10" name="data.current_phase.value" value="10">
+            <label for="current_phase-10">{{localize "FITD.CYCLE.PHASE10.Name"}}</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" id="current_phase-2" name="data.current_phase.value" value="2">
+            <label for="current_phase-2">{{localize "FITD.CYCLE.PHASE2.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-5" name="data.current_phase.value" value="5">
+            <label for="current_phase-5">{{localize "FITD.CYCLE.PHASE5.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-8" name="data.current_phase.value" value="8">
+            <label for="current_phase-8">{{localize "FITD.CYCLE.PHASE8.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-11" name="data.current_phase.value" value="11">
+            <label for="current_phase-11">{{localize "FITD.CYCLE.PHASE11.Name"}}</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="radio" id="current_phase-3" name="data.current_phase.value" value="3">
+            <label for="current_phase-3">{{localize "FITD.CYCLE.PHASE3.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-6" name="data.current_phase.value" value="6">
+            <label for="current_phase-6">{{localize "FITD.CYCLE.PHASE6.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-9" name="data.current_phase.value" value="9">
+            <label for="current_phase-9">{{localize "FITD.CYCLE.PHASE9.Name"}}</label>
+          </td>
+          <td>
+            <input type="radio" id="current_phase-12" name="data.current_phase.value" value="12">
+            <label for="current_phase-12">{{localize "FITD.CYCLE.PHASE12.Name"}}</label>
+          </td>
+        </tr>
+      </tbody>
+      {{/multiboxes}}
+    </table>
+    <div class="phase-hint">
+      <p>{{{data.phase_hint}}}</p>
+    </div>
+
+  </section>
+
+  {{!-- Navigation & Tabs --}}
+  <section class="flex-horizontal">
+    <div id="dun-nav-container" class="tab-content flex-vertical grow-two">
+
+      {{!-- Nav menu --}}
+      <nav class="tabs flex-horizontal">
+        <a class="item" data-tab="clocks">{{localize "FITD.Clocks"}}</a>
+        <a class="item" data-tab="invasions">{{localize "FITD.Invasions"}}</a>
+        <a class="item" data-tab="notes">{{localize "FITD.Notes"}}</a>
+        <a class="item" data-tab="all-dungeon-items">{{localize "FITD.AllItems"}}</a>
+      </nav>
+
+      {{!-- Clocks Tab --}}
+      <div id="clock-tab" class="tab flex-vertical" data-tab="clocks">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.Clocks"}}</p>
+          <p><a class="item-add-popup" data-item-type="project"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <table id="project-clocks-table">
+          <thead>
+            <tr>
+              <td>Clock</td>
+              <td>Name</td>
+              <td>Description</td>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody class="draggable-items">
+            {{#each actor.items as |item id|}}
+            {{#if (eq item.type "project")}}
+            <tr class="item" data-item-id="{{item._id}}">
+              <td class="flex-horizontal project-clock">
+                <div id="project-clock-{{item._id}}">
+                  {{{blades-clock "data.project_clock" item.data.clock_size item.data.clock_progress item._id}}}
+                </div>
+              </td>
+              <td class="item-body"><div class="item-name item-open-editor">{{item.name}}</div></td>
+              <td><div class="item-description">{{item.data.description}}</div></td>
+              <td><a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      {{!-- Invasions Tab --}}
+      <div id="invasions-tab" class="tab flex-vertical" data-tab="invasions">
+        <div class="label-stripe flex-horizontal">
+          <p>{{localize "FITD.MajorInvasions"}}</p>
+          <p><a class="item-add-popup" data-item-type="invasion"><i class="fas fa-plus-square"></i></a></p>
+        </div>
+        <table class="draggable-items" id="invasion-list">
+            <thead>
+              <tr>
+                <td>Inv #</td>
+                <td>{{ localize "FITD.Tier" }} 0</td>
+                <td>{{ localize "FITD.Tier" }} 1</td>
+                <td>{{ localize "FITD.Tier" }} 2</td>
+                <td>{{ localize "FITD.Tier" }} 3</td>
+                <td>{{ localize "FITD.Tier" }} 4</td>
+                <td>{{ localize "FITD.Hirelings" }}</td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each actor.items as |item id|}}
+              {{#if (eq item.type "invasion")}}
+              {{!-- Major Invasions --}}
+              <tr class="item" data-item-id="{{item._id}}">
+                <td class="item-body">
+                  <div class="item-name item-open-editor">{{item.data.inv_number}}</div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_0}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_1}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_2}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_3}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.adventurers_lv_4}}
+                  </div>
+                </td>
+                <td>
+                  <div class="item-description">
+                    {{item.data.hirelings}}
+                  </div>
+                </td>
+                <td>
+                  <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              {{/if}}
+              {{/each}}
+            </tbody>
+          </table>
+      </div>
+
+      {{!-- Notes Tab --}}
+      <div id="notes-tab" class="tab flex-vertical" data-tab="notes">
+        <div class="label-stripe">
+          <p>{{localize "FITD.Notes"}}</p>
+        </div>
+        {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      </div>
+
+      {{!-- Full Item List --}}
+      <div id="all-dungeon-items" class="tab grow-two flex-vertical" data-tab="all-dungeon-items">
+        <div class="label-stripe">
+          <p><label>{{localize "FITD.AllItems"}}</label></p>
+        </div>
+        {{#each actor.items as |item id|}}
+        <div class="item flex-horizontal all-items-list" data-item-id="{{item._id}}">
+          <div class="item-body flex-horizontal">
+            <img class="item-open-editor" src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+            <div class="item-name item-open-editor">{{item.name}}</div>
+          </div>
+          <a class="item-control item-delete" title="{{localize 'FITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        </div>
+        {{/each}}
+      </div>
+
+    </div>
+  </section>
+</form>

@@ -139,6 +139,9 @@ export class WickedItemSheet extends ItemSheet {
     // Update shared supplies across actors
     html.find('.shared-supply-count').change(this._onSharedSupplyChange.bind(this));
 
+    // Update adventurer class default passive skill
+    html.find('#adventurer-class-select').change(this._onAdvClassChange.bind(this));
+
     // Update Inventory Item
     html.find('#item-type-select').change(ev => {
       const abilitytype = ev.currentTarget.value;
@@ -198,7 +201,14 @@ export class WickedItemSheet extends ItemSheet {
         for (var i = 0; i < ev.currentTarget.length; i++) {
           if (i == choice) {
             ev.currentTarget[i].selected = true;
-            item.update({ ['data.' + propertyToSet]: game.i18n.localize(ev.currentTarget[i].value) });
+            if (ev.currentTarget.dataset.propertyToSet == 'adventurer_class_custom') {
+              let data = this.getAdventurerTraits(ev.currentTarget[i].value);
+              data['data.' + propertyToSet] = game.i18n.localize(ev.currentTarget[i].value);
+              item.update(data);
+
+            } else {
+              item.update({['data.' + propertyToSet]: game.i18n.localize(ev.currentTarget[i].value)});
+            }
           } else {
             ev.currentTarget[i].selected = false;
           }
@@ -248,6 +258,206 @@ export class WickedItemSheet extends ItemSheet {
       });
     });
 
+  }
+
+  /**
+   * Update adventurer passive on class change
+   * @param {*} event 
+   */
+  async _onAdvClassChange(event) {
+    let newClass = event.currentTarget.value;
+    if (newClass == "" || newClass == "random" || newClass == "custom") {
+      return;
+    }
+    let data = this.getAdventurerTraits(event.currentTarget.value);
+    this.object.update(data);
+  }
+
+  /**
+   * Get adventurer traits by class
+   * @param {*} adventurerClass 
+   */
+  getAdventurerTraits(adventurerClass) {
+
+    let newName = game.i18n.localize(adventurerClass);
+    let newPassive = game.i18n.localize(adventurerClass.replace('ADV_CLASS', 'ADV_CLASS_PASSIVE'));
+    let newMotivation = '';
+    let newPos = '';
+    let newNeg = '';
+
+    switch (adventurerClass) {
+      case CONFIG.WO.adventurer_classes.academic:
+        newMotivation = CONFIG.WO.adventurer_motivations.exploration;
+        newPos = CONFIG.WO.positive_traits.clever;
+        newNeg = CONFIG.WO.negative_traits.greedy;
+        break;
+      case CONFIG.WO.adventurer_classes.alchemist:
+        newMotivation = CONFIG.WO.adventurer_motivations.thrills;
+        newPos = CONFIG.WO.positive_traits.clever;
+        newNeg = CONFIG.WO.negative_traits.impatient;
+        break;
+      case CONFIG.WO.adventurer_classes.amazon:
+        newMotivation = CONFIG.WO.adventurer_motivations.challenge;
+        newPos = CONFIG.WO.positive_traits.honest;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.aristocrat:
+        newMotivation = CONFIG.WO.adventurer_motivations.respect;
+        newPos = CONFIG.WO.positive_traits.confident;
+        newNeg = CONFIG.WO.negative_traits.brash;
+        break;
+      case CONFIG.WO.adventurer_classes.assassin:
+        newMotivation = CONFIG.WO.adventurer_motivations.riches;
+        newPos = CONFIG.WO.positive_traits.persistent;
+        newNeg = CONFIG.WO.negative_traits.dishonest;
+        break;
+      case CONFIG.WO.adventurer_classes.barbarian:
+        newMotivation = CONFIG.WO.adventurer_motivations.justice;
+        newPos = CONFIG.WO.positive_traits.confident;
+        newNeg = CONFIG.WO.negative_traits.dumb;
+        break;
+      case CONFIG.WO.adventurer_classes.bard:
+        newMotivation = CONFIG.WO.adventurer_motivations.riches;
+        newPos = CONFIG.WO.positive_traits.helpful;
+        newNeg = CONFIG.WO.negative_traits.greedy;
+        break;
+      case CONFIG.WO.adventurer_classes.buccaneer:
+        newMotivation = CONFIG.WO.adventurer_motivations.riches;
+        newPos = CONFIG.WO.positive_traits.generous;
+        newNeg = CONFIG.WO.negative_traits.cocky;
+        break;
+      case CONFIG.WO.adventurer_classes.centurion:
+        newMotivation = CONFIG.WO.adventurer_motivations.respect;
+        newPos = CONFIG.WO.positive_traits.steady;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.chaosmage:
+        newMotivation = CONFIG.WO.adventurer_motivations.exploration;
+        newPos = CONFIG.WO.positive_traits.optimistic;
+        newNeg = CONFIG.WO.negative_traits.indecisive;
+        break;
+      case CONFIG.WO.adventurer_classes.cleric:
+        newMotivation = CONFIG.WO.adventurer_motivations.justice;
+        newPos = CONFIG.WO.positive_traits.generous;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.deathknight:
+        newMotivation = CONFIG.WO.adventurer_motivations.vengeance;
+        newPos = CONFIG.WO.positive_traits.persistent;
+        newNeg = CONFIG.WO.negative_traits.cocky;
+        break;
+      case CONFIG.WO.adventurer_classes.defender:
+        newMotivation = CONFIG.WO.adventurer_motivations.challenge;
+        newPos = CONFIG.WO.positive_traits.steady;
+        newNeg = CONFIG.WO.negative_traits.indecisive;
+        break;
+      case CONFIG.WO.adventurer_classes.druid:
+        newMotivation = CONFIG.WO.adventurer_motivations.vengeance;
+        newPos = CONFIG.WO.positive_traits.honest;
+        newNeg = CONFIG.WO.negative_traits.impatient;
+        break;
+      case CONFIG.WO.adventurer_classes.eldritchwarrior:
+        newMotivation = CONFIG.WO.adventurer_motivations.challenge;
+        newPos = CONFIG.WO.positive_traits.optimistic;
+        newNeg = CONFIG.WO.negative_traits.cocky;
+        break;
+      case CONFIG.WO.adventurer_classes.illusionist:
+        newMotivation = CONFIG.WO.adventurer_motivations.thrills;
+        newPos = CONFIG.WO.positive_traits.helpful;
+        newNeg = CONFIG.WO.negative_traits.indecisive;
+        break;
+      case CONFIG.WO.adventurer_classes.inquisitor:
+        newMotivation = CONFIG.WO.adventurer_motivations.justice;
+        newPos = CONFIG.WO.positive_traits.persistent;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.knight:
+        newMotivation = CONFIG.WO.adventurer_motivations.respect;
+        newPos = CONFIG.WO.positive_traits.honest;
+        newNeg = CONFIG.WO.negative_traits.cocky;
+        break;
+      case CONFIG.WO.adventurer_classes.lancer:
+        newMotivation = CONFIG.WO.adventurer_motivations.challenge;
+        newPos = CONFIG.WO.positive_traits.confident;
+        newNeg = CONFIG.WO.negative_traits.impatient;
+        break;
+      case CONFIG.WO.adventurer_classes.magehunter:
+        newMotivation = CONFIG.WO.adventurer_motivations.vengeance;
+        newPos = CONFIG.WO.positive_traits.persistent;
+        newNeg = CONFIG.WO.negative_traits.brash;
+        break;
+      case CONFIG.WO.adventurer_classes.monk:
+        newMotivation = CONFIG.WO.adventurer_motivations.challenge;
+        newPos = CONFIG.WO.positive_traits.steady;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.occultslayer:
+        newMotivation = CONFIG.WO.adventurer_motivations.justice;
+        newPos = CONFIG.WO.positive_traits.persistent;
+        newNeg = CONFIG.WO.negative_traits.dishonest;
+        break;
+      case CONFIG.WO.adventurer_classes.ranger:
+        newMotivation = CONFIG.WO.adventurer_motivations.exploration;
+        newPos = CONFIG.WO.positive_traits.clever;
+        newNeg = CONFIG.WO.negative_traits.impatient;
+        break;
+      case CONFIG.WO.adventurer_classes.scout:
+        newMotivation = CONFIG.WO.adventurer_motivations.exploration;
+        newPos = CONFIG.WO.positive_traits.helpful;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.shadowdancer:
+        newMotivation = CONFIG.WO.adventurer_motivations.thrills;
+        newPos = CONFIG.WO.positive_traits.clever;
+        newNeg = CONFIG.WO.negative_traits.impatient;
+        break;
+      case CONFIG.WO.adventurer_classes.slinger:
+        newMotivation = CONFIG.WO.adventurer_motivations.justice;
+        newPos = CONFIG.WO.positive_traits.optimistic;
+        newNeg = CONFIG.WO.negative_traits.indecisive;
+        break;
+      case CONFIG.WO.adventurer_classes.spellbow:
+        newMotivation = CONFIG.WO.adventurer_motivations.thrills;
+        newPos = CONFIG.WO.positive_traits.clever;
+        newNeg = CONFIG.WO.negative_traits.greedy;
+        break;
+      case CONFIG.WO.adventurer_classes.templar:
+        newMotivation = CONFIG.WO.adventurer_motivations.justice;
+        newPos = CONFIG.WO.positive_traits.steady;
+        newNeg = CONFIG.WO.negative_traits.stubborn;
+        break;
+      case CONFIG.WO.adventurer_classes.weaponsmith:
+        newMotivation = CONFIG.WO.adventurer_motivations.challenge;
+        newPos = CONFIG.WO.positive_traits.honest;
+        newNeg = CONFIG.WO.negative_traits.cocky;
+        break;
+      case CONFIG.WO.adventurer_classes.wildling:
+        newMotivation = CONFIG.WO.adventurer_motivations.thrills;
+        newPos = CONFIG.WO.positive_traits.generous;
+        newNeg = CONFIG.WO.negative_traits.dumb;
+        break;
+      default:
+    }
+
+    this.object.update({ ['name']: newName, ['data.passive']: newPassive });
+
+    let data = {
+      ['name']: newName,
+      ['data.passive']: newPassive,
+      ['data.motivation_1']: newMotivation,
+      ['data.motivation_1_custom']: game.i18n.localize(newMotivation),
+      ['data.motivation_2']: '',
+      ['data.motivation_2_custom']: '',
+      ['data.trait_pos_1']: newPos,
+      ['data.trait_pos_1_custom']: game.i18n.localize(newPos),
+      ['data.trait_pos_2']: '',
+      ['data.trait_pos_2_custom']: '',
+      ['data.trait_neg_1']: newNeg,
+      ['data.trait_neg_1_custom']: game.i18n.localize(newNeg),
+      ['data.trait_neg_2']: '',
+      ['data.trait_neg_2_custom']: ''
+    }
+    return data;
   }
 
 

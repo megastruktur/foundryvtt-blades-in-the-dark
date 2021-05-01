@@ -1,0 +1,68 @@
+// Imports
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixin.scss';
+
+
+form.gm-sheet {
+    
+    //padding: 5px 5px !important;
+
+    .cycle-headline {
+        margin-bottom: 0;
+        padding: 5px;
+    }
+
+    table.cycle-of-play {
+
+        margin-top: 0;
+
+        td label {
+            height: 15px;
+            width: 15px;
+            padding-left: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 5px;
+            background-image: url(assets/boxes/box-empty.png);
+        }
+
+        td input {
+
+            display: none;
+  
+            &:checked + label {
+                    background-image: url("assets/boxes/box-crossed.png");
+            }
+        }
+    } 
+
+    .project-clock {
+            height: 80px;
+            // Functionality will be overridden in wicked-sheet.js
+            @include clock(4, 40); 
+        }
+
+    // Clocks Table
+    #project-clocks-table {
+        tr {
+            td:nth-of-type(1) {
+                @include clock_zero_hover();
+                text-align: center;
+                width: 50px;
+            }
+
+            td:nth-of-type(2) {
+                text-align: center;
+                min-width: 90px;
+                width: 23%;
+                font-family: Bitter;
+            }
+
+            td:nth-of-type(4) {
+                width: 20px;
+            }
+        }
+    }
+
+}

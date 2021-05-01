@@ -179,6 +179,8 @@ export class WickedActor extends Actor {
             data[i].data.hireling_type = this.getRandomHirelingType();
             data[i].data.hireling_type_custom = game.i18n.localize(data[i].data.hireling_type);
           }
+        } else if (data[i].type == "invasion") {
+          data[i].name = this.getUniqueName(data[i].name);
         }
       }
     } else if (data.type == "adventurer") {
@@ -187,6 +189,8 @@ export class WickedActor extends Actor {
         data.data.hireling_type = this.getRandomHirelingType();
         data.data.hireling_type_custom = game.i18n.localize(data.data.hireling_type);
       }
+    } else if(data[i].type == "invasion") {
+      data[i].name = this.getUniqueName(data[i].name);
     }
     super.createEmbeddedEntity(embeddedName, data, options);
   }

@@ -1,0 +1,36 @@
+<form class="{{cssClass}} item-sheet invasion-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'FITD.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+<section class="sheet-body flex-vertical">
+  <div class="form-group">
+    <label>{{ localize "FITD.Tier" }} 0</label>
+    <input type="number" name="data.adventurers_lv_0" value="{{data.adventurers_lv_0}}" min="0" max="9">
+  </div>
+  <div class="form-group">
+    <label>{{ localize "FITD.Tier" }} 1</label>
+    <input type="number" name="data.adventurers_lv_1" value="{{data.adventurers_lv_1}}" min="0" max="9">
+  </div>
+  <div class="form-group">
+    <label>{{ localize "FITD.Tier" }} 2</label>
+    <input type="number" name="data.adventurers_lv_2" value="{{data.adventurers_lv_2}}" min="0" max="9">
+  </div>
+  <div class="form-group">
+    <label>{{ localize "FITD.Tier" }} 3</label>
+    <input type="number" name="data.adventurers_lv_3" value="{{data.adventurers_lv_3}}" min="0" max="9">
+  </div>
+  <div class="form-group">
+    <label>{{ localize "FITD.Tier" }} 4</label>
+    <input type="number" name="data.adventurers_lv_4" value="{{data.adventurers_lv_4}}" min="0" max="9">
+  </div>
+  <div class="form-group">
+    <label>{{ localize "FITD.Hirelings" }}</label>
+    <input type="number" name="data.hirelings" value="{{data.hirelings}}" min="0" max="99">
+  </div>
+</section>
+</form>

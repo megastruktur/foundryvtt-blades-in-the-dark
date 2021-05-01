@@ -777,6 +777,15 @@
                   {{#if (eq item.data.quality_category "powerful")}}
                   <label class="quality-powerful">{{localize "FITD.Powerful"}}</label>
                   {{/if}}
+                  {{#if (eq item.data.quality_category "tier1")}}
+                  <label class="quality-mundane">{{localize "FITD.TierOne"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.quality_category "tier2")}}
+                  <label class="quality-valuable">{{localize "FITD.TierTwo"}}</label>
+                  {{/if}}
+                  {{#if (eq item.data.quality_category "tier3")}}
+                  <label class="quality-powerful">{{localize "FITD.TierThree"}}</label>
+                  {{/if}}
                   {{#each item.data.edges}}
                   <label class="edge-tag">{{this}}</label>
                   {{/each}}
