@@ -35,6 +35,9 @@ export class WickedItem extends Item {
         case "goldmonger_type":
           path += 'Icon.5_16';
           break;
+        case "invasion":
+          path += 'Icon.6_01';
+          break;
         case "minionimpulse":
           path += 'Icon.2_29';
           break;

@@ -119,6 +119,8 @@ export class WickedSheet extends ActorSheet {
           }
           if (e.data.ability_group == 'group_core') {
             itemSuffix += ` (Core)`
+          } else if (e.data.ability_group == 'group_ext') {
+            itemSuffix += ` (External)`
           }
           if (itemTooltip == "") {
             itemTooltip = game.i18n.localize('FITD.ItemIsOfType') + ' ' +  game.i18n.localize(CONFIG.WO.special_ability_types[e.data.ability_type]);

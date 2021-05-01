@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": [ "character", "minion_pack", "dungeon", "faction", "party", "clock" ],
+    "types": [ "character", "minion_pack", "dungeon", "faction", "party", "clock", "gm_sheet" ],
     "character": {
       "look": "",
       "vilefriend": "",
@@ -221,10 +221,17 @@
       "value": "0",
       "notes": "",
       "style": "red"
+    },
+    "gm_sheet": {
+      "current_phase": {
+        "value": 1,
+        "min": 1,
+        "max": 12
+      }
     }
   },
   "Item": {
-    "types": [ "adventurer", "calling", "defense", "project", "duty", "dungeon_theme", "gearsupply", "goldmonger_type", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "tier3room", "wickedimpulse" ],
+    "types": [ "adventurer", "calling", "defense", "project", "duty", "dungeon_theme", "gearsupply", "goldmonger_type", "invasion", "minionimpulse", "minion_type", "minion_upgrade", "monster_race", "revelry", "specialability", "tier3room", "wickedimpulse" ],
     "templates": {
       "default": {
         "description": ""
@@ -396,6 +403,14 @@
       "theme_checkbox_1_checked": false,
       "theme_checkbox_2_text": "",
       "theme_checkbox_2_checked": false
+    },
+    "invasion": {
+      "adventurers_lv_0": 0,
+      "adventurers_lv_1": 0,
+      "adventurers_lv_2": 0,
+      "adventurers_lv_3": 0,
+      "adventurers_lv_4": 0,
+      "hirelings": 0
     }
   }
 }
