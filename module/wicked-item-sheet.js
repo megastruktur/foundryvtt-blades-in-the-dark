@@ -201,18 +201,14 @@ export class WickedItemSheet extends ItemSheet {
         for (var i = 0; i < ev.currentTarget.length; i++) {
           if (i == choice) {
             ev.currentTarget[i].selected = true;
-            let data = this.getAdventurerTraits(ev.currentTarget[i].value);
-            data['data.' + propertyToSet] = game.i18n.localize(ev.currentTarget[i].value);
-            item.update(data);
-            //let value = ev.currentTarget[i].value;
-            //let newName = game.i18n.localize(value);
-            //let newPassive = game.i18n.localize(ev.currentTarget[i].value.replace('ADV_CLASS', 'ADV_CLASS_PASSIVE'));
-            //this.object.update({ ['name']: newName, ['data.passive']: newPassive });
-            //item.update({
-            //  ['data.' + propertyToSet]: game.i18n.localize(ev.currentTarget[i].value),
-            //  ['name']: newName,
-            //  ['data.passive']: newPassive
-            //});
+            if (ev.currentTarget.dataset.propertyToSet == 'adventurer_class_custom') {
+              let data = this.getAdventurerTraits(ev.currentTarget[i].value);
+              data['data.' + propertyToSet] = game.i18n.localize(ev.currentTarget[i].value);
+              item.update(data);
+
+            } else {
+              item.update({['data.' + propertyToSet]: game.i18n.localize(ev.currentTarget[i].value)});
+            }
           } else {
             ev.currentTarget[i].selected = false;
           }
@@ -449,15 +445,15 @@ export class WickedItemSheet extends ItemSheet {
       ['name']: newName,
       ['data.passive']: newPassive,
       ['data.motivation_1']: newMotivation,
-      ['data.motivation_1_custom']: '',
-      ['data.motivation_2']: newPassive,
+      ['data.motivation_1_custom']: game.i18n.localize(newMotivation),
+      ['data.motivation_2']: '',
       ['data.motivation_2_custom']: '',
       ['data.trait_pos_1']: newPos,
-      ['data.trait_pos_1_custom']: '',
+      ['data.trait_pos_1_custom']: game.i18n.localize(newPos),
       ['data.trait_pos_2']: '',
       ['data.trait_pos_2_custom']: '',
       ['data.trait_neg_1']: newNeg,
-      ['data.trait_neg_1_custom']: '',
+      ['data.trait_neg_1_custom']: game.i18n.localize(newNeg),
       ['data.trait_neg_2']: '',
       ['data.trait_neg_2_custom']: ''
     }
