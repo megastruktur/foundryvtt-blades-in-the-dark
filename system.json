@@ -134,10 +134,10 @@
       "entity": "Item"
     },
     {
-      "name": "externalability",
-      "label": "External Abilities",
+      "name": "invasion",
+      "label": "Major Invasions",
       "system": "wicked-ones",
-      "path": "./packs/externalabilities.db",
+      "path": "./packs/invasions.db",
       "entity": "Item"
     },
     {

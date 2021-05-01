@@ -157,6 +157,9 @@ export class WickedHelpers {
     game_items = game.items.filter(e => e.type === item_type).map(e => {return e.data});
 
     let pack = game.packs.find(e => e.metadata.name === item_type);
+    if (pack == null) {
+      return game_items;
+    }
     let compendium_content = await pack.getContent();
     compendium_items = compendium_content.map(e => {return e.data});
 
