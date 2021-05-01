@@ -8,6 +8,35 @@ form.gm-sheet {
     
     //padding: 5px 5px !important;
 
+    .cycle-headline {
+        margin-bottom: 0;
+        padding: 5px;
+    }
+
+    table.cycle-of-play {
+
+        margin-top: 0;
+
+        td label {
+            height: 15px;
+            width: 15px;
+            padding-left: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 5px;
+            background-image: url(assets/boxes/box-empty.png);
+        }
+
+        td input {
+
+            display: none;
+  
+            &:checked + label {
+                    background-image: url("assets/boxes/box-crossed.png");
+            }
+        }
+    } 
+
     .project-clock {
             height: 80px;
             // Functionality will be overridden in wicked-sheet.js

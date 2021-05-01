@@ -2424,6 +2424,28 @@ form.clock-block #clock-notes .editor .editor-content {
 /* 
  *  Make clock resets invisible unless hovered
  */
+form.gm-sheet .cycle-headline {
+  margin-bottom: 0;
+  padding: 5px;
+}
+form.gm-sheet table.cycle-of-play {
+  margin-top: 0;
+}
+form.gm-sheet table.cycle-of-play td label {
+  height: 15px;
+  width: 15px;
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  background-image: url(assets/boxes/box-empty.png);
+}
+form.gm-sheet table.cycle-of-play td input {
+  display: none;
+}
+form.gm-sheet table.cycle-of-play td input:checked + label {
+  background-image: url("assets/boxes/box-crossed.png");
+}
 form.gm-sheet .project-clock {
   height: 80px;
   position: relative;
