@@ -141,6 +141,13 @@
       "entity": "Item"
     },
     {
+      "name": "invasion",
+      "label": "Major Invasions",
+      "system": "wicked-ones",
+      "path": "./packs/invasions.db",
+      "entity": "Item"
+    },
+    {
       "name": "dungeon_theme",
       "label": "Dungeon Themes",
       "system": "wicked-ones",
