@@ -1,7 +1,7 @@
 /**
  * Roll Dice.
- * @param {int} dice_amount 
- * @param {string} attribute_name 
+ * @param {int} dice_amount
+ * @param {string} attribute_name
  * @param {string} position
  * @param {string} effect
  */
@@ -15,7 +15,7 @@ export async function wickedRoll(dice_amount, attribute_name = "", position = "d
 
   let r = new Roll( `${dice_amount}d6`, {} );
 
-  r.roll();
+  r.evaluate({async: true});
   showChatRollMessage(r, zeromode, attribute_name, position, effect, type)
 
 }
@@ -23,7 +23,7 @@ export async function wickedRoll(dice_amount, attribute_name = "", position = "d
 /**
  * Shows Chat message.
  *
- * @param {Roll} r 
+ * @param {Roll} r
  * @param {Boolean} zeromode
  * @param {String} attribute_name
  * @param {string} position
@@ -31,12 +31,12 @@ export async function wickedRoll(dice_amount, attribute_name = "", position = "d
  * @param {string} type
  */
 async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "",type="") {
-  
+
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
   let rolls = [];
   let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
-  
+
   // Backward Compat for rolls.
   if (isBelow070) {
     rolls = (r.parts)[0].rolls;
@@ -51,15 +51,15 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   switch (position) {
     case 'dominant':
       position_localize = 'FITD.PositionDominant'
-      break;               
-    case 'dire':           
+      break;
+    case 'dire':
       position_localize = 'FITD.PositionDire'
-      break;               
-	case 'deadly':         
+      break;
+	case 'deadly':
       position_localize = 'FITD.PositionDeadly'
       break;
-    case 'default':        
-    default:               
+    case 'default':
+    default:
       position_localize = 'FITD.PositionDefault'
   }
 
@@ -67,16 +67,16 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   switch (effect) {
     case 'weak':
       effect_localize = 'FITD.EffectWeak'
-      break;             
-    case 'strong':       
+      break;
+    case 'strong':
       effect_localize = 'FITD.EffectStrong'
-      break; 
-    case 'zero':         
+      break;
+    case 'zero':
       effect_localize = 'FITD.EffectZero'
-      break; 
-    case 'default':     
-    default:            
-      effect_localize = 'FITD.EffectDefault'	  
+      break;
+    case 'default':
+    default:
+      effect_localize = 'FITD.EffectDefault'
   }
 
   let roll_type = game.i18n.localize('FITD.ROLL.' + type.toUpperCase() + '.Name');
@@ -110,10 +110,10 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_type: roll_type, roll_status_class: roll_status, roll_status_text: roll_status_text, attribute_label: attribute_label, position: position_localize, effect: effect_localize, roll_description: roll_description, zeromode: zeromode });
 
   let messageData = {
-    user: game.user._id,
+    user: game.user.id,
     speaker: speaker,
     content: result,
-    type: CHAT_MESSAGE_TYPES.ROLL,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
     sound: CONFIG.sounds.dice,
     roll: r
   }
@@ -125,7 +125,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   }
   const messageOptions = { rollMode: rMode };
 
-  CONFIG.ChatMessage.entityClass.create(messageData, messageOptions)
+  CONFIG.ChatMessage.documentClass.create(messageData, messageOptions)
 }
 
 /**
@@ -134,8 +134,8 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
  *  - partial-success
  *  - success
  *  - critical-success
- * @param {Array} rolls 
- * @param {Boolean} zeromode 
+ * @param {Array} rolls
+ * @param {Boolean} zeromode
  */
 export function getWickedRollStatus(rolls, zeromode = false) {
 
@@ -201,7 +201,7 @@ export function getWickedRollStatus(rolls, zeromode = false) {
  * Call a Roll popup.
  */
 export async function simpleRollPopup() {
-  
+
   new Dialog({
     title: `Dice Roller`,
     content: `
@@ -211,7 +211,7 @@ export async function simpleRollPopup() {
 		<div class="form-group">
 		<label>${game.i18n.localize('FITD.RollType')}:</label>
 		<select id="type" name="type">
-		  <option value="fortune" selected>${game.i18n.localize('FITD.ROLL.FORTUNE.Name')}</option>		  
+		  <option value="fortune" selected>${game.i18n.localize('FITD.ROLL.FORTUNE.Name')}</option>
 		  <option value="blowback">${game.i18n.localize('FITD.ROLL.BLOWBACK.Name')}</option>
 		  <option value="calamity">${game.i18n.localize('FITD.ROLL.CALAMITY.Name')}</option>
 		  <option value="defensive">${game.i18n.localize('FITD.ROLL.DEFENSIVE.Name')}</option>
@@ -222,15 +222,15 @@ export async function simpleRollPopup() {
 		  <option value="creature">${game.i18n.localize('FITD.ROLL.CREATURE.Name')}</option>
 		  <option value="trap">${game.i18n.localize('FITD.ROLL.TRAP.Name')}</option>
 		  <option value="starting">${game.i18n.localize('FITD.ROLL.STARTING.Name')}</option>
-		  <option value="pathing">${game.i18n.localize('FITD.ROLL.PATHING.Name')}</option>		  
+		  <option value="pathing">${game.i18n.localize('FITD.ROLL.PATHING.Name')}</option>
 		</select>
 	  </div>
         <div class="form-group">
           <label>${game.i18n.localize("FITD.RollNumberOfDice")}:</label>
           <select id="qty" name="qty">
             ${Array(11).fill().map((item, i) => `<option value="${i}">${i}D</option>`).join('')}
-          </select>		
-        </div>	  
+          </select>
+        </div>
       </form>
     `,
     buttons: {
@@ -238,8 +238,8 @@ export async function simpleRollPopup() {
         icon: "<i class='fas fa-check'></i>",
         label: `Roll`,
         callback: (html) => {
-          let diceQty = html.find('[name="qty"]')[0].value; 
-		  let type = html.find('[name="type"]')[0].value;		  
+          let diceQty = html.find('[name="qty"]')[0].value;
+		  let type = html.find('[name="type"]')[0].value;
           wickedRoll(diceQty, "", "default", "default", type);
         },
       },

@@ -23,6 +23,10 @@ export class WickedMinionSheet extends WickedSheet {
   /** @override */
   getData() {
     const data = super.getData();
+		data.editable = this.options.editable;
+    const actorData = data.data;
+		data.actor = actorData;
+		data.data = actorData.data;
 
     // get localization string for the item roll name
     data.items.forEach(i => {
@@ -49,14 +53,14 @@ export class WickedMinionSheet extends WickedSheet {
     // Update Inventory Item
     html.find('.item-open-editor').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(element.data("itemId"));
+      const item = this.document.items.get(element.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(element.data("itemId"));
+      this.document.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
   }

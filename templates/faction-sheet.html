@@ -5,7 +5,7 @@
     <table class="name-and-image">
       <tr>
         <td id="name" class="large-name">
-            <input type="text" id="party-{{actor._id}}-name" name="name" value="{{actor.name}}">
+            <input type="text" id="party-{{actor.id}}-name" name="name" value="{{actor.name}}">
         </td>
         <td>
           <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
@@ -15,12 +15,12 @@
 
     <div class="tier-side flex-horizontal">
       <div class="text-input flex-horizontal" id="number">
-        <label for="faction-{{actor._id}}-tier">{{localize "FITD.Tier"}}</label>
-        <input type="number" id="faction-{{actor._id}}-tier" name="data.tier.value" value="{{data.tier.value}}" min="0" max="4">
+        <label for="faction-{{actor.id}}-tier">{{localize "FITD.Tier"}}</label>
+        <input type="number" id="faction-{{actor.id}}-tier" name="data.tier.value" value="{{data.tier.value}}" min="0" max="4">
       </div>
       <div class="text-input flex-horizontal">
-        <label for="faction-{{actor._id}}-tier">{{localize "FITD.Side"}}</label>
-        <select class="" id="faction-{{actor._id}}-side" name="data.category">
+        <label for="faction-{{actor.id}}-tier">{{localize "FITD.Side"}}</label>
+        <select class="" id="faction-{{actor.id}}-side" name="data.category">
           {{#select data.category}}
           <option value="dark">{{localize "FITD.FACTION_SIDE.Dark"}}</option>
           <option value="neutral">{{localize "FITD.FACTION_SIDE.Neutral"}}</option>

@@ -23,7 +23,10 @@ export class WickedActorSheet extends WickedSheet {
   /** @override */
   getData() {
     const data = super.getData();
-
+    data.editable = this.options.editable;
+    const actorData = data.data;
+		data.actor = actorData;
+		data.data = actorData.data;
 
     // look for abilities that change the number of gold, supply and dark heart icons
     // also check for Doomseeker rays and add translations
@@ -55,7 +58,7 @@ export class WickedActorSheet extends WickedSheet {
     data.data.existing_minions = game.actors.filter(entry => entry.data.type === "minion_pack");
     let found = false;
     data.data.existing_minions.forEach(i => {
-      if (i._id == data.data.minionpack) {
+      if (i.id == data.data.minionpack) {
         found = true;
       }
     });
@@ -78,14 +81,14 @@ export class WickedActorSheet extends WickedSheet {
     // Update Inventory Item
     html.find('.item-open-editor').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(element.data("itemId"));
-      item.sheet.render(true);
+      const item = this.actor.items.get(element.data("itemId"));
+			item.sheet.render(true);
     });
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(element.data("itemId"));
+      this.actor.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
   }
