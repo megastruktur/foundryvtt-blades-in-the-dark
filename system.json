@@ -115,6 +115,13 @@
       "system": "blades-in-the-dark",
       "path": "./packs/factions.db",
       "entity": "Item"
+    },
+    {
+      "name": "npc",
+      "label": "NPCs",
+      "system": "blades-in-the-dark",
+      "path": "./packs/npcs.db",
+      "entity": "Actor"
     }
   ]
 }

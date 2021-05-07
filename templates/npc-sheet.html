@@ -1,0 +1,17 @@
+<form class="{{cssClass}} actor-sheet" autocomplete="off">
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+	<input type="text" id="character-{{actor._id}}-name" name="name"value="{{actor.name}} ">
+	<label for="character-{{actor._id}}-name">Name</label>
+	<input type="text" id="character-{{actor._id}}-short-description" name="data.description_short"value="{{data.description_short}} ">
+	<label for="character-{{actor._id}}-short-description">Short description</label>
+	<input type="text" id="character-{{actor._id}}-associated-class" name="data.associated_class"value="{{data.associated_class}} ">
+	<label for="character-{{actor._id}}-associated-class">Associated Class</label>
+	<input type="text" id="character-{{actor._id}}-description" name="data.description"value="{{data.description}} ">
+	<label for="character-{{actor._id}}-description">Description</label>
+	<input type="text" id="character-{{actor._id}}-associated-class" name="data.associated_crew_type"value="{{data.associated_crew_type}} ">
+	<label for="character-{{actor._id}}-associated-crew-type">Associated Crew Type</label>
+	<input type="text" id="character-{{actor._id}}-notes" name="data.notes"value="{{data.notes}} ">
+	<label for="character-{{actor._id}}-notes">Notes</label>
+	<input type="text" id="character-{{actor._id}}-associated-faction" name="data.associated_faction" value="{{data.associated_faction}}" >
+	<label for="character-{{actor._id}}-associated-faction">Associated Faction</label>
+</form>
