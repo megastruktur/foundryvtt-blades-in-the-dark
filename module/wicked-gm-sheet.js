@@ -22,6 +22,10 @@ export class WickedGMSheet extends WickedSheet {
   /** @override */
   getData() {
     const data = super.getData();
+    data.editable = this.options.editable;
+    const actorData = data.data;
+    data.actor = actorData;
+    data.data = actorData.data;
 
     // Progressivly count up the invasion items
     let invasion_count = 1;

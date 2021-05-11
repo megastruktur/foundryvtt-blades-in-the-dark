@@ -167,6 +167,18 @@ export class WickedHelpers {
 
     list_of_items = game_items.concat(compendium_items);
 
+    list_of_items.sort(function (a, b) {
+      var nameA = a.name.toUpperCase();
+      var nameB = b.name.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+
     return list_of_items;
 
   }
@@ -343,6 +355,6 @@ export class WickedHelpers {
     return 0;
   }
 
-/* -------------------------------------------- */
+  /* -------------------------------------------- */
 
 }
