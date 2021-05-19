@@ -13,9 +13,10 @@ export class WickedHelpers {
     // If the Item has the exact same name - remove it from list.
     // Remove Duplicate items from the array.
     actor.items.forEach(i => {
+      if (item_data._id == i.id) { return; }
       let has_double = (item_data.type === i.data.type);
       if (i.data.name === item_data.name || (should_be_distinct && has_double)) {
-        actor.deleteEmbeddedDocuments([i.id]);
+        actor.deleteEmbeddedDocuments("Item", [i.id]);
       }
     });
   }
