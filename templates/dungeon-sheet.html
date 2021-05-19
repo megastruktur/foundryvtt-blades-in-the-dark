@@ -7,8 +7,8 @@
       <tr>
         <td colspan="2">
           <div id="name" class="large-name">
-            <!-- <label for="character-{{actor.id}}-name">{{localize "FITD.Name"}}</label> -->
-            <input type="text" id="character-{{actor.id}}-name" name="name" value="{{actor.name}}">
+            <!-- <label for="character-{{actor._id}}-name">{{localize "FITD.Name"}}</label> -->
+            <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
           </div>
         </td>
       </tr>
@@ -30,12 +30,12 @@
         <td>
           <div id="dungeon-tier">
             {{#multiboxes data.tier.value}}
-            <input type="radio" id="dungeon-{{actor.id}}-tier-0" name="data.tier.value" value="0" dtype="Radio">
-            <label class="black-label" for="dungeon-{{actor.id}}-tier-0">{{localize "FITD.Tier"}}</label>
+            <input type="radio" id="dungeon-{{actor._id}}-tier-0" name="data.tier.value" value="0" dtype="Radio">
+            <label class="black-label" for="dungeon-{{actor._id}}-tier-0">{{localize "FITD.Tier"}}</label>
 
             {{#times_from_1 data.tier.max}}
-            <input type="radio" id="dungeon-{{../actor.id}}-tier-{{this}}" name="data.tier.value" value="{{this}}" dtype="Radio">
-            <label for="dungeon-{{../actor.id}}-tier-{{this}}"></label>
+            <input type="radio" id="dungeon-{{../actor._id}}-tier-{{this}}" name="data.tier.value" value="{{this}}" dtype="Radio">
+            <label for="dungeon-{{../actor._id}}-tier-{{this}}"></label>
             {{/times_from_1}}
 
             {{/multiboxes}}
@@ -58,8 +58,8 @@
                     {{#unless (eq item.data.theme_checkbox_1_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item.id}}-thcbx1-checked" value="{{item.data.theme_checkbox_1_checked}}" {{checked item.data.theme_checkbox_1_checked}} data-property-to-set="theme_checkbox_1_checked">
-                        <label for="item-{{item.id}}-thcbx1-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-thcbx1-checked" value="{{item.data.theme_checkbox_1_checked}}" {{checked item.data.theme_checkbox_1_checked}} data-property-to-set="theme_checkbox_1_checked">
+                        <label for="item-{{item._id}}-thcbx1-checked"></label>
                         {{item.data.theme_checkbox_1_text}}
                       </div>
                     </div>
@@ -67,8 +67,8 @@
                     {{#unless (eq item.data.theme_checkbox_2_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item.id}}-thcbx2-checked" value="{{item.data.theme_checkbox_2_checked}}" {{checked item.data.theme_checkbox_2_checked}} data-property-to-set="theme_checkbox_2_checked">
-                        <label for="item-{{item.id}}-thcbx2-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-thcbx2-checked" value="{{item.data.theme_checkbox_2_checked}}" {{checked item.data.theme_checkbox_2_checked}} data-property-to-set="theme_checkbox_2_checked">
+                        <label for="item-{{item._id}}-thcbx2-checked"></label>
                         {{item.data.theme_checkbox_2_text}}
                       </div>
                     </div>
@@ -128,8 +128,8 @@
                     {{#unless (eq item.data.room_checkbox_1_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item.id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
-                        <label for="item-{{item.id}}-rmcbx1-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
+                        <label for="item-{{item._id}}-rmcbx1-checked"></label>
                         {{item.data.room_checkbox_1_text}}
                       </div>
                     </div>
@@ -137,8 +137,8 @@
                     {{#unless (eq item.data.room_checkbox_2_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item.id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
-                        <label for="item-{{item.id}}-rmcbx2-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
+                        <label for="item-{{item._id}}-rmcbx2-checked"></label>
                         {{item.data.room_checkbox_2_text}}
                       </div>
                     </div>
@@ -169,8 +169,8 @@
                     {{#unless (eq item.data.room_checkbox_1_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item.id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
-                        <label for="item-{{item.id}}-rmcbx1-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx1-checked" value="{{item.data.room_checkbox_1_checked}}" {{checked item.data.room_checkbox_1_checked}} data-property-to-set="room_checkbox_1_checked">
+                        <label for="item-{{item._id}}-rmcbx1-checked"></label>
                         {{item.data.room_checkbox_1_text}}
                       </div>
                     </div>
@@ -178,8 +178,8 @@
                     {{#unless (eq item.data.room_checkbox_2_text "")}}
                     <div class="item-checkmark">
                       <div class="standard-checkbox">
-                        <input type="checkbox" id="item-{{item.id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
-                        <label for="item-{{item.id}}-rmcbx2-checked"></label>
+                        <input type="checkbox" id="item-{{item._id}}-rmcbx2-checked" value="{{item.data.room_checkbox_2_checked}}" {{checked item.data.room_checkbox_2_checked}} data-property-to-set="room_checkbox_2_checked">
+                        <label for="item-{{item._id}}-rmcbx2-checked"></label>
                         {{item.data.room_checkbox_2_text}}
                       </div>
                     </div>

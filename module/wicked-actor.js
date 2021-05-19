@@ -150,8 +150,8 @@ export class WickedActor extends Actor {
     // Make modifications to data here.
     data.clock_active_1 = (data.clock1.max != 0);
     data.clock_active_2 = (data.clock2.max != 0);
-    data.clock_uid_1 = actorData.id + "-1";
-    data.clock_uid_2 = actorData.id + "-2";
+    data.clock_uid_1 = actorData._id + "-1";
+    data.clock_uid_2 = actorData._id + "-2";
   }
 
   /* -------------------------------------------- */
