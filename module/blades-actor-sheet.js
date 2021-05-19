@@ -9,7 +9,7 @@ export class BladesActorSheet extends BladesSheet {
 
   /** @override */
 	static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
+	  return foundry.utils.mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
       width: 700,
@@ -23,6 +23,10 @@ export class BladesActorSheet extends BladesSheet {
   /** @override */
   getData() {
     var data = super.getData();
+    data.editable = this.options.editable;
+    const actorData = data.data;
+    data.actor = actorData;
+    data.data = actorData.data;
 
     // Calculate Load
     let loadout = 0;
@@ -76,14 +80,14 @@ export class BladesActorSheet extends BladesSheet {
     // Update Inventory Item
     html.find('.item-body').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(element.data("itemId"));
+      const item = this.actor.items.get(element.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
+    html.find('.item-delete').click( async ev => {
       const element = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(element.data("itemId"));
+      await this.actor.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
   }

@@ -8,7 +8,7 @@ export class BladesCrewSheet extends BladesSheet {
 
   /** @override */
 	static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
+	  return foundry.utils.mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
   	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
       width: 940,
@@ -22,6 +22,10 @@ export class BladesCrewSheet extends BladesSheet {
   /** @override */
   getData() {
     const data = super.getData();
+    data.editable = this.options.editable;
+    const actorData = data.data;
+    data.actor = actorData;
+    data.data = actorData.data;
 
     // Calculate Turfs amount.
     // We already have Lair, so set to -1.
@@ -56,14 +60,14 @@ export class BladesCrewSheet extends BladesSheet {
     // Update Inventory Item
     html.find('.item-sheet-open').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(element.data("itemId"));
+      const item = this.actor.items.get(element.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
+    html.find('.item-delete').click( async ev => {
       const element = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(element.data("itemId"));
+      await this.actor.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
 
@@ -73,7 +77,7 @@ export class BladesCrewSheet extends BladesSheet {
     });
 
     // Toggle Turf
-    html.find('.turf-select').click(ev => {
+    html.find('.turf-select').click( async ev => {
       const element = $(ev.currentTarget).parents(".item");
       
       let item_id = element.data("itemId")
@@ -81,22 +85,22 @@ export class BladesCrewSheet extends BladesSheet {
       let turf_current_status = $(ev.currentTarget).data("turfStatus");
       let turf_checkbox_name = 'data.turfs.' + turf_id + '.value';
 
-      this.actor.updateEmbeddedEntity('OwnedItem', {
+      await this.actor.updateEmbeddedDocuments('Item', [{
         _id: item_id,
-        [turf_checkbox_name]: !turf_current_status});
+        [turf_checkbox_name]: !turf_current_status}]);
       this.render(false);
     });
 
     // Cohort Block Harm handler
-    html.find('.cohort-block-harm input[type="radio"]').change(ev => {
+    html.find('.cohort-block-harm input[type="radio"]').change( async ev => {
       const element = $(ev.currentTarget).parents(".item");
       
       let item_id = element.data("itemId")
       let harm_id = $(ev.currentTarget).val();
 
-      this.actor.updateEmbeddedEntity('OwnedItem', {
+      await this.actor.updateEmbeddedDocuments('Item', [{
         _id: item_id,
-        "data.harm": [harm_id]});
+        "data.harm": [harm_id]}]);
       this.render(false);
     });
   }
@@ -109,7 +113,7 @@ export class BladesCrewSheet extends BladesSheet {
   async _updateObject(event, formData) {
 
     // Update the Item
-    super._updateObject(event, formData);
+    await super._updateObject(event, formData);
 
     if (event.target && event.target.name === "data.tier") {
       this.render(true);

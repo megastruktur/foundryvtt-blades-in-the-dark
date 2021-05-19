@@ -65,7 +65,7 @@ export class BladesSheet extends ActorSheet {
         one: {
           icon: '<i class="fas fa-check"></i>',
           label: game.i18n.localize('Add'),
-          callback: () => this.addItemsToSheet(item_type, $(document).find('#items-to-add'))
+          callback: async () => await this.addItemsToSheet(item_type, $(document).find('#items-to-add'))
         },
         two: {
           icon: '<i class="fas fa-times"></i>',
@@ -85,11 +85,12 @@ export class BladesSheet extends ActorSheet {
 
     let items = await BladesHelpers.getAllItemsByType(item_type, game);
     let items_to_add = [];
-    el.find("input:checked").each(function() {
 
+    el.find("input:checked").each(function() {
       items_to_add.push(items.find(e => e._id === $(this).val()));
     });
-    this.actor.createEmbeddedEntity("OwnedItem", items_to_add);
+
+    await Item.create(items_to_add, {parent: this.document});
   }
   /* -------------------------------------------- */
 
@@ -114,18 +115,18 @@ export class BladesSheet extends ActorSheet {
       if ( update_value == undefined) {
       update_value = document.getElementById('fac-' + update_type + '-' + item_id).value;
     };
-    
+    var update;
     if ( update_type == "status" ) {
-      var update = {_id: item_id, data:{status:{value: update_value}}};
+      update = {_id: item_id, data:{status:{value: update_value}}};
     }
     else if (update_type == "hold") {
-      var update = {_id: item_id, data:{hold:{value: update_value}}};
+      update = {_id: item_id, data:{hold:{value: update_value}}};
     } else {
       console.log("update attempted for type undefined in blades-sheet.js onUpdateBoxClick function");
       return;
     };
-    console.log(update);
-    await this.actor.updateEmbeddedEntity("OwnedItem", update);
+
+    await this.actor.updateEmbeddedDocuments("Item", [update]);
     
      
     }
