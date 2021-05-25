@@ -16,10 +16,10 @@ export class BladesActor extends Actor {
     switch (data.type) {
       case 'character':
       case 'crew':
+      case '\uD83D\uDD5B clock':
         data.token.actorLink = true;
         break;
     }
-
 
     return super.create(data, options);
   }
@@ -41,14 +41,14 @@ export class BladesActor extends Actor {
 
     // Calculate Dice to throw.
     let dice_amount = {};
-    for (var attibute_name in this.data.data.attributes) {
-      dice_amount[attibute_name] = 0;
-      for (var skill_name in this.data.data.attributes[attibute_name].skills) {
-        dice_amount[skill_name] = parseInt(this.data.data.attributes[attibute_name].skills[skill_name]['value'][0])
+    for (var attribute_name in this.data.data.attributes) {
+      dice_amount[attribute_name] = 0;
+      for (var skill_name in this.data.data.attributes[attribute_name].skills) {
+        dice_amount[skill_name] = parseInt(this.data.data.attributes[attribute_name].skills[skill_name]['value'][0])
 
         // We add a +1d for every skill higher than 0.
         if (dice_amount[skill_name] > 0) {
-          dice_amount[attibute_name]++;
+          dice_amount[attribute_name]++;
         }
       }
 
@@ -107,11 +107,11 @@ export class BladesActor extends Actor {
         yes: {
           icon: "<i class='fas fa-check'></i>",
           label: game.i18n.localize('BITD.Roll'),
-          callback: (html) => {
+          callback: async (html) => {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
             let position = html.find('[name="pos"]')[0].value;
             let effect = html.find('[name="fx"]')[0].value;
-            this.rollAttribute(attribute_name, modifier, position, effect);
+            await this.rollAttribute(attribute_name, modifier, position, effect);
           }
         },
         no: {
@@ -126,7 +126,7 @@ export class BladesActor extends Actor {
 
   /* -------------------------------------------- */
   
-  rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect) {
+  async rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect) {
 
     let dice_amount = 0;
     if (attribute_name !== "") {
@@ -138,7 +138,7 @@ export class BladesActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    bladesRoll(dice_amount, attribute_name, position, effect);
+    await bladesRoll(dice_amount, attribute_name, position, effect);
   }
 
   /* -------------------------------------------- */

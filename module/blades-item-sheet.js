@@ -7,7 +7,7 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
 	static get defaultOptions() {
 
-	  return mergeObject(super.defaultOptions, {
+	  return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ["blades-in-the-dark", "sheet", "item"],
 			width: 560,
 			height: 'auto',
@@ -46,6 +46,10 @@ export class BladesItemSheet extends ItemSheet {
   getData() {
     const data = super.getData();
     data.isGm = game.user.isGM;
+    data.editable = this.options.editable;
+    const itemData = data.data;
+    data.actor = itemData;
+    data.data = itemData.data;
     return data;
   }
 }
