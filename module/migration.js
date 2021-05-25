@@ -6,7 +6,7 @@ export const migrateWorld = async function() {
   ui.notifications.info(`Applying BITD Actors migration for version ${game.system.data.version}. Please be patient and do not close your game or shut down your server.`, {permanent: true});
 
   // Migrate World Actors
-  for ( let a of game.actors.entities ) {
+  for ( let a of game.actors.contents ) {
     if (a.data.type === 'character') {
       try {
         const updateData = _migrateActor(a.data);
@@ -35,7 +35,7 @@ export const migrateWorld = async function() {
   }
 
   // Migrate Actor Link
-  for ( let s of game.scenes.entities ) {
+  for ( let s of game.scenes.contents ) {
     try {
       const updateData = _migrateSceneData(s.data);
       if ( !isObjectEmpty(updateData) ) {

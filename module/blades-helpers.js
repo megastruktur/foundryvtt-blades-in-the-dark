@@ -12,12 +12,14 @@ export class BladesHelpers {
     let should_be_distinct = distinct_types.includes(item_data.type);
     // If the Item has the exact same name - remove it from list.
     // Remove Duplicate items from the array.
+    let update = [];
     actor.items.forEach(i => {
       let has_double = (item_data.type === i.data.type);
       if (i.data.name === item_data.name || (should_be_distinct && has_double)) {
-        actor.deleteOwnedItem(i.id);
+        update.push(i.id);
       }
     });
+    actor.deleteEmbeddedDocuments("Item", update);
   }
 
   /**
@@ -36,7 +38,7 @@ export class BladesHelpers {
       }
 
       if (logic) {
-        let logic_update = { "_id": entity.data._id };
+        let logic_update = { "_id": entity.id };
         logic.forEach(expression => {
 
           // Different logic behav. dep on operator.
@@ -44,7 +46,7 @@ export class BladesHelpers {
 
             // Add when creating.
             case "addition":
-              mergeObject(
+              foundry.utils.mergeObject(
                 logic_update,
                 {[expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, prefix + expression.attribute)) + expression.value},
                 {insertKeys: true}
@@ -53,7 +55,7 @@ export class BladesHelpers {
 
             // Change name property.
             case "attribute_change":
-              mergeObject(
+              foundry.utils.mergeObject(
                 logic_update,
                 {[expression.attribute]: expression.value},
                 {insertKeys: true}
@@ -62,7 +64,7 @@ export class BladesHelpers {
 
           }
         });
-        await Actor.update( logic_update );
+        await Actor.updateDocuments( logic_update );
       }
 
     }
@@ -88,7 +90,7 @@ export class BladesHelpers {
       }
 
       if (logic) {
-        let logic_update = { "_id": entity.data._id };
+        let logic_update = { "_id": entity.id };
         var entity_data = entity.data;
 
         logic.forEach(expression => {
@@ -97,7 +99,7 @@ export class BladesHelpers {
 
             // Subtract when removing.
             case "addition":
-              mergeObject(
+              foundry.utils.mergeObject(
                 logic_update,
                 {[expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, prefix + expression.attribute)) - expression.value},
                 {insertKeys: true}
@@ -110,7 +112,7 @@ export class BladesHelpers {
               let default_expression_attribute_path = expression.attribute + '_default';
               let default_name = default_expression_attribute_path.split(".").reduce((o, i) => o[i], entity_data);
 
-              mergeObject(
+              foundry.utils.mergeObject(
                 logic_update,
                 {[expression.attribute]: default_name},
 			        	{insertKeys: true}
@@ -119,7 +121,7 @@ export class BladesHelpers {
             break;
           }
         });
-        await Actor.update( logic_update );
+        await Actor.updateDocuments( logic_update );
       }
     }
 
@@ -150,7 +152,7 @@ export class BladesHelpers {
       name: randomID(),
       type: item_type
     };
-    return actor.createEmbeddedEntity("OwnedItem", data);
+    return actor.createEmbeddedDocuments("Item", [data]);
   }
 
   /**
@@ -168,7 +170,7 @@ export class BladesHelpers {
     game_items = game.items.filter(e => e.type === item_type).map(e => {return e.data});
 
     let pack = game.packs.find(e => e.metadata.name === item_type);
-    let compendium_content = await pack.getContent();
+    let compendium_content = await pack.getDocuments();
     compendium_items = compendium_content.map(e => {return e.data});
 
     list_of_items = game_items.concat(compendium_items);
@@ -189,10 +191,10 @@ export class BladesHelpers {
         let attribute_labels = {};
         const attributes = game.system.model.Actor.character.attributes;
 
-        for (var attibute_name in attributes) {
-          attribute_labels[attibute_name] = attributes[attibute_name].label;
-          for (var skill_name in attributes[attibute_name].skills) {
-            attribute_labels[skill_name] = attributes[attibute_name].skills[skill_name].label;
+        for (var attribute_name in attributes) {
+          attribute_labels[attribute_name] = attributes[attribute_name].label;
+          for (var skill_name in attributes[attribute_name].skills) {
+            attribute_labels[skill_name] = attributes[attribute_name].skills[skill_name].label;
           }
 
         }

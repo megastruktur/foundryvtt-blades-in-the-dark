@@ -16,8 +16,8 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "r
   let r = new Roll( `${dice_amount}d6`, {} );
 
   // show 3d Dice so Nice if enabled
-  r.roll();
-  showChatRollMessage(r, zeromode, attribute_name, position, effect);
+  r.evaluate({async:true});
+  await showChatRollMessage(r, zeromode, attribute_name, position, effect);
 }
 
 /**
@@ -88,7 +88,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
     roll: r
   }
 
-  CONFIG.ChatMessage.entityClass.create(messageData, {})
+  CONFIG.ChatMessage.documentClass.create(messageData, {})
 }
 
 /**
@@ -234,9 +234,9 @@ export async function simpleRollPopup() {
       yes: {
         icon: "<i class='fas fa-check'></i>",
         label: `Roll`,
-        callback: (html) => {
+        callback: async (html) => {
           let diceQty = html.find('[name="qty"]')[0].value;  
-          bladesRoll(diceQty);
+          await bladesRoll(diceQty);
         },
       },
       no: {

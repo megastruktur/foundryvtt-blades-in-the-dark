@@ -31,8 +31,8 @@ Hooks.once("init", async function() {
     dice: bladesRoll
   }
 
-  CONFIG.Item.entityClass = BladesItem;
-  CONFIG.Actor.entityClass = BladesActor;
+  CONFIG.Item.documentClass = BladesItem;
+  CONFIG.Actor.documentClass = BladesActor;
 
   // Register System Settings
   registerSystemSettings();
@@ -46,7 +46,7 @@ Hooks.once("init", async function() {
   Actors.registerSheet("blades", BladesNPCSheet, { types: ["npc"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
-  preloadHandlebarsTemplates();
+  await preloadHandlebarsTemplates();
   
   Actors.registeredSheets.forEach(element => console.log(element.Actor.name));
 
@@ -150,7 +150,7 @@ Hooks.once("init", async function() {
 
     let text = options.hash['text'].replace(/\n/g, "<br />");
 
-    return new Handlebars.SafeString(text);;
+    return new Handlebars.SafeString(text);
   });
 
   // "N Times" loop for handlebars.
@@ -284,22 +284,22 @@ Hooks.once("ready", function() {
 /*
  * Hooks
  */
-Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
+Hooks.on("preCreateItem", (item, data, options, userId) => {
 
-  BladesHelpers.removeDuplicatedItemType(child_data, parent_entity);
+  BladesHelpers.removeDuplicatedItemType(data, item.parent);
 
   return true;
 });
 
-Hooks.on("createOwnedItem", async (parent_entity, child_data, options, userId) => {
+Hooks.on("createItem", async (item, options, userId) => {
 
-  await BladesHelpers.callItemLogic(child_data, parent_entity);
+  await BladesHelpers.callItemLogic(item.data, item.parent);
   return true;
 });
 
-Hooks.on("deleteOwnedItem", async (parent_entity, child_data, options, userId) => {
+Hooks.on("deleteItem", async (item, options, userId) => {
 
-  await BladesHelpers.undoItemLogic(child_data, parent_entity);
+  await BladesHelpers.undoItemLogic(item.data, item.parent);
   return true;
 });
 // getSceneControlButtons
