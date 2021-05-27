@@ -2,9 +2,9 @@ export class WickedHelpers {
 
   /**
    * Removes a duplicate item type from charlist.
-   * 
-   * @param {Object} item_data 
-   * @param {Entity} actor 
+   *
+   * @param {Object} item_data
+   * @param {Entity} actor
    */
   static removeDuplicatedItemType(item_data, actor) {
 
@@ -13,17 +13,18 @@ export class WickedHelpers {
     // If the Item has the exact same name - remove it from list.
     // Remove Duplicate items from the array.
     actor.items.forEach(i => {
+      if (item_data._id == i.id) { return; }
       let has_double = (item_data.type === i.data.type);
       if (i.data.name === item_data.name || (should_be_distinct && has_double)) {
-        actor.deleteOwnedItem(i.id);
+        actor.deleteEmbeddedDocuments("Item", [i.id]);
       }
     });
   }
 
   /**
    * Add item modification if logic exists.
-   * @param {Object} item_data 
-   * @param {Entity} entity 
+   * @param {Object} item_data
+   * @param {Entity} entity
    */
   static callItemLogic(item_data, entity) {
 
@@ -41,7 +42,7 @@ export class WickedHelpers {
 
           // Different logic behav. dep on operator.
           switch (expression.operator) {
-    
+
             // Add when creating.
             case "addition":
               entity.update({
@@ -55,7 +56,7 @@ export class WickedHelpers {
                 [expression.attribute]: expression.value
               });
               break;
-    
+
           }
         });
       }
@@ -69,8 +70,8 @@ export class WickedHelpers {
    * @todo
    *  - Remove all items and then Add them back to
    *    sustain the logic mods
-   * @param {Object} item_data 
-   * @param {Entity} entity 
+   * @param {Object} item_data
+   * @param {Entity} entity
    */
   static undoItemLogic(item_data, entity) {
 
@@ -116,8 +117,8 @@ export class WickedHelpers {
 
   /**
    * Get a nested dynamic attribute.
-   * @param {Object} obj 
-   * @param {string} property 
+   * @param {Object} obj
+   * @param {string} property
    */
   static getNestedProperty(obj, property) {
     return property.split('.').reduce((r, e) => {
@@ -139,31 +140,45 @@ export class WickedHelpers {
       name: randomID(),
       type: item_type
     };
-    return actor.createEmbeddedEntity("OwnedItem", data);
+    return actor.createEmbeddedDocuments("Item", [data]);
   }
 
   /**
    * Get the list of all available ingame items by Type.
-   * 
-   * @param {string} item_type 
-   * @param {Object} game 
+   *
+   * @param {string} item_type
+   * @param {Object} game
    */
   static async getAllItemsByType(item_type, game) {
 
     let list_of_items = [];
     let game_items = [];
     let compendium_items = [];
-    
+
     game_items = game.items.filter(e => e.type === item_type).map(e => {return e.data});
 
     let pack = game.packs.find(e => e.metadata.name === item_type);
+
     if (pack == null) {
       return game_items;
     }
-    let compendium_content = await pack.getContent();
+    let compendium_content = await pack.getDocuments();
+
     compendium_items = compendium_content.map(e => {return e.data});
 
     list_of_items = game_items.concat(compendium_items);
+
+    list_of_items.sort(function (a, b) {
+      var nameA = a.name.toUpperCase();
+      var nameB = b.name.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
 
     return list_of_items;
 
@@ -174,20 +189,20 @@ export class WickedHelpers {
   /**
    * Returns the label for attribute.
    *
-   * @param {string} attribute_name 
+   * @param {string} attribute_name
    * @returns {string}
    */
   static getAttributeLabel(attribute_name) {
     // Calculate Dice to throw.
     let attribute_labels = {};
     const attributes = game.system.model.Actor.character.attributes;
-        
+
     for (var attibute_name in attributes) {
       attribute_labels[attibute_name] = attributes[attibute_name].label;
       for (var skill_name in attributes[attibute_name].skills) {
         attribute_labels[skill_name] = attributes[attibute_name].skills[skill_name].label;
       }
-    
+
     }
 
     let result = typeof attribute_labels[attribute_name] !== 'undefined' ? attribute_labels[attribute_name] : attribute_name;
@@ -200,7 +215,7 @@ export class WickedHelpers {
   /**
    * Returns true if a string is the localized version of a calling name
    *
-   * @param {string} attribute_name 
+   * @param {string} attribute_name
    * @returns {bool}
    */
   static isPrimalCalling(source_name) {
@@ -341,6 +356,6 @@ export class WickedHelpers {
     return 0;
   }
 
-/* -------------------------------------------- */
+  /* -------------------------------------------- */
 
 }

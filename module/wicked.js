@@ -41,8 +41,8 @@ Hooks.once("init", async function() {
   // CONFIG.Dice.template = "systems/wicked-ones/templates/wicked-roll.html"
   // CONFIG.Dice.tooltip = "systems/wicked-ones/templates/wicked-roll-tooltip.html"
 
-  CONFIG.Item.entityClass = WickedItem;
-  CONFIG.Actor.entityClass = WickedActor;
+  CONFIG.Item.documentClass = WickedItem;
+  CONFIG.Actor.documentClass = WickedActor;
 
   // Register System Settings
   registerSystemSettings();
@@ -63,14 +63,14 @@ Hooks.once("init", async function() {
 
   // Multiboxes.
   Handlebars.registerHelper('multiboxes', function(selected, options) {
-    
+
     let html = options.fn(this);
 
     // Fix for single non-array values.
     if ( !Array.isArray(selected) ) {
       selected = [selected];
     }
-    
+
     if (typeof selected !== 'undefined') {
       selected.forEach(selected_value => {
         if (selected_value !== false) {
@@ -228,7 +228,7 @@ Hooks.once("init", async function() {
 
     for (let i = 1; i <= parseInt(type); i++) {
       let checked = (parseInt(current_value) === i) ? 'checked="checked"' : '';
-      html += `        
+      html += `
         <input type="radio" value="${i}" id="clock-${i}-${uniq_id}" name="${parameter_name}" ${checked}>
         <label for="clock-${i}-${uniq_id}"></label>
       `;
@@ -247,9 +247,9 @@ Hooks.once("ready", function() {
   // Determine whether a system migration is required
   const currentVersion = game.settings.get("wicked-ones", "systemMigrationVersion");
   const NEEDS_MIGRATION_VERSION = 0.9;
-  
+
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
-  
+
   // Perform the migration
   if ( needMigration && game.user.isGM ) {
     migrations.migrateWorld();
@@ -259,24 +259,29 @@ Hooks.once("ready", function() {
 /*
  * Hooks
  */
-Hooks.on("preCreateOwnedItem", (parent_entity, child_data, options, userId) => {
+Hooks.on("preCreateItem", (item, data, options, userId) => {
 
-  WickedHelpers.removeDuplicatedItemType(child_data, parent_entity);
-
-  return true;
-});
-
-Hooks.on("createOwnedItem", (parent_entity, child_data, options, userId) => {
-
-  WickedHelpers.callItemLogic(child_data, parent_entity);
+  // v0.7 code moved to createItem Hook
+  // WickedHelpers.removeDuplicatedItemType(data, item.parent);
 
   return true;
 });
 
+Hooks.on("createItem", (item, options, userId) => {
 
-Hooks.on("deleteOwnedItem", (parent_entity, child_data, options, userId) => {
-  
-  WickedHelpers.undoItemLogic(child_data, parent_entity);
+  WickedHelpers.removeDuplicatedItemType(item.data, item.parent);
+
+  // Item Logic removed from Blades Module
+  // WickedHelpers.callItemLogic(item.data, item.parent);
+
+  return true;
+});
+
+
+Hooks.on("deleteItem", (item, options, userId) => {
+
+  // Item Logic removed from Blades Module
+  // WickedHelpers.undoItemLogic(item.data, item.parent);
 
   return true;
 });
