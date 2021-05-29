@@ -63,7 +63,7 @@ export class BladesActorSheet extends BladesSheet {
       data.data.load_level=load_level[loadout];   
     }
     
-    data.load_levels = ["BITD.Light", "BITD.Normal", "BITD.Heavy"];
+    data.load_levels = {"BITD.Light":"BITD.Light", "BITD.Normal":"BITD.Normal", "BITD.Heavy":"BITD.Heavy"};
 
     return data;
   }

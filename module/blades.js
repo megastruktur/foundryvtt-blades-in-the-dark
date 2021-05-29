@@ -235,7 +235,7 @@ Hooks.once("init", async function() {
 
     let html = '';
 
-    if (current_value === null) {
+    if (current_value === null || current_value === 'null') {
       current_value = 0;
     }
 
