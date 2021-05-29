@@ -284,29 +284,12 @@ Hooks.once("ready", function() {
 /*
  * Hooks
  */
-Hooks.on("preCreateItem", (item, data, options, userId) => {
 
-  BladesHelpers.removeDuplicatedItemType(data, item.parent);
-
-  return true;
-});
-
-Hooks.on("createItem", async (item, options, userId) => {
-
-  await BladesHelpers.callItemLogic(item.data, item.parent);
-  return true;
-});
-
-Hooks.on("deleteItem", async (item, options, userId) => {
-
-  await BladesHelpers.undoItemLogic(item.data, item.parent);
-  return true;
-});
 // getSceneControlButtons
 Hooks.on("renderSceneControls", async (app, html) => {
   let dice_roller = $('<li class="scene-control" title="Dice Roll"><i class="fas fa-dice"></i></li>');
-  dice_roller.click(function() {
-    simpleRollPopup();
+  dice_roller.click( async function() {
+    await simpleRollPopup();
   });
   html.append(dice_roller);
 });
