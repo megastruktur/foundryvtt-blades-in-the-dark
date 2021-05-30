@@ -16,7 +16,7 @@ export class BladesItem extends Item {
       if( actor?.documentName === "Actor" ) {
         removeItems = BladesHelpers.removeDuplicatedItemType( data, actor );
       }
-      if( removeItems ) {
+      if( removeItems.length !== 0 ) {
         await actor.deleteEmbeddedDocuments( "Item", removeItems );
       }
     }
