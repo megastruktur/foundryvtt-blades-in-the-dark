@@ -1,31 +1,34 @@
 export class BladesHelpers {
 
   /**
-   * Removes a duplicate item type from charlist.
+   * Identifies duplicate items by type and returns a array of item ids to remove
    *
    * @param {Object} item_data
-   * @param {Entity} actor
+   * @param {Document} actor
+   * @returns {Array}
+   *
    */
   static removeDuplicatedItemType(item_data, actor) {
-
+    let dupe_list = [];
     let distinct_types = ["crew_reputation", "class", "vice", "background", "heritage"];
+    let allowed_types = ["item"];
     let should_be_distinct = distinct_types.includes(item_data.type);
     // If the Item has the exact same name - remove it from list.
     // Remove Duplicate items from the array.
-    let update = [];
-    actor.items.forEach(i => {
+    actor.items.forEach( i => {
       let has_double = (item_data.type === i.data.type);
-      if (i.data.name === item_data.name || (should_be_distinct && has_double)) {
-        update.push(i.id);
+      if ( ( ( i.name === item_data.name ) || ( should_be_distinct && has_double ) ) && !( allowed_types.includes( item_data.type ) ) && ( item_data._id !== i.id ) ) {
+        dupe_list.push (i.id);
       }
     });
-    actor.deleteEmbeddedDocuments("Item", update);
+
+    return dupe_list;
   }
 
   /**
    * Add item modification if logic exists.
    * @param {Object} item_data
-   * @param {Entity} entity
+   * @param {Document} entity
    */
   static async callItemLogic(item_data, entity) {
 
@@ -77,7 +80,7 @@ export class BladesHelpers {
    *  - Remove all items and then Add them back to
    *    sustain the logic mods
    * @param {Object} item_data
-   * @param {Entity} entity
+   * @param {Document} entity
    */
   static async undoItemLogic(item_data, entity) {
 
@@ -101,7 +104,7 @@ export class BladesHelpers {
             case "addition":
               foundry.utils.mergeObject(
                 logic_update,
-                {[expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, prefix + expression.attribute)) - expression.value},
+                {[expression.attribute]: Number(BladesHelpers.getNestedProperty(entity, expression.attribute)) - expression.value},
                 {insertKeys: true}
               );
             break;
@@ -191,7 +194,7 @@ export class BladesHelpers {
         let attribute_labels = {};
         const attributes = game.system.model.Actor.character.attributes;
 
-        for (var attribute_name in attributes) {
+        for (attribute_name in attributes) {
           attribute_labels[attribute_name] = attributes[attribute_name].label;
           for (var skill_name in attributes[attribute_name].skills) {
             attribute_labels[skill_name] = attributes[attribute_name].skills[skill_name].label;
@@ -206,10 +209,9 @@ export class BladesHelpers {
    * Returns true if the attribute is an action
    *
    * @param {string} attribute_name 
-   * @returns {bool}
+   * @returns {Boolean}
    */
   static isAttributeAction(attribute_name) {
-        let attribute_labels = {};
         const attributes = game.system.model.Actor.character.attributes;
         
         return !(attribute_name in attributes);
