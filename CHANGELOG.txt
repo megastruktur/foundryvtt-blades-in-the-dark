@@ -1,3 +1,7 @@
+v3.2
+- Fix issue #120 (Load dropdown)
+- Fix issue #122 (Faction tracker labels)
+
 v3.1
 - Moving Hooks calls to Methods (@drewg13)
 
