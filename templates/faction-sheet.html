@@ -23,21 +23,24 @@
 				<!-- <label for="faction-{{id}}-status-0"><i class="fab fa-creative-commons-zero nullifier"></i></label> -->
 				<div id="faction-status-meter" class="teeth-experience-faction" style="float:left; width: 14em;">
 				{{#multiboxes faction.data.status.value}}
-					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="0" type="radio" id="faction-{{id}}-status-0" value="0" dtype="Radio">
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="1" type="radio" id="faction-{{id}}-status-1" value="1" dtype="Radio">
-						<label for="faction-{{id}}-status-1"></label>
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="2" type="radio" id="faction-{{id}}-status-2" value="2" dtype="Radio">
-						<label for="faction-{{id}}-status-2"></label>
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="3" type="radio" id="faction-{{id}}-status-3" value="3" dtype="Radio">
-						<label for="faction-{{id}}-status-3"></label>
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="4" type="radio" id="faction-{{id}}-status-4" value="4" dtype="Radio">
-						<label for="faction-{{id}}-status-4"></label>
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="5" type="radio" id="faction-{{id}}-status-5" value="5" dtype="Radio">
-						<label for="faction-{{id}}-status-5"></label>
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="6" type="radio" id="faction-{{id}}-status-6" value="6" dtype="Radio">
-						<label for="faction-{{id}}-status-6"></label>
-						<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="7" type="radio" id="faction-{{id}}-status-7" value="7" dtype="Radio">
-						<label for="faction-{{id}}-status-7"></label>
+					<div style="display: flex;justify-content: space-between"><input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="0" type="radio" id="faction-{{id}}-status-0" value="0" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="1" type="radio" id="faction-{{id}}-status-1" value="1" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="2" type="radio" id="faction-{{id}}-status-2" value="2" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="3" type="radio" id="faction-{{id}}-status-3" value="3" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="4" type="radio" id="faction-{{id}}-status-4" value="4" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="5" type="radio" id="faction-{{id}}-status-5" value="5" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="6" type="radio" id="faction-{{id}}-status-6" value="6" dtype="Radio">
+					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="7" type="radio" id="faction-{{id}}-status-7" value="7" dtype="Radio">
+					</div><div style="text-align: justify;padding:2px 2px 0px 5px">
+					<label for="faction-{{id}}-status-0" style="color:red">D</label>
+					<label for="faction-{{id}}-status-1" style="color:red">3</label>
+					<label for="faction-{{id}}-status-2" style="color:red">2</label>
+					<label for="faction-{{id}}-status-3" style="color:red">1</label>
+					<label for="faction-{{id}}-status-4" style="color:white">0</label>
+					<label for="faction-{{id}}-status-5" style="color:deepskyblue">1</label>
+					<label for="faction-{{id}}-status-6" style="color:deepskyblue">2</label>
+					<label for="faction-{{id}}-status-7" style="color:deepskyblue">3</label>
+				  <span style="width: 100%;display: inline-block;"> </span></div>
 				{{/multiboxes}}
 				</div>
 			  </div>
