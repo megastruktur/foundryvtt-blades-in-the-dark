@@ -194,10 +194,10 @@ export class BladesHelpers {
         let attribute_labels = {};
         const attributes = game.system.model.Actor.character.attributes;
 
-        for (attribute_name in attributes) {
-          attribute_labels[attribute_name] = attributes[attribute_name].label;
-          for (var skill_name in attributes[attribute_name].skills) {
-            attribute_labels[skill_name] = attributes[attribute_name].skills[skill_name].label;
+        for (const att_name in attributes) {
+          attribute_labels[att_name] = attributes[att_name].label;
+          for (const skill_name in attributes[att_name].skills) {
+            attribute_labels[skill_name] = attributes[att_name].skills[skill_name].label;
           }
 
         }
