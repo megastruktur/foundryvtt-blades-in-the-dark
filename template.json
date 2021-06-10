@@ -169,6 +169,38 @@
     },
     "logic": {
       "logic": ""
+    },
+    "activatedEffect": {
+      "activation": {
+        "type": "",
+        "cost": 0,
+        "condition": ""
+      },
+      "duration": {
+        "value": null,
+        "units": ""
+      },
+      "target": {
+        "value": null,
+        "width": null,
+        "units": "",
+        "type": ""
+      },
+      "range": {
+        "value": null,
+        "long": null,
+        "units": ""
+      },
+      "uses": {
+        "value": 0,
+        "max": 0,
+        "per": null
+      },
+      "consume": {
+        "type": "",
+        "target": null,
+        "amount": null
+      }
     }
   },
   "faction": {
@@ -204,12 +236,12 @@
     }
   },
   "item": {
-    "templates": ["default", "logic"],
+    "templates": ["default", "logic", "activatedEffect"],
     "class": "",
     "load": 0
   },
   "class": {
-    "templates": ["default", "logic"],
+    "templates": ["default", "logic", "activatedEffect"],
     "experience_clues": "",
     "base_skills": {
       "hunt": [0],
@@ -227,16 +259,16 @@
     }
   },
   "ability": {
-    "templates": ["ability", "logic"]
+    "templates": ["ability", "logic", "activatedEffect"]
   },
   "heritage": {
-    "templates": ["default"]
+    "templates": ["default", "activatedEffect"]
   },
   "background": {
-    "templates": ["default"]
+    "templates": ["default", "activatedEffect"]
   },
   "vice": {
-    "templates": ["default"]
+    "templates": ["default", "activatedEffect"]
   },
   "cohort": {
     "templates": ["default"],
@@ -358,11 +390,11 @@
     "templates": ["default"]
   },
   "crew_upgrade": {
-    "templates": ["ability", "logic"],
+    "templates": ["ability", "logic", "activatedEffect"],
     "crew_type": ""
   },
   "crew_ability": {
-    "templates": ["ability"]
+    "templates": ["ability", "activatedEffect"]
   },
   "crew_type": {
     "description": "",

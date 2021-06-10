@@ -233,6 +233,9 @@
         <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
         <a class="item" data-tab="loadout">{{localize "BITD.Loadout"}}</a>
         <a class="item" data-tab="character-notes">{{localize "BITD.Notes"}}</a>
+        {{#if isGM}}
+          <a class="item" data-tab="effects">{{localize "BITD.Effects"}}</a>
+        {{/if}}
         <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
       </nav>
 
@@ -315,6 +318,14 @@
           <p>{{localize "BITD.Notes"}}</p>
         </div>
         <textarea rows="13" name="data.description">{{{data.description}}}</textarea>
+      </div>
+
+      {{!-- Active Effects --}}
+      <div id="effects" class="tab effects flex-vertical" data-tab="effects">
+        <div class="label-stripe">
+          <p>{{localize "BITD.Effects"}}</p>
+        </div>
+        {{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}
       </div>
 
       {{!-- Full Item List --}}

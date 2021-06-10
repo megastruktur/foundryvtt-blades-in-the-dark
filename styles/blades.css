@@ -298,6 +298,30 @@
   text-decoration: none;
   font-weight: bold;
 }
+* #effects .flex {
+  display: flex;
+}
+* #effects table {
+  background: unset;
+  border-top: unset;
+  border-bottom: unset;
+  margin: unset;
+}
+* #effects table .item {
+  font-weight: unset;
+}
+* #effects table tr:nth-child(even) {
+  background-color: unset;
+}
+* #effects table thead {
+  background: unset;
+  color: unset;
+  text-shadow: unset;
+  border-bottom: unset;
+}
+* #effects table .item-controls {
+  justify-content: space-evenly;
+}
 * #character-stress label[for$="-0"] {
   margin-right: 0px;
 }
