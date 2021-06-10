@@ -10,5 +10,11 @@
   <section class="sheet-body flex-vertical">
     <label class="label-stripe">{{localize "BITD.Description"}}</label>
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    {{#if isGM}}
+      <div class="label-stripe">{{localize "BITD.Logic"}}</div>
+      <textarea name="data.logic">{{{data.logic}}}</textarea>
+      <div class="label-stripe">{{localize "BITD.Effects"}}</div>
+      <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
+    {{/if}}
   </section>
 </form>

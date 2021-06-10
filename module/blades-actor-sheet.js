@@ -1,5 +1,6 @@
 
 import { BladesSheet } from "./blades-sheet.js";
+import {onManageActiveEffect, prepareActiveEffectCategories} from "./effects.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -24,9 +25,13 @@ export class BladesActorSheet extends BladesSheet {
   getData() {
     var data = super.getData();
     data.editable = this.options.editable;
+    data.isGM = game.user.isGM;
     const actorData = data.data;
     data.actor = actorData;
     data.data = actorData.data;
+
+    // Prepare active effects
+    data.effects = prepareActiveEffectCategories(this.actor.effects);
 
     // Calculate Load
     let loadout = 0;
@@ -90,6 +95,9 @@ export class BladesActorSheet extends BladesSheet {
       await this.actor.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
+
+    // manage active effects
+    html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
   }
 
   /* -------------------------------------------- */
