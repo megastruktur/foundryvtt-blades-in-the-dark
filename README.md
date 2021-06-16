@@ -54,16 +54,6 @@ Clocks are now here!
 - To add clock go to Actors tab and create a new Actor of type "🕛 clock".
 - To share it to other players just drag it to a scene.
 
-## Logic field
-
-Logic field is a json with params which allows to implement some logic when the Item of corresponding type is added or removed.
-### Example (from the Vault 1 crew upgrade)
-`{"attribute":"data.vault.max","operator":"addition","value":4,"requirement":""}`
-- `attribute` - the attribute to affect
-- `operator` - what is done to attribute
-- `value` - the value for operator
-- `requirement` - is not used
-
 ### Operators list
 - `addition` - is added when item is attached and substracted when removed
 - `attribute_change` - changes the "attribute" to value and when removed - uses the "attribute_default" to restore
