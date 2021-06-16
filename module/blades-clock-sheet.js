@@ -33,7 +33,7 @@ export class BladesClockSheet extends BladesSheet {
 
   /** @override */
   async _updateObject(event, formData) {
-    let image_path = `/systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${formData['data.type']}-${formData['data.value']}.svg`;
+    let image_path = `systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${formData['data.type']}-${formData['data.value']}.svg`;
     formData['img'] = image_path;
     formData['token.img'] = image_path;
     let data = [];
