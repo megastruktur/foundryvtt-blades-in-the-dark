@@ -1,3 +1,7 @@
+v.3.3
+- Adds effects instead of item logic fields
+- Several image path fixes
+
 v3.2
 - Fix issue #120 (Load dropdown)
 - Fix issue #122 (Faction tracker labels)

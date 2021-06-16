@@ -13,5 +13,11 @@
       <input id="item-load" type="text" name="data.load" value="{{data.load}}">
       <label class="label-stripe">{{localize "BITD.Class"}}</label>
       <input id="item-class" type="text" name="data.class" value="{{data.class}}">
+      {{#if isGM}}
+        <div class="label-stripe">{{localize "BITD.Logic"}}</div>
+        <textarea name="data.logic">{{{data.logic}}}</textarea>
+        <div class="label-stripe">{{localize "BITD.Effects"}}</div>
+        <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
+      {{/if}}
     </section>
 </form>

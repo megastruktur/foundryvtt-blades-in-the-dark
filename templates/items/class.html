@@ -16,9 +16,12 @@
     <div><i>- {{localize "BITD.ClassExpClue3"}}</i></div>
     {{editor content=data.experience_clues target="data.experience_clues" button=true owner=owner editable=editable}}
 
-    {{isG}}
-    <label class="label-stripe">{{localize "BITD.Logic"}}</label>
-    <textarea name="data.logic">{{data.logic}}</textarea>
+    {{#if isGM}}
+      <div class="label-stripe">{{localize "BITD.Logic"}}</div>
+      <textarea name="data.logic">{{{data.logic}}}</textarea>
+      <div class="label-stripe">{{localize "BITD.Effects"}}</div>
+      <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
+    {{/if}}
   </section>
 
 </form>

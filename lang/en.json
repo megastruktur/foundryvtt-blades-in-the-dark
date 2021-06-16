@@ -205,6 +205,14 @@
   "BITD.Wear": "Wear",
   "BITD.Gloom": "Gloom",
 
+  "BITD.Add": "Add",
+  "BITD.Effects": "Effects",
+  "BITD.EffectCreate": "Create Effect",
+  "BITD.EffectToggle": "Toggle Effect",
+  "BITD.EffectEdit": "Edit Effect",
+  "BITD.EffectDelete": "Delete Effect",
+  "BITD.EffectWarning": "Managing Active Effects within an Owned Item is not currently supported by FoundryVTT and will be added in a subsequent update.",
+
   "BITD.Name": "Name",
   "BITD.CampaignName": "Campaign Name"
 }

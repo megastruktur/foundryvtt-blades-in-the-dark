@@ -2,6 +2,8 @@
  * Extend the basic ItemSheet
  * @extends {ItemSheet}
  */
+import {onManageActiveEffect, prepareActiveEffectCategories} from "./effects.js";
+
 export class BladesItemSheet extends ItemSheet {
 
   /** @override */
@@ -38,6 +40,11 @@ export class BladesItemSheet extends ItemSheet {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
+
+    html.find(".effect-control").click(ev => {
+      if ( this.item.isOwned ) return ui.notifications.warn(game.i18n.localize("BITD.EffectWarning"))
+      onManageActiveEffect(ev, this.item)
+    });
   }
 
   /* -------------------------------------------- */
@@ -45,11 +52,15 @@ export class BladesItemSheet extends ItemSheet {
   /** @override */
   getData() {
     const data = super.getData();
-    data.isGm = game.user.isGM;
+    data.isGM = game.user.isGM;
     data.editable = this.options.editable;
     const itemData = data.data;
     data.actor = itemData;
     data.data = itemData.data;
+
+    // Prepare Active Effects
+    data.effects = prepareActiveEffectCategories(this.item.effects);
+
     return data;
   }
 }
