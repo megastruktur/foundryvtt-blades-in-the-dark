@@ -177,7 +177,11 @@ export class BladesHelpers {
     compendium_items = compendium_content.map(e => {return e.data});
 
     list_of_items = game_items.concat(compendium_items);
-
+    list_of_items.sort(function(a, b) {
+      let nameA = a.name.toUpperCase();
+      let nameB = b.name.toUpperCase();
+      return nameA.localeCompare(nameB);
+    });
     return list_of_items;
 
   }
