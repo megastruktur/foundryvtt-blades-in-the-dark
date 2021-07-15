@@ -36,6 +36,9 @@ export async function wickedRoll(dice_amount, attribute_name = "", position = "d
 async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "", type="", char_name="") {
 
   let speaker = ChatMessage.getSpeaker();
+  if (speaker.alias == char_name) {
+    char_name = "";
+  }
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
   let rolls = [];
   let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
