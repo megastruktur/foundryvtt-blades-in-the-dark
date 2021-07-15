@@ -1,6 +1,6 @@
 
 Hooks.on('diceSoNiceReady', (dice3d) => {
-  dice3d.addSystem({ id: "WhiteDots", name: "Wicked Dots"},"exclusive");
+  dice3d.addSystem({ id: "WhiteDots", name: "Wicked Dots"},"default");
    dice3d.addDicePreset({
 	   type: "d6",
 	   labels: [
@@ -23,7 +23,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 		colorset:"Wicked Dice"
    },"d6");
 
-  dice3d.addSystem({ id: "BlackDots", name: "Wicked Dark Dots"},"exclusive");
+  dice3d.addSystem({ id: "BlackDots", name: "Wicked Dark Dots"},"default");
    dice3d.addDicePreset({
 	   type: "d6",
 	   labels: [
@@ -46,7 +46,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 		colorset:"Wicked Dice"
    },"d6");
 
-  dice3d.addSystem({ id: "Claws", name: "Wicked Claws"},"exclusive");
+  dice3d.addSystem({ id: "Claws", name: "Wicked Claws"},"preferred");
 
    dice3d.addDicePreset({
 	   type: "d6",
@@ -70,7 +70,7 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 		colorset:"Wicked Dice"
    },"d6");   
 
-   dice3d.addSystem({ id: "Numbers", name: "Wicked Numbers"},"exclusive");
+   dice3d.addSystem({ id: "Numbers", name: "Wicked Numbers"},"default");
    dice3d.addDicePreset({
 	   type: "d6",
 	   labels: [
@@ -96,5 +96,5 @@ Hooks.on('diceSoNiceReady', (dice3d) => {
 		material: 'metal',
 		font:"Didot",
 		texture: "../systems/wicked-ones/styles/assets/dice/dots/texture.webp",
-      },"default");
+      },"preferred");
     });
