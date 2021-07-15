@@ -234,12 +234,12 @@ export class WickedActor extends Actor {
 
     // Add extra values for braineater disciplines and doomseeker eye rays if available
     this.data.items.forEach(specialAbility => {
-      if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "ds_eyes") {
+      if (specialAbility.type == "specialability" && specialAbility.data.data.ability_type == "ds_eyes") {
         for (var i = 1; i < 10; i++) {
-          dice_amount[specialAbility.data.primal['ds_eye_ray_' + i]] = parseInt(specialAbility.data.primal['ds_eye_ray_' + i + '_val']);
+          dice_amount[specialAbility.data.data.primal['ds_eye_ray_' + i]] = parseInt(specialAbility.data.data.primal['ds_eye_ray_' + i + '_val']);
         }
-      } else if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "be_psi") {
-        dice_amount[specialAbility.data.primal.be_psi_skill_name] = parseInt(specialAbility.data.primal.be_psi_dots);
+      } else if (specialAbility.type == "specialability" && specialAbility.data.data.ability_type == "be_psi") {
+        dice_amount[specialAbility.data.data.primal.be_psi_skill_name] = parseInt(specialAbility.data.data.primal.be_psi_dots);
 
       }
     });
@@ -272,12 +272,12 @@ export class WickedActor extends Actor {
 
     // Add extra values for braineater disciplines and doomseeker eye rays if available
     this.data.items.forEach(specialAbility => {
-      if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "ds_eyes") {
+      if (specialAbility.type == "specialability" && specialAbility.data.data.ability_type == "ds_eyes") {
         for (var i = 1; i < 10; i++) {
-          dice_amount[specialAbility.data.primal['ds_eye_ray_' + i]] = this.data.data.attributes["guts"].shocked ? -1 : 0;
+          dice_amount[specialAbility.data.data.primal['ds_eye_ray_' + i]] = this.data.data.attributes["guts"].shocked ? -1 : 0;
         }
-      } else if (specialAbility.type == "specialability" && specialAbility.data.ability_type == "be_psi") {
-        dice_amount[specialAbility.data.primal.be_psi_skill_name] = dice_amount[specialAbility.data.primal['ds_eye_ray_' + i]] = this.data.data.attributes["guts"].shocked ? -1 : 0;
+      } else if (specialAbility.type == "specialability" && specialAbility.data.data.ability_type == "be_psi") {
+        dice_amount[specialAbility.data.data.primal.be_psi_skill_name] = dice_amount[specialAbility.data.data.primal['ds_eye_ray_' + i]] = this.data.data.attributes["guts"].shocked ? -1 : 0;
 
       }
     });

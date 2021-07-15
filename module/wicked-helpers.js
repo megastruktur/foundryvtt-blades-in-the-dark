@@ -205,6 +205,10 @@ export class WickedHelpers {
 
     }
 
+    for (var eye_ray in CONFIG.WO.doomseeker_eye_rays) {
+      attribute_labels[eye_ray] = CONFIG.WO.doomseeker_eye_rays[eye_ray] + '.Name';
+    }
+
     let result = typeof attribute_labels[attribute_name] !== 'undefined' ? attribute_labels[attribute_name] : attribute_name;
 
     return result;
