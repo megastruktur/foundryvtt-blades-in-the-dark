@@ -416,7 +416,7 @@ export class WickedActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    wickedRoll(dice_amount, attribute_name, position, effect, type);
+    wickedRoll(dice_amount, attribute_name, position, effect, type, this.name);
   }
 
   /* -------------------------------------------- */

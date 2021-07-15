@@ -4,8 +4,10 @@
  * @param {string} attribute_name
  * @param {string} position
  * @param {string} effect
+ * @param {string} type
+ * @param {string} char_name
  */
-export async function wickedRoll(dice_amount, attribute_name = "", position = "default", effect = "default", type="fortune") {
+export async function wickedRoll(dice_amount, attribute_name = "", position = "default", effect = "default", type = "fortune", char_name = "") {
 
   let zeromode = false;
   if (dice_amount <= 0) {
@@ -16,7 +18,7 @@ export async function wickedRoll(dice_amount, attribute_name = "", position = "d
   let r = new Roll( `${dice_amount}d6`, {} );
 
   r.evaluate({async: true});
-  showChatRollMessage(r, zeromode, attribute_name, position, effect, type)
+  showChatRollMessage(r, zeromode, attribute_name, position, effect, type, char_name)
 
 }
 
@@ -29,8 +31,9 @@ export async function wickedRoll(dice_amount, attribute_name = "", position = "d
  * @param {string} position
  * @param {string} effect
  * @param {string} type
+ * @param {string} char_name
  */
-async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "",type="") {
+async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "", type="", char_name="") {
 
   let speaker = ChatMessage.getSpeaker();
   let isBelow070 = isNewerVersion('0.7.0', game.data.version);
@@ -107,7 +110,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
     }
   }
 
-  let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_type: roll_type, roll_status_class: roll_status, roll_status_text: roll_status_text, attribute_label: attribute_label, position: position_localize, effect: effect_localize, roll_description: roll_description, zeromode: zeromode });
+  let result = await renderTemplate("systems/wicked-ones/templates/wicked-roll.html", { rolls: rolls, roll_type: roll_type, roll_status_class: roll_status, roll_status_text: roll_status_text, attribute_label: attribute_label, position: position_localize, effect: effect_localize, roll_description: roll_description, zeromode: zeromode, char_name: char_name });
 
   let messageData = {
     user: game.user.id,
