@@ -4,7 +4,7 @@
   "description": "Official system for the Wicked Ones game made by Bandit Camp. Including official compendium content, all you need to slay some adventurers!",
   "version": "WILL BE AUTO REPLACED",
   "minimumCoreVersion": "0.8.4",
-  "compatibleCoreVersion": "0.8.6",
+  "compatibleCoreVersion": "0.8.8",
   "templateVersion": 1,
   "background": "styles/assets/images/WO-Header.webp",
   "author": "Spearhead, LorduFreeman",
