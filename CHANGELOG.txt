@@ -1,3 +1,7 @@
+v.3.4
+- Update items to use effects system
+- Properly sort item lists alphabetically
+
 v.3.3
 - Adds effects instead of item logic fields
 - Several image path fixes
