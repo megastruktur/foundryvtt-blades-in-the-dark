@@ -1,6 +1,7 @@
 # FoundryVTT Blades in the Dark character and crew sheets
 
 If you like my work - send thanks to astromortis@gmail.com  :3
+... or donations to https://www.donationalerts.com/r/megastruktur
 
 Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
 
