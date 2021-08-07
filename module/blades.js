@@ -29,7 +29,10 @@ Hooks.once("init", async function() {
 
   game.blades = {
     dice: bladesRoll
-  }
+  };
+  game.system.bobclocks = {
+    sizes: [ 4, 6, 8 ]
+  };
 
   CONFIG.Item.documentClass = BladesItem;
   CONFIG.Actor.documentClass = BladesActor;

@@ -65,6 +65,16 @@ export class BladesItem extends Item {
       this._prepareCohort(data);
     
     }
+
+    if (item_data.type === "faction") {
+      if( !data.goal_1_clock_value ){ data.goal_1_clock_value = 0 }
+      if( data.goal_1_clock_max === 0 ){ data.goal_1_clock_max = 4 }
+      if( !data.goal_2_clock_value ){ data.goal_2_clock_value = 0 }
+      if( data.goal_2_clock_max === 0 ){ data.goal_2_clock_max = 4 }
+      data.size_list_1 = BladesHelpers.createListOfClockSizes( game.system.bobclocks.sizes, data.goal_1_clock_max, parseInt( data.goal_1_clock_max ) );
+      data.size_list_2 = BladesHelpers.createListOfClockSizes( game.system.bobclocks.sizes, data.goal_2_clock_max, parseInt( data.goal_2_clock_max ) );
+    }
+
   }
 
   /**
