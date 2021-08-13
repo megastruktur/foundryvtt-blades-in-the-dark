@@ -1,9 +1,7 @@
-# FoundryVTT Blades in the Dark character and crew sheets
+# FoundryVTT Beam Saber character and Squad sheets
 
-If you like my work - send thanks to astromortis@gmail.com  :3
-... or donations to https://www.donationalerts.com/r/megastruktur
-
-Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
+Everything is based off the Blades in the Dark system from megastruktur - https://github.com/megastruktur/foundryvtt-blades-in-the-dark
+Currently everythign needs to be updated
 
 ## Usage
 `"Item" - all classes, crew types, upgrades, items, abilities, upgrades, etc.`
@@ -60,18 +58,10 @@ Clocks are now here!
 - `attribute_change` - changes the "attribute" to value and when removed - uses the "attribute_default" to restore
 
 ## To be done in the nearest future
-- Friends/rivals section
-- Stress/Harm dynamic values (can be modified by abilities but for now are hardcoded)
+- actually update everything
 
 ## Troubleshooting
 - If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.
 
 ## Credits
-- This work is based on Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
-- Some assets were taken from here (thank you  timdenee and joesinghaus): https://github.com/joesinghaus/Blades-in-the-Dark
-
-
-[screenshot_all]: ./images/screenshot_all.png "screenshot_all"
-[screenshot_compendium]: ./images/screenshot_compendium.png "screenshot_compendium"
-[screenshot_roll_1]: ./images/screenshot_roll_1.png "screenshot_roll_1"
-[screenshot_roll_2]: ./images/screenshot_roll_2.png "screenshot_roll_2"
+- This work is based on Beamsaber by Austin Ramsay which can be found here - https://austin-ramsay.itch.io/beamsaber
