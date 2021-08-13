@@ -1,4 +1,4 @@
-This work is based on Blades in the Dark (found at http://www.bladesinthedark.com/), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
+This work is based on Beamsaber (https://austin-ramsay.itch.io/beamsaber), developed and authored by Austin Ramsay, and licensed for our use under the Creative Commons Attribution 3.0 Unported license (http://creativecommons.org/licenses/by/3.0/).
 
                       GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
