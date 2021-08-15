@@ -1,7 +1,7 @@
 {
 "Actor": {
-  "types": ["character", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
-  "character": {
+  "types": ["pilot", "vehicle", "npc", "squad", "\uD83D\uDD5B clock", "factions"],
+  "pilot": {
     "alias": "",
     "stress": {
       "value": [0],
@@ -116,7 +116,11 @@
         }
     }
   },
-  "crew": {
+  "vehicle": {
+    "name": "",
+    "description": ""
+  }.
+  "squad": {
     "name": "",
     "reputation": [0],
     "lair": "",
@@ -138,14 +142,17 @@
     "heat": [0],
     "wanted": [0]
   },
+	
   "\uD83D\uDD5B clock": {
     "name": "",
     "type": 4,
     "value": "0"
   },
+	
     "factions": {
 	"name": ""
     },
+	
     "npc": {
       "name": "",
       "description_short": "",
@@ -156,6 +163,7 @@
       "notes": ""
   }
 },
+	
 "Item": {
   "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
   "templates": {
