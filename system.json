@@ -2,7 +2,7 @@
   "name": "beamsaber",
   "title": "Beam Saber",
   "description": "Beam Saber game system based on the game from Austin Ramsay - https://austin-ramsay.itch.io/beamsaber",
-  "version": "bs0.1.0",
+  "version": "0.1.1",
   "minimumCoreVersion": "0.8.5",
   "compatibleCoreVersion": "0.8.9",
   "templateVersion": 1,
