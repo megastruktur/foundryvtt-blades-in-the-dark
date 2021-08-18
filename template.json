@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
+    "types": ["character", "npc", "vehicle", "crew", "\uD83D\uDD5B clock", "factions"],
     "character": {
       "alias": "",
       "stress": {
@@ -146,7 +146,7 @@
       "factions": {
     "name": ""
       },
-      "npc": {
+    "npc": {
         "name": "",
         "description_short": "",
         "description": "",
@@ -154,6 +154,13 @@
         "associated_faction": "",
         "associated_crew_type": "",
         "notes": ""
+    },
+    "Vehicle": {
+      "name": "",
+      "description_short": "",
+      "description": "",
+      "associated_size": "",
+      "notes": ""
     }
   },
   "Item": {
