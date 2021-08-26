@@ -1,6 +1,6 @@
 {
 "BITD.HelloThere": "General Kenobi",
-"BITD.Heritage": "Ancestralidade",
+"BITD.Heritage": "Raízes",
 "BITD.Background": "Passado",
 "BITD.TitleDeleteItem": "Deletar item",
 "BITD.Vice": "Vício",
@@ -74,7 +74,7 @@
 "BITD.Quality": "Qualidade",
 "BITD.AddAdditionalTypeOfGangText": "Você pode adicionar um tipo extra a uma gangue ou especialista se gastar duas melhorias de bando.<br>Quando um parceiro realiza ações em que seus tipos se aplicam, ele usa sua qualidade. Caso contrário, a qualidade dele é zero. Um parceiro pode ter no máximo dois tipos. Algumas melhorias de bando vão adicionar a qualidade 'Elite' a um bando, o que concede +1d quando rolarem para seu tipo.",
 "BITD.ClassExpClue1": "Sempre que você rolar uma ação desesperada, marque XP no atributo daquela ação.",
-"BITD.ClassExpClue2": "Você expressou suas crenças, motivações, ancestralidade e histórico.",
+"BITD.ClassExpClue2": "Você expressou suas crenças, motivações, raízes e histórico.",
 "BITD.ClassExpClue3": "Você enfrentou problemas causados pelo vício ou trauma durante a sessão.",
 "BITD.ClassExpClueDescription": "Ao fim de cada sessão, para cada item abaixo, marque 1xp (na sua classe ou num atributo) ou 2xp se for um elemento que ocorreu múltiplas vezes.",
 "BITD.Turf": "Território",
