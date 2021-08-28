@@ -322,7 +322,7 @@
 * #effects table .item-controls {
   justify-content: space-evenly;
 }
-* #character-stress label[for$="-0"] {
+* #pilot-stress label[for$="-0"] {
   margin-right: 0px;
 }
 * #abilities .item-name, * #loadout .item-name {
@@ -385,24 +385,24 @@
 * #harm-armor {
   display: flex;
 }
-* #harm-armor #character-harm {
+* #harm-armor #pilot-harm {
   width: 100%;
 }
-* #harm-armor #character-harm table {
+* #harm-armor #pilot-harm table {
   width: 100%;
 }
-* #harm-armor #character-harm table th {
+* #harm-armor #pilot-harm table th {
   background-color: #191813;
   color: #EEEFFF;
 }
-* #harm-armor #character-harm table input[type=text] {
+* #harm-armor #pilot-harm table input[type=text] {
   width: 100%;
 }
-* #harm-armor #character-health-clock {
+* #harm-armor #pilot-health-clock {
   margin: 0 auto;
   position: relative;
 }
-* #harm-armor #character-health-clock .blades-clock {
+* #harm-armor #pilot-health-clock .blades-clock {
   position: relative;
   padding: 0;
   width: 88px;
@@ -412,7 +412,7 @@
   overflow: hidden;
   background-size: cover;
 }
-* #harm-armor #character-health-clock .blades-clock label {
+* #harm-armor #pilot-health-clock .blades-clock label {
   overflow: hidden;
   position: absolute;
   top: -50%;
@@ -423,30 +423,30 @@
   transition: filter 0.1s;
   cursor: pointer;
 }
-* #harm-armor #character-health-clock .blades-clock label:hover {
+* #harm-armor #pilot-health-clock .blades-clock label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
-* #harm-armor #character-health-clock .blades-clock input {
+* #harm-armor #pilot-health-clock .blades-clock input {
   position: absolute;
   display: none;
 }
-* #harm-armor #character-health-clock .blades-clock input[value="0"] {
+* #harm-armor #pilot-health-clock .blades-clock input[value="0"] {
   display: none;
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(3) {
+* #harm-armor #pilot-health-clock .blades-clock *:nth-child(3) {
   transform: rotate(0deg) skewY(180deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(5) {
+* #harm-armor #pilot-health-clock .blades-clock *:nth-child(5) {
   transform: rotate(90deg) skewY(180deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(7) {
+* #harm-armor #pilot-health-clock .blades-clock *:nth-child(7) {
   transform: rotate(180deg) skewY(180deg);
 }
-* #harm-armor #character-health-clock .blades-clock *:nth-child(9) {
+* #harm-armor #pilot-health-clock .blades-clock *:nth-child(9) {
   transform: rotate(270deg) skewY(180deg);
 }
-* #harm-armor #character-armor-uses div {
+* #harm-armor #pilot-armor-uses div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

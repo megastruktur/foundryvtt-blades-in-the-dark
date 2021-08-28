@@ -12,9 +12,9 @@ export class BladesActor extends Actor {
 
     data.token = data.token || {};
 
-    // For Crew and Character set the Token to sync with charsheet.
+    // For Crew and pilot set the Token to sync with charsheet.
     switch (data.type) {
-      case 'character':
+      case 'pilot':
       case 'crew':
       case '\uD83D\uDD5B clock':
         data.token.actorLink = true;
@@ -99,7 +99,7 @@ export class BladesActor extends Actor {
     content += `
         </form>
       `;
-    
+
     new Dialog({
       title: `${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}`,
       content: content,
@@ -125,7 +125,7 @@ export class BladesActor extends Actor {
   }
 
   /* -------------------------------------------- */
-  
+
   async rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect) {
 
     let dice_amount = 0;
@@ -148,27 +148,27 @@ export class BladesActor extends Actor {
    *  which can be performed.
    */
   createListOfActions() {
-  
+
     let text, attribute, skill;
     let attributes = this.data.data.attributes;
-  
+
     for ( attribute in attributes ) {
-  
+
       var skills = attributes[attribute].skills;
-  
+
       text += `<optgroup label="${attribute} Actions">`;
       text += `<option value="${attribute}">${attribute} (Resist)</option>`;
-  
+
       for ( skill in skills ) {
         text += `<option value="${skill}">${skill}</option>`;
       }
-  
+
       text += `</optgroup>`;
-  
+
     }
-  
+
     return text;
-  
+
   }
 
   /* -------------------------------------------- */
@@ -178,20 +178,20 @@ export class BladesActor extends Actor {
    *
    * @param {int} rs
    *  Min die modifier
-   * @param {int} re 
+   * @param {int} re
    *  Max die modifier
    * @param {int} s
    *  Selected die
    */
   createListOfDiceMods(rs, re, s) {
-  
+
     var text = ``;
     var i = 0;
-  
+
     if ( s == "" ) {
       s = 0;
     }
-  
+
     for ( i  = rs; i <= re; i++ ) {
       var plus = "";
       if ( i >= 0 ) { plus = "+" };
@@ -199,12 +199,12 @@ export class BladesActor extends Actor {
       if ( i == s ) {
         text += ` selected`;
       }
-      
+
       text += `>${plus}${i}d</option>`;
     }
-  
+
     return text;
-  
+
   }
 
   /* -------------------------------------------- */

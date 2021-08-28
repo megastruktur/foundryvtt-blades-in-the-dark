@@ -238,7 +238,7 @@ $hover-brightness: 0.8;
 
   }
 
-  #character-stress {
+  #pilot-stress {
     label {
       &[for$="-0"] {
         margin-right: 0px;
@@ -288,7 +288,7 @@ $hover-brightness: 0.8;
     display: flex;
 
     // Harm
-    #character-harm {
+    #pilot-harm {
   
       width: 100%;
   
@@ -307,12 +307,12 @@ $hover-brightness: 0.8;
     }
   
     // Clock
-    #character-health-clock {
+    #pilot-health-clock {
       margin: 0 auto;
       @include clock(4, 88);
     }
 
-    #character-armor-uses {
+    #pilot-armor-uses {
 
       div {
         display: flex;

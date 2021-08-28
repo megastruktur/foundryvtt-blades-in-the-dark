@@ -1,5 +1,5 @@
 /**
- * A simple and flexible system for world-building using an arbitrary collection of character and item attributes
+ * A simple and flexible system for world-building using an arbitrary collection of pilot and item attributes
  * Author: Atropos
  * Software License: GNU GPLv3
  */
@@ -39,7 +39,7 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("blades", BladesActorSheet, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("blades", BladesActorSheet, { types: ["pilot"], makeDefault: true });
   Actors.registerSheet("blades", BladesCrewSheet, { types: ["crew"], makeDefault: true });
   Actors.registerSheet("blades", BladesFactionSheet, { types: ["factions"], makeDefault: true });
   Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });

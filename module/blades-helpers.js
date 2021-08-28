@@ -196,7 +196,7 @@ export class BladesHelpers {
    */
   static getAttributeLabel(attribute_name) {
         let attribute_labels = {};
-        const attributes = game.system.model.Actor.character.attributes;
+        const attributes = game.system.model.Actor.pilot.attributes;
 
         for (const att_name in attributes) {
           attribute_labels[att_name] = attributes[att_name].label;
@@ -216,7 +216,7 @@ export class BladesHelpers {
    * @returns {Boolean}
    */
   static isAttributeAction(attribute_name) {
-        const attributes = game.system.model.Actor.character.attributes;
+        const attributes = game.system.model.Actor.pilot.attributes;
         
         return !(attribute_name in attributes);
   }
