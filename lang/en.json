@@ -151,7 +151,7 @@
   "BITD.RollSuccess": "Success",
   "BITD.RollPartialSuccess": "Partial Success",
   "BITD.RollSomeDice": "Roll Some Dice!",
-  "BITD.RollTokenDescription": "If you want to pull the numbers from a pilot, select their Token first.",
+  "BITD.RollTokenDescription": "If you want to pull the numbers from a character, select their Token first.",
   "BITD.RollNumberOfDice": "Number of Dice",
   "BITD.RollDoWithIncreasedEffect": "You do it with <strong>increased effect</strong>.",
   "BITD.RollDo": "You do it.",

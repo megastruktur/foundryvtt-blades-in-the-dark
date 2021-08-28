@@ -7,7 +7,7 @@ export const migrateWorld = async function() {
 
   // Migrate World Actors
   for ( let a of game.actors.contents ) {
-    if (a.data.type === 'pilot') {
+    if (a.data.type === 'character') {
       try {
         const updateData = _migrateActor(a.data);
         if ( !isObjectEmpty(updateData) ) {
@@ -19,8 +19,8 @@ export const migrateWorld = async function() {
       }
     }
 
-    // Migrate Token Link for pilot and Crew
-    if (a.data.type === 'pilot' || a.data.type === 'crew') {
+    // Migrate Token Link for Character and Crew
+    if (a.data.type === 'character' || a.data.type === 'crew') {
       try {
         const updateData = _migrateTokenLink(a.data);
         if ( !isObjectEmpty(updateData) ) {
@@ -88,7 +88,7 @@ function _migrateActor(actor) {
   let updateData = {}
 
   // Migrate Skills
-  const attributes = game.system.model.Actor.pilot.attributes;
+  const attributes = game.system.model.Actor.character.attributes;
   for ( let attribute_name of Object.keys(actor.data.attributes || {}) ) {
 
     // Insert attribute label

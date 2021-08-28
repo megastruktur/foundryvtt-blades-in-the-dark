@@ -1,7 +1,7 @@
 {
   "Actor": {
-    "types": ["pilot", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
-    "pilot": {
+    "types": ["character", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
+    "character": {
       "alias": "",
       "stress": {
         "value": [0],

@@ -6,11 +6,11 @@
 
     <div class="grow-two">
       <div id="name">
-        <label for="pilot-{{actor._id}}-name">{{localize "BITD.Name"}}</label>
-        <input type="text" id="pilot-{{actor._id}}-name" name="name" value="{{actor.name}}">
+        <label for="character-{{actor._id}}-name">{{localize "BITD.Name"}}</label>
+        <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}}">
       </div>
 
-      <div id="pilot-traits" class="flex-column">
+      <div id="character-traits" class="flex-column">
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">{{localize "BITD.Heritage"}}</a></div>
@@ -77,8 +77,8 @@
 
     <div class="grow-two">
       <div id="alias">
-        <label for="pilot-{{actor._id}}-alias">{{localize "BITD.Alias"}}</label>
-        <input type="text" id="pilot-{{actor._id}}-alias" name="data.alias" value="{{data.alias}}">
+        <label for="character-{{actor._id}}-alias">{{localize "BITD.Alias"}}</label>
+        <input type="text" id="character-{{actor._id}}-alias" name="data.alias" value="{{data.alias}}">
       </div>
 
       {{> "systems/blades-in-the-dark/templates/parts/coins.html" actor=actor}}
@@ -91,31 +91,31 @@
   </section>
   {{!-- Stress and Trauma --}}
   <div id="stress-trauma" class="section big-teeth-section">
-    <div id="pilot-{{actor._id}}-stress" class="big-teeth">
+    <div id="character-{{actor._id}}-stress" class="big-teeth">
       {{#multiboxes data.stress.value}}
 
-      <input type="radio" id="pilot-{{actor._id}}-stress-0" name="data.stress.value" value="0" dtype="Radio">
-      <label class="black-label" for="pilot-{{actor._id}}-stress-0">{{localize data.stress.name}}</label>
+      <input type="radio" id="character-{{actor._id}}-stress-0" name="data.stress.value" value="0" dtype="Radio">
+      <label class="black-label" for="character-{{actor._id}}-stress-0">{{localize data.stress.name}}</label>
 
       {{#times_from_1 data.stress.max}}
-        <input type="radio" id="pilot-{{../actor._id}}-stress-{{this}}" name="data.stress.value" value="{{this}}"
+        <input type="radio" id="character-{{../actor._id}}-stress-{{this}}" name="data.stress.value" value="{{this}}"
                dtype="Radio">
-        <label for="pilot-{{../actor._id}}-stress-{{this}}"></label>
+        <label for="character-{{../actor._id}}-stress-{{this}}"></label>
       {{/times_from_1}}
 
       {{/multiboxes}}
 
     </div>
-    <div id="pilot-{{actor._id}}-trauma-container" class="small-teeth-container">
+    <div id="character-{{actor._id}}-trauma-container" class="small-teeth-container">
       {{#traumacounter data.trauma.list}}
-      <div id="pilot-{{actor._id}}-trauma" class="small-teeth-wrap">
-        <label class="black-label" for="pilot-{{actor._id}}-trauma-counter-0">{{localize data.trauma.name}}</label>
+      <div id="character-{{actor._id}}-trauma" class="small-teeth-wrap">
+        <label class="black-label" for="character-{{actor._id}}-trauma-counter-0">{{localize data.trauma.name}}</label>
         <div id="trauma-teeth" class="small-teeth">
-          <input type="radio" id="pilot-{{actor._id}}-trauma-counter-0" name="data.trauma.value" value="0">
+          <input type="radio" id="character-{{actor._id}}-trauma-counter-0" name="data.trauma.value" value="0">
 
           {{#times_from_1 data.trauma.max}}
-            <input type="radio" id="pilot-{{actor._id}}-trauma-counter-{{this}}" name="data.trauma.value" value="{{this}}" disabled>
-            <label for="pilot-{{actor._id}}-trauma-counter-{{this}}"></label>
+            <input type="radio" id="character-{{actor._id}}-trauma-counter-{{this}}" name="data.trauma.value" value="{{this}}" disabled>
+            <label for="character-{{actor._id}}-trauma-counter-{{this}}"></label>
           {{/times_from_1}}
         </div>
       </div>
@@ -161,7 +161,7 @@
 
   {{!-- Harm, Healing and Armor --}}
   <section id="harm-armor">
-    <div id="pilot-harm">
+    <div id="character-harm">
       <table>
         <thead>
           <th class="black-white" colspan="4">{{localize "BITD.Harm"}}</th>
@@ -172,15 +172,15 @@
           <tr>
             <td>3</td>
             <td colspan="2">
-              <input type="text" id="pilot-{{actor._id}}-harm-3-1" name="data.harm.heavy.one" value="{{data.harm.heavy.one}}">
+              <input type="text" id="character-{{actor._id}}-harm-3-1" name="data.harm.heavy.one" value="{{data.harm.heavy.one}}">
             </td>
             <td>{{localize "BITD.NeedHelp"}}</td>
             <td rowspan="3">
-              <div id="pilot-health-clock">
+              <div id="character-health-clock">
                 {{{blades-clock "data.healing-clock" 4 data.healing-clock actor._id}}}
               </div>
             </td>
-            <td rowspan="3" id="pilot-armor-uses">
+            <td rowspan="3" id="character-armor-uses">
               <div>
                 <label for="armor-uses-armor">{{localize "BITD.Armor"}}</label>
                 <input id="armor-uses-armor" type="checkbox" name="data.armor-uses.armor" {{checked data.armor-uses.armor}}>
@@ -198,20 +198,20 @@
           <tr>
             <td>2</td>
             <td>
-              <input type="text" id="pilot-{{actor._id}}-harm-2-1" name="data.harm.medium.one" value="{{data.harm.medium.one}}">
+              <input type="text" id="character-{{actor._id}}-harm-2-1" name="data.harm.medium.one" value="{{data.harm.medium.one}}">
             </td>
             <td>
-              <input type="text" id="pilot-{{actor._id}}-harm-2-2" name="data.harm.medium.two" value="{{data.harm.medium.two}}">
+              <input type="text" id="character-{{actor._id}}-harm-2-2" name="data.harm.medium.two" value="{{data.harm.medium.two}}">
             </td>
             <td>-1D</td>
           </tr>
           <tr>
             <td>1</td>
             <td>
-              <input type="text" id="pilot-{{actor._id}}-harm-1-1" name="data.harm.light.one" value="{{data.harm.light.one}}">
+              <input type="text" id="character-{{actor._id}}-harm-1-1" name="data.harm.light.one" value="{{data.harm.light.one}}">
             </td>
             <td>
-              <input type="text" id="pilot-{{actor._id}}-harm-1-2" name="data.harm.light.two" value="{{data.harm.light.two}}">
+              <input type="text" id="character-{{actor._id}}-harm-1-2" name="data.harm.light.two" value="{{data.harm.light.two}}">
             </td>
             <td>{{localize "BITD.LessEffect"}}</td>
           </tr>
@@ -230,39 +230,39 @@
       <nav class="tabs flex-horizontal">
         <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
         <a class="item" data-tab="loadout">{{localize "BITD.Loadout"}}</a>
-        <a class="item" data-tab="pilot-notes">{{localize "BITD.Notes"}}</a>
+        <a class="item" data-tab="character-notes">{{localize "BITD.Notes"}}</a>
         {{#if isGM}}
           <a class="item" data-tab="effects">{{localize "BITD.Effects"}}</a>
         {{/if}}
-        <a class="item" data-tab="all-pilot-items">{{localize "BITD.AllItems"}}</a>
+        <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
       </nav>
 
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
         <div class="label-stripe">
-          <p><label for="pilot-{{actor._id}}-experience-0">{{localize "BITD.Abilities"}}</label></p>
+          <p><label for="character-{{actor._id}}-experience-0">{{localize "BITD.Abilities"}}</label></p>
           <p><a class="item-add-popup" data-item-type="ability"><i class="fas fa-plus-square"></i></a></p>
-          <div id="pilot-experience" class="teeth-experience">
-            <label for="pilot-{{actor._id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>
+          <div id="character-experience" class="teeth-experience">
+            <label for="character-{{actor._id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>
             {{#multiboxes data.experience}}
-            <input type="radio" id="pilot-{{actor._id}}-experience-0" name="data.experience" value="0" dtype="Radio">
-            <input type="radio" id="pilot-{{actor._id}}-experience-1" name="data.experience" value="1" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-1"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-2" name="data.experience" value="2" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-2"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-3" name="data.experience" value="3" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-3"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-4" name="data.experience" value="4" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-4"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-5" name="data.experience" value="5" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-5"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-6" name="data.experience" value="6" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-6"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-7" name="data.experience" value="7" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-7"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-8" name="data.experience" value="8" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-8"></label>
-            <input type="radio" id="pilot-{{actor._id}}-experience-9" name="data.experience" value="9" dtype="Radio">
-            <label for="pilot-{{actor._id}}-experience-9"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-0" name="data.experience" value="0" dtype="Radio">
+            <input type="radio" id="character-{{actor._id}}-experience-1" name="data.experience" value="1" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-1"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-2" name="data.experience" value="2" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-2"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-3" name="data.experience" value="3" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-3"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-4" name="data.experience" value="4" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-4"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-5" name="data.experience" value="5" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-5"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-6" name="data.experience" value="6" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-6"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-7" name="data.experience" value="7" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-7"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-8" name="data.experience" value="8" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-8"></label>
+            <input type="radio" id="character-{{actor._id}}-experience-9" name="data.experience" value="9" dtype="Radio">
+            <label for="character-{{actor._id}}-experience-9"></label>
             {{/multiboxes}}
           </div>
         </div>
@@ -311,7 +311,7 @@
         </div>
       </div>
 
-      <div class="tab flex-vertical" data-tab="pilot-notes">
+      <div class="tab flex-vertical" data-tab="character-notes">
         <div class="label-stripe">
           <p>{{localize "BITD.Notes"}}</p>
         </div>
@@ -327,7 +327,7 @@
       </div>
 
       {{!-- Full Item List --}}
-      <div class="tab grow-two flex-vertical" data-tab="all-pilot-items">
+      <div class="tab grow-two flex-vertical" data-tab="all-character-items">
         <div class="label-stripe">
           <p><label>{{localize "BITD.AllItems"}}</label></p>
         </div>

@@ -64,7 +64,7 @@ v2.5
 - Updates the functionality with checkboxes and new FormDataExtended api.
 - Fixes Traumas for FVTT 0.7.2+.
 - Version update to be FVTT 0.7.2+ compatible.
-- Fixes improper label-id for radio buttons in pilot.
+- Fixes improper label-id for radio buttons in Character.
 
 v2.4
 - Fixed Rolls: roll position is shown correctly now
@@ -100,7 +100,7 @@ v1.0
 - Added Localization for text (except Items) + Migrations (megastruktur)
 - Added Rolls mod and styling (dunderjester)
 - Added Russian localization (Cododoc)
-- Added design improvements and quality of life hinting to pilot sheet (OctarineSourcerer)
+- Added design improvements and quality of life hinting to character sheet (OctarineSourcerer)
 - Changed the Versioning for easier tracking
 
 
