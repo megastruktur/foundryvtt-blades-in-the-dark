@@ -19,6 +19,7 @@
         "list": [0]
       },
       "healing-clock": [0],
+      "repair-clock": [0],
       "experience": [0],
       "coins": [0],
       "coins_stashed": [0],
@@ -113,6 +114,42 @@
                 "value": [0]
               }
             }
+          },
+          "expertise": {
+            "exp": [0],
+            "label": "BITD.SkillsExpertise",
+            "skills": {
+              "battle": {
+                "label": "BITD.SkillsBattle",
+                "value": [0]
+              },
+              "destroy": {
+                "label": "BITD.SkillsDestroy",
+                "value": [0]
+              },
+              "maneuver": {
+                "label": "BITD.SkillsManeuver",
+                "value": [0]
+              }
+            }
+          },
+          "acuity": {
+            "exp": [0],
+            "label": "BITD.SkillsAcuity",
+            "skills": {
+              "bombard": {
+                "label": "BITD.SkillsBombard",
+                "value": [0]
+              },
+              "manipulate": {
+                "label": "BITD.SkillsManipulate",
+                "value": [0]
+              },
+              "scan": {
+                "label": "BITD.SkillsScan",
+                "value": [0]
+              }
+            }
           }
       }
     },
@@ -154,6 +191,25 @@
         "associated_faction": "",
         "associated_crew_type": "",
         "notes": ""
+    },
+    "vehicle": {
+      "name": "",
+      "damage": {
+          "light": {
+            "one": "",
+            "two": ""
+          },
+          "medium": {
+            "one": "",
+            "two": ""
+          },
+          "heavy": {
+            "one": ""
+          },
+          "deadly": {
+            "one": ""
+          }
+      }
     }
   },
   "Item": {
@@ -285,7 +341,7 @@
       },
       "gang_type": ["Adepts"],
       "gang_type_list": {
-  
+
         "Adepts": {
           "label": "BITD.GangTypeAdepts",
           "description": "BITD.GangTypeAdeptsDescription"
@@ -494,4 +550,3 @@
     }
   }
   }
-  
