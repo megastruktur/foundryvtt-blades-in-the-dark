@@ -109,6 +109,7 @@
   "BITD.VehicleArmour": "Armour",
   "BITD.VehicleDamage": "Damage",
   "BITD.VehicleRepair": "Repair",
+  "BITD.VehicleLoadout": "Mech Load",
 
   "BITD.Gang": "Squad",
   "BITD.Expert": "Expert",

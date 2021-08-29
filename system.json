@@ -60,6 +60,13 @@
       "entity": "Item"
     },
     {
+      "name": "vehicle_gear",
+      "label": "Vehicle Gear",
+      "system": "beamsaber",
+      "path": "./packs/vehicle_gear.db",
+      "entity": "Item"
+    },
+    {
       "name": "ability",
       "label": "Abilities",
       "system": "beamsaber",

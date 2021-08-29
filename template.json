@@ -50,6 +50,7 @@
       },
       "vehicle-name": "",
       "vehicle-description": "",
+      "selected_vehicle_load_level": "",
       "vehicle-armor-uses": {
         "armor": 0,
         "heavy": 0,
@@ -69,6 +70,28 @@
           },
           "deadly": {
             "one": ""
+          }
+      },
+      "vehicle-quirks": {
+          "quirk1": {
+              "name": "",
+              "used": 0
+          },
+          "quirk2": {
+              "name": "",
+              "used": 0
+          },
+          "quirk3": {
+              "name": "",
+              "used": 0
+          },
+          "quirk4": {
+              "name": "",
+              "used": 0
+          },
+          "quirk5": {
+              "name": "",
+              "used": 0
           }
       },
       "attributes": {
