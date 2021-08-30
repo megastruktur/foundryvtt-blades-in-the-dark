@@ -92,6 +92,10 @@
           "quirk5": {
               "name": "",
               "used": 0
+          },
+          "quirk6": {
+              "name": "",
+              "used": 0
           }
       },
       "attributes": {
