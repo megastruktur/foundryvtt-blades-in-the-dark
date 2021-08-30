@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
+    "types": ["character", "npc", "vehicle", "crew", "\uD83D\uDD5B clock", "factions"],
     "character": {
       "alias": "",
       "stress": {
