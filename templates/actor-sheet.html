@@ -12,6 +12,7 @@
 
       <div id="character-traits" class="flex-column">
 
+        <!-- Hide Heritage
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">{{localize "BITD.Heritage"}}</a></div>
           {{#each actor.items as |item id|}}
@@ -26,7 +27,9 @@
               {{/if}}
           {{/each}}
         </div>
+        -->
 
+        <!--Hide Background
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background">{{localize "BITD.Background"}}</a></div>
           {{#each actor.items as |item id|}}
@@ -41,7 +44,9 @@
             {{/if}}
           {{/each}}
         </div>
+        -->
 
+        <!--Hide Vices
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice">{{localize "BITD.Vice"}}</a></div>
           {{#each actor.items as |item id|}}
@@ -56,7 +61,9 @@
               {{/if}}
           {{/each}}
         </div>
+        -->
 
+        <!-- Keep The classes -->
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class">{{localize "BITD.Class"}}</a></div>
             {{#each actor.items as |item id|}}
@@ -81,7 +88,7 @@
         <input type="text" id="character-{{actor._id}}-alias" name="data.alias" value="{{data.alias}}">
       </div>
 
-      {{> "systems/blades-in-the-dark/templates/parts/coins.html" actor=actor}}
+      {{> "systems/beamsaber/templates/parts/coins.html" actor=actor}}
     </div>
 
   </section>
@@ -220,8 +227,67 @@
     </div>
   </section>
 
-
-
+  {{!-- Vehicle Damage and Armour --}}
+  <!-- Adding a second damage panel on the character sheet -->
+  <section id="damage-armor">
+    <div id="vehicle-damage">
+      <table>
+        <thead>
+          <th class="black-white" colspan="4">{{localize "BITD.VehicleDamage"}}</th>
+          <th class="black-white"><label>{{localize "BITD.VehicleRepair"}}</label></th>
+          <th class="black-white">{{localize "BITD.VehicleArmour"}}</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td colspan="2">
+              <input type="text" id="character-{{actor._id}}-vehicle-damage-3-1" name="data.vehicle-damage.heavy.one" value="{{data.vehicle-damage.heavy.one}}">
+            </td>
+            <td>{{localize "BITD.NeedHelp"}}</td>
+            <td rowspan="3">
+              <div id="vehicle-repair-clock">
+                {{{blades-clock "data.repair-clock" 4 data.repair-clock actor._id}}}
+              </div>
+            </td>
+            <td rowspan="3" id="vehicle-character-armor-uses">
+              <div>
+                <label for="vehicle-armor-uses-armor">{{localize "BITD.VehicleArmour"}}</label>
+                <input id="vehicle-armor-uses-armor" type="checkbox" name="data.vehicle-armor-uses.armor" {{checked data.vehicle-armor-uses.armor}}>
+              </div>
+              <div>
+                <label for="vehicle-armor-uses-heavy">{{localize "BITD.Heavy"}}</label>
+                <input id="vehicle-armor-uses-heavy" type="checkbox" name="data.vehicle-armor-uses.heavy" {{checked data.vehicle-armor-uses.heavy}}>
+              </div>
+              <div>
+                <label for="vehicle-armor-uses-special">{{localize "BITD.Special"}}</label>
+                <input id="vehicle-armor-uses-special" type="checkbox" name="data.vehicle-armor-uses.special" {{checked data.vehicle-armor-uses.special}}>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <input type="text" id="character-{{actor._id}}-vehicle-damage-2-1" name="data.vehicle-damage.medium.one" value="{{data.vehicle-damage.medium.one}}">
+            </td>
+            <td>
+              <input type="text" id="character-{{actor._id}}-vehicle-damage-2-2" name="data.vehicle-damage.medium.two" value="{{data.vehicle-damage.medium.two}}">
+            </td>
+            <td>-1D</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>
+              <input type="text" id="character-{{actor._id}}-vehicle-damage-1-1" name="data.vehicle-damage.light.one" value="{{data.vehicle-damage.light.one}}">
+            </td>
+            <td>
+              <input type="text" id="character-{{actor._id}}-vehicle-damage-1-2" name="data.vehicle-damage.light.two" value="{{data.vehicle-damage.light.two}}">
+            </td>
+            <td>{{localize "BITD.LessEffect"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
   {{!-- Attributes --}}
   <section class="flex-horizontal">
@@ -232,11 +298,13 @@
       <nav class="tabs flex-horizontal">
         <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
         <a class="item" data-tab="loadout">{{localize "BITD.Loadout"}}</a>
+        <a class="item" data-tab="mech-load">{{localize "BITD.VehicleLoadout"}}</a>
         <a class="item" data-tab="character-notes">{{localize "BITD.Notes"}}</a>
         {{#if isGM}}
           <a class="item" data-tab="effects">{{localize "BITD.Effects"}}</a>
         {{/if}}
-        <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
+        <!-- Removing the all items section -->
+        <!-- <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a> -->
       </nav>
 
       <div id="abilities" class="tab flex-vertical" data-tab="abilities">
@@ -313,6 +381,34 @@
         </div>
       </div>
 
+      {{!-- Vehicle items Tab --}}
+      <div id="loadout" class="tab flex-vertical" data-tab="mech-load">
+        <div class="label-stripe flex-horizontal">
+           <p>{{localize "BITD.VehicleLoadout"}} <a class="item-add-popup" data-item-type="vehicle_gear"><i class="fas fa-plus-square"></i></a></p>
+           <p>{{data.loadout}}/{{localize data.load_level}} </p>
+           <div class="dropdown">
+             <select name="data.selected_vehicle_load_level">
+               {{selectOptions load_levels selected=data.selected_vehicle_load_level localize=true}}
+             </select>
+           </div>
+        </div>
+        <div>
+          {{#each actor.vehicle_gear as |item id|}}
+          {{#if (eq item.type "vehicle_gear")}}
+            <div class="item flex-horizontal" data-item-id="{{item._id}}">
+              <div class="item-body flex-horizontal">
+                <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                <div class="item-name">{{item.name}}</div>
+                <div class="item-description">{{{item.data.description}}}</div>
+              </div>
+              <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            </div>
+          {{/if}}
+          {{/each}}
+          <div class="item-class-label"><a class="item-add-popup" data-item-type="vehicle_gear">{{localize "BITD.AddItem"}}</a></div>
+        </div>
+      </div>
+
       <div class="tab flex-vertical" data-tab="character-notes">
         <div class="label-stripe">
           <p>{{localize "BITD.Notes"}}</p>
@@ -325,7 +421,7 @@
         <div class="label-stripe">
           <p>{{localize "BITD.Effects"}}</p>
         </div>
-        {{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}
+        {{> "systems/beamsaber/templates/parts/active-effects.html"}}
       </div>
 
       {{!-- Full Item List --}}
@@ -346,7 +442,7 @@
 
     </div>
     {{!-- Attributes --}}
-    {{> "systems/blades-in-the-dark/templates/parts/attributes.html" actor=actor}}
+    {{> "systems/beamsaber/templates/parts/attributes.html" actor=actor}}
   </section>
 
 </form>

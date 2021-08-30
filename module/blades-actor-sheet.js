@@ -12,8 +12,8 @@ export class BladesActorSheet extends BladesSheet {
 	static get defaultOptions() {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor"],
-  	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
-      width: 700,
+  	  template: "systems/beamsaber/templates/actor-sheet.html",
+      width: 850,
       height: 970,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}]
     });
@@ -37,14 +37,14 @@ export class BladesActorSheet extends BladesSheet {
     let loadout = 0;
     data.items.forEach(i => {loadout += (i.type === "item") ? parseInt(i.data.load) : 0});
     data.data.loadout = loadout;
-    
+
     // Encumbrance Levels
     let load_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal","BITD.Heavy","BITD.Encumbered",
 			"BITD.Encumbered","BITD.Encumbered","BITD.OverMax"];
     let mule_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal",
 			"BITD.Heavy","BITD.Encumbered","BITD.OverMax"];
     let mule_present=0;
- 
+
     //Sanity Check
     if (loadout < 0) {
       loadout = 0;
@@ -65,9 +65,9 @@ export class BladesActorSheet extends BladesSheet {
     if (mule_present) {
       data.data.load_level=mule_level[loadout];
     } else {
-      data.data.load_level=load_level[loadout];   
+      data.data.load_level=load_level[loadout];
     }
-    
+
     data.load_levels = {"BITD.Light":"BITD.Light", "BITD.Normal":"BITD.Normal", "BITD.Heavy":"BITD.Heavy"};
 
     return data;

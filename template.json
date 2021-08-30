@@ -19,6 +19,7 @@
         "list": [0]
       },
       "healing-clock": [0],
+      "repair-clock": [0],
       "experience": [0],
       "coins": [0],
       "coins_stashed": [0],
@@ -46,6 +47,52 @@
         "armor": 0,
         "heavy": 0,
         "special": 0
+      },
+      "vehicle-name": "",
+      "vehicle-description": "",
+      "selected_vehicle_load_level": "",
+      "vehicle-armor-uses": {
+        "armor": 0,
+        "heavy": 0,
+        "special": 0
+      },
+      "vehicle-damage": {
+          "light": {
+            "one": "",
+            "two": ""
+          },
+          "medium": {
+            "one": "",
+            "two": ""
+          },
+          "heavy": {
+            "one": ""
+          },
+          "deadly": {
+            "one": ""
+          }
+      },
+      "vehicle-quirks": {
+          "quirk1": {
+              "name": "",
+              "used": 0
+          },
+          "quirk2": {
+              "name": "",
+              "used": 0
+          },
+          "quirk3": {
+              "name": "",
+              "used": 0
+          },
+          "quirk4": {
+              "name": "",
+              "used": 0
+          },
+          "quirk5": {
+              "name": "",
+              "used": 0
+          }
       },
       "attributes": {
           "insight": {
@@ -113,6 +160,42 @@
                 "value": [0]
               }
             }
+          },
+          "expertise": {
+            "exp": [0],
+            "label": "BITD.SkillsExpertise",
+            "skills": {
+              "battle": {
+                "label": "BITD.SkillsBattle",
+                "value": [0]
+              },
+              "destroy": {
+                "label": "BITD.SkillsDestroy",
+                "value": [0]
+              },
+              "maneuver": {
+                "label": "BITD.SkillsManeuver",
+                "value": [0]
+              }
+            }
+          },
+          "acuity": {
+            "exp": [0],
+            "label": "BITD.SkillsAcuity",
+            "skills": {
+              "bombard": {
+                "label": "BITD.SkillsBombard",
+                "value": [0]
+              },
+              "manipulate": {
+                "label": "BITD.SkillsManipulate",
+                "value": [0]
+              },
+              "scan": {
+                "label": "BITD.SkillsScan",
+                "value": [0]
+              }
+            }
           }
       }
     },
@@ -126,6 +209,14 @@
       "experience": [0],
       "hold_types": ["weak", "strong"],
       "coins": {
+        "max": 4,
+        "value": [0]
+      },
+      "materiel": {
+        "max": 4,
+        "value": [0]
+      },
+      "personnel": {
         "max": 4,
         "value": [0]
       },
@@ -143,7 +234,7 @@
       "type": 4,
       "value": "0"
     },
-      "factions": {
+    "factions": {
     "name": ""
       },
     "npc": {
@@ -155,14 +246,12 @@
         "associated_crew_type": "",
         "notes": ""
     },
-    "Vehicle": {
+    "vehicle": {
       "name": "",
-      "description_short": "",
-      "description": "",
-      "associated_size": "",
-      "notes": ""
-    }
-  },
+      "model": "",
+      "size": ""
+      }
+    },
   "Item": {
     "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
     "templates": {
@@ -262,7 +351,13 @@
         "attune": [0],
         "command": [0],
         "consort": [0],
-        "sway": [0]
+        "sway": [0],
+        "battle": [0],
+        "destroy": [0],
+        "maneuver": [0],
+        "bombard": [0],
+        "manipulate": [0],
+        "scan": [0]
       }
     },
     "ability": {
@@ -292,7 +387,7 @@
       },
       "gang_type": ["Adepts"],
       "gang_type_list": {
-  
+
         "Adepts": {
           "label": "BITD.GangTypeAdepts",
           "description": "BITD.GangTypeAdeptsDescription"
@@ -501,4 +596,3 @@
     }
   }
   }
-  

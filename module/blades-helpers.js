@@ -208,16 +208,16 @@ export class BladesHelpers {
 
         return attribute_labels[attribute_name];
   }
-  
+
   /**
    * Returns true if the attribute is an action
    *
-   * @param {string} attribute_name 
+   * @param {string} attribute_name
    * @returns {Boolean}
    */
   static isAttributeAction(attribute_name) {
         const attributes = game.system.model.Actor.character.attributes;
-        
+
         return !(attribute_name in attributes);
   }
 

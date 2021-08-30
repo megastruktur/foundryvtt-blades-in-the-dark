@@ -21,7 +21,7 @@ export class BladesItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/blades-in-the-dark/templates/items";
+    const path = "systems/beamsaber/templates/items";
     let simple_item_types = ["background", "heritage", "vice", "crew_reputation"];
     let template_name = `${this.item.data.type}`;
 
