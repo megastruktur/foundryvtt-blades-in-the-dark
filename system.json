@@ -25,6 +25,13 @@
   "download": "https://github.com/conordjpc/foundryvtt-beamsaber/archive/bs0.1.5.zip",
   "packs": [
     {
+      "name": "ability",
+      "label": "Abilities",
+      "system": "beamsaber",
+      "path": "./packs/abilities.db",
+      "entity": "Item"
+    },
+    {
       "name": "class",
       "label": "Classes",
       "system": "beamsaber",
@@ -32,45 +39,10 @@
       "entity": "Item"
     },
     {
-      "name": "heritage",
-      "label": "Heritages",
+      "name": "crew_ability",
+      "label": "Crew Abilities",
       "system": "beamsaber",
-      "path": "./packs/heritages.db",
-      "entity": "Item"
-    },
-    {
-      "name": "vice",
-      "label": "Vices",
-      "system": "beamsaber",
-      "path": "./packs/vices.db",
-      "entity": "Item"
-    },
-    {
-      "name": "background",
-      "label": "Backgrounds",
-      "system": "beamsaber",
-      "path": "./packs/backgrounds.db",
-      "entity": "Item"
-    },
-    {
-      "name": "item",
-      "label": "Items",
-      "system": "beamsaber",
-      "path": "./packs/items.db",
-      "entity": "Item"
-    },
-    {
-      "name": "vehicle_gear",
-      "label": "Vehicle Gear",
-      "system": "beamsaber",
-      "path": "./packs/vehicle_gear.db",
-      "entity": "Item"
-    },
-    {
-      "name": "ability",
-      "label": "Abilities",
-      "system": "beamsaber",
-      "path": "./packs/abilities.db",
+      "path": "./packs/crew_abilities.db",
       "entity": "Item"
     },
     {
@@ -95,25 +67,18 @@
       "entity": "Item"
     },
     {
-      "name": "crew_ability",
-      "label": "Crew Abilities",
+      "name": "item",
+      "label": "Items",
       "system": "beamsaber",
-      "path": "./packs/crew_abilities.db",
-      "entity": "Item"
-    },
-	  {
-      "name": "faction",
-      "label": "Factions",
-      "system": "beamsaber",
-      "path": "./packs/factions.db",
+      "path": "./packs/items.db",
       "entity": "Item"
     },
     {
-      "name": "npc",
-      "label": "NPCs",
+      "name": "vehicle_gear",
+      "label": "Vehicle Gear",
       "system": "beamsaber",
-      "path": "./packs/npcs.db",
-      "entity": "Actor"
+      "path": "./packs/vehicle_gear.db",
+      "entity": "Item"
     }
   ]
 }
