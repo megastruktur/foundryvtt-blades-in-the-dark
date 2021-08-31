@@ -1,4 +1,4 @@
-/* 
+/*
 *  Elements that can be changed will hint this by dimming and fading a little on hover
 */
 /*
@@ -28,8 +28,14 @@
 /*
  * General Styles
  */
+
+ @font-face {
+   font-family: 'Exan'; /*a name to be used later*/
+   src: url("assets/fonts/Exan-Regular.ttf"); /*URL to font*/
+ }
+
 * {
-  font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+  font-family: 'Exan', "Orbitron", "Trebuchet MS", sans-serif;
 }
 * header {
   margin-bottom: 10px;
