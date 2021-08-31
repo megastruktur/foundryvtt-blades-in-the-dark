@@ -9,7 +9,7 @@
         <label for="crew-name">{{localize "BITD.Name"}}</label>
         <input type="text" id="crew-name" name="name" value="{{actor.name}}">
       </div>
-  
+
       <div class="flex-vertical">
         <div class="item-class-label">
           <a class="item-add-popup" data-distinct="true" data-item-type="crew_reputation">{{localize "BITD.CrewReputation"}}</a>
@@ -105,34 +105,54 @@
       <label for="crew-reputation-12"></label>
       {{/repturf}}
       {{/multiboxes}}
-      <div class="gray-label">{{localize "BITD.Turf"}}</div>
+      <div class="gray-label"></div>
     </div>
 
+    <!-- This is the resources section containing 3 types of currency -->
     {{!-- Coins --}}
     <div id="crew-coins">
 
       <div id="crew-coins-hands">
         <div class="stripe">
-          <label for="crew-coins-hands-0">{{localize "BITD.Coins"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
+          <label for="crew-materiel-hands-0">{{localize "BITD.Materiel"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
         </div>
-        <div class="crew-coins coins-hands">
-          {{#multiboxes data.coins.value}}
-          <input type="radio" id="crew-coins-hands-0" name="data.coins.value" value="0" checked="checked">
-          <input type="radio" id="crew-coins-hands-1" name="data.coins.value" value="1">
-          <label for="crew-coins-hands-1"></label>
-          <input type="radio" id="crew-coins-hands-2" name="data.coins.value" value="2">
-          <label for="crew-coins-hands-2"></label>
-          <input type="radio" id="crew-coins-hands-3" name="data.coins.value" value="3">
-          <label for="crew-coins-hands-3"></label>
-          <input type="radio" id="crew-coins-hands-4" name="data.coins.value" value="4">
-          <label for="crew-coins-hands-4"></label>
+        <div class="crew-materiel materiel-hands">
+          {{#multiboxes data.materiel.value}}
+          <input type="radio" id="crew-materiel-hands-0" name="data.materiel.value" value="0" checked="checked">
+          <input type="radio" id="crew-materiel-hands-1" name="data.materiel.value" value="1">
+          <label for="crew-materiel-hands-1"></label>
+          <input type="radio" id="crew-materiel-hands-2" name="data.materiel.value" value="2">
+          <label for="crew-materiel-hands-2"></label>
+          <input type="radio" id="crew-materiel-hands-3" name="data.materiel.value" value="3">
+          <label for="crew-materiel-hands-3"></label>
+          <input type="radio" id="crew-materiel-hands-4" name="data.materiel.value" value="4">
+          <label for="crew-materiel-hands-4"></label>
           {{/multiboxes}}
+        </div>
+        <div class="stripe">
+          <label for="crew-personnel-hands-0">{{localize "BITD.Personnel"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
+        </div>
+        <div class="crew-personnel personnel-hands">
+          {{#multiboxes data.personnel.value}}
+          <input type="radio" id="crew-personnel-hands-0" name="data.personnel.value" value="0" checked="checked">
+          <input type="radio" id="crew-personnel-hands-1" name="data.personnel.value" value="1">
+          <label for="crew-personnel-hands-1"></label>
+          <input type="radio" id="crew-personnel-hands-2" name="data.personnel.value" value="2">
+          <label for="crew-personnel-hands-2"></label>
+          <input type="radio" id="crew-personnel-hands-3" name="data.personnel.value" value="3">
+          <label for="crew-personnel-hands-3"></label>
+          <input type="radio" id="crew-personnel-hands-4" name="data.personnel.value" value="4">
+          <label for="crew-personnel-hands-4"></label>
+          {{/multiboxes}}
+        </div>
+        <div class="stripe">
+          <label for="crew-stash-hands-0">{{localize "BITD.Stash"}}</label> <input type="text" id="crew-stash" name="stash" value="{{actor.stash.value}}">
         </div>
       </div>
 
       {{#if data.vault.max}}
       <div id="crew-coins-vault">
-        
+
         <div class="stripe">
           <label for="crew-coins-vault-0">{{localize "BITD.Vault"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
         </div>
@@ -145,12 +165,12 @@
 
       </div>
       {{/if}}
-    
+
     </div>
 
     {{!-- Heat/Wanted --}}
     <div id="heat-wanted" class="flex-horizontal big-teeth-section">
-  
+
       <div id="crew-heat" class="big-teeth">
         {{#multiboxes data.heat}}
         <input type="radio" id="crew-heat-0" name="data.heat" value="0" dtype="Radio">
@@ -174,7 +194,7 @@
         <input type="radio" id="crew-heat-9" name="data.heat" value="9" dtype="Radio">
         <label for="crew-heat-9"></label>
         {{/multiboxes}}
-  
+
       </div>
       <div id="crew-wanted-container" class="small-teeth-container">
         {{#multiboxes data.wanted}}
@@ -194,7 +214,7 @@
         </div>
         {{/multiboxes}}
       </div>
-  
+
     </div>
   </section>
 
@@ -211,7 +231,7 @@
         {{/each}}
       </div>
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="turfs">{{localize "BITD.Turfs"}}</a>
+        <!-- <a class="item" data-tab="turfs">{{localize "BITD.Turfs"}}</a> -->
         <a class="item" data-tab="upgrades">{{localize "BITD.Upgrades"}}</a>
         <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
         <a class="item" data-tab="cohorts">{{localize "BITD.Cohorts"}}</a>
@@ -249,6 +269,7 @@
   {{!-- Tabs --}}
   <section class="tab-content">
 
+    <!-- Hiding the turfs
     {{!-- Turfs --}}
     <div class="tab" data-tab="turfs">
       <div class="label-stripe">
@@ -262,6 +283,7 @@
       {{/if}}
       {{/each}}
     </div>
+    -->
 
 
     {{!-- Crew Upgrades --}}
@@ -311,9 +333,9 @@
       <div class="cohorts flex-horizontal">
         {{#each actor.items as |item id|}}
           {{#if (eq item.type "cohort")}}
-          
+
             {{> "systems/beamsaber/templates/parts/cohort-block.html" item=item}}
-    
+
           {{/if}}
         {{/each}}
       </div>

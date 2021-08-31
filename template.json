@@ -21,6 +21,7 @@
       "healing-clock": [0],
       "repair-clock": [0],
       "experience": [0],
+      "playbook-xp": 0,
       "coins": [0],
       "coins_stashed": [0],
       "special_abilities": [],
@@ -56,6 +57,8 @@
         "heavy": 0,
         "special": 0
       },
+      "vehicle-gear": [],
+      "vehicle-enhance": 0,
       "vehicle-damage": {
           "light": {
             "one": "",
@@ -221,6 +224,10 @@
         "value": [0]
       },
       "personnel": {
+        "max": 4,
+        "value": [0]
+      },
+      "stash": {
         "max": 4,
         "value": [0]
       },
