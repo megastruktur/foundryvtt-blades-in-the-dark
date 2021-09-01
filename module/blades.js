@@ -17,6 +17,7 @@ import { BladesCrewSheet } from "./blades-crew-sheet.js";
 import { BladesClockSheet } from "./blades-clock-sheet.js";
 import { BladesNPCSheet } from "./blades-npc-sheet.js";
 import { BladesFactionSheet } from "./blades-faction-sheet.js";
+import { BeamVehicleSheet } from "./beam-vehicle-sheet.js";
 import * as migrations from "./migration.js";
 
 window.BladesHelpers = BladesHelpers;
@@ -44,6 +45,7 @@ Hooks.once("init", async function() {
   Actors.registerSheet("blades", BladesFactionSheet, { types: ["factions"], makeDefault: true });
   Actors.registerSheet("blades", BladesClockSheet, { types: ["\uD83D\uDD5B clock"], makeDefault: true });
   Actors.registerSheet("blades", BladesNPCSheet, { types: ["npc"], makeDefault: true });
+  Actors.registerSheet("blades", BeamVehicleSheet, { types: ["vehicle"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("blades", BladesItemSheet, {makeDefault: true});
   await preloadHandlebarsTemplates();

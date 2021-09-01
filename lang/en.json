@@ -106,6 +106,7 @@
   "BITD.SpecialAbilities": "Special Abilities",
 
   "BITD.VehicleName": "Vehicle",
+  "BITD.VehicleModel": "Model",
   "BITD.VehicleDescrition": "Vehicle Desc",
   "BITD.VehicleArmour": "Armour",
   "BITD.VehicleDamage": "Damage",
@@ -113,9 +114,11 @@
   "BITD.VehicleLoadout": "Mech Load",
   "BITD.VehicleQuirks": "Quirks",
   "BITD.VehicleEnhance": "Enhance",
+  "BITD.VehicleFaction": "Associated Faction",
 
   "BITD.Gang": "Fireteam",
   "BITD.Expert": "Expert",
+  "BITD.Difficulty": "Difficulty",
   "BITD.GangTypeAdepts": "Adepts",
   "BITD.GangTypeAdeptsDescription": "Scholars, tinkerers, occultists, and chemists.",
   "BITD.GangTypeRooks": "Rooks",

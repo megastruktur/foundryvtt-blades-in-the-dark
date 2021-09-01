@@ -260,7 +260,11 @@
     "vehicle": {
       "name": "",
       "model": "",
-      "size": ""
+      "description": "",
+      "size": "",
+      "notes":"",
+      "associated_faction": "",
+      "difficulty": ""
       }
     },
   "Item": {
