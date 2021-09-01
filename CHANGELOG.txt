@@ -1,108 +1,19 @@
-v.3.4
-- Update items to use effects system
-- Properly sort item lists alphabetically
+v0.5
 
-v.3.3
-- Adds effects instead of item logic fields
-- Several image path fixes
-
-v3.2
-- Fix issue #120 (Load dropdown)
-- Fix issue #122 (Faction tracker labels)
-
-v3.1
-- Moving Hooks calls to Methods (@drewg13)
-
-v3.0
-- FoundryVTT 0.8.x support
-
-v2.17
-- Adds German translation
-- Fixes Spanish translation typo
-- Adds NPC actor type and NPC compendium
-
-v2.16
-- Changes to the item logic process to eliminate DB write-locking
-- Loadout selector
-- Added Faction tracker (by @jonasPri)
-
-v2.15
-- Fixes all Tokens to be force "actor linked"
-
-v2.14
-- Fixes Dice-so-Nice integration
-
-v2.13
-- Adds Polish translation (thanks rajmundg10)
-
-v2.12
-- Fix turf and cohort edge/flaws checkboxes
-
-v2.11
-- Fix localize for Rolls (@kinote)
-- Adjust avatar image position for Actor, Crew and Item (@olivier-grech)
-- Adjust FVTT version compatibility
-
-v2.10
-- Fix clock styles
-
-v2.9
-- Minor style fixes
-
-v2.8
-- Clocks rebuilt to be Actors.
-- Fixed Dice-so-nice integration.
-
-v2.7
-- Clocks added!
-
-v2.6
-- Fixed bug with upgrade
-- Fixed bug with Gang Type (checkboxes in Foundry can not be used to pass string values so changed to multiple select)
-
-v2.5
-- Updates the functionality with checkboxes and new FormDataExtended api.
-- Fixes Traumas for FVTT 0.7.2+.
-- Version update to be FVTT 0.7.2+ compatible.
-- Fixes improper label-id for radio buttons in Character.
-
-v2.4
-- Fixed Rolls: roll position is shown correctly now
-
-v2.3
-- Added shortened attribute names to use in templates
-- Handlebars "concat" helper added
-
-v2.2
-- Spanish translation added
-- Cohorts localization fix
-
-v2.1
-- Minor css improvements
-
-v2.0
-- Refactored the Stress to have dynamic Max value
-- Added Hull
-- Added Ghost
-- Added Vampire
-- Added Logic field to Item, Class and Ability
-- Removed dice icons on Attributes
-- Added new logic operator "attribute_change"
-
-v1.2
-- Non-Turf claims are no longer counted against Rep-Turf limit
-
-v1.1
-- Fixes
-
-v1.0
-
-- Added Localization for text (except Items) + Migrations (megastruktur)
-- Added Rolls mod and styling (dunderjester)
-- Added Russian localization (Cododoc)
-- Added design improvements and quality of life hinting to character sheet (OctarineSourcerer)
-- Changed the Versioning for easier tracking
+- Removed Blades in the Dark references
+- Updated the localisation to reference Beamsaber terminology (but removed all languages apart from English, sorry)
+- Updated the Character sheet to include Vehicle Stats
+- Updated the Classes to reference Beamsaber classes
+- Added the Beamsaber attributes
+- Added Materiel, Personnel and supply to the Squad sheet
+- Created a basic Vehicle sheet to help GMs
+- Changed the font
 
 
 TODOs:
 - Remove and Re-add ALL items, when the item is removed to implement logic.
+- Add all beamsaber stuff to the compendium
+- Get Vehicle items to work
+- Update the visuals on repair, resources and a number of other places
+- Sort the character sheet layout
+- Dial up the Sci-fi
