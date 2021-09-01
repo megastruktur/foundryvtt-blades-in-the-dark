@@ -141,7 +141,7 @@
           <p><label for="character-{{actor._id}}-experience-0">{{localize "BITD.Abilities"}}</label></p>
           <p><a class="item-add-popup" data-item-type="ability"><i class="fas fa-plus-square"></i></a></p>
           <div id="character-experience" class="teeth-experience">
-            <label for="character-{{actor._id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>
+            <label for="character-{{actor._id}}-experience-0"><label for="character-{{actor._id}}-Playbook-experience-0">{{localize "BITD.PlaybookXP"}}</label><i class="fab fa-creative-commons-zero nullifier"></i></label>
             {{#multiboxes data.experience}}
             <input type="radio" id="character-{{actor._id}}-experience-0" name="data.experience" value="0" dtype="Radio">
             <input type="radio" id="character-{{actor._id}}-experience-1" name="data.experience" value="1" dtype="Radio">
@@ -353,7 +353,7 @@
               <input type="text" id="character-{{actor._id}}-vehicle-damage-3-1" name="data.vehicle-damage.heavy.one" value="{{data.vehicle-damage.heavy.one}}">
             </td>
             <td>{{localize "BITD.NeedHelp"}}</td>
-            <td rowspan="3">
+            <td rowspan="2">
               <div id="vehicle-repair-clock">
                 {{{blades-clock "data.repair-clock" 4 data.repair-clock actor.name}}}
               </div>
@@ -392,6 +392,7 @@
               <input type="text" id="character-{{actor._id}}-vehicle-damage-1-2" name="data.vehicle-damage.light.two" value="{{data.vehicle-damage.light.two}}">
             </td>
             <td>{{localize "BITD.LessEffect"}}</td>
+            <td>{{localize "BITD.VehicleEnhance"}} <input type="text" id="character-{{actor._id}}-vehicle-enhance" name="data.vehicle-enhance" value="{{data.vehicle-enhance}}"> </td>
           </tr>
         </tbody>
       </table>
