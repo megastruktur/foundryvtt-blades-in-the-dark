@@ -32,7 +32,7 @@
   font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
 }
 * header {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 * ul {
   list-style: none;
@@ -48,7 +48,7 @@
   padding: 5px;
 }
 * section {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -177,6 +177,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 0px;
+  margin-top: 10px;
   /* Trauma */
 }
 * .big-teeth-section > * {
@@ -1263,6 +1264,13 @@
 }
 * #loadout select:hover {
   color: red;
+}
+* img {
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 2px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /*# sourceMappingURL=blades.css.map */
