@@ -1,0 +1,23 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
+        </div>
+    </header>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body flex-vertical">
+      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      <label class="label-stripe">{{localize "BITD.Loadout"}}</label>
+      <input id="item-load" type="text" name="data.load" value="{{data.load}}">
+      <label class="label-stripe">{{localize "BITD.Class"}}</label>
+      <input id="item-class" type="text" name="data.class" value="{{data.class}}">
+      {{#if isGM}}
+        <div class="label-stripe">{{localize "BITD.Logic"}}</div>
+        <textarea name="data.logic">{{{data.logic}}}</textarea>
+        <div class="label-stripe">{{localize "BITD.Effects"}}</div>
+        <div id="effects">{{> "systems/beamsaber/templates/parts/active-effects.html"}}</div>
+      {{/if}}
+    </section>
+</form>

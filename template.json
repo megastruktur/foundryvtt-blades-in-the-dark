@@ -268,7 +268,7 @@
       }
     },
   "Item": {
-    "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+    "types": ["faction", "item", "vehicle_item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
     "templates": {
       "default": {
         "description": ""
@@ -349,7 +349,12 @@
     "item": {
       "templates": ["default", "logic", "activatedEffect"],
       "class": "",
-      "load": 0
+      "load": 1
+    },
+    "vehicle_item": {
+      "templates": ["default", "logic", "activatedEffect"],
+      "class": "",
+      "load": 1
     },
     "class": {
       "templates": ["default", "logic", "activatedEffect"],
