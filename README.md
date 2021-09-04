@@ -1,6 +1,6 @@
 # FoundryVTT Beam Saber character and Squad sheets
 
-This game system is for  Beamsaber by Austin Ramsay which can be found here - https://austin-ramsay.itch.io/beamsaber
+This game system is for  Beamsaber (v0.55) by Austin Ramsay which can be found here - https://austin-ramsay.itch.io/beamsaber
 Everything is based off the Blades in the Dark system from megastruktur - https://github.com/megastruktur/foundryvtt-blades-in-the-dark
 
 The system has custom character sheets supporting Pilot and Vehicle Stats and abilities and Squad sheets for the group supporting the new currency.
