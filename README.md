@@ -1,7 +1,9 @@
 # FoundryVTT Beam Saber character and Squad sheets
 
+This game system is for  Beamsaber by Austin Ramsay which can be found here - https://austin-ramsay.itch.io/beamsaber
 Everything is based off the Blades in the Dark system from megastruktur - https://github.com/megastruktur/foundryvtt-blades-in-the-dark
-Currently everything needs to be updated
+
+The system has custom character sheets supporting Pilot and Vehicle Stats and abilities and Squad sheets for the group supporting the new currency.
 
 ## Usage
 `"Item" - all classes, crew types, upgrades, items, abilities, upgrades, etc.`
@@ -9,9 +11,7 @@ Currently everything needs to be updated
 - To reset reputation, exp, etc counters just click on the label name.
 - Health clock can be reset by clicking on "Healing" table header.
 - To add items you can click a corresponding link or drag items from compendium/game to the sheet.
-- All "class/crew" specific items are prefixed with first letters
-
-- I don't want the "class/crew items" to be prepopulated, so the character sheet contains less "compendium" info.
+- All "class/Squad" specific items are prefixed with first letters
 - To see the description of Class, Vice, Background, etc you can just click added item and see all the info in the popup.
 - When adding a new item you can hover a "question-circle" icon to see the item's description.
 - To add Custom abilities just add a new "Foundry Item" of the corresponding type and fill all the necessary info. Then drag it to the sheet or add via button on a sheet.
