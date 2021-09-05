@@ -2,7 +2,7 @@
   "name": "beamsaber",
   "title": "Beam Saber",
   "description": "Beam Saber game system based on the game from Austin Ramsay - https://austin-ramsay.itch.io/beamsaber",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "minimumCoreVersion": "0.8.5",
   "compatibleCoreVersion": "0.8.9",
   "templateVersion": 1,
@@ -22,7 +22,7 @@
   ],
   "url": "https://github.com/conordjpc/foundryvtt-beamsaber/",
   "manifest": "https://raw.githubusercontent.com/conordjpc/foundryvtt-beamsaber/master/system.json",
-  "download": "https://github.com/conordjpc/foundryvtt-beamsaber/archive/bs0.1.6.zip",
+  "download": "https://github.com/conordjpc/foundryvtt-beamsaber/archive/bs0.1.7.zip",
   "packs": [
     {
       "name": "ability",
