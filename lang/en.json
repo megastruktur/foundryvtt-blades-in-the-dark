@@ -105,6 +105,13 @@
   "BITD.CrewExpClue1": "At the end of each session, for each item below, mark 1 xp (or instead mark 2xp if that item occurred multiple times).",
   "BITD.SpecialAbilities": "Special Abilities",
 
+  "BITD.Drive": "Drive",
+  "BITD.DriveClock1": "Drive Clock 1",
+  "BITD.DriveClock2": "Drive Clock 2",
+
+  "BITD.Connections": "Connections",
+  "BITD.Discoveries": "Discovered Truths",
+
   "BITD.VehicleName": "Vehicle",
   "BITD.VehicleModel": "Model",
   "BITD.VehicleDescrition": "Vehicle Desc",
@@ -112,8 +119,9 @@
   "BITD.VehicleDamage": "Damage",
   "BITD.VehicleRepair": "Repair",
   "BITD.VehicleLoadout": "Mech Load",
-  "BITD.VehicleQuirks": "Quirks",
+  "BITD.VehicleQuirks": "Quirks and breakdown",
   "BITD.VehicleEnhance": "Enhance",
+  "BITD.VehicleBreakdown": "Breakdown",
   "BITD.VehicleFaction": "Associated Faction",
 
   "BITD.Gang": "Fireteam",

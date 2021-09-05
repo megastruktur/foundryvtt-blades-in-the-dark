@@ -49,6 +49,133 @@
         "heavy": 0,
         "special": 0
       },
+      "drive": {
+        "description": "",
+        "clock1": 0,
+        "clock2": 0
+      },
+      "connections": {
+        "connection1": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection2": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection3": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection4": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection5": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection6": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        }
+      },
       "vehicle-name": "",
       "vehicle-description": "",
       "selected_vehicle_load_level": "",
@@ -59,6 +186,7 @@
       },
       "vehicle-gear": [],
       "vehicle-enhance": 0,
+      "vehicle-breakdown": 0,
       "vehicle-damage": {
           "light": {
             "one": "",

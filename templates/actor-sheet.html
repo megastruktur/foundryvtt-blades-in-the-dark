@@ -41,8 +41,53 @@
       {{> "systems/beamsaber/templates/parts/coins.html" actor=actor}}
       -->
     </div>
-
   </section>
+
+    <div id="drive">
+      <!-- TODO: replace the table layout with a proper style and teeth -->
+      <table>
+        <thead>
+          <th class="black-white" colspan="2">{{localize "BITD.Drive"}}</th>
+        </thead>
+        <tr>
+          <td colspan="2"><textarea rows="3" name="data.drive.description">{{{data.drive.description}}}</textarea></td>
+        </tr>
+        <tr>
+          <td><label for="character-drive-clock1-0">{{localize "BITD.DriveClock1"}} <i class="fab fa-creative-commons-zero nullifier"></i></label></td>
+          <td><label for="character-drive-clock2-0">{{localize "BITD.DriveClock2"}} <i class="fab fa-creative-commons-zero nullifier"></i></label></td>
+        </tr>
+        <tr>
+          <td>
+            {{#multiboxes data.drive.clock1}}
+            <input type="radio" id="character-drive-clock1-0" name="data.drive.clock1" value="0" checked="checked">
+            <input type="radio" id="character-drive-clock1-1" name="data.drive.clock1" value="1">
+            <label for="character-drive-clock1-1"></label>
+            <input type="radio" id="character-drive-clock1-2" name="data.drive.clock1" value="2">
+            <label for="character-drive-clock1-2"></label>
+            <input type="radio" id="character-drive-clock1-3" name="data.drive.clock1" value="3">
+            <label for="character-drive-clock1-3"></label>
+            <input type="radio" id="character-drive-clock1-4" name="data.drive.clock1" value="4">
+            <label for="character-drive-clock1-4"></label>
+            {{/multiboxes}}
+          </td>
+          <td>
+            {{#multiboxes data.drive.clock2}}
+            <input type="radio" id="character-drive-clock2-0" name="data.drive.clock2" value="0" checked="checked">
+            <input type="radio" id="character-drive-clock2-1" name="data.drive.clock2" value="1">
+            <label for="character-drive-clock2-1"></label>
+            <input type="radio" id="character-drive-clock2-2" name="data.drive.clock2" value="2">
+            <label for="character-drive-clock2-2"></label>
+            <input type="radio" id="character-drive-clock2-3" name="data.drive.clock2" value="3">
+            <label for="character-drive-clock2-3"></label>
+            <input type="radio" id="character-drive-clock2-4" name="data.drive.clock2" value="4">
+            <label for="character-drive-clock2-4"></label>
+            {{/multiboxes}}
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
 
   {{!-- Experience --}}
   <section class="experience">
@@ -131,8 +176,7 @@
         {{#if isGM}}
           <a class="item" data-tab="effects">{{localize "BITD.Effects"}}</a>
         {{/if}}
-        <!-- Removing the all items section -->
-        <!-- <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a> -->
+        <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
       </nav>
 
       <!-- Abilities Section -->
@@ -353,7 +397,7 @@
               <input type="text" id="character-{{actor._id}}-vehicle-damage-3-1" name="data.vehicle-damage.heavy.one" value="{{data.vehicle-damage.heavy.one}}">
             </td>
             <td>{{localize "BITD.NeedHelp"}}</td>
-            <td rowspan="2">
+            <td rowspan="3">
               <div id="vehicle-repair-clock">
                 {{{blades-clock "data.repair-clock" 4 data.repair-clock actor.name}}}
               </div>
@@ -392,38 +436,160 @@
               <input type="text" id="character-{{actor._id}}-vehicle-damage-1-2" name="data.vehicle-damage.light.two" value="{{data.vehicle-damage.light.two}}">
             </td>
             <td>{{localize "BITD.LessEffect"}}</td>
-            <td>{{localize "BITD.VehicleEnhance"}} <input type="text" id="character-{{actor._id}}-vehicle-enhance" name="data.vehicle-enhance" value="{{data.vehicle-enhance}}"> </td>
           </tr>
         </tbody>
       </table>
 
 
       <!-- Quirk section supporting 6 quirks cause I am too lazy to make this one dynamic -->
-      <<table>
+      <table>
         <thead>
           <th class="black-white" colspan="4">{{localize "BITD.VehicleQuirks"}}</th>
         </thead>
         <tr>
-          <td><input type="text" id="character-{{actor._id}}-quirk1" name="quirk1" value="{{data.vehicle-quirks.quirk1.name}}"></td>
-          <td><input id="vehicle-quirks.quirk1.used" type="checkbox" name="data.vehicle-quirks.quirk1.used" {{checked data.vehicle-quirks.quirk1.used}}></td>
-          <td><input type="text" id="character-{{actor._id}}-quirk2" name="quirk2" value="{{data.vehicle-quirks.quirk2.name}}"></td>
-          <td><input id="vehicle-quirks.quirk2.used" type="checkbox" name="data.vehicle-quirks.quirk2.used" {{checked data.vehicle-quirks.quirk2.used}}></td>
+          <td><input type="text" id="character-{{actor._id}}-quirk1" name="data.vehicle-quirks.quirk1.name" value="{{data.vehicle-quirks.quirk1.name}}"></td>
+          <td><input type="checkbox" id="vehicle-quirks.quirk1.used" name="data.vehicle-quirks.quirk1.used" {{checked data.vehicle-quirks.quirk1.used}}></td>
+          <td><input type="text" id="character-{{actor._id}}-quirk2" name="data.vehicle-quirks.quirk2.name" value="{{data.vehicle-quirks.quirk2.name}}"></td>
+          <td><input type="checkbox" id="vehicle-quirks.quirk2.used" name="data.vehicle-quirks.quirk2.used" {{checked data.vehicle-quirks.quirk2.used}}></td>
         </tr>
         <tr>
-          <td><input type="text" id="character-{{actor._id}}-quirk3" name="quirk3" value="{{data.vehicle-quirks.quirk3.name}}"></td>
-          <td><input id="vehicle-quirks.quirk3.used" type="checkbox" name="data.vehicle-quirks.quirk3.used" {{checked data.vehicle-quirks.quirk3.used}}></td>
-          <td><input type="text" id="character-{{actor._id}}-quirk4" name="quirk4" value="{{data.vehicle-quirks.quirk4.name}}"></td>
-          <td><input id="vehicle-quirks.quirk4.used" type="checkbox" name="data.vehicle-quirks.quirk4.used" {{checked data.vehicle-quirks.quirk4.used}}></td>
+          <td><input type="text" id="character-{{actor._id}}-quirk3" name="data.vehicle-quirks.quirk3.name" value="{{data.vehicle-quirks.quirk3.name}}"></td>
+          <td><input type="checkbox" id="vehicle-quirks.quirk3.used" name="data.vehicle-quirks.quirk3.used" {{checked data.vehicle-quirks.quirk3.used}}></td>
+          <td><input type="text" id="character-{{actor._id}}-quirk4" name="data.vehicle-quirks.quirk4.name" value="{{data.vehicle-quirks.quirk4.name}}"></td>
+          <td><input type="checkbox" id="vehicle-quirks.quirk4.used" name="data.vehicle-quirks.quirk4.used" {{checked data.vehicle-quirks.quirk4.used}}></td>
         </tr>
         <tr>
-          <td><input type="text" id="character-{{actor._id}}-quirk5" name="quirk5" value="{{data.vehicle-quirks.quirk5.name}}"></td>
-          <td><input id="vehicle-quirks.quirk5.used" type="checkbox" name="data.vehicle-quirks.quirk5.used" {{checked data.vehicle-quirks.quirk5.used}}></td>
-          <td><input type="text" id="character-{{actor._id}}-quirk6" name="quirk6" value="{{data.vehicle-quirks.quirk6.name}}"></td>
-          <td><input id="vehicle-quirks.quirk6.used" type="checkbox" name="data.vehicle-quirks.quirk6.used" {{checked data.vehicle-quirks.quirk6.used}}></td>
+          <td><input type="text" id="character-{{actor._id}}-quirk5" name="data.vehicle-quirks.quirk5.name" value="{{data.vehicle-quirks.quirk5.name}}"></td>
+          <td><input type="checkbox" id="vehicle-quirks.quirk5.used" name="data.vehicle-quirks.quirk5.used" {{checked data.vehicle-quirks.quirk5.used}}></td>
+          <td><input type="text" id="character-{{actor._id}}-quirk6" name="data.vehicle-quirks.quirk6.name" value="{{data.vehicle-quirks.quirk6.name}}"></td>
+          <td><input type="checkbox" id="vehicle-quirks.quirk6.used" name="data.vehicle-quirks.quirk6.used" {{checked data.vehicle-quirks.quirk6.used}}></td>
+        </tr>
+        <<tr>
+          <!-- TODO: These need to be converted to the regular teeth -->
+          <td colspan="2">{{localize "BITD.VehicleEnhance"}}<input type="text" id="character-{{actor._id}}-vehicle-enhance" name="data.vehicle-enhance" value="{{data.vehicle-enhance}}"> </td>
+          <td colspan="2">{{localize "BITD.VehicleBreakdown"}}<input type="text" id="character-{{actor._id}}-vehicle-breakdown" name="data.vehicle-breakdown" value="{{data.vehicle-breakdown}}"></td>
         </tr>
       </table>
     </div>
   </section>
+
+
+  <!-- TODO: this table is hideous. I apologise to all seeing it. The structure for connections needs to be considered overall-->
+  <div id="connections">
+    <table>
+      <thead>
+        <th colspan="4">{{localize "BITD.Connections"}}</th>
+      </thead>
+      <!--Characters 1 & 2 -->
+      <tr>
+        <td colspan="2">{{localize "BITD.Alias"}}<input type="text" id="character-{{actor._id}}-connection1" name="data.connections.connection1.name" value="{{data.connections.connection1.name}}"></td>
+        <td colspan="2">{{localize "BITD.Alias"}}<input type="text" id="character-{{actor._id}}-connection2" name="data.connections.connection2.name" value="{{data.connections.connection2.name}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection1.belief1.checked" name="data.connections.connection1.belief1.checked" {{checked data.connections.connection1.belief1.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection1-belief1" name="data.connections.connection1.belief1.description" value="{{data.connections.connection1.belief1.description}}"></td>
+        <td><input type="checkbox" id="connections.connection2.belief1.checked" name="data.connections.connection2.belief1.checked" {{checked data.connections.connection2.belief1.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection2-belief1" name="data.connections.connection2.belief1.description" value="{{data.connections.connection2.belief1.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection1.belief2.checked" name="data.connections.connection1.belief2.checked" {{checked data.connections.connection1.belief2.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection1-belief2" name="data.connections.connection1.belief2.description" value="{{data.connections.connection1.belief2.description}}"></td>
+        <td><input type="checkbox" id="connections.connection2.belief2.checked" name="data.connections.connection2.belief2.checked" {{checked data.connections.connection2.belief2.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection2-belief2" name="data.connections.connection2.belief2.description" value="{{data.connections.connection2.belief2.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection1.belief3.checked" name="data.connections.connection1.belief3.checked" {{checked data.connections.connection1.belief3.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection1-belief3" name="data.connections.connection1.belief3.description" value="{{data.connections.connection1.belief3.description}}"></td>
+        <td><input type="checkbox" id="connections.connection2.belief3.checked" name="data.connections.connection2.belief3.checked" {{checked data.connections.connection2.belief3.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection2-belief3" name="data.connections.connection2.belief3.description" value="{{data.connections.connection2.belief3.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection1.belief4.checked" name="data.connections.connection1.belief4.checked" {{checked data.connections.connection1.belief4.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection1-belief4" name="data.connections.connection1.belief4.description" value="{{data.connections.connection1.belief4.description}}"></td>
+        <td><input type="checkbox" id="connections.connection2.belief4.checked" name="data.connections.connection2.belief4.checked" {{checked data.connections.connection2.belief4.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection2-belief4" name="data.connections.connection2.belief4.description" value="{{data.connections.connection2.belief4.description}}"></td>
+      </tr>
+      <tr>
+        <td colspan="4">{{localize "BITD.Discoveries"}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea rows="3" name="data.connections.connection1.discoveries">{{{data.connections.connection1.discoveries}}}</textarea></td>
+        <td colspan="2"><textarea rows="3" name="data.connections.connection2.discoveries">{{{data.connections.connection2.discoveries}}}</textarea></td>
+      </tr>
+      <!-- Characters 3 & 4 -->
+      <tr>
+        <td colspan="2">{{localize "BITD.Alias"}}<input type="text" id="character-{{actor._id}}-connection3" name="data.connections.connection3.name" value="{{data.connections.connection3.name}}"></td>
+        <td colspan="2">{{localize "BITD.Alias"}}<input type="text" id="character-{{actor._id}}-connection4" name="data.connections.connection4.name" value="{{data.connections.connection4.name}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection3.belief1.checked" name="data.connections.connection3.belief1.checked" {{checked data.connections.connection3.belief1.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection3-belief1" name="data.connections.connection3.belief1.description" value="{{data.connections.connection3.belief1.description}}"></td>
+        <td><input type="checkbox" id="connections.connection4.belief1.checked" name="data.connections.connection4.belief1.checked" {{checked data.connections.connection4.belief1.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection4-belief1" name="data.connections.connection4.belief1.description" value="{{data.connections.connection4.belief1.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection3.belief2.checked" name="data.connections.connection3.belief2.checked" {{checked data.connections.connection3.belief2.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection3-belief2" name="data.connections.connection3.belief2.description" value="{{data.connections.connection3.belief2.description}}"></td>
+        <td><input type="checkbox" id="connections.connection4.belief2.checked" name="data.connections.connection4.belief2.checked" {{checked data.connections.connection4.belief2.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection4-belief2" name="data.connections.connection4.belief2.description" value="{{data.connections.connection4.belief2.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection3.belief3.checked" name="data.connections.connection3.belief3.checked" {{checked data.connections.connection3.belief3.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection3-belief3" name="data.connections.connection3.belief3.description" value="{{data.connections.connection3.belief3.description}}"></td>
+        <td><input type="checkbox" id="connections.connection4.belief3.checked" name="data.connections.connection4.belief3.checked" {{checked data.connections.connection4.belief3.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection4-belief3" name="data.connections.connection4.belief3.description" value="{{data.connections.connection4.belief3.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection3.belief4.checked" name="data.connections.connection3.belief4.checked" {{checked data.connections.connection3.belief4.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection3-belief4" name="data.connections.connection3.belief4.description" value="{{data.connections.connection3.belief4.description}}"></td>
+        <td><input type="checkbox" id="connections.connection4.belief4.checked" name="data.connections.connection4.belief4.checked" {{checked data.connections.connection4.belief4.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection4-belief4" name="data.connections.connection4.belief4.description" value="{{data.connections.connection4.belief4.description}}"></td>
+      </tr>
+      <tr>
+        <td colspan="4">{{localize "BITD.Discoveries"}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea rows="3" name="data.connections.connection3.discoveries">{{{data.connections.connection3.discoveries}}}</textarea></td>
+        <td colspan="2"><textarea rows="3" name="data.connections.connection4.discoveries">{{{data.connections.connection4.discoveries}}}</textarea></td>
+      </tr>
+      <!-- Characters 5 & 6 -->
+      <tr>
+        <td colspan="2">{{localize "BITD.Alias"}}<input type="text" id="character-{{actor._id}}-connection5" name="data.connections.connection5.name" value="{{data.connections.connection5.name}}"></td>
+        <td colspan="2">{{localize "BITD.Alias"}}<input type="text" id="character-{{actor._id}}-connection6" name="data.connections.connection6.name" value="{{data.connections.connection6.name}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection5.belief1.checked" name="data.connections.connection5.belief1.checked" {{checked data.connections.connection5.belief1.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection5-belief1" name="data.connections.connection5.belief1.description" value="{{data.connections.connection5.belief1.description}}"></td>
+        <td><input type="checkbox" id="connections.connection6.belief1.checked" name="data.connections.connection6.belief1.checked" {{checked data.connections.connection6.belief1.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection6-belief1" name="data.connections.connection6.belief1.description" value="{{data.connections.connection6.belief1.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection5.belief2.checked" name="data.connections.connection5.belief2.checked" {{checked data.connections.connection5.belief2.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection5-belief2" name="data.connections.connection5.belief2.description" value="{{data.connections.connection5.belief2.description}}"></td>
+        <td><input type="checkbox" id="connections.connection6.belief2.checked" name="data.connections.connection6.belief2.checked" {{checked data.connections.connection6.belief2.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection6-belief2" name="data.connections.connection6.belief2.description" value="{{data.connections.connection6.belief2.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection5.belief3.checked" name="data.connections.connection5.belief3.checked" {{checked data.connections.connection5.belief3.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection5-belief3" name="data.connections.connection5.belief3.description" value="{{data.connections.connection5.belief3.description}}"></td>
+        <td><input type="checkbox" id="connections.connection6.belief3.checked" name="data.connections.connection6.belief3.checked" {{checked data.connections.connection6.belief3.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection6-belief3" name="data.connections.connection6.belief3.description" value="{{data.connections.connection6.belief3.description}}"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" id="connections.connection5.belief4.checked" name="data.connections.connection5.belief4.checked" {{checked data.connections.connection5.belief4.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection5-belief4" name="data.connections.connection5.belief4.description" value="{{data.connections.connection5.belief4.description}}"></td>
+        <td><input type="checkbox" id="connections.connection6.belief4.checked" name="data.connections.connection6.belief4.checked" {{checked data.connections.connection6.belief4.checked}}></td>
+        <td><input type="text" id="character-{{actor._id}}-connection6-belief4" name="data.connections.connection6.belief4.description" value="{{data.connections.connection6.belief4.description}}"></td>
+      </tr>
+      <tr>
+        <td colspan="4">{{localize "BITD.Discoveries"}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><textarea rows="3" name="data.connections.connection5.discoveries">{{{data.connections.connection5.discoveries}}}</textarea></td>
+        <td colspan="2"><textarea rows="3" name="data.connections.connection6.discoveries">{{{data.connections.connection6.discoveries}}}</textarea></td>
+      </tr>
+    </table>
+  </div>
 
 
 </form>
