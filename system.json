@@ -38,6 +38,11 @@
       "lang": "de",
       "name": "Deutsch",
       "path": "lang/de.json"
+    },
+    {
+      "lang": "pt",
+      "name": "Portuguese",
+      "path": "lang/pt.json"
     }
   ],
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",

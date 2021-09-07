@@ -1,3 +1,8 @@
+v.3.5
+- Portuguese Translation
+- Tidied up CSS errors
+- Fix faction sheet goal clocks
+
 v.3.4
 - Update items to use effects system
 - Properly sort item lists alphabetically

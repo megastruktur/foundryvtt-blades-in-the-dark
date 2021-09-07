@@ -19,8 +19,29 @@
     
     {{#if isGM }}
         <label class="label-stripe">{{localize "BITD.Goal"}}</label>
-        Clock {{data.goal_1_clock_max}}:<br>{{data.goal_1}}<br><br>
-        Clock {{data.goal_2_clock_max}}:<br>{{data.goal_2}}<br><br>
+
+        <div class="flex-vertical clock-block" id="faction-goal-clock">
+          <div class="clocks clocks-{{data.goal_1_clock_max}} small" id="faction-clock-1">
+            {{{blades-clock "data.goal_1_clock_value" data.goal_1_clock_max data.goal_1_clock_value (concat item.id "-1")}}}
+          </div>
+          <div id="clock-max-1">
+            <select id="max-1" name="data.goal_1_clock_max">
+              {{{data.size_list_1}}}
+            </select>
+          </div>
+          <textarea rows="1" name="data.goal_1">{{data.goal_1}}</textarea>
+
+          <div class="clocks clocks-{{data.goal_1_clock_max}} small" id="faction-clock-2">
+            {{{blades-clock "data.goal_2_clock_value" data.goal_2_clock_max data.goal_2_clock_value (concat item.id "-2")}}}
+          </div>
+          <div id="clock-max-2">
+            <select id="max-2" name="data.goal_2_clock_max">
+              {{{data.size_list_2}}}
+            </select>
+          </div>
+          <textarea rows="1" name="data.goal_2">{{data.goal_2}}</textarea>
+
+        </div>
         <label class="label-stripe">{{localize "BITD.NotableNPCs"}}</label>
         <textarea rows="10" name="data.notables">{{data.notables}}</textarea>
         <label class="label-stripe">{{localize "BITD.Turf"}}</label>
