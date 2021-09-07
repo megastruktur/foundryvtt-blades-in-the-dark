@@ -1072,6 +1072,13 @@
 * .clock-block .clocks.clocks-4 {
   position: relative;
 }
+* .clock-block .clocks.clocks-4.small .blades-clock,
+* .clock-block .clocks.clocks-6.small .blades-clock,
+* .clock-block .clocks.clocks-8.small .blades-clock,
+* .clock-block .clocks.clocks-12.small .blades-clock {
+  width: 100px;
+  height: 100px;
+}
 * .clock-block .clocks.clocks-4 .blades-clock {
   position: relative;
   padding: 0;

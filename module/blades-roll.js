@@ -32,16 +32,8 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "r
 async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "") {
   
   let speaker = ChatMessage.getSpeaker();
-  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
-  let rolls = [];
+  let rolls = (r.terms)[0].results;
   let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
-  
-  // Backward Compat for rolls.
-  if (isBelow070) {
-    rolls = (r.parts)[0].rolls;
-  } else {
-    rolls = (r.terms)[0].results;
-  }
 
   // Retrieve Roll status.
   let roll_status = getBladesRollStatus(rolls, zeromode);
@@ -102,16 +94,8 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
  */
 export function getBladesRollStatus(rolls, zeromode = false) {
 
-  // Dice API has changed in 0.7.0 so need to keep that in mind.
-  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
-
-  let sorted_rolls = [];
   // Sort roll values from lowest to highest.
-  if (isBelow070) {
-    sorted_rolls = rolls.map(i => i.roll).sort();
-  } else {
-    sorted_rolls = rolls.map(i => i.result).sort();
-  }
+  let sorted_rolls = rolls.map(i => i.result).sort();
 
   let roll_status = "failure"
 
@@ -167,16 +151,8 @@ export function getBladesRollStress(rolls, zeromode = false) {
 
   var stress = 6;
 
-  // Dice API has changed in 0.7.0 so need to keep that in mind.
-  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
-
-  let sorted_rolls = [];
   // Sort roll values from lowest to highest.
-  if (isBelow070) {
-    sorted_rolls = rolls.map(i => i.roll).sort();
-  } else {
-    sorted_rolls = rolls.map(i => i.result).sort();
-  }
+  let sorted_rolls = rolls.map(i => i.result).sort();
 
   let roll_status = "failure"
 
