@@ -36,7 +36,7 @@ Crew Types:
 - (P)  Profiteers
 - (R)  Recon
 - (Rd) R&D
-- (Re) Redacted
+- ( ) Redacted
 
 ## Clocks
 - To add clock go to Actors tab and create a new Actor of type "🕛 clock".
