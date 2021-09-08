@@ -1,4 +1,4 @@
-v0.1.6
+v0.5.0
 
 - Removed Blades in the Dark references
 - Updated the localisation to reference Beamsaber terminology (but removed all languages apart from English, sorry)
@@ -7,14 +7,14 @@ v0.1.6
 - Added the Beamsaber attributes
 - Added Materiel, Personnel and supply to the Squad sheet
 - Created a basic Vehicle sheet to help GMs
-- Changed the font
+- Changed the font and some styling
 - Added all character itmes, gear and abilities
+- Added all squad abilities and Upgrades
+- Added all Vehicle gear
 
 
 TODOs:
-- Add all general beamsaber stuff to the compendium
-- Add squad abilities and upgrades to compendiums
-- Get Vehicle items to work
-- Update the visuals on repair, resources and a number of other places
+- Update the visuals on repair, resources and a number of other places in the sheets
+- Setup dynamic changes for gear and abilities
 - Sort the character sheet layout
 - Dial up the Sci-fi

@@ -43,7 +43,10 @@ Crew Types:
 - To share it to other players just drag it to a scene.
 
 ## To be done in the nearest future
-- actually update everything
+- Update all character sheet styling
+- Support How armour functions
+- Support Junking equipment
+- Dynamic updates to stats based on abilities and crew upgrades
 
 ## Troubleshooting
 - If you can't find the drag-n-dropped item, refer to "All Items" tab on each sheet.
