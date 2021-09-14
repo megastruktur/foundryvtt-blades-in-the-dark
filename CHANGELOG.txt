@@ -1,3 +1,7 @@
+v.3.6
+- Fixes system.json versioning.
+- Adds Entanglements Rolltables (#147)
+
 v.3.5
 - Portuguese Translation
 - Tidied up CSS errors
