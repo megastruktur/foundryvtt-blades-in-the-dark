@@ -2,7 +2,7 @@
   "name": "blades-in-the-dark",
   "title": "Blades in the Dark",
   "description": "Blades in the dark game system.",
-  "version": "3.4.0",
+  "version": "3.6",
   "minimumCoreVersion": "0.8.5",
   "compatibleCoreVersion": "0.8.9",
   "templateVersion": 1,
@@ -47,7 +47,7 @@
   ],
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
   "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/3.4.0.zip",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/3.6.zip",
   "packs": [
     {
       "name": "class",
@@ -132,6 +132,27 @@
       "system": "blades-in-the-dark",
       "path": "./packs/npcs.db",
       "entity": "Actor"
+    },
+	{
+      "name": "entanglements",
+      "label": "Entanglements",
+      "system": "blades-in-the-dark",
+      "path": "./packs/entanglements.db",
+      "entity": "RollTable"
+    },
+	{
+      "name": "entanglements-journals",
+      "label": "Entanglements Journals",
+      "system": "blades-in-the-dark",
+      "path": "./packs/entanglements-journals.db",
+      "entity": "JournalEntry"
+    },
+	{
+      "name": "entanglements-macro",
+      "label": "Entanglements Macro",
+      "system": "blades-in-the-dark",
+      "path": "./packs/entanglements-macro.db",
+      "entity": "Macro"
     }
   ]
 }
