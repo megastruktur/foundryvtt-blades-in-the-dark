@@ -36,8 +36,8 @@ $coin_margin: 3px;
   margin-bottom: 10px;
 }
 
-#name,
-#lair,
+.name,
+.lair,
 {
   margin-bottom: 10px;
 }
@@ -67,7 +67,7 @@ nav{
 
 
 // Reputation
-#crew-reputation {
+.crew-reputation {
   border-top: 3px solid $almost_black;
   @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
 
@@ -78,12 +78,12 @@ nav{
 
 // Turfs.
 
-#turf-container {
+.turf-container {
   overflow-x: scroll;
   overflow-y: clip;
 }
 
-#turf-list {
+.turf-list {
 
   display: flex;
   flex-direction: column;
@@ -115,13 +115,13 @@ nav{
   }
 }
 
-#crew-hold {
+.crew-hold {
   border-top: 3px solid $almost_black;
   @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
   width: 221px;
 }
 
-#crew-tier {
+.crew-tier {
 
   background-color: $gray;
   height: 33px;
@@ -138,7 +138,7 @@ nav{
 
 }
 
-#heat-wanted {
+.heat-wanted {
   //justify-content: none;
   .small-teeth{
     height: 20px;
@@ -180,9 +180,9 @@ nav{
 
 }
 
-#gang-expert-type-selector {
+.gang-expert-type-selector {
 
-  #gang-type-boxes {
+  .gang-type-boxes {
     flex-wrap: wrap;
   }
 }
@@ -285,7 +285,7 @@ nav{
     }
   }
 
-  #trauma-list {
+  .trauma-list {
     @include check_underscore();
     justify-content: space-between;
     align-items: flex-start;

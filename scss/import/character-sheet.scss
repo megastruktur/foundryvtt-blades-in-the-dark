@@ -88,7 +88,7 @@ $hover-brightness: 0.8;
       }
     }
 
-    #trauma-list {
+    .trauma-list {
       @include check_underscore();
       justify-content: space-between;
       align-items: flex-start;
@@ -96,7 +96,7 @@ $hover-brightness: 0.8;
 
   }
 
-  #character-stress {
+  .character-stress {
     label {
       &[for$="-0"] {
         margin-right: 0px;
@@ -105,7 +105,7 @@ $hover-brightness: 0.8;
   }
 
   //Abilitiers and loadout
-  #abilities, #loadout {
+  .abilities, .loadout {
     .item-name {
       width: 100px;
     }
@@ -118,7 +118,7 @@ $hover-brightness: 0.8;
   }
 
   // Abilities
-  #abilities {
+  .abilities {
     .label-stripe {
       p:first-child {
         margin-right: 10px;
@@ -127,7 +127,7 @@ $hover-brightness: 0.8;
   }
 
   // Loadout
-  #loadout {
+  .loadout {
     .item-add-popup {
       margin-left: 10px;
     }
@@ -141,12 +141,12 @@ $hover-brightness: 0.8;
     right: 10px;
   }
 
-  #harm-armor {
+  .harm-armor {
 
     display: flex;
 
     // Harm
-    #character-harm {
+    .character-harm {
 
       width: 100%;
 
@@ -165,12 +165,12 @@ $hover-brightness: 0.8;
     }
 
     // Clock
-    #character-health-clock {
+    .character-health-clock {
       margin: 0 auto;
       @include clock(4, 88);
     }
 
-    #character-armor-uses {
+    .character-armor-uses {
 
       div {
         display: flex;
@@ -181,7 +181,7 @@ $hover-brightness: 0.8;
   }
 
 
-  #attributes {
+  .attributes {
 
     display: flex;
     flex-direction: column;
@@ -260,9 +260,9 @@ $hover-brightness: 0.8;
     margin-bottom: 10px;
   }
 
-  #name,
-  #lair,
-  #alias {
+  .name,
+  .lair,
+  .alias {
     margin-bottom: 10px;
   }
 
