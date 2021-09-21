@@ -27,6 +27,7 @@ $hover-brightness: 0.8;
   font-family: "Crimson Text", serif;
 
   @import 'import/general-styles.scss';
+  @import 'import/clocks.scss';
 
   &.crew.sheet{
     @import 'import/crew-sheet.scss';
@@ -37,7 +38,6 @@ $hover-brightness: 0.8;
   }
 
   &.actor.clock{
-    @import 'import/clock-sheet';
   }
 
   &.item.sheet{
@@ -48,7 +48,7 @@ $hover-brightness: 0.8;
 //top-level styles
 @import 'import/chat.scss';
 @import 'import/dialogs.scss';
-@import 'import/tooltip.scss';
+//@import 'import/tooltip.scss';
 
 //
 //// Colors

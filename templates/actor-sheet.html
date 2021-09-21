@@ -1,8 +1,10 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <section id="name-alias" class="flex-horizontal">
+  <section id="{{actor._id}}-name-alias" class="flex-horizontal name-alias">
 
-    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="grow-two">
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" class="portrait" />
+    </div>
 
     <div class="grow-two">
       <div id="name">
@@ -87,7 +89,7 @@
   </section>
 
   {{!-- Experience --}}
-  <section class="experience">
+  <section class="flex experience">
   </section>
   {{!-- Stress and Trauma --}}
   <div id="stress-trauma" class="section big-teeth-section">
@@ -160,7 +162,7 @@
   </div>
 
   {{!-- Harm, Healing and Armor --}}
-  <section id="harm-armor">
+  <section id="harm-armor" class="flex>
     <div id="character-harm">
       <table>
         <thead>

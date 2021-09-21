@@ -11,10 +11,17 @@ textarea {
   }
 }
 
-section.flex {
-  margin-bottom: 10px;
+.rollable-text {
+  transition: color $transition-period;
+}
+.rollable-text:hover {
+  cursor: pointer;
+  color: $red;
+}
+
+section {
   display: flex;
-  //flex-direction: column;
+  flex-direction: column;
   justify-content: space-between;
 
   > *:not(.label-stripe) {
@@ -39,14 +46,6 @@ section.flex {
   }
 }
 
-
-.tab[data-tab]{
-  display: none;
-  &.active{
-    display: block;
-  }
-}
-
 .flex-horizontal {
   display: flex;
   flex-direction: row;
@@ -56,6 +55,13 @@ section.flex {
 .flex-vertical {
   display: flex;
   flex-direction: column;
+}
+
+.tab[data-tab]{
+  display: none;
+  &.active{
+    display: block;
+  }
 }
 .black-label {
   background-color: $almost_black;
