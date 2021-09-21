@@ -1,0 +1,752 @@
+// Colors
+$lightgray: #CCC;
+$gray: #999;
+$red: red;
+$almost_black: #191813;
+$almost_white: #EEEFFF;
+$gold: #DAA520;
+$green: #008000;
+$light_green: #12a012;
+$blue: #04578f;
+
+// Transition period for sheet parts that hint what they can do
+$transition-period: 0.2s;
+$hover-opacity: 0.9;
+$hover-brightness: 0.8;
+
+// Imports
+@import 'mixin.scss';
+
+/*
+ * General Styles
+ * There is probably a lot of redundancy here, since much of this was already moved into the split-out CSS, but it
+ * shouldn't hurt anything to have it in here. Maybe some annoyance with editing/troubleshooting CSS.
+ * Long-term, the CSS should get pared down so its just in the files it belongs in.
+ */
+
+& * {
+
+  header {
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  form {
+    &.actor-sheet {
+      padding: 20px;
+    }
+  }
+
+  textarea {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  td {
+    padding: 5px;
+  }
+
+  section {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    > *:not(.label-stripe) {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    .grow-one {
+      flex-grow: 1;
+    }
+
+    .grow-two {
+      flex-grow: 2;
+    }
+
+    &.experience {
+      margin-bottom: 0px;
+      justify-content: center;
+    }
+  }
+
+  nav {
+    margin-bottom: 10px;
+  }
+
+  .editor,
+  .editor-content {
+    min-height: 150px;
+  }
+
+  .flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .flex-vertical {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .black-label {
+    background-color: $almost_black;
+    color: $almost_white;
+    font-size: 21px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+  }
+
+  .gray-label {
+    background-color: $gray;
+    color: $almost_black;
+    font-size: 21px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+  }
+
+  .chat-label {
+    background-color: $almost_black;
+    color: $almost_white;
+    font-size: 21px;
+    text-align: center;
+    padding: 0px 5px;
+    height: 30px !important;
+    text-transform: capitalize;
+  }
+  .chat-label-small {
+    background-color: $gray;
+    color: $almost_black;
+    font-size: small;
+    text-align: center;
+    padding: 3px 5px;
+    height: 20px !important;
+  }
+
+  .label-stripe {
+    text-transform: uppercase;
+    background-color: $almost_black;
+    color: $almost_white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  .label-stripe-gray {
+    text-transform: uppercase;
+    background-color: $gray;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  .label-stripe-chat {
+    text-transform: uppercase;
+    background-color: $almost_black;
+    color: $almost_white;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 3px;
+    display: flex;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .label-stripe-chat-small {
+    text-transform: capitalize;
+    background-color: $gray;
+    color: $almost_black;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 3px;
+    display: flex;
+    font-weight: bold;
+  }
+
+  .description {
+    font-style: italic;
+  }
+
+  .rollable-text {
+    transition: color $transition-period;
+  }
+  .rollable-text:hover {
+    cursor: pointer;
+    color: $red;
+  }
+
+  // Stress and Trauma
+
+  .big-teeth-section {
+
+    border-top: 3px solid $almost_black;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+    > * {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    // Stress
+    .big-teeth {
+      @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    }
+
+    /* Trauma */
+    .small-teeth-container {
+
+      .small-teeth-wrap {
+        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
+        flex-direction: column;
+
+        .small-teeth {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+
+    #trauma-list {
+      @include check_underscore();
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+  }
+
+  #character-stress {
+    label {
+      &[for$="-0"] {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  //Abilitiers and loadout
+  #abilities, #loadout {
+    .item-name {
+      width: 100px;
+    }
+    .item-body {
+      width: auto;
+    }
+    .item-description {
+      width: 260px;
+    }
+  }
+
+  // Abilities
+  #abilities {
+    .label-stripe {
+      p:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // Loadout
+  #loadout {
+    .item-add-popup {
+      margin-left: 10px;
+    }
+  }
+
+  // Experience teeth
+  .teeth-experience {
+    @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+
+  #harm-armor {
+
+    display: flex;
+
+    // Harm
+    #character-harm {
+
+      width: 100%;
+
+      table {
+        width: 100%;
+
+        th {
+          background-color: $almost_black;
+          color: $almost_white;
+        }
+
+        input[type="text"] {
+          width: 100%;
+        }
+      }
+    }
+
+    // Clock
+    #character-health-clock {
+      margin: 0 auto;
+      @include clock(4, 88);
+    }
+
+    #character-armor-uses {
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+
+  #attributes {
+
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    .stripe {
+      background-color: $almost_black;
+      color: $almost_white;
+      font-size: 17px;
+      padding-left: 5px;
+    }
+
+    .attribute-label,
+    .attribute-skill-label {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .attribute-skill-label {
+      letter-spacing: 1px;
+    }
+    .attributes-exp {
+
+      position: relative;
+      margin-bottom: 10px;
+
+      .stripe-tooth-body {
+        @include toothradio(10px, 30px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+
+    .attributes-container {
+      display: flex;
+      margin: 3px 0px;
+      @include custom_radio(15px, 15px);
+
+      * {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // ITEM
+  .item {
+
+    justify-content: space-between;
+
+    .item-body {
+
+      margin-bottom: 10px;
+      * {
+        margin-right: 10px;
+      }
+
+      .item-description {
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+
+    div {
+      flex-grow: 2;
+    }
+    .item-control {
+      flex-grow: 1;
+    }
+    .item-body,
+    .item-class-label {
+      width: 100px;
+    }
+  }
+
+  .item-class-label {
+    margin-bottom: 10px;
+  }
+
+  #name,
+  #lair,
+  #alias {
+    margin-bottom: 10px;
+  }
+
+  $coin_size: 15px;
+  $coin_margin: 3px;
+
+  .coins {
+    @include custom_radio_square($coin_size);
+    flex-wrap: wrap;
+
+    input ~ label {
+      margin-right: $coin_margin;
+      margin-bottom: $coin_margin;
+
+      &[for$="0"] {
+        border-width: 2px;
+      }
+
+      @include changeable($transition-period, $hover-brightness, $hover-opacity);
+    }
+
+    &.coins-hands {
+      width: 36px;
+    }
+
+    &.coins-stashed {
+      width: 190px;
+    }
+
+  }
+
+  // Crew Coins
+  .crew-coins {
+    @include custom_radio_square($coin_size);
+    flex-wrap: wrap;
+    max-width: 4 * ($coin_size + $coin_margin);
+
+    label {
+      margin-right: $coin_margin;
+      margin-bottom: $coin_margin;
+    }
+  }
+
+
+  // Reputation
+  #crew-reputation {
+    border-top: 3px solid $almost_black;
+    @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+
+    input[disabled="disabled"] + label {
+      background-image: url(assets/teeth/stresstooth-black.png);
+    }
+  }
+
+  // Turfs.
+
+  #turf-container {
+    overflow-x: scroll;
+    overflow-y: clip;
+  }
+
+  #turf-list {
+
+    display: flex;
+    flex-direction: column;
+    width: 855px;
+
+    .turf-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      *:first-child {
+        margin-left: 0px;
+      }
+      *:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &.section-non-editable {
+      .turf-block {
+        @include turf_block(130px, 100px);
+      }
+    }
+
+    &.section-editable {
+      .turf-block {
+        @include turf_block(130px, 125px);
+      }
+    }
+  }
+
+  #crew-hold {
+    border-top: 3px solid $almost_black;
+    @include toothradio_single(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    width: 221px;
+  }
+
+  #crew-tier {
+
+    background-color: $gray;
+    height: 33px;
+    width: 145px;
+    display: flex;
+    align-items: center;
+    border-top: 3px solid $almost_black;
+
+    @include custom_radio_round(18px, gray, $almost_white, $almost_black);
+
+    > * {
+      margin-right: 5px;
+    }
+
+  }
+
+  #heat-wanted {
+    justify-content: none;
+  }
+
+  .experience-clues-container {
+    width: 340px;
+    font-size: 12px;
+
+    .experience-clues-description {
+      font-weight: bold;
+    }
+
+    .experience-clues {
+      font-style: italic;
+    }
+  }
+
+  .class-name {
+    width: 512px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 48px;
+    text-transform: uppercase;
+    border: 3px solid $almost_black;
+
+    .big-name {
+      font-weight: bold;
+    }
+
+    .big-description {
+      font-size: 20px;
+      color: $almost_black;
+    }
+  }
+
+  // Cohorts styling
+  .edgeflaw {
+
+    input {
+      display: none;
+
+      &:checked {
+
+        & + label {
+          color: $red;
+        }
+
+      }
+    }
+
+  }
+
+  #gang-expert-type-selector {
+
+    #gang-type-boxes {
+      flex-wrap: wrap;
+    }
+  }
+
+  .cohorts {
+    flex-wrap: wrap;
+
+    .cohort-block-wrapper {
+      width: 400px;
+    }
+    .label-stripe {
+      margin-bottom: 0px;
+    }
+
+    .cohort-body {
+      > div {
+        margin-bottom: 10px;
+      }
+    }
+
+    .cohort-block-harm {
+
+      justify-content: space-around;
+
+      input[type="radio"] {
+        display: none;
+
+        &:checked + label {
+          color: $almost_white;
+          font-weight: bold;
+          background-color: $almost_black;
+        }
+      }
+
+      label {
+        border: 2px solid $almost_black;
+        border-top: none;
+        padding: 5px;
+      }
+    }
+  }
+
+  // Add Items modal styling.
+  #items-to-add {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked + label {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Tooltip.
+  .tooltip {
+
+    .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: $almost_black;
+      color: $almost_white;
+      text-align: center;
+      padding: 5px;
+      border-radius: 6px;
+
+      // Position
+      position: absolute;
+      z-index: 9999;
+    }
+
+    &:hover .tooltiptext {
+      visibility: visible;
+    }
+  }
+
+  .blades-die-tooltip {
+
+    .die {
+      font-weight: bold;
+      text-transform: capitalize;
+      font-size: large;
+
+      &.critical-success {
+        color: $light_green;
+      }
+
+      &.success {
+        color: $green;
+      }
+
+      &.partial-success {
+        color: $blue;
+      }
+
+      &.failure {
+        color: $red;
+      }
+    }
+
+  }
+
+  .clock-zero-label {
+    color: $almost_black;
+  }
+
+  .clock-block {
+    .clocks {
+      &.clocks-4 {
+        @include clock(4, 200);
+      }
+      &.clocks-6 {
+        @include clock(6, 200);
+      }
+      &.clocks-8 {
+        @include clock(8, 200);
+      }
+    }
+  }
+
+  .clock-block .blades-clock-name-type {
+    > * {
+      margin-bottom: 0px;
+      max-width: 220px;
+    }
+  }
+
+  i {
+    &.nullifier {
+      @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
+    }
+  }
+
+  #loadout {
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+      background: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right;
+      padding: 0 20px 0 0;
+      margin: 0.1em -6px 0 0;
+      background-color: $almost_black;
+      font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      text-align: right;
+
+      option {
+        color: white;
+      }
+    }
+
+    select:hover {
+      color: red;
+    }
+  }
+}

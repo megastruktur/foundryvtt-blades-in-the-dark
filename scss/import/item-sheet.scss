@@ -1,0 +1,33 @@
+// ITEM
+.item {
+
+  justify-content: space-between;
+
+  .item-body {
+
+    margin-bottom: 10px;
+    * {
+      margin-right: 10px;
+    }
+
+    .item-description {
+      font-style: italic;
+      text-align: justify;
+    }
+  }
+
+  div {
+    flex-grow: 2;
+  }
+  .item-control {
+    flex-grow: 1;
+  }
+  .item-body,
+  .item-class-label {
+    width: 100px;
+  }
+}
+
+.item-class-label {
+  margin-bottom: 10px;
+}

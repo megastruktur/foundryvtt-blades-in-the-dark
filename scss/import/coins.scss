@@ -1,0 +1,27 @@
+$coin_size: 15px;
+$coin_margin: 3px;
+
+.coins {
+  @include custom_radio_square($coin_size);
+  flex-wrap: wrap;
+
+  input ~ label {
+    margin-right: $coin_margin;
+    margin-bottom: $coin_margin;
+
+    &[for$="0"] {
+      border-width: 2px;
+    }
+
+    @include changeable($transition-period, $hover-brightness, $hover-opacity);
+  }
+
+  &.coins-hands {
+    width: 36px;
+  }
+
+  &.coins-stashed {
+    width: 190px;
+  }
+
+}
