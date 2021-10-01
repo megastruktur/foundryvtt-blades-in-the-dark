@@ -1,0 +1,171 @@
+textarea {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.debug-toggle{
+  opacity: 0.1;
+
+  &.on{
+    opacity: 0.75;
+  }
+}
+
+.rollable-text {
+  transition: color $transition-period;
+}
+.rollable-text:hover {
+  cursor: pointer;
+  color: $red;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > *:not(.label-stripe) {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  .grow-one {
+    flex-grow: 1;
+  }
+
+  .grow-two {
+    flex-grow: 2;
+  }
+
+  &.experience {
+    margin-bottom: 0px;
+    justify-content: center;
+  }
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab[data-tab]{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+.black-label {
+  background-color: $almost_black;
+  color: $almost_white;
+  font-size: 21px;
+  text-align: center;
+  padding: 0px 5px;
+  height: 30px !important;
+  text-transform: capitalize;
+  font-family: Kirsty, serif;
+}
+
+.gray-label {
+  background-color: $gray;
+  color: $almost_black;
+  font-size: 21px;
+  text-align: center;
+  padding: 0px 5px;
+  height: 30px !important;
+  text-transform: capitalize;
+  font-family: Kirsty, serif;
+}
+
+
+.label-stripe {
+  text-transform: uppercase;
+  background-color: $almost_black;
+  color: $almost_white;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  font-weight: bold;
+}
+
+.label-stripe-gray {
+  text-transform: uppercase;
+  background-color: $gray;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  font-weight: bold;
+}
+
+.editor,
+.editor-content {
+  min-height: 150px;
+}
+
+.description {
+  font-style: italic;
+}
+
+i {
+  &.nullifier {
+    @include changeable($transition-period, $hover-brightness, $hover-opacity, $red);
+  }
+}
+
+.loadout {
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    background: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right;
+    padding: 0 20px 0 0;
+    margin: 0.1em -6px 0 0;
+    background-color: $almost_black;
+    font-family: Georgia, "Bitstream Charter", "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-align: right;
+
+    option {
+      color: white;
+    }
+  }
+
+  select:hover {
+    color: red;
+  }
+}
+
+.abilities, .loadout, .faction-items {
+  .item-name {
+    width: 100px;
+    margin-left: 10px;
+  }
+  .item-body {
+    width: auto;
+  }
+  .item-description {
+    width: 260px;
+  }
+}
+
+td {
+  padding: 5px;
+}

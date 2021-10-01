@@ -1,0 +1,276 @@
+// Colors
+$lightgray: #CCC;
+$gray: #999;
+$red: red;
+$almost_black: #191813;
+$almost_white: #EEEFFF;
+$gold: #DAA520;
+$green: #008000;
+$light_green: #12a012;
+$blue: #04578f;
+
+// Transition period for sheet parts that hint what they can do
+$transition-period: 0.2s;
+$hover-opacity: 0.9;
+$hover-brightness: 0.8;
+
+// Imports
+@import 'mixin.scss';
+
+/*
+ * General Styles
+ * Cleaned out things that don't appear to apply to the character sheet, and exist in other, separated SCSS files.
+ * Some things *might* be missing, but at a glance, everything looks to be in order.
+ */
+
+& * {
+  .name-alias{
+
+    img.portrait{
+      max-width: 200px;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .tab[data-tab]{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+
+  form {
+    &.actor-sheet {
+      padding: 20px;
+    }
+  }
+
+  // Stress and Trauma
+
+  .big-teeth-section {
+
+    border-top: 3px solid $almost_black;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+    > * {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    // Stress
+    .big-teeth {
+      @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    }
+
+    /* Trauma */
+    .small-teeth-container {
+
+      .small-teeth-wrap {
+        @include toothradio(17px, 50px, "assets/teeth/shorttooth-grey.png", "assets/teeth/shorttooth-red.png", false);
+        flex-direction: column;
+
+        .small-teeth {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+
+    .trauma-list {
+      @include check_underscore();
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+  }
+
+  .character-stress {
+    label {
+      &[for$="-0"] {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  //Abilitiers and loadout
+  .abilities, .loadout {
+    .item-name {
+      width: 100px;
+    }
+    .item-body {
+      width: auto;
+    }
+    .item-description {
+      width: 260px;
+    }
+  }
+
+  // Abilities
+  .abilities {
+    .label-stripe {
+      p:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // Loadout
+  .loadout {
+    .item-add-popup {
+      margin-left: 10px;
+    }
+  }
+
+  // Experience teeth
+  .teeth-experience {
+    @include toothradio(10px, 30px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
+    position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+
+  .harm-armor {
+
+    display: flex;
+
+    // Harm
+    .character-harm {
+
+      width: 100%;
+
+      table {
+        width: 100%;
+
+        th {
+          background-color: $almost_black;
+          color: $almost_white;
+        }
+
+        input[type="text"] {
+          width: 100%;
+        }
+      }
+    }
+
+    // Clock
+    .character-health-clock {
+      margin: 0 auto;
+      @include clock(4, 88);
+    }
+
+    .character-armor-uses {
+
+      div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+
+  .attributes {
+
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    .stripe {
+      background-color: $almost_black;
+      color: $almost_white;
+      font-size: 17px;
+      padding-left: 5px;
+    }
+
+    .attribute-label,
+    .attribute-skill-label {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .attribute-skill-label {
+      letter-spacing: 1px;
+    }
+    .attributes-exp {
+
+      position: relative;
+      margin-bottom: 10px;
+
+      .stripe-tooth-body {
+        @include toothradio(10px, 30px, "assets/teeth/xptooth-white.png", "assets/teeth/xptooth-red.png");
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+
+    .attributes-container {
+      display: flex;
+      margin: 3px 0px;
+      @include custom_radio(15px, 15px);
+
+      * {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // ITEM
+  .item {
+
+    justify-content: space-between;
+
+    .item-body {
+
+      margin-bottom: 10px;
+      * {
+        margin-right: 10px;
+      }
+
+      .item-description {
+        font-style: italic;
+        text-align: justify;
+      }
+    }
+
+    div {
+      flex-grow: 2;
+    }
+    .item-control {
+      flex-grow: 1;
+    }
+    .item-body,
+    .item-class-label {
+      width: 100px;
+    }
+  }
+
+  .item-class-label {
+    margin-bottom: 10px;
+  }
+
+  .name,
+  .lair,
+  .alias {
+    margin-bottom: 10px;
+  }
+
+  @import "coins.scss";
+
+
+
+
+
+
+}

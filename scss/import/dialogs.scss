@@ -1,0 +1,39 @@
+// Add Items modal styling.
+.items-to-add {
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + label {
+      font-weight: bold;
+    }
+  }
+
+ //Tooltip.
+  .tooltip {
+
+    .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: $almost_black;
+      color: $almost_white;
+      text-align: center;
+      padding: 5px;
+      border-radius: 6px;
+
+      // Position
+      position: absolute;
+      z-index: 9999;
+    }
+
+    &:hover .tooltiptext {
+      visibility: visible;
+    }
+  }
+}

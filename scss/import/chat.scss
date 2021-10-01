@@ -1,0 +1,67 @@
+.chat-label {
+  background-color: $almost_black;
+  font-family: Kirsty, serif;
+  color: $almost_white;
+  font-size: 21px;
+  text-align: center;
+  padding: 0px 5px;
+  height: 30px !important;
+  text-transform: capitalize;
+}
+.chat-label-small {
+  background-color: $gray;
+  color: $almost_black;
+  font-size: small;
+  text-align: center;
+  padding: 3px 5px;
+  height: 20px !important;
+}
+
+.label-stripe-chat {
+  text-transform: uppercase;
+  background-color: $almost_black;
+  color: $almost_white;
+  margin-bottom: 10px;
+  position: relative;
+  padding-top: 3px;
+  display: flex;
+  font-weight: bold;
+  margin: 0;
+}
+
+.label-stripe-chat-small {
+  text-transform: capitalize;
+  background-color: $gray;
+  color: $almost_black;
+  margin-bottom: 10px;
+  position: relative;
+  padding-top: 3px;
+  display: flex;
+  font-weight: bold;
+}
+
+.blades-die-tooltip {
+
+  .die {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: large;
+
+    &.critical-success {
+      color: $light_green;
+    }
+
+    &.success {
+      color: $green;
+    }
+
+    &.partial-success {
+      color: $blue;
+    }
+
+    &.failure {
+      color: $red;
+    }
+  }
+
+}

@@ -1,9 +1,9 @@
-<div id="attributes">
+<div id="character-{{actor._id}}-attributes" class="attributes">
 
   {{#each data.attributes as |attribute attribute_name|}}
 
-  <div id="attributes-{{attribute_name}}" class="attribute">
-    <div id="attributes-{{attribute_name}}-title" class="attributes-exp">
+  <div id="character-{{../actor._id}}-attributes-{{attribute_name}}" class="attribute">
+    <div id="character-{{../actor._id}}-attributes-{{attribute_name}}-title" class="attributes-exp">
       <div class="stripe">
         <a class="attribute-label roll-die-attribute rollable-text" data-roll-attribute="{{attribute_name}}">{{localize (concat attribute.label 'Short')}}</a>
       </div>
