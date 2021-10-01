@@ -1,3 +1,9 @@
+v.3.8
+- Filled in the "weird" playbooks #152
+- Added template.json fields for alternate sheet module flexibility #150
+- Add a custom class for ActiveEffects #151
+- CSS and Handlebars/HTML cleanup #153
+
 v.3.7
 - Entanglement tables cleanup #148
 

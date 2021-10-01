@@ -9,7 +9,7 @@ export class BladesCrewSheet extends BladesSheet {
   /** @override */
 	static get defaultOptions() {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
-  	  classes: ["blades-in-the-dark", "sheet", "actor"],
+  	  classes: ["blades-in-the-dark", "sheet", "actor", "crew"],
   	  template: "systems/blades-in-the-dark/templates/crew-sheet.html",
       width: 940,
       height: 1020,

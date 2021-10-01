@@ -11,7 +11,7 @@
           {{#each actor.items as |faction id|}}
           {{#if (eq faction.type "faction")}}
           
-			<div id="faction-items" class="label-stripe-gray item flex-horizontal" data-item-id="{{faction._id}}">
+			<div id="faction-{{faction._id}}-items" class="faction-items label-stripe-gray item flex-horizontal" data-item-id="{{faction._id}}">
               <a class="item-body flex-horizontal">
                 <img src="{{faction.img}}" title="{{faction.name}}" width="24" height="24"/>
 				<div class="item-name">{{faction.name}}<br>{{localize "BITD.Tier"}}: {{faction.data.tier}}</div>

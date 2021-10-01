@@ -35,7 +35,7 @@ export class BladesSheet extends ActorSheet {
 
     let items = await BladesHelpers.getAllItemsByType(item_type, game);
 
-    let html = `<div id="items-to-add">`;
+    let html = `<div class="items-to-add">`;
 
     items.forEach(e => {
       let addition_price_load = ``;
@@ -65,7 +65,7 @@ export class BladesSheet extends ActorSheet {
         one: {
           icon: '<i class="fas fa-check"></i>',
           label: game.i18n.localize('Add'),
-          callback: async () => await this.addItemsToSheet(item_type, $(document).find('#items-to-add'))
+          callback: async (html) => await this.addItemsToSheet(item_type, $(html).find('.items-to-add'))
         },
         two: {
           icon: '<i class="fas fa-times"></i>',

@@ -3,6 +3,7 @@
  * @extends {ItemSheet}
  */
 import {onManageActiveEffect, prepareActiveEffectCategories} from "./effects.js";
+import { BladesActiveEffect } from "./blades-active-effect.js";
 
 export class BladesItemSheet extends ItemSheet {
 
@@ -43,7 +44,7 @@ export class BladesItemSheet extends ItemSheet {
 
     html.find(".effect-control").click(ev => {
       if ( this.item.isOwned ) return ui.notifications.warn(game.i18n.localize("BITD.EffectWarning"))
-      onManageActiveEffect(ev, this.item)
+      BladesActiveEffect.onManageActiveEffect(ev, this.item)
     });
   }
 
@@ -59,7 +60,7 @@ export class BladesItemSheet extends ItemSheet {
     data.data = itemData.data;
 
     // Prepare Active Effects
-    data.effects = prepareActiveEffectCategories(this.item.effects);
+    data.effects = BladesActiveEffect.prepareActiveEffectCategories(this.item.effects);
 
     return data;
   }

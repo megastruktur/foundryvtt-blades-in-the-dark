@@ -13,6 +13,7 @@ import { BladesActor } from "./blades-actor.js";
 import { BladesItem } from "./blades-item.js";
 import { BladesItemSheet } from "./blades-item-sheet.js";
 import { BladesActorSheet } from "./blades-actor-sheet.js";
+import { BladesActiveEffect } from "./blades-active-effect.js";
 import { BladesCrewSheet } from "./blades-crew-sheet.js";
 import { BladesClockSheet } from "./blades-clock-sheet.js";
 import { BladesNPCSheet } from "./blades-npc-sheet.js";
@@ -36,6 +37,7 @@ Hooks.once("init", async function() {
 
   CONFIG.Item.documentClass = BladesItem;
   CONFIG.Actor.documentClass = BladesActor;
+  CONFIG.ActiveEffect.documentClass = BladesActiveEffect;
 
   // Register System Settings
   registerSystemSettings();
@@ -137,12 +139,12 @@ Hooks.once("init", async function() {
     return html;
   });
 
-  Handlebars.registerHelper('crew_experience', (options) => {
+  Handlebars.registerHelper('crew_experience', (actor, options) => {
 
     let html = options.fn(this);
     for (let i = 1; i <= 10; i++) {
 
-      html += '<input type="radio" id="crew-experience-' + i + '" name="data.experience" value="' + i + '" dtype="Radio"><label for="crew-experience-' + i + '"></label>';
+      html += `<input type="radio" id="crew-${actor._id}-experience-${i}" name="data.experience" value="${i}" dtype="Radio"><label for="crew-experience-${i}"></label>`;
     }
 
     return html;
