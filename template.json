@@ -1,8 +1,17 @@
 {
-"Actor": {
+  "Actor": {
   "types": ["character", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
   "character": {
     "alias": "",
+    "look": "",
+    "heritage": "",
+    "background": "",
+    "background-details": "",
+    "vice": "",
+    "vice-purveyor": "",
+    "playbook": "",
+    "acquaintances": [],
+    "acquaintances_label": "BITD.Acquaintances",
     "stress": {
       "value": [0],
       "max": 9,
@@ -16,16 +25,20 @@
       "value": [0],
       "name": "BITD.Trauma",
       "name_default": "BITD.Trauma",
-      "list": [0]
+      "options": ["cold", "haunted", "obsessed", "paranoid", "reckless", "soft", "unstable", "vicious"],
+      "list": []
     },
     "healing-clock": [0],
     "experience": [0],
+    "experience_max": 8,
+    "experience_clues": ["BITD.ClassExpClue3", "BITD.ClassExpClue2"],
     "coins": [0],
     "coins_stashed": [0],
     "special_abilities": [],
     "loadout": 0,
     "load_level": "",
     "selected_load_level": "",
+    "base_max_load": 0,
     "harm": {
         "light": {
           "one": "",
@@ -49,68 +62,71 @@
     },
     "attributes": {
         "insight": {
-          "exp": [0],
+          "exp": 0,
+          "exp_max": 6,
           "label": "BITD.SkillsInsight",
           "skills": {
             "hunt": {
               "label": "BITD.SkillsHunt",
-              "value": [0]
+              "value": 0
             },
             "study": {
               "label": "BITD.SkillsStudy",
-              "value": [0]
+              "value": 0
             },
             "survey": {
               "label": "BITD.SkillsSurvey",
-              "value": [0]
+              "value": 0
             },
             "tinker": {
               "label": "BITD.SkillsTinker",
-              "value": [0]
+              "value": 0
             }
           }
         },
         "prowess": {
-          "exp": [0],
+          "exp": 0,
+          "exp_max": 6,
           "label": "BITD.SkillsProwess",
           "skills": {
             "finesse": {
               "label": "BITD.SkillsFinesse",
-              "value": [0]
+              "value": 0
             },
             "prowl": {
               "label": "BITD.SkillsProwl",
-              "value": [0]
+              "value": 0
             },
             "skirmish": {
               "label": "BITD.SkillsSkirmish",
-              "value": [0]
+              "value": 0
             },
             "wreck": {
               "label": "BITD.SkillsWreck",
-              "value": [0]
+              "value": 0
             }
           }
         },
         "resolve": {
-          "exp": [0],
+          "exp": 0,
+          "exp_max": 6,
           "label": "BITD.SkillsResolve",
           "skills": {
             "attune": {
               "label": "BITD.SkillsAttune",
-              "value": [0]
+              "value": 0
             },
             "command": {
               "label": "BITD.SkillsCommand",
-              "value": [0]
+              "value": 0
             },
             "consort": {
               "label": "BITD.SkillsConsort",
-              "value": [0]
+              "value": 0
             },
             "sway": {
               "label": "BITD.SkillsSway",
-              "value": [0]
+              "value": 0
             }
           }
         }
@@ -154,21 +170,24 @@
       "associated_faction": "",
       "associated_crew_type": "",
       "notes": ""
-  }
-},
-"Item": {
-  "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
-  "templates": {
-    "default": {
-      "description": ""
-    },
-    "ability": {
-      "description": "",
-      "class": "",
-      "price": 1
-    },
-    "logic": {
-      "logic": ""
+    }
+  },
+  "Item": {
+    "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+    "templates": {
+      "default": {
+        "description": ""
+      },
+      "ability": {
+        "description": "",
+        "class": "",
+        "price": 1,
+        "purchased": false,
+        "class_default": false
+      },
+      "logic": {
+        "logic": ""
+      }
     },
     "activatedEffect": {
       "activation": {
@@ -201,48 +220,48 @@
         "target": null,
         "amount": null
       }
-    }
-  },
-  "faction": {
-    "templates": ["default"],
-	"type": "",
-  "tier": 0,
-	"goal_1": "",
-  "goal_1_clock_max": 0,
-  "goal_2": "",
-	"goal_2_clock_max": 0,
-	"turf": "",
-	"assets": "",
-	"quirks": "",
-	"notables": "",
-	"allies": "",
-	"enemies": "",
-	"situation": "",
-  "goal_clock": 0,
-  "notes": "",
-  "hold": {
-    "value": [1],
-    "max": 2,
-    "max_default": 2,
-    "name_default": "BITD.Hold",
-    "name": "BITD.Hold"
-  },
-	"status": {
-      "value": [4],
-      "max": 7,
-      "max_default": 7,
-      "name_default": "BITD.Status",
-      "name": "BITD.Status"
-    }
-  },
-  "item": {
+    },
+    "faction": {
+      "templates": ["default"],
+      "type": "",
+      "tier": 0,
+      "goal_1": "",
+      "goal_1_clock_max": 0,
+      "goal_2": "",
+      "goal_2_clock_max": 0,
+      "turf": "",
+      "assets": "",
+      "quirks": "",
+      "notables": "",
+      "allies": "",
+      "enemies": "",
+      "situation": "",
+      "goal_clock": 0,
+      "notes": "",
+      "hold": {
+        "value": [1],
+        "max": 2,
+        "max_default": 2,
+        "name_default": "BITD.Hold",
+        "name": "BITD.Hold"
+      },
+      "status": {
+        "value": [4],
+        "max": 7,
+        "max_default": 7,
+        "name_default": "BITD.Status",
+        "name": "BITD.Status"
+      }
+    },
+    "item": {
     "templates": ["default", "logic", "activatedEffect"],
     "class": "",
-    "load": 0
+    "load": 0,
+    "equipped" : false
   },
   "class": {
     "templates": ["default", "logic", "activatedEffect"],
-    "experience_clues": "",
+    "experience_clues": [],
     "base_skills": {
       "hunt": [0],
       "study": [0],
