@@ -13,6 +13,7 @@ import { BladesActor } from "./blades-actor.js";
 import { BladesItem } from "./blades-item.js";
 import { BladesItemSheet } from "./blades-item-sheet.js";
 import { BladesActorSheet } from "./blades-actor-sheet.js";
+import { BladesActiveEffect } from "./blades-active-effect.js";
 import { BladesCrewSheet } from "./blades-crew-sheet.js";
 import { BladesClockSheet } from "./blades-clock-sheet.js";
 import { BladesNPCSheet } from "./blades-npc-sheet.js";
@@ -36,6 +37,7 @@ Hooks.once("init", async function() {
 
   CONFIG.Item.documentClass = BladesItem;
   CONFIG.Actor.documentClass = BladesActor;
+  CONFIG.ActiveEffect.documentClass = BladesActiveEffect;
 
   // Register System Settings
   registerSystemSettings();
