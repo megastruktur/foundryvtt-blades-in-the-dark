@@ -53,7 +53,7 @@
           {{/multiboxes}}
         </div>
 
-        <div id="crew-{{actor._id}}-tier">
+        <div class="crew-tier">
           {{#multiboxes data.tier}}
           <input id="crew-{{actor._id}}-tier-0" type="radio" name="data.tier" value="0">
           <label for="crew-{{actor._id}}-tier-0" class="black-label">{{localize "BITD.Tier"}}</label>
@@ -225,7 +225,7 @@
     <div class="flex-fertical">
       <div class="big-teeth-section">
         <div id="crew-{{actor._id}}-xp" class="big-teeth">
-          <label class="black-label" for="crew-{{../actor._id}}-experience-0">{{localize "BITD.CrewXP"}}</label>
+          <label class="black-label" for="crew-{{actor._id}}-experience-0">{{localize "BITD.CrewXP"}}</label>
           {{#multiboxes data.experience}}
           <input type="radio" id="crew-{{actor._id}}-experience-0" name="data.experience" value="0" dtype="Radio">
           {{#crew_experience actor}}{{/crew_experience}}

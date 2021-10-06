@@ -144,7 +144,7 @@ Hooks.once("init", async function() {
     let html = options.fn(this);
     for (let i = 1; i <= 10; i++) {
 
-      html += `<input type="radio" id="crew-${actor._id}-experience-${i}" name="data.experience" value="${i}" dtype="Radio"><label for="crew-experience-${i}"></label>`;
+      html += `<input type="radio" id="crew-${actor._id}-experience-${i}" name="data.experience" value="${i}" dtype="Radio"><label for="crew-${actor._id}-experience-${i}"></label>`;
     }
 
     return html;
