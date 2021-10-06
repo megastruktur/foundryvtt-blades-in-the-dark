@@ -1,3 +1,6 @@
+v.3.11
+- Fix the version number
+
 v.3.10
 - Fix bug with setting crew xp and tier display #158
 
