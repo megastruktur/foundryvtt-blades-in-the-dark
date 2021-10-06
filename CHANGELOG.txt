@@ -1,3 +1,9 @@
+v.3.10
+- Fix bug with setting crew xp and tier display #158
+
+v.3.9
+- Fixes.
+
 v.3.8
 - Filled in the "weird" playbooks #152
 - Added template.json fields for alternate sheet module flexibility #150
