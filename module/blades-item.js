@@ -28,14 +28,14 @@ export class BladesItem extends Item {
   prepareData() {
 
     super.prepareData();
-    
+
     const item_data = this.data;
     const data = item_data.data;
 
     if (item_data.type === "cohort") {
-    
+
       this._prepareCohort(data);
-    
+
     }
 
     if (item_data.type === "faction") {
@@ -52,7 +52,7 @@ export class BladesItem extends Item {
   /**
    * Prepares Cohort data
    *
-   * @param {object} data 
+   * @param {object} data
    */
   _prepareCohort(data) {
 
@@ -60,22 +60,22 @@ export class BladesItem extends Item {
     let scale = 0;
 
     // Adds Scale and Quality
-    if (this.actor) {
-      switch (data.cohort[0]) {
+    if (this.actor.data) {
+      switch (data.cohort) {
         case "Gang":
-          scale = parseInt(this.actor.data.data.tier[0]);
-          quality = parseInt(this.actor.data.data.tier[0]);
+          scale = parseInt(this.actor.data.data.tier);
+          quality = parseInt(this.actor.data.data.tier);
           break;
         case "Expert":
-          scale = 1;
-          quality = parseInt(this.actor.data.data.tier[0]) + 1;
+          scale = 0;
+          quality = parseInt(this.actor.data.data.tier) + 1;
           break;
       }
     }
 
     data.scale = scale;
     data.quality = quality;
-    
+
     this.data.data = data;
 }
 }
