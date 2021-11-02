@@ -1,3 +1,7 @@
+v.3.12
+- Fix cohort scale and quality calculation #161
+- Removed itemLogic calls #160
+
 v.3.11
 - Fix the version number
 
