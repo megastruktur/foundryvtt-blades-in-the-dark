@@ -24,46 +24,18 @@ export class BladesItem extends Item {
 
   /* -------------------------------------------- */
 
-  /** @override */
-  async _onCreate( data, options, userId ) {
-    super._onCreate( data, options, userId );
-
-    if( userId === game.user.id ) {
-      let actor = this.parent ? this.parent : null;
-
-      if( ( actor?.documentName === "Actor" ) && ( actor?.permission >= CONST.ENTITY_PERMISSIONS.OWNER ) ) {
-        await BladesHelpers.callItemLogic( data, actor );
-      }
-    }
-  }
-
-  /* -------------------------------------------- */
-
-  /** @override */
-  async _onDelete( options, userId ) {
-    super._onDelete( options, userId );
-
-    let actor = this.parent ? this.parent : null;
-    let data = this.data;
-    if ( ( actor?.documentName === "Actor" ) && ( actor?.permission >= CONST.ENTITY_PERMISSIONS.OWNER ) ) {
-      await BladesHelpers.undoItemLogic( data, actor );
-    }
-  }
-
-  /* -------------------------------------------- */
-
   /* override */
   prepareData() {
 
     super.prepareData();
-    
+
     const item_data = this.data;
     const data = item_data.data;
 
     if (item_data.type === "cohort") {
-    
+
       this._prepareCohort(data);
-    
+
     }
 
     if (item_data.type === "faction") {
@@ -80,7 +52,7 @@ export class BladesItem extends Item {
   /**
    * Prepares Cohort data
    *
-   * @param {object} data 
+   * @param {object} data
    */
   _prepareCohort(data) {
 
@@ -88,22 +60,22 @@ export class BladesItem extends Item {
     let scale = 0;
 
     // Adds Scale and Quality
-    if (this.actor) {
-      switch (data.cohort[0]) {
+    if (this.actor.data) {
+      switch (data.cohort) {
         case "Gang":
-          scale = parseInt(this.actor.data.data.tier[0]);
-          quality = parseInt(this.actor.data.data.tier[0]);
+          scale = parseInt(this.actor.data.data.tier);
+          quality = parseInt(this.actor.data.data.tier);
           break;
         case "Expert":
-          scale = 1;
-          quality = parseInt(this.actor.data.data.tier[0]) + 1;
+          scale = 0;
+          quality = parseInt(this.actor.data.data.tier) + 1;
           break;
       }
     }
 
     data.scale = scale;
     data.quality = quality;
-    
+
     this.data.data = data;
 }
 }

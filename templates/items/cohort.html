@@ -6,7 +6,7 @@
           <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
       </div>
   </header>
-  
+
   <section class="flex-vertical">
 
     <div class="label-stripe">{{localize "BITD.Information"}}</div>
@@ -56,11 +56,13 @@
   </section>
 
   {{!-- Scale and Quality if attached to Actor --}}
-  {{#if data.quality}}
+  {{#if (eq document.parent.documentName "Actor")}}
   <section id="quality-scale" class="flex-vertical">
     <div class="label-stripe">{{localize "BITD.ScaleAndQuality"}}</div>
-    <div>{{localize "BITD.Quality"}}: {{data.quality}}</div>
-    <div>{{localize "BITD.Scale"}}: {{data.scale}}</div>
+    <div>
+      {{localize "BITD.Quality"}}: {{data.quality}}
+      {{localize "BITD.Scale"}}: {{data.scale}}
+    </div>
   </section>
   {{/if}}
 
@@ -97,7 +99,7 @@
 
 
   </section>
-  
+
   <section id="cohort-harm" class="flex-vertical">
     <div class="label-stripe">{{localize "BITD.Harm"}}</div>
     <div id="harm-list" class="flex-horizontal">
@@ -110,7 +112,7 @@
     </div>
   </section>
 
-  <section class="flex">
+  <section class="flex-horizontal" style="justify-content: unset;">
     <input id="cohort-armor" type="checkbox" name="data.armor" value="{{data.armor}}" {{checked data.armor}}>
     <label for="cohort-armor">{{localize "BITD.Armor"}}</label>
   </section>
