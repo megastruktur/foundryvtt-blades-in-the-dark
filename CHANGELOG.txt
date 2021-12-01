@@ -1,3 +1,6 @@
+v.3.13
+- Fix playbook max exp to depend on settings rather be hardcoded
+
 v.3.12
 - Fix cohort scale and quality calculation #161
 - Removed itemLogic calls #160
