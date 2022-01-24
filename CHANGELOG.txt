@@ -1,3 +1,8 @@
+v.3.14
+- Added friends/rivals labels to en.json #164 (justinross)
+- Fixes #165 [Multiple Clocks] (justinross)
+- fix faction sheet vanishing on faction delete #167 (Arnatious)
+
 v.3.13
 - Fix playbook max exp to depend on settings rather be hardcoded
 

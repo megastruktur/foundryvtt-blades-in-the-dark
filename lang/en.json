@@ -214,5 +214,16 @@
   "BITD.EffectWarning": "Managing Active Effects within an Owned Item is not currently supported by FoundryVTT and will be added in a subsequent update.",
 
   "BITD.Name": "Name",
-  "BITD.CampaignName": "Campaign Name"
+  "BITD.CampaignName": "Campaign Name",
+
+  "BITD.DangerousFriends": "Dangerous Friends",
+  "BITD.EnemiesRivals": "Enemies and Rivals",
+  "BITD.DeadlyFriends": "Deadly Friends",
+  "BITD.Blank": "",
+  "BITD.CleverFriends": "Clever Friends",
+  "BITD.ShadyFriends": "Shady Friends",
+  "BITD.SlyFriends": "Sly Friends",
+  "BITD.ShrewdFriends": "Shrewd Friends",
+  "BITD.DarkServants": "Dark Servants",
+  "BITD.StrangeFriends": "Strange Friends"
 }
