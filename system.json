@@ -4,7 +4,7 @@
   "description": "Official system for the Wicked Ones game made by Bandit Camp. Including official compendium content, all you need to slay some adventurers!",
   "version": "WILL BE AUTO REPLACED",
   "minimumCoreVersion": "0.8.4",
-  "compatibleCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "9.245",
   "templateVersion": 1,
   "background": "styles/assets/images/WO-Header.webp",
   "author": "Spearhead, LorduFreeman",
@@ -40,140 +40,160 @@
       "label": "Adventurers",
       "system": "wicked-ones",
       "path": "./packs/adventurers.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "calling",
       "label": "Callings",
       "system": "wicked-ones",
       "path": "./packs/callings.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "minion_upgrade",
       "label": "Minion Upgrades",
       "system": "wicked-ones",
       "path": "./packs/minion_upgrades.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "minion_type",
       "label": "Minion Types",
       "system": "wicked-ones",
       "path": "./packs/minion_types.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "monster_race",
       "label": "Monster Races",
       "system": "wicked-ones",
       "path": "./packs/monsterraces.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "goldmonger_type",
       "label": "Goldmonger Types",
       "system": "wicked-ones",
       "path": "./packs/goldmongertypes.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "revelry",
       "label": "Revelries",
       "system": "wicked-ones",
       "path": "./packs/revelries.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "wickedimpulse",
       "label": "Wicked One Impulses",
       "system": "wicked-ones",
       "path": "./packs/wickedimpulses.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "defense",
       "label": "Defenses",
       "system": "wicked-ones",
       "path": "./packs/defenses.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "minionimpulse",
       "label": "Minion Impulses",
       "system": "wicked-ones",
       "path": "./packs/minionimpulses.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "gearsupply",
       "label": "Gear & Supply",
       "system": "wicked-ones",
       "path": "./packs/gearsupply.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "duty",
       "label": "Duties",
       "system": "wicked-ones",
       "path": "./packs/duties.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "project",
       "label": "Projects",
       "system": "wicked-ones",
       "path": "./packs/projects.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "specialability",
       "label": "Special Abilities",
       "system": "wicked-ones",
       "path": "./packs/specialabilities.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "invasion",
       "label": "Major Invasions",
       "system": "wicked-ones",
       "path": "./packs/invasions.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "dungeon_theme",
       "label": "Dungeon Themes",
       "system": "wicked-ones",
       "path": "./packs/dungeon_themes.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "tier3room",
       "label": "Tier-3 Rooms",
       "system": "wicked-ones",
       "path": "./packs/tier3rooms.db",
-      "entity": "Item"
+      "entity": "Item",
+      "type": "Item"
     },
     {
       "name": "rollable-tables",
       "label": "Rollable Tables",
       "system": "wicked-ones",
       "path": "packs/rollable-tables.db",
-      "entity": "RollTable"
+      "entity": "RollTable",
+      "type": "RollTable"
     },
     {
       "name": "dungeon-generator",
       "label": "Dungeon Generator",
       "system": "wicked-ones",
       "path": "packs/dungeon-generator.db",
-      "entity": "RollTable"
+      "entity": "RollTable",
+      "type": "RollTable"
     },
     {
       "name": "wo-macros",
       "label": "Macros",
       "system": "wicked-ones",
       "path": "packs/macros.db",
-      "entity": "Macro"
+      "entity": "Macro",
+      "type": "Macro"
     }
   ]
 }

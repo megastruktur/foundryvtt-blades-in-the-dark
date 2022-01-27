@@ -39,7 +39,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
   if (speaker.alias == char_name) {
     char_name = "";
   }
-  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
+  let isBelow070 = isNewerVersion('0.7.0', game.version ?? game.data.version);
   let rolls = [];
   let attribute_label = WickedHelpers.getAttributeLabel(attribute_name);
 
@@ -146,7 +146,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
 export function getWickedRollStatus(rolls, zeromode = false) {
 
   // Dice API has changed in 0.7.0 so need to keep that in mind.
-  let isBelow070 = isNewerVersion('0.7.0', game.data.version);
+  let isBelow070 = isNewerVersion('0.7.0', game.version ?? game.data.version);
 
   let sorted_rolls = [];
   // Sort roll values from lowest to highest.

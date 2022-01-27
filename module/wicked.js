@@ -292,7 +292,11 @@ Hooks.on("renderSceneControls", async (app, html) => {
   dice_roller.click(function() {
     simpleRollPopup();
   });
-  html.append(dice_roller);
+  if ( !foundry.utils.isNewerVersion("9", game.version ?? game.data.version) ) {
+    html.children().first().append( dice_roller );
+  } else {
+    html.append( dice_roller );
+  }
 });
 
 Hooks.on("renderChatMessage", (app, html, data) => {
