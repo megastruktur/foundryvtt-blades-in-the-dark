@@ -73,7 +73,7 @@
   "BITD.Flaws": "Nachteil",
   "BITD.Scale": "Größe",
   "BITD.Quality": "Qualität",
-  "BITD.AddAdditionalTypeOfGangText": "Sie können einer Gang oder einem Experten einen zusätzlichen Typ hinzufügen, indem Sie zwei Crew-Upgrades ausgeben.<br>Wenn eine Kohorte Aktionen ausführt, für die ihre Typen gelten, verwendet sie ihre volle Qualitätsbewertung. Eine gegebene Kohorte kann bis zu zwei Typen haben. Einige Crew-Upgrades fügen einer Kohorte die Eigenschaft "Elite" hinzu, die ihr +1d gibt, wenn sie für einen bestimmten Typ würfelt.",
+  "BITD.AddAdditionalTypeOfGangText": "Sie können einer Gang oder einem Experten einen zusätzlichen Typ hinzufügen, indem Sie zwei Crew-Upgrades ausgeben.<br>Wenn eine Kohorte Aktionen ausführt, für die ihre Typen gelten, verwendet sie ihre volle Qualitätsbewertung. Eine gegebene Kohorte kann bis zu zwei Typen haben. Einige Crew-Upgrades fügen einer Kohorte die Eigenschaft \"Elite\" hinzu, die ihr +1d gibt, wenn sie für einen bestimmten Typ würfelt.",
   "BITD.ClassExpClue1": "Jedes Mal, wenn Sie eine Verzweiflungsaktion würfeln, markieren Sie xp in dem Attribut dieser Aktion.",
   "BITD.ClassExpClue2": "Sie haben Ihre Überzeugungen, Antriebe, Herkunft oder Ihren Hintergrund zum Ausdruck gebracht.",
   "BITD.ClassExpClue3": "Sie haben während der Sitzung mit Themen aus Ihrem Laster oder Traumata gekämpft.",
@@ -198,9 +198,7 @@
   "BITD.Position": "Position",
   "BITD.Effect": "Effekt",
   "BITD.Modifier": "Modifier",
-  
-  "BITD.Light": "leicht",
-  "BITD.Normal": "normal",
+
   "BITD.Encumbered": "belastet",
   "BITD.OverMax": "max",
 
