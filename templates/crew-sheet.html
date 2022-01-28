@@ -25,6 +25,35 @@
           </div>
         {{/if}}
         {{/each}}
+        
+        <div class="item-block flex-horizontal">
+          <div class="item-class-label">
+            <a
+              class="item-add-popup"
+              data-distinct="true"
+              data-item-type="crew_type"
+              >{{localize "BITD.CrewType"}}</a
+            >
+          </div>
+          {{#each actor.items as |item id|}} {{#if (eq item.type "crew_type")}}
+          <div class="item flex-horizontal" data-item-id="{{item._id}}">
+            <div class="item-body flex-horizontal">
+              <img
+                src="{{item.img}}"
+                title="{{item.name}}"
+                width="24"
+                height="24"
+              />
+              <div class="item-name">{{item.name}}</div>
+            </div>
+            <a
+              class="item-control item-delete"
+              title="{{localize 'BITD.TitleDeleteItem'}}"
+              ><i class="fas fa-trash"></i
+            ></a>
+          </div>
+          {{/if}} {{/each}}
+        </div>
       </div>
     </div>
 
