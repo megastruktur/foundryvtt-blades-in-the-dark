@@ -24,7 +24,7 @@ export class WickedSheet extends ActorSheet {
     if (this.document.isOwner) {
       // Core handlers from foundry.js
       var handler;
-      if (!isNewerVersion(game.data.version, "0.7")) {
+      if (!isNewerVersion(game.version ?? game.data.version, "0.7")) {
         handler = ev => this._onDragItemStart(ev);
       }
       else {
