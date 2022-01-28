@@ -1,3 +1,6 @@
+v.3.16
+- Fixes German translation
+
 v.3.15
 - Update system.json with the new version.
 
