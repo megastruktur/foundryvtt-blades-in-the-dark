@@ -1,3 +1,6 @@
+v.3.17
+- Fix Dice Roll icon in toolbar in V9 #172
+
 v.3.16
 - Fixes German translation
 
