@@ -1,0 +1,818 @@
+{
+  "SETTINGS": {
+    "WOExpandedResults": {
+      "Name": "Resultados de las tiradas ampliados",
+      "Label": "Muestra por defecto la información ampliada de los resultados de las tiradas de dados"
+    }
+  },
+  "ACTOR": {
+    "TypeCharacter": "Malvado",
+    "TypeMinion_pack": "Esbirros",
+    "TypeDungeon": "Mazmorra",
+    "TypeFaction": "Facción",
+    "TypeParty": "Grupo de aventureros",
+    "TypeClock": "⏰ Reloj",
+    "TypeGm_sheet": "Hoja de DJ"
+  },
+  "ITEM": {
+    "TypeItem": "Elemento",
+    "TypeAdventurer": "Aventurero",
+    "TypeCalling": "Vocación",
+    "TypeDefense": "Defensa",
+    "TypeGearsupply": "Equipo / Suministros",
+    "TypeGoldmonger_type": "Tipo de oroavaros",
+    "TypeDuty": "Tarea de Mazmorra",
+    "TypeProject": "Proyecto de descanso",
+    "TypeInvasion": "Invasión mayor",
+    "TypeMinion_upgrade": "Mejora de esbirro",
+    "TypeMinion_type": "Tipo de esbirro",
+    "TypeSpecialability": "Capacidad especial",
+    "TypeMonster_race": "Raza del monstruo",
+    "TypeWickedimpulse": "Impulso Oscuro del Malvado",
+    "TypeMinionimpulse": "Impulso Oscuro del esbirro",
+    "TypeRevelry": "Juerga",
+    "TypeDungeon_upgrade": "Mejora de Mazmorra",
+    "TypeDungeon_theme": "Tema de la Mazmorra",
+    "TypeTier3room": "Sala de Nivel 3",
+    "TypeDungeon_reputation": "Reputación de la Mazmorra",
+    "TypeDungeon_ability": "Capacidad de la Mazmorra"
+  },
+  "FITD": {
+    "DowntimeAction": "Acción de descanso",
+    "DowntimeActions": "Acciones de descanso",
+    "DowntimeActionHint": "<div><b>Elaborar</b> pociones y alquímicos</div><div><b>Construir</b> cerraduras, trampas, trucos, y salas.</div><div><b>Contactar</b> amigos infames, PNJ, o facciones.</div><div><b>Fabricar</b> un objeto, ventaja, o artilugio.</div><div><b>Recitar</b> un ritual.</div><div><b>Reclutar</b> una manada de esbirros.</div><div><b>Torturar</b> un prisionero.</div>",
+    "DowntimeActionUsed": "Acción de descanso utilizada",
+    "DowntimeActionRiskIt": "<b>Arriésgate:</b> Vuelve a tirar la acción de descanso pero pierde su situación ventajosa",
+    "MonsterRace": "Raza del monstruo",
+    "IsPrimalMonster": "Primal Monster",
+    "IsPrimalMonsterHint": "Only check if this is a Primal Monster",
+    "Number": "Número",
+    "Impulse": "Impulsos Oscuros",
+    "AddImpulse": "Añadir Impulsos",
+    "TitleDeleteItem": "Eliminar elemento",
+    "Revelry": "Juerga",
+    "Calling": "Vocación",
+    "Core": "Capacidad principal",
+    "Stress": "Estrés",
+    "Look": "Aspecto",
+    "MinionPack": "Manada de esbirros",
+    "VileFriend": "Amigo infame",
+    "LessEffect": "Less Effect",
+    "Description": "Descripción",
+    "DescriptionHint": "Introduce una breve descripción...",
+    "Loadout": "Equipo y Suministros",
+    "GearOrSupply": "Equipo o Suministros",
+    "QualityCategory": "Quality Category",
+    "Mundane": "Mundano",
+    "Valuable": "Valioso",
+    "Powerful": "Poderoso",
+    "Edges": "Ventajas",
+    "UsageLimit": "Límite de usos",
+    "UnlimitedUse": "Usos ilimitados",
+    "SteadySupply": "Suministros regulares",
+    "LimitedSupply": "Suministros limitados",
+    "SharedSupply": "Suministros compartidos",
+    "SupplyUsesLeft": "Usos restantes",
+    "SupplyUsesLeftSuffix": "usos restantes",
+    "Gear": "Equipo",
+    "Supply": "Suministros",
+    "DungeonTheme": "Tema de la Mazmorra",
+    "RoomRequirements": "Requisistos de ejemplo",
+    "MissingMaterials": "La sala carece de materiales",
+    "MissingMaterialsHint": "Indicar que esta sala carece de los materiales necesarios para funcionar",
+    "SpecialName": "Rasgo especial",
+    "SpecialDescription": "Descripción especial",
+    "Entrance": "Entrada",
+    "EntranceHints": "¿Qué aspecto tiene la entrada de la mazmorra desde el exterior?",
+    "Structure": "Estructura",
+    "StructureHints": "¿De qué están hechos los suelos y las paredes?",
+    "Lighting": "Iluminación",
+    "LightingHints": "¿Qué ilumina la mazmorra y cuán oscura es?",
+    "Atmospherics": "Atmósfera",
+    "AtmosphericsHints": "¿Qué sonidos y olores esperan a los que entran?",
+    "Hoard": "Botín",
+    "HoardHints": "¿De qué se componen las pilas de tesoros de tu botín?",
+    "Imps": "Diablillos",
+    "ImpsHints1": "Elige dos de los siguientes rasgos o inventa los tuyos para describirlos:",
+    "ImpsHints2": "inteligente - cobarde - cruel - maniático - ruidoso - estúpido - arisco - problemático",
+    "TierThreeRooms": "Salas de Nivel 3",
+    "DungeonDescription": "Descripción de la Mazmorra",
+    "MasterPlan": "Plan maestro",
+    "StepOne": "Primer paso",
+    "StepTwo": "Segundo paso",
+    "StepThree": "Tercer paso",
+    "StepFour": "Cuarto paso",
+    "StepFive": "Quinto paso",
+    "StepSix": "Último paso",
+    "Logic": "Lógica",
+    "AbilityClass": "Capacidades de vocación",
+    "Flashback": "Flashback",
+    "FlashbackClues": "Pistas del flashback",
+    "Coin": "oro",
+    "Tier": "Nivel",
+    "TierOne": "Nivel 1",
+    "TierTwo": "Nivel 2",
+    "TierThree": "Nivel 3",
+    "Type": "Tipo",
+    "ItemIsOfType": "El elemento es un",
+    "ClockSize": "Segmentos de reloj",
+    "ClockProgress": "Reloj de progreso",
+    "Abilities": "Capacidades",
+    "Upgrades": "Mejoras",
+    "Notes": "Notas",
+    "AllItems": "Todo",
+    "DutiesProjects": "Descanso",
+    "Duties": "Tarea de Mazmorra",
+    "Projects": "Proyectos de descanso",
+    "Players": "Jugadores",
+    "Invasions": "Invasiones",
+    "MajorInvasions": "Invasión mayor",
+    "For":  "para",
+
+    "TOOLTIP": {
+      "Reset": "Restablecer",
+      "Coin": "<strong>Puedes pagar Oro para:</strong><br>• Atraer a una criatura<br>• Obtener ayuda de tu amigo infame<br>• Ganar una acción de descanso de esbirro<br>• Que los esbirros se unan a un asalto<br>• Reclutar a un esbirro<br>• Mejorar un esbirro",
+      "Stress": "Cuando el reloj se completa, te <strong>Vuelves salvaje:</strong> Estás <strong>obligado</strong>. Las capacidades utilizadas durante esta acción no necesitan estrés.",
+      "Wicked": "Elige una capacidad cuando se complete. Marca 1 PX por cada uno que hayas hecho en esta sesión:<br>•Avanzaste en tu Plan maestro.<br>•Actuaste en la Escena de Mazmorra de otra persona.<br>•Actuaste como un monstruo.<br>•Utilizaste tu equipo o suministros de forma creativa.",
+      "Reckless": "Añade un punto de acción cuando se complete.<br> Marca 1 PX si has contribuido a<br>estar <strong>Ensangrentado</strong> o volverte <strong>Salvaje</strong> esta sesión.",
+      "Shock": "Tienes -1D en la siguiente tirada, y después se elimina. ( Calculado automáticamente en la tirada)",
+      "DarkHeart": "Tienes +1D en una tirada. Sólo puedes gastar un Corazón Oscuro por tirada.<br><strong>Toque de difuntos:</strong> Cuando mueres con Corazones Oscuros realizas una acción final. Añade +1D por cada Corazón Oscuro. Cualquier aliado que lo vea gana un Corazón Oscuro.",
+      "Bloodied": "Todos los atributos obtienen <strong>Conmoción</strong>, se elimina cuando se han <strong>eliminado todas las Conmociones</strong>. Si recibes otra herida considerable mientras estás ensangrentado, <strong>mueres</strong>.",
+      "BloodiedMinions": "Tus esbirros reciben -1D a todas las tiradas mientras están ensangrentados y lo eliminan al recuperarse.",
+      "Morale": "Puedes gastar Moral para obtener +1D en una acción o Tirada de Fortuna. La moral se obtiene de las Tiradas de Desastre o la otorga el DJ por momentos destacados de la historia.",
+      "LightTongue": "<div id='tongue-grid'><div>Conoces las siguientes palabras de Lengua de la Luz:</div><div>Tú</div><div>Uno</div><div>Sí</div><div>Ir</div><div>Comer</div><div>Yo</div><div>Dos</div><div>No</div><div>Hacer</div><div>Dar</div><div>Nosotros</div><div>Tres</div><div>Quizás</div><div>Parar</div><div>Dar</div><div>Eso</div><div>Más</div><div>Ahora</div><div>Matar</div><div>Oro</div></div>",
+      "GMSize": "Cuando aumenta el nivel de la mazmorra, se añade un punto de acción y se avanza un paso en dos sendas de crecimiento distintas. También puedes incrementar tu tamaño cuando aumenta el nivel.",
+      "GMSize0": "Con nivel 0, no eres más que un pequeño cachorro y los humanoides tienen escala contra ti.",
+      "GMSize1": "Con nivel 1, estás en igualdad de condiciones con los humanoides.",
+      "GMSize3": "Con nivel 3, tienes escala contra los humanoides.",
+      "PleasedXP": "No ganas px malvados ni osados. En su lugar, al final de cada sesión, puedes dar 1 px al PJ que más te haya gustado en esta sesión. Puedes seguir ganando px de práctica.",
+      "Guardian": "You mark 1 xp for each session in which you were neither bloodied nor went feral. When you hit 3 xp, you can either increase an eye ray's action rating (max of 3d) or add an action dot.",
+
+      "Skillsscan": "Al ESCUDRIÑAR, buscas información o analizas las situaciones mediante la percepción.",
+      "Skillstinker": "Al TRASTEAR, manipulas ingeniosamente un dispositivo, mecanismo o brebaje.",
+      "Skillstrick": "Al ENGAÑAR, engañas, confundes o manipulas astutamente a alguien.",
+      "Skillsfinesse": "Al AFINAR, apuntas , maniobras o utilizas herramientas con precisión.",
+      "Skillsskulk": "Al RONDAR, te mueves sigilosamente sin ser visto o lanzas un ataque por sorpresa.",
+      "Skillssmash": "Al MACHACAR, atacas con fuerza a alguien o a algo.",
+      "Skillsbanter": "Al CAMELAR, consigues de manera amistosa que la gente te ayude porque les caes bien.",
+      "Skillsinvoke": "Al INVOCAR, interactúas mágicamente con fuerzas oscuras y místicas.",
+      "Skillsthreaten": "Al AMENAZAR, obligas por la fuerza a alguien a obedecerte o a temerte."
+    },
+
+    "Roll": "Tirar",
+    "RollOptions": "Opciones de tirada",
+    "PositionDominant": "Ventajosa",
+    "PositionDefault": "Estándar",
+    "PositionDire": "Nefasta",
+    "PositionDeadly": "Mortal",
+
+    "EffectStrong": "Potente",
+    "EffectDefault": "Estándar",
+    "EffectWeak": "Débil",
+    "EffectZero": "Nulo",
+
+    "PosEffEqual": "Igualdad de condiociones",
+    "RollSomeDice": "Lanzador de dados",
+    "RollTokenDescription": "Selecciona el tipo de tirada y la cantidad de dados a lanzar:",
+    "RollNumberOfDice": "Cantidad de dados",
+
+    "SkillsBrains": "Cerebro",
+    "SkillsScan": "Escudriñar",
+    "SkillsTinker": "Trastear",
+    "SkillsTrick": "Engañar",
+    "SkillsbrainsDescription": "Smarts, Awareness, Insight",
+    "SkillsscanDescription": "perceptively",
+    "SkillstinkerDescription": "cleverly",
+    "SkillstrickDescription": "slyly",
+
+    "SkillsMuscles": "Músculo",
+    "SkillsFinesse": "Afinar",
+    "SkillsSkulk": "Rondar",
+    "SkillsSmash": "Machacar",
+    "SkillsmusclesDescription": "Strength, Agility, Speed",
+    "SkillsfinesseDescription": "precisely",
+    "SkillsskulkDescription": "sneakily",
+    "SkillssmashDescription": "powerfully",
+
+
+    "SkillsGuts": "Agallas",
+    "SkillsBanter": "Camelar",
+    "SkillsInvoke": "Invocar",
+    "SkillsThreaten": "Amenazar",
+    "SkillsgutsDescription": "Personality, Mettle, Magic",
+    "SkillsbanterDescription": "affably",
+    "SkillsinvokeDescription": "magically",
+    "SkillsthreatenDescription": "forcefully",
+
+
+    "Position": "Posición",
+    "DeadlyPosition": "Tirada para resistir la muerte",
+    "No": "No",
+    "Yes": "Sí",
+    "Effect": "Efecto",
+    "BaseSkillDice": "Dados de habilidad base",
+    "TotalSkillDice": "Total de dados de habilidad",
+    "Modifier": "Modificador",
+    "RollType": "Tipo de tirada",
+    "ActionsHelp": "<strong>Apoyar:</strong> Otorga +Efecto, pero está abierto a la Consecuencia<br><strong>Arriesgar: </strong>Intercambias: +Efecto por -Posición<br><span id='team-up'><strong>Hacer equipo:</strong> Se utiliza el resultado más alto, pero cada PJ con un Parcial o Fracaso recibe Estrés.</span><br><strong>Pacto Oscuro:</strong> Intercambia +1D por una Consecuencia<br><strong>Corazón Oscuro:</strong> Ganas +1D a una Tirada",
+    "ProjectsHelp": "<strong>Elaborar</strong> pociones y alquímicos.<br><strong>•Construir</strong> cerraduras, trampas, trucos, y salas.<br><strong>•Contactar</strong> amigos infames, PNJ, o facciones.<br><strong>•Fabricar</strong> un objeto, ventaja, o artilugio.<br><strong>•Recitar</strong> un ritual.<br><strong>•Reclutar</strong> una manada de esbirros.<br><strong>Torturar</strong> un prisionero.<br><br><strong>•¡Arriésgate!</strong><br>Vuelve a tirar la acción de descanso pero pierde su situación ventajosa.",
+
+    "Bloodied": "Ensangrentado",
+    "Morale": "Moral",
+    "DarkHearts": "Corazones Oscuros",
+    "Defenses": "Defensas",
+    "WickedXP": "PX Malvados",
+    "RecklessXP": "PX Osados",
+    "Choice": "Elige",
+    "Name": "Nombre",
+
+    "ItemAbilityType": "Tipo de Capacidad especial",
+    "Basic": "Básica",
+    "Advanced": "Avanzada",
+    "PsiDiscipline": "Braineater Psi Discipline",
+    "EyeRays": "Doomseeker Eye Rays",
+    "Face": "Facestealer Face",
+    "GMType": "Goldmonger Type",
+    "GMAntiType": "Goldmonger Anti-Type",
+    "GMSize": "Size",
+    "GrowthPath": "Goldmonger Growth Path",
+    "CustomGMTypeHint": "Enter custom type here",
+    "GMPleasedXP": "Pleased XP",
+    "GuardianXP": "Guardian XP",
+
+    "AbilityGroup": "Capacidad de grupo",
+    "BasicPrimalAbilities": "Base Primal Monster Abilities",
+    "FaceStealerFaces": "Facestealer Faces",
+    "CoreSkill": "Core Skill",
+    "PrimalSpecials": "Primal Monster Specials",
+    "GeneralAbilities": "General Special Abilities",
+    "Flexibility": "Flexibility",
+    "FlexibilityAbilities": "Flexibility Abilities",
+    "External": "External",
+    "ExternalAbilities": "External Abilities",
+
+    "MinionUpgradeType": "Tipo de Mejora",
+    "Regular": "Regular",
+    "InvocationPath": "Invocation Path",
+    "RollableSkill": "Rollable Skill",
+    "SkillName": "Skill Name",
+    "SkillRating": "Skill Rating",
+
+    "Source": "Source",
+    "SourceExample": "Source of Ability (Calling, Primal, etc)",
+    "Braineater": "Braineater",
+    "Doomseeker": "Doomseeker",
+    "Facestealer": "Facestealer",
+    "Goldmonger": "Goldmonger",
+    "AbilitiesTabTitle": "Abilities List",
+    "SupplyTabTitle": "Supply",
+    "DowntimeTabTitle": "Downtime Actions",
+    "DisplayCheckbox": "Display Checkbox",
+    "Checkbox": "Checkbox",
+    "CheckboxExample": "Enter text to display a checkbox",
+
+    "BESkillName": "Psionics Skill Name",
+    "BESkillNameHint": "Name to show up next to the skill dots",
+    "BESkillTooltip": "Psionics Skill Tooltip",
+    "BESkillTooltipHint": "Tooltip to show when hovering over the name",
+    "BEMasteryAbilityName1": "First Mastery Name",
+    "BEMasteryAbilityDesc1": "First Mastery Description",
+    "BEMasteryAbilityName2": "Second Mastery Name",
+    "BEMasteryAbilityDesc2": "Second Mastery Description",
+    "BEMasteryTaken": "Mastery taken",
+
+    "DSMainEye": "Main Eye",
+    "DSOuterEyes": "Outer Eyes",
+    "DSOtherEyes": "Other Eyes",
+    "DSConfigureRays": "Configure Eye Rays",
+    "NoneParentheses": "(None)",
+
+    "EYE_RAYS": {
+      "NONE": {
+        "Name": "(none)",
+        "Tooltip": "No ray assigned"
+      },
+      "BEWITCH": {
+        "Name": "Bewitchment Ray",
+        "Tooltip": "Makes the target act to help you in some way."
+      },
+      "DEATH": {
+        "Name": "Death Ray",
+        "Tooltip": "Harms any living thing it hits, necrotizing flesh and plant matter."
+      },
+      "FEAR": {
+        "Name": "Fear Ray",
+        "Tooltip": "Strikes fear in their heart, pushing them towards irrational action."
+      },
+      "NULL": {
+        "Name": "Null-Magic Ray",
+        "Tooltip": "Creates a small area inside which magic does not function."
+      },
+      "PARA": {
+        "Name": "Paralysis Ray",
+        "Tooltip": "Wrecks a target's nerves, temporarily paralyzing them."
+      },
+      "TELE": {
+        "Name": "Telekinesis Ray",
+        "Tooltip": "Moves objects and other non-living, solid matter."
+      },
+      "TIME": {
+        "Name": "Time Ray",
+        "Tooltip": "Modifies time, speeding it up or slowing it down, in a limited bubble."
+      },
+      "TRANS": {
+        "Name": "Transmogr. Ray",
+        "Tooltip": "Shapes inanimate objects into new forms."
+      },
+      "VISION": {
+        "Name": "Vision Ray",
+        "Tooltip": "Sees the unseeable, such as through walls or at great distances."
+      }
+    },
+
+    "FSGrafted": "Grafted",
+
+    "GMStage1": "Stage One",
+    "GMStage1Box": "Stage One Checkbox",
+    "GMStage2": "Stage Two",
+    "GMStage2Box": "Stage Two Checkbox",
+    "GMStage3": "Stage Three",
+    "GMStage3Box": "Stage Three Checkbox",
+
+    "Brute": "Bruto",
+    "Conniver": "Confabulador",
+    "Crafter": "Artesano",
+    "Hunter": "Cazador",
+    "Marauder": "Bandido",
+    "Shadow": "Sombra",
+    "Shaman": "Chamán",
+    "Warlock": "Brujo",
+    "Zealot": "Fanático",
+
+    "Clock": "Reloj",
+    "Clocks": "Relojes",
+    "Segements": "Segmentos",
+    "Off": "Off",
+    "Project": "Proyecto",
+
+    "BasicInformation": "Información básica",
+    "Custom": "(Personalizada)",
+    "Random": "(Aleatoria)",
+    "AdventurerType": "Tipo de aventurero",
+    "Adventurer": "Aventurero",
+    "Adventurers": "Aventureros",
+    "AdventurerClass": "Clase del aventurero",
+    "CustomClassHint": "Introduce una Clase personalizada",
+    "HirelingType": "Tipo de mercenario",
+    "CustomTypeHint": "Introduce un tipo personalizado",
+    "Hireling": "Mercenario",
+    "Hirelings": "Mercenarios",
+    "AdventurerPassive": "Capacidad pasiva",
+    "HirelingPassiveHint": "(leave empty to grant a single move)",
+    "CustomTraitHint": "Enter custom trait here",
+    "PositiveTrait": "Positive Trait",
+    "PositiveTraits": "Positive Traits",
+    "NegativeTrait": "Negative Trait",
+    "NegativeTraits": "Negative Traits",
+    "CustomMotivationHint": "Enter custom motivation here",
+    "Motivation": "Motivation",
+    "Motivations": "Motivations",
+    "Side": "Side",
+    "Open": "Open",
+    "ZeroModeHint": "(0D roll)",
+    "CustomDutyTypeHint": "Enter a custom duty type here",
+
+    "ROLL": {
+      "Critical": "¡Crítico!",
+      "Success": "Éxito",
+      "Mixed": "Parcial",
+      "Failure": "Fracaso",
+
+      "DO": {
+        "Critical": "<strong>¡Sí, y...</strong> ¡No sólo consigues lo que querías, sino que además obtienes algo más a cambio!",
+        "Success": "<strong>¡Sí!</strong> ¡Conseguiste lo que querías!",
+        "Mixed": "<strong>Sí, pero…</strong> Consigues lo que querías, pero tiene un coste. Algunas consecuencias se interpondrán en tu camino. O puede que simplemente se obtenga un resultado peor.",
+        "Failure": "<strong>No, y…</strong> Las cosas salen tan mal como podrían salir en esta situación. No lo consigues y sufres una consecuencia."
+      },
+
+      "ACTION": {
+        "Name": "Tirada de Acción",
+        "Critical": "<strong>¡Sí, y...</strong> ¡No sólo consigues lo que querías, sino que además obtienes algo más a cambio!",
+        "Success": "<strong>¡Sí!</strong>  ¡Conseguiste lo que querías!",
+        "Mixed": "<strong>Sí, pero…</strong> Consigues lo que querías, pero tiene un coste. Algunas consecuencias se interpondrán en tu camino. O puede que simplemente se obtenga un resultado peor.",
+        "Failure": "<strong>No, and…</strong> Las cosas salen tan mal como podrían salir en esta situación. No lo consigues y sufres una consecuencia."
+      },
+
+      "BLOWBACK": {
+        "Name": "Tirada de Repercusión",
+        "Critical": "Cada PJ obtiene un <strong>corazón oscuro</strong>. Además, puedes elegir una facción para que cargue con la culpa en tu lugar.",
+        "Success": "Cada PJ obtiene un <strong>corazón oscuro</strong>.",
+        "Mixed": "Sufres una repercusión menor.",
+        "Failure": "¡Sufres una repercusión mayor!"
+      },
+
+      "CALAMITY": {
+        "Name": "Tirada de Desastre",
+        "Critical": "Vuestros esbirros ganan <strong>moral</strong> y participan en el siguiente asalto sin coste. Además, ¡vuestros diablillos excavan un <strong>hallazgo exitoso</strong>!",
+        "Success": "Vuestros esbirros ganan <strong>moral</strong> y participan en el siguiente asalto sin coste.",
+        "Mixed": "Sufrís un desastre menor.",
+        "Failure": "¡Sufrís un desastre mayor!"
+      },
+
+      "DEFENSIVE": {
+        "Name": "Tirada de Movimiento defensivo",
+        "Critical": "Lo resisten completamente e inmediatamente hacen un movimiento ofensivo gratuito.",
+        "Success": "Lo resisten completamente.",
+        "Mixed": "Lo resisten parcialmente, reduciendo su severidad.",
+        "Failure": "No resisten nada."
+      },
+
+      "DISCOVERY": {
+        "Name": "Tirada de Descubrimiento",
+        "Critical": "Un éxito mejora claramente la mazmorra o la vida de los PJ. Se colocarán en la zona perfecta para ayudar a la mazmorra de la mejor manera posible. <strong>¡Un crítico cuenta como dos éxitos!</strong>",
+        "Success": "Un éxito mejora claramente la mazmorra o la vida de los PJ. Se colocarán en la zona perfecta para ayudar a la mazmorra de la mejor manera posible.",
+        "Mixed": "Un parcial tiene que tener un impacto leve, quizás ligeramente bueno o malo para los PJ en función de cómo respondan a él. Se colocarn en zonas con pequeños inconvenientes.",
+        "Failure": "Un fracaso debería perjudicar considerablemente a vuestra mazmorra, causando problemas inmediatos para vosotros o dificultando la defensa de la mazmorra. Casi siempre se situarán en posiciones que faciliten a los invasores eludir las defensas o que interfieran en vuestro diseño."
+      },
+
+      "ENGAGEMENT": {
+        "Name": "Tirada de Implicación",
+        "Critical": "Empezáis con <strong>ventaja</strong>, con la situación bajo control. Además, ¡tenéis un golpe de suerte!",
+        "Success": "Empezáis con <strong>ventaja</strong>, con la situación bajo control.",
+        "Mixed": "Empezáis en <strong>igualdad de condiciones</strong>, listos para afrontar el reto.",
+        "Failure": "Empezáis en un <strong>aprieto</strong>, con consecuencias infligidas."
+      },
+
+      "LOCK": {
+        "Name": "Tirada de Cerradura",
+        "Critical": "Each adventurer wastes a move trying to open it, then they go another way unless they have no other option.",
+        "Success": "An adventurer wastes a move trying to open it, then they go another way unless they have no other option.",
+        "Mixed": "They go another way unless they have no other option.",
+        "Failure": "They unlock the door and move past it.",
+        "Note": "❖ When there is no other way forward, roll again for the lock."
+      },
+
+      "LOOT": {
+        "Name": "Tirada de Saqueo",
+        "Critical": "Puedes combinar dos éxitos en un Crítico para sacar un objeto poderoso del botín. El DJ elige cuál es.",
+        "Success": "Sacas un objeto mundano o valioso del botín.",
+        "Mixed": "Ganas 1 oro o lo gastas en juerga en su lugar.",
+        "Failure": "Disfrutas de alguna juerga, ganando un corazón oscuro.",
+        "Note": "¡Si ganas un exceso de corazones oscuros, te excedes y sufres una consecuencia frustrante o devastadora basada en tu juerga!"
+      },
+
+      "RESISTANCE": {
+        "Name": "Tirada de Resistencia",
+        "Critical": "<strong>Eliminas</strong> 1 de estrés y resistes <strong>completamente</strong> la consecuencia.",
+        "Success": "Obtienes 1 de estrés y resistes <strong>completamente</strong> la consecuencia.",
+        "Mixed": "Obtienes 2 de estrés y resistes <strong>parcialmente</strong> la consecuencia.",
+        "Failure": "Obtienes 3 de estrés y resistes <strong>parcialmente</strong> la consecuencia."
+      },
+
+      "RESISTDEATH": {
+        "Mixed": "The consequence is reduced in severity but <strong>still devastating</strong>. Maybe you get knocked out of the scene, a clock starts as you start bleeding to death, or you lose a limb.",
+        "Failure": "<strong>You die</strong>. If you have dark hearts, perform your <strong>death knell</strong>!"
+      },
+
+      "CREATURE": {
+        "Name": "Tirada de Criatura",
+        "Critical": "Dañas a dos aventureros a tu elección. <strong>Vuelve a tirar.</strong>",
+        "Success": "Dañas a un aventurero a tu elección <strong>Vuelve a tirar.</strong>",
+        "Mixed": "Dañas a un aventurero a elección del DJ y la criatura queda fuera de combate.",
+        "Failure": "TLa criatura muere o huye de la mazmorra para siempre.",
+        "Note": "❖ No puedes dañar al mismo aventurero dos veces seguidas a menos que esté solo."
+      },
+
+      "TRAP": {
+        "Name": "Tirada de Trampa",
+        "Critical": "Dañas a dos aventureros a tu elección. <strong>Vuelve a tirar.</strong>",
+        "Success": "Dañas a un aventurero a tu elección <strong>Vuelve a tirar.</strong>",
+        "Mixed": "Dañas a un aventurero a elección del DJ.",
+        "Failure": "The trap is disabled or avoided by the adventurers.",
+        "Note": "You can't damage the same adventurer twice in a row unless they're alone."
+      },
+
+      "STARTING": {
+        "Name": "Tirada de Localización inicial",
+        "Critical": "StartingLoc Roll",
+        "Success": "Un éxito te sitúa en una buena posición. Empiezas en la sala exacta de la mazmorra en la que quieres estar con armas cerca.",
+        "Mixed": "Con un parcial comienzas en una situación poco ideal. Es posible que no tengas armas o que no empieces en una buena ubicación. Es probable que estés ocupado haciendo alguna otra tarea.",
+        "Failure": "Un fracaso te sitúa en una posición pésima. Estás lejos de la acción, más bien distraído por algo que estás haciendo, probablemente sin armas, o tal vez incluso durmiendo. Los aventureros tienen una ventaja considerable contra ti."
+      },
+
+      "PATHING": {
+        "Name": "Tirada de Recorrido",
+        "CriticalSuccess": "Pathing Roll",
+        "Success": "On a mixed or success, the adventurers go the way the players want them to.",
+        "MixedSuccess": "On a mixed or success, the adventurers go the way the players want them to.",
+        "Failure": "On a mixed or success, the adventurers go the way the players want them to. On a failure, <strong>they go the other way.</strong>"
+      },
+
+      "FORTUNE": {
+        "Name": "Tirada de Fortuna",
+        "Critical": "Es una situación ideal, ya que obtienes lo que querías. Además, ¡obtienes más de lo que esperabas!",
+        "Success": "Es una situación ideal, ya que obtienes lo que querías.",
+        "Mixed": "Está bastante bien, pero no es perfecto, con un toque decepcionante.",
+        "Failure": "Las cosas van tan mal como podrían ir."
+      }
+    },
+
+    "FACTION_SIDE": {
+      "Dark": "Oscuridad",
+      "Neutral": "Neutral",
+      "Light": "Luz"
+    },
+
+    "ADV_CLASS": {
+      "Academic": "Academic",
+      "Alchemist": "Alchemist",
+      "Amazon": "Amazon",
+      "Aristocrat": "Aristocrat",
+      "Assassin": "Assassin",
+      "Barbarian": "Barbarian",
+      "Bard": "Bard",
+      "Buccaneer": "Buccaneer",
+      "Centurion": "Centurion",
+      "ChaosMage": "Chaos Mage",
+      "Cleric": "Cleric",
+      "DeathKnight": "Death Knight",
+      "Defender": "Defender",
+      "Druid": "Druid",
+      "EldritchWarrior": "Eldritch Warrior",
+      "Illusionist": "Illusionist",
+      "Inquisitor": "Inquisitor",
+      "Knight": "Knight",
+      "Lancer": "Lancer",
+      "MageHunter": "Mage Hunter",
+      "Monk": "Monk",
+      "OccultSlayer": "Occult Slayer",
+      "Ranger": "Ranger",
+      "Scout": "Scout",
+      "Shadowdancer": "Shadowdancer",
+      "Slinger": "Slinger",
+      "Spellbow": "Spellbow",
+      "Templar": "Templar",
+      "Weaponsmith": "Weaponsmith",
+      "Wildling": "Wildling"
+    },
+
+    "ADV_CLASS_PASSIVE": {
+      "Academic": "Excels at navigating dungeon paths",
+      "Alchemist": "Can use any tier 1 or 2 concoction on pg. 121",
+      "Amazon": "Has a very strong mind and willpower",
+      "Aristocrat": "Excels at one-on-one combat",
+      "Assassin": "Can always start a scene hidden",
+      "Barbarian": "Keeps fighting when he should be dead",
+      "Bard": "Makes all nearby allies perform better",
+      "Buccaneer": "Is nearly impossible to pin down",
+      "Centurion": "Grows more powerful when injured",
+      "ChaosMage": "Casts random magic when attacked",
+      "Cleric": "Heals an ally a bit when they take a break",
+      "DeathKnight": "Heals when death occurs nearby",
+      "Defender": "Extends strong defense to nearby allies",
+      "Druid": "Can shapeshift into any animal",
+      "EldritchWarrior": "Can summon a powerful magic sword at-will",
+      "Illusionist": "Reacts to attacks and surprise with illusions",
+      "Inquisitor": "Excels at seeing through lies and tricks",
+      "Knight": "Is nearly impervious to physical damage",
+      "Lancer": "Excels at keeping enemies at a distance",
+      "MageHunter": "Is nearly immune to magic",
+      "Monk": "Can run on walls and across water",
+      "OccultSlayer": "Has a sixth sense for danger",
+      "Ranger": "Has a loyal bear companion",
+      "Scout": "Excels at spotting traps and hazards",
+      "Shadowdancer": "Can teleport between shadows",
+      "Slinger": "Excels against anyone bigger than him",
+      "Spellbow": "Imbues each arrow with an elemental effect",
+      "Templar": "Cannot be turned from their path",
+      "Weaponsmith": "Always has the right weapon for the job",
+      "Wildling": "Can run through difficult terrain"
+    },
+
+    "ADV_TYPE": {
+      "Archer": "Archer",
+      "Boatman": "Boatman",
+      "Burglar": "Burglar",
+      "Butcher": "Butcher",
+      "Carpenter": "Carpenter",
+      "Cartographer": "Cartographer",
+      "Chronicler": "Chronicler",
+      "Cook": "Cook",
+      "Driver": "Driver",
+      "Farmhand": "Farmhand",
+      "Fisherman": "Fisherman",
+      "Footman": "Footman",
+      "Footpad": "Footpad",
+      "Forester": "Forester",
+      "Guard": "Guard",
+      "Guide": "Guide",
+      "Inventor": "Inventor",
+      "Linguist": "Linguist",
+      "Locksmith": "Locksmith",
+      "Lumberjack": "Lumberjack",
+      "Mercenary": "Mercenary",
+      "Messenger": "Messenger",
+      "Miner": "Miner",
+      "Pathfinder": "Pathfinder",
+      "Priest": "Priest",
+      "RatCatcher": "Rat Catcher",
+      "Rider": "Rider",
+      "Sailor": "Sailor",
+      "Sawbones": "Sawbones",
+      "Scholar": "Scholar",
+      "Scribe": "Scribe",
+      "Singer": "Singer",
+      "Spelunker": "Spelunker",
+      "Swordsman": "Swordsman",
+      "Trader": "Trader",
+      "Trapfinder": "Trapfinder"
+    },
+    "ADV_TRAIT": {
+      "Clever": "Clever",
+      "Confident": "Confident",
+      "Generous": "Generous",
+      "Helpful": "Helpful",
+      "Honest": "Honest",
+      "Optimistic": "Optimistic",
+      "Persistent": "Persistent",
+      "Steady": "Steady",
+      "Brash": "Brash",
+      "Cocky": "Cocky",
+      "Dishonest": "Dishonest",
+      "Dumb": "Dumb",
+      "Greedy": "Greedy",
+      "Impatient": "Impatient",
+      "Indecisive": "Indecisive",
+      "Stubborn": "Stubborn"
+    },
+    "ADV_MOTIVE": {
+      "Challenge": "Challenge",
+      "Exploration": "Exploration",
+      "Justice": "Justice",
+      "Respect": "Respect",
+      "Riches": "Riches",
+      "Thrills": "Thrills",
+      "Vengeance": "Vengeance"
+    },
+    "GM_TYPE": {
+      "Acid": "Acid",
+      "Crystal": "Crystal",
+      "Fire": "Fire",
+      "Earth": "Earth",
+      "Energy": "Energy",
+      "Ice": "Ice",
+      "Illusion": "Illusion",
+      "Lightning": "Lightning",
+      "Metal": "Metal",
+      "Mind": "Mind",
+      "Plant": "Plant",
+      "Shadow": "Shadow",
+      "Shimmering": "Shimmering",
+      "Sonic": "Sonic",
+      "Venom": "Venom",
+      "Water": "Water",
+      "Wind": "Wind"
+    },
+    "DUTY_TYPE": {
+      "Creature": "Criatura",
+      "Discovery": "Descubrimiento",
+      "Lock": "Cerradura",
+      "Room": "Sala",
+      "Trap": "Trampa",
+      "Trick": "Truco",
+      "HINT": {
+        "CreaturePrompt": "Describe un monstruo carente de inteligencia y dos rasgos:",
+        "CreatureParagraph": "astuto, corrompido, corrosivo, enfermo, incorpóreo, flamígero, gélido, mágico, cieno, escurridizo, fuerte, enjambre, aterrador, incansable, venenoso",
+        "LockPrompt": "Describe los materiales de la puerta y el mecanismo de la cerradura",
+        "LockParagraph1": "<strong>Materiales de la puerta</strong>: barras, hueso, cristal, hielo, hierro, área mágica, raíces, piedra, madera",
+        "LockParagraph2": "<strong>Mecanismo de la cerradura</strong>: arcano, barra, perno, objeto pesado, muesca, cerradura, candado, contraseña, polea, placa de presión, rompecabezas, cerrojo, temporizada",
+        "TrapPrompt": "Describir el mecanismo y su activación",
+        "TrapParagraph1": "<strong>Mecanismo</strong>: muro aplastante, dardos, pinchos, fuego, roca, hoja de sierra, cuchilla de péndulo, gas, bobina de relámpago, arco de relámpago, cuchilla oscilante, barril explosivo, foso, cuchilla en el suelo",
+        "TrapParagraph2": "<strong>Activación</strong>: placa de presión, cable trampa, detección mágica, ilusión o camuflaje, sonido, eliminación de objetos, puerta falsa",
+        "TrickPrompt": "Describe un propósito y su desencadenante.",
+        "TrickParagraph": "Todos los trucos tienen un propósito, algo que les ocurre a los aventureros, y un desencadenante que hace que el truco ocurra."
+      }
+    },
+    "CYCLE": {
+      "Name": "Cycle of Play",
+      "HEADINGS": {
+        "Lurking": "Lurking",
+        "Calamity": "Calamity",
+        "Raiding": "Raiding",
+        "Blowback": "Blowback"
+      },
+      "PHASE1": {
+        "Name": "Recovery",
+        "Hint1": "All stress, Shock and Bloodied condition clear.",
+        "Hint2": "Used supply slots and defenses clear.",
+        "Hint3": "Once per cycle abilities, items, and rooms refresh.",
+        "Hint4": "Dungeon attracts a creature to the lowest tier empty lair.",
+        "Hint5": "Recovery happens after invasions that occur from blowback."
+      },
+      "PHASE2": {
+        "Name": "Loot Roll",
+        "Hint1": "Roll a number of dice equal to the amount of loot you hauled in from your last raid.",
+        "Hint2": "Each die rolled gives you something based on its result.",
+        "Hint3": "May combine two successes into a critical for a powerful item chosen by the GM.",
+        "Hint4": "Gaining excess Dark Hearts causes monsters to overdo their revelry.",
+        "Hint5": "Overdoing it causes damage to the monsters or the dungeon in a frustrating or devastating consequence."
+      },
+      "PHASE3": {
+        "Name": "Downtime",
+        "Hint1": "Each player gets one downtime action, plus any extra from calling abilities.",
+        "Hint2": "Players can pay their minions 1 gold to perform a downtime action.",
+        "Hint3": "Downtime actions are usually made with dominant position. (Torture is an expection)",
+        "Hint4": "Risk It: Players can reroll any dominant downtime action with normal position instead.",
+        "Hint5": "The GM rolls the dungeon tier for the imps’ downtime action."
+      },
+      "PHASE4": {
+        "Name": "Dungeon Logic Review",
+        "Hint1": "5 factors determine the amount of malcontent in the Dungeon. The GM needs to build a gut feeling for this dungeon logic",
+        "Hint2": "Atmosphere: Does the layout feel like a dungeon and do the minions enjoy living there? They want your dungeon to make sense, feel like a dungeon, and have at least some rooms that they can enjoy. They desire a place that feels evil and dungeony.",
+        "Hint3": "Growth: Has the dungeon been steadily growing, increasing in tier and adding rooms and discoveries? They yearn for power as much as their masters do because belonging to a strong dungeon means greater raids and more revelry.",
+        "Hint4": "Hierarchy: Are weaker creatures likely to face adventurers before stronger ones? Powerful monsters, such as upgraded minions, think it’s beneath them to face the enemy first.",
+        "Hint5": "Loot and Revelry: Has there been a steady flow of loot into the dungeon and has the dungeon survived your revelry intact? Making sure you go out of your way to increase loot rolls helps keep grumbling down.",
+        "Hint6": "Worthy Masters: Have you formulated a solid master plan and garnered a reputation of evil? You have to present a strong front and any chinks in that armor quickly become apparent to those below you."
+      },
+      "PHASE5": {
+        "Name": "Calamity Roll",
+        "Hint1": "GM rolls 1-3 dice depending on how much the Denizens are grumbling.",
+        "Hint2": "Sample calamities are weak or normal dungeon invasions, denizen trouble, structural problems and outside interference."
+      },
+      "PHASE6": {
+        "Name": "Calamity",
+        "Hint1": "The GM decides what form the calamity takes.",
+        "Hint2": "It can be something that is immediately accepted and resolved or you can jump into a scene to try to deal with the fallout of the situation.",
+        "Hint3": "Calamity can’t be resisted and may be pocketed by the GM and brought out at an opportune time later.",
+        "Hint4": "Minor calamity is an inconvenience, but one that you’re likely equipped to ignore or handle.",
+        "Hint5": "Major calamity is an immediately pressing concern that must be dealt with."
+      },
+      "PHASE7": {
+        "Name": "Goal + Target",
+        "Hint1": "Players come up with a goal to pursue. When indecision or disputes arise, use a power struggle to resolve it.",
+        "Hint2": "Players look for a target that makes sense for their goal.",
+        "Hint3": "Targets belong to factions, being one small part of the overall faction.",
+        "Hint4": "You are on equal footing with factions at your tier.  Hitting equal or higher tier targets gives more loot.",
+        "Hint5": "The GM decides what type of raid scene makes sense. When the goal is not very challenging, it can focus on the approach (Difficulty in getting to the target) or the getaway (Difficulty in getting out of the area)."
+      },
+      "PHASE8": {
+        "Name": "Plan + Details",
+        "Hint1": "Choose a raid plan and set some details.",
+        "Hint2": "Ambush: Hit them when they least expect it, making sure they don’t take any of you down in the process. Why is their guard down? Where are you waiting? What’s the signal?",
+        "Hint3": "Assault: Bring full force to bear, driving off or killing all those who stand against you. Where does the assault begin? Who leads the way? Do you avoid any targets?",
+        "Hint4": "Negotiation: Talk it out, tell lies, or offer something to get what you want, spilling as little blood as possible. Where’s the meeting spot? What are you offering? Are you there in good faith?",
+        "Hint5": "Stealth: Slip in, find what you’re after, and slip out quietly, being noticed as little as possible. Where do you slip in? What time of day is it? Do you split up?",
+        "Hint6": "Strike: Bust in, get what you want, and run out quickly, without deviating from your goal. How do you get in? Who signals to get out? What guards your prize?",
+        "Hint7": "Trickery: Confuse, lure, or trick them into doing what you want, without letting on until it’s too late. What do you want them to do? Why would they do that? Does it matter if they know after?"
+      },
+      "PHASE9": {
+        "Name": "Engagement Roll",
+        "Hint1": "The GM rolls engagement, considering the following factors.",
+        "Hint2": "The dungeon’s tier vs. the target’s faction’s tier.",
+        "Hint3": "The target is particularly strong/weak against the chosen plan.",
+        "Hint4": "The PCs are working with good/bad information.",
+        "Hint5": "The faction has been hit by the dungeon before or they’re caught unaware.",
+        "Hint6": "Recent events in the sandbox has the faction on the lookout for trouble",
+        "Hint7": "During a raid, you take +1d to your loot roll for: Target faction at least equal to dungeon tier, each tier target faction is above the dungeon tier, each source of good loot you grabbed, each adventurer taken out."
+      },
+      "PHASE10": {
+        "Name": "Raid Plan Review",
+        "Hint1": "After the raid, review the raid plan together and how well you followed it. The GM is the final judge.",
+        "Hint2": "Ambush: Minimize your own losses. (1d: You took heavy damage. 2d: There were a few injuries. 3d: Nobody in your group was injured)",
+        "Hint3": "Assault: Kill or drive off all opposing you. (1d: Significant forces remained when you left. 2d: Most on the scene fled or were killed. 3d: It was a complete slaughter, crushing all)",
+        "Hint4": "Negotiation: Avoid conflict. (1d: It devolved into a bloody fight. 2d: Things were tense, but nobody died. 3d: You maintained control throughout)",
+        "Hint5": "Stealth: Avoid being noticed. (1d: You were clearly spotted and identified. 2d: You were spotted, but recovered. 3d: They had no idea of your presence)",
+        "Hint6": "Strike: Stick to the path and get out quickly. (1d: You got caught up in other endeavors. 2d: There were a few distractions. 3d: You didn’t diverge from the plan once)",
+        "Hint7": "Trickery: Don’t let on until it’s too late. (1d: They saw right through your intentions. 2d: They did as you wanted, but were suspicious. 3d: They did exactly as you wanted)"
+      },
+      "PHASE11": {
+        "Name": "Blowback Roll",
+        "Hint1": "How did the raid plan go? (1d: off the rails, 2d: a little awry, 3d: perfectly)",
+        "Hint2": "Possible consequences: Weak to strong dungeon invasion, travel trouble, factions/sandbox trouble, ambush / capture."
+      },
+      "PHASE12": {
+        "Name": "Blowback",
+        "Hint1": "Blowback can be something that is immediately accepted and resolved or you can jump into a scene to try to deal with the fallout of the situation.",
+        "Hint2": "The GM decides what form blowback takes.",
+        "Hint3": "It can’t be resisted and may be pocketed by the GM and brought out at an opportune time later.",
+        "Hint4": "Minor blowback is an inconvenience, but one that you’re likely equipped to ignore or handle.",
+        "Hint5": "Major blowback is an immediately pressing concern that must be dealt with."
+      }
+    },
+    "ERRORS": {
+      "NoActorAssigned": "No se ha asignado ningún actor al jugador",
+      "NoMinionPackLinked": "No hay ninguna manada de esbirros vinculada a tu actor"
+    },
+    "GAME_LOGIC": {
+      "_comment": "GAME LOGIC DATA: Keep in sync with item name translations",
+      "PackMule": "Pack Mule",
+      "StickyFingers": "Sticky Fingers",
+      "Lair": "Lair",
+      "GearLocker": "Gear Locker",
+      "Braineater": "Braineater",
+      "Doomseeker": "Doomseeker",
+      "Facestealer": "Facestealer",
+      "Goldmonger": "Goldmonger"
+    }
+  }
+}
