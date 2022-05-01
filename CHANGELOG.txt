@@ -1,3 +1,13 @@
+v0.5.1 -
+
+Forked system to make changes.
+Merged https://github.com/megastruktur/foundryvtt-blades-in-the-dark/commit/241345bf0a68921fa7d4ecb97f597ee4f2ad68ba to fix fortune roll CSS.
+Updated version compatibility to v9.
+
+
+
+
+
 v0.5.0
 
 - Removed Blades in the Dark references
