@@ -22,7 +22,7 @@
   ],
   "url": "https://github.com/grankless/foundryvtt-beamsaber/",
   "manifest": "https://raw.githubusercontent.com/grankless/foundryvtt-beamsaber/master/system.json",
-  "download": "https://github.com/grankless/foundryvtt-beamsaber/archive/bs0.5.1.zip",
+  "download": "https://github.com/grankless/foundryvtt-beamsaber/archive/bs0.5.2.zip",
   "packs": [
     {
       "name": "ability",
