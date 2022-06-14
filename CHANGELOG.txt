@@ -1,5 +1,6 @@
 v0.5.2 (6/13/22)
 Update font to Arial instead of the unreadable Exan.
+Rename "special" to "spark". Removed "special" from vehicle section since there's just one spark.
 Todo list is chilling in the issues. Would love MRs or issue requests.
 
 v0.5.1 -
