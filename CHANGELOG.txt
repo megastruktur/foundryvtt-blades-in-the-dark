@@ -1,3 +1,7 @@
+v0.5.2 (6/13/22)
+Update font to Arial instead of the unreadable Exan.
+Todo list is chilling in the issues. Would love MRs or issue requests.
+
 v0.5.1 -
 
 Forked system to make changes.
