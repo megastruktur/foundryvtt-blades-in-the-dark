@@ -204,6 +204,10 @@ export async function simpleRollPopup() {
             ${Array(11).fill().map((item, i) => `<option value="${i}">${i}d</option>`).join('')}
           </select>
         </div>
+        <div className="form-group">
+          <label>${game.i18n.localize('BITD.Notes')}:</label>
+          <input id="note" name="note" type="text" value="">
+        </div><br/>
       </form>
     `,
     buttons: {
@@ -211,8 +215,9 @@ export async function simpleRollPopup() {
         icon: "<i class='fas fa-check'></i>",
         label: `Roll`,
         callback: async (html) => {
-          let diceQty = html.find('[name="qty"]')[0].value;  
-          await bladesRoll(diceQty);
+          let diceQty = html.find('[name="qty"]')[0].value;
+          let note = html.find('[name="note"]')[0].value;
+          await bladesRoll(diceQty,"","","",note);
         },
       },
       no: {
