@@ -91,11 +91,11 @@ export class BladesActor extends Actor {
                 <option value="great">${game.i18n.localize('BITD.EffectGreat')}</option>
               </select>
             </div>`;
-        } else {
+    } else {
         content += `
             <input  id="pos" name="pos" type="hidden" value="">
             <input id="fx" name="fx" type="hidden" value="">`;
-        }
+    }
     content += `
         <div className="form-group">
           <label>${game.i18n.localize('BITD.Notes')}:</label>
