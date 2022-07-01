@@ -5,7 +5,7 @@
  * @param {string} position
  * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "", position = "risky", effect = "standard") {
+export async function bladesRoll(dice_amount, attribute_name = "", position = "risky", effect = "standard", note = "") {
 
   // ChatMessage.getSpeaker(controlledToken)
   let zeromode = false;
@@ -17,7 +17,7 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "r
 
   // show 3d Dice so Nice if enabled
   r.evaluate({async:true});
-  await showChatRollMessage(r, zeromode, attribute_name, position, effect);
+  await showChatRollMessage(r, zeromode, attribute_name, position, effect, note);
 }
 
 /**
@@ -29,7 +29,7 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "r
  * @param {string} position
  * @param {string} effect
  */
-async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "") {
+async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "", note = "") {
   
   let speaker = ChatMessage.getSpeaker();
   let rolls = (r.terms)[0].results;
@@ -66,11 +66,11 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
         effect_localize = 'BITD.EffectStandard'
     }
 
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/action-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, position_localize: position_localize, effect: effect, effect_localize: effect_localize});
+    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/action-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, position_localize: position_localize, effect: effect, effect_localize: effect_localize, note: note});
   } else {
     let stress = getBladesRollStress(rolls, zeromode);
     
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/resistance-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, stress: stress});
+    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/resistance-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, stress: stress, note: note});
   }
 
   let messageData = {
