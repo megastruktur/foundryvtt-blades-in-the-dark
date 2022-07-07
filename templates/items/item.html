@@ -13,9 +13,15 @@
       <input id="item-load" type="text" name="data.load" value="{{data.load}}">
       <label class="label-stripe">{{localize "BITD.Class"}}</label>
       <input id="item-class" type="text" name="data.class" value="{{data.class}}">
+      <label class="label-stripe">{{localize "BITD.Uses"}}</label>
+      <input id="item-uses" type="text" name="data.uses" value="{{data.uses}}">
+      <label class="label-stripe">{{localize "BITD.NumberAvailable"}}</label>
+      <input id="item-num_available" type="text" name="data.num_available" value="{{data.num_available}}">
+      <label class="label-stripe">{{localize "BITD.AdditionalInfo"}}</label>
+      <textarea id="item-additional_info" type="text" name="data.additional_info" value="">{{data.additional_info}}</textarea>
       {{#if isGM}}
-        <div class="label-stripe">{{localize "BITD.Logic"}}</div>
-        <textarea name="data.logic">{{{data.logic}}}</textarea>
+<!--         <div class="label-stripe">{{localize "BITD.Logic"}}</div> -->
+<!--         <textarea name="data.logic">{{{data.logic}}}</textarea> -->
         <div class="label-stripe">{{localize "BITD.Effects"}}</div>
         <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
       {{/if}}

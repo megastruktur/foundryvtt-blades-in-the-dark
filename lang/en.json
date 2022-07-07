@@ -55,6 +55,7 @@
   "BITD.LessEffect": "Less Effect",
   "BITD.Description": "Description",
   "BITD.Loadout": "Loadout",
+  "BITD.Load": "Load",
   "BITD.CrewType": "Crew Type",
   "BITD.FactionType": "Faction Type",
   "BITD.Price": "Price",
@@ -193,6 +194,9 @@
 
   "BITD.AddAbility": "Add Ability",
   "BITD.AddItem": "Add Item",
+  "BITD.Uses": "No. of Uses",
+  "BITD.NumberAvailable": "Number Available",
+  "BITD.AdditionalInfo": "Additional Information",
 
   "BITD.Position": "Position",
   "BITD.Effect": "Effect",

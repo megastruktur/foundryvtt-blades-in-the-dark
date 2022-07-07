@@ -257,7 +257,10 @@
     "templates": ["default", "logic", "activatedEffect"],
     "class": "",
     "load": 0,
-    "equipped" : false
+    "uses": 1,
+    "additional_info": "",
+    "equipped" : false,
+    "num_available": 1
   },
   "class": {
     "templates": ["default", "logic", "activatedEffect"],
