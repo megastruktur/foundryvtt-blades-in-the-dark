@@ -154,11 +154,12 @@
     "heat": [0],
     "wanted": [0]
   },
-  "\uD83D\uDD5B clock": {
+    "\uD83D\uDD5B clock": {
     "name": "",
     "type": 4,
-    "value": "0"
-  },
+    "value": "0",
+    "owner": ""
+    },
     "factions": {
 	"name": ""
     },
