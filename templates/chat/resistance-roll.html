@@ -10,6 +10,9 @@
   <div class="die success">{{localize "BITD.RollSuccess"}}</div>
   <div class="description"><p>{{{localize "BITD.RollResistance" stress=stress}}}</p></div>
   {{/if}}
+  {{#if note}}
+    <em>{{note}}</em>
+  {{/if}}
 
   <ol class="dice-rolls">
     {{#each this.rolls}}

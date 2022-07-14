@@ -97,6 +97,10 @@ export class BladesActor extends Actor {
             <input id="fx" name="fx" type="hidden" value="">`;
     }
     content += `
+        <div className="form-group">
+          <label>${game.i18n.localize('BITD.Notes')}:</label>
+          <input id="note" name="note" type="text" value="">
+        </div><br/>
         </form>
       `;
     
@@ -111,7 +115,8 @@ export class BladesActor extends Actor {
             let modifier = parseInt(html.find('[name="mod"]')[0].value);
             let position = html.find('[name="pos"]')[0].value;
             let effect = html.find('[name="fx"]')[0].value;
-            await this.rollAttribute(attribute_name, modifier, position, effect);
+            let note = html.find('[name="note"]')[0].value;
+            await this.rollAttribute(attribute_name, modifier, position, effect, note);
           }
         },
         no: {
@@ -126,7 +131,7 @@ export class BladesActor extends Actor {
 
   /* -------------------------------------------- */
   
-  async rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect) {
+  async rollAttribute(attribute_name = "", additional_dice_amount = 0, position, effect, note) {
 
     let dice_amount = 0;
     if (attribute_name !== "") {
@@ -138,7 +143,7 @@ export class BladesActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    await bladesRoll(dice_amount, attribute_name, position, effect);
+    await bladesRoll(dice_amount, attribute_name, position, effect, note);
   }
 
   /* -------------------------------------------- */

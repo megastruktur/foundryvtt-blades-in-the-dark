@@ -47,7 +47,9 @@
     </p>
   </div>
   {{/if}}
-
+  {{#if note}}
+    <em>{{note}}</em>
+  {{/if}}
   <ol class="dice-rolls">
     {{#each this.rolls}}
     {{#if this.result}}

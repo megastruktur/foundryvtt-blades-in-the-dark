@@ -1,3 +1,11 @@
+v.3.19
+- system.json updated to v3.19
+
+v.3.18
+- Minor syntax fixes to crew types #176 (mikehoyle)
+- Feature/roll notes #177 (justinross)
+- Added a couple of extra fields to the "item" Item type for sheet/homebrew flexibility #178 (justinross)
+
 v.3.17
 - Fix Dice Roll icon in toolbar in V9 #172
 
