@@ -1,4 +1,5 @@
 # FoundryVTT Beam Saber character and Squad sheets
+-- Forked by Grankless to merge system compatibility fixes; I do not have any coding expertise so do not expect future development unless this is forked again --
 
 This game system is for  Beamsaber (v0.55) by Austin Ramsay which can be found here - https://austin-ramsay.itch.io/beamsaber
 Everything is based off the Blades in the Dark system from megastruktur - https://github.com/megastruktur/foundryvtt-blades-in-the-dark

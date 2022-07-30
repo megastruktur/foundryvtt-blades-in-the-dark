@@ -16,16 +16,18 @@ $hover-brightness: 0.8;
 
 // Imports
 @import 'mixin.scss';
-@font-face {
-  font-family: 'Exan'; /*a name to be used later*/
-  src: url("assets/fonts/Exan-Regular.ttf"); /*URL to font*/
-}
+
 
 /*
  * General Styles
  */
 * {
-  font-family: 'Exan', "Orbitron", "Trebuchet MS", sans-serif;
+  .blades-in-the-dark{
+  font-family: Arial, sans-serif;
+    &.actor-sheet {
+      padding: 20px;
+    }
+  }
 
   header {
     margin-bottom: 10px;
