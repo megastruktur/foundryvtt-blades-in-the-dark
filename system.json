@@ -22,7 +22,7 @@
   ],
   "url": "https://github.com/conordjpc/foundryvtt-beamsaber/",
   "manifest": "https://raw.githubusercontent.com/conordjpc/foundryvtt-beamsaber/master/system.json",
-  "download": "https://github.com/conordjpc/foundryvtt-beamsaber/archive/bs.0.5.3.zip",
+  "download": "https://github.com/conordjpc/foundryvtt-beamsaber/archive/bs0.5.3.zip",
   "packs": [
     {
       "name": "ability",
