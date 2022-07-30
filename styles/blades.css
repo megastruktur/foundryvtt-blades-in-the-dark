@@ -30,12 +30,12 @@
  */
 
  @font-face {
-   font-family: 'Exan'; /*a name to be used later*/
-   src: url("assets/fonts/Exan-Regular.ttf"); /*URL to font*/
+   font-family: 'Orbitron'; /*a name to be used later*/
+   src: url("assets/fonts/Orbitron-Light.ttf"); /*URL to font*/
  }
 
 * {
-  font-family: 'Exan', "Orbitron", "Trebuchet MS", sans-serif;
+  font-family: "Orbitron", "Trebuchet MS", sans-serif;
 }
 * header {
   margin-bottom: 10px;
