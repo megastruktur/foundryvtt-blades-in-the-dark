@@ -12,30 +12,31 @@ export class BladesClockSheet extends BladesSheet {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor", "clock"],
   	  template: "systems/blades-in-the-dark/templates/actors/clock-sheet.html",
-      width: 700,
-      height: 970,
+      width: 420,
+      height: 400,
     });
   }
 
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    var data = super.getData();
-    data.editable = this.options.editable;
-    const actorData = data.data;
-    data.actor = actorData;
-    data.data = actorData.data;
-    return data;
+  getData(options) {
+    const superData = super.getData( options );
+    const sheetData = superData.data;
+    sheetData.owner = superData.owner;
+    sheetData.editable = superData.editable;
+    sheetData.isGM = game.user.isGM;
+
+    return sheetData;
   }
 
     /* -------------------------------------------- */
 
   /** @override */
   async _updateObject(event, formData) {
-    let image_path = `systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${formData['data.type']}-${formData['data.value']}.svg`;
+    let image_path = `systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${formData['system.type']}-${formData['system.value']}.svg`;
     formData['img'] = image_path;
-    formData['token.img'] = image_path;
+    formData['prototypeToken.texture.src'] = image_path;
     let data = [];
     let update = {
       img: image_path,

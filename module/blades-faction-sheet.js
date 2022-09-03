@@ -20,13 +20,13 @@ export class BladesFactionSheet extends BladesSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
-    data.editable = this.options.editable;
-    const actorData = data.data;
-    data.actor = actorData;
-    data.data = actorData.data;
-    return data;
+  getData(options) {
+    const superData = super.getData( options );
+    const sheetData = superData.data;
+    sheetData.owner = superData.owner;
+    sheetData.editable = superData.editable;
+    sheetData.isGM = game.user.isGM;
+    return sheetData;
   }
 
   /* -------------------------------------------- */
@@ -44,13 +44,13 @@ export class BladesFactionSheet extends BladesSheet {
       const item = this.actor.items.get(element.data("itemId"));
       item.sheet.render(true);
     });
-	
+
     // Delete Inventory Item
     html.find('.item-delete').click( async ev => {
       const element = $(ev.currentTarget).parents(".item");
       await this.actor.deleteEmbeddedDocuments("Item", [element.data("itemId")]);
       element.slideUp(200, () => this.render(false));
     });
-	
+
 	}
 }

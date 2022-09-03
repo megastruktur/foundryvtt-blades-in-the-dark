@@ -1,5 +1,5 @@
-<div id="crew-{{actor._id}}-turf-list" class="turf-list {{#if can_edit}}section-editable{{else}}section-non-editable{{/if}}">
-
+<div id="crew-{{_id}}-turf-list" class="turf-list {{#if can_edit}}section-editable{{else}}section-non-editable{{/if}}">
+{{ log this }}
   <div class="turf-row">
     {{#each turfs_data as |turf id|}}
     <div class="turf-block {{#if turf.value}}turf-selected{{/if}}">
@@ -19,22 +19,22 @@
         {{#if ../can_edit}}
 
           {{#noteq id "8"}}
-          <input class="name-box" type="checkbox" name="data.turfs.{{id}}.value" {{checked turf.value}}>
+          <input class="name-box" type="checkbox" data-dType="Boolean" name="system.turfs.{{id}}.value" {{checked turf.value}}>
           {{/noteq}}
 
           <div>
             {{#multiboxes turf.connects}}
-            <input type="checkbox" name="data.turfs.{{id}}.connects.left" {{checked turf.connects.left}}>
-            <input type="checkbox" name="data.turfs.{{id}}.connects.top" {{checked turf.connects.top}}>
-            <input type="checkbox" name="data.turfs.{{id}}.connects.right" {{checked turf.connects.right}}>
-            <input type="checkbox" name="data.turfs.{{id}}.connects.bottom" {{checked turf.connects.bottom}}>
+            <input type="checkbox" data-dType="Boolean" name="system.turfs.{{id}}.connects.left" {{checked turf.connects.left}}>
+            <input type="checkbox" data-dType="Boolean" name="system.turfs.{{id}}.connects.top" {{checked turf.connects.top}}>
+            <input type="checkbox" data-dType="Boolean" name="system.turfs.{{id}}.connects.right" {{checked turf.connects.right}}>
+            <input type="checkbox" data-dType="Boolean" name="system.turfs.{{id}}.connects.bottom" {{checked turf.connects.bottom}}>
             {{/multiboxes}}
           </div>
 
-          <input class="turf-name" type="text" name="data.turfs.{{id}}.name" value="{{#if ../editable}}{{turf.name}}{{else}}{{localize turf.name}}{{/if}}">
+          <input class="turf-name" type="text" name="system.turfs.{{id}}.name" value="{{#if ../editable}}{{turf.name}}{{else}}{{localize turf.name}}{{/if}}">
           {{#noteq turf.name "BITD.Turf"}}
           {{#noteq turf.name "BITD.Lair"}}
-          <textarea class="turf-description" name="data.turfs.{{id}}.description">{{localize turf.description}}</textarea>
+          <textarea class="turf-description" name="system.turfs.{{id}}.description">{{localize turf.description}}</textarea>
           {{/noteq}}
           {{/noteq}}
         {{else}}

@@ -22,29 +22,20 @@ export class BladesActorSheet extends BladesSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    var data = super.getData();
-    data.editable = this.options.editable;
-    data.isGM = game.user.isGM;
-    const actorData = data.data;
-    data.actor = actorData;
-    data.data = actorData.data;
+  async getData(options) {
+    const superData = super.getData( options );
+    const sheetData = superData.data;
+    sheetData.owner = superData.owner;
+    sheetData.editable = superData.editable;
+    sheetData.isGM = game.user.isGM;
 
     // Prepare active effects
-    data.effects = BladesActiveEffect.prepareActiveEffectCategories(this.actor.effects);
+    sheetData.effects = BladesActiveEffect.prepareActiveEffectCategories(this.actor.effects);
 
     // Calculate Load
     let loadout = 0;
-    data.items.forEach(i => {loadout += (i.type === "item") ? parseInt(i.data.load) : 0});
-    data.data.loadout = loadout;
-    
-    // Encumbrance Levels
-    let load_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal","BITD.Heavy","BITD.Encumbered",
-			"BITD.Encumbered","BITD.Encumbered","BITD.OverMax"];
-    let mule_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal",
-			"BITD.Heavy","BITD.Encumbered","BITD.OverMax"];
-    let mule_present=0;
- 
+    sheetData.items.forEach(i => {loadout += (i.type === "item") ? parseInt(i.system.load) : 0});
+
     //Sanity Check
     if (loadout < 0) {
       loadout = 0;
@@ -53,24 +44,36 @@ export class BladesActorSheet extends BladesSheet {
       loadout = 10;
     }
 
+    sheetData.system.loadout = loadout;
+
+    // Encumbrance Levels
+    let load_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal","BITD.Heavy","BITD.Encumbered",
+			"BITD.Encumbered","BITD.Encumbered","BITD.OverMax"];
+    let mule_level=["BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Light","BITD.Normal","BITD.Normal",
+			"BITD.Heavy","BITD.Encumbered","BITD.OverMax"];
+    let mule_present=0;
+
+
     //look for Mule ability
     // @todo - fix translation.
-    data.items.forEach(i => {
-      if (i.type == "ability" && i.name == "(C) Mule") {
+    sheetData.items.forEach(i => {
+      if (i.type === "ability" && i.name === "(C) Mule") {
         mule_present = 1;
       }
     });
 
     //set encumbrance level
     if (mule_present) {
-      data.data.load_level=mule_level[loadout];
+      sheetData.system.load_level=mule_level[loadout];
     } else {
-      data.data.load_level=load_level[loadout];   
+      sheetData.system.load_level=load_level[loadout];
     }
-    
-    data.load_levels = {"BITD.Light":"BITD.Light", "BITD.Normal":"BITD.Normal", "BITD.Heavy":"BITD.Heavy"};
 
-    return data;
+    sheetData.system.load_levels = {"BITD.Light":"BITD.Light", "BITD.Normal":"BITD.Normal", "BITD.Heavy":"BITD.Heavy"};
+
+    sheetData.system.description = await TextEditor.enrichHTML(sheetData.system.description, {secrets: sheetData.owner, async: true});
+
+    return sheetData;
   }
 
   /* -------------------------------------------- */
