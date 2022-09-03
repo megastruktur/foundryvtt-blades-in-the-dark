@@ -20,22 +20,22 @@ export class BladesCrewSheet extends BladesSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
-    data.editable = this.options.editable;
-    const actorData = data.data;
-    data.actor = actorData;
-    data.data = actorData.data;
+  getData(options) {
+    const superData = super.getData( options );
+    const sheetData = superData.data;
+    sheetData.owner = superData.owner;
+    sheetData.editable = superData.editable;
+    sheetData.isGM = game.user.isGM;
 
     // Calculate Turfs amount.
     // We already have Lair, so set to -1.
     let turfs_amount = 0
 
-    data.items.forEach(item => {
+    sheetData.items.forEach(item => {
 
       if (item.type === "crew_type") {
         // Object.entries(item.data.turfs).forEach(turf => {turfs_amount += (turf.value === true) ? 1 : 0});
-        Object.entries(item.data.turfs).forEach(([key, turf]) => {
+        Object.entries(item.system.turfs).forEach(([key, turf]) => {
           if (turf.name === 'BITD.Turf') {
             turfs_amount += (turf.value === true) ? 1 : 0;
           }
@@ -43,9 +43,9 @@ export class BladesCrewSheet extends BladesSheet {
       }
 
     });
-    data.data.turfs_amount = turfs_amount;
+    sheetData.system.turfs_amount = turfs_amount;
 
-    return data;
+    return sheetData;
   }
 
   /* -------------------------------------------- */
@@ -79,11 +79,11 @@ export class BladesCrewSheet extends BladesSheet {
     // Toggle Turf
     html.find('.turf-select').click( async ev => {
       const element = $(ev.currentTarget).parents(".item");
-      
+
       let item_id = element.data("itemId")
       let turf_id = $(ev.currentTarget).data("turfId");
       let turf_current_status = $(ev.currentTarget).data("turfStatus");
-      let turf_checkbox_name = 'data.turfs.' + turf_id + '.value';
+      let turf_checkbox_name = 'system.turfs.' + turf_id + '.value';
 
       await this.actor.updateEmbeddedDocuments('Item', [{
         _id: item_id,
@@ -94,13 +94,13 @@ export class BladesCrewSheet extends BladesSheet {
     // Cohort Block Harm handler
     html.find('.cohort-block-harm input[type="radio"]').change( async ev => {
       const element = $(ev.currentTarget).parents(".item");
-      
+
       let item_id = element.data("itemId")
       let harm_id = $(ev.currentTarget).val();
 
       await this.actor.updateEmbeddedDocuments('Item', [{
         _id: item_id,
-        "data.harm": [harm_id]}]);
+        "system.harm": [harm_id]}]);
       this.render(false);
     });
   }
@@ -115,7 +115,7 @@ export class BladesCrewSheet extends BladesSheet {
     // Update the Item
     await super._updateObject(event, formData);
 
-    if (event.target && event.target.name === "data.tier") {
+    if (event.target && event.target.name === "system.tier") {
       this.render(true);
     }
   }

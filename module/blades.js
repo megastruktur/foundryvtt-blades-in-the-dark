@@ -31,7 +31,7 @@ Hooks.once("init", async function() {
   game.blades = {
     dice: bladesRoll
   };
-  game.system.bobclocks = {
+  game.system.bladesClocks = {
     sizes: [ 4, 6, 8 ]
   };
 
@@ -78,9 +78,15 @@ Hooks.once("init", async function() {
     if (typeof selected !== 'undefined') {
       selected.forEach(selected_value => {
         if (selected_value !== false) {
-          const escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
-          const rgx = new RegExp(' value=\"' + escapedValue + '\"');
-          html = html.replace(rgx, "$& checked=\"checked\"");
+          let escapedValue = RegExp.escape(Handlebars.escapeExpression(selected_value));
+          let rgx = new RegExp(' value=\"' + escapedValue + '\"');
+          let oldHtml = html;
+          html = html.replace(rgx, "$& checked");
+          while( ( oldHtml === html ) && ( escapedValue >= 0 ) ){
+            escapedValue--;
+            rgx = new RegExp(' value=\"' + escapedValue + '\"');
+            html = html.replace(rgx, "$& checked");
+          }
         }
       });
     }
@@ -102,7 +108,7 @@ Hooks.once("init", async function() {
     if (count > 4) count = 4;
 
     const rgx = new RegExp(' value=\"' + count + '\"');
-    return html.replace(rgx, "$& checked=\"checked\"");
+    return html.replace(rgx, "$& checked");
 
   });
 
@@ -123,7 +129,7 @@ Hooks.once("init", async function() {
 
     for (let i = 13 - turfs_amount_int; i <= 12; i++) {
       const rgx = new RegExp(' value=\"' + i + '\"');
-      html = html.replace(rgx, "$& disabled=\"disabled\"");
+      html = html.replace(rgx, "$& disabled");
     }
     return html;
   });
@@ -133,18 +139,18 @@ Hooks.once("init", async function() {
     let html = options.fn(this);
     for (let i = 1; i <= max_coins; i++) {
 
-      html += "<input type=\"radio\" id=\"crew-coins-vault-" + i + "\" name=\"data.vault.value\" value=\"" + i + "\"><label for=\"crew-coins-vault-" + i + "\"></label>";
+      html += "<input type=\"radio\" id=\"crew-coins-vault-" + i + "\" data-dType=\"Number\" name=\"system.vault.value\" value=\"" + i + "\"><label for=\"crew-coins-vault-" + i + "\"></label>";
     }
 
     return html;
   });
 
-  Handlebars.registerHelper('crew_experience', (actor, options) => {
+  Handlebars.registerHelper('crew_experience', (_id, options) => {
 
     let html = options.fn(this);
     for (let i = 1; i <= 10; i++) {
 
-      html += `<input type="radio" id="crew-${actor._id}-experience-${i}" name="data.experience" value="${i}" dtype="Radio"><label for="crew-${actor._id}-experience-${i}"></label>`;
+      html += `<input type="radio" id="crew-${_id}-experience-${i}" data-dType="Number" name="system.experience" value="${i}" dtype="Radio"><label for="crew-${_id}-experience-${i}"></label>`;
     }
 
     return html;
@@ -252,13 +258,13 @@ Hooks.once("init", async function() {
     html += `<label class="clock-zero-label" for="clock-0-${uniq_id}}"><i class="fab fa-creative-commons-zero nullifier"></i></label>`;
     html += `<div id="blades-clock-${uniq_id}" class="blades-clock clock-${type} clock-${type}-${current_value}" style="background-image:url('systems/blades-in-the-dark/styles/assets/progressclocks-svg/Progress Clock ${type}-${current_value}.svg');">`;
 
-    let zero_checked = (parseInt(current_value) === 0) ? 'checked="checked"' : '';
-    html += `<input type="radio" value="0" id="clock-0-${uniq_id}}" name="${parameter_name}" ${zero_checked}>`;
+    let zero_checked = (parseInt(current_value) === 0) ? 'checked' : '';
+    html += `<input type="radio" value="0" id="clock-0-${uniq_id}}" data-dType="String" name="${parameter_name}" ${zero_checked}>`;
 
     for (let i = 1; i <= parseInt(type); i++) {
-      let checked = (parseInt(current_value) === i) ? 'checked="checked"' : '';
+      let checked = (parseInt(current_value) === i) ? 'checked' : '';
       html += `
-        <input type="radio" value="${i}" id="clock-${i}-${uniq_id}" name="${parameter_name}" ${checked}>
+        <input type="radio" value="${i}" id="clock-${i}-${uniq_id}" data-dType="String" name="${parameter_name}" ${checked}>
         <label for="clock-${i}-${uniq_id}"></label>
       `;
     }
@@ -296,9 +302,6 @@ Hooks.on("renderSceneControls", async (app, html) => {
   dice_roller.click( async function() {
     await simpleRollPopup();
   });
-  if ( !foundry.utils.isNewerVersion("9", game.version ?? game.data.version) ) {
-    html.children().first().append( dice_roller );
-  } else {
-    html.append( dice_roller );
-  }
+  html.children().first().append( dice_roller );
+
 });

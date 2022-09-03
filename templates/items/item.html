@@ -1,27 +1,27 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <img src="{{img}}" data-edit="img" title="{{name}}"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
+            <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
         </div>
     </header>
-    
+
     {{!-- Sheet Body --}}
     <section class="sheet-body flex-vertical">
-      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      {{editor system.description target="system.description" button=true editable=editable}}
       <label class="label-stripe">{{localize "BITD.Loadout"}}</label>
-      <input id="item-load" type="text" name="data.load" value="{{data.load}}">
+      <input id="item-load" type="text" name="system.load" value="{{system.load}}">
       <label class="label-stripe">{{localize "BITD.Class"}}</label>
-      <input id="item-class" type="text" name="data.class" value="{{data.class}}">
+      <input id="item-class" type="text" name="system.class" value="{{system.class}}">
       <label class="label-stripe">{{localize "BITD.Uses"}}</label>
-      <input id="item-uses" type="text" name="data.uses" value="{{data.uses}}">
+      <input id="item-uses" type="text" name="system.uses" value="{{system.uses}}">
       <label class="label-stripe">{{localize "BITD.NumberAvailable"}}</label>
-      <input id="item-num_available" type="text" name="data.num_available" value="{{data.num_available}}">
+      <input id="item-num_available" type="text" name="system.num_available" value="{{system.num_available}}">
       <label class="label-stripe">{{localize "BITD.AdditionalInfo"}}</label>
-      <textarea id="item-additional_info" type="text" name="data.additional_info" value="">{{data.additional_info}}</textarea>
+      <textarea id="item-additional_info" type="text" name="system.additional_info" value="">{{system.additional_info}}</textarea>
       {{#if isGM}}
 <!--         <div class="label-stripe">{{localize "BITD.Logic"}}</div> -->
-<!--         <textarea name="data.logic">{{{data.logic}}}</textarea> -->
+<!--         <textarea name="system.logic">{{{system.logic}}}</textarea> -->
         <div class="label-stripe">{{localize "BITD.Effects"}}</div>
         <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
       {{/if}}

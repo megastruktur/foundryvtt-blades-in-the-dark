@@ -29,22 +29,21 @@ export class BladesItem extends Item {
 
     super.prepareData();
 
-    const item_data = this.data;
-    const data = item_data.data;
+    const item_data = this.system;
 
-    if (item_data.type === "cohort") {
+    if (this.type === "cohort") {
 
-      this._prepareCohort(data);
+      this._prepareCohort(item_data);
 
     }
 
-    if (item_data.type === "faction") {
-      if( !data.goal_1_clock_value ){ data.goal_1_clock_value = 0 }
-      if( data.goal_1_clock_max === 0 ){ data.goal_1_clock_max = 4 }
-      if( !data.goal_2_clock_value ){ data.goal_2_clock_value = 0 }
-      if( data.goal_2_clock_max === 0 ){ data.goal_2_clock_max = 4 }
-      data.size_list_1 = BladesHelpers.createListOfClockSizes( game.system.bobclocks.sizes, data.goal_1_clock_max, parseInt( data.goal_1_clock_max ) );
-      data.size_list_2 = BladesHelpers.createListOfClockSizes( game.system.bobclocks.sizes, data.goal_2_clock_max, parseInt( data.goal_2_clock_max ) );
+    if (this.type === "faction") {
+      if( !item_data.goal_1_clock_value ){ this.system.goal_1_clock_value = 0 }
+      if( item_data.goal_1_clock_max === 0 ){ this.system.goal_1_clock_max = 4 }
+      if( !item_data.goal_2_clock_value ){ this.system.goal_2_clock_value = 0 }
+      if( item_data.goal_2_clock_max === 0 ){ this.system.goal_2_clock_max = 4 }
+      this.system.size_list_1 = BladesHelpers.createListOfClockSizes( game.system.bladesClocks.sizes, this.system.goal_1_clock_max, parseInt( this.system.goal_1_clock_max ) );
+      this.system.size_list_2 = BladesHelpers.createListOfClockSizes( game.system.bladesClocks.sizes, this.system.goal_2_clock_max, parseInt( this.system.goal_2_clock_max ) );
     }
 
   }
@@ -54,28 +53,26 @@ export class BladesItem extends Item {
    *
    * @param {object} data
    */
-  _prepareCohort(data) {
+  _prepareCohort(item_data) {
 
     let quality = 0;
     let scale = 0;
 
     // Adds Scale and Quality
-    if (this.actor.data) {
-      switch (data.cohort) {
+    if (this.actor?.system) {
+      switch (item_data.cohort) {
         case "Gang":
-          scale = parseInt(this.actor.data.data.tier);
-          quality = parseInt(this.actor.data.data.tier);
+          scale = parseInt(this.actor.system.tier);
+          quality = parseInt(this.actor.system.tier);
           break;
         case "Expert":
           scale = 0;
-          quality = parseInt(this.actor.data.data.tier) + 1;
+          quality = parseInt(this.actor.system.tier) + 1;
           break;
       }
     }
 
-    data.scale = scale;
-    data.quality = quality;
-
-    this.data.data = data;
+    this.system.scale = scale;
+    this.system.quality = quality;
 }
 }

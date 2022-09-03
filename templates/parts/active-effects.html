@@ -16,14 +16,14 @@
     {{#each section.effects as |effect|}}
         <tr class="item effect flex-horizontal" data-effect-id="{{effect.id}}">
             <td width="40%" class="effect-name flex">
-                <img class="item-image" src="{{effect.data.icon}}" width="24" height="24"/>
-                <h4>{{effect.data.label}}</h4>
+                <img class="item-image" src="{{effect.icon}}" width="24" height="24"/>
+                <h4>{{effect.label}}</h4>
             </td>
             <td width="20%" class="effect-source center">{{effect.sourceName}}</td>
             <td width="20%" class="effect-duration center">{{effect.duration.label}}</td>
             <td width="20%"><div class="item-controls effect-controls flex">
                 <a class="effect-control" data-action="toggle" title="{{localize 'BITD.EffectToggle'}}">
-                    <i class="fas {{#if effect.data.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
+                    <i class="fas {{#if effect.disabled}}fa-check{{else}}fa-times{{/if}}"></i>
                 </a>
                 <a class="effect-control" data-action="edit" title="{{localize 'BITD.EffectEdit'}}">
                     <i class="fas fa-edit"></i>

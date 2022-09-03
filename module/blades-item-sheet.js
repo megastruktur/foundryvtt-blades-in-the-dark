@@ -24,9 +24,9 @@ export class BladesItemSheet extends ItemSheet {
   get template() {
     const path = "systems/blades-in-the-dark/templates/items";
     let simple_item_types = ["background", "heritage", "vice", "crew_reputation"];
-    let template_name = `${this.item.data.type}`;
+    let template_name = `${this.item.type}`;
 
-    if (simple_item_types.indexOf(this.item.data.type) >= 0) {
+    if (simple_item_types.indexOf(this.item.type) >= 0) {
       template_name = "simple";
     }
 
@@ -51,17 +51,19 @@ export class BladesItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
-    data.isGM = game.user.isGM;
-    data.editable = this.options.editable;
-    const itemData = data.data;
-    data.actor = itemData;
-    data.data = itemData.data;
+  async getData(options) {
+    const superData = super.getData( options );
+    const sheetData = superData.data;
+
+    sheetData.isGM = game.user.isGM;
+    sheetData.owner = superData.owner;
+    sheetData.editable = superData.editable;
 
     // Prepare Active Effects
-    data.effects = BladesActiveEffect.prepareActiveEffectCategories(this.item.effects);
+    sheetData.effects = prepareActiveEffectCategories(this.document.effects);
 
-    return data;
+    sheetData.system.description = await TextEditor.enrichHTML(sheetData.system.description, {secrets: sheetData.owner, async: true});
+
+    return sheetData;
   }
 }

@@ -18,7 +18,7 @@ export class BladesActiveEffect extends ActiveEffect {
     if ( this.isSuppressed ) return null;
     //this allows for math and actor data references in the change values. Probably not necessary for
     // blades, but it was simple, and you never know what users will do. Probably ruin everything.
-    change.value = Roll.replaceFormulaData(change.value, actor.data);
+    change.value = Roll.replaceFormulaData(change.value, actor.system);
     try {
       change.value = Roll.safeEval(change.value).toString();
     } catch (e) {
@@ -70,7 +70,7 @@ export class BladesActiveEffect extends ActiveEffect {
         console.log("delete effect");
         return effect.delete();
       case "toggle":
-        return effect.update({disabled: !effect.data.disabled});
+        return effect.update({disabled: !effect.disabled});
     }
   }
 
@@ -111,7 +111,7 @@ export class BladesActiveEffect extends ActiveEffect {
     for ( let e of effects ) {
       e._getSourceName(); // Trigger a lookup for the source name
       if ( e.isSuppressed ) categories.suppressed.effects.push(e);
-      else if ( e.data.disabled ) categories.inactive.effects.push(e);
+      else if ( e.disabled ) categories.inactive.effects.push(e);
       else if ( e.isTemporary ) categories.temporary.effects.push(e);
       else categories.passive.effects.push(e);
     }

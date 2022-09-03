@@ -1,61 +1,61 @@
 <form class="{{cssClass}}" autocomplete="off">
   <header class="sheet-header">
-      <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <img src="{{img}}" data-edit="img" title="{{name}}"/>
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Faction'}}"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="{{localize 'BITD.Faction'}}"/></h1>
       </div>
   </header>
 
 
   <section class="flex-vertical">
 	<label class="label-stripe">{{localize "BITD.Description"}}</label>
-    <textarea rows="2" name="data.description">{{data.description}}</textarea>
+    <textarea rows="2" name="system.description">{{system.description}}</textarea>
 	<label class="label-stripe">{{localize "BITD.FactionType"}}</label>
-    {{data.type}}<br><br>
+    {{system.type}}<br><br>
 	<label class="label-stripe">{{localize "BITD.Tier"}}</label>
-    <textarea rows="1" name="data.tier">{{data.tier}}</textarea>
+    <textarea rows="1" name="system.tier">{{system.tier}}</textarea>
 	<label class="label-stripe">{{localize "BITD.Notes"}}</label>
-    <textarea rows="2" name="data.notes">{{data.notes}}</textarea>
-    
+    <textarea rows="2" name="system.notes">{{system.notes}}</textarea>
+
     {{#if isGM }}
         <label class="label-stripe">{{localize "BITD.Goal"}}</label>
 
         <div class="flex-vertical clock-block" id="faction-goal-clock">
-          <div class="clocks clocks-{{data.goal_1_clock_max}} small" id="faction-clock-1">
-            {{{blades-clock "data.goal_1_clock_value" data.goal_1_clock_max data.goal_1_clock_value (concat item.id "-1")}}}
+          <div class="clocks clocks-{{system.goal_1_clock_max}} small" id="faction-clock-1">
+            {{{blades-clock "system.goal_1_clock_value" system.goal_1_clock_max system.goal_1_clock_value (concat id "-1")}}}
           </div>
           <div id="clock-max-1">
-            <select id="max-1" name="data.goal_1_clock_max">
-              {{{data.size_list_1}}}
+            <select id="max-1" name="system.goal_1_clock_max">
+              {{{system.size_list_1}}}
             </select>
           </div>
-          <textarea rows="1" name="data.goal_1">{{data.goal_1}}</textarea>
+          <textarea rows="1" name="system.goal_1">{{system.goal_1}}</textarea>
 
-          <div class="clocks clocks-{{data.goal_1_clock_max}} small" id="faction-clock-2">
-            {{{blades-clock "data.goal_2_clock_value" data.goal_2_clock_max data.goal_2_clock_value (concat item.id "-2")}}}
+          <div class="clocks clocks-{{system.goal_1_clock_max}} small" id="faction-clock-2">
+            {{{blades-clock "system.goal_2_clock_value" system.goal_2_clock_max system.goal_2_clock_value (concat id "-2")}}}
           </div>
           <div id="clock-max-2">
-            <select id="max-2" name="data.goal_2_clock_max">
-              {{{data.size_list_2}}}
+            <select id="max-2" name="system.goal_2_clock_max">
+              {{{system.size_list_2}}}
             </select>
           </div>
-          <textarea rows="1" name="data.goal_2">{{data.goal_2}}</textarea>
+          <textarea rows="1" name="system.goal_2">{{system.goal_2}}</textarea>
 
         </div>
         <label class="label-stripe">{{localize "BITD.NotableNPCs"}}</label>
-        <textarea rows="10" name="data.notables">{{data.notables}}</textarea>
+        <textarea rows="10" name="system.notables">{{system.notables}}</textarea>
         <label class="label-stripe">{{localize "BITD.Turf"}}</label>
-        <textarea rows="2" name="data.turf">{{data.turf}}</textarea>
+        <textarea rows="2" name="system.turf">{{system.turf}}</textarea>
         <label class="label-stripe">{{localize "BITD.Assets"}}</label>
-        <textarea rows="1" name="data.assets">{{data.assets}}</textarea>
+        <textarea rows="1" name="system.assets">{{system.assets}}</textarea>
         <label class="label-stripe">{{localize "BITD.Quirks"}}</label>
-        <textarea rows="1" name="data.quirks">{{data.quirks}}</textarea>
+        <textarea rows="1" name="system.quirks">{{system.quirks}}</textarea>
         <label class="label-stripe">{{localize "BITD.Allies"}}</label>
-        <textarea rows="1" name="data.allies">{{data.allies}}</textarea>
+        <textarea rows="1" name="system.allies">{{system.allies}}</textarea>
         <label class="label-stripe">{{localize "BITD.Enemies"}}</label>
-        <textarea rows="1" name="data.enemies">{{data.enemies}}</textarea>
+        <textarea rows="1" name="system.enemies">{{system.enemies}}</textarea>
         <label class="label-stripe">{{localize "BITD.Situation"}}</label>
-        <textarea rows="10" name="data.situation">{{data.situation}}</textarea>
+        <textarea rows="10" name="system.situation">{{system.situation}}</textarea>
     {{/if}}
   </section>
 
