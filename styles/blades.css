@@ -1624,6 +1624,8 @@
   border-radius: 6px;
   position: absolute;
   z-index: 9999;
+  font-family: var(--font-primary);
+  font-weight: normal;
 }
 .items-to-add .tooltip:hover .tooltiptext {
   visibility: visible;
