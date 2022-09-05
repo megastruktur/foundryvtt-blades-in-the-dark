@@ -1,12 +1,19 @@
 {
-  "name": "blades-in-the-dark",
+  "id": "blades-in-the-dark",
   "title": "Blades in the Dark",
   "description": "Blades in the dark game system.",
-  "version": "3.19",
-  "minimumCoreVersion": "0.8.5",
-  "compatibleCoreVersion": "9",
-  "templateVersion": 1,
-  "author": "megastruktur",
+  "version": "4.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.284"
+  },
+  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
+  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/4.0/system.json",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/4.0.zip",
+  "authors": [
+    { "name": "megastruktur" },
+    { "name": "drewg13" }
+  ],
   "esmodules": [
     "module/blades.js"
   ],
@@ -45,114 +52,114 @@
       "path": "lang/pt.json"
     }
   ],
-  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/3.19.zip",
   "packs": [
     {
       "name": "class",
       "label": "Classes",
       "system": "blades-in-the-dark",
       "path": "./packs/classes.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "heritage",
       "label": "Heritages",
       "system": "blades-in-the-dark",
       "path": "./packs/heritages.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "vice",
       "label": "Vices",
       "system": "blades-in-the-dark",
       "path": "./packs/vices.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "background",
       "label": "Backgrounds",
       "system": "blades-in-the-dark",
       "path": "./packs/backgrounds.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "item",
       "label": "Items",
       "system": "blades-in-the-dark",
       "path": "./packs/items.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "ability",
       "label": "Abilities",
       "system": "blades-in-the-dark",
       "path": "./packs/abilities.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "crew_reputation",
       "label": "Crew Reputation",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_reputation.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "crew_type",
       "label": "Crew Types",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_types.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "crew_upgrade",
       "label": "Crew Upgrades",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_upgrades.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "crew_ability",
       "label": "Crew Abilities",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_abilities.db",
-      "entity": "Item"
+      "type": "Item"
     },
 	{
       "name": "faction",
       "label": "Factions",
       "system": "blades-in-the-dark",
       "path": "./packs/factions.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "npc",
       "label": "NPCs",
       "system": "blades-in-the-dark",
       "path": "./packs/npcs.db",
-      "entity": "Actor"
+      "type": "Actor"
     },
 	{
       "name": "entanglements",
       "label": "Entanglements",
       "system": "blades-in-the-dark",
       "path": "./packs/entanglements.db",
-      "entity": "RollTable"
+      "type": "RollTable"
     },
 	{
       "name": "entanglements-journals",
       "label": "Entanglements Journals",
       "system": "blades-in-the-dark",
       "path": "./packs/entanglements-journals.db",
-      "entity": "JournalEntry"
+      "type": "JournalEntry"
     },
 	{
       "name": "entanglements-macro",
       "label": "Entanglements Macro",
       "system": "blades-in-the-dark",
       "path": "./packs/entanglements-macro.db",
-      "entity": "Macro"
+      "type": "Macro"
     }
-  ]
+  ],
+  "name": "",
+  "minimumCoreVersion": "",
+  "author": ""
 }

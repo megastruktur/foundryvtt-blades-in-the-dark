@@ -1,9 +1,9 @@
 <form class="{{cssClass}}" autocomplete="off">
 
   <header class="sheet-header">
-      <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <img src="{{img}}" data-edit="img" title="{{name}}"/>
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
       </div>
   </header>
 
@@ -19,29 +19,29 @@
     <div class="label-stripe">{{localize "BITD.CohortType"}}</div>
 
     <div id="cohort-type-list">
-      {{#each data.cohort_list as |cohort key|}}
-      {{#multiboxes ../data.cohort}}
+      {{#each system.cohort_list as |cohort key|}}
+      {{#multiboxes ../system.cohort}}
       <label for="{{key}}-cohort">{{localize cohort.label}}</label>
-      <input id="{{key}}-cohort" type="radio" name="data.cohort" value="{{key}}">
+      <input id="{{key}}-cohort" type="radio" name="system.cohort" value="{{key}}">
       {{/multiboxes}}
       {{/each}}
     </div>
   </section>
 
   <section id="gang-expert-type-selector" class="flex-vertical">
-    {{#if (eq data.cohort "Gang")}}
+    {{#if (eq system.cohort "Gang")}}
 
       <div class="label-stripe">{{localize "BITD.GangType"}}</div>
       <div id="gang-type-boxes" class="flex-horizontal">
 
-        <select name="data.gang_type" multiple>
-          {{selectOptionsWithLabel data.gang_type_list selected=data.gang_type localize=true}}
+        <select name="system.gang_type" multiple>
+          {{selectOptionsWithLabel system.gang_type_list selected=system.gang_type localize=true}}
         </select>
 
       </div>
       <div id="selected-gang-description" class="description">
-        {{#each data.gang_type as |gang_type key|}}
-          {{#with (lookup ../data.gang_type_list gang_type)}}
+        {{#each system.gang_type as |gang_type key|}}
+          {{#with (lookup ../system.gang_type_list gang_type)}}
             {{localize description}}
           {{/with}}
         {{/each}}
@@ -49,9 +49,9 @@
 
     {{/if}}
 
-    {{#if (eq data.cohort "Expert")}}
+    {{#if (eq system.cohort "Expert")}}
       <div class="label-stripe">{{localize "BITD.ExpertType"}}</div>
-      <input type="text" name="data.expert_type" value="{{data.expert_type}}">
+      <input type="text" name="system.expert_type" value="{{system.expert_type}}">
     {{/if}}
   </section>
 
@@ -60,8 +60,8 @@
   <section id="quality-scale" class="flex-vertical">
     <div class="label-stripe">{{localize "BITD.ScaleAndQuality"}}</div>
     <div>
-      {{localize "BITD.Quality"}}: {{data.quality}}
-      {{localize "BITD.Scale"}}: {{data.scale}}
+      {{localize "BITD.Quality"}}: {{system.quality}}
+      {{localize "BITD.Scale"}}: {{system.scale}}
     </div>
   </section>
   {{/if}}
@@ -75,22 +75,22 @@
 
       <div class="edgeflaw-container flex-vertical">
         <div class="label-stripe">{{localize "BITD.Edges"}}</div>
-        {{#each data.edges_list as |edge key|}}
+        {{#each system.edges_list as |edge key|}}
           <div class="edgeflaw flex-horizontal">
-            <input id="cohort-{{item._id}}-edge-{{key}}" type="checkbox" name="data.edges_list.{{key}}.selected"
+            <input id="cohort-{{_id}}-edge-{{key}}" type="checkbox" data-dType="Boolean" name="system.edges_list.{{key}}.selected"
                    {{checked edge.selected}}>
-            <label for="cohort-{{item._id}}-edge-{{key}}">{{localize edge.label}}</label>
+            <label for="cohort-{{_id}}-edge-{{key}}">{{localize edge.label}}</label>
           </div>
         {{/each}}
       </div>
 
       <div class="edgeflaw-container flex-vertical">
         <div class="label-stripe">{{localize "BITD.Flaws"}}</div>
-        {{#each data.flaws_list as |flaw key|}}
+        {{#each system.flaws_list as |flaw key|}}
           <div class="edgeflaw flex-horizontal">
-            <input id="cohort-{{item._id}}-flaw-{{key}}" type="checkbox" name="data.flaws_list.{{key}}.selected"
+            <input id="cohort-{{_id}}-flaw-{{key}}" type="checkbox" data-dType="Boolean" name="system.flaws_list.{{key}}.selected"
                    {{checked flaw.selected}}>
-            <label for="cohort-{{item._id}}-flaw-{{key}}">{{localize flaw.label}}</label>
+            <label for="cohort-{{_id}}-flaw-{{key}}">{{localize flaw.label}}</label>
           </div>
         {{/each}}
       </div>
@@ -103,9 +103,9 @@
   <section id="cohort-harm" class="flex-vertical">
     <div class="label-stripe">{{localize "BITD.Harm"}}</div>
     <div id="harm-list" class="flex-horizontal">
-      {{#multiboxes data.harm}}
-      {{#each data.harm_list as |harm harm_key|}}
-        <input id="{{harm_key}}-harm" type="radio" name="data.harm" value="{{harm_key}}">
+      {{#multiboxes system.harm}}
+      {{#each system.harm_list as |harm harm_key|}}
+        <input id="{{harm_key}}-harm" type="radio" name="system.harm" value="{{harm_key}}">
         <label for="{{harm_key}}-harm">{{localize harm.label}}</label>
       {{/each}}
       {{/multiboxes}}
@@ -113,12 +113,12 @@
   </section>
 
   <section class="flex-horizontal" style="justify-content: unset;">
-    <input id="cohort-armor" type="checkbox" name="data.armor" value="{{data.armor}}" {{checked data.armor}}>
+    <input id="cohort-armor" type="checkbox" data-dType="Boolean" name="system.armor" value="{{system.armor}}" {{checked system.armor}}>
     <label for="cohort-armor">{{localize "BITD.Armor"}}</label>
   </section>
 
   <section class="sheet-body flex-vertical">
     <div class="label-stripe">{{localize "BITD.Description"}}</div>
-    <textarea name="data.description">{{data.description}}</textarea>
+    <textarea name="system.description">{{system.description}}</textarea>
   </section>
 </form>

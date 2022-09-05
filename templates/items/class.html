@@ -1,24 +1,24 @@
 <form class="{{cssClass}}" autocomplete="off">
   <header class="sheet-header">
-      <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <img src="{{img}}" data-edit="img" title="{{name}}"/>
       <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
+          <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
       </div>
   </header>
-  
+
   <section class="flex-vertical">
     <label class="label-stripe">{{localize "BITD.Description"}}</label>
-    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+    {{editor system.description target="system.description" button=true editable=editable}}
     <label class="label-stripe">{{localize "BITD.ExpClues"}}</label>
     <div><i>- {{localize "BITD.ClassExpClue1"}}</i></div>
     <div>{{localize "BITD.ClassExpClueDescription"}}</div>
     <div><i>- {{localize "BITD.ClassExpClue2"}}</i></div>
     <div><i>- {{localize "BITD.ClassExpClue3"}}</i></div>
-    {{editor content=data.experience_clues target="data.experience_clues" button=true owner=owner editable=editable}}
+    {{editor system.experience_clues target="system.experience_clues" button=true editable=editable}}
 
     {{#if isGM}}
       <div class="label-stripe">{{localize "BITD.Logic"}}</div>
-      <textarea name="data.logic">{{{data.logic}}}</textarea>
+      <textarea name="system.logic">{{{system.logic}}}</textarea>
       <div class="label-stripe">{{localize "BITD.Effects"}}</div>
       <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
     {{/if}}

@@ -1,24 +1,24 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <img src="{{img}}" data-edit="img" title="{{name}}"/>
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
+            <h1 class="charname"><input name="name" type="text" value="{{name}}" placeholder="{{localize 'BITD.Name'}}"/></h1>
         </div>
     </header>
-    
+
     {{!-- Sheet Body --}}
     <section class="sheet-body flex">
-      {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+      {{editor system.description target="system.description" button=true editable=editable}}
     </section>
-    
+
     <div class="flex-vertical">
       <label class="label-stripe">{{localize "BITD.AbilityPrice"}}</label>
-      <input id="ability-price" type="text" name="data.price" value="{{data.price}}" placeholder="{{localize 'BITD.AbilityPrice'}}">
+      <input id="ability-price" type="text" name="system.price" value="{{system.price}}" placeholder="{{localize 'BITD.AbilityPrice'}}">
       <label class="label-stripe">{{localize "BITD.AbilityClass"}}</label>
-      <input id="ability-class" type="text" name="data.class" value="{{data.class}}" placeholder="{{localize 'BITD.AbilityClass'}}">
+      <input id="ability-class" type="text" name="system.class" value="{{system.class}}" placeholder="{{localize 'BITD.AbilityClass'}}">
       {{#if isGM}}
         <div class="label-stripe">{{localize "BITD.Logic"}}</div>
-        <textarea name="data.logic">{{{data.logic}}}</textarea>
+        <textarea name="system.logic">{{{system.logic}}}</textarea>
         <div class="label-stripe">{{localize "BITD.Effects"}}</div>
         <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
       {{/if}}

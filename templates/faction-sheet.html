@@ -6,23 +6,23 @@
            <p>{{localize "BITD.Factions"}}</p>
           <p><a class="item-add-popup" data-item-type="faction"><i class="fas fa-plus-square"></i></a></p>
         </div>
-		
+
         <div id="faction-list">
-          {{#each actor.items as |faction id|}}
+          {{#each items as |faction id|}}
           {{#if (eq faction.type "faction")}}
-          
+
 			<div id="faction-{{faction._id}}-items" class="faction-items label-stripe-gray item flex-horizontal" data-item-id="{{faction._id}}">
               <a class="item-body flex-horizontal">
                 <img src="{{faction.img}}" title="{{faction.name}}" width="24" height="24"/>
-				<div class="item-name">{{faction.name}}<br>{{localize "BITD.Tier"}}: {{faction.data.tier}}</div>
+				<div class="item-name">{{faction.name}}<br>{{localize "BITD.Tier"}}: {{faction.system.tier}}</div>
 			  </a>
 			  <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
-			  
+
 			  <div id="faction-status">
-				<div id="faction-status-label" style="float:left; width: 10em; text-align: right; padding-right: 10px; color: var(--almost_white);">{{localize "BITD.Status"}}<br><span style="color: var(--{{#if (eq faction.data.status.value 7)}}holoblue{{/if}}{{#if (eq faction.data.status.value 6)}}holobluemed{{/if}}{{#if (eq faction.data.status.value 5)}}holobluelt{{/if}}{{#if (eq faction.data.status.value 4)}}almost_white{{/if}}{{#if (eq faction.data.status.value 3)}}redlt{{/if}}{{#if (eq faction.data.status.value 2)}}redmed{{/if}}{{#if (eq faction.data.status.value 1)}}red{{/if}}{{#if (eq faction.data.status.value 0)}}almost_white{{/if}});">{{#if (eq faction.data.status.value 7)}}{{localize "BITD.Allies"}}{{/if}}{{#if (eq faction.data.status.value 6)}}{{localize "BITD.Friends"}}{{/if}}{{#if (eq faction.data.status.value 5)}}{{localize "BITD.Associates"}}{{/if}}{{#if (eq faction.data.status.value 4)}}{{localize "BITD.Neutral"}}{{/if}}{{#if (eq faction.data.status.value 3)}}{{localize "BITD.Adversaries"}}{{/if}}{{#if (eq faction.data.status.value 2)}}{{localize "BITD.Enemies"}}{{/if}}{{#if (eq faction.data.status.value 1)}}{{localize "BITD.AtWar"}}{{/if}}{{#if (eq faction.data.status.value 0)}}{{localize "BITD.Neutral"}}{{/if}}</span></div>
+				<div id="faction-status-label" style="float:left; width: 10em; text-align: right; padding-right: 10px; color: var(--almost_white);">{{localize "BITD.Status"}}<br><span style="color: var(--{{#if (eq faction.system.status.value 7)}}holoblue{{/if}}{{#if (eq faction.system.status.value 6)}}holobluemed{{/if}}{{#if (eq faction.system.status.value 5)}}holobluelt{{/if}}{{#if (eq faction.system.status.value 4)}}almost_white{{/if}}{{#if (eq faction.system.status.value 3)}}redlt{{/if}}{{#if (eq faction.system.status.value 2)}}redmed{{/if}}{{#if (eq faction.system.status.value 1)}}red{{/if}}{{#if (eq faction.system.status.value 0)}}almost_white{{/if}});">{{#if (eq faction.system.status.value 7)}}{{localize "BITD.Allies"}}{{/if}}{{#if (eq faction.system.status.value 6)}}{{localize "BITD.Friends"}}{{/if}}{{#if (eq faction.system.status.value 5)}}{{localize "BITD.Associates"}}{{/if}}{{#if (eq faction.system.status.value 4)}}{{localize "BITD.Neutral"}}{{/if}}{{#if (eq faction.system.status.value 3)}}{{localize "BITD.Adversaries"}}{{/if}}{{#if (eq faction.system.status.value 2)}}{{localize "BITD.Enemies"}}{{/if}}{{#if (eq faction.system.status.value 1)}}{{localize "BITD.AtWar"}}{{/if}}{{#if (eq faction.system.status.value 0)}}{{localize "BITD.Neutral"}}{{/if}}</span></div>
 				<!-- <label for="faction-{{id}}-status-0"><i class="fab fa-creative-commons-zero nullifier"></i></label> -->
 				<div id="faction-status-meter" class="teeth-experience-faction" style="float:left; width: 14em;">
-				{{#multiboxes faction.data.status.value}}
+				{{#multiboxes faction.system.status.value}}
 					<div style="display: flex;justify-content: space-between"><input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="0" type="radio" id="faction-{{id}}-status-0" value="0" dtype="Radio">
 					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="1" type="radio" id="faction-{{id}}-status-1" value="1" dtype="Radio">
 					<input class="update-box" data-utype="status" data-item="{{faction._id}}" data-value="2" type="radio" id="faction-{{id}}-status-2" value="2" dtype="Radio">
@@ -44,10 +44,10 @@
 				{{/multiboxes}}
 				</div>
 			  </div>
-			
+
 			  <div id="crew-hold" class="flex-horizontal">
 				<div class="black-label">{{localize "BITD.Hold"}}</div>
-				{{#multiboxes faction.data.hold.value}}
+				{{#multiboxes faction.system.hold.value}}
 				<div class="flex-horizontal">
 				  <div class="gray-label">{{localize "BITD.Weak"}}</div>
 				  <input class="update-box" data-utype="hold" data-item="{{faction._id}}" data-value="1" type="radio" id="faction-{{id}}-hold-1" value="1" dtype="Radio">
@@ -60,10 +60,10 @@
 				</div>
 				{{/multiboxes}}
 			  </div>
-			
-              
-              
-           
+
+
+
+
 		  </div>
           {{/if}}
           {{/each}}

@@ -1,22 +1,22 @@
 <form class="{{cssClass}} actor-sheet" autocomplete="off">
 
-  <section id="character-{{actor._id}}-name-alias" class="flex-horizontal name-alias">
+  <section id="character-{{_id}}-name-alias" class="flex-horizontal name-alias">
 
     <div class="grow-two">
-    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" class="portrait" />
+    <img src="{{img}}" data-edit="img" title="{{name}}" class="portrait" />
     </div>
 
     <div class="grow-two">
-      <div id="character-{{actor._id}}-name-box">
-        <label for="character-{{actor._id}}-name">{{localize "BITD.Name"}}</label>
-        <input type="text" id="character-{{actor._id}}-name" class="name" name="name" value="{{actor.name}}">
+      <div id="character-{{_id}}-name-box">
+        <label for="character-{{_id}}-name">{{localize "BITD.Name"}}</label>
+        <input type="text" id="character-{{_id}}-name" class="name" name="name" value="{{name}}">
       </div>
 
-      <div id="character-{{actor._id}}-traits" class="flex-column">
+      <div id="character-{{_id}}-traits" class="flex-column">
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="heritage">{{localize "BITD.Heritage"}}</a></div>
-          {{#each actor.items as |item id|}}
+          {{#each items as |item id|}}
               {{#if (eq item.type "heritage")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
                 <div class="item-body flex-horizontal">
@@ -31,7 +31,7 @@
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="background">{{localize "BITD.Background"}}</a></div>
-          {{#each actor.items as |item id|}}
+          {{#each items as |item id|}}
             {{#if (eq item.type "background")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
@@ -46,7 +46,7 @@
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="vice">{{localize "BITD.Vice"}}</a></div>
-          {{#each actor.items as |item id|}}
+          {{#each items as |item id|}}
               {{#if (eq item.type "vice")}}
               <div class="item flex-horizontal" data-item-id="{{item._id}}">
                 <div class="item-body flex-horizontal">
@@ -61,7 +61,7 @@
 
         <div class="item-block flex-horizontal">
           <div class="item-class-label"><a class="item-add-popup" data-distinct="true" data-item-type="class">{{localize "BITD.Class"}}</a></div>
-            {{#each actor.items as |item id|}}
+            {{#each items as |item id|}}
                 {{#if (eq item.type "class")}}
                 <div class="item flex-horizontal" data-item-id="{{item._id}}">
                   <div class="item-body flex-horizontal">
@@ -78,9 +78,9 @@
     </div>
 
     <div class="grow-two">
-      <div id="character-{{actor._id}}-alias-box">
-        <label for="character-{{actor._id}}-alias">{{localize "BITD.Alias"}}</label>
-        <input type="text" id="character-{{actor._id}}-alias" class="alias" name="data.alias" value="{{data.alias}}">
+      <div id="character-{{_id}}-alias-box">
+        <label for="character-{{_id}}-alias">{{localize "BITD.Alias"}}</label>
+        <input type="text" id="character-{{_id}}-alias" class="alias" name="system.alias" value="{{system.alias}}">
       </div>
 
       {{> "systems/blades-in-the-dark/templates/parts/coins.html" actor=actor}}
@@ -92,69 +92,69 @@
   <section class="flex experience">
   </section>
   {{!-- Stress and Trauma --}}
-  <div id="character-{{actor._id}}-stress-trauma" class="section big-teeth-section">
-    <div id="character-{{actor._id}}-stress" class="big-teeth character-stress">
-      {{#multiboxes data.stress.value}}
+  <div id="character-{{_id}}-stress-trauma" class="section big-teeth-section">
+    <div id="character-{{_id}}-stress" class="big-teeth character-stress">
+      {{#multiboxes system.stress.value}}
 
-      <input type="radio" id="character-{{actor._id}}-stress-0" name="data.stress.value" value="0" dtype="Radio">
-      <label class="black-label" for="character-{{actor._id}}-stress-0">{{localize data.stress.name}}</label>
+      <input type="radio" id="character-{{_id}}-stress-0" name="system.stress.value" value="0" dtype="Radio">
+      <label class="black-label" for="character-{{_id}}-stress-0">{{localize system.stress.name}}</label>
 
-      {{#times_from_1 data.stress.max}}
-        <input type="radio" id="character-{{../actor._id}}-stress-{{this}}" name="data.stress.value" value="{{this}}"
+      {{#times_from_1 system.stress.max}}
+        <input type="radio" id="character-{{../_id}}-stress-{{this}}" name="system.stress.value" value="{{this}}"
                dtype="Radio">
-        <label for="character-{{../actor._id}}-stress-{{this}}"></label>
+        <label for="character-{{../_id}}-stress-{{this}}"></label>
       {{/times_from_1}}
 
       {{/multiboxes}}
 
     </div>
-    <div id="character-{{actor._id}}-trauma-container" class="small-teeth-container">
-      {{#traumacounter data.trauma.list}}
-      <div id="character-{{actor._id}}-trauma" class="small-teeth-wrap">
-        <label class="black-label" for="character-{{actor._id}}-trauma-counter-0">{{localize data.trauma.name}}</label>
-        <div id="character-{{actor._id}}-trauma-teeth" class="small-teeth">
-          <input type="radio" id="character-{{actor._id}}-trauma-counter-0" name="data.trauma.value" value="0">
+    <div id="character-{{_id}}-trauma-container" class="small-teeth-container">
+      {{#traumacounter system.trauma.list}}
+      <div id="character-{{_id}}-trauma" class="small-teeth-wrap">
+        <label class="black-label" for="character-{{_id}}-trauma-counter-0">{{localize system.trauma.name}}</label>
+        <div id="character-{{_id}}-trauma-teeth" class="small-teeth">
+          <input type="radio" id="character-{{_id}}-trauma-counter-0" name="system.trauma.value" value="0">
 
-          {{#times_from_1 data.trauma.max}}
-            <input type="radio" id="character-{{../actor._id}}-trauma-counter-{{this}}" name="data.trauma.value" value="{{this}}" disabled>
-            <label for="character-{{../actor._id}}-trauma-counter-{{this}}"></label>
+          {{#times_from_1 system.trauma.max}}
+            <input type="radio" id="character-{{../_id}}-trauma-counter-{{this}}" name="system.trauma.value" value="{{this}}" disabled>
+            <label for="character-{{../_id}}-trauma-counter-{{this}}"></label>
           {{/times_from_1}}
         </div>
       </div>
       {{/traumacounter}}
     </div>
 
-    <div id="character-{{actor._id}}-trauma-list" class="trauma-list">
+    <div id="character-{{_id}}-trauma-list" class="trauma-list">
       <label>
-        <input type="checkbox" name="data.trauma.list.cold" value="cold" {{checked data.trauma.list.cold}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.cold" value="cold" {{checked system.trauma.list.cold}}>
         <span class="checkmark">{{localize "BITD.TraumaCold"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.haunted" value="haunted" {{checked data.trauma.list.haunted}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.haunted" value="haunted" {{checked system.trauma.list.haunted}}>
         <span class="checkmark">{{localize "BITD.TraumaHaunted"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.obsessed" value="obsessed" {{checked data.trauma.list.obsessed}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.obsessed" value="obsessed" {{checked system.trauma.list.obsessed}}>
         <span class="checkmark">{{localize "BITD.TraumaObsessed"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.paranoid" value="paranoid" {{checked data.trauma.list.paranoid}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.paranoid" value="paranoid" {{checked system.trauma.list.paranoid}}>
         <span class="checkmark">{{localize "BITD.TraumaParanoid"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.reckless" value="reckless" {{checked data.trauma.list.reckless}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.reckless" value="reckless" {{checked system.trauma.list.reckless}}>
         <span class="checkmark">{{localize "BITD.TraumaReckless"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.soft" value="soft" {{checked data.trauma.list.soft}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.soft" value="soft" {{checked system.trauma.list.soft}}>
         <span class="checkmark">{{localize "BITD.TraumaSoft"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.unstable" value="unstable" {{checked data.trauma.list.unstable}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.unstable" value="unstable" {{checked system.trauma.list.unstable}}>
         <span class="checkmark">{{localize "BITD.TraumaUnstable"}}</span>
       </label>
       <label>
-        <input type="checkbox" name="data.trauma.list.vicious" value="vicious" {{checked data.trauma.list.vicious}}>
+        <input type="checkbox" data-dType="Boolean" name="system.trauma.list.vicious" value="vicious" {{checked system.trauma.list.vicious}}>
         <span class="checkmark">{{localize "BITD.TraumaVicious"}}</span>
       </label>
     </div>
@@ -162,8 +162,8 @@
   </div>
 
   {{!-- Harm, Healing and Armor --}}
-  <section id="character-{{actor._id}}-harm-armor" class="flex harm-armor">
-    <div id="character-{{actor._id}}-character-harm" class="character-harm">
+  <section id="character-{{_id}}-harm-armor" class="flex harm-armor">
+    <div id="character-{{_id}}-character-harm" class="character-harm">
       <table>
         <thead>
           <th class="black-white" colspan="4">{{localize "BITD.Harm"}}</th>
@@ -174,46 +174,46 @@
           <tr>
             <td>3</td>
             <td colspan="2">
-              <input type="text" id="character-{{actor._id}}-harm-3-1" name="data.harm.heavy.one" value="{{data.harm.heavy.one}}">
+              <input type="text" id="character-{{_id}}-harm-3-1" name="system.harm.heavy.one" value="{{system.harm.heavy.one}}">
             </td>
             <td>{{localize "BITD.NeedHelp"}}</td>
             <td rowspan="3">
-              <div id="character-{{actor._id}}-health-clock" class="character-health-clock">
-                {{{blades-clock "data.healing-clock" 4 data.healing-clock actor._id}}}
+              <div id="character-{{_id}}-health-clock" class="character-health-clock">
+                {{{blades-clock "system.healing-clock" 4 system.healing-clock _id}}}
               </div>
             </td>
-            <td rowspan="3" id="character-{{actor._id}}-armor-uses" class="character-armor-uses">
+            <td rowspan="3" id="character-{{_id}}-armor-uses" class="character-armor-uses">
               <div>
-                <label for="character-{{actor._id}}-armor-uses-armor">{{localize "BITD.Armor"}}</label>
-                <input id="character-{{actor._id}}-armor-uses-armor" type="checkbox" name="data.armor-uses.armor" {{checked data.armor-uses.armor}}>
+                <label for="character-{{_id}}-armor-uses-armor">{{localize "BITD.Armor"}}</label>
+                <input id="character-{{_id}}-armor-uses-armor" type="checkbox" name="system.armor-uses.armor" {{checked system.armor-uses.armor}}>
               </div>
               <div>
-                <label for="character-{{actor._id}}-armor-uses-heavy">{{localize "BITD.Heavy"}}</label>
-                <input id="character-{{actor._id}}-armor-uses-heavy" type="checkbox" name="data.armor-uses.heavy" {{checked data.armor-uses.heavy}}>
+                <label for="character-{{_id}}-armor-uses-heavy">{{localize "BITD.Heavy"}}</label>
+                <input id="character-{{_id}}-armor-uses-heavy" type="checkbox" name="system.armor-uses.heavy" {{checked system.armor-uses.heavy}}>
               </div>
               <div>
-                <label for="character-{{actor._id}}-armor-uses-special">{{localize "BITD.Special"}}</label>
-                <input id="character-{{actor._id}}-armor-uses-special" type="checkbox" name="data.armor-uses.special" {{checked data.armor-uses.special}}>
+                <label for="character-{{_id}}-armor-uses-special">{{localize "BITD.Special"}}</label>
+                <input id="character-{{_id}}-armor-uses-special" type="checkbox" name="system.armor-uses.special" {{checked system.armor-uses.special}}>
               </div>
             </td>
           </tr>
           <tr>
             <td>2</td>
             <td>
-              <input type="text" id="character-{{actor._id}}-harm-2-1" name="data.harm.medium.one" value="{{data.harm.medium.one}}">
+              <input type="text" id="character-{{_id}}-harm-2-1" name="system.harm.medium.one" value="{{system.harm.medium.one}}">
             </td>
             <td>
-              <input type="text" id="character-{{actor._id}}-harm-2-2" name="data.harm.medium.two" value="{{data.harm.medium.two}}">
+              <input type="text" id="character-{{_id}}-harm-2-2" name="system.harm.medium.two" value="{{system.harm.medium.two}}">
             </td>
             <td>-1D</td>
           </tr>
           <tr>
             <td>1</td>
             <td>
-              <input type="text" id="character-{{actor._id}}-harm-1-1" name="data.harm.light.one" value="{{data.harm.light.one}}">
+              <input type="text" id="character-{{_id}}-harm-1-1" name="system.harm.light.one" value="{{system.harm.light.one}}">
             </td>
             <td>
-              <input type="text" id="character-{{actor._id}}-harm-1-2" name="data.harm.light.two" value="{{data.harm.light.two}}">
+              <input type="text" id="character-{{_id}}-harm-1-2" name="system.harm.light.two" value="{{system.harm.light.two}}">
             </td>
             <td>{{localize "BITD.LessEffect"}}</td>
           </tr>
@@ -241,29 +241,29 @@
         <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
       </nav>
 
-      <div id="character-{{actor._id}}-abilities" class="tab flex-vertical abilities" data-tab="abilities">
+      <div id="character-{{_id}}-abilities" class="tab flex-vertical abilities" data-tab="abilities">
         <div class="label-stripe">
-          <p><label for="character-{{actor._id}}-experience-0">{{localize "BITD.Abilities"}}</label></p>
+          <p><label for="character-{{_id}}-experience-0">{{localize "BITD.Abilities"}}</label></p>
           <p><a class="item-add-popup" data-item-type="ability"><i class="fas fa-plus-square"></i></a></p>
-          <div id="character-{{actor._id}}-experience" class="teeth-experience">
-            <label for="character-{{actor._id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>
-            {{#multiboxes data.experience}}
-            <input type="radio" id="character-{{actor._id}}-experience-0" name="data.experience" value="0" dtype="Radio">
-            {{#times_from_1 data.experience_max}}
-            <input type="radio" id="character-{{actor._id}}-experience-{{this}}" name="data.experience" value="{{this}}" dtype="Radio">
-            <label for="character-{{actor._id}}-experience-{{this}}"></label>
+          <div id="character-{{_id}}-experience" class="teeth-experience">
+            <label for="character-{{_id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>
+            {{#multiboxes system.experience}}
+            <input type="radio" id="character-{{_id}}-experience-0" name="system.experience" value="0" dtype="Radio">
+            {{#times_from_1 system.experience_max}}
+            <input type="radio" id="character-{{_id}}-experience-{{this}}" name="system.experience" value="{{this}}" dtype="Radio">
+            <label for="character-{{_id}}-experience-{{this}}"></label>
             {{/times_from_1}}
             {{/multiboxes}}
           </div>
         </div>
 
-        <div id="character-{{actor._id}}-abilities-list">
-          {{#each actor.items as |item id|}}
+        <div id="character-{{_id}}-abilities-list">
+          {{#each items as |item id|}}
           {{#if (eq item.type "ability")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
                 <b><div class="item-name">{{item.name}}</div></b>
-                <div class="item-description">{{{item.data.description}}}</div>
+                <div class="item-description">{{{item.system.description}}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -274,24 +274,24 @@
       </div>
 
       {{!-- Owned Items Tab --}}
-      <div id="character-{{actor._id}}-loadout" class="tab flex-vertical loadout" data-tab="loadout">
+      <div id="character-{{_id}}-loadout" class="tab flex-vertical loadout" data-tab="loadout">
         <div class="label-stripe flex-horizontal">
            <p>{{localize "BITD.Loadout"}} <a class="item-add-popup" data-item-type="item"><i class="fas fa-plus-square"></i></a></p>
-           <p>{{data.loadout}}/{{localize data.load_level}} </p>
+           <p>{{system.loadout}}/{{localize system.load_level}} </p>
            <div class="dropdown">
-             <select name="data.selected_load_level">
-               {{selectOptions load_levels selected=data.selected_load_level localize=true}}
+             <select name="system.selected_load_level">
+               {{selectOptions system.load_levels selected=system.selected_load_level localize=true}}
              </select>
            </div>
         </div>
         <div>
-          {{#each actor.items as |item id|}}
+          {{#each items as |item id|}}
           {{#if (eq item.type "item")}}
             <div class="item flex-horizontal" data-item-id="{{item._id}}">
               <div class="item-body flex-horizontal">
                 <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
                 <div class="item-name">{{item.name}}</div>
-                <div class="item-description">{{{item.data.description}}}</div>
+                <div class="item-description">{{{item.system.description}}}</div>
               </div>
               <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
             </div>
@@ -305,11 +305,11 @@
         <div class="label-stripe">
           <p>{{localize "BITD.Notes"}}</p>
         </div>
-        <textarea rows="13" name="data.description">{{{data.description}}}</textarea>
+        <textarea rows="13" name="system.description">{{{system.description}}}</textarea>
       </div>
 
       {{!-- Active Effects --}}
-      <div id="character-{{actor._id}}-effects" class="tab effects flex-vertical" data-tab="effects">
+      <div id="character-{{_id}}-effects" class="tab effects flex-vertical" data-tab="effects">
         <div class="label-stripe">
           <p>{{localize "BITD.Effects"}}</p>
         </div>
@@ -321,7 +321,7 @@
         <div class="label-stripe">
           <p><label>{{localize "BITD.AllItems"}}</label></p>
         </div>
-        {{#each actor.items as |item id|}}
+        {{#each items as |item id|}}
         <div class="item flex-horizontal" data-item-id="{{item._id}}">
           <div class="item-body item-sheet-open flex-horizontal">
             <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
