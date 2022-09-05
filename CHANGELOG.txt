@@ -1,3 +1,6 @@
+v.4.1
+- Update manifest link
+
 v.4.0
 - Update to FoundryVTT v10 with migrations by @drewg13
 
