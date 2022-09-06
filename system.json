@@ -7,6 +7,8 @@
     "minimum": 10,
     "verified": "10.284"
   },
+  "name": "blades-in-the-dark",
+  "minimumCoreVersion": "10",
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
   "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
   "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/archive/4.1.zip",
@@ -158,8 +160,5 @@
       "path": "./packs/entanglements-macro.db",
       "type": "Macro"
     }
-  ],
-  "name": "",
-  "minimumCoreVersion": "",
-  "author": ""
+  ]
 }

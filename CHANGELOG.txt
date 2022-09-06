@@ -1,3 +1,6 @@
+v.4.2
+- System.json V9 backward compat
+
 v.4.1
 - Update manifest link
 
