@@ -105,15 +105,59 @@ export class BladesHelpers {
   }
 
   /**
+   * Returns the label for roll type.
+   *
+   * @param {string} roll_name
+   * @returns {string}
+   */
+  static getRollLabel(roll_name) {
+    let attribute_labels = {};
+    const attributes = game.system.model.Actor.character.attributes;
+
+    for (const att_name in attributes) {
+      if (att_name == roll_name) {
+        return attributes[att_name].label;
+      }
+      for (const skill_name in attributes[att_name].skills) {
+        if (skill_name == roll_name) {
+          return attributes[att_name].skills[skill_name].label;
+        }
+      }
+    }
+
+    return roll_name;
+  }
+
+  /**
    * Returns true if the attribute is an action
    *
    * @param {string} attribute_name
    * @returns {Boolean}
    */
   static isAttributeAction(attribute_name) {
-        const attributes = game.system.model.Actor.character.attributes;
+    const attributes = game.system.model.Actor.character.attributes;
 
-        return !(attribute_name in attributes);
+    for (const att_name in attributes) {
+      for (const skill_name in attributes[att_name].skills) {
+        if (skill_name == attribute_name) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Returns true if the attribute is an attribute
+   *
+   * @param {string} attribute_name
+   * @returns {Boolean}
+   */
+  static isAttributeAttribute(attribute_name) {
+    const attributes = game.system.model.Actor.character.attributes;
+
+    return (attribute_name in attributes);
   }
 
   /* -------------------------------------------- */
