@@ -1,3 +1,9 @@
+v.4.4
+- Added acquaintances to en.json #179
+- Feature: Owned clocks. #180 
+--  Adds an "owned" field to the clock actor type, to allow clocks to be easily associated with a specific character/faction
+- Fix: Clocks update with no active scene fix.
+
 v.4.3
 - System.json V9 backward compat
 
