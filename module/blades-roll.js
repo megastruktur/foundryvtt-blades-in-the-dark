@@ -215,7 +215,7 @@ export async function simpleRollPopup() {
         icon: "<i class='fas fa-check'></i>",
         label: `Roll`,
         callback: async (html) => {
-          let diceQty = html.find('[name="qty"]')[0].value;
+          let diceQty = parseInt(html.find('[name="qty"]')[0].value, 10);
           let note = html.find('[name="note"]')[0].value;
           await bladesRoll(diceQty,"","","",note);
         },
