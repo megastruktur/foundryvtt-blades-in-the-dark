@@ -1,5 +1,12 @@
 # FoundryVTT Blades in the Dark character and crew sheets
 
+<p align="center">
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/megastruktur/foundryvtt-blades-in-the-dark"> <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/megastruktur/foundryvtt-blades-in-the-dark"> <img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/megastruktur/foundryvtt-blades-in-the-dark/total" /> <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/megastruktur/foundryvtt-blades-in-the-dark/latest/total" /> <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/megastruktur/foundryvtt-blades-in-the-dark?label=latest%20release" /> 
+</p>
+<p align="center">
+<img alt="GitHub" src="https://img.shields.io/github/license/megastruktur/foundryvtt-blades-in-the-dark"> <a href="https://github.com/megastruktur/foundryvtt-blades-in-the-dark/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/megastruktur/foundryvtt-blades-in-the-dark"></a> <a href="https://github.com/megastruktur/foundryvtt-blades-in-the-dark/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/megastruktur/foundryvtt-blades-in-the-dark"></a> <a href="https://github.com/megastruktur/foundryvtt-blades-in-the-dark/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/megastruktur/foundryvtt-blades-in-the-dark"></a> 
+</p>
+
 If you like my work - send thanks to astromortis@gmail.com  :3
 
 Contact Discord: `megastruktur#5704` in case you find any bugs or if you have any suggestions.
