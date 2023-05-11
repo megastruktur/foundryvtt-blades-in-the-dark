@@ -1,0 +1,31 @@
+<div class="dice-tooltip blades-die-tooltip">
+  {{#if attribute_label}}<div class="chat-label label-stripe-chat">{{localize attribute_label}}</div>{{/if}}
+
+  {{#if (or (eq roll_status "success") (eq roll_status "critical-success"))}}
+  <div class="die {{roll_status}}">{{localize "BITD.RollSuccess"}}</div>
+  <div class="description"><p>{{{localize "BITD.RollGatherInformationSuccess"}}}</p></div>
+  {{/if}}
+
+  {{#if (eq roll_status "partial-success")}}
+  <div class="die {{roll_status}}">{{localize "BITD.RollPartialSuccess"}}</div>
+  <div class="description"><p>{{{localize "BITD.RollGatherInformationPartialSuccess"}}}</p></div>
+  {{/if}}
+
+  {{#if (eq roll_status "failure")}}
+  <div class="die {{roll_status}}">{{localize "BITD.RollFailure"}}</div>
+  <div class="description"><p>{{{localize "BITD.RollGatherInformationFailure"}}}</p></div>
+  {{/if}}
+
+  {{#if note}}
+    <em>{{note}}</em>
+  {{/if}}
+  <ol class="dice-rolls">
+    {{#each this.rolls}}
+    {{#if this.result}}
+    <li class="roll die d6">{{{this.result}}}</li>
+    {{else}}
+    <li class="roll die d6">{{{this.roll}}}</li>
+    {{/if}}
+    {{/each}}
+  </ol>
+</div>

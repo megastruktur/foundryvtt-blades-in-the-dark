@@ -27,71 +27,61 @@
  */
 @font-face {
   font-family: "Kirsty";
-  src: url("assets/fonts/Kirsty/Kirsty.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/Kirsty/Kirsty.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Kirsty";
-  src: url("assets/fonts/Kirsty/KirstyBold.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/Kirsty/KirstyBold.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Kirsty";
-  src: url("assets/fonts/Kirsty/KirstyBoldItalic.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/Kirsty/KirstyBoldItalic.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "Kirsty";
-  src: url("assets/fonts/Kirsty/KirstyItalic.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/Kirsty/KirstyItalic.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url("assets/fonts/CrimsonText/CrimsonText-Regular.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/CrimsonText/CrimsonText-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url("assets/fonts/CrimsonText/CrimsonText-Bold.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/CrimsonText/CrimsonText-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url("assets/fonts/CrimsonText/CrimsonText-BoldItalic.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/CrimsonText/CrimsonText-BoldItalic.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url("assets/fonts/CrimsonText/CrimsonText-Italic.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/CrimsonText/CrimsonText-Italic.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url("assets/fonts/CrimsonText/CrimsonText-SemiBold.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/CrimsonText/CrimsonText-SemiBold.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Crimson Text";
-  src: url("assets/fonts/CrimsonText/CrimsonText-SemiBoldItalic.ttf") format("truetype");
-  /* Safari, Android, iOS */
+  src: url("assets/fonts/CrimsonText/CrimsonText-SemiBoldItalic.ttf") format("truetype"); /* Safari, Android, iOS */
   font-weight: 600;
   font-style: italic;
 }
@@ -577,7 +567,7 @@
 .blades-in-the-dark.crew.sheet .crew-reputation input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-.blades-in-the-dark.crew.sheet .crew-reputation input[disabled=disabled] + label {
+.blades-in-the-dark.crew.sheet .crew-reputation input:disabled + label {
   background-image: url(assets/teeth/stresstooth-black.png);
 }
 .blades-in-the-dark.crew.sheet .turf-container {
@@ -847,7 +837,20 @@
   width: 400px;
 }
 .blades-in-the-dark.crew.sheet .cohorts .label-stripe {
+  align-items: center;
+  cursor: pointer;
   margin-bottom: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.blades-in-the-dark.crew.sheet .cohorts .item-control {
+  flex-grow: 0;
+}
+.blades-in-the-dark.crew.sheet .cohorts .cohort-body img {
+  border: 2px solid #191813;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-top: none;
 }
 .blades-in-the-dark.crew.sheet .cohorts .cohort-body > div {
   margin-bottom: 10px;
@@ -864,9 +867,15 @@
   background-color: #191813;
 }
 .blades-in-the-dark.crew.sheet .cohorts .cohort-block-harm label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 0;
   border: 2px solid #191813;
   border-top: none;
-  padding: 5px;
+  border-left: none;
+  padding: 0 5px;
+  text-align: center;
 }
 .blades-in-the-dark.crew.sheet .class-name {
   width: 512px;
@@ -1624,8 +1633,6 @@
   border-radius: 6px;
   position: absolute;
   z-index: 9999;
-  font-family: var(--font-primary);
-  font-weight: normal;
 }
 .items-to-add .tooltip:hover .tooltiptext {
   visibility: visible;

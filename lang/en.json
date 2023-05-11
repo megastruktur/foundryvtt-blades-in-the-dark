@@ -121,16 +121,16 @@
   "BITD.EdgesIndependent": "Independent",
   "BITD.EdgesIndependentDescription": "The cohort can be trusted to make good decisions and act on their own initiative in the absence of direct orders.",
   "BITD.EdgesLoyal": "Loyal",
-  "BITD.EdgesLoyalDescription": "The cohort can’t be bribed or turned against you.",
+  "BITD.EdgesLoyalDescription": "The cohort can't be bribed or turned against you.",
   "BITD.EdgesTenacious": "Tenacious",
-  "BITD.EdgesTenaciousDescription": "The cohort won’t be deterred from a task.",
+  "BITD.EdgesTenaciousDescription": "The cohort won't be deterred from a task.",
 
   "BITD.FlawsPrincipled": "Principled",
-  "BITD.FlawsPrincipledDescription": "The cohort has an ethic or values that it won’t betray.",
+  "BITD.FlawsPrincipledDescription": "The cohort has an ethic or values that it won't betray.",
   "BITD.FlawsSavage": "Savage",
   "BITD.FlawsSavageDescription": "The cohort is excessively violent and cruel.",
   "BITD.FlawsUnreliable": "Unreliable",
-  "BITD.FlawsUnreliableDescription": "The cohort isn’t always available, due to other obligations, stupefaction from their vices, etc.",
+  "BITD.FlawsUnreliableDescription": "The cohort isn't always available, due to other obligations, stupefaction from their vices, etc.",
   "BITD.FlawsWild": "Wild",
   "BITD.FlawsWildDescription": "The cohort is drunken, debauched, and loud-mouthed.",
 
@@ -141,7 +141,7 @@
   "BITD.HarmImpaired": "Impaired",
   "BITD.HarmImpairedDescription": "The cohort operates with reduced quality (-1d).",
   "BITD.HarmBroken": "Broken",
-  "BITD.HarmBrokenDescription": "The cohort can’t do anything until they recover.",
+  "BITD.HarmBrokenDescription": "The cohort can't do anything until they recover.",
   "BITD.HarmDead": "Dead",
   "BITD.HarmDeadDescription": "The cohort is destroyed. You can spend coin equal to your Tier +2 to restore it, plus two downtime activities to recruit new gang members, or hire a new expert.",
 
@@ -156,11 +156,11 @@
   "BITD.RollDoWithIncreasedEffect": "You do it with <strong>increased effect</strong>.",
   "BITD.RollDo": "You do it.",
   "BITD.RollPartialSuccessPositionControlled": "You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a <strong>minor complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser harm</strong>, you end up in a <strong>risky</strong> position.",
-  "BITD.RollPartialSuccessPositionRisky": "You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
-  "BITD.RollPartialSuccessPosition": "You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
+  "BITD.RollPartialSuccessPositionRisky": "You do it, but there's a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
+  "BITD.RollPartialSuccessPosition": "You do it, but there's a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
   "BITD.RollFailurePositionControlled": "You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach.",
   "BITD.RollFailurePositionRisky": "Things go badly. You suffer <strong>harm</strong> a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong>.",
-  "BITD.RollFailurePositionDesperate": "It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication occurs</strong>, you <strong>lose this opportunity for action</strong>.",
+  "BITD.RollFailurePositionDesperate": "It's the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication occurs</strong>, you <strong>lose this opportunity for action</strong>.",
   "BITD.RollResistance": "You <strong>reduce</strong> or <strong>avoid</strong> the effects of the consequence (GM chooses).<br/>Suffer <strong>{stress} stress</strong>.",
   "BITD.RollResistanceCritical": "You <strong>reduce</strong> or <strong>avoid</strong> the effects of the consequence (GM chooses).<br/>Clear <strong>1 stress</strong>.",
 
@@ -230,5 +230,41 @@
   "BITD.ShrewdFriends": "Shrewd Friends",
   "BITD.DarkServants": "Dark Servants",
   "BITD.StrangeFriends": "Strange Friends",
-  "BITD.Acquaintances": "Acquaintances"
+  "BITD.Acquaintances": "Acquaintances",
+
+  "BITD.IndulgeVice": "Indulge Vice",
+  "BITD.GatherInformation": "Gather Information",
+  "BITD.Fortune": "Fortune",
+  "BITD.Engagement": "Engagement",
+  "BITD.AcquireAsset": "Acquire Asset",
+  "BITD.AcquireAssetExtra": "To raise the result beyond critical, you may spend <strong>2 coin</strong> per +1 Tier bonus.",
+  "BITD.CrewTier": "Crew Tier",
+
+  "BITD.RollVice": "You indulge your vice.<br/>Clear <strong>{clear_stress} stress</strong>.",
+  "BITD.RollViceFailure": "You <strong>overindulge</strong>. Clear <strong>{clear_stress} stress</strong> and choose <strong>one</strong> of the following consequences:",
+  "BITD.RollViceFailureAttactTrouble": "<strong>Attract Trouble.</strong> Select or roll an additional <strong>entanglement.</strong>",
+  "BITD.RollViceFailureBrag": "<strong>Brag</strong> about your exploits. <strong>+2 Heat</strong>",
+  "BITD.RollViceFailureLost": "<strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.",
+  "BITD.RollViceFailureTapped": "<strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.",
+
+  "BITD.RollFortuneCritical": "The result is <strong>exceptional</strong>. You have <strong>great</strong> or <strong>extreme effect</strong>.",
+  "BITD.RollFortuneSuccess": "The result is <strong>good</strong>. You have <strong>standard</strong> or <strong>full effect</strong>.",
+  "BITD.RollFortunePartialSuccess": "The result is <strong>mixed</strong>. You have <strong>limited</strong> or <strong>partial effect</strong>.",
+  "BITD.RollFortuneFailure": "The result is <strong>bad</strong>. You have <strong>poor</strong> or <strong>little effect</strong>.",
+  
+  "BITD.RollGatherInformationSuccess": "<strong>Great</strong>: You get exceptional details. The information is complete and follow-up questions may expand into related areas or reveal more than you hoped for.",
+  "BITD.RollGatherInformationPartialSuccess": "<strong>Standard</strong>: You get good details. Clarifying and follow-up questions are possible.",
+  "BITD.RollGatherInformationFailure": "<strong>Limited</strong>: You get incomplete or partial information. More information gathering will be needed to get all the answers.",
+
+  "BITD.RollEngagementCritical": "Exceptional result. You've already <strong>overcome the first obstacle</strong> and you're in a <strong>controlled</strong> position for what's next.",
+  "BITD.RollEngagementSuccess": "Good result. You're in a <strong>controlled</strong> position when the action starts.",
+  "BITD.RollEngagementPartialSuccess": "Mixed result. You're in a <strong>risky</strong> position when the action starts.",
+  "BITD.RollEngagementFailure": "Bad result. You're in a <strong>desperate</strong> position when the action starts.",
+
+  "BITD.RollAcquireAssetResult": "You gain an asset of <strong>Tier {tier_quality}</strong> quality.",
+  "BITD.RollAcquireAssetCritical": "Exceptional result.",
+  "BITD.RollAcquireAssetSuccess": "Good result.",
+  "BITD.RollAcquireAssetPartialSuccess": "Mixed result.",
+  "BITD.RollAcquireAssetFailure": "Bad result."
+
 }

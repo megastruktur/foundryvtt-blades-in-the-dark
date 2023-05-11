@@ -71,7 +71,7 @@ nav{
   border-top: 3px solid $almost_black;
   @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
 
-  input[disabled="disabled"] + label {
+  input:disabled + label {
     background-image: url(assets/teeth/stresstooth-black.png);
   }
 }
@@ -193,18 +193,33 @@ nav{
   .cohort-block-wrapper {
     width: 400px;
   }
+
   .label-stripe {
+    align-items: center;
+    cursor: pointer;
     margin-bottom: 0px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .item-control {
+    flex-grow: 0;
   }
 
   .cohort-body {
+    img {
+      border: 2px solid $almost_black;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-top: none;
+    }
+
     > div {
       margin-bottom: 10px;
     }
   }
 
   .cohort-block-harm {
-
     justify-content: space-around;
 
     input[type="radio"] {
@@ -218,9 +233,16 @@ nav{
     }
 
     label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex: 1 0 0;
       border: 2px solid $almost_black;
       border-top: none;
-      padding: 5px;
+      border-left: none;
+      padding: 0 5px;
+      text-align: center;
     }
   }
 }

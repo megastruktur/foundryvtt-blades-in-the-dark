@@ -2,19 +2,28 @@
 
   <div class="cohort-block">
     <div class="label-stripe">
-      <div class="item-sheet-open">{{#if (eq system.cohort "Gang")}}Gang of {{#each system.gang_type as |gang_type key|}}{{gang_type}} {{/each}}{{/if}}{{#if (eq system.cohort "Expert")}}{{system.cohort}} {{system.expert_type}}{{/if}} (click to edit)</div>
+      <div class="item-sheet-open">
+        {{#if (eq system.cohort "Gang")}}
+          Gang of {{#each system.gang_type as |gang_type key|}}{{gang_type}} {{/each}}
+        {{else if (eq system.cohort "Expert")}}
+          {{system.cohort}} {{system.expert_type}}
+        {{/if}}
+        <i class="fas fa-fw fa-edit"></i>
+      </div>
       <div>Q:{{system.quality}} S:{{system.scale}}</div>
       <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
     </div>
     <div class="cohort-body">
-
-      <div class="cohort-block-harm flex-horizontal">
-        {{#each system.harm_list as |harm harm_key|}}
-          {{#multiboxes ../system.harm}}
-          <input id="harm-{{harm_key}}-{{../_id}}" type="radio" name="harm.{{../_id}}" data-item="{{../_id}}" value="{{harm_key}}">
-          <label for="harm-{{harm_key}}-{{../_id}}">{{localize harm.label}}</label>
-          {{/multiboxes}}
-        {{/each}}
+      <div class="flex-horizontal">
+        <img src="{{img}}"/>
+        <div class="cohort-block-harm flex-horizontal">
+          {{#each system.harm_list as |harm harm_key|}}
+            {{#multiboxes ../system.harm}}
+            <input id="harm-{{harm_key}}-{{../_id}}" type="radio" name="harm.{{../_id}}" data-item="{{../_id}}" value="{{harm_key}}">
+            <label for="harm-{{harm_key}}-{{../_id}}">{{localize harm.label}}</label>
+            {{/multiboxes}}
+          {{/each}}
+        </div>
       </div>
 
       {{#if (eq system.cohort "Gang")}}
