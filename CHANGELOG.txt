@@ -1,3 +1,10 @@
+v.4.5
+- Added additional dice roll types #188 by anthonywaters
+- Modified Clock Sheet for Customization #185 by WillLaWill
+- Fixing 0d rolls from left side controls #189 by richmusser
+- Use official German translation #190 by Graffini
+- Updated visual display of cohorts #193 by CarlosFdez
+
 v.4.4
 - Added acquaintances to en.json #179
 - Feature: Owned clocks. #180 

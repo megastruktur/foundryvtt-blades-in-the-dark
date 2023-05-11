@@ -567,7 +567,7 @@
 .blades-in-the-dark.crew.sheet .crew-reputation input:checked + label {
   background-image: url("assets/teeth/stresstooth-red.png");
 }
-.blades-in-the-dark.crew.sheet .crew-reputation input[disabled=disabled] + label {
+.blades-in-the-dark.crew.sheet .crew-reputation input:disabled + label {
   background-image: url(assets/teeth/stresstooth-black.png);
 }
 .blades-in-the-dark.crew.sheet .turf-container {

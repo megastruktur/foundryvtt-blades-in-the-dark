@@ -71,7 +71,7 @@ nav{
   border-top: 3px solid $almost_black;
   @include toothradio(17px, 50px, "assets/teeth/stresstooth-halfgrey.png", "assets/teeth/stresstooth-red.png");
 
-  input[disabled="disabled"] + label {
+  input:disabled + label {
     background-image: url(assets/teeth/stresstooth-black.png);
   }
 }

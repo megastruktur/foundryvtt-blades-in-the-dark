@@ -208,7 +208,7 @@
  */
 @mixin clock($segments, $size, $default_color:null, $accent_color:null) {
 
-  $angle: 360 / $segments;
+  $angle: calc(360 / $segments);
   $skew: 90 + $angle;
   $border_width: 3;
 
