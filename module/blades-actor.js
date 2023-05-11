@@ -41,9 +41,11 @@ export class BladesActor extends Actor {
 
     // Calculate Dice to throw.
     let dice_amount = {};
-    for (const attribute_name in this.system.attributes) {
+    dice_amount['BITD.Vice'] = 4;
+
+    for (var attribute_name in this.system.attributes) {
       dice_amount[attribute_name] = 0;
-      for (const skill_name in this.system.attributes[attribute_name].skills) {
+      for (var skill_name in this.system.attributes[attribute_name].skills) {
         dice_amount[skill_name] = parseInt(this.system.attributes[attribute_name].skills[skill_name]['value'][0])
 
         // We add a +1d for every skill higher than 0.
@@ -51,7 +53,10 @@ export class BladesActor extends Actor {
           dice_amount[attribute_name]++;
         }
       }
-
+      // Vice dice roll uses lowest attribute dice amount
+      if (dice_amount[attribute_name] < dice_amount['BITD.Vice'] ) {
+        dice_amount['BITD.Vice'] = dice_amount[attribute_name];
+      }
     }
 
     return dice_amount;
@@ -62,7 +67,7 @@ export class BladesActor extends Actor {
   rollAttributePopup(attribute_name) {
 
     // const roll = new Roll("1d20 + @abilities.wis.mod", actor.getRollData());
-    let attribute_label = BladesHelpers.getAttributeLabel(attribute_name);
+    let attribute_label = BladesHelpers.getRollLabel(attribute_name);
 
     let content = `
         <h2>${game.i18n.localize('BITD.Roll')} ${game.i18n.localize(attribute_label)}</h2>
@@ -143,7 +148,7 @@ export class BladesActor extends Actor {
     }
     dice_amount += additional_dice_amount;
 
-    await bladesRoll(dice_amount, attribute_name, position, effect, note);
+    await bladesRoll(dice_amount, attribute_name, position, effect, note, this.system.stress.value);
   }
 
   /* -------------------------------------------- */
