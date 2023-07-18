@@ -21,7 +21,8 @@
               <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
               <div class="item-name">{{item.name}}</div>
             </div>
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+            <a class="item-control item-post" title="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
           </div>
         {{/if}}
         {{/each}}
@@ -276,7 +277,8 @@
             <b><div class="item-name">{{item.name}}</div></b>
             <div class="item-description">{{{item.system.description}}}</div>
           </div>
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-post" title="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
         </div>
       {{/if}}
       {{/each}}
@@ -295,7 +297,8 @@
             <b><div class="item-name">{{item.name}}</div></b>
             <div class="item-description">{{{item.system.description}}}</div>
           </div>
-          <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+          <a class="item-control item-post" title="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
         </div>
       {{/if}}
       {{/each}}
@@ -337,7 +340,8 @@
           <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
           <div class="item-name">{{item.name}}</div>
         </div>
-        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+        <a class="item-control item-delete" title="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+        <a class="item-control item-post" title="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
       </div>
       {{/each}}
     </div>
