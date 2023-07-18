@@ -73,6 +73,15 @@ export class BladesActorSheet extends BladesSheet {
 
     sheetData.system.description = await TextEditor.enrichHTML(sheetData.system.description, {secrets: sheetData.owner, async: true});
 
+    // catch unmigrated actor data
+    for( const a in sheetData.system.attributes ) {
+      for( const s in sheetData.system.attributes[a].skills ) {
+        if( sheetData.system.attributes[a].skills[s].max === undefined ){
+          sheetData.system.attributes[a].skills[s].max = 4;
+        }
+      }
+    }
+
     return sheetData;
   }
 
