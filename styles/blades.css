@@ -474,6 +474,7 @@
 }
 .blades-in-the-dark.crew.sheet .item .item-control {
   flex-grow: 1;
+  max-width: 18px;
 }
 .blades-in-the-dark.crew.sheet .item .item-body,
 .blades-in-the-dark.crew.sheet .item .item-class-label {
@@ -1566,6 +1567,14 @@
   text-align: center;
   padding: 3px 5px;
   height: 20px !important;
+}
+
+.chat-item img {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .label-stripe-chat {
