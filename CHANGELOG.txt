@@ -1,3 +1,10 @@
+v.4.7
+- Missing coma fix #195 (@hendryl)
+- Make action ratings variable and modifiable by Active Effects #197 (@drewg13)
+- Add additional UI for choosing a Crew Type #199 (@drewg13)
+- Fix Faction goal clocks #200 (Fixes !186 @drewg13)
+- Add options to send item descriptions to chat #198 (@drewg13)
+
 v.4.5
 - Added additional dice roll types #188 by anthonywaters
 - Modified Clock Sheet for Customization #185 by WillLaWill
