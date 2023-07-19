@@ -201,7 +201,7 @@
 
     <div class="flex-vertical">
 
-      <div id="crew-{{_id}}-class" class="class-name crew-class">
+      <div id="crew-{{_id}}-class" class="class-name crew-class" data-tooltip="{{localize "BITD.CrewTypeBox"}}" data-distinct="true" data-item-type="crew_type">
         {{#each items as |item id|}}
         {{#if (eq item.type "crew_type")}}
         <div class="big-name">{{item.name}}</div>

@@ -57,6 +57,9 @@ export class BladesCrewSheet extends BladesSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
+    // Add Crew Type
+    html.find(".crew-class").click(this._onItemAddClick.bind(this));
+
     // Update Inventory Item
     html.find('.item-sheet-open').click(ev => {
       const element = $(ev.currentTarget).parents(".item");
@@ -104,6 +107,7 @@ export class BladesCrewSheet extends BladesSheet {
       this.render(false);
     });
   }
+
 
   /* -------------------------------------------- */
   /*  Form Submission                             */
