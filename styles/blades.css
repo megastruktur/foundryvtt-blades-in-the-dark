@@ -186,7 +186,8 @@
 .blades-in-the-dark .editor-content {
   min-height: 150px;
 }
-.blades-in-the-dark .description {
+.blades-in-the-dark .cohort-description,
+.blades-in-the-dark .gang-description {
   font-style: italic;
 }
 .blades-in-the-dark i.nullifier {
