@@ -39,7 +39,7 @@
         </select>
 
       </div>
-      <div id="selected-gang-description" class="description">
+      <div id="selected-gang-description" class="gang-description">
         {{#each system.gang_type as |gang_type key|}}
           {{#with (lookup ../system.gang_type_list gang_type)}}
             {{localize description}}
