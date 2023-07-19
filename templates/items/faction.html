@@ -6,7 +6,7 @@
       </div>
   </header>
 
-
+{{this}}
   <section class="flex-vertical">
 	<label class="label-stripe">{{localize "BITD.Description"}}</label>
     <textarea rows="2" name="system.description">{{system.description}}</textarea>
@@ -22,7 +22,7 @@
 
         <div class="flex-vertical clock-block" id="faction-goal-clock">
           <div class="clocks clocks-{{system.goal_1_clock_max}} small" id="faction-clock-1">
-            {{{blades-clock "system.goal_1_clock_value" system.goal_1_clock_max system.goal_1_clock_value (concat id "-1")}}}
+            {{{blades-clock "system.goal_1_clock_value" system.goal_1_clock_max system.goal_1_clock_value (concat _id "-1")}}}
           </div>
           <div id="clock-max-1">
             <select id="max-1" name="system.goal_1_clock_max">
@@ -31,8 +31,8 @@
           </div>
           <textarea rows="1" name="system.goal_1">{{system.goal_1}}</textarea>
 
-          <div class="clocks clocks-{{system.goal_1_clock_max}} small" id="faction-clock-2">
-            {{{blades-clock "system.goal_2_clock_value" system.goal_2_clock_max system.goal_2_clock_value (concat id "-2")}}}
+          <div class="clocks clocks-{{system.goal_2_clock_max}} small" id="faction-clock-2">
+            {{{blades-clock "system.goal_2_clock_value" system.goal_2_clock_max system.goal_2_clock_value (concat _id "-2")}}}
           </div>
           <div id="clock-max-2">
             <select id="max-2" name="system.goal_2_clock_max">

@@ -13,6 +13,13 @@ export class BladesSheet extends ActorSheet {
     html.find(".item-add-popup").click(this._onItemAddClick.bind(this));
     html.find(".update-box").click(this._onUpdateBoxClick.bind(this));
 
+    // Post item to chat
+    html.find(".item-post").click((ev) => {
+      const element = $(ev.currentTarget).parents(".item");
+      const item = this.actor.items.get(element.data("itemId"));
+      item.sendToChat();
+    });
+
     // This is a workaround until is being fixed in FoundryVTT.
     if ( this.options.submitOnChange ) {
       html.on("change", "textarea", this._onChangeInput.bind(this));  // Use delegated listener on the form

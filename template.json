@@ -68,19 +68,23 @@
           "skills": {
             "hunt": {
               "label": "BITD.SkillsHunt",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "study": {
               "label": "BITD.SkillsStudy",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "survey": {
               "label": "BITD.SkillsSurvey",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "tinker": {
               "label": "BITD.SkillsTinker",
-              "value": 0
+              "value": 0,
+              "max": 4
             }
           }
         },
@@ -91,19 +95,23 @@
           "skills": {
             "finesse": {
               "label": "BITD.SkillsFinesse",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "prowl": {
               "label": "BITD.SkillsProwl",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "skirmish": {
               "label": "BITD.SkillsSkirmish",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "wreck": {
               "label": "BITD.SkillsWreck",
-              "value": 0
+              "value": 0,
+              "max": 4
             }
           }
         },
@@ -114,19 +122,23 @@
           "skills": {
             "attune": {
               "label": "BITD.SkillsAttune",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "command": {
               "label": "BITD.SkillsCommand",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "consort": {
               "label": "BITD.SkillsConsort",
-              "value": 0
+              "value": 0,
+              "max": 4
             },
             "sway": {
               "label": "BITD.SkillsSway",
-              "value": 0
+              "value": 0,
+              "max": 4
             }
           }
         }

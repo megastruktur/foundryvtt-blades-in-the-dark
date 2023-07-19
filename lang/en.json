@@ -3,6 +3,7 @@
   "BITD.Heritage": "Heritage",
   "BITD.Background": "Background",
   "BITD.TitleDeleteItem": "Delete item",
+  "BITD.TitlePostItem": "Post item",
   "BITD.Vice": "Vice",
   "BITD.Class": "Class",
   "BITD.Stress": "Stress",
@@ -57,6 +58,7 @@
   "BITD.Loadout": "Loadout",
   "BITD.Load": "Load",
   "BITD.CrewType": "Crew Type",
+  "BITD.CrewTypeBox": "Click to choose a Crew Type",
   "BITD.FactionType": "Faction Type",
   "BITD.Price": "Price",
   "BITD.Logic": "Logic",
@@ -159,7 +161,7 @@
   "BITD.RollPartialSuccessPositionRisky": "You do it, but there's a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
   "BITD.RollPartialSuccessPosition": "You do it, but there's a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
   "BITD.RollFailurePositionControlled": "You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach.",
-  "BITD.RollFailurePositionRisky": "Things go badly. You suffer <strong>harm</strong> a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong>.",
+  "BITD.RollFailurePositionRisky": "Things go badly. You suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong>.",
   "BITD.RollFailurePositionDesperate": "It's the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication occurs</strong>, you <strong>lose this opportunity for action</strong>.",
   "BITD.RollResistance": "You <strong>reduce</strong> or <strong>avoid</strong> the effects of the consequence (GM chooses).<br/>Suffer <strong>{stress} stress</strong>.",
   "BITD.RollResistanceCritical": "You <strong>reduce</strong> or <strong>avoid</strong> the effects of the consequence (GM chooses).<br/>Clear <strong>1 stress</strong>.",
@@ -251,7 +253,7 @@
   "BITD.RollFortuneSuccess": "The result is <strong>good</strong>. You have <strong>standard</strong> or <strong>full effect</strong>.",
   "BITD.RollFortunePartialSuccess": "The result is <strong>mixed</strong>. You have <strong>limited</strong> or <strong>partial effect</strong>.",
   "BITD.RollFortuneFailure": "The result is <strong>bad</strong>. You have <strong>poor</strong> or <strong>little effect</strong>.",
-  
+
   "BITD.RollGatherInformationSuccess": "<strong>Great</strong>: You get exceptional details. The information is complete and follow-up questions may expand into related areas or reveal more than you hoped for.",
   "BITD.RollGatherInformationPartialSuccess": "<strong>Standard</strong>: You get good details. Clarifying and follow-up questions are possible.",
   "BITD.RollGatherInformationFailure": "<strong>Limited</strong>: You get incomplete or partial information. More information gathering will be needed to get all the answers.",
