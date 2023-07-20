@@ -11,7 +11,7 @@
   "minimumCoreVersion": "10",
   "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
   "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/releases/download/4.8/blades-in-the-dark-{VERSION_NUMBER}.zip",
+  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/releases/download/4.8/blades-in-the-dark-4.8.zip",
   "authors": [
     { "name": "megastruktur" },
     { "name": "drewg13" },
