@@ -1,3 +1,7 @@
+v.4.8
+- Fix CSS namespace collisions #202 (@drewg13)
+- Adds Automatic generated version in system.json
+
 v.4.7
 - Missing coma fix #195 (@hendryl)
 - Make action ratings variable and modifiable by Active Effects #197 (@drewg13)
