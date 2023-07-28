@@ -206,7 +206,7 @@
         {{#each items as |item id|}}
         {{#if (eq item.type "crew_type")}}
         <div class="big-name">{{item.name}}</div>
-        <div class="big-description">{{item.system.description}}</div>
+        <div class="big-description">{{{item.system.description}}}</div>
         {{/if}}
         {{/each}}
       </div>

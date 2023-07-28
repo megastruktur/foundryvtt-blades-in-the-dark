@@ -1543,7 +1543,7 @@
 }
 .blades-in-the-dark.item.sheet .item .item-body,
 .blades-in-the-dark.item.sheet .item .item-class-label {
-  width: 100px;
+  width: auto;
 }
 .blades-in-the-dark.item.sheet .item-class-label {
   margin-bottom: 10px;
