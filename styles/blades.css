@@ -1462,10 +1462,6 @@
 .blades-in-the-dark.actor.pc * .item .item-control {
   flex-grow: 1;
 }
-.blades-in-the-dark.actor.pc * .item .item-body,
-.blades-in-the-dark.actor.pc * .item .item-class-label {
-  width: 100px;
-}
 .blades-in-the-dark.actor.pc * .item-class-label {
   margin-bottom: 10px;
 }
