@@ -26,6 +26,7 @@ export class BladesCrewSheet extends BladesSheet {
     sheetData.owner = superData.owner;
     sheetData.editable = superData.editable;
     sheetData.isGM = game.user.isGM;
+    sheetData.limited = superData.limited
 
     // Calculate Turfs amount.
     // We already have Lair, so set to -1.

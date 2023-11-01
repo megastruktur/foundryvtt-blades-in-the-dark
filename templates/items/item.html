@@ -19,11 +19,11 @@
       <input id="item-num_available" type="text" name="system.num_available" value="{{system.num_available}}">
       <label class="label-stripe">{{localize "BITD.AdditionalInfo"}}</label>
       <textarea id="item-additional_info" type="text" name="system.additional_info" value="">{{system.additional_info}}</textarea>
-      {{#if isGM}}
+      {{#unless limited}}
 <!--         <div class="label-stripe">{{localize "BITD.Logic"}}</div> -->
 <!--         <textarea name="system.logic">{{{system.logic}}}</textarea> -->
         <div class="label-stripe">{{localize "BITD.Effects"}}</div>
         <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
-      {{/if}}
+      {{/unless}}
     </section>
 </form>

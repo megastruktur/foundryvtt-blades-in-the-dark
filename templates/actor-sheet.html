@@ -239,9 +239,9 @@
         <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
         <a class="item" data-tab="loadout">{{localize "BITD.Loadout"}}</a>
         <a class="item" data-tab="character-notes">{{localize "BITD.Notes"}}</a>
-        {{#if isGM}}
+        {{#unless limited}}
           <a class="item" data-tab="effects">{{localize "BITD.Effects"}}</a>
-        {{/if}}
+        {{/unless}}
         <a class="item" data-tab="all-character-items">{{localize "BITD.AllItems"}}</a>
       </nav>
 

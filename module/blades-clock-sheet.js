@@ -26,6 +26,7 @@ export class BladesClockSheet extends BladesSheet {
     sheetData.owner = superData.owner;
     sheetData.editable = superData.editable;
     sheetData.isGM = game.user.isGM;
+    sheetData.limited = superData.limited
 
     return sheetData;
   }

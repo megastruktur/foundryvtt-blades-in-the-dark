@@ -16,11 +16,11 @@
       <input id="ability-price" type="text" name="system.price" value="{{system.price}}" placeholder="{{localize 'BITD.AbilityPrice'}}">
       <label class="label-stripe">{{localize "BITD.AbilityClass"}}</label>
       <input id="ability-class" type="text" name="system.class" value="{{system.class}}" placeholder="{{localize 'BITD.AbilityClass'}}">
-      {{#if isGM}}
+      {{#unless limited}}
         <div class="label-stripe">{{localize "BITD.Logic"}}</div>
         <textarea name="system.logic">{{{system.logic}}}</textarea>
         <div class="label-stripe">{{localize "BITD.Effects"}}</div>
         <div id="effects">{{> "systems/blades-in-the-dark/templates/parts/active-effects.html"}}</div>
-      {{/if}}
+      {{/unless}}
     </div>
 </form>

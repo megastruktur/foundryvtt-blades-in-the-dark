@@ -58,6 +58,7 @@ export class BladesItemSheet extends ItemSheet {
     sheetData.isGM = game.user.isGM;
     sheetData.owner = superData.owner;
     sheetData.editable = superData.editable;
+    sheetData.limited = superData.limited;
 
     // Prepare Active Effects
     sheetData.effects = prepareActiveEffectCategories(this.document.effects);
