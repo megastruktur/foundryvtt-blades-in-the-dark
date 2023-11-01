@@ -28,6 +28,7 @@ export class BladesActorSheet extends BladesSheet {
     sheetData.owner = superData.owner;
     sheetData.editable = superData.editable;
     sheetData.isGM = game.user.isGM;
+    sheetData.limited = superData.limited
 
     // Prepare active effects
     sheetData.effects = BladesActiveEffect.prepareActiveEffectCategories(this.actor.effects);

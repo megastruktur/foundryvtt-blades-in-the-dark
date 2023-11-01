@@ -27,6 +27,7 @@ export class BladesNPCSheet extends BladesSheet {
     sheetData.isGM = game.user.isGM;
     sheetData.owner = superData.owner;
     sheetData.editable = superData.editable;
+    sheetData.limited = superData.limited
 
     sheetData.system.description = await TextEditor.enrichHTML(sheetData.system.description, {secrets: sheetData.owner, async: true});
 
