@@ -162,6 +162,13 @@
       "system": "beam-saber",
       "path": "./packs/entanglements-macro.db",
       "type": "Macro"
-    }
+  },
+      {
+                "name": "vehicle_gear",
+                "label": "Vehicle Gear",
+                "system": "beam-saber",
+                "path": "./packs/vehicle_gear.db",
+                "entity": "Item"
+      }
   ]
 }
