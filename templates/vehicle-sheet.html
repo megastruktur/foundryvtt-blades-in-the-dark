@@ -1,0 +1,16 @@
+<form class="{{cssClass}} actor-sheet" autocomplete="off">
+    <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <input type="text" id="character-{{actor._id}}-name" name="name" value="{{actor.name}} ">
+    <label for="character-{{actor._id}}-model">{{localize "BITD.VehicleModel"}}</label>
+    <input type="text" id="character-{{actor._id}}-model" name="data.model" value="{{data.model}} ">
+    <label for="character-{{actor._id}}-size">{{localize "BITD.VehicleLoadout"}}</label>
+  	<input type="text" id="character-{{actor._id}}-size" name="data.size" value="{{data.size}} ">
+    <label for="character-{{actor._id}}-description">{{localize "BITD.VehicleDescrition"}}</label>
+  	<input type="text" id="character-{{actor._id}}-description" name="data.description" value="{{data.description}} ">
+    <label for="character-{{actor._id}}-notes">{{localize "BITD.Notes"}}</label>
+  	<input type="text" id="character-{{actor._id}}-notes" name="data.notes" value="{{data.notes}} ">
+    <label for="character-{{actor._id}}-associated-faction">{{localize "BITD.VehicleFaction"}}</label>
+    <input type="text" id="character-{{actor._id}}-associated-faction" name="data.associated_faction" value="{{data.associated_faction}}" >
+    <label for="character-{{actor._id}}-difficulty">{{localize "BITD.Difficulty"}}</label>
+    <input type="text" id="character-{{actor._id}}-difficulty" name="data.difficulty" value="{{data.difficulty}} ">
+</form>
