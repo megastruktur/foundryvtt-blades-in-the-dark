@@ -1,192 +1,401 @@
 {
   "Actor": {
-  "types": ["character", "npc", "crew", "\uD83D\uDD5B clock", "factions"],
-  "character": {
-    "alias": "",
-    "look": "",
-    "heritage": "",
-    "background": "",
-    "background-details": "",
-    "vice": "",
-    "vice-purveyor": "",
-    "playbook": "",
-    "acquaintances": [],
-    "acquaintances_label": "BITD.Acquaintances",
-    "stress": {
-      "value": [0],
-      "max": 9,
-      "max_default": 9,
-      "name_default": "BITD.Stress",
-      "name": "BITD.Stress"
-    },
-    "trauma": {
-      "max": 4,
-      "max_default": 4,
-      "value": [0],
-      "name": "BITD.Trauma",
-      "name_default": "BITD.Trauma",
-      "options": ["cold", "haunted", "obsessed", "paranoid", "reckless", "soft", "unstable", "vicious"],
-      "list": []
-    },
-    "healing-clock": [0],
-    "experience": [0],
-    "experience_max": 8,
-    "experience_clues": ["BITD.ClassExpClue3", "BITD.ClassExpClue2"],
-    "coins": [0],
-    "coins_stashed": [0],
-    "special_abilities": [],
-    "loadout": 0,
-    "load_level": "",
-    "selected_load_level": "",
-    "base_max_load": 0,
-    "harm": {
-        "light": {
-          "one": "",
-          "two": ""
+    "types": ["character", "npc", "vehicle", "crew", "\uD83D\uDD5B clock", "factions"],
+    "character": {
+      "alias": "",
+      "stress": {
+        "value": [0],
+        "max": 9,
+        "max_default": 9,
+        "name_default": "BITD.Stress",
+        "name": "BITD.Stress"
+      },
+      "trauma": {
+        "max": 4,
+        "max_default": 4,
+        "value": [0],
+        "name": "BITD.Trauma",
+        "name_default": "BITD.Trauma",
+        "list": [0]
+      },
+      "healing-clock": [0],
+      "repair-clock": [0],
+      "experience": [0],
+      "playbook-xp": 0,
+      "coins": [0],
+      "coins_stashed": [0],
+      "special_abilities": [],
+      "loadout": 0,
+      "load_level": "",
+      "selected_load_level": "",
+      "harm": {
+          "light": {
+            "one": "",
+            "two": ""
+          },
+          "medium": {
+            "one": "",
+            "two": ""
+          },
+          "heavy": {
+            "one": ""
+          },
+          "deadly": {
+            "one": ""
+          }
+      },
+      "armor-uses": {
+        "armor": 0,
+        "heavy": 0,
+        "spark": 0
+      },
+      "drive": {
+        "description": "",
+        "clock1": 0,
+        "clock2": 0
+      },
+      "connections": {
+        "connection1": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
         },
-        "medium": {
-          "one": "",
-          "two": ""
+        "connection2": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
         },
-        "heavy": {
-          "one": ""
+        "connection3": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
         },
-        "deadly": {
-          "one": ""
+        "connection4": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection5": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
+        },
+        "connection6": {
+          "name": "",
+          "belief1":{
+            "description": "",
+            "checked": 0
+          },
+          "belief2":{
+            "description": "",
+            "checked": 0
+          },
+          "belief3":{
+            "description": "",
+            "checked": 0
+          },
+          "belief4":{
+            "description": "",
+            "checked": 0
+          },
+          "discoveries": ""
         }
-    },
-    "armor-uses": {
-      "armor": 0,
-      "heavy": 0,
-      "special": 0
-    },
-    "attributes": {
-        "insight": {
-          "exp": 0,
-          "exp_max": 6,
-          "label": "BITD.SkillsInsight",
-          "skills": {
-            "hunt": {
-              "label": "BITD.SkillsHunt",
-              "value": 0,
-              "max": 4
-            },
-            "study": {
-              "label": "BITD.SkillsStudy",
-              "value": 0,
-              "max": 4
-            },
-            "survey": {
-              "label": "BITD.SkillsSurvey",
-              "value": 0,
-              "max": 4
-            },
-            "tinker": {
-              "label": "BITD.SkillsTinker",
-              "value": 0,
-              "max": 4
+      },
+      "vehicle-name": "",
+      "vehicle-description": "",
+      "selected_vehicle_load_level": "",
+      "vehicle-armor-uses": {
+        "armor": 0,
+        "heavy": 0
+      },
+      "vehicle-gear": [],
+      "vehicle-enhance": 0,
+      "vehicle-breakdown": 0,
+      "vehicle-damage": {
+          "light": {
+            "one": "",
+            "two": ""
+          },
+          "medium": {
+            "one": "",
+            "two": ""
+          },
+          "heavy": {
+            "one": ""
+          },
+          "deadly": {
+            "one": ""
+          }
+      },
+      "vehicle-quirks": {
+          "quirk1": {
+              "name": "",
+              "used": 0
+          },
+          "quirk2": {
+              "name": "",
+              "used": 0
+          },
+          "quirk3": {
+              "name": "",
+              "used": 0
+          },
+          "quirk4": {
+              "name": "",
+              "used": 0
+          },
+          "quirk5": {
+              "name": "",
+              "used": 0
+          },
+          "quirk6": {
+              "name": "",
+              "used": 0
+          }
+      },
+      "attributes": {
+          "insight": {
+            "exp": [0],
+            "label": "BITD.SkillsInsight",
+            "skills": {
+              "hunt": {
+                "label": "BITD.SkillsHunt",
+                "value": [0]
+              },
+              "study": {
+                "label": "BITD.SkillsStudy",
+                "value": [0]
+              },
+              "survey": {
+                "label": "BITD.SkillsSurvey",
+                "value": [0]
+              },
+              "tinker": {
+                "label": "BITD.SkillsTinker",
+                "value": [0]
+              }
+            }
+          },
+          "prowess": {
+            "exp": [0],
+            "label": "BITD.SkillsProwess",
+            "skills": {
+              "finesse": {
+                "label": "BITD.SkillsFinesse",
+                "value": [0]
+              },
+              "prowl": {
+                "label": "BITD.SkillsProwl",
+                "value": [0]
+              },
+              "skirmish": {
+                "label": "BITD.SkillsSkirmish",
+                "value": [0]
+              },
+              "wreck": {
+                "label": "BITD.SkillsWreck",
+                "value": [0]
+              }
+            }
+          },
+          "resolve": {
+            "exp": [0],
+            "label": "BITD.SkillsResolve",
+            "skills": {
+              "attune": {
+                "label": "BITD.SkillsAttune",
+                "value": [0]
+              },
+              "command": {
+                "label": "BITD.SkillsCommand",
+                "value": [0]
+              },
+              "consort": {
+                "label": "BITD.SkillsConsort",
+                "value": [0]
+              },
+              "sway": {
+                "label": "BITD.SkillsSway",
+                "value": [0]
+              }
+            }
+          },
+          "expertise": {
+            "exp": [0],
+            "label": "BITD.SkillsExpertise",
+            "skills": {
+              "battle": {
+                "label": "BITD.SkillsBattle",
+                "value": [0]
+              },
+              "destroy": {
+                "label": "BITD.SkillsDestroy",
+                "value": [0]
+              },
+              "maneuver": {
+                "label": "BITD.SkillsManeuver",
+                "value": [0]
+              }
+            }
+          },
+          "acuity": {
+            "exp": [0],
+            "label": "BITD.SkillsAcuity",
+            "skills": {
+              "bombard": {
+                "label": "BITD.SkillsBombard",
+                "value": [0]
+              },
+              "manipulate": {
+                "label": "BITD.SkillsManipulate",
+                "value": [0]
+              },
+              "scan": {
+                "label": "BITD.SkillsScan",
+                "value": [0]
+              }
             }
           }
-        },
-        "prowess": {
-          "exp": 0,
-          "exp_max": 6,
-          "label": "BITD.SkillsProwess",
-          "skills": {
-            "finesse": {
-              "label": "BITD.SkillsFinesse",
-              "value": 0,
-              "max": 4
-            },
-            "prowl": {
-              "label": "BITD.SkillsProwl",
-              "value": 0,
-              "max": 4
-            },
-            "skirmish": {
-              "label": "BITD.SkillsSkirmish",
-              "value": 0,
-              "max": 4
-            },
-            "wreck": {
-              "label": "BITD.SkillsWreck",
-              "value": 0,
-              "max": 4
-            }
-          }
-        },
-        "resolve": {
-          "exp": 0,
-          "exp_max": 6,
-          "label": "BITD.SkillsResolve",
-          "skills": {
-            "attune": {
-              "label": "BITD.SkillsAttune",
-              "value": 0,
-              "max": 4
-            },
-            "command": {
-              "label": "BITD.SkillsCommand",
-              "value": 0,
-              "max": 4
-            },
-            "consort": {
-              "label": "BITD.SkillsConsort",
-              "value": 0,
-              "max": 4
-            },
-            "sway": {
-              "label": "BITD.SkillsSway",
-              "value": 0,
-              "max": 4
-            }
-          }
-        }
-    }
-  },
-  "crew": {
-    "name": "",
-    "reputation": [0],
-    "lair": "",
-    "tier": "",
-    "deity": "",
-    "hold": ["strong"],
-    "experience": [0],
-    "hold_types": ["weak", "strong"],
-    "coins": {
-      "max": 4,
-      "value": [0]
+      }
     },
-    "vault": {
-      "value": [0],
-      "max": 0
-    },
-    "turfs": [8],
-    "features": [],
-    "heat": [0],
-    "wanted": [0]
-  },
-  "\uD83D\uDD5B clock": {
-    "name": "",
-    "type": 4,
-    "value": "0",
-    "owner": ""
-  },
-    "factions": {
-	"name": ""
-    },
-    "npc": {
+    "crew": {
       "name": "",
-      "description_short": "",
+      "reputation": [0],
+      "lair": "",
+      "tier": [0],
+      "deity": "",
+      "hold": ["strong"],
+      "experience": [0],
+      "hold_types": ["weak", "strong"],
+      "coins": {
+        "max": 4,
+        "value": [0]
+      },
+      "materiel": {
+        "max": 4,
+        "value": [0]
+      },
+      "personnel": {
+        "max": 4,
+        "value": [0]
+      },
+      "stash": {
+        "max": 4,
+        "value": [0]
+      },
+      "vault": {
+        "value": [0],
+        "max": 0
+      },
+      "turfs": [8],
+      "features": [],
+      "heat": [0],
+      "wanted": [0]
+    },
+    "\uD83D\uDD5B clock": {
+      "name": "",
+      "type": 4,
+      "value": "0"
+    },
+    "factions": {
+    "name": ""
+      },
+    "npc": {
+        "name": "",
+        "description_short": "",
+        "description": "",
+        "associated_class": "",
+        "associated_faction": "",
+        "associated_crew_type": "",
+        "notes": ""
+    },
+    "vehicle": {
+      "name": "",
+      "model": "",
       "description": "",
-      "associated_class": "",
+      "size": "",
+      "notes":"",
       "associated_faction": "",
-      "associated_crew_type": "",
-      "notes": ""
-    }
-  },
+      "difficulty": ""
+      }
+    },
   "Item": {
-    "types": ["faction", "item", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
+    "types": ["faction", "item", "vehicle_gear", "class", "ability", "heritage", "background", "vice", "crew_upgrade", "cohort", "crew_type", "crew_reputation", "crew_upgrade", "crew_ability"],
     "templates": {
       "default": {
         "description": ""
@@ -194,71 +403,69 @@
       "ability": {
         "description": "",
         "class": "",
-        "price": 1,
-        "purchased": false,
-        "class_default": false
+        "price": 1
       },
       "logic": {
         "logic": ""
-      }
-    },
-    "activatedEffect": {
-      "activation": {
-        "type": "",
-        "cost": 0,
-        "condition": ""
       },
-      "duration": {
-        "value": null,
-        "units": ""
-      },
-      "target": {
-        "value": null,
-        "width": null,
-        "units": "",
-        "type": ""
-      },
-      "range": {
-        "value": null,
-        "long": null,
-        "units": ""
-      },
-      "uses": {
-        "value": 0,
-        "max": 0,
-        "per": null
-      },
-      "consume": {
-        "type": "",
-        "target": null,
-        "amount": null
+      "activatedEffect": {
+        "activation": {
+          "type": "",
+          "cost": 0,
+          "condition": ""
+        },
+        "duration": {
+          "value": null,
+          "units": ""
+        },
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": ""
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": 0,
+          "max": 0,
+          "per": null
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null
+        }
       }
     },
     "faction": {
       "templates": ["default"],
-      "type": "",
-      "tier": 0,
-      "goal_1": "",
-      "goal_1_clock_max": 0,
-      "goal_2": "",
-      "goal_2_clock_max": 0,
-      "turf": "",
-      "assets": "",
-      "quirks": "",
-      "notables": "",
-      "allies": "",
-      "enemies": "",
-      "situation": "",
-      "goal_clock": 0,
-      "notes": "",
-      "hold": {
-        "value": [1],
-        "max": 2,
-        "max_default": 2,
-        "name_default": "BITD.Hold",
-        "name": "BITD.Hold"
-      },
-      "status": {
+    "type": "",
+    "tier": 0,
+    "goal_1": "",
+    "goal_1_clock_max": 0,
+    "goal_2": "",
+    "goal_2_clock_max": 0,
+    "turf": "",
+    "assets": "",
+    "quirks": "",
+    "notables": "",
+    "allies": "",
+    "enemies": "",
+    "situation": "",
+    "goal_clock": 0,
+    "notes": "",
+    "hold": {
+      "value": [1],
+      "max": 2,
+      "max_default": 2,
+      "name_default": "BITD.Hold",
+      "name": "BITD.Hold"
+    },
+    "status": {
         "value": [4],
         "max": 7,
         "max_default": 7,
@@ -267,265 +474,272 @@
       }
     },
     "item": {
-    "templates": ["default", "logic", "activatedEffect"],
-    "class": "",
-    "load": 0,
-    "uses": 1,
-    "additional_info": "",
-    "equipped" : false,
-    "num_available": 1
-  },
-  "class": {
-    "templates": ["default", "logic", "activatedEffect"],
-    "experience_clues": [],
-    "base_skills": {
-      "hunt": [0],
-      "study": [0],
-      "survey": [0],
-      "tinker": [0],
-      "finesse": [0],
-      "prowl": [0],
-      "skirmish": [0],
-      "wreck": [0],
-      "attune": [0],
-      "command": [0],
-      "consort": [0],
-      "sway": [0]
-    }
-  },
-  "ability": {
-    "templates": ["ability", "logic", "activatedEffect"]
-  },
-  "heritage": {
-    "templates": ["default", "activatedEffect"]
-  },
-  "background": {
-    "templates": ["default", "activatedEffect"]
-  },
-  "vice": {
-    "templates": ["default", "activatedEffect"]
-  },
-  "cohort": {
-    "templates": ["default"],
-    "cohort": ["Gang"],
-    "scale": 0,
-    "quality": 0,
-    "cohort_list": {
-      "Gang": {
-        "label": "BITD.Gang"
-      },
-      "Expert": {
-        "label": "BITD.Expert"
+      "templates": ["default", "logic", "activatedEffect"],
+      "class": "",
+      "load": 1
+    },
+    "vehicle_gear": {
+      "templates": ["default", "logic", "activatedEffect"],
+      "class": "",
+      "load": 1
+    },
+    "class": {
+      "templates": ["default", "logic", "activatedEffect"],
+      "experience_clues": "",
+      "base_skills": {
+        "hunt": [0],
+        "study": [0],
+        "survey": [0],
+        "tinker": [0],
+        "finesse": [0],
+        "prowl": [0],
+        "skirmish": [0],
+        "wreck": [0],
+        "attune": [0],
+        "command": [0],
+        "consort": [0],
+        "sway": [0],
+        "battle": [0],
+        "destroy": [0],
+        "maneuver": [0],
+        "bombard": [0],
+        "manipulate": [0],
+        "scan": [0]
       }
     },
-    "gang_type": ["Adepts"],
-    "gang_type_list": {
+    "ability": {
+      "templates": ["ability", "logic", "activatedEffect"]
+    },
+    "heritage": {
+      "templates": ["default", "activatedEffect"]
+    },
+    "background": {
+      "templates": ["default", "activatedEffect"]
+    },
+    "vice": {
+      "templates": ["default", "activatedEffect"]
+    },
+    "cohort": {
+      "templates": ["default"],
+      "cohort": ["Gang"],
+      "scale": 0,
+      "quality": 0,
+      "cohort_list": {
+        "Gang": {
+          "label": "BITD.Gang"
+        },
+        "Expert": {
+          "label": "BITD.Expert"
+        }
+      },
+      "gang_type": ["Adepts"],
+      "gang_type_list": {
 
-      "Adepts": {
-        "label": "BITD.GangTypeAdepts",
-        "description": "BITD.GangTypeAdeptsDescription"
+        "Adepts": {
+          "label": "BITD.GangTypeAdepts",
+          "description": "BITD.GangTypeAdeptsDescription"
+        },
+        "Rooks": {
+          "label": "BITD.GangTypeRooks",
+          "description": "BITD.GangTypeRooksDescription"
+        },
+        "Rovers": {
+          "label": "BITD.GangTypeRovers",
+          "description": "BITD.GangTypeRoversDescription"
+        },
+        "Skulks": {
+          "label": "BITD.GangTypeSkulks",
+          "description": "BITD.GangTypeSkulksDescription"
+        },
+        "Thugs": {
+          "label": "BITD.GangTypeThugs",
+          "description": "BITD.GangTypeThugsDescription"
+        }
       },
-      "Rooks": {
-        "label": "BITD.GangTypeRooks",
-        "description": "BITD.GangTypeRooksDescription"
+      "expert_type": "",
+      "status": [],
+      "statuses": [],
+      "edges": [],
+      "edges_list": {
+        "Fearsome": {
+          "label": "BITD.EdgesFearsome",
+          "description": "BITD.EdgesFearsomeDescription",
+          "selected": false
+        },
+        "Independent": {
+          "label": "BITD.EdgesIndependent",
+          "description": "BITD.EdgesIndependentDescription",
+          "selected": false
+        },
+        "Loyal": {
+          "label": "BITD.EdgesLoyal",
+          "description": "BITD.EdgesLoyalDescription",
+          "selected": false
+        },
+        "Tenacious": {
+          "label": "BITD.EdgesTenacious",
+          "description": "BITD.EdgesTenaciousDescription",
+          "selected": false
+        }
       },
-      "Rovers": {
-        "label": "BITD.GangTypeRovers",
-        "description": "BITD.GangTypeRoversDescription"
+      "flaws": [],
+      "flaws_list": {
+        "Principled": {
+          "label": "BITD.FlawsPrincipled",
+          "description": "BITD.FlawsPrincipledDescription",
+          "selected": false
+        },
+        "Savage": {
+          "label": "BITD.FlawsSavage",
+          "description": "BITD.FlawsSavageDescription",
+          "selected": false
+        },
+        "Unreliable": {
+          "label": "BITD.FlawsUnreliable",
+          "description": "BITD.FlawsUnreliableDescription",
+          "selected": false
+        },
+        "Wild": {
+          "label": "BITD.FlawsWild",
+          "description": "BITD.FlawsWildDescription",
+          "selected": false
+        }
       },
-      "Skulks": {
-        "label": "BITD.GangTypeSkulks",
-        "description": "BITD.GangTypeSkulksDescription"
+      "harm": ["No"],
+      "harm_list": {
+        "No": {
+          "label": "BITD.HarmNoHarm",
+          "description": "BITD.HarmNoHarmDescription",
+          "value": 0
+        },
+        "Weakened": {
+          "label": "BITD.HarmWeakened",
+          "description": "BITD.HarmWeakenedDescription",
+          "value": 1
+        },
+        "Impaired": {
+          "label": "BITD.HarmImpaired",
+          "description": "BITD.HarmImpairedDescription",
+          "value": 2
+        },
+        "Broken": {
+          "label": "BITD.HarmBroken",
+          "description": "BITD.HarmBrokenDescription",
+          "value": 3
+        },
+        "Dead": {
+          "label": "BITD.HarmDead",
+          "description": "BITD.HarmDeadDescription",
+          "value": 4
+        }
       },
-      "Thugs": {
-        "label": "BITD.GangTypeThugs",
-        "description": "BITD.GangTypeThugsDescription"
-      }
+      "armor": false
     },
-    "expert_type": "",
-    "status": [],
-    "statuses": [],
-    "edges": [],
-    "edges_list": {
-      "Fearsome": {
-        "label": "BITD.EdgesFearsome",
-        "description": "BITD.EdgesFearsomeDescription",
-        "selected": false
-      },
-      "Independent": {
-        "label": "BITD.EdgesIndependent",
-        "description": "BITD.EdgesIndependentDescription",
-        "selected": false
-      },
-      "Loyal": {
-        "label": "BITD.EdgesLoyal",
-        "description": "BITD.EdgesLoyalDescription",
-        "selected": false
-      },
-      "Tenacious": {
-        "label": "BITD.EdgesTenacious",
-        "description": "BITD.EdgesTenaciousDescription",
-        "selected": false
-      }
+    "crew_reputation": {
+      "templates": ["default"]
     },
-    "flaws": [],
-    "flaws_list": {
-      "Principled": {
-        "label": "BITD.FlawsPrincipled",
-        "description": "BITD.FlawsPrincipledDescription",
-        "selected": false
-      },
-      "Savage": {
-        "label": "BITD.FlawsSavage",
-        "description": "BITD.FlawsSavageDescription",
-        "selected": false
-      },
-      "Unreliable": {
-        "label": "BITD.FlawsUnreliable",
-        "description": "BITD.FlawsUnreliableDescription",
-        "selected": false
-      },
-      "Wild": {
-        "label": "BITD.FlawsWild",
-        "description": "BITD.FlawsWildDescription",
-        "selected": false
-      }
+    "crew_upgrade": {
+      "templates": ["ability", "logic", "activatedEffect"],
+      "crew_type": ""
     },
-    "harm": ["No"],
-    "harm_list": {
-      "No": {
-        "label": "BITD.HarmNoHarm",
-        "description": "BITD.HarmNoHarmDescription",
-        "value": 0
-      },
-      "Weakened": {
-        "label": "BITD.HarmWeakened",
-        "description": "BITD.HarmWeakenedDescription",
-        "value": 1
-      },
-      "Impaired": {
-        "label": "BITD.HarmImpaired",
-        "description": "BITD.HarmImpairedDescription",
-        "value": 2
-      },
-      "Broken": {
-        "label": "BITD.HarmBroken",
-        "description": "BITD.HarmBrokenDescription",
-        "value": 3
-      },
-      "Dead": {
-        "label": "BITD.HarmDead",
-        "description": "BITD.HarmDeadDescription",
-        "value": 4
-      }
+    "crew_ability": {
+      "templates": ["ability", "activatedEffect"]
     },
-    "armor": false
-  },
-  "crew_reputation": {
-    "templates": ["default"]
-  },
-  "crew_upgrade": {
-    "templates": ["ability", "logic", "activatedEffect"],
-    "crew_type": ""
-  },
-  "crew_ability": {
-    "templates": ["ability", "activatedEffect"]
-  },
-  "crew_type": {
-    "description": "",
-    "experience_clues": "",
-    "turfs": {
-      "1": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "2": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "3": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "4": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "5": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "6": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "7": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "8": {
-        "name": "BITD.Lair",
-        "value": 1,
-        "description": "",
-        "connects": []
-      },
-      "9": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "10": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "11": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "12": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "13": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "14": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
-      },
-      "15": {
-        "name": "",
-        "value": "",
-        "description": "",
-        "connects": []
+    "crew_type": {
+      "description": "",
+      "experience_clues": "",
+      "turfs": {
+        "1": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "2": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "3": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "4": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "5": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "6": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "7": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "8": {
+          "name": "BITD.Lair",
+          "value": 1,
+          "description": "",
+          "connects": []
+        },
+        "9": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "10": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "11": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "12": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "13": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "14": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        },
+        "15": {
+          "name": "",
+          "value": "",
+          "description": "",
+          "connects": []
+        }
       }
     }
   }
-}
-}
+  }
