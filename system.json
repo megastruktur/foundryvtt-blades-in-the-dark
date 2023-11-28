@@ -168,7 +168,7 @@
                 "label": "Vehicle Gear",
                 "system": "beam-saber",
                 "path": "./packs/vehicle_gear.db",
-                "entity": "Item"
+                "type": "Item"
       }
   ]
 }
