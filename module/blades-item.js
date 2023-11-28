@@ -81,7 +81,7 @@ export class BladesItem extends Item {
     if (itemData.img.includes("/mystery-man")) {
       itemData.img = null;
     }
-    const html = await renderTemplate("systems/blades-in-the-dark/templates/chat/chat-item.html", itemData);
+    const html = await renderTemplate("systems/beam-saber/templates/chat/chat-item.html", itemData);
     const chatData = {
       user: game.userId,
       content: html,

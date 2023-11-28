@@ -9,8 +9,8 @@ export class BeamVehicleSheet extends BladesSheet {
   /** @override */
 	static get defaultOptions() {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
-  	  classes: ["blades-in-the-dark", "sheet", "actor"],
-  	  template: "systems/beamsaber/templates/vehicle-sheet.html",
+  	  classes: ["beam-saber", "sheet", "actor"],
+  	  template: "systems/beam-saber/templates/vehicle-sheet.html",
       width: 900,
       height: 'auto',
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content"}]

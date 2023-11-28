@@ -152,7 +152,7 @@
 	{
       "name": "entanglements-journals",
       "label": "Entanglements Journals",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/entanglements-journals.db",
       "type": "JournalEntry"
     },

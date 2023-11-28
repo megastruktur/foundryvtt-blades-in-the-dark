@@ -11,8 +11,8 @@ export class BladesActorSheet extends BladesSheet {
   /** @override */
 	static get defaultOptions() {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
-  	  classes: ["blades-in-the-dark", "sheet", "actor", "pc"],
-  	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
+  	  classes: ["beam-saber", "sheet", "actor", "pc"],
+  	  template: "systems/beam-saber/templates/actor-sheet.html",
       width: 700,
       height: 970,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}]

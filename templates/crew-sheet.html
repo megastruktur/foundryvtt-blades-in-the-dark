@@ -257,7 +257,7 @@
       {{#each items as |item id|}}
       {{#if (eq item.type "crew_type")}}
       <div class="item" data-item-id="{{item._id}}">
-      {{> "systems/blades-in-the-dark/templates/parts/turf-list.html" _id=../_id turfs_data=item.system.turfs can_edit=false}}
+      {{> "systems/beam-saber/templates/parts/turf-list.html" _id=../_id turfs_data=item.system.turfs can_edit=false}}
       </div>
       {{/if}}
       {{/each}}
@@ -314,7 +314,7 @@
         {{#each items as |item id|}}
           {{#if (eq item.type "cohort")}}
 
-            {{> "systems/blades-in-the-dark/templates/parts/cohort-block.html" item=item}}
+            {{> "systems/beam-saber/templates/parts/cohort-block.html" item=item}}
 
           {{/if}}
         {{/each}}
