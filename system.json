@@ -1,21 +1,23 @@
 {
-  "id": "blades-in-the-dark",
-  "title": "Blades in the Dark",
-  "description": "Blades in the dark game system.",
+  "id": "beam-saber",
+  "title": "Beam Saber",
+  "description": "Beam Saber game system.",
   "version": "4.8",
   "compatibility": {
     "minimum": 10,
     "verified": "10.284"
   },
-  "name": "blades-in-the-dark",
+  "name": "beam-saber",
   "minimumCoreVersion": "10",
-  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/releases/download/4.8/blades-in-the-dark-4.8.zip",
+  "url": "https://github.com/TakeV-Lambda/foundryvtt-beam-saber",
+  "manifest": "https://raw.githubusercontent.com/TakeV-Lambda/foundryvtt-beam-saber/master/system.json",
+  "download": "https://github.com/TakeV-Lambda/foundryvtt-beam-saber/releases/download/4.8/beam-saber-4.8.zip",
   "authors": [
     { "name": "megastruktur" },
     { "name": "drewg13" },
-    { "name": "justinross" }
+    { "name": "justinross" },
+    { "name": "grankless"},
+    { "name": "TakeV"}
   ],
   "esmodules": [
     "module/blades.js"
@@ -59,91 +61,91 @@
     {
       "name": "class",
       "label": "Classes",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/classes.db",
       "type": "Item"
     },
     {
       "name": "heritage",
       "label": "Heritages",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/heritages.db",
       "type": "Item"
     },
     {
       "name": "vice",
       "label": "Vices",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/vices.db",
       "type": "Item"
     },
     {
       "name": "background",
       "label": "Backgrounds",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/backgrounds.db",
       "type": "Item"
     },
     {
       "name": "item",
       "label": "Items",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/items.db",
       "type": "Item"
     },
     {
       "name": "ability",
       "label": "Abilities",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/abilities.db",
       "type": "Item"
     },
     {
       "name": "crew_reputation",
       "label": "Crew Reputation",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/crew_reputation.db",
       "type": "Item"
     },
     {
       "name": "crew_type",
       "label": "Crew Types",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/crew_types.db",
       "type": "Item"
     },
     {
       "name": "crew_upgrade",
       "label": "Crew Upgrades",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/crew_upgrades.db",
       "type": "Item"
     },
     {
       "name": "crew_ability",
       "label": "Crew Abilities",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/crew_abilities.db",
       "type": "Item"
     },
 	{
       "name": "faction",
       "label": "Factions",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/factions.db",
       "type": "Item"
     },
     {
       "name": "npc",
       "label": "NPCs",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/npcs.db",
       "type": "Actor"
     },
 	{
       "name": "entanglements",
       "label": "Entanglements",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/entanglements.db",
       "type": "RollTable"
     },
@@ -157,7 +159,7 @@
 	{
       "name": "entanglements-macro",
       "label": "Entanglements Macro",
-      "system": "blades-in-the-dark",
+      "system": "beam-saber",
       "path": "./packs/entanglements-macro.db",
       "type": "Macro"
     }
