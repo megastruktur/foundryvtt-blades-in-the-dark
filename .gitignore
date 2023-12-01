@@ -1,2 +1,5 @@
 /.idea/*
 /blades-in-the-dark.lock
+node_modules/
+package-lock.json
+package.json
