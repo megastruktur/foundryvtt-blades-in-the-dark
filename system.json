@@ -9,9 +9,9 @@
   },
   "name": "beam-saber",
   "minimumCoreVersion": "10",
-  "url": "https://github.com/TakeV-Lambda/foundryvtt-beam-saber",
-  "manifest": "https://raw.githubusercontent.com/TakeV-Lambda/foundryvtt-beam-saber/master/system.json",
-  "download": "https://github.com/TakeV-Lambda/foundryvtt-beam-saber/archive/refs/tags/4.9.zip",
+  "url": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber",
+  "manifest": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber/raw/branch/devel/system.json",
+  "download": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber/archive/4.8.zip",
   "authors": [
     { "name": "megastruktur" },
     { "name": "drewg13" },
