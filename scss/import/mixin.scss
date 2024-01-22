@@ -283,7 +283,7 @@
 
 
   $turf_margin: 20px;
-  $connector_height: math.div($turf_height, 10);
+  $connector_height: $turf_height / 10;
   $connector_width: $turf_margin * 2;
 
   width: $turf_width;
@@ -309,8 +309,8 @@
     &.right,
     &.left {
       width: $turf_margin * 2;
-      height: math.div($turf_height, 5);
-      top: math.div($turf_height, 2) - math.div($turf_height, 10);
+      height: $turf_height / 5;
+      top: ($turf_height / 2) - ($turf_height / 10);
     }
     &.left {
       left: -$turf_margin * 2;
@@ -322,8 +322,8 @@
     &.top,
     &.bottom {
       height: $turf_margin * 2;
-      width: math.div($turf_height, 5);
-      left: math.div($turf_width, 2) - math.div($turf_height, 10);
+      width: ($turf_height / 5);
+      left: ($turf_width / 2) - ($turf_height / 10);
     }
     &.top {
       top: -$turf_margin * 2;
@@ -421,7 +421,7 @@
 
       vertical-align: middle;
       border: 2px solid $accent_color;
-      border-radius: math.div($diameter, 2);
+      border-radius: ($diameter / 2);
     }
   }
 
