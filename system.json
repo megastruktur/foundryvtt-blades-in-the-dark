@@ -2,7 +2,7 @@
   "id": "beam-saber",
   "title": "Beam Saber",
   "description": "Beam Saber game system.",
-  "version": "4.9",
+  "version": "4.9.1",
   "compatibility": {
     "minimum": 10,
     "verified": "10.284"
@@ -11,7 +11,7 @@
   "minimumCoreVersion": "10",
   "url": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber",
   "manifest": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber/raw/branch/devel/system.json",
-  "download": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber/archive/4.8.zip",
+  "download": "https://git.solarpunk.moe/TakeV/foundryvtt-beam-saber/archive/devel.zip",
   "authors": [
     { "name": "megastruktur" },
     { "name": "drewg13" },
