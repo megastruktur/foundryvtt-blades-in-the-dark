@@ -31,7 +31,7 @@
 
     <div class="grow-two flex-vertical">
       <div id="crew-{{_id}}-lair-box" class="lair">
-        <label for="crew-{{_id}}-lair">{{localize "BITD.Lair"}}</label>
+        <label for="crew-{{_id}}-lair">{{localize "BOTI.Base"}}</label>
         <input type="text" id="crew-{{_id}}-lair" name="system.lair" value="{{system.lair}}">
       </div>
 
@@ -105,7 +105,7 @@
       <label for="crew-{{../_id}}-reputation-12"></label>
       {{/repturf}}
       {{/multiboxes}}
-      <div class="gray-label">{{localize "BITD.Turf"}}</div>
+      <div class="gray-label">{{localize "BOTI.Favor"}}</div>
     </div>
 
     {{!-- Coins --}}
@@ -113,7 +113,7 @@
 
       <div id="crew-{{_id}}-coins-hands" class="crew-coins-hands">
         <div class="stripe">
-          <label for="crew-{{_id}}-coins-hands-0">{{localize "BITD.Coins"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
+          <label for="crew-{{_id}}-coins-hands-0">{{localize "BOTI.Salaries"}} <i class="fab fa-creative-commons-zero nullifier"></i></label>
         </div>
         <div class="crew-coins coins-hands">
           {{#multiboxes system.coins.value}}
@@ -154,7 +154,7 @@
       <div id="crew-{{_id}}-heat" class="big-teeth">
         {{#multiboxes system.heat}}
         <input type="radio" id="crew-{{_id}}-heat-0" name="system.heat" value="0" dtype="Radio">
-        <label class="black-label" for="crew-{{_id}}-heat-0">{{localize "BITD.Heat"}}</label>
+        <label class="black-label" for="crew-{{_id}}-heat-0">{{localize "BOTI.Suspicion"}}</label>
         <input type="radio" id="crew-{{_id}}-heat-1" name="system.heat" value="1" dtype="Radio">
         <label for="crew-{{_id}}-heat-1"></label>
         <input type="radio" id="crew-{{_id}}-heat-2" name="system.heat" value="2" dtype="Radio">
@@ -176,7 +176,7 @@
         {{/multiboxes}}
 
       </div>
-      <div id="crew-{{_id}}-wanted-container" class="small-teeth-container crew-wanted-container">
+      <!-- <div id="crew-{{_id}}-wanted-container" class="small-teeth-container crew-wanted-container">
         {{#multiboxes system.wanted}}
         <div id="crew-{{_id}}-wanted" class="small-teeth-wrap">
           <label class="black-label" for="crew-{{_id}}-wanted-counter-0">{{localize "BITD.Wanted"}}</label>
@@ -193,7 +193,7 @@
           </div>
         </div>
         {{/multiboxes}}
-      </div>
+      </div> -->
 
     </div>
   </section>
@@ -211,7 +211,7 @@
         {{/each}}
       </div>
       <nav class="tabs flex-horizontal">
-        <a class="item" data-tab="turfs">{{localize "BITD.Turfs"}}</a>
+        <a class="item" data-tab="turfs">{{localize "BOTI.Boons"}}</a>
         <a class="item" data-tab="upgrades">{{localize "BITD.Upgrades"}}</a>
         <a class="item" data-tab="abilities">{{localize "BITD.Abilities"}}</a>
         <a class="item" data-tab="cohorts">{{localize "BITD.Cohorts"}}</a>
@@ -252,7 +252,7 @@
     {{!-- Turfs --}}
     <div class="tab" data-tab="turfs">
       <div class="label-stripe">
-        <p><label>{{localize "BITD.Turfs"}}</label></p>
+        <p><label>{{localize "BOTI.Boons"}}</label></p>
       </div>
       {{#each items as |item id|}}
       {{#if (eq item.type "crew_type")}}

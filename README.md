@@ -40,6 +40,19 @@ Crew Types:
 
 - (A) Acolytes
 
+Blades of the Inquisition Changes:
+
+- Backgrounds = Imperial Divinations
+- Vices = Corruptions
+- Coin = Salary
+- Heat = Suspicion
+- Rep = Reputation
+- Lair = Base of Operations
+- Turf = Favor
+- Skulk = Finesse + Prowl
+- Drive added to Prowess
+- Attune = Warp
+
 ## Screenshots
 
 ### Character Sheet, Crew Sheet and Class

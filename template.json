@@ -102,13 +102,13 @@
           "exp_max": 6,
           "label": "BITD.SkillsProwess",
           "skills": {
-            "finesse": {
-              "label": "BITD.SkillsFinesse",
+            "drive": {
+              "label": "BOTI.SkillsDrive",
               "value": 0,
               "max": 4
             },
-            "prowl": {
-              "label": "BITD.SkillsProwl",
+            "skulk": {
+              "label": "BOTI.SkillsSkulk",
               "value": 0,
               "max": 4
             },
@@ -129,11 +129,6 @@
           "exp_max": 6,
           "label": "BITD.SkillsResolve",
           "skills": {
-            "attune": {
-              "label": "BITD.SkillsAttune",
-              "value": 0,
-              "max": 4
-            },
             "command": {
               "label": "BITD.SkillsCommand",
               "value": 0,
@@ -146,6 +141,11 @@
             },
             "sway": {
               "label": "BITD.SkillsSway",
+              "value": 0,
+              "max": 4
+            },
+            "warp": {
+              "label": "BOTI.SkillsWarp",
               "value": 0,
               "max": 4
             }

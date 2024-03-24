@@ -1,7 +1,7 @@
 {
   "id": "blades-of-the-inquisition",
-  "title": "Blades of the Imperium (Blades in the Dark hack)",
-  "description": "Blades of the Imperium (Blades in the Dark hack) game system.",
+  "title": "Blades of the Inquisition (Blades in the Dark hack)",
+  "description": "Blades of the Inquisition (Blades in the Dark hack) game system.",
   "version": "4.8",
   "compatibility": {
     "minimum": 10,
@@ -14,6 +14,7 @@
   "download": "https://github.com/sombranox/foundryvtt-blades-of-the-inquisition/releases/download/4.8/blades-of-the-inquisition-4.8.zip",
   "authors": [
     { "name": "sombranox" },
+    { "name": "RoosterEma" },
     { "name": "megastruktur" },
     { "name": "drewg13" },
     { "name": "justinross" }
@@ -69,14 +70,14 @@
     },
     {
       "name": "vice",
-      "label": "Vices",
+      "label": "Corruptions",
       "system": "blades-of-the-inquisition",
       "path": "./packs/vices.db",
       "type": "Item"
     },
     {
       "name": "background",
-      "label": "Backgrounds",
+      "label": "Imperial Divinations",
       "system": "blades-of-the-inquisition",
       "path": "./packs/backgrounds.db",
       "type": "Item"
@@ -153,7 +154,7 @@
     },
     {
       "name": "entanglements-macro",
-      "label": "Entanglements Macro",
+      "label": "Macros",
       "system": "blades-of-the-inquisition",
       "path": "./packs/entanglements-macro.db",
       "type": "Macro"

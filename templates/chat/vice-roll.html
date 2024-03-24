@@ -4,19 +4,18 @@
   {{#if (eq roll_status "failure")}}
   <div class="die {{roll_status}}">{{localize "BITD.RollFailure"}}</div>
   <div class="description">
-    <p>{{{localize "BITD.RollViceFailure" clear_stress=clear_stress}}}
+    <p>{{{localize "BOTI.RollCorruptionFailure" clear_stress=clear_stress}}}
     <ul>
-      <li>{{{localize "BITD.RollViceFailureAttactTrouble"}}}</li>
-      <li>{{{localize "BITD.RollViceFailureBrag"}}}</li>
-      <li>{{{localize "BITD.RollViceFailureLost"}}}</li>
-      <li>{{{localize "BITD.RollViceFailureTapped"}}}</li>
+      <li>{{{localize "BOTI.RollCorruptionFailureAttactTrouble"}}}</li>
+      <li>{{{localize "BOTI.RollCorruptionFailureGuilt"}}}</li>
+      <li>{{{localize "BOTI.RollCorruptionFailureRumors"}}}</li>
     </ul>
     </p>
   </div>
   {{else}}
   <div class="die success">{{localize "BITD.RollSuccess"}}</div>
   <div class="description">
-    <p>{{{localize "BITD.RollVice" clear_stress=clear_stress}}}</p>
+    <p>{{{localize "BOTI.RollCorruption" clear_stress=clear_stress}}}</p>
   </div>
   {{/if}}
   {{#if note}}
