@@ -1,28 +1,25 @@
 {
-  "id": "blades-in-the-dark",
-  "title": "Blades in the Dark",
-  "description": "Blades in the dark game system.",
+  "id": "blades-of-the-inquisition",
+  "title": "Blades of the Imperium (Blades in the Dark hack)",
+  "description": "Blades of the Imperium (Blades in the Dark hack) game system.",
   "version": "4.8",
   "compatibility": {
     "minimum": 10,
-    "verified": "10.284"
+    "verified": "11.315"
   },
-  "name": "blades-in-the-dark",
+  "name": "blades-of-the-inquisition",
   "minimumCoreVersion": "10",
-  "url": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/",
-  "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
-  "download": "https://github.com/megastruktur/foundryvtt-blades-in-the-dark/releases/download/4.8/blades-in-the-dark-4.8.zip",
+  "url": "https://github.com/sombranox/foundryvtt-blades-of-the-inquisition/",
+  "manifest": "https://raw.githubusercontent.com/sombranox/foundryvtt-blades-of-the-inquisition/master/system.json",
+  "download": "https://github.com/sombranox/foundryvtt-blades-of-the-inquisition/releases/download/4.8/blades-of-the-inquisition-4.8.zip",
   "authors": [
+    { "name": "sombranox" },
     { "name": "megastruktur" },
     { "name": "drewg13" },
     { "name": "justinross" }
   ],
-  "esmodules": [
-    "module/blades.js"
-  ],
-  "styles": [
-    "styles/blades.css"
-  ],
+  "esmodules": ["module/blades.js"],
+  "styles": ["styles/blades.css"],
   "languages": [
     {
       "lang": "en",
@@ -59,105 +56,105 @@
     {
       "name": "class",
       "label": "Classes",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/classes.db",
       "type": "Item"
     },
     {
       "name": "heritage",
       "label": "Heritages",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/heritages.db",
       "type": "Item"
     },
     {
       "name": "vice",
       "label": "Vices",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/vices.db",
       "type": "Item"
     },
     {
       "name": "background",
       "label": "Backgrounds",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/backgrounds.db",
       "type": "Item"
     },
     {
       "name": "item",
       "label": "Items",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/items.db",
       "type": "Item"
     },
     {
       "name": "ability",
       "label": "Abilities",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/abilities.db",
       "type": "Item"
     },
     {
       "name": "crew_reputation",
       "label": "Crew Reputation",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/crew_reputation.db",
       "type": "Item"
     },
     {
       "name": "crew_type",
       "label": "Crew Types",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/crew_types.db",
       "type": "Item"
     },
     {
       "name": "crew_upgrade",
       "label": "Crew Upgrades",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/crew_upgrades.db",
       "type": "Item"
     },
     {
       "name": "crew_ability",
       "label": "Crew Abilities",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/crew_abilities.db",
       "type": "Item"
     },
-	{
+    {
       "name": "faction",
       "label": "Factions",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/factions.db",
       "type": "Item"
     },
     {
       "name": "npc",
       "label": "NPCs",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/npcs.db",
       "type": "Actor"
     },
-	{
+    {
       "name": "entanglements",
       "label": "Entanglements",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/entanglements.db",
       "type": "RollTable"
     },
-	{
+    {
       "name": "entanglements-journals",
       "label": "Entanglements Journals",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/entanglements-journals.db",
       "type": "JournalEntry"
     },
-	{
+    {
       "name": "entanglements-macro",
       "label": "Entanglements Macro",
-      "system": "blades-in-the-dark",
+      "system": "blades-of-the-inquisition",
       "path": "./packs/entanglements-macro.db",
       "type": "Macro"
     }
