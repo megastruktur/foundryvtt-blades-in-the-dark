@@ -139,6 +139,13 @@
       "type": "Actor"
     },
     {
+      "name": "otherTables",
+      "label": "Other Tables",
+      "system": "blades-of-the-inquisition",
+      "path": "./packs/other-tables.db",
+      "type": "RollTable"
+    },
+    {
       "name": "entanglements",
       "label": "Entanglements",
       "system": "blades-of-the-inquisition",
@@ -154,7 +161,7 @@
     },
     {
       "name": "entanglements-macro",
-      "label": "Macros",
+      "label": "Entanglement Macro",
       "system": "blades-of-the-inquisition",
       "path": "./packs/entanglements-macro.db",
       "type": "Macro"

@@ -10,7 +10,7 @@
 {"name":"Strange","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":800001,"flags":{},"_id":"Jt1oFkNFOhs40XDi"}
 {"name":"Brutal","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":200001,"flags":{},"_id":"LvYh7PiLfkKQDucv"}
 {"name":"Alluring","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":200001,"flags":{},"_id":"RxKQBii0463Ow5Tt"}
-{"name":"Cruel","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":300001,"flags":{},"_id":"TBDvFVgXDLeLkPmB"}
+{"name":"Cruel","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":300001,"flags":{},"_id":"TADvFVgXDLeLkPmB"}
 {"name":"Professional","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":500001,"flags":{},"_id":"TKcQBfHL9c7AZDm6"}
 {"name":"Savvy","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":600001,"flags":{},"_id":"riaILfgXbt9lrsc8"}
 {"name":"Sinister","permission":{"default":0},"type":"crew_reputation","system":{"description":""},"folder":null,"sort":700001,"flags":{},"_id":"u0Dpn1VcDO7OJBRy"}
