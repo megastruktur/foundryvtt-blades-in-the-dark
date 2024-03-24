@@ -26,7 +26,9 @@ window.BladesHelpers = BladesHelpers;
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
 Hooks.once("init", async function () {
-  console.log(`Initializing Blades In the Dark System`);
+  console.log(
+    `Initializing Blades of the Inquisition (Blades In the Dark hack) System`
+  );
 
   game.blades = {
     dice: bladesRoll,
