@@ -268,5 +268,4 @@
   "BITD.RollAcquireAssetSuccess": "Good result.",
   "BITD.RollAcquireAssetPartialSuccess": "Mixed result.",
   "BITD.RollAcquireAssetFailure": "Bad result."
-
 }

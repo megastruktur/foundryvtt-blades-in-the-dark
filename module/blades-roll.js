@@ -5,19 +5,40 @@
  * @param {string} position
  * @param {string} effect
  */
-export async function bladesRoll(dice_amount, attribute_name = "", position = "risky", effect = "standard", note = "", current_stress, current_crew_tier) {
-
+export async function bladesRoll(
+  dice_amount,
+  attribute_name = "",
+  position = "risky",
+  effect = "standard",
+  note = "",
+  current_stress,
+  current_crew_tier
+) {
   // ChatMessage.getSpeaker(controlledToken)
   let zeromode = false;
 
-  if ( dice_amount < 0 ) { dice_amount = 0; }
-  if ( dice_amount === 0 ) { zeromode = true; dice_amount = 2; }
+  if (dice_amount < 0) {
+    dice_amount = 0;
+  }
+  if (dice_amount === 0) {
+    zeromode = true;
+    dice_amount = 2;
+  }
 
-  let r = new Roll( `${dice_amount}d6`, {} );
+  let r = new Roll(`${dice_amount}d6`, {});
 
   // show 3d Dice so Nice if enabled
-  r.evaluate({async:true});
-  await showChatRollMessage(r, zeromode, attribute_name, position, effect, note, current_stress, current_crew_tier);
+  r.evaluate({ async: true });
+  await showChatRollMessage(
+    r,
+    zeromode,
+    attribute_name,
+    position,
+    effect,
+    note,
+    current_stress,
+    current_crew_tier
+  );
 }
 
 /**
@@ -29,10 +50,18 @@ export async function bladesRoll(dice_amount, attribute_name = "", position = "r
  * @param {string} position
  * @param {string} effect
  */
-async function showChatRollMessage(r, zeromode, attribute_name = "", position = "", effect = "", note = "", current_stress, current_crew_tier) {
-
+async function showChatRollMessage(
+  r,
+  zeromode,
+  attribute_name = "",
+  position = "",
+  effect = "",
+  note = "",
+  current_stress,
+  current_crew_tier
+) {
   let speaker = ChatMessage.getSpeaker();
-  let rolls = (r.terms)[0].results;
+  let rolls = r.terms[0].results;
   let attribute_label = BladesHelpers.getRollLabel(attribute_name);
 
   // Retrieve Roll status.
@@ -40,42 +69,63 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
 
   let result;
   if (BladesHelpers.isAttributeAction(attribute_name)) {
-    let position_localize = '';
+    let position_localize = "";
     switch (position) {
-      case 'controlled':
-        position_localize = 'BITD.PositionControlled'
+      case "controlled":
+        position_localize = "BITD.PositionControlled";
         break;
-      case 'desperate':
-        position_localize = 'BITD.PositionDesperate'
+      case "desperate":
+        position_localize = "BITD.PositionDesperate";
         break;
-      case 'risky':
+      case "risky":
       default:
-        position_localize = 'BITD.PositionRisky'
+        position_localize = "BITD.PositionRisky";
     }
 
-    let effect_localize = '';
+    let effect_localize = "";
     switch (effect) {
-      case 'limited':
-        effect_localize = 'BITD.EffectLimited'
+      case "limited":
+        effect_localize = "BITD.EffectLimited";
         break;
-      case 'great':
-        effect_localize = 'BITD.EffectGreat'
+      case "great":
+        effect_localize = "BITD.EffectGreat";
         break;
-      case 'standard':
+      case "standard":
       default:
-        effect_localize = 'BITD.EffectStandard'
+        effect_localize = "BITD.EffectStandard";
     }
 
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/action-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, position: position, position_localize: position_localize, effect: effect, effect_localize: effect_localize, note: note});
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/action-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: attribute_label,
+        position: position,
+        position_localize: position_localize,
+        effect: effect,
+        effect_localize: effect_localize,
+        note: note,
+      }
+    );
   }
   // Check for Resistance roll
   else if (BladesHelpers.isAttributeAttribute(attribute_name)) {
     let stress = getBladesRollStress(rolls, zeromode);
 
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/resistance-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, stress: stress, note: note});
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/resistance-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: attribute_label,
+        stress: stress,
+        note: note,
+      }
+    );
   }
   // Check for Indugle Vice roll
-  else if (attribute_name == 'BITD.Vice') {
+  else if (attribute_name == "BITD.Vice") {
     let clear_stress = getBladesRollVice(rolls, zeromode);
 
     if (current_stress - clear_stress >= 0) {
@@ -85,18 +135,43 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
       clear_stress = current_stress;
     }
 
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/vice-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, clear_stress: clear_stress, note: note});
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/vice-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: attribute_label,
+        clear_stress: clear_stress,
+        note: note,
+      }
+    );
   }
   // Check for Gather Information roll
-  else if (attribute_name == 'BITD.GatherInformation') {
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/gather-info-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, note: note});
+  else if (attribute_name == "BITD.GatherInformation") {
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/gather-info-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: attribute_label,
+        note: note,
+      }
+    );
   }
   // Check for Engagement roll
-  else if (attribute_name == 'BITD.Engagement') {
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/engagement-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, note: note});
+  else if (attribute_name == "BITD.Engagement") {
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/engagement-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: attribute_label,
+        note: note,
+      }
+    );
   }
   // Check for Asset roll
-  else if (attribute_name == 'BITD.AcquireAsset') {
+  else if (attribute_name == "BITD.AcquireAsset") {
     let tier_quality = Number(current_crew_tier);
     let status = String(roll_status);
     switch (status) {
@@ -107,7 +182,7 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
         tier_quality = tier_quality + 1;
         break;
       case "failure":
-        if (tier_quality > 0){
+        if (tier_quality > 0) {
           tier_quality = tier_quality - 1;
         }
         break;
@@ -115,21 +190,38 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
         break;
     }
 
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/asset-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: attribute_label, tier_quality: tier_quality, note: note});
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/asset-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: attribute_label,
+        tier_quality: tier_quality,
+        note: note,
+      }
+    );
   }
   // Fortune roll if not specified
   else {
-    result = await renderTemplate("systems/blades-in-the-dark/templates/chat/fortune-roll.html", {rolls: rolls, roll_status: roll_status, attribute_label: "BITD.Fortune", note: note});
+    result = await renderTemplate(
+      "systems/blades-in-the-dark/templates/chat/fortune-roll.html",
+      {
+        rolls: rolls,
+        roll_status: roll_status,
+        attribute_label: "BITD.Fortune",
+        note: note,
+      }
+    );
   }
 
   let messageData = {
     speaker: speaker,
     content: result,
     type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-    roll: r
-  }
+    roll: r,
+  };
 
-  CONFIG.ChatMessage.documentClass.create(messageData, {})
+  CONFIG.ChatMessage.documentClass.create(messageData, {});
 }
 
 /**
@@ -142,27 +234,24 @@ async function showChatRollMessage(r, zeromode, attribute_name = "", position = 
  * @param {Boolean} zeromode
  */
 export function getBladesRollStatus(rolls, zeromode = false) {
-
   // Sort roll values from lowest to highest.
-  let sorted_rolls = rolls.map(i => i.result).sort();
+  let sorted_rolls = rolls.map((i) => i.result).sort();
 
-  let roll_status = "failure"
+  let roll_status = "failure";
 
   if (sorted_rolls[0] === 6 && zeromode) {
     roll_status = "success";
-  }
-  else {
+  } else {
     let use_die;
     let prev_use_die = false;
 
     if (zeromode) {
       use_die = sorted_rolls[0];
-    }
-    else {
+    } else {
       use_die = sorted_rolls[sorted_rolls.length - 1];
 
       if (sorted_rolls.length - 2 >= 0) {
-        prev_use_die = sorted_rolls[sorted_rolls.length - 2]
+        prev_use_die = sorted_rolls[sorted_rolls.length - 2];
       }
     }
 
@@ -185,11 +274,9 @@ export function getBladesRollStatus(rolls, zeromode = false) {
     else {
       roll_status = "partial-success";
     }
-
   }
 
   return roll_status;
-
 }
 /**
  * Get stress of the Roll.
@@ -197,29 +284,26 @@ export function getBladesRollStatus(rolls, zeromode = false) {
  * @param {Boolean} zeromode
  */
 export function getBladesRollStress(rolls, zeromode = false) {
-
   var stress = 6;
 
   // Sort roll values from lowest to highest.
-  let sorted_rolls = rolls.map(i => i.result).sort();
+  let sorted_rolls = rolls.map((i) => i.result).sort();
 
-  let roll_status = "failure"
+  let roll_status = "failure";
 
   if (sorted_rolls[0] === 6 && zeromode) {
     stress = -1;
-  }
-  else {
+  } else {
     let use_die;
     let prev_use_die = false;
 
     if (zeromode) {
       use_die = sorted_rolls[0];
-    }
-    else {
+    } else {
       use_die = sorted_rolls[sorted_rolls.length - 1];
 
       if (sorted_rolls.length - 2 >= 0) {
-        prev_use_die = sorted_rolls[sorted_rolls.length - 2]
+        prev_use_die = sorted_rolls[sorted_rolls.length - 2];
       }
     }
 
@@ -228,11 +312,9 @@ export function getBladesRollStress(rolls, zeromode = false) {
     } else {
       stress = 6 - use_die;
     }
-
   }
 
   return stress;
-
 }
 
 /**
@@ -242,26 +324,22 @@ export function getBladesRollStress(rolls, zeromode = false) {
  */
 export function getBladesRollVice(rolls, zeromode = false) {
   // Sort roll values from lowest to highest.
-  let sorted_rolls = rolls.map(i => i.result).sort();
+  let sorted_rolls = rolls.map((i) => i.result).sort();
   let use_die;
 
   if (zeromode) {
     use_die = sorted_rolls[0];
-  }
-  else {
+  } else {
     use_die = sorted_rolls[sorted_rolls.length - 1];
   }
 
   return use_die;
-
 }
-
 
 /**
  * Call a Roll popup.
  */
 export async function simpleRollPopup() {
-
   new Dialog({
     title: `Simple Roll`,
     content: `
@@ -271,47 +349,66 @@ export async function simpleRollPopup() {
         <div class="form-group">
           <label>${game.i18n.localize("BITD.RollNumberOfDice")}:</label>
           <select id="qty" name="qty">
-            ${Array(11).fill().map((item, i) => `<option value="${i}">${i}d</option>`).join('')}
+            ${Array(11)
+              .fill()
+              .map((item, i) => `<option value="${i}">${i}d</option>`)
+              .join("")}
           </select>
         </div>
         <fieldset class="form-group" style="display:block;justify-content:space-between;">
           <legend>Roll Types</legend>
           <div class="radio-group" >
             <label>
-              <input type="radio" id="fortune" name="rollSelection" checked=true> ${game.i18n.localize("BITD.Fortune")}
+              <input type="radio" id="fortune" name="rollSelection" checked=true> ${game.i18n.localize(
+                "BITD.Fortune"
+              )}
             </label>
           </div>
           <div class="radio-group">
             <label>
-              <input type="radio" id="gatherInfo" name="rollSelection"> ${game.i18n.localize("BITD.GatherInformation")}
+              <input type="radio" id="gatherInfo" name="rollSelection"> ${game.i18n.localize(
+                "BITD.GatherInformation"
+              )}
             </label>
           </div>
           <div class="radio-group">
             <label>
-              <input type="radio" id="engagement" name="rollSelection"> ${game.i18n.localize("BITD.Engagement")}
+              <input type="radio" id="engagement" name="rollSelection"> ${game.i18n.localize(
+                "BITD.Engagement"
+              )}
             </label>
           </div>
           <div class="radio-group" style="display:flex;flex-direction:row;justify-content:space-between;">
-            <label><input type="radio" id="indulgeVice" name="rollSelection"> ${game.i18n.localize("BITD.IndulgeVice")}</label>
+            <label><input type="radio" id="indulgeVice" name="rollSelection"> ${game.i18n.localize(
+              "BITD.IndulgeVice"
+            )}</label>
             <span style="width:200px">
-              <label>${game.i18n.localize('BITD.Stress')}:</label>
+              <label>${game.i18n.localize("BITD.Stress")}:</label>
               <select style="width:100px;float:right" id="stress" name="stress">
-                ${Array(11).fill().map((item, i) => `<option value="${i}">${i}</option>`).join('')}
+                ${Array(11)
+                  .fill()
+                  .map((item, i) => `<option value="${i}">${i}</option>`)
+                  .join("")}
               </select>
             </span>
           </div>
           <div class="radio-group" style="display:flex;flex-direction:row;justify-content:space-between;">
-            <label><input type="radio" id="acqurieAsset" name="rollSelection"> ${game.i18n.localize("BITD.AcquireAsset")}</label>
+            <label><input type="radio" id="acqurieAsset" name="rollSelection"> ${game.i18n.localize(
+              "BITD.AcquireAsset"
+            )}</label>
             <span style="width:200px">
-              <label>${game.i18n.localize('BITD.CrewTier')}:</label>
+              <label>${game.i18n.localize("BITD.CrewTier")}:</label>
               <select style="width:100px;float:right" id="tier" name="tier">
-                ${Array(5).fill().map((item, i) => `<option value="${i}">${i}</option>`).join('')}
+                ${Array(5)
+                  .fill()
+                  .map((item, i) => `<option value="${i}">${i}</option>`)
+                  .join("")}
               </select>
             </span>
           </div>
         </fieldset>
         <div className="form-group">
-          <label>${game.i18n.localize('BITD.Notes')}:</label>
+          <label>${game.i18n.localize("BITD.Notes")}:</label>
           <input id="note" name="note" type="text" value="">
         </div><br/>
       </form>
@@ -327,24 +424,46 @@ export async function simpleRollPopup() {
           let note = html.find('[name="note"]')[0].value;
 
           let input = html.find("input");
-          for (let i = 0; i < input.length; i++){
+          for (let i = 0; i < input.length; i++) {
             if (input[i].checked) {
               switch (input[i].id) {
-                case 'gatherInfo':
-                  await bladesRoll(diceQty,"BITD.GatherInformation","","",note,"");
+                case "gatherInfo":
+                  await bladesRoll(
+                    diceQty,
+                    "BITD.GatherInformation",
+                    "",
+                    "",
+                    note,
+                    ""
+                  );
                   break;
-                case 'engagement':
-                  await bladesRoll(diceQty,"BITD.Engagement","","",note,"");
+                case "engagement":
+                  await bladesRoll(
+                    diceQty,
+                    "BITD.Engagement",
+                    "",
+                    "",
+                    note,
+                    ""
+                  );
                   break;
-                case 'indulgeVice':
-                  await bladesRoll(diceQty,"BITD.Vice","","",note,stress);
+                case "indulgeVice":
+                  await bladesRoll(diceQty, "BITD.Vice", "", "", note, stress);
                   break;
-                case 'acqurieAsset':
-                  await bladesRoll(diceQty,"BITD.AcquireAsset","","",note,"",tier);
+                case "acqurieAsset":
+                  await bladesRoll(
+                    diceQty,
+                    "BITD.AcquireAsset",
+                    "",
+                    "",
+                    note,
+                    "",
+                    tier
+                  );
                   break;
 
                 default:
-                  await bladesRoll(diceQty,"","","",note,"");
+                  await bladesRoll(diceQty, "", "", "", note, "");
                   break;
               }
               break;
@@ -354,9 +473,9 @@ export async function simpleRollPopup() {
       },
       no: {
         icon: "<i class='fas fa-times'></i>",
-        label: game.i18n.localize('Cancel'),
+        label: game.i18n.localize("Cancel"),
       },
     },
-    default: "yes"
+    default: "yes",
   }).render(true);
 }
