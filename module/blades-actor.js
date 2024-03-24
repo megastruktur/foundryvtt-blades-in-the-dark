@@ -38,7 +38,7 @@ export class BladesActor extends Actor {
   getAttributeDiceToThrow() {
     // Calculate Dice to throw.
     let dice_amount = {};
-    dice_amount["BITD.Vice"] = 4;
+    dice_amount["BOTI.Corruption"] = 4;
 
     for (var attribute_name in this.system.attributes) {
       dice_amount[attribute_name] = 0;
@@ -53,8 +53,8 @@ export class BladesActor extends Actor {
         }
       }
       // Vice dice roll uses lowest attribute dice amount
-      if (dice_amount[attribute_name] < dice_amount["BITD.Vice"]) {
-        dice_amount["BITD.Vice"] = dice_amount[attribute_name];
+      if (dice_amount[attribute_name] < dice_amount["BOTI.Corruption"]) {
+        dice_amount["BOTI.Corruption"] = dice_amount[attribute_name];
       }
     }
 

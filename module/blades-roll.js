@@ -125,7 +125,7 @@ async function showChatRollMessage(
     );
   }
   // Check for Indugle Vice roll
-  else if (attribute_name == "BITD.Vice") {
+  else if (attribute_name == "BOTI.Corruption") {
     let clear_stress = getBladesRollVice(rolls, zeromode);
 
     if (current_stress - clear_stress >= 0) {
@@ -380,7 +380,7 @@ export async function simpleRollPopup() {
           </div>
           <div class="radio-group" style="display:flex;flex-direction:row;justify-content:space-between;">
             <label><input type="radio" id="indulgeVice" name="rollSelection"> ${game.i18n.localize(
-              "BITD.IndulgeVice"
+              "BOTI.IndulgeCorruption"
             )}</label>
             <span style="width:200px">
               <label>${game.i18n.localize("BITD.Stress")}:</label>
@@ -448,7 +448,14 @@ export async function simpleRollPopup() {
                   );
                   break;
                 case "indulgeVice":
-                  await bladesRoll(diceQty, "BITD.Vice", "", "", note, stress);
+                  await bladesRoll(
+                    diceQty,
+                    "BOTI.Corruption",
+                    "",
+                    "",
+                    note,
+                    stress
+                  );
                   break;
                 case "acqurieAsset":
                   await bladesRoll(
