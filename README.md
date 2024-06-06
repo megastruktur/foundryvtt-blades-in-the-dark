@@ -1,3 +1,7 @@
+# THE GAME SUPPORT WAS TRANSFERED TO ANOTHER PERSON and won't be updated anymore. BUT:
+## The NEW repo for the system is here: https://github.com/Dez384/foundryvtt-blades-in-the-dark
+
+<details>
 # FoundryVTT Blades in the Dark character and crew sheets
 
 <p align="center">
@@ -84,3 +88,5 @@ Clocks are now here!
 [screenshot_compendium]: ./images/screenshot_compendium.png "screenshot_compendium"
 [screenshot_roll_1]: ./images/screenshot_roll_1.png "screenshot_roll_1"
 [screenshot_roll_2]: ./images/screenshot_roll_2.png "screenshot_roll_2"
+
+</details>
